@@ -1,5 +1,9 @@
 # Research assessment — 2026-10-31
 
+## Implementation update
+
+The website now implements the initial atlas, recordings, films and searchable source catalog. Physical scale is resolved at 0.08 mm per voxel: primary-paper methods and Amira bounds agree, and all intensity/label voxels match across formats after storage-axis reversal. See `analysis/atlas-scale-resolution.json`. The original planning assessment below is retained for context; its scale-resolution prerequisite has been completed. Tractography and cross-specimen registration remain unimplemented.
+
 ## Best starting project
 
 Build a documented atlas-and-recordings resource with reproducible measurements. The most defensible first public contribution is a searchable catalog, reliable original-media playback, explicit coordinate handling, and data-quality reports. An improved interface is immediately feasible; improved anatomical accuracy must be demonstrated against independent landmarks or expert annotations.

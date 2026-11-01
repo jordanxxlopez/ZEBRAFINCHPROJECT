@@ -15,7 +15,7 @@
     "audio": true,
     "license": "CC-BY; article license, retain original credit",
     "transformations": "none",
-    "validation": "ffprobe metadata checked; desktop/browser playback not tested; scene description from publisher caption"
+    "validation": "ffprobe metadata checked; browser checks documented in website/README.md; scene description from publisher caption"
   },
   {
     "path": "media/original/elife-07770-media1.mp4",
@@ -33,6 +33,6 @@
     "audio": true,
     "license": "CC-BY; article license, retain original credit",
     "transformations": "none",
-    "validation": "ffprobe metadata checked; desktop/browser playback not tested; scene description from publisher caption"
+    "validation": "ffprobe metadata checked; browser checks documented in website/README.md; scene description from publisher caption"
   }
 ]

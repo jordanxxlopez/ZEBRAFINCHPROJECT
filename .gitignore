@@ -6,3 +6,6 @@ research/repository-audit/*-README.md
 research/evidence/*.pdf
 __pycache__/
 .DS_Store
+.venv/
+website/.git/
+website/.openai/local/

@@ -4,7 +4,7 @@ This register records observed discrepancies and testable concerns. No misconduc
 
 | ID | Evidence | Status | Consequence / next check |
 |---|---|---|---|
-| Q01 | Original MRI Analyze headers have pixdim ≈ 0.8 and blank units; Amira bounding box 0–20.4 over 256 samples implies 0.08 spacing | Observed locally | Resolve coordinate scale before physical measurements; preserve both source conventions |
+| Q01 | Original MRI Analyze headers have pixdim ≈ 0.8 and blank units; Amira bounding box 0–20.4 over 256 samples implies 0.08 spacing | Resolved physical scale | 0.08 mm from original acquisition methods and Amira bounds; exact cross-format voxel equality verified. Corrected derivative headers only; anatomical signs and stereotaxic origin remain unassigned |
 | Q02 | Zenodo MRI record says NeuroImage 2026 but links DOI 10.1016/j.neuroimage.2008.01.069 | Metadata discrepancy | Keep deposit date separate from publication year; do not change original metadata |
 | Q03 | Clustering record 22657329 describes loss of access to an earlier publication | Provider-documented version issue | Reconcile concept IDs and contents; do not count versions as independent datasets |
 | Q04 | EM provider distinguishes v6/v8 cell types and voxel-coordinate synapses from nanometre skeletons | Documented integration hazard | Pin full version and coordinate units before merging tables |

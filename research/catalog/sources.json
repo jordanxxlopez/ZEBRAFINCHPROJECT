@@ -6,7 +6,7 @@
     "doi": "10.1016/j.neuroimage.2008.01.069",
     "source_url": "https://zenodo.org/records/22107510",
     "modality": "Structural MRI",
-    "proposed_analysis": "Inspect original volume headers and reconstruct measured anatomy",
+    "proposed_analysis": "Scale-resolved MRI sections and label-derived surfaces at 0.08 mm per voxel",
     "rights": "CC-BY-4.0; Zenodo API",
     "review_status": "Downloaded; see acquisition manifest",
     "limitation": "Male reference brain; voxel spacing is not whole-brain size; 2026 deposit describes a 2008 paper",

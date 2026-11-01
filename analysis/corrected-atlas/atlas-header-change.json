@@ -1,0 +1,23 @@
+{
+  "original_sha256": "e88398fc4647ee90aefe5f45cab3e67eeb5991adda45a429e6d66d4977d59ec2",
+  "corrected_sha256": "a64c59f4cc96cb8b7de1e9e50249f4317c0be1524b4b15b88c78ea53ecb7d4eb",
+  "changed_fields": {
+    "pixdim[1:4]": {
+      "from": [
+        0.800000011920929,
+        0.7999999523162842,
+        0.800000011920929
+      ],
+      "to": [
+        0.08,
+        0.08,
+        0.08
+      ]
+    },
+    "vox_units": {
+      "from": "",
+      "to": "mm"
+    }
+  },
+  "unchanged_image_sha256": "ad36f8107793f4821d0b210f7737f91dc97e6bca95c0bb9494b69fa2532b6a70"
+}

@@ -7,7 +7,7 @@ Discovery and feasibility review, 2026-10-31. Download status is established by 
 - Source: https://zenodo.org/records/22107510
 - DOI: 10.1016/j.neuroimage.2008.01.069
 - Data: Structural MRI
-- Possible work: Inspect original volume headers and reconstruct measured anatomy
+- Possible work: Scale-resolved MRI sections and label-derived surfaces at 0.08 mm per voxel
 - Rights: CC-BY-4.0; Zenodo API
 - Review: Downloaded; see acquisition manifest
 - Qualification: Male reference brain; voxel spacing is not whole-brain size; 2026 deposit describes a 2008 paper
