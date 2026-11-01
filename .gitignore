@@ -1,0 +1,8 @@
+data/raw/
+research/repository-audit/NEUROETHOLOGY/
+research/repository-audit/BEHAVNEUR-392-/
+research/repository-audit/*-tree.json
+research/repository-audit/*-README.md
+research/evidence/*.pdf
+__pycache__/
+.DS_Store

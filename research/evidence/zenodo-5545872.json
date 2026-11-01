@@ -1,0 +1,144 @@
+{
+  "created": "2021-10-02T15:19:35.249681+00:00",
+  "modified": "2021-10-03T01:48:24.330733+00:00",
+  "id": 5545872,
+  "conceptrecid": "5545871",
+  "doi": "10.5281/zenodo.5545872",
+  "conceptdoi": "10.5281/zenodo.5545871",
+  "doi_url": "https://doi.org/10.5281/zenodo.5545872",
+  "metadata": {
+    "title": "Machine Learning for Bird Song Learning (ML4BL) dataset",
+    "doi": "10.5281/zenodo.5545872",
+    "publication_date": "2021-10-02",
+    "description": "<p><strong>General description</strong></p>\n\n<p>This dataset contains Zebra Finch decisions about perceptual similarity on song units. All the data and files are used for reproducing the results of the paper &#39;Bird song comparison using deep learning trained from avian perceptual judgments&#39; by the same authors.&nbsp;</p>\n\n<p><strong>Git&nbsp;repo on Zenodo:</strong>&nbsp;<a href=\"https://doi.org/10.5281/zenodo.5545932\">https://doi.org/10.5281/zenodo.5545932</a><br>\n<strong>Git&nbsp;repo access:&nbsp;</strong><a href=\"https://github.com/veronicamorfi/ml4bl/tree/v1.0.0\">https://github.com/veronicamorfi/ml4bl/tree/v1.0.0</a></p>\n\n<p><strong>Directory organisation:</strong><br>\nML4BL_ZF<br>\n|_files<br>\n&nbsp; &nbsp; |_Final_probes_20200816.csv - all trials and decisions of the birds (aviary 1 cycle 1 data are removed from experiments)<br>\n&nbsp; &nbsp; |_luscinia_triplets_filtered.csv - triplets to use for training<br>\n&nbsp; &nbsp; |_mean_std_luscinia_pretraining.pckl - mean and std of luscinia triplets used for trianing<br>\n&nbsp; &nbsp; |_*_cons_* - % side consistency on triplets (train/test) - train set contains both train and val splits<br>\n&nbsp; &nbsp; |_*_gt_* - cycle accuracy for triplets of the specific bird&nbsp;(train/test)&nbsp;- train set contains both train&nbsp;and val splits<br>\n&nbsp; &nbsp; |_*_trials_* - number of decisions made for a triplet&nbsp;(train/test)&nbsp;- train set contains both train and val splits<br>\n&nbsp; &nbsp; |_*_triplets_* - triplet information (aviary_cycle-acc_birdID, POS, NEG, ANC)&nbsp;(train/test)&nbsp;- train set contains both train and val splits<br>\n&nbsp; &nbsp; |_*_low*_ - low-margin (ambiguous) triplets (train/val/test)<br>\n&nbsp; &nbsp; |_*_high_ -&nbsp;high-margin (unambiguous) triplets (train/val/test)<br>\n&nbsp; &nbsp; |_*_cycle_bird_keys_* - unique aviary_cycle-acc_birdID&nbsp;keys (train/test) -&nbsp;train set contains both train and val splits<br>\n&nbsp; &nbsp; |_TunedLusciniaV1e.csv - pairwise distance of two recordings computed by Luscinia<br>\n&nbsp; &nbsp; |_training_setup_1_ordered_acc_single_cons_50_70_trials.pckl - dictionary containing everything needed for training the model&nbsp;(keys: &#39;train_keys&#39;, &#39;train_triplets&#39;, &#39;val_keys&#39;, &#39;vali_triplets&#39;, &#39;test_triplets&#39;, &#39;test_keys&#39;, &#39;train_mean&#39;, &#39;train_std&#39;)<br>\n|_melspecs - *.pckl - melspectrograms of recordings<br>\n|_wavs - *wav - recordings<br>\n|_README.txt</p>\n\n<p><strong>Recordings</strong></p>\n\n<p>887 syllables extracted from zebra finch song recordings, with a sampling rate of 48kHz and high pass filtered (100Hz), with a 20ms intro/outro fade.&nbsp;</p>\n\n<p><strong>Decisions</strong></p>\n\n<p>Triplets were created from the recordings and the birds made side based decisions about their similarity (see &#39;Bird song comparison using deep learning trained from avian perceptual judgments&#39; for further information).</p>\n\n<p><strong>Training dictionary Information</strong></p>\n\n<p>Dictionary keys:<br>\n&nbsp;&nbsp; &nbsp;&#39;train_keys&#39;, &#39;train_triplets&#39;, &#39;val_keys&#39;, &#39;vali_triplets&#39;, &#39;test_triplets&#39;, &#39;test_keys&#39;, &#39;train_mean&#39;, &#39;train_std&#39;</p>\n\n<p>train_triplets/vali_triplets/test_triplets:&nbsp;<br>\n&nbsp;&nbsp; &nbsp;Aviary_Cycle_birdID, POS, NEG, ANC, Decisions, Cycle_ACC(%), Consistency(%)<br>\n&nbsp;<br>\ntrain_keys/val_keys/test_keys:<br>\n&nbsp;&nbsp; &nbsp;Aviary_Cycle_birdID</p>\n\n<p>train_mean/train_std:<br>\n&nbsp;&nbsp; &nbsp;shape: (1, mel_bins)</p>\n\n<p>&nbsp;</p>\n\n<p><strong>Open Access</strong></p>\n\n<p>This dataset is available under a Creative Commons Attribution 4.0 International (CC BY 4.0) license.</p>\n\n<p><br>\n<strong>Contact info</strong></p>\n\n<p>Please send any questions about the recordings to:<br>\nLies Zandberg:&nbsp;Elisabeth.Zandberg@rhul.ac.uk</p>\n\n<p>Please send any feedback or questions about the code and the rest of the data&nbsp;to:<br>\nVeronica Morfi: g.v.morfi@qmul.ac.uk</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Lies Zandberg",
+        "affiliation": "Royal Holloway University of London; Queen Mary University of London"
+      },
+      {
+        "name": "Veronica Morfi",
+        "affiliation": "Queen Mary University of London"
+      },
+      {
+        "name": "Julia George",
+        "affiliation": "Queen Mary University of London; Clemson University, Clemson"
+      },
+      {
+        "name": "David F. Clayton",
+        "affiliation": "Queen Mary University of London; Clemson University, Clemson"
+      },
+      {
+        "name": "Dan Stowell",
+        "affiliation": "Queen Mary University of London; Tilburg University; Naturalis Biodiversity Centre"
+      },
+      {
+        "name": "Robert F. Lachlan",
+        "affiliation": "Royal Holloway University of London;  Queen Mary University of London"
+      }
+    ],
+    "keywords": [
+      "bioacoustics, zebra finches, perceptual decisions, audio similarity, vocal learning, machine learning, bird song"
+    ],
+    "version": "1.0",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "grants": [
+      {
+        "code": "BB/R008736/1",
+        "internal_id": "10.13039/100014013::BB/R008736/1",
+        "funder": {
+          "name": "UK Research and Innovation",
+          "doi": "10.13039/100014013",
+          "acronym": "UKRI"
+        },
+        "title": "Machine Learning for Bird Song Learning",
+        "program": "BBSRC"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "5545871"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Machine Learning for Bird Song Learning (ML4BL) dataset",
+  "links": {
+    "self": "https://zenodo.org/api/records/5545872",
+    "self_html": "https://zenodo.org/records/5545872",
+    "preview_html": "https://zenodo.org/records/5545872?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.5545872",
+    "self_doi": "https://doi.org/10.5281/zenodo.5545872",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.5545872",
+    "reserve_doi": "https://zenodo.org/api/records/5545872/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/5545871",
+    "parent_html": "https://zenodo.org/records/5545871",
+    "parent_doi": "https://doi.org/10.5281/zenodo.5545871",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.5545871",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:5545872/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:5545872/sequence/default",
+    "files": "https://zenodo.org/api/records/5545872/files",
+    "media_files": "https://zenodo.org/api/records/5545872/media-files",
+    "latest": "https://zenodo.org/api/records/5545872/versions/latest",
+    "latest_html": "https://zenodo.org/records/5545872/latest",
+    "versions": "https://zenodo.org/api/records/5545872/versions",
+    "draft": "https://zenodo.org/api/records/5545872/draft",
+    "access_links": "https://zenodo.org/api/records/5545872/access/links",
+    "access_grants": "https://zenodo.org/api/records/5545872/access/grants",
+    "access_users": "https://zenodo.org/api/records/5545872/access/users",
+    "access_request": "https://zenodo.org/api/records/5545872/access/request",
+    "access": "https://zenodo.org/api/records/5545872/access",
+    "communities": "https://zenodo.org/api/records/5545872/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/5545872/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/5545872/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/5545872/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/5545872/quota-increase",
+    "requests": "https://zenodo.org/api/records/5545872/requests"
+  },
+  "updated": "2021-10-03T01:48:24.330733+00:00",
+  "recid": "5545872",
+  "revision": 6,
+  "files": [
+    {
+      "id": "c994d059-0f86-4fd5-8b97-be6387bbd177",
+      "key": "ML4BL_ZF.zip",
+      "size": 49917019,
+      "checksum": "md5:87437ef9de328d7981abbf37c0becb50",
+      "links": {
+        "self": "https://zenodo.org/api/records/5545872/files/ML4BL_ZF.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "197412"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 135,
+    "unique_downloads": 123,
+    "views": 684,
+    "unique_views": 652,
+    "version_downloads": 135,
+    "version_unique_downloads": 123,
+    "version_unique_views": 651,
+    "version_views": 683
+  },
+  "state": "done",
+  "submitted": true
+}

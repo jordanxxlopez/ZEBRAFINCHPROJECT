@@ -1,0 +1,10 @@
+{
+  "verified_assets": 10,
+  "wav_files": 887,
+  "sample_rates": [
+    48000
+  ],
+  "total_audio_seconds": 126.26120833333333,
+  "atlas_headers": 8,
+  "movies": 2
+}

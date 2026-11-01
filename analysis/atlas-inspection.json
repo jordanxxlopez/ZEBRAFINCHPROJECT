@@ -1,0 +1,221 @@
+{
+  "files": [
+    "Zebra finch/",
+    "Zebra finch/MRI/",
+    "Zebra finch/MRI/atlas.am",
+    "Zebra finch/MRI/atlas.hdr",
+    "Zebra finch/MRI/atlas.img",
+    "Zebra finch/MRI/atlas.raw",
+    "Zebra finch/MRI/atlas_for_skull.am",
+    "Zebra finch/MRI/atlas_for_skull.hdr",
+    "Zebra finch/MRI/atlas_for_skull.img",
+    "Zebra finch/MRI/atlas_for_skull.raw",
+    "Zebra finch/MRI/atlas_sn.mat",
+    "Zebra finch/MRI/brain_delineations.am",
+    "Zebra finch/MRI/brain_delineations.hdr",
+    "Zebra finch/MRI/brain_delineations.img",
+    "Zebra finch/MRI/brain_delineations.raw",
+    "Zebra finch/MRI/brain_delineations_for_skull.am",
+    "Zebra finch/MRI/brain_delineations_for_skull.hdr",
+    "Zebra finch/MRI/brain_delineations_for_skull.img",
+    "Zebra finch/MRI/brain_delineations_for_skull.raw",
+    "Zebra finch/MRI/nuclei_delineations.am",
+    "Zebra finch/MRI/nuclei_delineations.hdr",
+    "Zebra finch/MRI/nuclei_delineations.img",
+    "Zebra finch/MRI/nuclei_delineations.raw",
+    "Zebra finch/MRI/nuclei_delineationsi_for_skull.am",
+    "Zebra finch/MRI/nuclei_delineationsi_for_skull.hdr",
+    "Zebra finch/MRI/nuclei_delineationsi_for_skull.img",
+    "Zebra finch/MRI/nuclei_delineationsi_for_skull.raw",
+    "Zebra finch/MRI/skull.am",
+    "Zebra finch/MRI/skull.hdr",
+    "Zebra finch/MRI/skull.img",
+    "Zebra finch/MRI/skull.raw",
+    "Zebra finch/MRI/skull_delineations.am",
+    "Zebra finch/MRI/skull_delineations.hdr",
+    "Zebra finch/MRI/skull_delineations.img",
+    "Zebra finch/MRI/skull_delineations.raw",
+    "Zebra finch/sag_05lat.jpg",
+    "Zebra finch/stokes atlas.doc",
+    "Zebra finch/Thumbs.db",
+    "Zebra finch/trans_00ap.jpg",
+    "Zebra finch/trans_02a.jpg",
+    "Zebra finch/trans_02p.jpg",
+    "Zebra finch/trans_04a.jpg",
+    "Zebra finch/trans_04p.jpg",
+    "Zebra finch/trans_06a.jpg",
+    "Zebra finch/trans_06p.jpg",
+    "Zebra finch/trans_08a.jpg",
+    "Zebra finch/trans_08p.jpg",
+    "Zebra finch/trans_10a.jpg",
+    "Zebra finch/trans_10p.jpg",
+    "Zebra finch/trans_12a.jpg",
+    "Zebra finch/trans_12p.jpg",
+    "Zebra finch/trans_14a.jpg",
+    "Zebra finch/trans_14p.jpg",
+    "Zebra finch/trans_16a.jpg",
+    "Zebra finch/trans_16p.jpg",
+    "Zebra finch/trans_18a.jpg",
+    "Zebra finch/trans_20a.jpg",
+    "Zebra finch/trans_22a.jpg",
+    "Zebra finch/trans_24a.jpg",
+    "Zebra finch/trans_26a.jpg",
+    "Zebra finch/trans_28a.jpg",
+    "Zebra finch/trans_30a.jpg",
+    "Zebra finch/trans_35a.jpg",
+    "Zebra finch/trans_40a.jpg",
+    "Zebra finch/trans_45a.jpg",
+    "Zebra finch/trans_50a.jpg",
+    "Zebra finch/trans_60a.jpg",
+    "Zebra finch/trans_60aa.jpg",
+    "Zebra finch/trans_70a.jpg"
+  ],
+  "headers": [
+    {
+      "file": "Zebra finch/MRI/atlas.hdr",
+      "dimensions": [
+        256,
+        256,
+        256,
+        1
+      ],
+      "pixdim": [
+        0.800000011920929,
+        0.7999999523162842,
+        0.800000011920929,
+        0.0
+      ],
+      "datatype": 4,
+      "bits": 16,
+      "units_field": "",
+      "note": "Analyze header only; orientation and units must be reconciled with original atlas documentation before anatomical measurements"
+    },
+    {
+      "file": "Zebra finch/MRI/atlas_for_skull.hdr",
+      "dimensions": [
+        300,
+        300,
+        512,
+        1
+      ],
+      "pixdim": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        0.0
+      ],
+      "datatype": 4,
+      "bits": 16,
+      "units_field": "",
+      "note": "Analyze header only; orientation and units must be reconciled with original atlas documentation before anatomical measurements"
+    },
+    {
+      "file": "Zebra finch/MRI/brain_delineations.hdr",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "pixdim": [
+        0.800000011920929,
+        0.7999999523162842,
+        0.800000011920929
+      ],
+      "datatype": 2,
+      "bits": 8,
+      "units_field": "",
+      "note": "Analyze header only; orientation and units must be reconciled with original atlas documentation before anatomical measurements"
+    },
+    {
+      "file": "Zebra finch/MRI/brain_delineations_for_skull.hdr",
+      "dimensions": [
+        300,
+        300,
+        512
+      ],
+      "pixdim": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929
+      ],
+      "datatype": 2,
+      "bits": 8,
+      "units_field": "",
+      "note": "Analyze header only; orientation and units must be reconciled with original atlas documentation before anatomical measurements"
+    },
+    {
+      "file": "Zebra finch/MRI/nuclei_delineations.hdr",
+      "dimensions": [
+        256,
+        256,
+        256,
+        1
+      ],
+      "pixdim": [
+        0.800000011920929,
+        0.7999999523162842,
+        0.800000011920929,
+        0.0
+      ],
+      "datatype": 2,
+      "bits": 8,
+      "units_field": "",
+      "note": "Analyze header only; orientation and units must be reconciled with original atlas documentation before anatomical measurements"
+    },
+    {
+      "file": "Zebra finch/MRI/nuclei_delineationsi_for_skull.hdr",
+      "dimensions": [
+        300,
+        300,
+        512
+      ],
+      "pixdim": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929
+      ],
+      "datatype": 2,
+      "bits": 8,
+      "units_field": "",
+      "note": "Analyze header only; orientation and units must be reconciled with original atlas documentation before anatomical measurements"
+    },
+    {
+      "file": "Zebra finch/MRI/skull.hdr",
+      "dimensions": [
+        300,
+        300,
+        512,
+        1
+      ],
+      "pixdim": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        0.0
+      ],
+      "datatype": 4,
+      "bits": 16,
+      "units_field": "",
+      "note": "Analyze header only; orientation and units must be reconciled with original atlas documentation before anatomical measurements"
+    },
+    {
+      "file": "Zebra finch/MRI/skull_delineations.hdr",
+      "dimensions": [
+        300,
+        300,
+        512
+      ],
+      "pixdim": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800048828125
+      ],
+      "datatype": 2,
+      "bits": 8,
+      "units_field": "",
+      "note": "Analyze header only; orientation and units must be reconciled with original atlas documentation before anatomical measurements"
+    }
+  ],
+  "amira_header": "# AmiraMesh 3D BINARY 2.0\n\n# CreationDate: Wed Oct 24 12:51:02 2007\n\n\ndefine Lattice 256 256 256\n\nParameters {\n    Content \"256x256x256 short, uniform coordinates\",\n    BoundingBox 0 20.4 0 20.4 0 20.4,\n    CoordType \"uniform\"\n}\n\nLattice { short Data } @1\n\n",
+  "interpretation": "Storage grid is resampled; grid extents are not brain anatomical dimensions. No tracts reconstructed."
+}
