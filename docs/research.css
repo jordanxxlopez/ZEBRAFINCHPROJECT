@@ -1,0 +1,100 @@
+/* Research-portal layout. Editorial pages and working data views have distinct compositions. */
+:root { --paper:#fff; --ink:#202c36; --muted:#56646f; --line:#d4dbe0; --accent:#245d7c; --soft:#f1f4f6; }
+html { scroll-behavior:auto; border-top:6px solid #203d50; }
+body { font:16px/1.65 Arial,Helvetica,sans-serif; }
+h1,h2,h3 { letter-spacing:normal; }
+h1 { font-size:38px; line-height:1.15; }
+h2 { font-size:29px; line-height:1.25; }
+h3 { font-size:23px; line-height:1.3; }
+a { text-decoration-thickness:1px; }
+p a, .citation a { color:var(--accent); }
+header { max-width:1280px; margin:0 auto; padding:25px 32px; height:auto; min-height:115px; gap:28px; border-bottom:1px solid var(--line); }
+.brand { display:block; letter-spacing:0; white-space:normal; min-width:310px; }
+.brand-name { display:block; font:26px/1.1 Georgia,serif; color:#213f52; }
+.brand-name>span { font-size:23px; }
+.brand-description { display:block; margin-top:9px; color:var(--muted); font:11px/1.4 Arial,sans-serif; }
+nav { gap:21px; align-self:end; padding-bottom:3px; }
+nav a { font-size:13px; padding:8px 0; white-space:nowrap; }
+.repo-link { padding-left:17px; font-size:12px; align-self:end; margin-bottom:14px; }
+main { max-width:1280px; padding:0 32px; }
+.portal-intro { padding:33px 0 28px; }
+.portal-intro h1 { font-size:34px; margin-bottom:8px; }
+.portal-intro p { color:var(--muted); font-size:16px; }
+.lead-story { display:grid; grid-template-columns:1.15fr 1fr; gap:40px; align-items:start; }
+.species-photo img { display:block; width:100%; height:auto; }
+.species-photo figcaption { color:var(--muted); font-size:11px; line-height:1.5; padding-top:10px; max-width:590px; }
+.lead-text { padding:10px 0 0; }
+.collection-caption { font-size:13px; color:var(--accent); margin-bottom:14px; }
+.lead-text h2 { font-size:37px; margin:0 0 20px; }
+.lead-text p:not(.collection-caption) { margin:0 0 16px; font-size:15px; max-width:475px; }
+.article-link { display:inline-block; font-size:14px; font-weight:600; color:var(--accent); margin-top:6px; }
+.secondary-link { display:block; font-size:13px; color:var(--accent); margin-top:12px; }
+.home-research { display:grid; grid-template-columns:1.3fr 1fr; gap:70px; margin:42px 0 55px; padding-top:25px; border-top:2px solid var(--ink); }
+.home-list>h2,.research-desk>h2 { font:600 15px/1.5 Arial,sans-serif; margin-bottom:20px; }
+.home-list>a { display:block; padding:18px 0 22px; border-top:1px solid var(--line); text-decoration:none; }
+.home-list h3 { margin-bottom:8px; color:var(--accent); }
+.home-list p { font-size:14px; color:var(--muted); max-width:560px; }
+.home-list a>span { font-size:13px; text-decoration:underline; display:block; margin-top:10px; color:var(--accent); }
+.research-desk { padding-left:28px; border-left:1px solid var(--line); }
+.research-desk h3 { font-size:22px; margin:0 0 12px; }
+.research-desk p { font-size:14px; margin:0 0 14px; }
+.research-desk a { font-size:13px; color:var(--accent); }
+.research-desk hr { border:0; border-top:1px solid var(--line); margin:25px 0; }
+.result-line { color:var(--ink); font-weight:600; }
+.result-line span { font-weight:400; color:var(--muted); font-size:12px; }
+.eyebrow,.index { letter-spacing:.3px; text-transform:none; font-size:12px; font-weight:400; }
+.page-heading { padding:30px 0 25px; max-width:900px; }
+.page-heading h1 { font-size:36px; letter-spacing:0; margin:7px 0 12px; }
+.page-heading>p:last-child { font-size:15px; max-width:760px; }
+.breadcrumb { font-size:12px; color:var(--muted); }
+.species-layout { display:grid; grid-template-columns:minmax(0,760px) 255px; gap:65px; align-items:start; }
+.species-article h2 { font-size:28px; margin:5px 0 16px; }
+.species-article h2:not(:first-child) { margin-top:34px; }
+.species-article p { margin-bottom:17px; font-size:15px; }
+.species-article .citation { font-size:12px; color:var(--muted); }
+.specimen-audio { padding:20px 24px; margin:24px 0; background:var(--soft); border-left:3px solid var(--accent); }
+.specimen-audio h3 { font:600 14px/1.5 Arial,sans-serif; margin-bottom:12px; }
+.specimen-audio audio { display:block; width:100%; max-width:480px; }
+.specimen-audio p,.specimen-audio a { font-size:12px; margin:12px 0 0; }
+.collection-index { border-top:2px solid var(--ink); padding-top:15px; }
+.collection-index h2 { font:600 14px/1.5 Arial,sans-serif; margin-bottom:15px; }
+.collection-index>a { display:block; color:var(--accent); font-size:14px; padding:11px 0; border-top:1px solid var(--line); }
+.collection-index>a>span { display:block; color:var(--muted); font-size:12px; text-decoration:none; }
+.collection-index>p { font-size:12px; color:var(--muted); margin-top:20px; }
+.anatomy-plate { margin:40px 0; padding:28px; background:#18211f; color:#e3e9e5; display:grid; grid-template-columns:1fr 1.2fr; gap:25px; }
+.plate-intro h2 { font-size:26px; margin:0 0 16px; }
+.plate-intro p { font-size:14px; }
+.plate-intro>a { font-size:13px; display:block; margin-top:18px; }
+.anatomy-plate .hero-scans { padding:0; }
+.anatomy-plate figcaption { grid-column:1/-1; color:#b6c2bc; font-size:11px; border-top:1px solid #43524c; padding-top:14px; }
+.atlas-toolbar { padding:12px 0; }
+.atlas-sidebar h3 { font-size:23px; }
+.atlas-notes h3 { font-size:23px; }
+.study h3 { font-size:22px; }
+.study-sector { text-transform:none; letter-spacing:0; font-size:12px; }
+.study { grid-template-columns:110px 1fr 105px; padding:20px 0; }
+.study p { font-size:14px; }
+.methods-grid article h2 { font-size:28px; }
+.status-label { letter-spacing:0; font-size:12px; text-transform:none; color:var(--accent); }
+.film h2 { font-size:29px; }
+footer { max-width:1216px; margin:40px auto 0; display:grid; grid-template-columns:1.4fr 1fr 1fr; padding:25px 0 35px; border-color:var(--line); font-size:12px; }
+.footer-title { font:20px/1.3 Georgia,serif; }
+footer p { margin-top:10px; font-size:11px; }
+@media(max-width:1100px) {
+ header { gap:18px; padding:22px 25px; } .brand { min-width:260px; } .brand-name { font-size:23px; } .brand-name>span { font-size:21px; } nav {gap:16px;} .repo-link {display:none;}
+ main {padding:0 25px;} .lead-story {gap:28px;} .lead-text h2 {font-size:31px;} .lead-text {padding:0;} .lead-text p:not(.collection-caption) {font-size:14px;} .home-research {gap:35px;} footer {margin:35px 25px 0;} .species-layout {gap:35px;grid-template-columns:minmax(0,1fr) 230px;}
+}
+@media(max-width:700px) {
+ header {display:block; padding:20px 20px 0; min-height:0; margin:0;}
+ .brand {min-width:0;} .brand-name {font-size:25px;} .brand-name>span {font-size:22px;}.brand-description{margin-top:7px;}
+ nav {margin:16px 0 0; padding:0; width:100%; display:flex; flex-wrap:wrap; gap:0 14px; overflow:visible;}
+ nav a {font-size:12px;padding:10px 0;}
+ main {padding:0 20px;} .portal-intro {padding:25px 0 20px;} .portal-intro h1 {font-size:30px;} .portal-intro p{font-size:14px;}
+ .lead-story {grid-template-columns:1fr;gap:24px;} .lead-text h2 {font-size:32px;} .lead-text h2 br {display:none;} .lead-text p:not(.collection-caption){font-size:15px;max-width:none;}
+ .collection-caption {margin-bottom:8px;} .home-research{grid-template-columns:1fr;gap:28px;margin:30px 0;}.research-desk{padding:22px 0 0;border-left:0;border-top:1px solid var(--line);}
+ .page-heading {padding:25px 0 20px;}.page-heading h1{font-size:31px;letter-spacing:0;}.page-heading>p:last-child{font-size:14px;}
+ .species-layout{grid-template-columns:1fr;gap:30px;}.species-article h2{font-size:26px;}.collection-index {order:-1;}.collection-index>a{display:inline-block;vertical-align:top;width:49%;}.collection-index>p{margin-top:12px;}
+ .anatomy-plate{grid-template-columns:1fr;padding:20px;}.anatomy-plate .hero-scans{padding:0;}.anatomy-plate figcaption{grid-column:auto;}
+ .study{grid-template-columns:1fr;gap:9px;}.study h3{font-size:21px;}.study>a{text-align:left;}.film h2{font-size:26px;}
+ footer{display:block;margin:30px 20px 0;}footer>div{margin-bottom:20px;}
+}

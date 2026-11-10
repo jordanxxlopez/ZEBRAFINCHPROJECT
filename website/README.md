@@ -1,4 +1,8 @@
-# Zebra Finch Project website
+# Animal Communication & Neuroscience website
+
+Public site: https://jordanxxlopez.github.io/ZEBRAFINCHPROJECT/
+
+The Zebra Finch Project is the first species collection. The visual redesign and reference review are recorded in `research/DESIGN_REVIEW.md`. The first species photograph is credited on the homepage and in `media/photography-manifest.json`.
 
 Buildless static site in `dist/`; all runtime assets are local. No generated illustrations, stock biological substitutes, or fabricated connectivity. Three.js is vendored with its MIT license.
 
@@ -32,4 +36,4 @@ The paper specifies a 20.48 mm field of view and 256³ interpolated grid (80 μm
 - Literature search for “connectome” returned the two matching records.
 - Mobile 390 × 844 layout inspected; document width 390 px with no horizontal overflow. Navigation and atlas controls remain available.
 
-Hosting starts owner-private. GitHub holds the website source and original-source manifests. Third-party materials retain their stated licenses and credits.
+GitHub Pages publishes `/docs` from the `main` branch. Run `python scripts/sync_github_pages.py` from the repository root after editing `website/dist/` to synchronize the published copy. The earlier Sites deployment remains a separate private version. GitHub holds the website source and original-source manifests. Third-party materials retain their stated licenses and credits.

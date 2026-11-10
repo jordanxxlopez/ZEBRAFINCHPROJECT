@@ -1,0 +1,20 @@
+[
+  {
+    "asset": "assets/zebra-finch-peripitus.jpg",
+    "description": "Zebra finch at Dundee Wildlife Park, Murray Bridge, South Australia",
+    "photographer": "Peripitus",
+    "date": "February 2009",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Taeniopygia_guttata_-_perched_-_dundee_wildlife_park.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Taeniopygia_guttata_-_perched_-_dundee_wildlife_park.jpg",
+    "license": "CC-BY-SA-2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+    "sha256": "33f8ac5ea5774f0883470652b9d47bec75602b848d841ebe3cfb166448ac5629",
+    "bytes": 4174817,
+    "dimensions": [
+      3880,
+      2608
+    ],
+    "transformations": "none; original file stored unchanged and proportionally scaled by the browser",
+    "context": "Illustrative species photograph. Not an animal from the linked laboratory experiments. Source species terminology retained; no specimen identity inferred."
+  }
+]

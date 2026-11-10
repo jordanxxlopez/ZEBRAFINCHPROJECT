@@ -5,15 +5,15 @@ const get=async path=>{const r=await fetch(path);if(!r.ok)throw Error(`Could not
 const message=text=>{const box=$('#global-status');box.textContent=text;box.hidden=false;};
 let atlas,volume,labels,recordings=[],sources=[],page=0,currentAudio=null,meshViewer=null;
 let atlasReady;
-const pages=['home','atlas','recordings','films','studies','methods'];
+const pages=['home','species','atlas','recordings','films','studies','methods'];
 function route(){
  const hash=location.hash.slice(1)||'home';if(hash==='content'){$('#content').focus();return;}const id=pages.includes(hash)?hash:document.getElementById(hash)?.closest('.page')?.id||'home';
  all('.page').forEach(p=>p.hidden=p.id!==id);
  all('nav a').forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
- if(!['recordings'].includes(id))$('#audio-player').pause();
+ all('audio').filter(a=>a.closest('.page')?.id!==id).forEach(a=>a.pause());
  if(id!=='films')all('video').forEach(v=>v.pause());
  if(pages.includes(hash))window.scrollTo(0,0);else requestAnimationFrame(()=>document.getElementById(hash)?.scrollIntoView());
- document.title=({home:'Anatomy, sound & behavior',atlas:'Brain atlas',recordings:'Original recordings',films:'Research films',studies:'Research library',methods:'Methods & provenance'}[id])+' — Zebra Finch Project';
+ document.title=id==='home'?'Animal Communication & Neuroscience':({species:'Zebra finch collection',atlas:'Brain atlas',recordings:'Sound archive',films:'Research films',studies:'Research library',methods:'Data and methods'}[id])+' | Animal Communication & Neuroscience';
  if(id==='atlas')requestAnimationFrame(()=>{drawSlice();meshViewer?.resize();});
 }
 window.addEventListener('hashchange',route);route();

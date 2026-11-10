@@ -1,4 +1,6 @@
-# Zebra Finch Project
+# Animal Communication & Neuroscience
+
+Zebra Finch Project is the first collection in this growing research resource. [Design review and implemented changes](research/DESIGN_REVIEW.md).
 
 A research foundation for a public zebra finch resource: measured anatomy, original recordings, evidence-linked connectivity, and reproducible computational work. No AI-generated images or invented biological data.
 
