@@ -4,6 +4,9 @@ A research foundation for a public zebra finch resource: measured anatomy, origi
 
 ## Website
 
+[Public GitHub Pages site](https://jordanxxlopez.github.io/ZEBRAFINCHPROJECT/) · [Research expansion and 50-paper discovery pool](research/site-design-and-expansion.md) · [Reproducible perceptual-choice model](analysis/perceptual-choice-regression.json)
+
+
 [Open the website](https://zebra-finch-project.grassyinlet4.chatgpt.site) (owner-private hosting). Source and static assets are in `website/`. Includes MRI slices, measured 3D anatomy, 887 original WAVs, two original supplementary films and 25 research records. See [build and validation notes](website/README.md).
 
 ## First research collection

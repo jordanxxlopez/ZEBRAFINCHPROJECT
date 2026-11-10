@@ -25,7 +25,7 @@ The sources below were surfaced in scholarly and publisher searches. Search-resu
 ### Zebra finch and other songbirds
 
 - Garst-Orozco, Babadi & Ölveczky, “A neural circuit mechanism for regulating vocal variability during song learning in zebra finches,” eLife (2014), [DOI 10.7554/eLife.03697](https://doi.org/10.7554/eLife.03697). Primary intracellular study plus a model; the article describes separate motor and variability pathways converging on RA. Its article page has figures and data tabs.
-- “Identification of a motor to auditory pathway important for vocal learning,” primary songbird circuit study, [PMC article](https://pmc.ncbi.nlm.nih.gov/articles/5572074/). Strong candidate for a circuit diagram linked to a playback/learning experiment.
+- “Identification of a motor to auditory pathway important for vocal learning,” primary songbird circuit study, [PMC article](https://pmc.ncbi.nlm.nih.gov/articles/PMC5572074/). Strong candidate for a circuit diagram linked to a playback/learning experiment.
 - “Discrete evaluative and premotor circuits enable vocal learning in songbirds,” [PMC article](https://pmc.ncbi.nlm.nih.gov/articles/PMC6842112/). Circuit perturbation and auditory-feedback timing make the experiment explainable as an evidence-linked pathway view.
 - “Inhibition protects acquired song segments during vocal learning in zebra finches,” [PMC article](https://pmc.ncbi.nlm.nih.gov/articles/PMC4860291/).
 - “Intrinsic neuronal properties represent song and error in zebra finch vocal learning,” [PMC article](https://pmc.ncbi.nlm.nih.gov/articles/PMC7031510/).

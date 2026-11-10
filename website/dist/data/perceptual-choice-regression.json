@@ -1,0 +1,49 @@
+{
+  "title": "Can published acoustic distance predict zebra-finch probe choices?",
+  "source_paper": {
+    "title": "Bird song comparison using deep learning trained from avian perceptual judgments",
+    "doi": "10.1371/journal.pcbi.1012329",
+    "url": "https://doi.org/10.1371/journal.pcbi.1012329",
+    "data_url": "https://zenodo.org/records/5545872"
+  },
+  "model": "Single-predictor logistic regression; response is bird choosing right rather than left; predictor is Luscinia distance(left, probe) minus distance(right, probe).",
+  "scope": "Probe trials from documented CSV; repeated trials grouped by bird. This is an explanatory baseline, not a reproduction of the paper deep-learning model.",
+  "n_rows": 16319,
+  "n_birds": 22,
+  "train_rows": 12578,
+  "train_birds": 16,
+  "heldout_rows": 3741,
+  "heldout_birds": 6,
+  "heldout_accuracy": 0.5629510825982358,
+  "heldout_auc": 0.5676448706889066,
+  "heldout_log_loss": 0.6804197278949093,
+  "animal_bootstrap_95_ci": {
+    "accuracy": [
+      0.41795418905818676,
+      0.704585359343193
+    ],
+    "auc": [
+      0.5274412423715221,
+      0.6303162684960443
+    ]
+  },
+  "coefficients": {
+    "intercept": 0.20336983810818146,
+    "relative_distance": 2.7270047905433534
+  },
+  "baseline_chance": 0.5,
+  "limitations": [
+    "Split is by bird, but stimuli may overlap between train/test birds.",
+    "Repeated choices for the same stimulus are not independent; bootstrap resamples held-out birds.",
+    "Luscinia distance is one published acoustic metric, not a direct measure of neural representation or communication meaning.",
+    "Missing distance pairs are dropped; coverage and excluded counts are reported.",
+    "Behavioral choice is used; no brain recordings are modeled.",
+    "The model is a transparent statistical baseline and does not claim to outperform the paper."
+  ],
+  "n_probe_rows": 26491,
+  "n_rows_with_distance_and_response": 16319,
+  "excluded_rows": 10172,
+  "excluded_fraction": 0.38397946472386846,
+  "seed": 392,
+  "bootstrap_replicates": 4000
+}
