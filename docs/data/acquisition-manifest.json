@@ -1,0 +1,116 @@
+[
+  {
+    "path": "data/raw/zebra-finch-atlas.zip",
+    "source_url": "https://zenodo.org/api/records/22107510/files/Zebra%20finch.zip/content",
+    "record": "https://zenodo.org/records/22107510",
+    "bytes": 186119794,
+    "sha256": "770ff4ff56a32e22cb4f7c15a7b10175956e5c87ce233f07dbecc6000bd57b6d",
+    "provider_checksum": "md5:1ed9de8da5e2fd348ce9dcecc3daa677",
+    "license": "cc-by-4.0",
+    "status": "downloaded; provider checksum verified"
+  },
+  {
+    "path": "data/raw/ML4BL_ZF.zip",
+    "source_url": "https://zenodo.org/api/records/5545872/files/ML4BL_ZF.zip/content",
+    "record": "https://zenodo.org/records/5545872",
+    "bytes": 49917019,
+    "sha256": "c2b60c7556b84981966a009290be659f8b947e25b99e4c7837ee43e74e817ef4",
+    "provider_checksum": "md5:87437ef9de328d7981abbf37c0becb50",
+    "license": "cc-by-4.0",
+    "status": "downloaded; provider checksum verified"
+  },
+  {
+    "path": "data/raw/kv3-README.md",
+    "source_url": "https://zenodo.org/api/records/8187898/files/README.md/content",
+    "record": "https://zenodo.org/records/8187898",
+    "bytes": 9779,
+    "sha256": "c8b79d42fc96812709d4d49dc80979796436a420912c2958d1441470f3a27f8c",
+    "provider_checksum": "md5:715be767f34a20085ebd774f8c1d62fb",
+    "license": "cc-zero",
+    "status": "downloaded; provider checksum verified"
+  },
+  {
+    "path": "data/raw/kv3-data.xlsx",
+    "source_url": "https://zenodo.org/api/records/8187898/files/dryad_raw_data_jun_19_2023.xlsx/content",
+    "record": "https://zenodo.org/records/8187898",
+    "bytes": 509042,
+    "sha256": "a4f42b3565fcf1767b78686dddac412ed91c8fd9f35ab61e64e566de20579773",
+    "provider_checksum": "md5:cec8bad9cd5a31e537e1069c664665eb",
+    "license": "cc-zero",
+    "status": "downloaded; provider checksum verified"
+  },
+  {
+    "path": "data/raw/birdpark-segments.h5",
+    "source_url": "https://zenodo.org/api/records/13144875/files/segments.h5/content",
+    "record": "https://zenodo.org/records/13144875",
+    "bytes": 1905721,
+    "sha256": "8c4dd42d4fa59afbbfd1d56ae161bacbb42e7b47cf581623259e893219238063",
+    "provider_checksum": "md5:be900f572084a3d83efd6979e3739fe0",
+    "license": "gpl-2.0-or-later",
+    "status": "downloaded; provider checksum verified"
+  },
+  {
+    "path": "data/raw/birdpark-README.pdf",
+    "source_url": "https://zenodo.org/api/records/13144875/files/README.pdf/content",
+    "record": "https://zenodo.org/records/13144875",
+    "bytes": 59467,
+    "sha256": "f4b9ae689329543eea40143d327ca5d6cf72af71984a360ee35b45bc0640f9eb",
+    "provider_checksum": "md5:bf9ed8effd1c99910a93e0ca95c06522",
+    "license": "gpl-2.0-or-later",
+    "status": "downloaded; provider checksum verified"
+  },
+  {
+    "path": "media/original/elife-01833-media1.mp4",
+    "source_url": "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/190/50dc9a740db174cc36bf449fd08fa35f0181fdfb/elife-01833-media1.mp4",
+    "paper_doi": "10.7554/eLife.01833",
+    "movie_identifier": "Video 1",
+    "credit": "Hamaguchi et al. (2014)",
+    "description": "Sharp intracellular recording from an identified HVC-X neuron in a singing male zebra finch",
+    "sha256": "7857d8b2adf5194884a5296e724e80e38e18380415aa52b284086cf3cf1e5a16",
+    "bytes": 3887682,
+    "width": 1024,
+    "height": 576,
+    "codec": "h264",
+    "duration_seconds": 32.853,
+    "audio": true,
+    "license": "CC-BY; article license, retain original credit",
+    "transformations": "none",
+    "validation": "ffprobe metadata checked; browser checks documented in website/README.md; scene description from publisher caption"
+  },
+  {
+    "path": "media/original/elife-07770-media1.mp4",
+    "source_url": "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/132/495963f23c62af9a0207d32ae77cfcc8b8b2759b/elife-07770-media1.mp4",
+    "paper_doi": "10.7554/eLife.07770",
+    "movie_identifier": "Video 1",
+    "credit": "Gill et al. (2015)",
+    "description": "Group-housed zebra finches with on-bird recording microphones",
+    "sha256": "c0316f03f054e35d9b4a92bfcceb81f9edddd94bbb28e1dae5cbec4e28f534ed",
+    "bytes": 3331347,
+    "width": 640,
+    "height": 480,
+    "codec": "h264",
+    "duration_seconds": 12.9129,
+    "audio": true,
+    "license": "CC-BY; article license, retain original credit",
+    "transformations": "none",
+    "validation": "ffprobe metadata checked; browser checks documented in website/README.md; scene description from publisher caption"
+  },
+  {
+    "path": "research/evidence/elife-01833.pdf",
+    "source_url": "https://elifesciences.org/articles/01833.pdf",
+    "paper_doi": "10.7554/eLife.01833",
+    "sha256": "3a4ebd07c0034cd0d6500a712467786080cf1786f9a3fe6f053ece9602e1b10d",
+    "bytes": 5743079,
+    "license": "CC-BY; see article copyright statement",
+    "review_status": "Downloaded; file signature checked; selected online sections reviewed, not exhaustive PDF review"
+  },
+  {
+    "path": "research/evidence/elife-07770.pdf",
+    "source_url": "https://elifesciences.org/articles/07770.pdf",
+    "paper_doi": "10.7554/eLife.07770",
+    "sha256": "b259d882196bd02257e46b461c39279a707270a735d5601e7e9032bc94b1f335",
+    "bytes": 3419065,
+    "license": "CC-BY; see article copyright statement",
+    "review_status": "Downloaded; file signature checked; selected online sections reviewed, not exhaustive PDF review"
+  }
+]
