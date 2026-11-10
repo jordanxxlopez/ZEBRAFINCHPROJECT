@@ -1,22 +1,46 @@
 const $=s=>document.querySelector(s);
 const all=s=>[...document.querySelectorAll(s)];
 const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const get=async path=>{const r=await fetch(path+'?v=20261109d');if(!r.ok)throw Error(`Could not load ${path} (${r.status})`);return r.json();};
+const get=async path=>{const r=await fetch(path+'?v=20261109f');if(!r.ok)throw Error(`Could not load ${path} (${r.status})`);return r.json();};
 const message=text=>{const box=$('#global-status');box.textContent=text;box.hidden=false;};
 let atlas,volume,labels,recordings=[],sources=[],page=0,currentAudio=null,meshViewer=null;
 let atlasReady, spectrograms={}, marineSummary;
 const cursor={x:126,y:135,z:140};
+let collection=new URL(location.href).searchParams.get('species')||'all';
+if(!['all','zebra-finch','sperm-whale'].includes(collection))collection='all';
 const pages=['home','species','zebra-finch','sperm-whale','paper-sperm-whale','paper-hamaguchi','atlas','recordings','films','studies','methods'];
 function route(){
  const hash=location.hash.slice(1)||'home';if(hash==='content'){$('#content').focus();return;}const id=pages.includes(hash)?hash:document.getElementById(hash)?.closest('.page')?.id||'home';
+ if(['zebra-finch','paper-hamaguchi'].includes(id))collection='zebra-finch';
+ if(['sperm-whale','paper-sperm-whale'].includes(id))collection='sperm-whale';
+ syncCollection();
  all('.page').forEach(p=>p.hidden=p.id!==id);
  all('.site-nav a').forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
  all('audio').filter(a=>a.closest('.page')?.id!==id).forEach(a=>a.pause());
  all('video').filter(v=>v.closest('.page')?.id!==id).forEach(v=>v.pause());
  if(pages.includes(hash))window.scrollTo(0,0);else requestAnimationFrame(()=>document.getElementById(hash)?.scrollIntoView());
- document.title=id==='home'?'Animal Communication & Neuroscience':({species:'Species register','zebra-finch':'Zebra finch collection','sperm-whale':'Sperm whale collection','paper-sperm-whale':'Sperm whale coda study','paper-hamaguchi':'HVC auditory-feedback experiment',atlas:'Brain atlas',recordings:'Sound archive',films:'Research films',studies:'Research library',methods:'Data and methods'}[id])+' | Animal Communication & Neuroscience';
- if(id==='atlas'||id==='zebra-finch')ensureAtlas().then(()=>{drawSlice();meshViewer?.resize();}).catch(e=>message(e.message));
+ document.title=id==='home'?'Animal Communication & Neuroscience':({species:'Species register','zebra-finch':'Zebra finch collection','sperm-whale':'Sperm whale collection','paper-sperm-whale':'Sperm whale coda study','paper-hamaguchi':'HVC auditory-feedback experiment',atlas:'Brain atlases',recordings:'Sound archive',films:'Research films',studies:'Research library',methods:'Data and methods'}[id])+' | Animal Communication & Neuroscience';
+ if((id==='atlas'&&collection==='zebra-finch')||id==='zebra-finch')ensureAtlas().then(()=>{drawSlice();meshViewer?.resize();}).catch(e=>message(e.message));
 }
+function syncCollection(){
+ const playing=recordings.find(r=>r.name===currentAudio);
+ if(playing&&collection!=='all'&&playing.species!==collection){$('#audio-player').pause();$('#audio-player').hidden=true;$('#audio-title').textContent='Select a file below';$('#audio-detail').textContent='Choose a recording from this collection.';$('#audio-context').textContent='';$('#audio-download').hidden=true;$('#spectrogram-panel').hidden=true;$('#waveform').getContext('2d').clearRect(0,0,700,160);currentAudio=null;}
+ const names={'all':'All species','zebra-finch':'Zebra finch','sperm-whale':'Sperm whale'};
+ $('#collection-species').value=collection;$('#recording-species').value=collection;$('#study-species').value=collection;
+ $('#collection-context-note').textContent=collection==='all'?'Browse both species; availability is recorded for each collection.':`${names[collection]} selected · Audio, literature, films and anatomy follow this collection.`;
+ $('#collection-home').href=collection==='all'?'#species':'#'+collection;$('#collection-home').textContent=collection==='all'?'Species register':'Open collection';
+ $('#atlas-directory').hidden=collection!=='all';$('#finch-atlas').hidden=collection!=='zebra-finch';$('#atlas-unavailable').hidden=collection!=='sperm-whale';
+ $('#finch-films').hidden=collection==='sperm-whale';$('#films-unavailable').hidden=collection!=='sperm-whale';
+ const url=new URL(location.href);if(collection==='all')url.searchParams.delete('species');else url.searchParams.set('species',collection);history.replaceState(null,'',url);
+ page=0;renderRecordings();renderStudies();
+}
+function setCollection(value){
+ collection=value;
+ if(['#zebra-finch','#sperm-whale','#paper-hamaguchi','#paper-sperm-whale'].includes(location.hash)){location.hash=value==='all'?'#species':'#'+value;}
+ syncCollection();if(location.hash==='#atlas'&&value==='zebra-finch')ensureAtlas().then(()=>{drawSlice();meshViewer?.resize();}).catch(e=>message(e.message));
+}
+for(const id of ['collection-species','recording-species','study-species'])$('#'+id).addEventListener('change',e=>setCollection(e.target.value));
+all('[data-select-collection]').forEach(b=>b.addEventListener('click',()=>setCollection(b.dataset.selectCollection)));
 window.addEventListener('hashchange',route);
 async function compressed(path){const r=await fetch(path);if(!r.ok)throw Error('Atlas file unavailable');const stream=r.body.pipeThrough(new DecompressionStream('gzip'));const a=new Uint8Array(await new Response(stream).arrayBuffer());if(a.length!==256**3)throw Error('Atlas volume length mismatch');return a;}
 function point(axis,s,u,v){return axis==='z'?[u,255-v,s]:axis==='y'?[u,s,255-v]:[s,u,255-v];}
@@ -96,7 +120,7 @@ function renderRecordings(){
  $('#recording-list').innerHTML=filtered.slice(page*size,(page+1)*size).map(r=>`<tr class="${currentAudio===r.name?'selected':''}"><td class="recording-name">${escapeHTML(r.name)}</td><td>${escapeHTML(r.species_name)}<small>${escapeHTML(r.kind||'Song excerpt')}</small></td><td>${r.duration_seconds.toFixed(3)} s</td><td>${(r.sample_rate/1000).toFixed(3)} kHz</td><td><button data-audio="${escapeHTML(r.name)}" aria-label="Listen to ${escapeHTML(r.name)}">Listen</button></td><td><a href="${r.url}" download>WAV ↓</a></td></tr>`).join('')||'<tr><td colspan="6">No matching recordings.</td></tr>';
  $('#recording-page').textContent=`Page ${page+1} / ${pages}`;$('#recording-prev').disabled=page===0;$('#recording-next').disabled=page>=pages-1;
 }
-for(const [id,event] of [['recording-search','input'],['recording-sort','change'],['recording-species','change']])$('#'+id).addEventListener(event,()=>{page=0;renderRecordings();});
+for(const [id,event] of [['recording-search','input'],['recording-sort','change']])$('#'+id).addEventListener(event,()=>{page=0;renderRecordings();});
 $('#recording-prev').addEventListener('click',()=>{page--;renderRecordings();});$('#recording-next').addEventListener('click',()=>{page++;renderRecordings();});
 let audioContext;
 $('#recording-list').addEventListener('click',async e=>{
@@ -119,7 +143,7 @@ function renderStudies(){
  $('#study-count').textContent=`${rows.length} source records`;
  $('#study-list').innerHTML=rows.map(r=>`<tr><td>${r.species==='sperm-whale'?'Sperm whale':'Zebra finch'}<small>${escapeHTML(r.sector)}</small></td><td><a href="${escapeHTML(r.source_url)}">${escapeHTML(r.title)} ↗</a><small>${escapeHTML(r.modality)}</small>${r.doi?`<small>DOI ${escapeHTML(r.doi)}</small>`:''}</td><td>${escapeHTML(r.sector)}</td><td><details><summary>Evidence &amp; reuse</summary><p>${escapeHTML(r.review_status)}</p><p>${escapeHTML(r.proposed_analysis)}</p><p>${escapeHTML(r.limitation)}</p><p>${escapeHTML(r.rights)}</p></details></td></tr>`).join('')||'<tr><td colspan="4">No matching sources.</td></tr>';
 }
-for(const [id,event] of [['study-search','input'],['study-sector','change'],['study-species','change']])$('#'+id).addEventListener(event,renderStudies);
+for(const [id,event] of [['study-search','input'],['study-sector','change']])$('#'+id).addEventListener(event,renderStudies);
 function ensureAtlas(){return atlasReady||=(async()=>{
  [atlas,volume,labels]=await Promise.all([get('data/atlas.json'),compressed('data/atlas-volume.bin.gz'),compressed('data/atlas-labels.bin.gz')]);
  $('#region').innerHTML=atlas.regions.map(r=>`<option value="${r.id}">${escapeHTML(r.name)}</option>`).join('');
@@ -128,8 +152,8 @@ function ensureAtlas(){return atlasReady||=(async()=>{
 })();}
 function renderCodas(){if(!marineSummary)return;const g=marineSummary.groups[$('#coda-clan').value];$('#coda-summary-count').textContent=`${g.n.toLocaleString()} deposited rows · ${g.type_count} supplied labels · median duration ${g.duration_median_s.toFixed(3)} s`;$('#coda-summary').innerHTML=g.types.map(t=>`<tr><td>${escapeHTML(t.label)}</td><td>${t.count}</td><td>${t.duration_median_s.toFixed(3)}</td><td>${t.duration_q10_s.toFixed(3)}–${t.duration_q90_s.toFixed(3)}</td></tr>`).join('');}
 $('#coda-clan').addEventListener('change',renderCodas);
-all('[data-species-sounds]').forEach(a=>a.addEventListener('click',()=>{$('#recording-species').value=a.dataset.speciesSounds;page=0;renderRecordings();}));
-all('[data-species-library]').forEach(a=>a.addEventListener('click',()=>{$('#study-species').value=a.dataset.speciesLibrary;renderStudies();}));
+all('[data-species-sounds]').forEach(a=>a.addEventListener('click',()=>{setCollection(a.dataset.speciesSounds);}));
+all('[data-species-library]').forEach(a=>a.addEventListener('click',()=>{setCollection(a.dataset.speciesLibrary);}));
 Promise.all([get('data/recordings.json'),get('data/sources.json'),get('data/marine-recordings.json'),get('data/spectrograms.json'),get('data/marine-coda-summary.json')]).then(([r,s,m,sp,c])=>{recordings=[...r.map(x=>({...x,species:'zebra-finch',species_name:'Zebra finch'})),...m];sources=s;spectrograms=sp;marineSummary=c;renderRecordings();renderStudies();renderCodas();}).catch(e=>message(e.message));
 
 // Reading aids use the original published image; no panel is redrawn.
