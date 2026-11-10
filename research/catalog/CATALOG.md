@@ -1,6 +1,6 @@
 # Research source catalog
 
-Discovery and feasibility review, 2026-10-31. Download status is established by the acquisition manifest. These are not 25 completed replications.
+Discovery and feasibility review, 2026-10-31. Download status is established by the acquisition manifest. Records include discovery leads and reviewed sources, not completed replications.
 
 ## 3D MRI atlas of the zebra finch brain
 - ID / sector: `atlas-mri` / Atlas
@@ -251,3 +251,73 @@ Discovery and feasibility review, 2026-10-31. Download status is established by 
 - Rights: Not yet verified
 - Review: Primary abstract indexed
 - Qualification: Behavioral state can confound apparent regional or cross-species expression differences
+
+## Contextual and combinatorial structure in sperm whale vocalisations.
+- ID / sector: `marine-s41467-024-47221-8` / Behavior
+- Source: https://doi.org/10.1038/s41467-024-47221-8
+- DOI: 10.1038/s41467-024-47221-8
+- Data: Marine bioacoustics · primary study
+- Possible work: Inspect source annotations and preserve caller, social unit and recording context before statistical inference.
+- Rights: Article CC BY 4.0; linked repository has no standalone license identified
+- Review: Publisher full text, figure legend and data availability inspected; descriptive CSV summary, not clustering replication
+- Qualification: Deposited CSV cohort requires reconciliation with article; counts do not establish coda meaning
+
+## Deep Machine Learning Techniques for the Detection and Classification of Sperm Whale Bioacoustics.
+- ID / sector: `marine-s41598-019-48909-4` / Behavior
+- Source: https://doi.org/10.1038/s41598-019-48909-4
+- DOI: 10.1038/s41598-019-48909-4
+- Data: Marine bioacoustics · primary study
+- Possible work: Inspect source annotations and preserve caller, social unit and recording context before statistical inference.
+- Rights: Redistribution rights not assessed; provider link only
+- Review: Europe PMC metadata and indexed abstract reviewed; full methods and raw data not yet audited
+- Qualification: Recordings illustrate source-specific behavior; no neural circuit measurements are supplied
+
+## High Arctic "hotspots" for sperm whales (Physeter macrocephalus) off western and northern Svalbard, Norway, revealed by multi-year Passive Acoustic Monitoring (PAM).
+- ID / sector: `marine-s41598-024-56287-9` / Behavior
+- Source: https://doi.org/10.1038/s41598-024-56287-9
+- DOI: 10.1038/s41598-024-56287-9
+- Data: Marine bioacoustics · primary study
+- Possible work: Inspect source annotations and preserve caller, social unit and recording context before statistical inference.
+- Rights: Article CC BY 4.0; original supplementary audio retained
+- Review: Publisher full text and supplementary recordings inspected; five original WAVs acquired
+- Qualification: Recordings illustrate source-specific behavior; no neural circuit measurements are supplied
+
+## Automatic detection and annotation of eastern Caribbean sperm whale codas.
+- ID / sector: `marine-s41598-025-97009-z` / Behavior
+- Source: https://doi.org/10.1038/s41598-025-97009-z
+- DOI: 10.1038/s41598-025-97009-z
+- Data: Marine bioacoustics · primary study
+- Possible work: Inspect source annotations and preserve caller, social unit and recording context before statistical inference.
+- Rights: Redistribution rights not assessed; provider link only
+- Review: Europe PMC metadata and indexed abstract reviewed; full methods and raw data not yet audited
+- Qualification: Recordings illustrate source-specific behavior; no neural circuit measurements are supplied
+
+## Individual, unit and vocal clan level identity cues in sperm whale codas.
+- ID / sector: `marine-rsos.150372` / Behavior
+- Source: https://doi.org/10.1098/rsos.150372
+- DOI: 10.1098/rsos.150372
+- Data: Marine bioacoustics · primary study
+- Possible work: Inspect source annotations and preserve caller, social unit and recording context before statistical inference.
+- Rights: Redistribution rights not assessed; provider link only
+- Review: Europe PMC metadata and indexed abstract reviewed; full methods and raw data not yet audited
+- Qualification: Recordings illustrate source-specific behavior; no neural circuit measurements are supplied
+
+## Socially segregated, sympatric sperm whale clans in the Atlantic Ocean.
+- ID / sector: `marine-rsos.160061` / Behavior
+- Source: https://doi.org/10.1098/rsos.160061
+- DOI: 10.1098/rsos.160061
+- Data: Marine bioacoustics · primary study
+- Possible work: Inspect source annotations and preserve caller, social unit and recording context before statistical inference.
+- Rights: Redistribution rights not assessed; provider link only
+- Review: Europe PMC metadata and indexed abstract reviewed; full methods and raw data not yet audited
+- Qualification: Recordings illustrate source-specific behavior; no neural circuit measurements are supplied
+
+## Sperm whale codas may encode individuality as well as clan identity.
+- ID / sector: `marine-1.4949478` / Behavior
+- Source: https://doi.org/10.1121/1.4949478
+- DOI: 10.1121/1.4949478
+- Data: Marine bioacoustics · primary study
+- Possible work: Inspect source annotations and preserve caller, social unit and recording context before statistical inference.
+- Rights: Redistribution rights not assessed; provider link only
+- Review: Europe PMC metadata and indexed abstract reviewed; full methods and raw data not yet audited
+- Qualification: Recordings illustrate source-specific behavior; no neural circuit measurements are supplied

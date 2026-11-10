@@ -1,0 +1,724 @@
+{
+  "source_file": "DominicaCodas.csv",
+  "source_url": "https://github.com/pratyushasharma/sw-combinatoriality/blob/main/data/DominicaCodas.csv",
+  "paper_doi": "10.1038/s41467-024-47221-8",
+  "sha256": "53dd44fbfb0040da93656aa44883954f3abe18dd6539e90c625af86a96db6b45",
+  "method": "Python CSV parsing and NumPy quantiles; original CodaType and Clan columns; no inferred labels or new language model.",
+  "scope": "Descriptive statistics of the deposited file; not a reproduction of rhythm/tempo clustering or a test of coda meaning.",
+  "rights": "The paper is CC BY 4.0. No standalone license file was found in the linked code/data repository. Original CSV is kept local and linked to the provider; the website exports only derived summary statistics.",
+  "groups": {
+    "all": {
+      "n": 8719,
+      "duration_median_s": 0.8523833,
+      "duration_q10_s": 0.322,
+      "duration_q90_s": 1.33602,
+      "type_count": 35,
+      "types": [
+        {
+          "label": "1+1+3",
+          "count": 3589,
+          "duration_q10_s": 0.7729750400000001,
+          "duration_median_s": 1.0887333,
+          "duration_q90_s": 1.34492548
+        },
+        {
+          "label": "5R1",
+          "count": 1510,
+          "duration_q10_s": 0.30825451000000004,
+          "duration_median_s": 0.329,
+          "duration_q90_s": 0.35602
+        },
+        {
+          "label": "5R3",
+          "count": 642,
+          "duration_q10_s": 1.01654,
+          "duration_median_s": 1.13335,
+          "duration_q90_s": 1.3753099999999998
+        },
+        {
+          "label": "4R2",
+          "count": 340,
+          "duration_q10_s": 0.77677714,
+          "duration_median_s": 0.96342965,
+          "duration_q90_s": 1.23019151
+        },
+        {
+          "label": "5R2",
+          "count": 287,
+          "duration_q10_s": 0.47102178,
+          "duration_median_s": 0.508275,
+          "duration_q90_s": 0.552
+        },
+        {
+          "label": "5-NOISE",
+          "count": 280,
+          "duration_q10_s": 0.2207,
+          "duration_median_s": 0.6744,
+          "duration_q90_s": 1.54587216
+        },
+        {
+          "label": "4D",
+          "count": 219,
+          "duration_q10_s": 0.49917999999999996,
+          "duration_median_s": 0.5175,
+          "duration_q90_s": 0.55564
+        },
+        {
+          "label": "6i",
+          "count": 188,
+          "duration_q10_s": 0.20241,
+          "duration_median_s": 0.385,
+          "duration_q90_s": 0.49127347000000005
+        },
+        {
+          "label": "8i",
+          "count": 178,
+          "duration_q10_s": 0.284,
+          "duration_median_s": 0.3523539,
+          "duration_q90_s": 0.44504000000000016
+        },
+        {
+          "label": "7D1",
+          "count": 177,
+          "duration_q10_s": 0.9997999999999999,
+          "duration_median_s": 1.2079,
+          "duration_q90_s": 1.36342
+        },
+        {
+          "label": "6-NOISE",
+          "count": 172,
+          "duration_q10_s": 0.73029,
+          "duration_median_s": 1.02362085,
+          "duration_q90_s": 1.4475575
+        },
+        {
+          "label": "7i",
+          "count": 151,
+          "duration_q10_s": 0.2138,
+          "duration_median_s": 0.33205,
+          "duration_q90_s": 0.55
+        },
+        {
+          "label": "9i",
+          "count": 137,
+          "duration_q10_s": 0.299,
+          "duration_median_s": 0.384,
+          "duration_q90_s": 0.6169
+        },
+        {
+          "label": "4R1",
+          "count": 84,
+          "duration_q10_s": 0.17219,
+          "duration_median_s": 0.24155,
+          "duration_q90_s": 0.38140460000000004
+        },
+        {
+          "label": "2+3",
+          "count": 77,
+          "duration_q10_s": 0.6227400200000001,
+          "duration_median_s": 0.652,
+          "duration_q90_s": 0.6980299999999999
+        },
+        {
+          "label": "1+32",
+          "count": 72,
+          "duration_q10_s": 0.383,
+          "duration_median_s": 0.3925,
+          "duration_q90_s": 0.4069
+        },
+        {
+          "label": "6R",
+          "count": 67,
+          "duration_q10_s": 1.18112,
+          "duration_median_s": 1.4196,
+          "duration_q90_s": 1.7699399999999998
+        },
+        {
+          "label": "3D",
+          "count": 61,
+          "duration_q10_s": 0.2908199,
+          "duration_median_s": 0.31324,
+          "duration_q90_s": 0.385
+        },
+        {
+          "label": "8R",
+          "count": 60,
+          "duration_q10_s": 1.17501,
+          "duration_median_s": 1.2854041500000002,
+          "duration_q90_s": 1.55227
+        },
+        {
+          "label": "10i",
+          "count": 55,
+          "duration_q10_s": 0.30522,
+          "duration_median_s": 0.384,
+          "duration_q90_s": 0.79749072
+        },
+        {
+          "label": "4-NOISE",
+          "count": 51,
+          "duration_q10_s": 0.468,
+          "duration_median_s": 0.7185,
+          "duration_q90_s": 1.5568946
+        },
+        {
+          "label": "1+31",
+          "count": 51,
+          "duration_q10_s": 0.648575,
+          "duration_median_s": 0.727,
+          "duration_q90_s": 0.796
+        },
+        {
+          "label": "9R",
+          "count": 43,
+          "duration_q10_s": 1.2851432,
+          "duration_median_s": 1.385,
+          "duration_q90_s": 1.5724600000000002
+        },
+        {
+          "label": "7D2",
+          "count": 35,
+          "duration_q10_s": 1.3852065199999999,
+          "duration_median_s": 1.487216,
+          "duration_q90_s": 1.59929832
+        },
+        {
+          "label": "10R",
+          "count": 32,
+          "duration_q10_s": 1.45139997,
+          "duration_median_s": 1.5996166500000002,
+          "duration_q90_s": 1.7338500000000001
+        },
+        {
+          "label": "7R",
+          "count": 23,
+          "duration_q10_s": 1.29552,
+          "duration_median_s": 1.465,
+          "duration_q90_s": 1.66956
+        },
+        {
+          "label": "3-NOISE",
+          "count": 21,
+          "duration_q10_s": 0.3724807,
+          "duration_median_s": 0.5183468,
+          "duration_q90_s": 0.7512488
+        },
+        {
+          "label": "3R",
+          "count": 21,
+          "duration_q10_s": 0.1188,
+          "duration_median_s": 0.1348554,
+          "duration_q90_s": 0.17
+        },
+        {
+          "label": "8D",
+          "count": 20,
+          "duration_q10_s": 1.4059142,
+          "duration_median_s": 1.55271665,
+          "duration_q90_s": 1.7521983
+        },
+        {
+          "label": "7-NOISE",
+          "count": 19,
+          "duration_q10_s": 1.17508906,
+          "duration_median_s": 1.396,
+          "duration_q90_s": 1.91644
+        },
+        {
+          "label": "8-NOISE",
+          "count": 17,
+          "duration_q10_s": 0.95647642,
+          "duration_median_s": 1.8624,
+          "duration_q90_s": 2.28721516
+        },
+        {
+          "label": "9-NOISE",
+          "count": 16,
+          "duration_q10_s": 1.2721792,
+          "duration_median_s": 1.7029896999999998,
+          "duration_q90_s": 1.8738912
+        },
+        {
+          "label": "10-NOISE",
+          "count": 9,
+          "duration_q10_s": 1.73602272,
+          "duration_median_s": 2.1110769,
+          "duration_q90_s": 2.63861912
+        },
+        {
+          "label": "1-NOISE",
+          "count": 9,
+          "duration_q10_s": 0.0,
+          "duration_median_s": 0.0,
+          "duration_q90_s": 0.0
+        },
+        {
+          "label": "2-NOISE",
+          "count": 6,
+          "duration_q10_s": 0.08784585,
+          "duration_median_s": 0.2301811,
+          "duration_q90_s": 0.7873332
+        }
+      ],
+      "click_counts": {
+        "1": 9,
+        "2": 6,
+        "3": 103,
+        "4": 818,
+        "5": 6384,
+        "6": 427,
+        "7": 405,
+        "8": 275,
+        "9": 196,
+        "10": 96
+      }
+    },
+    "EC1": {
+      "n": 7770,
+      "duration_median_s": 0.801,
+      "duration_q10_s": 0.31913627,
+      "duration_q90_s": 1.3075188700000002,
+      "type_count": 34,
+      "types": [
+        {
+          "label": "1+1+3",
+          "count": 3574,
+          "duration_q10_s": 0.7745611,
+          "duration_median_s": 1.09,
+          "duration_q90_s": 1.34498818
+        },
+        {
+          "label": "5R1",
+          "count": 1510,
+          "duration_q10_s": 0.30825451000000004,
+          "duration_median_s": 0.329,
+          "duration_q90_s": 0.35602
+        },
+        {
+          "label": "4R2",
+          "count": 303,
+          "duration_q10_s": 0.77539492,
+          "duration_median_s": 0.972,
+          "duration_q90_s": 1.2364536
+        },
+        {
+          "label": "5R2",
+          "count": 287,
+          "duration_q10_s": 0.47102178,
+          "duration_median_s": 0.508275,
+          "duration_q90_s": 0.552
+        },
+        {
+          "label": "5-NOISE",
+          "count": 227,
+          "duration_q10_s": 0.20756,
+          "duration_median_s": 0.6447,
+          "duration_q90_s": 1.16392
+        },
+        {
+          "label": "4D",
+          "count": 219,
+          "duration_q10_s": 0.49917999999999996,
+          "duration_median_s": 0.5175,
+          "duration_q90_s": 0.55564
+        },
+        {
+          "label": "6i",
+          "count": 182,
+          "duration_q10_s": 0.20043,
+          "duration_median_s": 0.38704165,
+          "duration_q90_s": 0.49108
+        },
+        {
+          "label": "8i",
+          "count": 178,
+          "duration_q10_s": 0.284,
+          "duration_median_s": 0.3523539,
+          "duration_q90_s": 0.44504000000000016
+        },
+        {
+          "label": "7D1",
+          "count": 171,
+          "duration_q10_s": 0.998,
+          "duration_median_s": 1.2079,
+          "duration_q90_s": 1.3654
+        },
+        {
+          "label": "6-NOISE",
+          "count": 167,
+          "duration_q10_s": 0.7264424,
+          "duration_median_s": 1.0268,
+          "duration_q90_s": 1.44766168
+        },
+        {
+          "label": "7i",
+          "count": 145,
+          "duration_q10_s": 0.21080000000000002,
+          "duration_median_s": 0.332,
+          "duration_q90_s": 0.5661999999999998
+        },
+        {
+          "label": "9i",
+          "count": 135,
+          "duration_q10_s": 0.2994,
+          "duration_median_s": 0.384,
+          "duration_q90_s": 0.6172
+        },
+        {
+          "label": "4R1",
+          "count": 82,
+          "duration_q10_s": 0.17193,
+          "duration_median_s": 0.24155,
+          "duration_q90_s": 0.37748649
+        },
+        {
+          "label": "2+3",
+          "count": 77,
+          "duration_q10_s": 0.6227400200000001,
+          "duration_median_s": 0.652,
+          "duration_q90_s": 0.6980299999999999
+        },
+        {
+          "label": "1+32",
+          "count": 71,
+          "duration_q10_s": 0.383,
+          "duration_median_s": 0.392,
+          "duration_q90_s": 0.406
+        },
+        {
+          "label": "3D",
+          "count": 61,
+          "duration_q10_s": 0.2908199,
+          "duration_median_s": 0.31324,
+          "duration_q90_s": 0.385
+        },
+        {
+          "label": "10i",
+          "count": 52,
+          "duration_q10_s": 0.30483000000000005,
+          "duration_median_s": 0.37982954999999996,
+          "duration_q90_s": 0.7873499399999999
+        },
+        {
+          "label": "1+31",
+          "count": 51,
+          "duration_q10_s": 0.648575,
+          "duration_median_s": 0.727,
+          "duration_q90_s": 0.796
+        },
+        {
+          "label": "8R",
+          "count": 41,
+          "duration_q10_s": 1.1472,
+          "duration_median_s": 1.2496,
+          "duration_q90_s": 1.4033
+        },
+        {
+          "label": "4-NOISE",
+          "count": 38,
+          "duration_q10_s": 0.462,
+          "duration_median_s": 0.669,
+          "duration_q90_s": 1.0285199900000002
+        },
+        {
+          "label": "7D2",
+          "count": 35,
+          "duration_q10_s": 1.3852065199999999,
+          "duration_median_s": 1.487216,
+          "duration_q90_s": 1.59929832
+        },
+        {
+          "label": "3R",
+          "count": 21,
+          "duration_q10_s": 0.1188,
+          "duration_median_s": 0.1348554,
+          "duration_q90_s": 0.17
+        },
+        {
+          "label": "9R",
+          "count": 20,
+          "duration_q10_s": 1.18853,
+          "duration_median_s": 1.337,
+          "duration_q90_s": 1.40476847
+        },
+        {
+          "label": "8D",
+          "count": 20,
+          "duration_q10_s": 1.4059142,
+          "duration_median_s": 1.55271665,
+          "duration_q90_s": 1.7521983
+        },
+        {
+          "label": "5R3",
+          "count": 19,
+          "duration_q10_s": 0.94558568,
+          "duration_median_s": 1.101,
+          "duration_q90_s": 1.18906106
+        },
+        {
+          "label": "9-NOISE",
+          "count": 14,
+          "duration_q10_s": 1.2423442,
+          "duration_median_s": 1.6680202,
+          "duration_q90_s": 1.8130138
+        },
+        {
+          "label": "3-NOISE",
+          "count": 13,
+          "duration_q10_s": 0.35368942000000003,
+          "duration_median_s": 0.51,
+          "duration_q90_s": 0.7207990400000002
+        },
+        {
+          "label": "10R",
+          "count": 11,
+          "duration_q10_s": 1.46484,
+          "duration_median_s": 1.6170853,
+          "duration_q90_s": 1.8615024
+        },
+        {
+          "label": "8-NOISE",
+          "count": 10,
+          "duration_q10_s": 0.85182325,
+          "duration_median_s": 1.2749,
+          "duration_q90_s": 2.26739539
+        },
+        {
+          "label": "7-NOISE",
+          "count": 10,
+          "duration_q10_s": 1.08135253,
+          "duration_median_s": 1.2501799,
+          "duration_q90_s": 1.32769
+        },
+        {
+          "label": "10-NOISE",
+          "count": 9,
+          "duration_q10_s": 1.73602272,
+          "duration_median_s": 2.1110769,
+          "duration_q90_s": 2.63861912
+        },
+        {
+          "label": "1-NOISE",
+          "count": 8,
+          "duration_q10_s": 0.0,
+          "duration_median_s": 0.0,
+          "duration_q90_s": 0.0
+        },
+        {
+          "label": "2-NOISE",
+          "count": 6,
+          "duration_q10_s": 0.08784585,
+          "duration_median_s": 0.2301811,
+          "duration_q90_s": 0.7873332
+        },
+        {
+          "label": "6R",
+          "count": 3,
+          "duration_q10_s": 1.16066,
+          "duration_median_s": 1.1681,
+          "duration_q90_s": 1.40754
+        }
+      ],
+      "click_counts": {
+        "1": 8,
+        "2": 6,
+        "3": 95,
+        "4": 765,
+        "5": 5693,
+        "6": 352,
+        "7": 361,
+        "8": 249,
+        "9": 169,
+        "10": 72
+      }
+    },
+    "EC2": {
+      "n": 949,
+      "duration_median_s": 1.1643,
+      "duration_q10_s": 0.89183864,
+      "duration_q90_s": 1.56942,
+      "type_count": 23,
+      "types": [
+        {
+          "label": "5R3",
+          "count": 623,
+          "duration_q10_s": 1.01816,
+          "duration_median_s": 1.1388,
+          "duration_q90_s": 1.3764
+        },
+        {
+          "label": "6R",
+          "count": 64,
+          "duration_q10_s": 1.2145,
+          "duration_median_s": 1.42585,
+          "duration_q90_s": 1.77852
+        },
+        {
+          "label": "5-NOISE",
+          "count": 53,
+          "duration_q10_s": 0.65114,
+          "duration_median_s": 1.3509,
+          "duration_q90_s": 2.0357250000000002
+        },
+        {
+          "label": "4R2",
+          "count": 37,
+          "duration_q10_s": 0.7838744400000001,
+          "duration_median_s": 0.8738789,
+          "duration_q90_s": 1.1795999999999998
+        },
+        {
+          "label": "9R",
+          "count": 23,
+          "duration_q10_s": 1.34498,
+          "duration_median_s": 1.4663,
+          "duration_q90_s": 1.60196
+        },
+        {
+          "label": "7R",
+          "count": 23,
+          "duration_q10_s": 1.29552,
+          "duration_median_s": 1.465,
+          "duration_q90_s": 1.66956
+        },
+        {
+          "label": "10R",
+          "count": 21,
+          "duration_q10_s": 1.4508333,
+          "duration_median_s": 1.5979,
+          "duration_q90_s": 1.6749
+        },
+        {
+          "label": "8R",
+          "count": 19,
+          "duration_q10_s": 1.27804,
+          "duration_median_s": 1.4971,
+          "duration_q90_s": 1.68314
+        },
+        {
+          "label": "1+1+3",
+          "count": 15,
+          "duration_q10_s": 0.7116,
+          "duration_median_s": 0.7726,
+          "duration_q90_s": 0.81352
+        },
+        {
+          "label": "4-NOISE",
+          "count": 13,
+          "duration_q10_s": 0.65136,
+          "duration_median_s": 1.5024167,
+          "duration_q90_s": 1.61128374
+        },
+        {
+          "label": "7-NOISE",
+          "count": 9,
+          "duration_q10_s": 1.77348,
+          "duration_median_s": 1.8603,
+          "duration_q90_s": 2.01912
+        },
+        {
+          "label": "3-NOISE",
+          "count": 8,
+          "duration_q10_s": 0.51158972,
+          "duration_median_s": 0.5480353499999999,
+          "duration_q90_s": 0.78547108
+        },
+        {
+          "label": "8-NOISE",
+          "count": 7,
+          "duration_q10_s": 1.86894,
+          "duration_median_s": 2.1414,
+          "duration_q90_s": 2.5598691600000003
+        },
+        {
+          "label": "6i",
+          "count": 6,
+          "duration_q10_s": 0.2768,
+          "duration_median_s": 0.32151425,
+          "duration_q90_s": 0.4598
+        },
+        {
+          "label": "7i",
+          "count": 6,
+          "duration_q10_s": 0.33615,
+          "duration_median_s": 0.36819999999999997,
+          "duration_q90_s": 0.4645
+        },
+        {
+          "label": "7D1",
+          "count": 6,
+          "duration_q10_s": 1.1644999999999999,
+          "duration_median_s": 1.1997,
+          "duration_q90_s": 1.224
+        },
+        {
+          "label": "6-NOISE",
+          "count": 5,
+          "duration_q10_s": 0.82208,
+          "duration_median_s": 0.9095,
+          "duration_q90_s": 1.02716
+        },
+        {
+          "label": "10i",
+          "count": 3,
+          "duration_q10_s": 0.51274,
+          "duration_median_s": 0.5525,
+          "duration_q90_s": 1.18834
+        },
+        {
+          "label": "9i",
+          "count": 2,
+          "duration_q10_s": 0.30993,
+          "duration_median_s": 0.36724999999999997,
+          "duration_q90_s": 0.42457
+        },
+        {
+          "label": "4R1",
+          "count": 2,
+          "duration_q10_s": 0.26077,
+          "duration_median_s": 0.34185,
+          "duration_q90_s": 0.42293
+        },
+        {
+          "label": "9-NOISE",
+          "count": 2,
+          "duration_q10_s": 1.94003,
+          "duration_median_s": 2.15775,
+          "duration_q90_s": 2.37547
+        },
+        {
+          "label": "1+32",
+          "count": 1,
+          "duration_q10_s": 0.4893,
+          "duration_median_s": 0.4893,
+          "duration_q90_s": 0.4893
+        },
+        {
+          "label": "1-NOISE",
+          "count": 1,
+          "duration_q10_s": 0.0,
+          "duration_median_s": 0.0,
+          "duration_q90_s": 0.0
+        }
+      ],
+      "click_counts": {
+        "1": 1,
+        "3": 8,
+        "4": 53,
+        "5": 691,
+        "6": 75,
+        "7": 44,
+        "8": 26,
+        "9": 27,
+        "10": 24
+      }
+    }
+  },
+  "quality_note": "The deposited CSV has 8,719 rows: 7,770 labeled EC1 and 949 labeled EC2. The article describes 8,719 codas from EC1. This pass has not reconciled that difference. These summaries describe the deposited CSV and are not presented as the exact published analysis cohort.",
+  "limitations": [
+    "Rows are codas, not independent whales.",
+    "Coda labels include NOISE categories; they are retained as supplied.",
+    "No p-value or biological effect is inferred from these descriptive counts.",
+    "Unknown or repeated caller identifiers must be resolved before individual-level inference."
+  ]
+}

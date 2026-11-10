@@ -33,14 +33,16 @@ ROWS = [
 ('state-expression','Quality','Controlling for activity-dependent genes and behavioral states is critical for determining brain relationships within and across species','','https://pubmed.ncbi.nlm.nih.gov/33855704/','Gene expression under different behavioral states','Design atlas metadata that retain singing, light and stimulation state','Not yet verified','Primary abstract indexed','Behavioral state can confound apparent regional or cross-species expression differences'),
 ]
 FIELDS=['id','sector','title','doi','source_url','modality','proposed_analysis','rights','review_status','limitation']
-records=[dict(zip(FIELDS,row),checked_date='2026-11-09' if row[0]=='gating' else '2026-10-31') for row in ROWS]
+records=[dict(zip(FIELDS,row),species='zebra-finch',checked_date='2026-11-09' if row[0]=='gating' else '2026-10-31') for row in ROWS]
+marine=json.loads((ROOT/'research/marine-sources.json').read_text())
+records.extend(marine)
 out=ROOT/'research/catalog';out.mkdir(parents=True,exist_ok=True)
 (out/'sources.json').write_text(json.dumps(records,indent=2)+'\n')
 db=sqlite3.connect(out/'catalog.sqlite')
 db.execute('DROP TABLE IF EXISTS sources')
-db.execute('CREATE TABLE sources ('+', '.join(f'{f} TEXT'+(' PRIMARY KEY' if f=='id' else '') for f in FIELDS+['checked_date'])+')')
-db.executemany('INSERT INTO sources VALUES ('+','.join('?' for _ in range(11))+')',[list(r.values()) for r in records]);db.commit();db.close()
-text=['# Research source catalog','', 'Discovery and feasibility review, 2026-10-31. Download status is established by the acquisition manifest. These are not 25 completed replications.','']
+db.execute('CREATE TABLE sources ('+', '.join(f'{f} TEXT'+(' PRIMARY KEY' if f=='id' else '') for f in FIELDS+['species','checked_date'])+')')
+db.executemany('INSERT INTO sources VALUES ('+','.join('?' for _ in range(12))+')',[list(r.values()) for r in records]);db.commit();db.close()
+text=['# Research source catalog','', 'Discovery and feasibility review, 2026-10-31. Download status is established by the acquisition manifest. Records include discovery leads and reviewed sources, not completed replications.','']
 for r in records:
  text += [f"## {r['title']}",f"- ID / sector: `{r['id']}` / {r['sector']}",f"- Source: {r['source_url']}",f"- DOI: {r['doi'] or 'Not yet verified'}",f"- Data: {r['modality']}",f"- Possible work: {r['proposed_analysis']}",f"- Rights: {r['rights']}",f"- Review: {r['review_status']}",f"- Qualification: {r['limitation']}",'']
 (out/'CATALOG.md').write_text('\n'.join(text))

@@ -1,22 +1,23 @@
 const $=s=>document.querySelector(s);
 const all=s=>[...document.querySelectorAll(s)];
 const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const get=async path=>{const r=await fetch(path);if(!r.ok)throw Error(`Could not load ${path} (${r.status})`);return r.json();};
+const get=async path=>{const r=await fetch(path+'?v=20261109d');if(!r.ok)throw Error(`Could not load ${path} (${r.status})`);return r.json();};
 const message=text=>{const box=$('#global-status');box.textContent=text;box.hidden=false;};
 let atlas,volume,labels,recordings=[],sources=[],page=0,currentAudio=null,meshViewer=null;
-let atlasReady;
-const pages=['home','species','paper-hamaguchi','atlas','recordings','films','studies','methods'];
+let atlasReady, spectrograms={}, marineSummary;
+const cursor={x:126,y:135,z:140};
+const pages=['home','species','zebra-finch','sperm-whale','paper-sperm-whale','paper-hamaguchi','atlas','recordings','films','studies','methods'];
 function route(){
  const hash=location.hash.slice(1)||'home';if(hash==='content'){$('#content').focus();return;}const id=pages.includes(hash)?hash:document.getElementById(hash)?.closest('.page')?.id||'home';
  all('.page').forEach(p=>p.hidden=p.id!==id);
- all('nav a').forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+ all('.site-nav a').forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
  all('audio').filter(a=>a.closest('.page')?.id!==id).forEach(a=>a.pause());
  all('video').filter(v=>v.closest('.page')?.id!==id).forEach(v=>v.pause());
  if(pages.includes(hash))window.scrollTo(0,0);else requestAnimationFrame(()=>document.getElementById(hash)?.scrollIntoView());
- document.title=id==='home'?'Animal Communication & Neuroscience':({species:'Zebra finch collection','paper-hamaguchi':'HVC auditory-feedback experiment',atlas:'Brain atlas',recordings:'Sound archive',films:'Research films',studies:'Research library',methods:'Data and methods'}[id])+' | Animal Communication & Neuroscience';
- if(id==='atlas')requestAnimationFrame(()=>{drawSlice();meshViewer?.resize();});
+ document.title=id==='home'?'Animal Communication & Neuroscience':({species:'Species register','zebra-finch':'Zebra finch collection','sperm-whale':'Sperm whale collection','paper-sperm-whale':'Sperm whale coda study','paper-hamaguchi':'HVC auditory-feedback experiment',atlas:'Brain atlas',recordings:'Sound archive',films:'Research films',studies:'Research library',methods:'Data and methods'}[id])+' | Animal Communication & Neuroscience';
+ if(id==='atlas'||id==='zebra-finch')ensureAtlas().then(()=>{drawSlice();meshViewer?.resize();}).catch(e=>message(e.message));
 }
-window.addEventListener('hashchange',route);route();
+window.addEventListener('hashchange',route);
 async function compressed(path){const r=await fetch(path);if(!r.ok)throw Error('Atlas file unavailable');const stream=r.body.pipeThrough(new DecompressionStream('gzip'));const a=new Uint8Array(await new Response(stream).arrayBuffer());if(a.length!==256**3)throw Error('Atlas volume length mismatch');return a;}
 function point(axis,s,u,v){return axis==='z'?[u,255-v,s]:axis==='y'?[u,s,255-v]:[s,u,255-v];}
 function draw(canvas,axis,s,overlay=false,selected=0){
@@ -35,35 +36,37 @@ function draw(canvas,axis,s,overlay=false,selected=0){
 }
 function drawSlice(){
  if(!volume)return;
- const axis=$('#plane').value,s=+$('#slice').value;
+ const axis=$('#plane').value,s=cursor[axis];$('#slice').value=s;
  draw($('#slice-canvas'),axis,s,$('#overlay').checked,+$('#region').value);
  $('#plane-label').textContent=`GRID ${axis.toUpperCase()} SECTION`;
- $('#slice-position').textContent=`Slice ${s} / 255 · ${(s*.08).toFixed(2)} mm from grid origin`;
+ $('#slice-position').textContent=`Index ${s} / 255 · ${(s*.08).toFixed(2)} mm from grid origin`;
  $('#slice-value').textContent=s;
+ for(const a of ['x','y','z']){draw($('#orth-'+a),a,cursor[a],$('#overlay').checked,+$('#region').value);$('#orth-'+a+'-position').textContent=`${(cursor[a]*.08).toFixed(2)} mm`;$('#axis-'+a).value=cursor[a];$('#coord-'+a).textContent=`${(cursor[a]*.08).toFixed(2)} mm`;}
  $('.scale-rule').style.width=($('#slice-canvas').getBoundingClientRect().width*25/256)+'px';
 }
 function regionDetail(){
  if(!atlas)return;const r=atlas.regions[+$('#region').value];
- $('#region-detail').innerHTML=`<dl class="region-metrics"><div><dt>Label voxels</dt><dd>${r.voxel_count.toLocaleString()}</dd></div><div><dt>Mask volume</dt><dd>${r.volume_mm3.toFixed(3)} mm³</dd></div><div><dt>Grid extent (X, Y, Z)</dt><dd>${r.extent_mm.join(' × ')} mm</dd></div></dl>`;
- if(r.id){const axis={x:0,y:1,z:2}[$('#plane').value];$('#slice').value=Math.round((r.bounds_mm[0][axis]+r.bounds_mm[1][axis])/2/.08);}
+ $('#region-detail').innerHTML=`<dl class="region-metrics"><div><dt>Selected label</dt><dd>${escapeHTML(r.name)}</dd></div><div><dt>Voxels</dt><dd>${r.voxel_count.toLocaleString()}</dd></div><div><dt>Mask volume</dt><dd>${r.volume_mm3.toFixed(3)} mm³</dd></div><div><dt>Extent · X / Y / Z</dt><dd>${r.extent_mm.join(' × ')} mm</dd></div></dl>`;
+ if(r.id)for(const [i,a] of ['x','y','z'].entries())cursor[a]=Math.round((r.bounds_mm[0][i]+r.bounds_mm[1][i])/2/.08);
  drawSlice();meshViewer?.select(r.id);
 }
-$('#plane').addEventListener('change',()=>{regionDetail();drawSlice();});
-$('#slice').addEventListener('input',drawSlice);$('#overlay').addEventListener('change',()=>{drawSlice();meshViewer?.select(+$('#region').value);});
+$('#plane').addEventListener('change',drawSlice);
+$('#slice').addEventListener('input',()=>{cursor[$('#plane').value]=+$('#slice').value;drawSlice();});
+$('#overlay').addEventListener('change',()=>{drawSlice();meshViewer?.select(+$('#region').value);});
 $('#region').addEventListener('change',regionDetail);
-$('#brain-shell').addEventListener('change',()=>meshViewer?.select(+$('#region').value));
+$('#region-filter').addEventListener('input',()=>all('#region option').forEach(o=>o.hidden=!o.textContent.toLowerCase().includes($('#region-filter').value.toLowerCase())));
+for(const a of ['x','y','z'])$('#axis-'+a).addEventListener('input',()=>{cursor[a]=+$('#axis-'+a).value;drawSlice();});
+all('[data-orth-plane]').forEach(b=>b.addEventListener('click',()=>{$('#plane').value=b.dataset.orthPlane;drawSlice();}));
+for(const id of ['brain-shell','shell-opacity'])$('#'+id).addEventListener('input',()=>meshViewer?.select(+$('#region').value));
 window.addEventListener('resize',()=>{drawSlice();meshViewer?.resize();});
-$('#slice-mode').addEventListener('click',()=>setAtlasMode(false));
-$('#surface-mode').addEventListener('click',()=>setAtlasMode(true));
+$('#slice-mode').addEventListener('click',()=>setAtlasMode(false));$('#surface-mode').addEventListener('click',()=>setAtlasMode(true));
 async function setAtlasMode(surface){
  $('#slice-panel').hidden=surface;$('#surface-panel').hidden=!surface;
  for(const [id,active] of [['slice-mode',!surface],['surface-mode',surface]]){$('#'+id).classList.toggle('active',active);$('#'+id).setAttribute('aria-pressed',active);}
- if(surface){
-  try{await atlasReady;if(!meshViewer){$('#atlas-status').textContent='Loading measured anatomical surfaces…';meshViewer=await createMeshViewer();}meshViewer.resize();$('#atlas-status').textContent='Source-label reconstruction · millimetres · no smoothing';}
-  catch(e){$('#atlas-status').textContent='3D display could not load. MRI sections and downloads remain available.';console.error(e);}
- }else{$('#atlas-status').textContent='Original MRI · contrast window applied for display · regional labels optional';drawSlice();}
+ try{await ensureAtlas();if(surface){if(!meshViewer){$('#atlas-status').textContent='Loading label-derived surfaces…';meshViewer=await createMeshViewer();}meshViewer.resize();$('#atlas-status').textContent='Label-derived geometry · millimetres · no smoothing';}else{drawSlice();$('#atlas-status').textContent='Source MRI · display contrast applied · stored grid coordinates';}}
+ catch(e){$('#atlas-status').textContent='Display unavailable. Source data remain linked.';console.error(e);}
 }
-$('#reset-atlas').addEventListener('click',()=>{$('#region').value='0';$('#plane').value='z';$('#slice').value=140;$('#overlay').checked=true;$('#brain-shell').checked=true;regionDetail();meshViewer?.reset();});
+$('#reset-atlas').addEventListener('click',()=>{$('#region-filter').value='';all('#region option').forEach(o=>o.hidden=false);$('#region').value='0';$('#plane').value='z';Object.assign(cursor,{x:126,y:135,z:140});$('#overlay').checked=true;$('#brain-shell').checked=true;$('#shell-opacity').value=.14;regionDetail();meshViewer?.reset();});
 async function createMeshViewer(){
  const [THREE,{OrbitControls},data]=await Promise.all([import('./assets/three.module.js'),import('./assets/OrbitControls.js'),get('data/atlas-meshes.json')]);
  const container=$('#three-view'),scene=new THREE.Scene();scene.background=new THREE.Color('#151d1b');
@@ -80,20 +83,20 @@ async function createMeshViewer(){
  scene.add(new THREE.AmbientLight(0xffffff,1.35));const light=new THREE.DirectionalLight(0xffffff,2.5);light.position.set(15,-20,30);scene.add(light);const back=new THREE.DirectionalLight(0xb0c6cf,1.2);back.position.set(-20,10,10);scene.add(back);
  const render=()=>renderer.render(scene,camera);
  const resize=()=>{const {width,height}=container.getBoundingClientRect();if(!width||!height)return;renderer.setSize(width,height);camera.aspect=width/height;camera.updateProjectionMatrix();render();};
- const select=id=>{objects.forEach((o,i)=>{o.visible=i===0?$('#brain-shell').checked:$('#overlay').checked&&(id===0||i===id);});render();};
+ const select=id=>{objects[0].material.opacity=+$('#shell-opacity').value;objects.forEach((o,i)=>{o.visible=i===0?$('#brain-shell').checked:$('#overlay').checked&&(id===0||i===id);});render();};
  const reset=()=>{group.rotation.set(0,0,0);camera.position.set(23,-24,20);controls.target.set(0,0,0);controls.update();select(0);};
  controls.addEventListener('change',render);
  container.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','-','='].includes(e.key)){e.preventDefault();if(e.key==='ArrowLeft')group.rotation.z-=.12;if(e.key==='ArrowRight')group.rotation.z+=.12;if(e.key==='ArrowUp')group.rotation.x-=.12;if(e.key==='ArrowDown')group.rotation.x+=.12;if(['+','='].includes(e.key))camera.position.multiplyScalar(.9);if(e.key==='-')camera.position.multiplyScalar(1.1);controls.update();render();}});
  select(+$('#region').value);resize();return{resize,select,reset};
 }
-function filteredRecordings(){const q=$('#recording-search').value.trim().toLowerCase();const a=recordings.filter(r=>r.name.toLowerCase().includes(q));return a.sort($('#recording-sort').value==='duration'?(a,b)=>b.duration_seconds-a.duration_seconds:(a,b)=>a.name.localeCompare(b.name));}
+function filteredRecordings(){const q=$('#recording-search').value.trim().toLowerCase(),species=$('#recording-species').value;return recordings.filter(r=>(species==='all'||r.species===species)&&[r.name,r.kind,r.species_name].join(' ').toLowerCase().includes(q)).sort($('#recording-sort').value==='duration'?(a,b)=>b.duration_seconds-a.duration_seconds:(a,b)=>a.name.localeCompare(b.name));}
 function renderRecordings(){
- const filtered=filteredRecordings(),size=12;const pages=Math.max(1,Math.ceil(filtered.length/size));page=Math.min(page,pages-1);
- $('#recording-count').textContent=`${filtered.length} of 887 recordings`;
- $('#recording-list').innerHTML=filtered.slice(page*size,(page+1)*size).map(r=>`<div class="recording-row ${currentAudio===r.name?'selected':''}"><span class="recording-name">${escapeHTML(r.name)}</span><span class="duration">${r.duration_seconds.toFixed(3)} s</span><button data-audio="${escapeHTML(r.name)}" aria-label="Listen to ${escapeHTML(r.name)}">Listen</button><a href="${r.url}" download aria-label="Download ${escapeHTML(r.name)}">WAV ↓</a></div>`).join('')||'<p class="empty">No recordings match that filename. Try a shorter search.</p>';
- $('#recording-page').textContent=`Page ${page+1} of ${pages}`;$('#recording-prev').disabled=page===0;$('#recording-next').disabled=page>=pages-1;
+ const filtered=filteredRecordings(),size=12,pages=Math.max(1,Math.ceil(filtered.length/size));page=Math.min(page,pages-1);
+ $('#recording-count').textContent=`${filtered.length} / ${recordings.length} recordings`;
+ $('#recording-list').innerHTML=filtered.slice(page*size,(page+1)*size).map(r=>`<tr class="${currentAudio===r.name?'selected':''}"><td class="recording-name">${escapeHTML(r.name)}</td><td>${escapeHTML(r.species_name)}<small>${escapeHTML(r.kind||'Song excerpt')}</small></td><td>${r.duration_seconds.toFixed(3)} s</td><td>${(r.sample_rate/1000).toFixed(3)} kHz</td><td><button data-audio="${escapeHTML(r.name)}" aria-label="Listen to ${escapeHTML(r.name)}">Listen</button></td><td><a href="${r.url}" download>WAV ↓</a></td></tr>`).join('')||'<tr><td colspan="6">No matching recordings.</td></tr>';
+ $('#recording-page').textContent=`Page ${page+1} / ${pages}`;$('#recording-prev').disabled=page===0;$('#recording-next').disabled=page>=pages-1;
 }
-$('#recording-search').addEventListener('input',()=>{page=0;renderRecordings();});$('#recording-sort').addEventListener('change',()=>{page=0;renderRecordings();});
+for(const [id,event] of [['recording-search','input'],['recording-sort','change'],['recording-species','change']])$('#'+id).addEventListener(event,()=>{page=0;renderRecordings();});
 $('#recording-prev').addEventListener('click',()=>{page--;renderRecordings();});$('#recording-next').addEventListener('click',()=>{page++;renderRecordings();});
 let audioContext;
 $('#recording-list').addEventListener('click',async e=>{
@@ -101,6 +104,7 @@ $('#recording-list').addEventListener('click',async e=>{
  const r=recordings.find(r=>r.name===button.dataset.audio);currentAudio=r.name;
  $('#audio-title').textContent=r.name;const player=$('#audio-player');player.hidden=false;player.src=r.url;player.play().catch(()=>{});
  $('#audio-detail').textContent=`${r.duration_seconds.toFixed(3)} s · ${r.sample_rate.toLocaleString()} Hz · ${r.channels===1?'mono':r.channels+' channels'} · original WAV`;
+ $('#audio-context').textContent=r.context||'Original ML4BL zebra finch excerpt; supplied processing and clip boundaries are retained.';const spec=spectrograms[r.name];$('#spectrogram-panel').hidden=!spec;if(spec){$('#spectrogram-image').src=spec.url;$('#spectrogram-caption').textContent=`0–${spec.time_end_seconds.toFixed(3)} s · 0–${(spec.frequency_max_hz/1000).toFixed(2)} kHz · −80 to 0 dB relative to this clip’s STFT peak (not sound-pressure level).`; }
  const link=$('#audio-download');link.href=r.url;link.hidden=false;renderRecordings();
  try{
   audioContext ||=new AudioContext();const response=await fetch(r.url);const buffer=await audioContext.decodeAudioData(await response.arrayBuffer());
@@ -110,19 +114,23 @@ $('#recording-list').addEventListener('click',async e=>{
  }catch(e){$('#audio-detail').textContent+=' · waveform unavailable';}
 });
 function renderStudies(){
- const q=$('#study-search').value.toLowerCase().trim(),sector=$('#study-sector').value;
- const rows=sources.filter(r=>(sector==='all'||r.sector===sector)&&[r.title,r.modality,r.doi,r.proposed_analysis].join(' ').toLowerCase().includes(q));
- $('#study-count').textContent=`${rows.length} resources`;
- $('#study-list').innerHTML=rows.map(r=>`<article class="study"><span class="study-sector">${escapeHTML(r.sector)}</span><div><h3>${escapeHTML(r.title)}</h3><p>${escapeHTML(r.modality)}</p><details><summary>Data, methods & review status</summary><p><b>Possible analysis.</b> ${escapeHTML(r.proposed_analysis)}</p><p><b>Review status.</b> ${escapeHTML(r.review_status)}</p><p><b>Interpretation.</b> ${escapeHTML(r.limitation)}</p><p><b>Reuse.</b> ${escapeHTML(r.rights)}</p>${r.doi?`<p>DOI: <a href="https://doi.org/${encodeURI(r.doi)}">${escapeHTML(r.doi)}</a></p>`:''}</details></div><a href="${escapeHTML(r.source_url)}">View source ↗</a></article>`).join('')||'<p class="empty">No matching resources. Try a different term or collection.</p>';
+ const q=$('#study-search').value.toLowerCase().trim(),sector=$('#study-sector').value,species=$('#study-species').value;
+ const rows=sources.filter(r=>(species==='all'||r.species===species)&&(sector==='all'||r.sector===sector)&&[r.title,r.modality,r.doi,r.proposed_analysis].join(' ').toLowerCase().includes(q));
+ $('#study-count').textContent=`${rows.length} source records`;
+ $('#study-list').innerHTML=rows.map(r=>`<tr><td>${r.species==='sperm-whale'?'Sperm whale':'Zebra finch'}<small>${escapeHTML(r.sector)}</small></td><td><a href="${escapeHTML(r.source_url)}">${escapeHTML(r.title)} ↗</a><small>${escapeHTML(r.modality)}</small>${r.doi?`<small>DOI ${escapeHTML(r.doi)}</small>`:''}</td><td>${escapeHTML(r.sector)}</td><td><details><summary>Evidence &amp; reuse</summary><p>${escapeHTML(r.review_status)}</p><p>${escapeHTML(r.proposed_analysis)}</p><p>${escapeHTML(r.limitation)}</p><p>${escapeHTML(r.rights)}</p></details></td></tr>`).join('')||'<tr><td colspan="4">No matching sources.</td></tr>';
 }
-$('#study-search').addEventListener('input',renderStudies);$('#study-sector').addEventListener('change',renderStudies);
-atlasReady=(async()=>{
+for(const [id,event] of [['study-search','input'],['study-sector','change'],['study-species','change']])$('#'+id).addEventListener(event,renderStudies);
+function ensureAtlas(){return atlasReady||=(async()=>{
  [atlas,volume,labels]=await Promise.all([get('data/atlas.json'),compressed('data/atlas-volume.bin.gz'),compressed('data/atlas-labels.bin.gz')]);
  $('#region').innerHTML=atlas.regions.map(r=>`<option value="${r.id}">${escapeHTML(r.name)}</option>`).join('');
  draw($('#hero-x'),'x',126);draw($('#hero-y'),'y',135);draw($('#hero-z'),'z',140);regionDetail();
- $('#atlas-status').textContent='Original MRI · contrast window applied for display · regional labels optional';
-})().catch(e=>{message('The atlas could not load. Check your connection and reload; source downloads remain linked.');throw e;});
-Promise.all([get('data/recordings.json'),get('data/sources.json')]).then(([r,s])=>{recordings=r;sources=s;renderRecordings();renderStudies();}).catch(e=>message(e.message));
+ $('#atlas-status').textContent='Source MRI · stored grid coordinates · 0.08 mm per voxel';
+})();}
+function renderCodas(){if(!marineSummary)return;const g=marineSummary.groups[$('#coda-clan').value];$('#coda-summary-count').textContent=`${g.n.toLocaleString()} deposited rows · ${g.type_count} supplied labels · median duration ${g.duration_median_s.toFixed(3)} s`;$('#coda-summary').innerHTML=g.types.map(t=>`<tr><td>${escapeHTML(t.label)}</td><td>${t.count}</td><td>${t.duration_median_s.toFixed(3)}</td><td>${t.duration_q10_s.toFixed(3)}–${t.duration_q90_s.toFixed(3)}</td></tr>`).join('');}
+$('#coda-clan').addEventListener('change',renderCodas);
+all('[data-species-sounds]').forEach(a=>a.addEventListener('click',()=>{$('#recording-species').value=a.dataset.speciesSounds;page=0;renderRecordings();}));
+all('[data-species-library]').forEach(a=>a.addEventListener('click',()=>{$('#study-species').value=a.dataset.speciesLibrary;renderStudies();}));
+Promise.all([get('data/recordings.json'),get('data/sources.json'),get('data/marine-recordings.json'),get('data/spectrograms.json'),get('data/marine-coda-summary.json')]).then(([r,s,m,sp,c])=>{recordings=[...r.map(x=>({...x,species:'zebra-finch',species_name:'Zebra finch'})),...m];sources=s;spectrograms=sp;marineSummary=c;renderRecordings();renderStudies();renderCodas();}).catch(e=>message(e.message));
 
 // Reading aids use the original published image; no panel is redrawn.
 const paperPanelNotes={
@@ -140,3 +148,5 @@ all('[data-enlarge]').forEach(button=>button.addEventListener('click',()=>{
  $('#enlarged-original-figure').src=original.src;$('#enlarged-original-figure').alt=original.alt;
  $('#figure-dialog').showModal();
 }));
+
+route();

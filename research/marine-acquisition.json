@@ -1,0 +1,18 @@
+[
+  {
+    "local_path": "data/raw/DominicaCodas.csv",
+    "source_url": "https://github.com/pratyushasharma/sw-combinatoriality/blob/main/data/DominicaCodas.csv",
+    "sha256": "53dd44fbfb0040da93656aa44883954f3abe18dd6539e90c625af86a96db6b45",
+    "bytes": 747518,
+    "checked_date": "2026-11-09",
+    "repository_commit": "7228c8eed2cc27ddd23b74c51aeccec9d762389e",
+    "pinned_url": "https://github.com/pratyushasharma/sw-combinatoriality/blob/7228c8eed2cc27ddd23b74c51aeccec9d762389e/data/DominicaCodas.csv"
+  },
+  {
+    "local_path": "data/raw/sperm-whale-arctic-supplements.zip",
+    "source_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-024-56287-9/MediaObjects/41598_2024_56287_MOESM1_ESM.zip",
+    "sha256": "7fc0d9ecb55946eedfc6088ac2657c9e331b61f1876cae34c6895b416ce822e5",
+    "bytes": 5623879,
+    "checked_date": "2026-11-09"
+  }
+]

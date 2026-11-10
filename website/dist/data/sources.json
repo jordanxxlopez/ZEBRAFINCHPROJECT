@@ -10,6 +10,7 @@
     "rights": "CC-BY-4.0; Zenodo API",
     "review_status": "Downloaded; see acquisition manifest",
     "limitation": "Male reference brain; voxel spacing is not whole-brain size; 2026 deposit describes a 2008 paper",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -23,6 +24,7 @@
     "rights": "Not yet verified",
     "review_status": "Primary repository abstract reviewed",
     "limitation": "Nonstereotaxic histology; tissue deformation and cross-specimen registration require assessment",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -36,6 +38,7 @@
     "rights": "Check individual image terms",
     "review_status": "Article text reviewed",
     "limitation": "Different brains; reference drawings are approximate guides, not exact registration",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -49,6 +52,7 @@
     "rights": "Repository user license",
     "review_status": "Abstract and acquisition summary reviewed; raw data not located",
     "limitation": "78 micrometre acquisition and 40 micrometre TDI grid are distinct; streamlines are not axon counts",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -62,6 +66,7 @@
     "rights": "Check dataset rights separately",
     "review_status": "Methods and data-availability sections reviewed",
     "limitation": "Mixed songbird evidence; filter zebra finch records before species-specific claims",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -75,6 +80,7 @@
     "rights": "Not verified for redistribution; link to provider",
     "review_status": "Provider documentation reviewed; small API sample acquired locally",
     "limitation": "Area X subvolume, not a whole-brain connectome; automated labels and fragments require QC",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -88,6 +94,7 @@
     "rights": "Not yet verified",
     "review_status": "Primary paper search lead",
     "limitation": "Confirm tracing access and cell identity; do not infer morphology from a stylized figure",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -101,6 +108,7 @@
     "rights": "CC-BY-4.0",
     "review_status": "Downloaded; see acquisition manifest",
     "limitation": "Respect supplied splits; check individual-bird leakage before evaluating new models",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -114,6 +122,7 @@
     "rights": "GPL-2.0-or-later in record; inspect embedded rights",
     "review_status": "Annotations and README acquired; 12.3 GB recordings deferred",
     "limitation": "Annotations alone are not the full audiovisual recording set",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -127,6 +136,7 @@
     "rights": "Not yet verified",
     "review_status": "Institutional dataset description reviewed",
     "limitation": "2025 deposit relates to Norton and Scharff 2016; do not confuse deposit and article dates",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -140,6 +150,7 @@
     "rights": "Not yet verified",
     "review_status": "Version notes reviewed",
     "limitation": "Resolve v1, v2 and separate earlier concept record; prevent duplicate counting",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -153,6 +164,7 @@
     "rights": "Provider conditions; account required",
     "review_status": "Provider documentation reviewed; not downloaded",
     "limitation": "Account access is required; split by recording and animal",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -166,6 +178,7 @@
     "rights": "Provider conditions to verify",
     "review_status": "Provider description reviewed; not downloaded",
     "limitation": "Nine animals; preserve bird-level hierarchy and juvenile/adult identity",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -179,6 +192,7 @@
     "rights": "Verify Dryad file terms",
     "review_status": "Article and data statement reviewed",
     "limitation": "Sequence correlation is not anatomical connectivity; preserve tutor exposure and age",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -192,6 +206,7 @@
     "rights": "Verify Dryad record and code terms",
     "review_status": "Data statement reviewed; 9.81 GB deposit not downloaded",
     "limitation": "Do not load untrusted pickle files directly; distinguish measured traces from simulated output",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -205,6 +220,7 @@
     "rights": "CC0-1.0",
     "review_status": "Workbook and README acquired",
     "limitation": "Summary workbook is not necessarily raw voltage traces",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -218,6 +234,7 @@
     "rights": "CC-BY-3.0; article-specific copyright verified",
     "review_status": "Full text and methods inspected; original Figures 1 and 2 acquired; focused electrophysiology guide implemented; no raw-data replication",
     "limitation": "Movie is an illustration; it is not the complete raw electrophysiology dataset",
+    "species": "zebra-finch",
     "checked_date": "2026-11-09"
   },
   {
@@ -231,6 +248,7 @@
     "rights": "CC-BY article; retain source attribution",
     "review_status": "PDF and original movie acquired",
     "limitation": "Keep exact experimental context; do not represent this as a different study",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -244,6 +262,7 @@
     "rights": "Verify code and dataset licenses",
     "review_status": "Primary article identified",
     "limitation": "Learned distance is not automatically perceptual similarity; no generated imagery is needed",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -257,6 +276,7 @@
     "rights": "Verify repository terms",
     "review_status": "Dataset file list reviewed",
     "limitation": "Regional volumes do not uniquely determine 3D brain shape",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -270,6 +290,7 @@
     "rights": "Verify repository terms",
     "review_status": "Dataset file list reviewed",
     "limitation": "Use current version; keep songs and birds as separate units",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -283,6 +304,7 @@
     "rights": "Verify repository terms",
     "review_status": "Primary paper and dataset leads reviewed",
     "limitation": "Observational and experimental components need separate interpretation",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -296,6 +318,7 @@
     "rights": "Verify repository terms",
     "review_status": "Dataset file list reviewed",
     "limitation": "Inspect zero-byte placeholder versus zipped data; no allegation follows from an empty entry",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -309,6 +332,7 @@
     "rights": "Not yet verified",
     "review_status": "Primary-paper data availability lead",
     "limitation": "Identify exact Dryad files before implementation",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
   },
   {
@@ -322,6 +346,105 @@
     "rights": "Not yet verified",
     "review_status": "Primary abstract indexed",
     "limitation": "Behavioral state can confound apparent regional or cross-species expression differences",
+    "species": "zebra-finch",
     "checked_date": "2026-10-31"
+  },
+  {
+    "id": "marine-s41467-024-47221-8",
+    "sector": "Behavior",
+    "title": "Contextual and combinatorial structure in sperm whale vocalisations.",
+    "doi": "10.1038/s41467-024-47221-8",
+    "source_url": "https://doi.org/10.1038/s41467-024-47221-8",
+    "modality": "Marine bioacoustics \u00b7 primary study",
+    "proposed_analysis": "Inspect source annotations and preserve caller, social unit and recording context before statistical inference.",
+    "rights": "Article CC BY 4.0; linked repository has no standalone license identified",
+    "review_status": "Publisher full text, figure legend and data availability inspected; descriptive CSV summary, not clustering replication",
+    "limitation": "Deposited CSV cohort requires reconciliation with article; counts do not establish coda meaning",
+    "species": "sperm-whale",
+    "checked_date": "2026-11-09"
+  },
+  {
+    "id": "marine-s41598-019-48909-4",
+    "sector": "Behavior",
+    "title": "Deep Machine Learning Techniques for the Detection and Classification of Sperm Whale Bioacoustics.",
+    "doi": "10.1038/s41598-019-48909-4",
+    "source_url": "https://doi.org/10.1038/s41598-019-48909-4",
+    "modality": "Marine bioacoustics \u00b7 primary study",
+    "proposed_analysis": "Inspect source annotations and preserve caller, social unit and recording context before statistical inference.",
+    "rights": "Redistribution rights not assessed; provider link only",
+    "review_status": "Europe PMC metadata and indexed abstract reviewed; full methods and raw data not yet audited",
+    "limitation": "Recordings illustrate source-specific behavior; no neural circuit measurements are supplied",
+    "species": "sperm-whale",
+    "checked_date": "2026-11-09"
+  },
+  {
+    "id": "marine-s41598-024-56287-9",
+    "sector": "Behavior",
+    "title": "High Arctic \"hotspots\" for sperm whales (Physeter macrocephalus) off western and northern Svalbard, Norway, revealed by multi-year Passive Acoustic Monitoring (PAM).",
+    "doi": "10.1038/s41598-024-56287-9",
+    "source_url": "https://doi.org/10.1038/s41598-024-56287-9",
+    "modality": "Marine bioacoustics \u00b7 primary study",
+    "proposed_analysis": "Inspect source annotations and preserve caller, social unit and recording context before statistical inference.",
+    "rights": "Article CC BY 4.0; original supplementary audio retained",
+    "review_status": "Publisher full text and supplementary recordings inspected; five original WAVs acquired",
+    "limitation": "Recordings illustrate source-specific behavior; no neural circuit measurements are supplied",
+    "species": "sperm-whale",
+    "checked_date": "2026-11-09"
+  },
+  {
+    "id": "marine-s41598-025-97009-z",
+    "sector": "Behavior",
+    "title": "Automatic detection and annotation of eastern Caribbean sperm whale codas.",
+    "doi": "10.1038/s41598-025-97009-z",
+    "source_url": "https://doi.org/10.1038/s41598-025-97009-z",
+    "modality": "Marine bioacoustics \u00b7 primary study",
+    "proposed_analysis": "Inspect source annotations and preserve caller, social unit and recording context before statistical inference.",
+    "rights": "Redistribution rights not assessed; provider link only",
+    "review_status": "Europe PMC metadata and indexed abstract reviewed; full methods and raw data not yet audited",
+    "limitation": "Recordings illustrate source-specific behavior; no neural circuit measurements are supplied",
+    "species": "sperm-whale",
+    "checked_date": "2026-11-09"
+  },
+  {
+    "id": "marine-rsos.150372",
+    "sector": "Behavior",
+    "title": "Individual, unit and vocal clan level identity cues in sperm whale codas.",
+    "doi": "10.1098/rsos.150372",
+    "source_url": "https://doi.org/10.1098/rsos.150372",
+    "modality": "Marine bioacoustics \u00b7 primary study",
+    "proposed_analysis": "Inspect source annotations and preserve caller, social unit and recording context before statistical inference.",
+    "rights": "Redistribution rights not assessed; provider link only",
+    "review_status": "Europe PMC metadata and indexed abstract reviewed; full methods and raw data not yet audited",
+    "limitation": "Recordings illustrate source-specific behavior; no neural circuit measurements are supplied",
+    "species": "sperm-whale",
+    "checked_date": "2026-11-09"
+  },
+  {
+    "id": "marine-rsos.160061",
+    "sector": "Behavior",
+    "title": "Socially segregated, sympatric sperm whale clans in the Atlantic Ocean.",
+    "doi": "10.1098/rsos.160061",
+    "source_url": "https://doi.org/10.1098/rsos.160061",
+    "modality": "Marine bioacoustics \u00b7 primary study",
+    "proposed_analysis": "Inspect source annotations and preserve caller, social unit and recording context before statistical inference.",
+    "rights": "Redistribution rights not assessed; provider link only",
+    "review_status": "Europe PMC metadata and indexed abstract reviewed; full methods and raw data not yet audited",
+    "limitation": "Recordings illustrate source-specific behavior; no neural circuit measurements are supplied",
+    "species": "sperm-whale",
+    "checked_date": "2026-11-09"
+  },
+  {
+    "id": "marine-1.4949478",
+    "sector": "Behavior",
+    "title": "Sperm whale codas may encode individuality as well as clan identity.",
+    "doi": "10.1121/1.4949478",
+    "source_url": "https://doi.org/10.1121/1.4949478",
+    "modality": "Marine bioacoustics \u00b7 primary study",
+    "proposed_analysis": "Inspect source annotations and preserve caller, social unit and recording context before statistical inference.",
+    "rights": "Redistribution rights not assessed; provider link only",
+    "review_status": "Europe PMC metadata and indexed abstract reviewed; full methods and raw data not yet audited",
+    "limitation": "Recordings illustrate source-specific behavior; no neural circuit measurements are supplied",
+    "species": "sperm-whale",
+    "checked_date": "2026-11-09"
   }
 ]
