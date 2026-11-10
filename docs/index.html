@@ -4,6 +4,12 @@
  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Zebra Finch Project — Anatomy, sound & behavior</title>
  <meta name="description" content="Explore measured zebra finch anatomy, 887 original song recordings, research films and a source-linked scientific library.">
+ <script>
+  // Modules and atlas fetches require HTTP. Keep double-clicked local links usable.
+  if (location.protocol === 'file:') {
+   location.replace('https://jordanxxlopez.github.io/ZEBRAFINCHPROJECT/' + location.hash);
+  }
+ </script>
  <link rel="stylesheet" href="styles.css">
  <script type="importmap">{"imports":{"three":"./assets/three.module.js"}}</script>
  <script type="module" src="app.js"></script>
