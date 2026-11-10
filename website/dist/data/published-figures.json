@@ -1,0 +1,56 @@
+[
+  {
+    "id": "hamaguchi-2014-figure-1",
+    "asset": "assets/elife-01833-fig1-v1.jpg",
+    "figure_number": 1,
+    "article": "Auditory synapses to song premotor neurons are gated off during vocalization in zebra finches",
+    "authors": [
+      "Kosuke Hamaguchi",
+      "Katherine A Tschida",
+      "Inho Yoon",
+      "Bruce R Donald",
+      "Richard Mooney"
+    ],
+    "year": 2014,
+    "species": "Taeniopygia guttata (source terminology), male zebra finch",
+    "paper_doi": "10.7554/eLife.01833",
+    "figure_doi": "10.7554/eLife.01833.003",
+    "description": "Circuit and intracellular recording preparation; altered-feedback paradigm; example spectrogram and voltage recording",
+    "source_page": "https://elifesciences.org/articles/01833/figures",
+    "publisher_rendition_url": "https://iiif.elifesciences.org/lax/01833%2Felife-01833-fig1-v1.tif/full/1500,/0/default.jpg",
+    "license": "CC-BY-3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "rights_verification": "Article copyright section links CC BY 3.0; site-wide footer links CC BY 4.0 and does not override article-specific license.",
+    "transformations": "Publisher-provided 1500px JPEG rendition; no site crop, redrawing, recoloring or generated overlays. Browser scales original image.",
+    "sha256": "181a2246b22de36d727fd23c2b2fc37bbe63b0a8e4b193f92a2027a95cf8e1bb",
+    "bytes": 198366,
+    "review_status": "Full text, discussion and methods inspected; original figures visually inspected; focused electrophysiology guide; no independent raw-data replication."
+  },
+  {
+    "id": "hamaguchi-2014-figure-2",
+    "asset": "assets/elife-01833-fig2-v1.jpg",
+    "figure_number": 2,
+    "article": "Auditory synapses to song premotor neurons are gated off during vocalization in zebra finches",
+    "authors": [
+      "Kosuke Hamaguchi",
+      "Katherine A Tschida",
+      "Inho Yoon",
+      "Bruce R Donald",
+      "Richard Mooney"
+    ],
+    "year": 2014,
+    "species": "Taeniopygia guttata (source terminology), male zebra finch",
+    "paper_doi": "10.7554/eLife.01833",
+    "figure_doi": "10.7554/eLife.01833.007",
+    "description": "Published comparison of hit/catch recordings, membrane-potential differences, and postsynaptic-potential onset timing",
+    "source_page": "https://elifesciences.org/articles/01833/figures",
+    "publisher_rendition_url": "https://iiif.elifesciences.org/lax/01833%2Felife-01833-fig2-v1.tif/full/1500,/0/default.jpg",
+    "license": "CC-BY-3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "rights_verification": "Article copyright section links CC BY 3.0; site-wide footer links CC BY 4.0 and does not override article-specific license.",
+    "transformations": "Publisher-provided 1500px JPEG rendition; no site crop, redrawing, recoloring or generated overlays. Browser scales original image.",
+    "sha256": "bc3d37c84830fdef400c7913a36e4b58b3c176acc2a43d5789ee9511490fe42f",
+    "bytes": 152273,
+    "review_status": "Full text, discussion and methods inspected; original figures visually inspected; focused electrophysiology guide; no independent raw-data replication."
+  }
+]

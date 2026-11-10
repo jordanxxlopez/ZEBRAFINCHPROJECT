@@ -6,6 +6,10 @@ The Zebra Finch Project is the first species collection. The visual redesign and
 
 Buildless static site in `dist/`; all runtime assets are local. No generated illustrations, stock biological substitutes, or fabricated connectivity. Three.js is vendored with its MIT license.
 
+## Typography and published figures
+
+Source Sans 3 and Source Serif 4 are self-hosted in `dist/assets/fonts/` with their SIL OFL licenses. The first paper guide is `#paper-hamaguchi`, linked from the species introduction and library. It uses unedited publisher JPEG renditions of original Figures 1 and 2, under the article-specific CC BY 3.0 license. Source hashes, figure DOIs and reuse information are in `media/published-figures.json`; the focused review is in `research/HAMAGUCHI_2014_REVIEW.md`.
+
 ## Reproduce
 
 From the repository root, acquire originals using `scripts/download_assets.py`, install `requirements-science.txt` in a virtual environment, then run:

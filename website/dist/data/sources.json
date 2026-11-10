@@ -215,10 +215,10 @@
     "source_url": "https://elifesciences.org/articles/01833/figures",
     "modality": "Original Video 1 and intracellular recording study",
     "proposed_analysis": "Embed source movie beside explanation of measured preparation",
-    "rights": "CC-BY article; retain source attribution",
-    "review_status": "PDF and movie acquisition tracked in manifest",
+    "rights": "CC-BY-3.0; article-specific copyright verified",
+    "review_status": "Full text and methods inspected; original Figures 1 and 2 acquired; focused electrophysiology guide implemented; no raw-data replication",
     "limitation": "Movie is an illustration; it is not the complete raw electrophysiology dataset",
-    "checked_date": "2026-10-31"
+    "checked_date": "2026-11-09"
   },
   {
     "id": "group-calls",

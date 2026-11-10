@@ -45,4 +45,6 @@ This visual redesign does not turn the existing 50-item discovery list into 50 v
 
 ## Browser checks
 
+Typography refinement: Source Serif 4 and Source Sans 3 replace the Georgia/Arial default pairing. Official Google Fonts distributions are hosted locally with their SIL Open Font License files; file provenance and hashes are in `data/fonts.json`. The existing masthead and independent-collection identity are retained. The first illustrated paper guide uses the original species-specific published figures rather than a new project-created schematic; details are in `HAMAGUCHI_2014_REVIEW.md`.
+
 Desktop homepage and the new species route were inspected in the in-app browser. The MRI and 3D atlas loaded after navigation, and selecting HVC updated its region statistics. At a 390 × 844 viewport the homepage and recording archive had document width 390 pixels, without horizontal overflow. Search for Grey644 returned nine recordings; Grey644_1 played at the expected 0.165-second duration with no media error. The waveform loaded from decoded source samples. Both original video elements remain in the films view; their loaded media states are recorded in the browser checks for this release. No scientific source arrays were modified by the design changes.

@@ -1,0 +1,34 @@
+[
+  {
+    "file": "assets/fonts/source-sans-3-400.ttf",
+    "source": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Ky461EN.ttf",
+    "license": "SIL Open Font License 1.1",
+    "license_file": "assets/fonts/sourcesans3-OFL.txt",
+    "sha256": "20ab9752bd19a373dba627393b6c142e6cf8fc2f219119a8e0cb1442ef679ec5",
+    "bytes": 234708
+  },
+  {
+    "file": "assets/fonts/source-sans-3-600.ttf",
+    "source": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Kxm7FEN.ttf",
+    "license": "SIL Open Font License 1.1",
+    "license_file": "assets/fonts/sourcesans3-OFL.txt",
+    "sha256": "950e66c48e5e60c9407421d0fa601047176f17e0d22a598bbd084dde45a98be2",
+    "bytes": 234680
+  },
+  {
+    "file": "assets/fonts/source-serif-4-400.ttf",
+    "source": "https://fonts.gstatic.com/s/sourceserif4/v15/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjihdqrhw.ttf",
+    "license": "SIL Open Font License 1.1",
+    "license_file": "assets/fonts/sourceserif4-OFL.txt",
+    "sha256": "f01900495012279f1e95d721c59363395eeffb79ef806eaa4dfa8bd923ccec0b",
+    "bytes": 194464
+  },
+  {
+    "file": "assets/fonts/source-serif-4-600.ttf",
+    "source": "https://fonts.gstatic.com/s/sourceserif4/v15/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjisltrhw.ttf",
+    "license": "SIL Open Font License 1.1",
+    "license_file": "assets/fonts/sourceserif4-OFL.txt",
+    "sha256": "0b03b227d7edf5addbf0094b88c3aa1d66d9448b2b501ed686eb4818b691c247",
+    "bytes": 194800
+  }
+]

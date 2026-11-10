@@ -168,8 +168,8 @@ Discovery and feasibility review, 2026-10-31. Download status is established by 
 - DOI: 10.7554/eLife.01833
 - Data: Original Video 1 and intracellular recording study
 - Possible work: Embed source movie beside explanation of measured preparation
-- Rights: CC-BY article; retain source attribution
-- Review: PDF and movie acquisition tracked in manifest
+- Rights: CC-BY-3.0; article-specific copyright verified
+- Review: Full text and methods inspected; original Figures 1 and 2 acquired; focused electrophysiology guide implemented; no raw-data replication
 - Qualification: Movie is an illustration; it is not the complete raw electrophysiology dataset
 
 ## Patterns of call communication between group-housed zebra finches change during the breeding cycle

@@ -5,15 +5,15 @@ const get=async path=>{const r=await fetch(path);if(!r.ok)throw Error(`Could not
 const message=text=>{const box=$('#global-status');box.textContent=text;box.hidden=false;};
 let atlas,volume,labels,recordings=[],sources=[],page=0,currentAudio=null,meshViewer=null;
 let atlasReady;
-const pages=['home','species','atlas','recordings','films','studies','methods'];
+const pages=['home','species','paper-hamaguchi','atlas','recordings','films','studies','methods'];
 function route(){
  const hash=location.hash.slice(1)||'home';if(hash==='content'){$('#content').focus();return;}const id=pages.includes(hash)?hash:document.getElementById(hash)?.closest('.page')?.id||'home';
  all('.page').forEach(p=>p.hidden=p.id!==id);
  all('nav a').forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
  all('audio').filter(a=>a.closest('.page')?.id!==id).forEach(a=>a.pause());
- if(id!=='films')all('video').forEach(v=>v.pause());
+ all('video').filter(v=>v.closest('.page')?.id!==id).forEach(v=>v.pause());
  if(pages.includes(hash))window.scrollTo(0,0);else requestAnimationFrame(()=>document.getElementById(hash)?.scrollIntoView());
- document.title=id==='home'?'Animal Communication & Neuroscience':({species:'Zebra finch collection',atlas:'Brain atlas',recordings:'Sound archive',films:'Research films',studies:'Research library',methods:'Data and methods'}[id])+' | Animal Communication & Neuroscience';
+ document.title=id==='home'?'Animal Communication & Neuroscience':({species:'Zebra finch collection','paper-hamaguchi':'HVC auditory-feedback experiment',atlas:'Brain atlas',recordings:'Sound archive',films:'Research films',studies:'Research library',methods:'Data and methods'}[id])+' | Animal Communication & Neuroscience';
  if(id==='atlas')requestAnimationFrame(()=>{drawSlice();meshViewer?.resize();});
 }
 window.addEventListener('hashchange',route);route();
@@ -123,3 +123,20 @@ atlasReady=(async()=>{
  $('#atlas-status').textContent='Original MRI · contrast window applied for display · regional labels optional';
 })().catch(e=>{message('The atlas could not load. Check your connection and reload; source downloads remain linked.');throw e;});
 Promise.all([get('data/recordings.json'),get('data/sources.json')]).then(([r,s])=>{recordings=r;sources=s;renderRecordings();renderStudies();}).catch(e=>message(e.message));
+
+// Reading aids use the original published image; no panel is redrawn.
+const paperPanelNotes={
+ a:'Panel A is the authors’ schematic of the zebra finch preparation. Red marks the song motor pathway; blue marks the anterior forebrain pathway. The electrode records an HVC cell projecting to Area X. This published circuit drawing is not a measured tractogram or a spatial registration to our MRI atlas.',
+ b:'Panel B illustrates a spike-collision test used to identify an HVC neuron projecting to Area X. A stimulus in Area X can evoke a spike traveling back toward HVC. Its collision with a naturally generated spike helps establish the projection identity; the voltage and time scale bars apply to these traces.',
+ c:'Panel C shows the feedback manipulation. The real-time system detects a target in the song sequence and triggers playback on hit trials. On catch trials playback is withheld. This is the authors’ experimental schematic, not a simulation created for this site.',
+ d:'Panel D pairs a song spectrogram with an intracellular voltage recording. Frequency is in kHz, time in milliseconds and voltage in mV. The orange interval marks feedback playback. The bottom traces expand the comparison of hit and catch conditions. These are example observations; Figure 2 provides the population analysis.'
+};
+all('[data-paper-panel]').forEach(button=>button.addEventListener('click',()=>{
+ all('[data-paper-panel]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+ $('#figure-panel-note').textContent=paperPanelNotes[button.dataset.paperPanel];
+}));
+all('[data-enlarge]').forEach(button=>button.addEventListener('click',()=>{
+ const original=document.getElementById(button.dataset.enlarge);
+ $('#enlarged-original-figure').src=original.src;$('#enlarged-original-figure').alt=original.alt;
+ $('#figure-dialog').showModal();
+}));
