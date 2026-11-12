@@ -1,0 +1,6464 @@
+{
+ "id": "honeybee-dance-sun",
+ "species": "honeybee",
+ "title": "Do waggle-dance angles follow the sun? An independent reanalysis",
+ "paper": {
+  "citation": "Dormagen DM, Wild B, Wario F, Landgraf T (2023) Machine learning reveals the waggle drift's role in the honey bee dance communication system. PNAS Nexus 2:pgad275. doi:10.1093/pnasnexus/pgad275",
+  "doi": "10.1093/pnasnexus/pgad275"
+ },
+ "data": {
+  "files": [
+   "Berlin2019_dances.csv",
+   "Berlin2019_waggle_phases.csv",
+   "Berlin2019_feeder_experiment_log.csv"
+  ],
+  "record": "doi:10.5281/zenodo.7928121",
+  "licence": "CC BY 4.0",
+  "sha256": {
+   "Berlin2019_dances.csv": "dcd02a4f5b7e5f88b3c01d1274674f6a8ff947cecc36db9b074a806761224cc7",
+   "Berlin2019_waggle_phases.csv": "359e71b88eb312c8537b04b52e87ea90ac344dde8c6c9a94171799c868639423",
+   "Berlin2019_feeder_experiment_log.csv": "8bb4a653ac458b038b875b0d6c34cd83d21c3be36eaa21268054fbab2e98d51f"
+  }
+ },
+ "claims": [
+  {
+   "claim": "Foragers encode the direction of a food source relative to the sun's azimuth, so dances for a fixed feeder should rotate as the sun moves (von Frisch's classic finding).",
+   "source": "Background to the dataset; tested here on the deposited 2019 dances",
+   "result": "793 dances (\u22653 waggle runs, mean resultant length > 0.5) from 2 cameras and 2 feeders. In three of four camera\u2013feeder groups the best-fitting slope of dance angle on sun azimuth was close to 1 (1.07, 0.53, 0.92, 1.11). Removing the sun's movement reduced the circular spread in every group. With the slope fixed at 1, the sun-corrected directions for the two feeders differ by 133.9\u00b0 on camera 0 and 137.9\u00b0 on camera 1, an agreement between independently recorded groups.",
+   "status": "consistent (independent reanalysis)",
+   "scope": "A minority of dances lie about 180\u00b0 from the main cluster for their feeder, consistent with head\u2013tail orientation errors in automatic tracking; they were kept, which widens the spread. Angles are in each camera's image frame; their sign and zero are not tied to gravity in the deposit, so only the rate of change is tested, not the absolute direction. Dances by the same bee are not independent; the bootstrap intervals resample dances and are therefore optimistic."
+  }
+ ],
+ "tables": {
+  "groups": [
+   {
+    "camera": 0,
+    "feeder": 1,
+    "dances": 352,
+    "sun_az_range": [
+     144.1,
+     263.2
+    ],
+    "best_slope": 1.07,
+    "slope_ci95": [
+     0.97,
+     1.16
+    ],
+    "offset_deg": -8.5,
+    "offset_slope1_deg": 7.3,
+    "circ_sd_fixed_angle": 55.4,
+    "circ_sd_slope1": 45.6,
+    "circ_sd_best": 45.6
+   },
+   {
+    "camera": 0,
+    "feeder": 2,
+    "dances": 305,
+    "sun_az_range": [
+     144.4,
+     265.1
+    ],
+    "best_slope": 0.53,
+    "slope_ci95": [
+     0.31,
+     0.73
+    ],
+    "offset_deg": -12.7,
+    "offset_slope1_deg": -126.6,
+    "circ_sd_fixed_angle": 34.8,
+    "circ_sd_slope1": 34.3,
+    "circ_sd_best": 32.4
+   },
+   {
+    "camera": 1,
+    "feeder": 1,
+    "dances": 73,
+    "sun_az_range": [
+     155.0,
+     263.2
+    ],
+    "best_slope": 0.92,
+    "slope_ci95": [
+     0.26,
+     1.36
+    ],
+    "offset_deg": 25.4,
+    "offset_slope1_deg": 6.9,
+    "circ_sd_fixed_angle": 55.6,
+    "circ_sd_slope1": 52.3,
+    "circ_sd_best": 52.3
+   },
+   {
+    "camera": 1,
+    "feeder": 2,
+    "dances": 63,
+    "sun_az_range": [
+     162.7,
+     265.5
+    ],
+    "best_slope": 1.11,
+    "slope_ci95": [
+     0.85,
+     1.62
+    ],
+    "offset_deg": -157.1,
+    "offset_slope1_deg": -131.0,
+    "circ_sd_fixed_angle": 43.1,
+    "circ_sd_slope1": 38.1,
+    "circ_sd_best": 38.0
+   }
+  ],
+  "separation_deg": {
+   "0": 133.9,
+   "1": 137.9
+  }
+ },
+ "points": [
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T12:31:23Z",
+   "sun_az": 209.32,
+   "angle": 102.72,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T12:41:58Z",
+   "sun_az": 212.78,
+   "angle": -76.77,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T14:47:43Z",
+   "sun_az": 246.56,
+   "angle": -88.93,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:54:49Z",
+   "sun_az": 233.03,
+   "angle": 9.11,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-23T14:21:37Z",
+   "sun_az": 241.28,
+   "angle": -109.57,
+   "runs": 15
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T12:13:48Z",
+   "sun_az": 203.37,
+   "angle": 144.13,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T13:54:36Z",
+   "sun_az": 234.07,
+   "angle": 68.08,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-27T11:17:35Z",
+   "sun_az": 183.34,
+   "angle": -47.29,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:27:24Z",
+   "sun_az": 255.36,
+   "angle": -84.31,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T13:54:10Z",
+   "sun_az": 233.96,
+   "angle": 99.93,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-26T15:40:15Z",
+   "sun_az": 258.59,
+   "angle": -28.04,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:34:36Z",
+   "sun_az": 242.72,
+   "angle": -114.14,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T15:06:56Z",
+   "sun_az": 250.1,
+   "angle": -102.78,
+   "runs": 27
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:30:52Z",
+   "sun_az": 241.54,
+   "angle": -98.5,
+   "runs": 43
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:00:53Z",
+   "sun_az": 234.19,
+   "angle": -118.6,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:05:28Z",
+   "sun_az": 235.35,
+   "angle": -104.46,
+   "runs": 40
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T12:31:40Z",
+   "sun_az": 209.0,
+   "angle": 92.15,
+   "runs": 17
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:35:18Z",
+   "sun_az": 227.84,
+   "angle": -125.53,
+   "runs": 40
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:59:19Z",
+   "sun_az": 234.19,
+   "angle": -114.43,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:30:14Z",
+   "sun_az": 226.11,
+   "angle": -75.76,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:49:06Z",
+   "sun_az": 231.15,
+   "angle": -117.42,
+   "runs": 20
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:09:37Z",
+   "sun_az": 236.38,
+   "angle": -109.66,
+   "runs": 83
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:37:45Z",
+   "sun_az": 243.16,
+   "angle": -93.94,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:47:49Z",
+   "sun_az": 245.49,
+   "angle": -112.72,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:48:41Z",
+   "sun_az": 155.42,
+   "angle": 157.62,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:48:35Z",
+   "sun_az": 244.75,
+   "angle": -85.31,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:48:46Z",
+   "sun_az": 244.79,
+   "angle": -102.26,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:21:30Z",
+   "sun_az": 239.3,
+   "angle": -100.94,
+   "runs": 21
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:06:25Z",
+   "sun_az": 248.72,
+   "angle": -114.08,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:42:29Z",
+   "sun_az": 244.56,
+   "angle": -92.31,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:47:57Z",
+   "sun_az": 245.82,
+   "angle": -120.68,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:53:09Z",
+   "sun_az": 247.01,
+   "angle": -108.44,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T15:03:33Z",
+   "sun_az": 249.35,
+   "angle": -93.59,
+   "runs": 34
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T14:52:47Z",
+   "sun_az": 247.72,
+   "angle": -96.29,
+   "runs": 28
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:02:23Z",
+   "sun_az": 249.89,
+   "angle": -95.49,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:36:12Z",
+   "sun_az": 228.08,
+   "angle": -124.63,
+   "runs": 15
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:41:16Z",
+   "sun_az": 243.08,
+   "angle": -125.32,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:05:43Z",
+   "sun_az": 219.45,
+   "angle": -121.9,
+   "runs": 49
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:37:17Z",
+   "sun_az": 228.38,
+   "angle": -135.54,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T15:04:37Z",
+   "sun_az": 249.58,
+   "angle": -100.35,
+   "runs": 30
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:41:55Z",
+   "sun_az": 229.26,
+   "angle": -106.46,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:16:28Z",
+   "sun_az": 238.07,
+   "angle": -118.49,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:47:58Z",
+   "sun_az": 155.19,
+   "angle": 161.71,
+   "runs": 15
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:53:22Z",
+   "sun_az": 156.89,
+   "angle": 163.57,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:45:09Z",
+   "sun_az": 243.97,
+   "angle": -105.91,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:40:14Z",
+   "sun_az": 242.84,
+   "angle": -117.78,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:06:44Z",
+   "sun_az": 235.66,
+   "angle": -111.41,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:11:19Z",
+   "sun_az": 236.81,
+   "angle": -113.52,
+   "runs": 37
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:30:05Z",
+   "sun_az": 149.69,
+   "angle": 132.54,
+   "runs": 17
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:54:12Z",
+   "sun_az": 246.02,
+   "angle": -98.31,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T14:59:10Z",
+   "sun_az": 249.17,
+   "angle": -103.47,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:05:11Z",
+   "sun_az": 219.29,
+   "angle": -132.19,
+   "runs": 48
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:13:02Z",
+   "sun_az": 221.58,
+   "angle": -131.66,
+   "runs": 40
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:26:22Z",
+   "sun_az": 225.37,
+   "angle": -99.12,
+   "runs": 43
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:52:58Z",
+   "sun_az": 246.97,
+   "angle": -92.2,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:23:10Z",
+   "sun_az": 224.47,
+   "angle": -72.62,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:54:58Z",
+   "sun_az": 247.42,
+   "angle": -89.44,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T15:04:36Z",
+   "sun_az": 249.58,
+   "angle": -98.06,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:18:56Z",
+   "sun_az": 238.67,
+   "angle": -94.89,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:32:51Z",
+   "sun_az": 242.01,
+   "angle": -110.99,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:35:04Z",
+   "sun_az": 241.65,
+   "angle": -109.54,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:40:13Z",
+   "sun_az": 242.84,
+   "angle": -117.78,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:52:35Z",
+   "sun_az": 245.65,
+   "angle": -113.35,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T15:03:30Z",
+   "sun_az": 249.34,
+   "angle": -89.66,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:03:51Z",
+   "sun_az": 234.94,
+   "angle": -108.35,
+   "runs": 32
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:31:12Z",
+   "sun_az": 241.62,
+   "angle": -118.38,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:54:06Z",
+   "sun_az": 247.23,
+   "angle": -105.06,
+   "runs": 29
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:58:45Z",
+   "sun_az": 248.27,
+   "angle": -106.26,
+   "runs": 48
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T15:03:26Z",
+   "sun_az": 249.32,
+   "angle": -99.57,
+   "runs": 91
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:37:22Z",
+   "sun_az": 243.07,
+   "angle": -100.03,
+   "runs": 17
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:50:43Z",
+   "sun_az": 231.58,
+   "angle": -96.79,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:32:05Z",
+   "sun_az": 241.83,
+   "angle": -93.52,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:58:34Z",
+   "sun_az": 246.99,
+   "angle": 169.67,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:05:27Z",
+   "sun_az": 248.51,
+   "angle": -67.5,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-23T14:06:01Z",
+   "sun_az": 237.35,
+   "angle": 77.06,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T12:54:09Z",
+   "sun_az": 216.65,
+   "angle": -160.68,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:00:58Z",
+   "sun_az": 234.21,
+   "angle": -119.74,
+   "runs": 98
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T15:00:26Z",
+   "sun_az": 248.34,
+   "angle": -103.11,
+   "runs": 52
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:28:46Z",
+   "sun_az": 149.29,
+   "angle": 146.24,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:40:35Z",
+   "sun_az": 152.9,
+   "angle": 161.8,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:20:12Z",
+   "sun_az": 165.54,
+   "angle": -173.35,
+   "runs": 67
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:41:02Z",
+   "sun_az": 243.03,
+   "angle": -123.14,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:45:15Z",
+   "sun_az": 243.99,
+   "angle": -116.27,
+   "runs": 21
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:54:40Z",
+   "sun_az": 246.12,
+   "angle": -121.56,
+   "runs": 34
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:21:04Z",
+   "sun_az": 254.0,
+   "angle": -85.53,
+   "runs": 27
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:33:19Z",
+   "sun_az": 256.62,
+   "angle": -105.48,
+   "runs": 20
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:57:21Z",
+   "sun_az": 233.69,
+   "angle": -94.21,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:59:37Z",
+   "sun_az": 234.27,
+   "angle": 15.83,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:06:18Z",
+   "sun_az": 248.7,
+   "angle": -104.23,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T11:42:20Z",
+   "sun_az": 192.23,
+   "angle": -166.74,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T12:11:47Z",
+   "sun_az": 202.68,
+   "angle": -100.24,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:18:28Z",
+   "sun_az": 223.14,
+   "angle": -129.18,
+   "runs": 31
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:29:45Z",
+   "sun_az": 226.31,
+   "angle": -124.81,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:43:49Z",
+   "sun_az": 230.13,
+   "angle": -117.89,
+   "runs": 28
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:57:32Z",
+   "sun_az": 233.73,
+   "angle": -110.55,
+   "runs": 51
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:57:10Z",
+   "sun_az": 247.92,
+   "angle": -105.46,
+   "runs": 89
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T13:42:11Z",
+   "sun_az": 230.2,
+   "angle": -135.92,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:19:39Z",
+   "sun_az": 223.48,
+   "angle": -129.01,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:30:49Z",
+   "sun_az": 226.61,
+   "angle": -116.75,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:52:21Z",
+   "sun_az": 246.83,
+   "angle": -93.61,
+   "runs": 23
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:57:05Z",
+   "sun_az": 247.9,
+   "angle": -92.32,
+   "runs": 41
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:33:56Z",
+   "sun_az": 227.12,
+   "angle": -126.96,
+   "runs": 31
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:39:29Z",
+   "sun_az": 228.61,
+   "angle": -122.88,
+   "runs": 70
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:05:56Z",
+   "sun_az": 235.46,
+   "angle": -116.23,
+   "runs": 102
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:13:38Z",
+   "sun_az": 237.38,
+   "angle": 124.33,
+   "runs": 24
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:51:59Z",
+   "sun_az": 156.46,
+   "angle": 171.29,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:16:14Z",
+   "sun_az": 164.24,
+   "angle": 167.37,
+   "runs": 43
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:58:11Z",
+   "sun_az": 233.9,
+   "angle": -113.23,
+   "runs": 16
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T15:06:09Z",
+   "sun_az": 249.92,
+   "angle": -91.99,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:32:58Z",
+   "sun_az": 226.85,
+   "angle": -123.07,
+   "runs": 34
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:47:38Z",
+   "sun_az": 230.77,
+   "angle": -124.57,
+   "runs": 35
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-10T16:12:35Z",
+   "sun_az": 262.76,
+   "angle": -123.01,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:10:06Z",
+   "sun_az": 162.25,
+   "angle": 159.91,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:44:09Z",
+   "sun_az": 243.74,
+   "angle": -122.46,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:49:09Z",
+   "sun_az": 244.88,
+   "angle": -126.35,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:20:42Z",
+   "sun_az": 253.92,
+   "angle": -87.83,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:07:29Z",
+   "sun_az": 251.03,
+   "angle": -95.38,
+   "runs": 71
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-22T13:11:29Z",
+   "sun_az": 222.29,
+   "angle": 78.14,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T11:41:02Z",
+   "sun_az": 191.76,
+   "angle": -160.06,
+   "runs": 38
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T12:48:32Z",
+   "sun_az": 214.28,
+   "angle": -139.68,
+   "runs": 110
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:35:37Z",
+   "sun_az": 227.92,
+   "angle": -128.13,
+   "runs": 62
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T11:53:38Z",
+   "sun_az": 196.29,
+   "angle": 107.01,
+   "runs": 44
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:43:33Z",
+   "sun_az": 230.06,
+   "angle": -122.77,
+   "runs": 124
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:17:52Z",
+   "sun_az": 222.97,
+   "angle": -127.99,
+   "runs": 85
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:45:00Z",
+   "sun_az": 230.45,
+   "angle": -117.66,
+   "runs": 55
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:50:30Z",
+   "sun_az": 231.9,
+   "angle": -105.41,
+   "runs": 88
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:32:01Z",
+   "sun_az": 242.11,
+   "angle": -95.49,
+   "runs": 52
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:37:54Z",
+   "sun_az": 243.5,
+   "angle": -87.69,
+   "runs": 30
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:58:21Z",
+   "sun_az": 248.18,
+   "angle": -102.85,
+   "runs": 55
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T15:03:53Z",
+   "sun_az": 249.42,
+   "angle": -99.15,
+   "runs": 80
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:41:24Z",
+   "sun_az": 244.01,
+   "angle": -101.43,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-04T11:44:01Z",
+   "sun_az": 193.19,
+   "angle": 53.98,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:51:46Z",
+   "sun_az": 246.39,
+   "angle": 120.15,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:28:05Z",
+   "sun_az": 225.85,
+   "angle": -118.28,
+   "runs": 24
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:43:10Z",
+   "sun_az": 229.96,
+   "angle": -120.04,
+   "runs": 57
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-10T16:14:30Z",
+   "sun_az": 263.14,
+   "angle": -117.01,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:33:45Z",
+   "sun_az": 227.07,
+   "angle": -130.91,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:03:37Z",
+   "sun_az": 234.88,
+   "angle": -110.48,
+   "runs": 50
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:26:08Z",
+   "sun_az": 148.5,
+   "angle": 158.37,
+   "runs": 37
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:33:22Z",
+   "sun_az": 150.69,
+   "angle": 140.29,
+   "runs": 29
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:39:08Z",
+   "sun_az": 152.45,
+   "angle": 174.4,
+   "runs": 27
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:45:35Z",
+   "sun_az": 154.45,
+   "angle": 141.24,
+   "runs": 48
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:53:27Z",
+   "sun_az": 156.92,
+   "angle": 165.59,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:06:08Z",
+   "sun_az": 160.97,
+   "angle": 141.74,
+   "runs": 46
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:19:25Z",
+   "sun_az": 165.28,
+   "angle": -173.39,
+   "runs": 57
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:11:12Z",
+   "sun_az": 144.08,
+   "angle": 145.96,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:27:13Z",
+   "sun_az": 148.82,
+   "angle": 156.85,
+   "runs": 45
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:45:08Z",
+   "sun_az": 243.97,
+   "angle": -116.56,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:50:21Z",
+   "sun_az": 245.15,
+   "angle": -143.44,
+   "runs": 27
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:55:51Z",
+   "sun_az": 246.38,
+   "angle": -126.71,
+   "runs": 55
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:20:09Z",
+   "sun_az": 165.52,
+   "angle": -160.7,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:01:14Z",
+   "sun_az": 247.58,
+   "angle": -115.99,
+   "runs": 30
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:01:00Z",
+   "sun_az": 247.53,
+   "angle": -117.46,
+   "runs": 13
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T14:46:58Z",
+   "sun_az": 246.38,
+   "angle": -86.33,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-30T12:02:30Z",
+   "sun_az": 199.42,
+   "angle": 17.77,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T12:52:57Z",
+   "sun_az": 215.63,
+   "angle": -127.21,
+   "runs": 100
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:11:44Z",
+   "sun_az": 221.21,
+   "angle": -122.33,
+   "runs": 70
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:29:58Z",
+   "sun_az": 241.62,
+   "angle": -83.3,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:52:30Z",
+   "sun_az": 246.86,
+   "angle": -97.38,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:51:19Z",
+   "sun_az": 231.73,
+   "angle": -110.71,
+   "runs": 28
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:09:18Z",
+   "sun_az": 236.3,
+   "angle": -119.81,
+   "runs": 64
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-21T15:53:27Z",
+   "sun_az": 262.18,
+   "angle": -67.71,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-23T14:04:42Z",
+   "sun_az": 237.01,
+   "angle": -151.49,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-23T14:09:17Z",
+   "sun_az": 238.19,
+   "angle": 112.34,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T13:11:30Z",
+   "sun_az": 221.96,
+   "angle": 73.12,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T13:24:53Z",
+   "sun_az": 225.88,
+   "angle": 166.51,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-10T15:58:13Z",
+   "sun_az": 259.83,
+   "angle": 116.14,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-10T16:13:12Z",
+   "sun_az": 262.88,
+   "angle": -108.25,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:12:52Z",
+   "sun_az": 144.57,
+   "angle": 126.71,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:24:09Z",
+   "sun_az": 147.9,
+   "angle": 136.23,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:42:40Z",
+   "sun_az": 153.54,
+   "angle": 143.31,
+   "runs": 20
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:48:53Z",
+   "sun_az": 155.48,
+   "angle": 150.47,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-26T15:11:56Z",
+   "sun_az": 252.5,
+   "angle": -65.04,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-21T15:45:59Z",
+   "sun_az": 260.63,
+   "angle": 111.73,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-22T13:06:49Z",
+   "sun_az": 220.87,
+   "angle": 120.03,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:25:10Z",
+   "sun_az": 225.04,
+   "angle": -103.4,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:33:42Z",
+   "sun_az": 242.51,
+   "angle": -101.65,
+   "runs": 28
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:38:38Z",
+   "sun_az": 243.67,
+   "angle": -107.91,
+   "runs": 57
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:57:26Z",
+   "sun_az": 247.98,
+   "angle": -102.41,
+   "runs": 116
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-23T14:10:09Z",
+   "sun_az": 238.41,
+   "angle": 81.45,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T12:49:45Z",
+   "sun_az": 215.27,
+   "angle": 101.25,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T13:38:15Z",
+   "sun_az": 229.65,
+   "angle": -70.19,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-27T14:40:45Z",
+   "sun_az": 245.26,
+   "angle": -112.12,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-27T15:15:19Z",
+   "sun_az": 253.08,
+   "angle": -126.81,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T14:42:49Z",
+   "sun_az": 245.58,
+   "angle": 124.98,
+   "runs": 24
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T14:47:52Z",
+   "sun_az": 246.75,
+   "angle": 113.82,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T14:53:24Z",
+   "sun_az": 248.02,
+   "angle": 126.17,
+   "runs": 42
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T15:14:55Z",
+   "sun_az": 252.83,
+   "angle": 130.17,
+   "runs": 80
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T15:23:23Z",
+   "sun_az": 254.67,
+   "angle": -80.11,
+   "runs": 18
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T15:45:27Z",
+   "sun_az": 259.34,
+   "angle": 130.26,
+   "runs": 36
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T14:52:42Z",
+   "sun_az": 247.7,
+   "angle": -93.66,
+   "runs": 32
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:30:38Z",
+   "sun_az": 256.05,
+   "angle": -103.68,
+   "runs": 51
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:48:13Z",
+   "sun_az": 245.89,
+   "angle": -90.5,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T12:54:52Z",
+   "sun_az": 216.88,
+   "angle": -136.22,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T13:27:52Z",
+   "sun_az": 226.73,
+   "angle": -145.81,
+   "runs": 16
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-04T13:33:44Z",
+   "sun_az": 227.18,
+   "angle": 26.38,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:31:49Z",
+   "sun_az": 226.54,
+   "angle": -116.6,
+   "runs": 64
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:38:45Z",
+   "sun_az": 228.42,
+   "angle": -130.56,
+   "runs": 46
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:45:40Z",
+   "sun_az": 230.25,
+   "angle": -136.32,
+   "runs": 111
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:03:38Z",
+   "sun_az": 234.88,
+   "angle": -108.64,
+   "runs": 67
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:08:57Z",
+   "sun_az": 236.22,
+   "angle": -113.83,
+   "runs": 173
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:22:48Z",
+   "sun_az": 224.37,
+   "angle": -79.13,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-22T13:30:23Z",
+   "sun_az": 227.83,
+   "angle": -123.45,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-23T13:45:00Z",
+   "sun_az": 231.78,
+   "angle": -105.8,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T14:29:50Z",
+   "sun_az": 242.98,
+   "angle": -105.84,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-26T15:23:48Z",
+   "sun_az": 255.09,
+   "angle": -158.31,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T15:02:39Z",
+   "sun_az": 250.11,
+   "angle": 129.85,
+   "runs": 36
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:55:10Z",
+   "sun_az": 157.46,
+   "angle": 150.75,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:14:56Z",
+   "sun_az": 163.82,
+   "angle": 153.22,
+   "runs": 44
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:47:56Z",
+   "sun_az": 244.6,
+   "angle": -113.25,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T14:34:47Z",
+   "sun_az": 243.53,
+   "angle": -89.29,
+   "runs": 64
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T14:41:47Z",
+   "sun_az": 245.18,
+   "angle": -84.55,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T14:47:46Z",
+   "sun_az": 246.57,
+   "angle": -87.19,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T14:53:47Z",
+   "sun_az": 247.95,
+   "angle": -89.35,
+   "runs": 38
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:06:08Z",
+   "sun_az": 250.73,
+   "angle": -96.14,
+   "runs": 17
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:11:53Z",
+   "sun_az": 252.0,
+   "angle": -87.67,
+   "runs": 74
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:19:58Z",
+   "sun_az": 253.76,
+   "angle": -85.82,
+   "runs": 37
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-26T15:21:38Z",
+   "sun_az": 254.62,
+   "angle": -161.15,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-27T11:04:45Z",
+   "sun_az": 178.65,
+   "angle": -174.35,
+   "runs": 15
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-27T11:11:26Z",
+   "sun_az": 181.09,
+   "angle": -138.22,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-27T11:18:01Z",
+   "sun_az": 183.49,
+   "angle": -62.32,
+   "runs": 16
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-21T15:35:20Z",
+   "sun_az": 258.4,
+   "angle": 91.57,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T11:36:45Z",
+   "sun_az": 190.2,
+   "angle": -170.84,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T13:11:19Z",
+   "sun_az": 221.9,
+   "angle": -159.78,
+   "runs": 15
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-21T15:54:35Z",
+   "sun_az": 262.41,
+   "angle": 65.07,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-22T12:59:51Z",
+   "sun_az": 218.72,
+   "angle": 76.48,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:17:48Z",
+   "sun_az": 253.29,
+   "angle": -103.14,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:29:49Z",
+   "sun_az": 255.88,
+   "angle": -107.36,
+   "runs": 35
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:58:42Z",
+   "sun_az": 248.26,
+   "angle": -105.16,
+   "runs": 49
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:38:37Z",
+   "sun_az": 243.66,
+   "angle": -108.34,
+   "runs": 56
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:53:49Z",
+   "sun_az": 247.16,
+   "angle": -105.77,
+   "runs": 38
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:51:33Z",
+   "sun_az": 245.42,
+   "angle": -174.84,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:11:19Z",
+   "sun_az": 249.79,
+   "angle": 120.88,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:25:56Z",
+   "sun_az": 252.94,
+   "angle": 96.53,
+   "runs": 35
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:11:42Z",
+   "sun_az": 236.9,
+   "angle": -113.89,
+   "runs": 70
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:42:49Z",
+   "sun_az": 244.34,
+   "angle": -127.56,
+   "runs": 62
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T12:49:12Z",
+   "sun_az": 214.49,
+   "angle": -135.83,
+   "runs": 187
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:18:14Z",
+   "sun_az": 223.08,
+   "angle": -126.98,
+   "runs": 78
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:50:07Z",
+   "sun_az": 231.8,
+   "angle": -107.24,
+   "runs": 58
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:31:12Z",
+   "sun_az": 241.92,
+   "angle": -88.1,
+   "runs": 18
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:37:34Z",
+   "sun_az": 243.42,
+   "angle": -98.82,
+   "runs": 50
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:52:36Z",
+   "sun_az": 246.89,
+   "angle": -96.69,
+   "runs": 24
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T15:02:41Z",
+   "sun_az": 249.15,
+   "angle": -102.09,
+   "runs": 125
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:28:29Z",
+   "sun_az": 240.97,
+   "angle": -125.62,
+   "runs": 32
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-27T11:13:34Z",
+   "sun_az": 181.87,
+   "angle": -43.06,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-27T14:57:45Z",
+   "sun_az": 249.17,
+   "angle": -98.02,
+   "runs": 44
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-27T15:08:01Z",
+   "sun_az": 251.47,
+   "angle": -101.49,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T15:00:19Z",
+   "sun_az": 249.59,
+   "angle": 4.41,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T15:04:59Z",
+   "sun_az": 250.63,
+   "angle": 134.62,
+   "runs": 16
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T15:40:08Z",
+   "sun_az": 258.23,
+   "angle": 113.67,
+   "runs": 13
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-28T16:04:05Z",
+   "sun_az": 263.18,
+   "angle": 134.2,
+   "runs": 67
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:01:55Z",
+   "sun_az": 249.79,
+   "angle": -100.92,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:07:22Z",
+   "sun_az": 251.0,
+   "angle": -95.0,
+   "runs": 47
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:27:39Z",
+   "sun_az": 255.42,
+   "angle": -101.92,
+   "runs": 184
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T12:34:58Z",
+   "sun_az": 210.05,
+   "angle": -135.89,
+   "runs": 60
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T12:48:58Z",
+   "sun_az": 214.42,
+   "angle": -136.84,
+   "runs": 164
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:04:11Z",
+   "sun_az": 219.0,
+   "angle": -136.08,
+   "runs": 131
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:12:02Z",
+   "sun_az": 221.29,
+   "angle": -123.24,
+   "runs": 105
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:19:41Z",
+   "sun_az": 223.49,
+   "angle": -127.89,
+   "runs": 79
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:27:44Z",
+   "sun_az": 225.75,
+   "angle": -123.03,
+   "runs": 62
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:42:37Z",
+   "sun_az": 229.81,
+   "angle": -115.42,
+   "runs": 85
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:51:53Z",
+   "sun_az": 232.27,
+   "angle": -105.69,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:37:38Z",
+   "sun_az": 228.12,
+   "angle": -141.51,
+   "runs": 53
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:50:49Z",
+   "sun_az": 231.6,
+   "angle": -111.99,
+   "runs": 85
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:06:43Z",
+   "sun_az": 235.66,
+   "angle": -127.31,
+   "runs": 70
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:28:52Z",
+   "sun_az": 241.07,
+   "angle": -111.8,
+   "runs": 97
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:42:55Z",
+   "sun_az": 244.36,
+   "angle": -131.63,
+   "runs": 64
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:46:43Z",
+   "sun_az": 230.53,
+   "angle": -126.07,
+   "runs": 62
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:11:07Z",
+   "sun_az": 236.76,
+   "angle": -111.68,
+   "runs": 77
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:31:05Z",
+   "sun_az": 241.59,
+   "angle": -99.29,
+   "runs": 49
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:28:09Z",
+   "sun_az": 240.89,
+   "angle": -114.21,
+   "runs": 194
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:56:00Z",
+   "sun_az": 247.34,
+   "angle": 88.72,
+   "runs": 13
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:29:55Z",
+   "sun_az": 241.31,
+   "angle": -106.67,
+   "runs": 101
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:29:06Z",
+   "sun_az": 241.12,
+   "angle": -113.03,
+   "runs": 55
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T15:01:00Z",
+   "sun_az": 248.46,
+   "angle": -104.37,
+   "runs": 83
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:37:03Z",
+   "sun_az": 228.31,
+   "angle": -124.28,
+   "runs": 56
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:44:10Z",
+   "sun_az": 230.23,
+   "angle": -117.97,
+   "runs": 81
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:52:00Z",
+   "sun_az": 232.3,
+   "angle": -112.68,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T12:27:15Z",
+   "sun_az": 207.59,
+   "angle": -86.44,
+   "runs": 34
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T12:33:35Z",
+   "sun_az": 209.61,
+   "angle": -124.54,
+   "runs": 180
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T12:51:27Z",
+   "sun_az": 215.18,
+   "angle": -129.97,
+   "runs": 179
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:07:42Z",
+   "sun_az": 220.03,
+   "angle": -130.75,
+   "runs": 172
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:16:46Z",
+   "sun_az": 222.66,
+   "angle": -121.44,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:31:19Z",
+   "sun_az": 226.74,
+   "angle": -133.68,
+   "runs": 28
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:36:29Z",
+   "sun_az": 228.16,
+   "angle": -123.42,
+   "runs": 71
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:41:36Z",
+   "sun_az": 229.54,
+   "angle": -98.22,
+   "runs": 58
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:36:21Z",
+   "sun_az": 243.13,
+   "angle": -100.01,
+   "runs": 68
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:46:32Z",
+   "sun_az": 245.5,
+   "angle": -92.73,
+   "runs": 80
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:53:30Z",
+   "sun_az": 247.09,
+   "angle": -100.85,
+   "runs": 107
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:35:16Z",
+   "sun_az": 227.48,
+   "angle": -95.41,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:43:17Z",
+   "sun_az": 229.62,
+   "angle": -113.65,
+   "runs": 31
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:04:11Z",
+   "sun_az": 235.02,
+   "angle": -102.47,
+   "runs": 68
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:29:59Z",
+   "sun_az": 241.33,
+   "angle": -106.94,
+   "runs": 80
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:41:40Z",
+   "sun_az": 244.07,
+   "angle": -104.27,
+   "runs": 32
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T15:04:00Z",
+   "sun_az": 249.13,
+   "angle": -87.52,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T14:52:49Z",
+   "sun_az": 247.73,
+   "angle": -90.45,
+   "runs": 34
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-29T15:14:10Z",
+   "sun_az": 252.5,
+   "angle": -83.02,
+   "runs": 31
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T12:52:48Z",
+   "sun_az": 215.59,
+   "angle": -130.5,
+   "runs": 176
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:08:34Z",
+   "sun_az": 220.29,
+   "angle": -121.06,
+   "runs": 139
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:17:58Z",
+   "sun_az": 223.0,
+   "angle": -127.21,
+   "runs": 87
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:25:54Z",
+   "sun_az": 225.24,
+   "angle": -85.33,
+   "runs": 91
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:45:08Z",
+   "sun_az": 230.49,
+   "angle": -116.92,
+   "runs": 54
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:50:37Z",
+   "sun_az": 231.93,
+   "angle": -98.37,
+   "runs": 100
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:41:53Z",
+   "sun_az": 153.3,
+   "angle": 143.49,
+   "runs": 21
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:19:23Z",
+   "sun_az": 165.27,
+   "angle": -179.35,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:36:44Z",
+   "sun_az": 242.04,
+   "angle": -109.64,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:40:38Z",
+   "sun_az": 242.94,
+   "angle": -103.48,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:48:35Z",
+   "sun_az": 244.75,
+   "angle": -115.38,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:53:51Z",
+   "sun_az": 245.94,
+   "angle": -117.82,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:57:25Z",
+   "sun_az": 246.73,
+   "angle": -121.76,
+   "runs": 20
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:01:07Z",
+   "sun_az": 247.56,
+   "angle": -107.86,
+   "runs": 29
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:09:52Z",
+   "sun_az": 236.45,
+   "angle": -110.78,
+   "runs": 60
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:51:33Z",
+   "sun_az": 231.79,
+   "angle": -110.68,
+   "runs": 41
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:31:12Z",
+   "sun_az": 241.62,
+   "angle": -95.69,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:22:17Z",
+   "sun_az": 166.22,
+   "angle": -177.49,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:01:28Z",
+   "sun_az": 247.63,
+   "angle": -116.88,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:05:13Z",
+   "sun_az": 248.46,
+   "angle": -71.23,
+   "runs": 28
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:31:26Z",
+   "sun_az": 241.67,
+   "angle": -107.22,
+   "runs": 59
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:16:15Z",
+   "sun_az": 145.56,
+   "angle": 112.68,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:24:19Z",
+   "sun_az": 147.95,
+   "angle": 108.38,
+   "runs": 16
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:35:45Z",
+   "sun_az": 151.41,
+   "angle": 35.14,
+   "runs": 58
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:41:38Z",
+   "sun_az": 153.22,
+   "angle": 146.46,
+   "runs": 40
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:53:26Z",
+   "sun_az": 156.91,
+   "angle": 164.1,
+   "runs": 36
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:53:43Z",
+   "sun_az": 245.91,
+   "angle": -119.94,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:57:54Z",
+   "sun_az": 246.84,
+   "angle": -127.54,
+   "runs": 20
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:02:26Z",
+   "sun_az": 247.85,
+   "angle": -119.64,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:34:28Z",
+   "sun_az": 151.02,
+   "angle": 144.02,
+   "runs": 15
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:49:45Z",
+   "sun_az": 155.75,
+   "angle": 144.29,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T09:54:02Z",
+   "sun_az": 157.1,
+   "angle": 151.83,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:05:47Z",
+   "sun_az": 160.85,
+   "angle": 142.39,
+   "runs": 45
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T10:17:01Z",
+   "sun_az": 164.5,
+   "angle": 167.84,
+   "runs": 37
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:52:46Z",
+   "sun_az": 245.69,
+   "angle": -115.98,
+   "runs": 21
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:57:04Z",
+   "sun_az": 246.66,
+   "angle": -119.86,
+   "runs": 43
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:02:36Z",
+   "sun_az": 247.88,
+   "angle": -117.65,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:52:04Z",
+   "sun_az": 245.54,
+   "angle": -108.86,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T14:28:36Z",
+   "sun_az": 241.0,
+   "angle": -123.47,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T15:05:07Z",
+   "sun_az": 248.44,
+   "angle": -67.16,
+   "runs": 32
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:52:25Z",
+   "sun_az": 232.41,
+   "angle": -82.31,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-02T13:54:38Z",
+   "sun_az": 232.98,
+   "angle": 34.82,
+   "runs": 36
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:43:56Z",
+   "sun_az": 244.9,
+   "angle": -107.07,
+   "runs": 128
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:52:31Z",
+   "sun_az": 246.87,
+   "angle": -100.02,
+   "runs": 66
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:58:23Z",
+   "sun_az": 248.19,
+   "angle": -109.74,
+   "runs": 107
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-11T14:41:25Z",
+   "sun_az": 243.12,
+   "angle": -117.96,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-21T15:55:45Z",
+   "sun_az": 262.65,
+   "angle": 43.87,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-22T13:11:09Z",
+   "sun_az": 222.19,
+   "angle": 69.87,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-23T14:08:16Z",
+   "sun_az": 237.93,
+   "angle": 83.9,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T12:12:00Z",
+   "sun_az": 202.75,
+   "angle": -85.61,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-25T13:05:49Z",
+   "sun_az": 220.25,
+   "angle": -83.59,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-26T15:14:56Z",
+   "sun_az": 253.16,
+   "angle": -20.56,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-08-26T15:40:37Z",
+   "sun_az": 258.67,
+   "angle": -12.75,
+   "runs": 38
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-03T14:59:49Z",
+   "sun_az": 248.51,
+   "angle": -111.5,
+   "runs": 244
+  },
+  {
+   "camera": 0,
+   "feeder": 1,
+   "time": "2019-09-05T13:49:00Z",
+   "sun_az": 231.13,
+   "angle": -118.3,
+   "runs": 79
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-23T14:09:41Z",
+   "sun_az": 238.29,
+   "angle": 132.94,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:12:42Z",
+   "sun_az": 222.1,
+   "angle": 94.56,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T14:08:47Z",
+   "sun_az": 237.46,
+   "angle": 103.09,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T14:20:56Z",
+   "sun_az": 240.49,
+   "angle": 119.65,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T14:48:38Z",
+   "sun_az": 246.93,
+   "angle": 120.11,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T14:53:22Z",
+   "sun_az": 248.01,
+   "angle": 124.86,
+   "runs": 35
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:41:37Z",
+   "sun_az": 258.54,
+   "angle": 133.38,
+   "runs": 24
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:47:07Z",
+   "sun_az": 259.69,
+   "angle": -124.51,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-04T12:35:33Z",
+   "sun_az": 210.14,
+   "angle": 22.37,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T10:45:33Z",
+   "sun_az": 171.81,
+   "angle": 115.41,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:06:20Z",
+   "sun_az": 250.93,
+   "angle": 141.43,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:15:21Z",
+   "sun_az": 252.92,
+   "angle": 110.13,
+   "runs": 18
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:24:23Z",
+   "sun_az": 254.88,
+   "angle": 130.16,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:35:33Z",
+   "sun_az": 257.26,
+   "angle": 98.19,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:21:01Z",
+   "sun_az": 205.76,
+   "angle": 87.42,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:31:52Z",
+   "sun_az": 209.36,
+   "angle": 89.69,
+   "runs": 13
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:15:04Z",
+   "sun_az": 238.74,
+   "angle": 104.71,
+   "runs": 30
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:06:09Z",
+   "sun_az": 263.6,
+   "angle": 128.66,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:17:12Z",
+   "sun_az": 239.27,
+   "angle": 107.26,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:17:48Z",
+   "sun_az": 251.2,
+   "angle": 104.71,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:45:43Z",
+   "sun_az": 231.16,
+   "angle": 117.95,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:10:41Z",
+   "sun_az": 237.64,
+   "angle": 103.54,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:50:02Z",
+   "sun_az": 245.99,
+   "angle": 119.75,
+   "runs": 32
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:15:09Z",
+   "sun_az": 251.58,
+   "angle": 119.11,
+   "runs": 60
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-22T13:14:38Z",
+   "sun_az": 223.23,
+   "angle": 153.9,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-22T13:24:14Z",
+   "sun_az": 226.06,
+   "angle": -172.54,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-22T13:23:38Z",
+   "sun_az": 225.89,
+   "angle": 77.17,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-22T13:35:54Z",
+   "sun_az": 229.4,
+   "angle": 83.08,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:54:06Z",
+   "sun_az": 261.13,
+   "angle": 126.35,
+   "runs": 44
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:32:14Z",
+   "sun_az": 254.27,
+   "angle": 95.64,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:36:31Z",
+   "sun_az": 228.91,
+   "angle": 101.33,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T14:48:32Z",
+   "sun_az": 246.91,
+   "angle": 132.63,
+   "runs": 54
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T14:52:48Z",
+   "sun_az": 247.89,
+   "angle": 125.04,
+   "runs": 47
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:04:50Z",
+   "sun_az": 250.6,
+   "angle": 124.46,
+   "runs": 30
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:12:26Z",
+   "sun_az": 252.28,
+   "angle": 133.6,
+   "runs": 48
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:34:35Z",
+   "sun_az": 257.06,
+   "angle": 129.89,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:42:25Z",
+   "sun_az": 258.71,
+   "angle": 135.01,
+   "runs": 74
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T14:23:40Z",
+   "sun_az": 240.11,
+   "angle": 110.04,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T14:51:44Z",
+   "sun_az": 246.69,
+   "angle": 131.07,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:58:11Z",
+   "sun_az": 247.83,
+   "angle": 116.91,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:38:44Z",
+   "sun_az": 255.64,
+   "angle": 114.24,
+   "runs": 18
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:13:04Z",
+   "sun_az": 238.24,
+   "angle": 105.2,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:45:52Z",
+   "sun_az": 213.88,
+   "angle": 84.17,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:24:31Z",
+   "sun_az": 252.64,
+   "angle": 127.44,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:20:04Z",
+   "sun_az": 252.64,
+   "angle": 125.5,
+   "runs": 43
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:39:47Z",
+   "sun_az": 229.55,
+   "angle": 71.42,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:44:11Z",
+   "sun_az": 230.74,
+   "angle": 104.86,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:07:20Z",
+   "sun_az": 236.8,
+   "angle": 123.76,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:12:39Z",
+   "sun_az": 238.14,
+   "angle": 116.26,
+   "runs": 15
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:07:05Z",
+   "sun_az": 251.1,
+   "angle": 133.89,
+   "runs": 16
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:20:51Z",
+   "sun_az": 254.12,
+   "angle": 133.34,
+   "runs": 23
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:30:48Z",
+   "sun_az": 256.26,
+   "angle": 119.46,
+   "runs": 18
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:45:31Z",
+   "sun_az": 259.36,
+   "angle": 127.74,
+   "runs": 23
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:50:10Z",
+   "sun_az": 260.32,
+   "angle": -177.1,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:09:13Z",
+   "sun_az": 264.22,
+   "angle": 141.43,
+   "runs": 32
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:15:09Z",
+   "sun_az": 238.76,
+   "angle": 113.63,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:42:33Z",
+   "sun_az": 256.44,
+   "angle": 107.35,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:22:22Z",
+   "sun_az": 254.45,
+   "angle": 96.81,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:39:55Z",
+   "sun_az": 229.59,
+   "angle": 73.88,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:58:59Z",
+   "sun_az": 262.14,
+   "angle": 139.66,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:29:11Z",
+   "sun_az": 254.6,
+   "angle": 136.03,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:58:12Z",
+   "sun_az": 158.43,
+   "angle": 36.13,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:09:11Z",
+   "sun_az": 249.33,
+   "angle": 101.69,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:17:54Z",
+   "sun_az": 251.22,
+   "angle": 103.21,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:32:11Z",
+   "sun_az": 254.26,
+   "angle": 96.66,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:17:29Z",
+   "sun_az": 251.13,
+   "angle": 109.41,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:38:40Z",
+   "sun_az": 255.63,
+   "angle": 114.28,
+   "runs": 24
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:51:39Z",
+   "sun_az": 260.63,
+   "angle": 156.66,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T16:04:01Z",
+   "sun_az": 262.17,
+   "angle": 88.52,
+   "runs": 18
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:53:52Z",
+   "sun_az": 246.86,
+   "angle": 119.32,
+   "runs": 75
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:24:27Z",
+   "sun_az": 253.59,
+   "angle": 119.15,
+   "runs": 99
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:25:20Z",
+   "sun_az": 148.26,
+   "angle": 124.67,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:48:45Z",
+   "sun_az": 155.44,
+   "angle": 151.57,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-23T13:49:33Z",
+   "sun_az": 233.01,
+   "angle": -122.88,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T10:08:09Z",
+   "sun_az": 161.62,
+   "angle": 58.02,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T10:13:46Z",
+   "sun_az": 163.44,
+   "angle": 159.75,
+   "runs": 28
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:34:02Z",
+   "sun_az": 254.65,
+   "angle": 102.16,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:52:22Z",
+   "sun_az": 260.78,
+   "angle": 122.87,
+   "runs": 94
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:38:13Z",
+   "sun_az": 255.53,
+   "angle": 124.59,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:21:52Z",
+   "sun_az": 224.77,
+   "angle": 82.09,
+   "runs": 44
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:32:57Z",
+   "sun_az": 227.92,
+   "angle": 106.87,
+   "runs": 65
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:37:50Z",
+   "sun_az": 229.27,
+   "angle": 101.94,
+   "runs": 35
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:42:24Z",
+   "sun_az": 230.52,
+   "angle": 93.9,
+   "runs": 43
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T14:41:50Z",
+   "sun_az": 245.51,
+   "angle": 123.26,
+   "runs": 21
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:18:36Z",
+   "sun_az": 252.33,
+   "angle": 122.59,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:26:23Z",
+   "sun_az": 254.0,
+   "angle": 125.39,
+   "runs": 131
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:02:51Z",
+   "sun_az": 250.16,
+   "angle": 116.64,
+   "runs": 21
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:15:42Z",
+   "sun_az": 253.0,
+   "angle": 126.54,
+   "runs": 65
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:26:39Z",
+   "sun_az": 255.37,
+   "angle": 131.96,
+   "runs": 23
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:50:00Z",
+   "sun_az": 260.29,
+   "angle": 161.72,
+   "runs": 46
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:48:15Z",
+   "sun_az": 231.83,
+   "angle": 105.43,
+   "runs": 29
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:52:13Z",
+   "sun_az": 232.89,
+   "angle": 98.15,
+   "runs": 28
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:59:38Z",
+   "sun_az": 218.17,
+   "angle": 95.92,
+   "runs": 17
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:05:28Z",
+   "sun_az": 219.94,
+   "angle": 95.48,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:18:22Z",
+   "sun_az": 223.76,
+   "angle": 112.89,
+   "runs": 31
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:25:56Z",
+   "sun_az": 225.94,
+   "angle": 112.01,
+   "runs": 38
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:32:52Z",
+   "sun_az": 227.89,
+   "angle": 107.87,
+   "runs": 55
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:45:21Z",
+   "sun_az": 231.32,
+   "angle": 112.6,
+   "runs": 18
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:57:19Z",
+   "sun_az": 234.5,
+   "angle": 105.58,
+   "runs": 55
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T14:32:09Z",
+   "sun_az": 243.06,
+   "angle": -170.34,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T14:38:25Z",
+   "sun_az": 244.55,
+   "angle": 117.06,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T14:58:13Z",
+   "sun_az": 249.12,
+   "angle": 159.79,
+   "runs": 36
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:02:43Z",
+   "sun_az": 250.13,
+   "angle": 121.76,
+   "runs": 74
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:15:22Z",
+   "sun_az": 252.93,
+   "angle": 120.8,
+   "runs": 37
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:25:35Z",
+   "sun_az": 255.14,
+   "angle": 124.47,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:40:16Z",
+   "sun_az": 229.68,
+   "angle": 94.07,
+   "runs": 42
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:02:57Z",
+   "sun_az": 235.68,
+   "angle": 99.4,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-02T13:47:01Z",
+   "sun_az": 230.99,
+   "angle": 111.99,
+   "runs": 77
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T14:23:37Z",
+   "sun_az": 240.1,
+   "angle": 112.79,
+   "runs": 13
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:03:31Z",
+   "sun_az": 249.34,
+   "angle": -94.0,
+   "runs": 31
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:17:20Z",
+   "sun_az": 252.37,
+   "angle": 113.59,
+   "runs": 101
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:27:11Z",
+   "sun_az": 254.5,
+   "angle": 108.17,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:33:53Z",
+   "sun_az": 255.92,
+   "angle": 117.97,
+   "runs": 73
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:41:13Z",
+   "sun_az": 257.46,
+   "angle": 115.19,
+   "runs": 76
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:49:28Z",
+   "sun_az": 259.18,
+   "angle": 122.4,
+   "runs": 57
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:55:15Z",
+   "sun_az": 260.37,
+   "angle": 119.18,
+   "runs": 54
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T16:03:34Z",
+   "sun_az": 262.08,
+   "angle": 124.31,
+   "runs": 20
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:29:31Z",
+   "sun_az": 254.99,
+   "angle": 124.37,
+   "runs": 46
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:35:55Z",
+   "sun_az": 256.35,
+   "angle": 127.31,
+   "runs": 31
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-04T12:01:41Z",
+   "sun_az": 199.17,
+   "angle": 62.61,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:46:32Z",
+   "sun_az": 258.57,
+   "angle": 122.31,
+   "runs": 74
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T16:01:42Z",
+   "sun_az": 261.7,
+   "angle": 131.88,
+   "runs": 62
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-04T16:19:05Z",
+   "sun_az": 265.05,
+   "angle": 100.32,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:42:49Z",
+   "sun_az": 244.34,
+   "angle": 130.76,
+   "runs": 64
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:49:43Z",
+   "sun_az": 245.92,
+   "angle": 120.78,
+   "runs": 114
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:11:09Z",
+   "sun_az": 250.7,
+   "angle": 123.63,
+   "runs": 98
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:27:04Z",
+   "sun_az": 254.15,
+   "angle": 127.31,
+   "runs": 76
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:30:21Z",
+   "sun_az": 227.19,
+   "angle": 104.35,
+   "runs": 105
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:38:02Z",
+   "sun_az": 229.33,
+   "angle": 97.16,
+   "runs": 82
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T14:37:32Z",
+   "sun_az": 244.5,
+   "angle": 101.07,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T14:45:18Z",
+   "sun_az": 246.16,
+   "angle": 106.83,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:15:36Z",
+   "sun_az": 252.98,
+   "angle": 127.63,
+   "runs": 56
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:24:35Z",
+   "sun_az": 254.92,
+   "angle": 128.44,
+   "runs": 92
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:34:15Z",
+   "sun_az": 256.99,
+   "angle": 129.04,
+   "runs": 63
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:41:11Z",
+   "sun_az": 258.45,
+   "angle": 130.61,
+   "runs": 165
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:49:16Z",
+   "sun_az": 260.14,
+   "angle": 137.08,
+   "runs": 153
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:03:57Z",
+   "sun_az": 263.15,
+   "angle": 131.74,
+   "runs": 106
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:12:31Z",
+   "sun_az": 264.89,
+   "angle": 125.05,
+   "runs": 44
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:03:07Z",
+   "sun_az": 250.22,
+   "angle": 124.86,
+   "runs": 61
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:15:52Z",
+   "sun_az": 253.04,
+   "angle": 129.37,
+   "runs": 59
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:40:57Z",
+   "sun_az": 258.4,
+   "angle": 134.1,
+   "runs": 136
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:48:19Z",
+   "sun_az": 259.94,
+   "angle": 146.58,
+   "runs": 109
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:07:11Z",
+   "sun_az": 263.81,
+   "angle": 139.8,
+   "runs": 114
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:48:15Z",
+   "sun_az": 231.83,
+   "angle": 110.46,
+   "runs": 45
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:58:57Z",
+   "sun_az": 234.65,
+   "angle": 103.49,
+   "runs": 28
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:06:10Z",
+   "sun_az": 236.5,
+   "angle": 109.85,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:13:43Z",
+   "sun_az": 238.4,
+   "angle": 113.0,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:59:16Z",
+   "sun_az": 261.2,
+   "angle": 130.18,
+   "runs": 57
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:22:32Z",
+   "sun_az": 253.17,
+   "angle": 121.55,
+   "runs": 236
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-10T16:09:26Z",
+   "sun_az": 262.12,
+   "angle": 117.37,
+   "runs": 43
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:12:19Z",
+   "sun_az": 144.41,
+   "angle": 7.59,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:15:12Z",
+   "sun_az": 145.25,
+   "angle": 100.72,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:25:04Z",
+   "sun_az": 148.18,
+   "angle": 75.84,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:36:07Z",
+   "sun_az": 151.53,
+   "angle": 34.04,
+   "runs": 51
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:47:27Z",
+   "sun_az": 155.03,
+   "angle": 59.75,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:53:15Z",
+   "sun_az": 156.86,
+   "angle": 162.46,
+   "runs": 21
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:22:39Z",
+   "sun_az": 252.24,
+   "angle": 111.68,
+   "runs": 20
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:27:47Z",
+   "sun_az": 253.33,
+   "angle": 103.04,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:37:17Z",
+   "sun_az": 255.34,
+   "angle": 122.88,
+   "runs": 13
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:23:53Z",
+   "sun_az": 240.91,
+   "angle": 147.28,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T13:38:02Z",
+   "sun_az": 228.22,
+   "angle": -147.78,
+   "runs": 33
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T13:43:48Z",
+   "sun_az": 229.76,
+   "angle": -117.55,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:51:40Z",
+   "sun_az": 246.36,
+   "angle": 119.3,
+   "runs": 119
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:59:25Z",
+   "sun_az": 248.11,
+   "angle": 122.6,
+   "runs": 33
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:09:55Z",
+   "sun_az": 250.43,
+   "angle": 135.57,
+   "runs": 29
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:16:19Z",
+   "sun_az": 251.83,
+   "angle": 121.76,
+   "runs": 41
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:22:43Z",
+   "sun_az": 253.21,
+   "angle": 118.14,
+   "runs": 79
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-22T13:11:17Z",
+   "sun_az": 222.23,
+   "angle": 58.18,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:05:51Z",
+   "sun_az": 200.59,
+   "angle": 78.73,
+   "runs": 15
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:11:46Z",
+   "sun_az": 221.82,
+   "angle": 65.01,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:07:16Z",
+   "sun_az": 263.83,
+   "angle": 139.18,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:12:06Z",
+   "sun_az": 264.81,
+   "angle": 126.52,
+   "runs": 96
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:47:35Z",
+   "sun_az": 231.66,
+   "angle": 96.23,
+   "runs": 20
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:51:38Z",
+   "sun_az": 232.73,
+   "angle": 97.37,
+   "runs": 50
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:23:45Z",
+   "sun_az": 240.88,
+   "angle": 161.21,
+   "runs": 26
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:15:28Z",
+   "sun_az": 238.84,
+   "angle": 107.47,
+   "runs": 60
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:10:55Z",
+   "sun_az": 264.57,
+   "angle": 126.7,
+   "runs": 27
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:06:26Z",
+   "sun_az": 236.57,
+   "angle": 114.21,
+   "runs": 30
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:52:19Z",
+   "sun_az": 246.51,
+   "angle": 119.36,
+   "runs": 92
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-10T16:10:51Z",
+   "sun_az": 262.4,
+   "angle": 110.31,
+   "runs": 23
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:26:36Z",
+   "sun_az": 254.05,
+   "angle": 126.5,
+   "runs": 113
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:36:34Z",
+   "sun_az": 151.66,
+   "angle": 37.1,
+   "runs": 40
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:55:22Z",
+   "sun_az": 157.53,
+   "angle": 142.89,
+   "runs": 16
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:23:37Z",
+   "sun_az": 252.45,
+   "angle": 113.47,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:26:58Z",
+   "sun_az": 253.16,
+   "angle": 106.9,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:52:24Z",
+   "sun_az": 232.94,
+   "angle": 95.1,
+   "runs": 18
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T14:39:12Z",
+   "sun_az": 244.89,
+   "angle": 101.1,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:13:19Z",
+   "sun_az": 252.48,
+   "angle": 128.71,
+   "runs": 195
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:43:42Z",
+   "sun_az": 258.98,
+   "angle": 132.6,
+   "runs": 101
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:51:53Z",
+   "sun_az": 260.68,
+   "angle": 122.06,
+   "runs": 162
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:10:13Z",
+   "sun_az": 264.43,
+   "angle": 118.94,
+   "runs": 130
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:48:57Z",
+   "sun_az": 232.02,
+   "angle": 105.33,
+   "runs": 95
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:54:12Z",
+   "sun_az": 246.94,
+   "angle": 120.33,
+   "runs": 60
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:03:51Z",
+   "sun_az": 249.1,
+   "angle": -96.64,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:13:28Z",
+   "sun_az": 251.21,
+   "angle": 121.5,
+   "runs": 87
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-10T15:58:57Z",
+   "sun_az": 259.98,
+   "angle": 99.64,
+   "runs": 42
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:23:00Z",
+   "sun_az": 147.56,
+   "angle": 12.33,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:45:10Z",
+   "sun_az": 154.32,
+   "angle": 37.95,
+   "runs": 17
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:11:47Z",
+   "sun_az": 249.9,
+   "angle": 133.77,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:22:02Z",
+   "sun_az": 252.11,
+   "angle": 115.97,
+   "runs": 24
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:27:47Z",
+   "sun_az": 253.33,
+   "angle": 100.0,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:25:53Z",
+   "sun_az": 225.92,
+   "angle": 113.69,
+   "runs": 45
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:32:59Z",
+   "sun_az": 227.93,
+   "angle": 107.52,
+   "runs": 79
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:40:07Z",
+   "sun_az": 258.23,
+   "angle": 135.71,
+   "runs": 46
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:44:01Z",
+   "sun_az": 259.04,
+   "angle": 126.62,
+   "runs": 87
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:56:21Z",
+   "sun_az": 261.6,
+   "angle": 135.29,
+   "runs": 138
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T15:25:59Z",
+   "sun_az": 255.06,
+   "angle": -85.01,
+   "runs": 16
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T15:29:25Z",
+   "sun_az": 255.79,
+   "angle": -104.51,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:32:28Z",
+   "sun_az": 256.61,
+   "angle": 128.63,
+   "runs": 34
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:37:13Z",
+   "sun_az": 257.62,
+   "angle": -142.14,
+   "runs": 43
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:07:42Z",
+   "sun_az": 263.92,
+   "angle": 143.26,
+   "runs": 103
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:57:32Z",
+   "sun_az": 247.69,
+   "angle": 125.93,
+   "runs": 88
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:22:49Z",
+   "sun_az": 253.23,
+   "angle": 116.88,
+   "runs": 75
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-10T15:42:03Z",
+   "sun_az": 256.49,
+   "angle": 99.13,
+   "runs": 15
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-10T15:50:53Z",
+   "sun_az": 258.33,
+   "angle": 109.74,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-10T16:01:13Z",
+   "sun_az": 260.45,
+   "angle": 99.68,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-10T16:09:16Z",
+   "sun_az": 262.08,
+   "angle": 118.14,
+   "runs": 34
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:05:13Z",
+   "sun_az": 248.46,
+   "angle": 108.23,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:09:23Z",
+   "sun_az": 249.37,
+   "angle": 112.19,
+   "runs": 35
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:16:28Z",
+   "sun_az": 250.91,
+   "angle": 107.44,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:22:21Z",
+   "sun_az": 252.18,
+   "angle": 112.04,
+   "runs": 28
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:27:30Z",
+   "sun_az": 253.27,
+   "angle": 97.75,
+   "runs": 16
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:32:24Z",
+   "sun_az": 254.31,
+   "angle": 113.48,
+   "runs": 29
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:38:52Z",
+   "sun_az": 255.67,
+   "angle": 115.11,
+   "runs": 33
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-21T15:47:58Z",
+   "sun_az": 261.05,
+   "angle": 90.78,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-22T13:19:25Z",
+   "sun_az": 224.65,
+   "angle": -140.81,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-25T13:16:26Z",
+   "sun_az": 223.42,
+   "angle": 167.9,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-25T13:25:27Z",
+   "sun_az": 226.04,
+   "angle": -174.32,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-25T14:24:43Z",
+   "sun_az": 241.73,
+   "angle": -76.53,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T11:55:14Z",
+   "sun_az": 196.88,
+   "angle": 121.58,
+   "runs": 17
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:25:49Z",
+   "sun_az": 207.37,
+   "angle": 84.73,
+   "runs": 34
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:37:03Z",
+   "sun_az": 211.05,
+   "angle": 99.95,
+   "runs": 16
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:55:32Z",
+   "sun_az": 216.91,
+   "angle": 96.98,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:07:29Z",
+   "sun_az": 220.55,
+   "angle": 83.25,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:32:26Z",
+   "sun_az": 227.77,
+   "angle": 106.91,
+   "runs": 68
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-22T12:47:32Z",
+   "sun_az": 214.82,
+   "angle": 76.54,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-25T12:37:31Z",
+   "sun_az": 211.34,
+   "angle": 84.29,
+   "runs": 4
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-26T15:02:02Z",
+   "sun_az": 250.3,
+   "angle": 82.9,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T11:52:03Z",
+   "sun_az": 195.76,
+   "angle": 69.12,
+   "runs": 43
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:02:21Z",
+   "sun_az": 199.37,
+   "angle": 78.68,
+   "runs": 34
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:21:58Z",
+   "sun_az": 206.08,
+   "angle": 84.34,
+   "runs": 71
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T12:53:49Z",
+   "sun_az": 216.38,
+   "angle": 146.38,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:09:27Z",
+   "sun_az": 221.13,
+   "angle": 67.31,
+   "runs": 42
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T11:01:23Z",
+   "sun_az": 177.54,
+   "angle": 64.61,
+   "runs": 29
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:18:00Z",
+   "sun_az": 251.24,
+   "angle": 90.59,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:23:42Z",
+   "sun_az": 252.46,
+   "angle": 104.94,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:28:43Z",
+   "sun_az": 253.53,
+   "angle": 99.22,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:34:09Z",
+   "sun_az": 254.68,
+   "angle": 104.48,
+   "runs": 12
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-25T12:00:47Z",
+   "sun_az": 198.83,
+   "angle": 106.56,
+   "runs": 29
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:55:30Z",
+   "sun_az": 234.03,
+   "angle": 103.62,
+   "runs": 29
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:49:22Z",
+   "sun_az": 260.16,
+   "angle": 139.39,
+   "runs": 25
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:11:31Z",
+   "sun_az": 264.69,
+   "angle": 121.97,
+   "runs": 52
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:27:15Z",
+   "sun_az": 255.5,
+   "angle": 127.38,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:43:12Z",
+   "sun_az": 258.87,
+   "angle": 128.47,
+   "runs": 69
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:39:04Z",
+   "sun_az": 229.36,
+   "angle": 83.32,
+   "runs": 49
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:41:13Z",
+   "sun_az": 256.16,
+   "angle": 101.9,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:27:05Z",
+   "sun_az": 254.15,
+   "angle": 127.18,
+   "runs": 72
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:50:26Z",
+   "sun_az": 155.97,
+   "angle": 5.94,
+   "runs": 18
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:03:50Z",
+   "sun_az": 248.16,
+   "angle": 128.45,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:09:37Z",
+   "sun_az": 249.42,
+   "angle": 123.51,
+   "runs": 22
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:14:40Z",
+   "sun_az": 250.52,
+   "angle": 106.67,
+   "runs": 7
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:19:54Z",
+   "sun_az": 251.65,
+   "angle": 109.51,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:26:06Z",
+   "sun_az": 252.98,
+   "angle": 111.74,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:36:51Z",
+   "sun_az": 255.25,
+   "angle": 124.74,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:41:40Z",
+   "sun_az": 256.25,
+   "angle": 98.03,
+   "runs": 21
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T14:42:25Z",
+   "sun_az": 245.49,
+   "angle": 123.65,
+   "runs": 32
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:17:18Z",
+   "sun_az": 253.35,
+   "angle": 129.77,
+   "runs": 9
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:24:52Z",
+   "sun_az": 254.99,
+   "angle": 125.79,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:47:58Z",
+   "sun_az": 259.87,
+   "angle": 125.68,
+   "runs": 31
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:52:23Z",
+   "sun_az": 260.78,
+   "angle": 121.95,
+   "runs": 109
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:06:42Z",
+   "sun_az": 263.71,
+   "angle": 134.85,
+   "runs": 77
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:11:30Z",
+   "sun_az": 264.69,
+   "angle": 123.51,
+   "runs": 56
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:39:55Z",
+   "sun_az": 229.59,
+   "angle": 75.31,
+   "runs": 35
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:47:29Z",
+   "sun_az": 231.63,
+   "angle": 98.33,
+   "runs": 37
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:50:57Z",
+   "sun_az": 232.55,
+   "angle": 103.6,
+   "runs": 34
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:15:15Z",
+   "sun_az": 238.79,
+   "angle": 104.38,
+   "runs": 50
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:22:25Z",
+   "sun_az": 240.55,
+   "angle": 122.72,
+   "runs": 17
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:14:16Z",
+   "sun_az": 251.71,
+   "angle": 121.62,
+   "runs": 49
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:19:56Z",
+   "sun_az": 252.94,
+   "angle": 118.13,
+   "runs": 92
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:32:44Z",
+   "sun_az": 255.68,
+   "angle": 119.63,
+   "runs": 104
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:48:04Z",
+   "sun_az": 258.89,
+   "angle": 122.52,
+   "runs": 98
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:53:50Z",
+   "sun_az": 260.08,
+   "angle": 116.33,
+   "runs": 56
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-03T15:59:56Z",
+   "sun_az": 261.34,
+   "angle": 130.23,
+   "runs": 55
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:04:17Z",
+   "sun_az": 263.22,
+   "angle": 138.19,
+   "runs": 53
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:56:03Z",
+   "sun_az": 234.17,
+   "angle": 126.46,
+   "runs": 8
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:53:48Z",
+   "sun_az": 261.07,
+   "angle": 128.76,
+   "runs": 64
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T15:59:40Z",
+   "sun_az": 262.28,
+   "angle": 126.31,
+   "runs": 37
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:22:50Z",
+   "sun_az": 239.62,
+   "angle": -104.55,
+   "runs": 23
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:29:18Z",
+   "sun_az": 241.17,
+   "angle": -115.25,
+   "runs": 43
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:51:30Z",
+   "sun_az": 246.32,
+   "angle": 119.86,
+   "runs": 105
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T14:59:46Z",
+   "sun_az": 248.19,
+   "angle": 115.36,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:11:18Z",
+   "sun_az": 250.74,
+   "angle": 124.4,
+   "runs": 39
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-05T15:17:41Z",
+   "sun_az": 252.13,
+   "angle": 123.67,
+   "runs": 19
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-10T16:03:52Z",
+   "sun_az": 260.99,
+   "angle": 118.64,
+   "runs": 11
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-10T16:11:35Z",
+   "sun_az": 262.55,
+   "angle": 138.86,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:22:35Z",
+   "sun_az": 147.44,
+   "angle": 16.85,
+   "runs": 5
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T09:29:29Z",
+   "sun_az": 149.51,
+   "angle": 130.13,
+   "runs": 14
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T10:20:00Z",
+   "sun_az": 165.48,
+   "angle": -165.67,
+   "runs": 54
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-09-11T15:29:13Z",
+   "sun_az": 253.64,
+   "angle": 109.68,
+   "runs": 10
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-28T16:13:00Z",
+   "sun_az": 264.99,
+   "angle": 129.86,
+   "runs": 17
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T13:59:31Z",
+   "sun_az": 234.79,
+   "angle": -22.98,
+   "runs": 15
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-29T14:21:37Z",
+   "sun_az": 240.36,
+   "angle": 122.04,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-21T15:18:49Z",
+   "sun_az": 254.85,
+   "angle": 52.31,
+   "runs": 6
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-21T15:37:51Z",
+   "sun_az": 258.93,
+   "angle": 149.06,
+   "runs": 3
+  },
+  {
+   "camera": 0,
+   "feeder": 2,
+   "time": "2019-08-27T13:29:30Z",
+   "sun_az": 226.95,
+   "angle": 103.47,
+   "runs": 92
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:30:57Z",
+   "sun_az": 228.0,
+   "angle": -119.27,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-23T14:27:04Z",
+   "sun_az": 242.62,
+   "angle": -60.22,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-25T13:20:00Z",
+   "sun_az": 224.47,
+   "angle": -131.82,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-03T14:48:58Z",
+   "sun_az": 246.06,
+   "angle": -95.26,
+   "runs": 13
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:07:12Z",
+   "sun_az": 235.78,
+   "angle": -95.71,
+   "runs": 7
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:50:43Z",
+   "sun_az": 231.96,
+   "angle": -64.48,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:51:00Z",
+   "sun_az": 232.03,
+   "angle": -64.48,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:32:20Z",
+   "sun_az": 241.89,
+   "angle": -101.93,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:34:36Z",
+   "sun_az": 242.42,
+   "angle": -85.07,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-29T14:47:54Z",
+   "sun_az": 246.6,
+   "angle": 179.62,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-29T14:58:03Z",
+   "sun_az": 248.92,
+   "angle": -175.01,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-29T15:28:37Z",
+   "sun_az": 255.62,
+   "angle": -100.21,
+   "runs": 10
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-03T15:02:53Z",
+   "sun_az": 249.2,
+   "angle": -96.48,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:06:39Z",
+   "sun_az": 219.72,
+   "angle": -127.59,
+   "runs": 17
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-11T09:47:20Z",
+   "sun_az": 155.0,
+   "angle": -33.15,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:29:30Z",
+   "sun_az": 241.22,
+   "angle": 113.14,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T13:46:08Z",
+   "sun_az": 230.38,
+   "angle": 103.48,
+   "runs": 8
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:17:46Z",
+   "sun_az": 238.39,
+   "angle": 122.83,
+   "runs": 12
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-29T15:29:03Z",
+   "sun_az": 255.72,
+   "angle": -103.72,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:12:25Z",
+   "sun_az": 221.41,
+   "angle": -118.69,
+   "runs": 9
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-03T14:58:00Z",
+   "sun_az": 248.11,
+   "angle": -98.09,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-03T14:53:42Z",
+   "sun_az": 247.14,
+   "angle": -97.12,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:42:47Z",
+   "sun_az": 244.33,
+   "angle": -87.5,
+   "runs": 9
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:30:18Z",
+   "sun_az": 241.41,
+   "angle": -104.17,
+   "runs": 10
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-03T14:39:47Z",
+   "sun_az": 243.94,
+   "angle": -97.59,
+   "runs": 12
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:42:30Z",
+   "sun_az": 244.26,
+   "angle": -93.36,
+   "runs": 8
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T13:40:16Z",
+   "sun_az": 228.82,
+   "angle": -113.18,
+   "runs": 8
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T15:04:22Z",
+   "sun_az": 249.21,
+   "angle": 43.77,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:37:33Z",
+   "sun_az": 228.45,
+   "angle": -131.56,
+   "runs": 7
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:54:11Z",
+   "sun_az": 232.87,
+   "angle": -116.2,
+   "runs": 7
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:56:14Z",
+   "sun_az": 233.4,
+   "angle": 101.59,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:34:10Z",
+   "sun_az": 228.91,
+   "angle": 103.3,
+   "runs": 13
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:37:38Z",
+   "sun_az": 228.47,
+   "angle": -137.16,
+   "runs": 7
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:31:39Z",
+   "sun_az": 241.73,
+   "angle": -98.67,
+   "runs": 13
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:30:48Z",
+   "sun_az": 227.95,
+   "angle": -119.27,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-11T09:58:47Z",
+   "sun_az": 158.61,
+   "angle": 174.05,
+   "runs": 16
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-21T15:31:02Z",
+   "sun_az": 257.48,
+   "angle": -104.15,
+   "runs": 10
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:12:41Z",
+   "sun_az": 222.65,
+   "angle": -106.08,
+   "runs": 9
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:27:15Z",
+   "sun_az": 226.94,
+   "angle": -141.09,
+   "runs": 15
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-23T14:15:22Z",
+   "sun_az": 239.73,
+   "angle": -87.37,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-25T12:13:55Z",
+   "sun_az": 203.41,
+   "angle": 152.1,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-25T13:40:54Z",
+   "sun_az": 230.38,
+   "angle": -178.73,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T12:57:01Z",
+   "sun_az": 217.84,
+   "angle": -136.54,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:25:38Z",
+   "sun_az": 226.47,
+   "angle": -118.13,
+   "runs": 7
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:35:12Z",
+   "sun_az": 229.2,
+   "angle": -122.5,
+   "runs": 20
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-27T15:21:50Z",
+   "sun_az": 254.5,
+   "angle": -99.01,
+   "runs": 7
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-28T15:29:00Z",
+   "sun_az": 255.87,
+   "angle": -84.89,
+   "runs": 16
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:11:39Z",
+   "sun_az": 222.34,
+   "angle": -114.22,
+   "runs": 8
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:35:26Z",
+   "sun_az": 229.27,
+   "angle": -123.53,
+   "runs": 19
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-21T15:21:36Z",
+   "sun_az": 255.46,
+   "angle": -117.3,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:18:12Z",
+   "sun_az": 224.29,
+   "angle": -126.34,
+   "runs": 14
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-21T15:07:29Z",
+   "sun_az": 252.36,
+   "angle": -88.84,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-03T14:48:24Z",
+   "sun_az": 245.93,
+   "angle": -100.34,
+   "runs": 16
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T13:39:23Z",
+   "sun_az": 228.59,
+   "angle": -126.7,
+   "runs": 13
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:13:33Z",
+   "sun_az": 237.36,
+   "angle": -95.46,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-03T14:59:45Z",
+   "sun_az": 248.5,
+   "angle": -79.18,
+   "runs": 22
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-03T14:29:33Z",
+   "sun_az": 241.52,
+   "angle": -107.32,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-28T15:09:52Z",
+   "sun_az": 251.72,
+   "angle": 163.6,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:37:28Z",
+   "sun_az": 228.43,
+   "angle": -131.49,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:58:49Z",
+   "sun_az": 234.06,
+   "angle": -121.63,
+   "runs": 20
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:22:51Z",
+   "sun_az": 239.62,
+   "angle": -92.82,
+   "runs": 22
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-02T13:57:49Z",
+   "sun_az": 233.81,
+   "angle": -91.97,
+   "runs": 8
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-03T14:30:58Z",
+   "sun_az": 241.86,
+   "angle": -96.95,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-03T15:00:28Z",
+   "sun_az": 248.66,
+   "angle": -71.55,
+   "runs": 35
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T13:48:08Z",
+   "sun_az": 230.9,
+   "angle": 145.52,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:27:56Z",
+   "sun_az": 240.84,
+   "angle": 109.99,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:36:20Z",
+   "sun_az": 242.83,
+   "angle": 110.07,
+   "runs": 17
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-05T14:13:08Z",
+   "sun_az": 237.25,
+   "angle": -100.62,
+   "runs": 13
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-11T10:21:19Z",
+   "sun_az": 165.91,
+   "angle": 179.8,
+   "runs": 36
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-11T09:59:45Z",
+   "sun_az": 158.92,
+   "angle": 169.49,
+   "runs": 22
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-09-11T10:22:05Z",
+   "sun_az": 166.16,
+   "angle": 177.94,
+   "runs": 33
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-21T15:58:32Z",
+   "sun_az": 263.22,
+   "angle": 84.76,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 1,
+   "time": "2019-08-22T13:12:26Z",
+   "sun_az": 222.57,
+   "angle": -120.6,
+   "runs": 8
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-22T13:34:11Z",
+   "sun_az": 228.91,
+   "angle": 103.3,
+   "runs": 13
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-27T13:12:13Z",
+   "sun_az": 221.96,
+   "angle": 101.51,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-27T14:07:26Z",
+   "sun_az": 237.12,
+   "angle": 117.59,
+   "runs": 8
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-02T12:50:20Z",
+   "sun_az": 214.84,
+   "angle": 69.56,
+   "runs": 38
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T14:45:35Z",
+   "sun_az": 244.97,
+   "angle": 75.92,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T15:09:39Z",
+   "sun_az": 250.38,
+   "angle": 115.64,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-03T14:43:47Z",
+   "sun_az": 244.87,
+   "angle": 89.9,
+   "runs": 12
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-03T14:52:21Z",
+   "sun_az": 246.83,
+   "angle": 124.04,
+   "runs": 7
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T13:43:48Z",
+   "sun_az": 229.76,
+   "angle": 76.85,
+   "runs": 7
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T13:45:49Z",
+   "sun_az": 230.29,
+   "angle": 83.6,
+   "runs": 10
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T13:53:18Z",
+   "sun_az": 232.25,
+   "angle": 96.59,
+   "runs": 11
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T14:36:12Z",
+   "sun_az": 242.8,
+   "angle": 109.14,
+   "runs": 19
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-03T15:42:00Z",
+   "sun_az": 257.63,
+   "angle": 150.41,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T13:45:02Z",
+   "sun_az": 230.09,
+   "angle": 109.5,
+   "runs": 7
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T15:09:19Z",
+   "sun_az": 250.3,
+   "angle": 123.22,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-28T14:57:35Z",
+   "sun_az": 248.97,
+   "angle": 92.56,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T14:16:16Z",
+   "sun_az": 238.02,
+   "angle": 108.32,
+   "runs": 46
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T15:00:58Z",
+   "sun_az": 248.45,
+   "angle": 117.08,
+   "runs": 9
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T15:08:54Z",
+   "sun_az": 250.21,
+   "angle": 110.86,
+   "runs": 26
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T15:16:01Z",
+   "sun_az": 251.77,
+   "angle": 120.26,
+   "runs": 42
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-22T13:32:04Z",
+   "sun_az": 228.31,
+   "angle": 96.92,
+   "runs": 7
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-22T13:34:46Z",
+   "sun_az": 229.08,
+   "angle": -118.27,
+   "runs": 12
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-28T15:52:03Z",
+   "sun_az": 260.71,
+   "angle": 107.68,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T15:18:50Z",
+   "sun_az": 252.38,
+   "angle": 133.92,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-28T15:45:54Z",
+   "sun_az": 259.44,
+   "angle": 88.55,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-03T15:53:17Z",
+   "sun_az": 259.97,
+   "angle": 135.84,
+   "runs": 32
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T14:28:27Z",
+   "sun_az": 240.97,
+   "angle": 118.84,
+   "runs": 17
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T14:57:06Z",
+   "sun_az": 247.59,
+   "angle": 140.51,
+   "runs": 29
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T15:05:32Z",
+   "sun_az": 249.47,
+   "angle": -117.72,
+   "runs": 9
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-02T12:58:49Z",
+   "sun_az": 217.4,
+   "angle": 78.01,
+   "runs": 62
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-02T13:09:02Z",
+   "sun_az": 220.42,
+   "angle": 77.96,
+   "runs": 11
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-02T13:25:14Z",
+   "sun_az": 225.05,
+   "angle": 82.66,
+   "runs": 30
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-02T13:40:24Z",
+   "sun_az": 229.22,
+   "angle": 90.16,
+   "runs": 30
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-02T13:56:07Z",
+   "sun_az": 233.37,
+   "angle": 94.48,
+   "runs": 11
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-03T15:04:15Z",
+   "sun_az": 249.5,
+   "angle": 101.22,
+   "runs": 32
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-03T15:10:55Z",
+   "sun_az": 250.97,
+   "angle": 122.59,
+   "runs": 29
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T15:24:12Z",
+   "sun_az": 253.53,
+   "angle": 112.84,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-21T15:48:30Z",
+   "sun_az": 261.16,
+   "angle": 108.29,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-29T14:27:48Z",
+   "sun_az": 241.86,
+   "angle": 71.97,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T15:15:36Z",
+   "sun_az": 251.68,
+   "angle": 119.4,
+   "runs": 24
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T15:24:41Z",
+   "sun_az": 253.64,
+   "angle": 114.93,
+   "runs": 9
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-22T13:33:57Z",
+   "sun_az": 228.85,
+   "angle": 86.42,
+   "runs": 16
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-25T12:55:48Z",
+   "sun_az": 217.17,
+   "angle": -61.13,
+   "runs": 8
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-05T14:51:10Z",
+   "sun_az": 246.25,
+   "angle": 129.89,
+   "runs": 15
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-22T13:33:32Z",
+   "sun_az": 228.73,
+   "angle": 87.95,
+   "runs": 13
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-27T13:42:30Z",
+   "sun_az": 230.55,
+   "angle": 117.11,
+   "runs": 12
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-27T14:27:44Z",
+   "sun_az": 242.15,
+   "angle": 143.35,
+   "runs": 13
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-22T12:48:31Z",
+   "sun_az": 215.13,
+   "angle": 96.76,
+   "runs": 12
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-22T12:55:17Z",
+   "sun_az": 217.29,
+   "angle": 82.71,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-26T16:13:57Z",
+   "sun_az": 265.51,
+   "angle": 141.92,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-27T11:42:41Z",
+   "sun_az": 192.42,
+   "angle": 50.78,
+   "runs": 21
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-28T15:29:22Z",
+   "sun_az": 255.95,
+   "angle": -178.33,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-29T13:55:44Z",
+   "sun_az": 233.81,
+   "angle": 109.51,
+   "runs": 6
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-03T15:27:17Z",
+   "sun_az": 254.52,
+   "angle": 116.05,
+   "runs": 35
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-11T10:11:21Z",
+   "sun_az": 162.65,
+   "angle": 44.96,
+   "runs": 14
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-22T13:08:57Z",
+   "sun_az": 221.52,
+   "angle": 103.32,
+   "runs": 4
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-22T13:14:59Z",
+   "sun_az": 223.34,
+   "angle": 87.61,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-29T14:27:05Z",
+   "sun_az": 241.69,
+   "angle": -12.17,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-29T14:38:28Z",
+   "sun_az": 244.4,
+   "angle": 135.19,
+   "runs": 3
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-09-02T12:58:17Z",
+   "sun_az": 217.24,
+   "angle": 80.46,
+   "runs": 43
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-21T15:20:58Z",
+   "sun_az": 255.32,
+   "angle": -99.07,
+   "runs": 5
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-21T15:29:50Z",
+   "sun_az": 257.23,
+   "angle": -112.97,
+   "runs": 20
+  },
+  {
+   "camera": 1,
+   "feeder": 2,
+   "time": "2019-08-27T13:10:56Z",
+   "sun_az": 221.58,
+   "angle": 92.27,
+   "runs": 17
+  }
+ ],
+ "method": "Waggle phases were assigned to a dance when they came from the same camera, fell between the dance's start and end times and lay within 60 px of its median position. Each dance angle is the circular mean of its waggle phases. Sun azimuth was computed with the NOAA solar-position equations at 52.456\u00b0 N, 13.296\u00b0 E (between the two feeders listed in the log; the hive coordinates are not given). For each camera and feeder the slope k in angle = c + k\u00b7azimuth was chosen by maximising the mean resultant length of the residuals over k \u2208 [\u22122, 2]; 95% intervals from 300 bootstrap resamples of dances.",
+ "limits": "A slope of +1 rather than \u22121 reflects the camera's image-coordinate convention. This is an exploratory reanalysis, not a reproduction of the paper's waggle-drift results."
+}

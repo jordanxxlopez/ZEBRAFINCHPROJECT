@@ -1,0 +1,104 @@
+{
+ "species": "egyptian-fruit-bat",
+ "title": "Egyptian rousette (Rousettus aegyptiacus) ex vivo brain MRI, Animal Brain Collection sub-07",
+ "dims": [
+  181,
+  167,
+  187
+ ],
+ "spacing_mm": [
+  0.15,
+  0.15,
+  0.15
+ ],
+ "axes": {
+  "x": "left \u2192 right",
+  "y": "posterior \u2192 anterior",
+  "z": "inferior \u2192 superior"
+ },
+ "flip_display": {
+  "y": true,
+  "z": true
+ },
+ "images": [
+  {
+   "file": "image-t2.u8.gz",
+   "name": "T2-weighted RARE, fixed brain (run 1)",
+   "window_source_units": [
+    926.0526275634766,
+    14496.6904296875
+   ],
+   "kind": "measured"
+  }
+ ],
+ "diffusion": {
+  "dims": [
+   108,
+   120,
+   100
+  ],
+  "spacing_mm": [
+   0.25,
+   0.25,
+   0.25
+  ],
+  "images": [
+   {
+    "file": "image-b0.u8.gz",
+    "name": "Diffusion b = 0 image (mean of 5)",
+    "kind": "measured"
+   },
+   {
+    "file": "image-fa.u8.gz",
+    "name": "Fractional anisotropy (computed here)",
+    "kind": "derived",
+    "scale": "0\u20131 mapped to 0\u2013255"
+   },
+   {
+    "file": "image-dec-{c}.u8.gz",
+    "name": "Direction-encoded colour FA (computed here)",
+    "kind": "derived",
+    "channels": [
+     "r",
+     "g",
+     "b"
+    ]
+   }
+  ],
+  "fa_in_mask": {
+   "median": 0.14,
+   "p95": 0.336,
+   "voxels": 543881
+  },
+  "note": "Separate acquisition grid (0.25 mm). Not registered to the T2 volume, so the two are shown side by side, never overlaid."
+ },
+ "labels": null,
+ "regions": [],
+ "meshes": null,
+ "mesh_units": "mm",
+ "provenance": {
+  "dataset": "OpenNeuro ds005431 (Animal Brain Collection), sub-07ERousetteAdult, doi:10.18112/openneuro.ds005431.v1.3.0",
+  "citation": "Tsurugizawa T, Komaki Y, Aota I, Suematsu M, Ohtaka-Maruyama C, Kumamoto T. (2025) A cross-species brain magnetic resonance imaging and histology database of vertebrates. Scientific Data 12:1206. doi:10.1038/s41597-025-05540-5",
+  "licence": "CC0 (dataset_description.json)",
+  "sha256": {
+   "sub-07_run-01_T2w.nii.gz": "aeb2ed78d653536ec6391bc3b362ae88b2eaa33d7fa9ab5b47621262f1996c12",
+   "sub-07_dwi.nii": "a22398a322c1ddeba73a2e9665d1c1c56e87895370f04abdd4eef5398f231b89",
+   "sub-07_dwi.bval": "883e513ea8779061e14667cba9208828881c28b2bb031d5faaff53f45134b429",
+   "sub-07_dwi.bvec": "be5fc13f7197a2768c416d9572c3dcf076495c821798d96cbfa504804fcfbccf"
+  }
+ },
+ "processing": [
+  "T2 volume reoriented to RAS and resampled from 0.1 mm to 0.15 mm (linear) to keep the download small.",
+  "No anatomical labels exist for this specimen, so no regions are drawn. The scan is of a fixed head (skull, eyes and surrounding tissue are visible), so no 3D brain surface is offered.",
+  "Diffusion tensor fitted by ordinary least squares on log signal (b \u2248 2000 s/mm\u00b2, 30 directions, 5 b0). FA and principal-direction colour are derived values.",
+  "Gradient vectors were assumed to be in voxel axes and re-signed for the reorientation; the colour map should be read qualitatively."
+ ],
+ "sizes_bytes": {
+  "image-t2.u8.gz": 3176286,
+  "image-fa.u8.gz": 502297,
+  "image-b0.u8.gz": 577281,
+  "image-dec-r.u8.gz": 486057,
+  "image-dec-g.u8.gz": 454330,
+  "image-dec-b.u8.gz": 460424
+ }
+}

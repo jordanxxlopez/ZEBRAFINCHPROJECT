@@ -8,4 +8,7 @@
 - The canonical static source is `website/dist/`. GitHub Pages publishes the copy in `docs/`. Run `python3 scripts/sync_github_pages.py` after edits. Check actual browser behavior and mobile layout before publishing.
 - Preserve existing hash routes. The interface uses self-hosted Source Sans 3 under the SIL OFL; avoid serif display typography. Favor specific labels and readable research content over generic marketing sections.
 
-- The shared collection selector and URL species parameter coordinate audio, literature, atlas availability and films. Brain atlases is a species directory; do not silently show zebra finch anatomy as another species. State when data have not been acquired.
+- Six species collections (zebra finch, sperm whale, Egyptian fruit bat, common marmoset, house mouse, western honeybee). Species text and references live in `website/dist/js/content.js`; every factual sentence must cite a DOI verified against Crossref and screened for retractions.
+- Brain atlases is a species directory. Never show one species' anatomy as another's, never register atlases to each other, and state when no open atlas exists (currently the sperm whale). The bat scan is an unlabelled fixed head: do not draw regions or assert anatomical axes.
+- Research review entries must state the claim, the data used (with checksums), the method, the result and its limits, using the verdict scale in `content.js`. A discrepancy is never presented as misconduct.
+- Rebuild derived data with `scripts/build_atlases.py` and `scripts/build_collections.py` from originals in `data/raw/` (see `research/sources-2026-11.json`).

@@ -1,0 +1,107 @@
+[
+ {
+  "species": "zebra-finch",
+  "name": "Poirier et al. 3D MRI atlas (2008)",
+  "url": "https://doi.org/10.1016/j.neuroimage.2008.01.069",
+  "licence": "See research/acquisition-manifest.json",
+  "use": "Brain atlas sections and surfaces"
+ },
+ {
+  "species": "zebra-finch",
+  "name": "ML4BL zebra finch perceptual dataset",
+  "url": "https://doi.org/10.5281/zenodo.5545872",
+  "licence": "See research/acquisition-manifest.json",
+  "use": "887 syllables; perceptual-choice baseline"
+ },
+ {
+  "species": "zebra-finch",
+  "name": "eLife supplementary videos (Hamaguchi 2014; Gill 2015)",
+  "url": "https://doi.org/10.7554/eLife.01833",
+  "licence": "CC BY 3.0 / CC BY 4.0",
+  "use": "Video page; HVC reading guide"
+ },
+ {
+  "species": "sperm-whale",
+  "name": "DSWP coda table and supplementary recordings",
+  "url": "https://doi.org/10.1038/s41467-024-47221-8",
+  "licence": "See media/marine-recordings.json",
+  "use": "Coda reading guide; field recordings"
+ },
+ {
+  "species": "egyptian-fruit-bat",
+  "name": "Prat et al. annotated vocalization dataset (figshare collection 3666502)",
+  "url": "https://doi.org/10.6084/m9.figshare.c.3666502",
+  "licence": "CC0",
+  "use": "Example recordings, behaviour videos, annotation recount"
+ },
+ {
+  "species": "egyptian-fruit-bat",
+  "name": "Animal Brain Collection, OpenNeuro ds005431, sub-07ERousetteAdult",
+  "url": "https://doi.org/10.18112/openneuro.ds005431.v1.3.0",
+  "licence": "CC0",
+  "use": "Ex vivo T2 MRI; diffusion tensor maps"
+ },
+ {
+  "species": "common-marmoset",
+  "name": "MarmAudio (Zenodo 15017207, v6)",
+  "url": "https://doi.org/10.5281/zenodo.15017207",
+  "licence": "CC BY 4.0",
+  "use": "Example calls; annotation recount"
+ },
+ {
+  "species": "common-marmoset",
+  "name": "Brain/MINDS BMA 2017 ex vivo atlas",
+  "url": "https://doi.org/10.24475/bma.2799",
+  "licence": "CC BY 4.0",
+  "use": "MRI, Nissl, 558 regions, surfaces"
+ },
+ {
+  "species": "house-mouse",
+  "name": "Allen Mouse Brain CCFv3 (2017 annotation, 50 µm) and structure meshes",
+  "url": "https://download.alleninstitute.org/informatics-archive/current-release/mouse_ccf/",
+  "licence": "Allen Institute Terms of Use (non-commercial, with citation)",
+  "use": "Template, annotation, surfaces"
+ },
+ {
+  "species": "house-mouse",
+  "name": "BootSnap evaluation recordings (Zenodo 5771669)",
+  "url": "https://doi.org/10.5281/zenodo.5771669",
+  "licence": "CC BY 4.0",
+  "use": "USV excerpts (time-expanded)"
+ },
+ {
+  "species": "house-mouse",
+  "name": "Separation slang call tables (Zenodo 17491957)",
+  "url": "https://doi.org/10.5281/zenodo.17491957",
+  "licence": "CC BY-SA 4.0",
+  "use": "Low-frequency call check"
+ },
+ {
+  "species": "honeybee",
+  "name": "Honeybee Standard Brain surfaces, InsectBrainDB",
+  "url": "https://insectbraindb.org/app/",
+  "licence": "CC BY-NC 4.0",
+  "use": "3D surfaces"
+ },
+ {
+  "species": "honeybee",
+  "name": "Dormagen et al. waggle-dance data (Zenodo 7928121)",
+  "url": "https://doi.org/10.5281/zenodo.7928121",
+  "licence": "CC BY 4.0",
+  "use": "Dance angle vs. sun reanalysis"
+ },
+ {
+  "species": "honeybee",
+  "name": "Waggle-run sound recordings (Zenodo 7678084)",
+  "url": "https://doi.org/10.5281/zenodo.7678084",
+  "licence": "CC BY 4.0",
+  "use": "Example sounds"
+ },
+ {
+  "species": "all",
+  "name": "Species photographs, Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/",
+  "licence": "CC0 / CC BY-SA (per image; see media/photography-manifest-2026-11.json)",
+  "use": "Species pages"
+ }
+]

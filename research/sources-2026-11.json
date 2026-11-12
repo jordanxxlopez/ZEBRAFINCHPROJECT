@@ -1,0 +1,266 @@
+{
+ "retrieved": "2026-11-12",
+ "note": "Original downloads are not committed; re-download from the URLs and compare checksums.",
+ "sources": [
+  {
+   "species": "zebra-finch",
+   "name": "Poirier et al. 3D MRI atlas (2008)",
+   "url": "https://doi.org/10.1016/j.neuroimage.2008.01.069",
+   "licence": "See research/acquisition-manifest.json",
+   "use": "Brain atlas sections and surfaces",
+   "files": []
+  },
+  {
+   "species": "zebra-finch",
+   "name": "ML4BL zebra finch perceptual dataset",
+   "url": "https://doi.org/10.5281/zenodo.5545872",
+   "licence": "See research/acquisition-manifest.json",
+   "use": "887 syllables; perceptual-choice baseline",
+   "files": []
+  },
+  {
+   "species": "zebra-finch",
+   "name": "eLife supplementary videos (Hamaguchi 2014; Gill 2015)",
+   "url": "https://doi.org/10.7554/eLife.01833",
+   "licence": "CC BY 3.0 / CC BY 4.0",
+   "use": "Video page; HVC reading guide",
+   "files": []
+  },
+  {
+   "species": "sperm-whale",
+   "name": "DSWP coda table and supplementary recordings",
+   "url": "https://doi.org/10.1038/s41467-024-47221-8",
+   "licence": "See media/marine-recordings.json",
+   "use": "Coda reading guide; field recordings",
+   "files": []
+  },
+  {
+   "species": "egyptian-fruit-bat",
+   "name": "Prat et al. annotated vocalization dataset (figshare collection 3666502)",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502",
+   "licence": "CC0",
+   "use": "Example recordings, behaviour videos, annotation recount",
+   "files": [
+    {
+     "path": "data/raw/bat/Annotations.csv",
+     "bytes": 3286405,
+     "sha256": "e53558a459c1ed5484ce57b24fb94c2b78fb3988aace6971aa6ade10dc7f3b24"
+    },
+    {
+     "path": "data/raw/bat/FileInfo.csv",
+     "bytes": 31574701,
+     "sha256": "753529d166f8cbb6f900fa54d3d5122d1e47bae5d6be59669e37f33e4cc1ed34"
+    },
+    {
+     "path": "data/raw/bat/Metadata.pdf",
+     "bytes": 367257,
+     "sha256": "d3aba4bb60b372ba7409854dcc8b5f297df58c1b61c741bb6df765d3ad818f47"
+    }
+   ]
+  },
+  {
+   "species": "egyptian-fruit-bat",
+   "name": "Animal Brain Collection, OpenNeuro ds005431, sub-07ERousetteAdult",
+   "url": "https://doi.org/10.18112/openneuro.ds005431.v1.3.0",
+   "licence": "CC0",
+   "use": "Ex vivo T2 MRI; diffusion tensor maps",
+   "files": [
+    {
+     "path": "data/raw/bat/sub-07_run-01_T2w.nii.gz",
+     "bytes": 66670276,
+     "sha256": "aeb2ed78d653536ec6391bc3b362ae88b2eaa33d7fa9ab5b47621262f1996c12"
+    },
+    {
+     "path": "data/raw/bat/sub-07_dwi.nii",
+     "bytes": 90720352,
+     "sha256": "a22398a322c1ddeba73a2e9665d1c1c56e87895370f04abdd4eef5398f231b89"
+    },
+    {
+     "path": "data/raw/bat/sub-07_dwi.bval",
+     "bytes": 245,
+     "sha256": "883e513ea8779061e14667cba9208828881c28b2bb031d5faaff53f45134b429"
+    },
+    {
+     "path": "data/raw/bat/sub-07_dwi.bvec",
+     "bytes": 894,
+     "sha256": "be5fc13f7197a2768c416d9572c3dcf076495c821798d96cbfa504804fcfbccf"
+    }
+   ]
+  },
+  {
+   "species": "common-marmoset",
+   "name": "MarmAudio (Zenodo 15017207, v6)",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "use": "Example calls; annotation recount",
+   "files": [
+    {
+     "path": "data/raw/marmoset/Annotations.tsv",
+     "bytes": 68488599,
+     "sha256": "8ee81f84c592239c9a68d83fe34ef4007ffc9d9a1712557a86f9c4ee10df12f7"
+    },
+    {
+     "path": "data/raw/marmoset/Audio_Examples.zip",
+     "bytes": 20494767,
+     "sha256": "1d9fb5a7091d8b3a0cbc2694bf9cc00f7966068b3f982fc8ecc27c5c7306d6b3"
+    },
+    {
+     "path": "data/raw/marmoset/Metadata.pdf",
+     "bytes": 347392,
+     "sha256": "a05753be8604e5045b529194dfd833ba2e6be1fd5544c7f2e1135634eab68054"
+    }
+   ]
+  },
+  {
+   "species": "common-marmoset",
+   "name": "Brain/MINDS BMA 2017 ex vivo atlas",
+   "url": "https://doi.org/10.24475/bma.2799",
+   "licence": "CC BY 4.0",
+   "use": "MRI, Nissl, 558 regions, surfaces",
+   "files": [
+    {
+     "path": "data/raw/marmoset/bma-1-mri.nii.gz",
+     "bytes": 33754185,
+     "sha256": "b4e18b7aedf642a3cf39bfb03c0c57abc2f331193c52a3afde4d4ec40be4057c"
+    },
+    {
+     "path": "data/raw/marmoset/bma-1-nissl.nii.gz",
+     "bytes": 38686329,
+     "sha256": "5ebf19c4f9c425e53a08e2db6d23e9f1a15a044e6d00098e2a6b46d1f9fdb074"
+    },
+    {
+     "path": "data/raw/marmoset/bma-1-region_seg.nii.gz",
+     "bytes": 2174501,
+     "sha256": "8e0515d2c2414586244de5d1ffe1a01178d1bdbe24c90f00283773f19c52aafe"
+    },
+    {
+     "path": "data/raw/marmoset/bma-1-clut.ctbl",
+     "bytes": 91704,
+     "sha256": "04e5df3c718c34fdfba96fdae5ec52edf609477946960709ccec49383cad0cb2"
+    }
+   ]
+  },
+  {
+   "species": "house-mouse",
+   "name": "Allen Mouse Brain CCFv3 (2017 annotation, 50 µm) and structure meshes",
+   "url": "https://download.alleninstitute.org/informatics-archive/current-release/mouse_ccf/",
+   "licence": "Allen Institute Terms of Use (non-commercial, with citation)",
+   "use": "Template, annotation, surfaces",
+   "files": [
+    {
+     "path": "data/raw/mouse/average_template_50.nrrd",
+     "bytes": 5346363,
+     "sha256": "6114c341d526f9782ca93b314b3244bb0c4c6cea17045f432d4cda63339915aa"
+    },
+    {
+     "path": "data/raw/mouse/annotation_50.nrrd",
+     "bytes": 880845,
+     "sha256": "84e7cecea1b03af16e923c3639602b8324929f833425ba03582bf56f962ea0d4"
+    },
+    {
+     "path": "data/raw/mouse/structure_graph_1.json",
+     "bytes": 637735,
+     "sha256": "b5f0d024d1df09ee18aef15093f55240f4a70b3924ee9689add612dadff80386"
+    }
+   ]
+  },
+  {
+   "species": "house-mouse",
+   "name": "BootSnap evaluation recordings (Zenodo 5771669)",
+   "url": "https://doi.org/10.5281/zenodo.5771669",
+   "licence": "CC BY 4.0",
+   "use": "USV excerpts (time-expanded)",
+   "files": [
+    {
+     "path": "data/raw/mouse/abbasi_0020.WAV",
+     "bytes": 179930082,
+     "sha256": "939621c7250050635e222af36e20c7c7f1a2701c71302ba1047cf60b8b31a81e"
+    }
+   ]
+  },
+  {
+   "species": "house-mouse",
+   "name": "Separation slang call tables (Zenodo 17491957)",
+   "url": "https://doi.org/10.5281/zenodo.17491957",
+   "licence": "CC BY-SA 4.0",
+   "use": "Low-frequency call check",
+   "files": [
+    {
+     "path": "data/raw/mouse/breslav_call_data.tar.gz",
+     "bytes": 386319,
+     "sha256": "a7257ab2ccdd6188f207f0879a201b97504acc8e433b56dcfb5c7d4d56da9ee4"
+    }
+   ]
+  },
+  {
+   "species": "honeybee",
+   "name": "Honeybee Standard Brain surfaces, InsectBrainDB",
+   "url": "https://insectbraindb.org/app/",
+   "licence": "CC BY-NC 4.0",
+   "use": "3D surfaces",
+   "files": [
+    {
+     "path": "data/raw/honeybee/meshes/manifest.json",
+     "bytes": 7318,
+     "sha256": "287540a63b5fd871d42159f36932a81b546ddb43e25707012d6f59a540b1f03d"
+    }
+   ]
+  },
+  {
+   "species": "honeybee",
+   "name": "Dormagen et al. waggle-dance data (Zenodo 7928121)",
+   "url": "https://doi.org/10.5281/zenodo.7928121",
+   "licence": "CC BY 4.0",
+   "use": "Dance angle vs. sun reanalysis",
+   "files": [
+    {
+     "path": "data/raw/honeybee/Berlin2019_dances.csv",
+     "bytes": 211675,
+     "sha256": "dcd02a4f5b7e5f88b3c01d1274674f6a8ff947cecc36db9b074a806761224cc7"
+    },
+    {
+     "path": "data/raw/honeybee/Berlin2019_waggle_phases.csv",
+     "bytes": 15202608,
+     "sha256": "359e71b88eb312c8537b04b52e87ea90ac344dde8c6c9a94171799c868639423"
+    },
+    {
+     "path": "data/raw/honeybee/Berlin2019_feeder_experiment_log.csv",
+     "bytes": 3662,
+     "sha256": "8bb4a653ac458b038b875b0d6c34cd83d21c3be36eaa21268054fbab2e98d51f"
+    }
+   ]
+  },
+  {
+   "species": "honeybee",
+   "name": "Waggle-run sound recordings (Zenodo 7678084)",
+   "url": "https://doi.org/10.5281/zenodo.7678084",
+   "licence": "CC BY 4.0",
+   "use": "Example sounds",
+   "files": [
+    {
+     "path": "data/raw/honeybee/waggle_run_phase_1.wav",
+     "bytes": 1587824,
+     "sha256": "47cf24b5c4a67143d95311eac35cdb84af11191f093016f362fd20137f893ca4"
+    },
+    {
+     "path": "data/raw/honeybee/waggle_run_phase_2.wav",
+     "bytes": 1639848,
+     "sha256": "15ba3d2d428d6cf3daed3f595ba1ad3da0b651b45063f9aac43bef5c4e431a9f"
+    },
+    {
+     "path": "data/raw/honeybee/waggle_run_phase_3.wav",
+     "bytes": 1630248,
+     "sha256": "c08dbcc48fcc2477ad0b47e47dbe79f44908e7f22bd9f324ec5cc5998d290130"
+    }
+   ]
+  },
+  {
+   "species": "all",
+   "name": "Species photographs, Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/",
+   "licence": "CC0 / CC BY-SA (per image; see media/photography-manifest-2026-11.json)",
+   "use": "Species pages",
+   "files": []
+  }
+ ]
+}

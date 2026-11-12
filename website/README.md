@@ -4,7 +4,7 @@ Public site: https://jordanxxlopez.github.io/ZEBRAFINCHPROJECT/
 
 The Zebra Finch Project is the first species collection. The visual redesign and reference review are recorded in `research/DESIGN_REVIEW.md`. The first species photograph is credited on the homepage and in `media/photography-manifest.json`.
 
-Buildless static site in `dist/`; all runtime assets are local. No generated illustrations, stock biological substitutes, or fabricated connectivity. Three.js is vendored with its MIT license.
+Buildless static site in `dist/` (`index.html`, `css/site.css`, `js/app.js`, `js/content.js`, `js/charts.js`, `js/atlas.js`). Derived data come from `scripts/build_atlases.py` and `scripts/build_collections.py`; see `research/REBUILD_2026-11.md`. all runtime assets are local. No generated illustrations, stock biological substitutes, or fabricated connectivity. Three.js is vendored with its MIT license.
 
 ## Typography and published figures
 

@@ -1,0 +1,329 @@
+{
+ "id": "bat-annotation-recount",
+ "species": "egyptian-fruit-bat",
+ "title": "Recount of the Egyptian fruit bat annotation tables",
+ "paper": {
+  "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143",
+  "doi": "10.1038/sdata.2017.143"
+ },
+ "data": {
+  "files": [
+   "Annotations.csv (figshare file 7379008)",
+   "FileInfo.csv (figshare file 8900695)",
+   "Metadata.pdf (figshare file 8900800)"
+  ],
+  "sha256": {
+   "Annotations.csv": "e53558a459c1ed5484ce57b24fb94c2b78fb3988aace6971aa6ade10dc7f3b24",
+   "FileInfo.csv": "753529d166f8cbb6f900fa54d3d5122d1e47bae5d6be59669e37f33e4cc1ed34",
+   "Metadata.pdf": "d3aba4bb60b372ba7409854dcc8b5f297df58c1b61c741bb6df765d3ad818f47"
+  },
+  "licence": "CC0"
+ },
+ "claims": [
+  {
+   "claim": "The recordings comprise almost 300,000 files.",
+   "source": "Abstract",
+   "result": "FileInfo.csv lists 293,238 files.",
+   "status": "consistent"
+  },
+  {
+   "claim": "Annotation counts per behavioural context (Metadata Table 4).",
+   "source": "Metadata.pdf, Table 4",
+   "result": "All 13 context counts match the deposited Annotations.csv exactly (91,080 annotations in 87,986 distinct files).",
+   "status": "reproduced"
+  },
+  {
+   "claim": "'#Rec. Emitted' per bat is the number of recorded files containing calls emitted by that bat.",
+   "source": "Metadata.pdf, Table 2",
+   "result": "For each of the 21 bats checked (every bat with at least 197 published entries), the published number equals the count of annotation rows, which exceeds the count of distinct files by 0\u201380 because some files carry more than one annotation. The numbers are internally consistent; the column describes annotations rather than unique files.",
+   "status": "minor wording discrepancy"
+  }
+ ],
+ "tables": {
+  "contexts": [
+   {
+    "code": 0,
+    "context": "Unknown",
+    "published": 640,
+    "recount": 640,
+    "files": 636
+   },
+   {
+    "code": 1,
+    "context": "Separation",
+    "published": 504,
+    "recount": 504,
+    "files": 499
+   },
+   {
+    "code": 2,
+    "context": "Biting",
+    "published": 1788,
+    "recount": 1788,
+    "files": 1753
+   },
+   {
+    "code": 3,
+    "context": "Feeding",
+    "published": 6683,
+    "recount": 6683,
+    "files": 6668
+   },
+   {
+    "code": 4,
+    "context": "Fighting",
+    "published": 7963,
+    "recount": 7963,
+    "files": 7833
+   },
+   {
+    "code": 5,
+    "context": "Grooming",
+    "published": 383,
+    "recount": 383,
+    "files": 379
+   },
+   {
+    "code": 6,
+    "context": "Isolation",
+    "published": 5714,
+    "recount": 5714,
+    "files": 5665
+   },
+   {
+    "code": 7,
+    "context": "Kissing",
+    "published": 362,
+    "recount": 362,
+    "files": 359
+   },
+   {
+    "code": 8,
+    "context": "Landing",
+    "published": 16,
+    "recount": 16,
+    "files": 16
+   },
+   {
+    "code": 9,
+    "context": "Mating protest",
+    "published": 2338,
+    "recount": 2338,
+    "files": 2261
+   },
+   {
+    "code": 10,
+    "context": "Threat-like",
+    "published": 1065,
+    "recount": 1065,
+    "files": 1019
+   },
+   {
+    "code": 11,
+    "context": "General",
+    "published": 29627,
+    "recount": 29627,
+    "files": 28956
+   },
+   {
+    "code": 12,
+    "context": "Sleeping",
+    "published": 33997,
+    "recount": 33997,
+    "files": 32786
+   }
+  ],
+  "per_bat": [
+   {
+    "bat": 101,
+    "published": 197,
+    "annotation_rows": 197,
+    "unique_files": 197
+   },
+   {
+    "bat": 102,
+    "published": 307,
+    "annotation_rows": 307,
+    "unique_files": 307
+   },
+   {
+    "bat": 109,
+    "published": 1329,
+    "annotation_rows": 1329,
+    "unique_files": 1328
+   },
+   {
+    "bat": 110,
+    "published": 1058,
+    "annotation_rows": 1058,
+    "unique_files": 1055
+   },
+   {
+    "bat": 111,
+    "published": 1341,
+    "annotation_rows": 1341,
+    "unique_files": 1331
+   },
+   {
+    "bat": 119,
+    "published": 786,
+    "annotation_rows": 786,
+    "unique_files": 786
+   },
+   {
+    "bat": 120,
+    "published": 659,
+    "annotation_rows": 659,
+    "unique_files": 656
+   },
+   {
+    "bat": 201,
+    "published": 634,
+    "annotation_rows": 634,
+    "unique_files": 613
+   },
+   {
+    "bat": 207,
+    "published": 1245,
+    "annotation_rows": 1245,
+    "unique_files": 1239
+   },
+   {
+    "bat": 208,
+    "published": 779,
+    "annotation_rows": 779,
+    "unique_files": 775
+   },
+   {
+    "bat": 210,
+    "published": 1493,
+    "annotation_rows": 1493,
+    "unique_files": 1485
+   },
+   {
+    "bat": 211,
+    "published": 2225,
+    "annotation_rows": 2225,
+    "unique_files": 2213
+   },
+   {
+    "bat": 213,
+    "published": 1239,
+    "annotation_rows": 1239,
+    "unique_files": 1213
+   },
+   {
+    "bat": 215,
+    "published": 6150,
+    "annotation_rows": 6150,
+    "unique_files": 6093
+   },
+   {
+    "bat": 216,
+    "published": 2524,
+    "annotation_rows": 2524,
+    "unique_files": 2477
+   },
+   {
+    "bat": 220,
+    "published": 1426,
+    "annotation_rows": 1426,
+    "unique_files": 1423
+   },
+   {
+    "bat": 221,
+    "published": 765,
+    "annotation_rows": 765,
+    "unique_files": 759
+   },
+   {
+    "bat": 226,
+    "published": 2310,
+    "annotation_rows": 2310,
+    "unique_files": 2272
+   },
+   {
+    "bat": 228,
+    "published": 1653,
+    "annotation_rows": 1653,
+    "unique_files": 1573
+   },
+   {
+    "bat": 230,
+    "published": 3269,
+    "annotation_rows": 3269,
+    "unique_files": 3212
+   },
+   {
+    "bat": 231,
+    "published": 3051,
+    "annotation_rows": 3051,
+    "unique_files": 3022
+   }
+  ],
+  "duration_quartiles_s": {
+   "Unknown": [
+    1.314,
+    1.38,
+    1.871
+   ],
+   "Separation": [
+    1.412,
+    1.478,
+    2.139
+   ],
+   "Biting": [
+    1.314,
+    1.347,
+    1.806
+   ],
+   "Feeding": [
+    1.314,
+    1.347,
+    1.707
+   ],
+   "Fighting": [
+    1.478,
+    2.101,
+    3.04
+   ],
+   "Grooming": [
+    1.314,
+    1.38,
+    1.838
+   ],
+   "Isolation": [
+    1.347,
+    1.412,
+    2.101
+   ],
+   "Kissing": [
+    1.314,
+    1.314,
+    1.478
+   ],
+   "Mating protest": [
+    1.314,
+    1.543,
+    2.527
+   ],
+   "Threat-like": [
+    1.38,
+    1.969,
+    2.821
+   ],
+   "General": [
+    1.314,
+    1.543,
+    2.199
+   ],
+   "Sleeping": [
+    1.314,
+    1.412,
+    1.904
+   ]
+  }
+ },
+ "method": "Counts computed with pandas from the deposited CSV files. Durations use (End sample \u2212 Start sample) / 250,000 Hz; they are annotated segment lengths, not single-syllable durations.",
+ "limits": "This check confirms the internal consistency of the deposited tables. It does not re-score any audio or test the behavioural labels themselves."
+}

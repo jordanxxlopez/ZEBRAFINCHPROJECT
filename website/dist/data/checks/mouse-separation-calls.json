@@ -1,0 +1,609 @@
+{
+ "id": "mouse-separation-calls",
+ "species": "house-mouse",
+ "title": "Call frequencies in the 'separation slang' call tables",
+ "paper": {
+  "citation": "Breslav D, W\u00f3jcik MP, Koch U, Becker T (2025) Separation slang: laboratory mice use a low-frequency call repertoire during physical separation. Dataset, Zenodo. doi:10.5281/zenodo.17491957",
+  "doi": "10.5281/zenodo.17491957",
+  "note": "The accompanying article was not located during this review; the check is limited to the dataset title's claim."
+ },
+ "data": {
+  "files": [
+   "call_data.tar.gz \u2192 Call data/Prefixed_Data_<animal>_<sex>.xlsx (19 files)"
+  ],
+  "sha256": {
+   "call_data.tar.gz": "a7257ab2ccdd6188f207f0879a201b97504acc8e433b56dcfb5c7d4d56da9ee4"
+  },
+  "licence": "CC BY-SA 4.0"
+ },
+ "claims": [
+  {
+   "claim": "Laboratory mice use a low-frequency call repertoire during physical separation.",
+   "source": "Dataset title",
+   "result": "3,147 accepted calls from 19 animals. 937 carry LFV labels (median peak 11.7 kHz); 2,210 are ultrasonic (median peak 53.3 kHz). LFV calls were present in 19 of 19 animals (share per animal: median 31%, range 8%\u201368%).",
+   "status": "consistent, partly checked",
+   "scope": "These tables contain the separation condition only, so they show that a low-frequency repertoire occurs during separation; they cannot show that it is specific to separation. That comparison needs the control recordings."
+  }
+ ],
+ "tables": {
+  "per_label": [
+   {
+    "label": "LFV-1Step",
+    "n": 36.0,
+    "peak_khz_median": 16.13,
+    "peak_khz_q1": 11.51,
+    "peak_khz_q3": 18.67,
+    "dur_ms_median": 16.23
+   },
+   {
+    "label": "LFV-2Step",
+    "n": 6.0,
+    "peak_khz_median": 18.1,
+    "peak_khz_q1": 17.35,
+    "peak_khz_q3": 21.69,
+    "dur_ms_median": 26.94
+   },
+   {
+    "label": "LFV-Chevron",
+    "n": 14.0,
+    "peak_khz_median": 15.24,
+    "peak_khz_q1": 12.36,
+    "peak_khz_q3": 17.94,
+    "dur_ms_median": 17.16
+   },
+   {
+    "label": "LFV-Downward",
+    "n": 168.0,
+    "peak_khz_median": 12.19,
+    "peak_khz_q1": 8.75,
+    "peak_khz_q3": 16.9,
+    "dur_ms_median": 11.04
+   },
+   {
+    "label": "LFV-Flat",
+    "n": 521.0,
+    "peak_khz_median": 8.28,
+    "peak_khz_q1": 5.47,
+    "peak_khz_q3": 14.73,
+    "dur_ms_median": 12.92
+   },
+   {
+    "label": "LFV-LFC",
+    "n": 1.0,
+    "peak_khz_median": 25.87,
+    "peak_khz_q1": 25.87,
+    "peak_khz_q3": 25.87,
+    "dur_ms_median": 18.26
+   },
+   {
+    "label": "LFV-LFCH",
+    "n": 2.0,
+    "peak_khz_median": 13.09,
+    "peak_khz_q1": 10.59,
+    "peak_khz_q3": 15.59,
+    "dur_ms_median": 11.69
+   },
+   {
+    "label": "LFV-NVT",
+    "n": 1.0,
+    "peak_khz_median": 15.06,
+    "peak_khz_q1": 15.06,
+    "peak_khz_q3": 15.06,
+    "dur_ms_median": 34.21
+   },
+   {
+    "label": "LFV-Short",
+    "n": 118.0,
+    "peak_khz_median": 14.48,
+    "peak_khz_q1": 11.76,
+    "peak_khz_q3": 18.15,
+    "dur_ms_median": 4.95
+   },
+   {
+    "label": "LFV-USV",
+    "n": 7.0,
+    "peak_khz_median": 20.18,
+    "peak_khz_q1": 7.28,
+    "peak_khz_q3": 21.46,
+    "dur_ms_median": 13.67
+   },
+   {
+    "label": "LFV-Undefined",
+    "n": 1.0,
+    "peak_khz_median": 24.67,
+    "peak_khz_q1": 24.67,
+    "peak_khz_q3": 24.67,
+    "dur_ms_median": 17.19
+   },
+   {
+    "label": "LFV-Upward",
+    "n": 62.0,
+    "peak_khz_median": 15.32,
+    "peak_khz_q1": 13.51,
+    "peak_khz_q3": 18.65,
+    "dur_ms_median": 9.75
+   },
+   {
+    "label": "MFV-1Step",
+    "n": 18.0,
+    "peak_khz_median": 36.98,
+    "peak_khz_q1": 34.39,
+    "peak_khz_q3": 43.26,
+    "dur_ms_median": 13.68
+   },
+   {
+    "label": "MFV-2STEP",
+    "n": 2.0,
+    "peak_khz_median": 46.23,
+    "peak_khz_q1": 44.65,
+    "peak_khz_q3": 47.81,
+    "dur_ms_median": 44.3
+   },
+   {
+    "label": "MFV-2Step",
+    "n": 3.0,
+    "peak_khz_median": 35.52,
+    "peak_khz_q1": 34.95,
+    "peak_khz_q3": 37.77,
+    "dur_ms_median": 23.49
+   },
+   {
+    "label": "MFV-Chevron",
+    "n": 5.0,
+    "peak_khz_median": 37.55,
+    "peak_khz_q1": 36.25,
+    "peak_khz_q3": 41.29,
+    "dur_ms_median": 15.38
+   },
+   {
+    "label": "MFV-Downward",
+    "n": 28.0,
+    "peak_khz_median": 36.16,
+    "peak_khz_q1": 34.36,
+    "peak_khz_q3": 41.47,
+    "dur_ms_median": 10.85
+   },
+   {
+    "label": "MFV-Flat",
+    "n": 47.0,
+    "peak_khz_median": 36.07,
+    "peak_khz_q1": 34.52,
+    "peak_khz_q3": 37.33,
+    "dur_ms_median": 11.56
+   },
+   {
+    "label": "MFV-Hook",
+    "n": 1.0,
+    "peak_khz_median": 38.6,
+    "peak_khz_q1": 38.6,
+    "peak_khz_q3": 38.6,
+    "dur_ms_median": 16.46
+   },
+   {
+    "label": "MFV-Short",
+    "n": 56.0,
+    "peak_khz_median": 37.59,
+    "peak_khz_q1": 34.78,
+    "peak_khz_q3": 41.48,
+    "dur_ms_median": 5.07
+   },
+   {
+    "label": "MFV-Upward",
+    "n": 26.0,
+    "peak_khz_median": 40.75,
+    "peak_khz_q1": 36.66,
+    "peak_khz_q3": 43.75,
+    "dur_ms_median": 10.12
+   },
+   {
+    "label": "Noisy-Chirp",
+    "n": 666.0,
+    "peak_khz_median": 27.72,
+    "peak_khz_q1": 16.52,
+    "peak_khz_q3": 53.89,
+    "dur_ms_median": 26.18
+   },
+   {
+    "label": "Noisy-LowFreqNoisy",
+    "n": 388.0,
+    "peak_khz_median": 10.51,
+    "peak_khz_q1": 7.87,
+    "peak_khz_q3": 17.7,
+    "dur_ms_median": 23.96
+   },
+   {
+    "label": "USV-1STEP",
+    "n": 10.0,
+    "peak_khz_median": 72.8,
+    "peak_khz_q1": 70.48,
+    "peak_khz_q3": 83.26,
+    "dur_ms_median": 24.62
+   },
+   {
+    "label": "USV-1Step",
+    "n": 47.0,
+    "peak_khz_median": 63.53,
+    "peak_khz_q1": 58.76,
+    "peak_khz_q3": 72.21,
+    "dur_ms_median": 19.23
+   },
+   {
+    "label": "USV-2STEP",
+    "n": 33.0,
+    "peak_khz_median": 72.51,
+    "peak_khz_q1": 66.92,
+    "peak_khz_q3": 81.67,
+    "dur_ms_median": 84.45
+   },
+   {
+    "label": "USV-2Step",
+    "n": 23.0,
+    "peak_khz_median": 75.98,
+    "peak_khz_q1": 69.03,
+    "peak_khz_q3": 85.53,
+    "dur_ms_median": 78.67
+   },
+   {
+    "label": "USV-Chevron",
+    "n": 99.0,
+    "peak_khz_median": 71.54,
+    "peak_khz_q1": 68.4,
+    "peak_khz_q3": 76.38,
+    "dur_ms_median": 48.91
+   },
+   {
+    "label": "USV-Complex",
+    "n": 46.0,
+    "peak_khz_median": 70.76,
+    "peak_khz_q1": 68.54,
+    "peak_khz_q3": 76.1,
+    "dur_ms_median": 78.74
+   },
+   {
+    "label": "USV-Downward",
+    "n": 67.0,
+    "peak_khz_median": 60.32,
+    "peak_khz_q1": 56.23,
+    "peak_khz_q3": 67.37,
+    "dur_ms_median": 11.17
+   },
+   {
+    "label": "USV-FLAT",
+    "n": 4.0,
+    "peak_khz_median": 70.35,
+    "peak_khz_q1": 66.22,
+    "peak_khz_q3": 71.04,
+    "dur_ms_median": 20.5
+   },
+   {
+    "label": "USV-Flat",
+    "n": 16.0,
+    "peak_khz_median": 60.05,
+    "peak_khz_q1": 55.63,
+    "peak_khz_q3": 64.0,
+    "dur_ms_median": 13.32
+   },
+   {
+    "label": "USV-Hook",
+    "n": 84.0,
+    "peak_khz_median": 72.47,
+    "peak_khz_q1": 70.14,
+    "peak_khz_q3": 76.73,
+    "dur_ms_median": 63.23
+   },
+   {
+    "label": "USV-LFCH",
+    "n": 1.0,
+    "peak_khz_median": 51.04,
+    "peak_khz_q1": 51.04,
+    "peak_khz_q3": 51.04,
+    "dur_ms_median": 15.87
+   },
+   {
+    "label": "USV-Multistep",
+    "n": 1.0,
+    "peak_khz_median": 71.41,
+    "peak_khz_q1": 71.41,
+    "peak_khz_q3": 71.41,
+    "dur_ms_median": 122.35
+   },
+   {
+    "label": "USV-RevChevron",
+    "n": 7.0,
+    "peak_khz_median": 67.61,
+    "peak_khz_q1": 60.35,
+    "peak_khz_q3": 81.89,
+    "dur_ms_median": 17.83
+   },
+   {
+    "label": "USV-RevHook",
+    "n": 8.0,
+    "peak_khz_median": 66.16,
+    "peak_khz_q1": 57.27,
+    "peak_khz_q3": 69.67,
+    "dur_ms_median": 27.36
+   },
+   {
+    "label": "USV-ReversedChevron",
+    "n": 4.0,
+    "peak_khz_median": 65.04,
+    "peak_khz_q1": 64.18,
+    "peak_khz_q3": 66.83,
+    "dur_ms_median": 31.15
+   },
+   {
+    "label": "USV-Short",
+    "n": 98.0,
+    "peak_khz_median": 62.62,
+    "peak_khz_q1": 57.28,
+    "peak_khz_q3": 71.49,
+    "dur_ms_median": 4.95
+   },
+   {
+    "label": "USV-Upward",
+    "n": 422.0,
+    "peak_khz_median": 69.53,
+    "peak_khz_q1": 63.39,
+    "peak_khz_q3": 74.03,
+    "dur_ms_median": 17.91
+   }
+  ],
+  "peak_hist": {
+   "edges_khz": [
+    0.0,
+    2.5,
+    5.0,
+    7.5,
+    10.0,
+    12.5,
+    15.0,
+    17.5,
+    20.0,
+    22.5,
+    25.0,
+    27.5,
+    30.0,
+    32.5,
+    35.0,
+    37.5,
+    40.0,
+    42.5,
+    45.0,
+    47.5,
+    50.0,
+    52.5,
+    55.0,
+    57.5,
+    60.0,
+    62.5,
+    65.0,
+    67.5,
+    70.0,
+    72.5,
+    75.0,
+    77.5,
+    80.0,
+    82.5,
+    85.0,
+    87.5,
+    90.0,
+    92.5,
+    95.0,
+    97.5,
+    100.0,
+    102.5,
+    105.0,
+    107.5,
+    110.0,
+    112.5,
+    115.0,
+    117.5,
+    120.0,
+    122.5
+   ],
+   "counts": {
+    "Low-frequency (LFV)": [
+     1,
+     108,
+     158,
+     129,
+     117,
+     125,
+     109,
+     84,
+     34,
+     36,
+     19,
+     13,
+     4,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "Ultrasonic (USV)": [
+     4,
+     18,
+     106,
+     143,
+     81,
+     41,
+     86,
+     108,
+     53,
+     33,
+     25,
+     17,
+     14,
+     80,
+     87,
+     50,
+     31,
+     37,
+     23,
+     20,
+     34,
+     47,
+     107,
+     90,
+     85,
+     66,
+     99,
+     142,
+     142,
+     99,
+     59,
+     45,
+     21,
+     22,
+     26,
+     16,
+     10,
+     6,
+     7,
+     3,
+     3,
+     3,
+     2,
+     1,
+     1,
+     3,
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "per_animal": [
+   {
+    "animal": "288_m",
+    "Low-frequency (LFV)": 59,
+    "Ultrasonic (USV)": 28
+   },
+   {
+    "animal": "291_m",
+    "Low-frequency (LFV)": 56,
+    "Ultrasonic (USV)": 186
+   },
+   {
+    "animal": "294_m",
+    "Low-frequency (LFV)": 37,
+    "Ultrasonic (USV)": 42
+   },
+   {
+    "animal": "315_f",
+    "Low-frequency (LFV)": 36,
+    "Ultrasonic (USV)": 249
+   },
+   {
+    "animal": "316_f",
+    "Low-frequency (LFV)": 33,
+    "Ultrasonic (USV)": 361
+   },
+   {
+    "animal": "322_m",
+    "Low-frequency (LFV)": 43,
+    "Ultrasonic (USV)": 95
+   },
+   {
+    "animal": "327_m",
+    "Low-frequency (LFV)": 26,
+    "Ultrasonic (USV)": 21
+   },
+   {
+    "animal": "328_m",
+    "Low-frequency (LFV)": 39,
+    "Ultrasonic (USV)": 63
+   },
+   {
+    "animal": "335_f",
+    "Low-frequency (LFV)": 70,
+    "Ultrasonic (USV)": 129
+   },
+   {
+    "animal": "340_f",
+    "Low-frequency (LFV)": 29,
+    "Ultrasonic (USV)": 61
+   },
+   {
+    "animal": "341_m",
+    "Low-frequency (LFV)": 136,
+    "Ultrasonic (USV)": 84
+   },
+   {
+    "animal": "350_m",
+    "Low-frequency (LFV)": 31,
+    "Ultrasonic (USV)": 77
+   },
+   {
+    "animal": "351_f",
+    "Low-frequency (LFV)": 52,
+    "Ultrasonic (USV)": 114
+   },
+   {
+    "animal": "353_m",
+    "Low-frequency (LFV)": 40,
+    "Ultrasonic (USV)": 123
+   },
+   {
+    "animal": "354_f",
+    "Low-frequency (LFV)": 23,
+    "Ultrasonic (USV)": 63
+   },
+   {
+    "animal": "370_f",
+    "Low-frequency (LFV)": 26,
+    "Ultrasonic (USV)": 98
+   },
+   {
+    "animal": "371_f",
+    "Low-frequency (LFV)": 78,
+    "Ultrasonic (USV)": 202
+   },
+   {
+    "animal": "373_m",
+    "Low-frequency (LFV)": 28,
+    "Ultrasonic (USV)": 161
+   },
+   {
+    "animal": "380_m",
+    "Low-frequency (LFV)": 95,
+    "Ultrasonic (USV)": 53
+   }
+  ]
+ },
+ "method": "Only rows with Accepted = TRUE were used. 'Family' groups labels beginning with 'LFV' versus all others. Peak frequencies are those exported by DeepSqueak in the deposited tables.",
+ "limits": "No audio was re-analysed for this check; it relies on the depositors' detection and labelling."
+}

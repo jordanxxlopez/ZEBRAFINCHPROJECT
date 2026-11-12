@@ -1,0 +1,168 @@
+{
+ "species": "zebra-finch",
+ "title": "Zebra finch 3D MRI atlas (Poirier et al. 2008)",
+ "dims": [
+  256,
+  256,
+  256
+ ],
+ "spacing_mm": [
+  0.08,
+  0.08,
+  0.08
+ ],
+ "axes": {
+  "x": "storage grid x",
+  "y": "storage grid y",
+  "z": "storage grid z"
+ },
+ "flip_display": {
+  "y": true,
+  "z": true
+ },
+ "storage_index": "legacy",
+ "images": [
+  {
+   "file": "image-mri.u8.gz",
+   "name": "MRI (ex vivo, 80 \u00d7 160 \u00d7 160 \u00b5m acquisition, 80 \u00b5m grid)",
+   "kind": "measured"
+  }
+ ],
+ "labels": {
+  "file": "labels.u16.gz",
+  "dtype": "uint16",
+  "count": 13
+ },
+ "regions": [
+  {
+   "index": 1,
+   "source_id": 1,
+   "acronym": "Field L",
+   "name": "Field L",
+   "color": "#d0a45b",
+   "voxels": 5854,
+   "volume_mm3": 2.99725
+  },
+  {
+   "index": 2,
+   "source_id": 2,
+   "acronym": "HVC",
+   "name": "HVC",
+   "color": "#6aa6b8",
+   "voxels": 2236,
+   "volume_mm3": 1.14483
+  },
+  {
+   "index": 3,
+   "source_id": 3,
+   "acronym": "Area X",
+   "name": "Area X",
+   "color": "#bb775b",
+   "voxels": 8581,
+   "volume_mm3": 4.39347
+  },
+  {
+   "index": 4,
+   "source_id": 4,
+   "acronym": "RA",
+   "name": "RA",
+   "color": "#9a819c",
+   "voxels": 1557,
+   "volume_mm3": 0.79718
+  },
+  {
+   "index": 5,
+   "source_id": 5,
+   "acronym": "Entopallium",
+   "name": "Entopallium",
+   "color": "#9fa768",
+   "voxels": 7881,
+   "volume_mm3": 4.03507
+  },
+  {
+   "index": 6,
+   "source_id": 6,
+   "acronym": "LMAN",
+   "name": "LMAN",
+   "color": "#769680",
+   "voxels": 1103,
+   "volume_mm3": 0.56474
+  },
+  {
+   "index": 7,
+   "source_id": 7,
+   "acronym": "MLd",
+   "name": "MLd",
+   "color": "#bb9185",
+   "voxels": 1223,
+   "volume_mm3": 0.62618
+  },
+  {
+   "index": 8,
+   "source_id": 8,
+   "acronym": "DLM",
+   "name": "DLM",
+   "color": "#8297ae",
+   "voxels": 575,
+   "volume_mm3": 0.2944
+  },
+  {
+   "index": 9,
+   "source_id": 9,
+   "acronym": "Ovoidalis",
+   "name": "Ovoidalis",
+   "color": "#bead72",
+   "voxels": 276,
+   "volume_mm3": 0.14131
+  },
+  {
+   "index": 10,
+   "source_id": 10,
+   "acronym": "Olfactory bulb",
+   "name": "Olfactory bulb",
+   "color": "#859b96",
+   "voxels": 482,
+   "volume_mm3": 0.24678
+  },
+  {
+   "index": 11,
+   "source_id": 11,
+   "acronym": "nXIIts",
+   "name": "nXIIts",
+   "color": "#b28b6b",
+   "voxels": 374,
+   "volume_mm3": 0.19149
+  },
+  {
+   "index": 12,
+   "source_id": 12,
+   "acronym": "Rotundus",
+   "name": "Rotundus",
+   "color": "#8c969f",
+   "voxels": 2333,
+   "volume_mm3": 1.1945
+  },
+  {
+   "index": 13,
+   "source_id": 13,
+   "acronym": "Optic tectum",
+   "name": "Optic tectum",
+   "color": "#8ba5ae",
+   "voxels": 39270,
+   "volume_mm3": 20.10624
+  }
+ ],
+ "meshes": "meshes.json",
+ "mesh_units": "mm",
+ "provenance": {
+  "dataset": "https://doi.org/10.1016/j.neuroimage.2008.01.069",
+  "citation": "Poirier C, Vellema M, Verhoye M, et al. (2008) A three-dimensional MRI atlas of the zebra finch brain in stereotaxic coordinates. NeuroImage 41:1\u20136. doi:10.1016/j.neuroimage.2008.01.069",
+  "licence": "See research/acquisition-manifest.json"
+ },
+ "processing": [
+  "Analyze storage-grid x,y,z, origin at first voxel centre; anatomical axis signs and posterior commissure origin not assigned",
+  "Encoded label values follow material order (Exterior=0); header Id attributes are not voxel values",
+  "Marching cubes at level 0.5; whole-brain step 2, nuclei step 1; no smoothing; source-mask volumes computed before meshing",
+  "All intensity and label voxels equal after Amira x/y flips; original images unchanged"
+ ]
+}

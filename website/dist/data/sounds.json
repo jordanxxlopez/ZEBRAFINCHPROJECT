@@ -1,0 +1,1080 @@
+[
+ {
+  "id": "bat-social6",
+  "species": "egyptian-fruit-bat",
+  "title": "Social call \u2014 example 6",
+  "kind": "Social call",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/social6-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/social6-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/social6.png",
+   "t0": 0.0,
+   "t1": 0.2407,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -59.4,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.2407,
+   "file": "Social6.wav",
+   "sha256": "484a0e84c2af20daf02f1a209b61a89f1f81d0d35240f5686cf7843e68174d30",
+   "doi": "10.6084/m9.figshare.c.3666502_D50.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D50.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-social7",
+  "species": "egyptian-fruit-bat",
+  "title": "Social call \u2014 example 7",
+  "kind": "Social call",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/social7-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/social7-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/social7.png",
+   "t0": 0.0,
+   "t1": 0.0345,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -89.1,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.0345,
+   "file": "Social7.wav",
+   "sha256": "994a85ba405a1ffc4fbe32d518e63202de8c0bfab9bd730454107daf07327478",
+   "doi": "10.6084/m9.figshare.c.3666502_D51.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D51.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-social4",
+  "species": "egyptian-fruit-bat",
+  "title": "Social call \u2014 example 4",
+  "kind": "Social call",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/social4-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/social4-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/social4.png",
+   "t0": 0.0,
+   "t1": 0.0925,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -60.2,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.0925,
+   "file": "Social4.wav",
+   "sha256": "37d960c4f11ade2eb51df22d30aa26f036fc9bfae74dd7867a4931f3007f9723",
+   "doi": "10.6084/m9.figshare.c.3666502_D50.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D50.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-social5",
+  "species": "egyptian-fruit-bat",
+  "title": "Social call \u2014 example 5",
+  "kind": "Social call",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/social5-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/social5-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/social5.png",
+   "t0": 0.0,
+   "t1": 0.097,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -74.2,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.097,
+   "file": "Social5.wav",
+   "sha256": "d562d415a8fa7bc0998c73d79b0872c81d823d7a010c364271f49debe8db99d1",
+   "doi": "10.6084/m9.figshare.c.3666502_D50.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D50.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-social2",
+  "species": "egyptian-fruit-bat",
+  "title": "Social call \u2014 example 2",
+  "kind": "Social call",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/social2-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/social2-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/social2.png",
+   "t0": 0.0,
+   "t1": 0.2481,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -57.6,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.2481,
+   "file": "Social2.wav",
+   "sha256": "fd869115765232be8d6b34d1bdd1e71d615776be83e3113cc1fc963a302e3f1c",
+   "doi": "10.6084/m9.figshare.c.3666502_D49.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D49.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-social1",
+  "species": "egyptian-fruit-bat",
+  "title": "Social call \u2014 example 1",
+  "kind": "Social call",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/social1-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/social1-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/social1.png",
+   "t0": 0.0,
+   "t1": 0.1754,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -67.9,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.1754,
+   "file": "Social1.wav",
+   "sha256": "7537c990be96f6baadf587a780fe3e1eebddf0ad0d098411f401066f99199b28",
+   "doi": "10.6084/m9.figshare.c.3666502_D45.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D45.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-social3",
+  "species": "egyptian-fruit-bat",
+  "title": "Social call \u2014 example 3",
+  "kind": "Social call",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/social3-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/social3-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/social3.png",
+   "t0": 0.0,
+   "t1": 0.0619,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -61.7,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.0619,
+   "file": "Social3.wav",
+   "sha256": "5ae4f9f0615e4aac3dc4065201c0559d0aa779dd04a29d92744bb9ec517b3ec2",
+   "doi": "10.6084/m9.figshare.c.3666502_D49.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D49.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-isolation4",
+  "species": "egyptian-fruit-bat",
+  "title": "Isolation call (pup) \u2014 example 4",
+  "kind": "Isolation call (pup)",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/isolation4-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/isolation4-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/isolation4.png",
+   "t0": 0.0,
+   "t1": 0.1031,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -57.0,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.1031,
+   "file": "Isolation4.wav",
+   "sha256": "0b2459bf24801160d8e27cefb622d4b7a98c4504841e4cd8e90937707cd375f7",
+   "doi": "10.6084/m9.figshare.c.3666502_D41.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D41.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-echolocation2",
+  "species": "egyptian-fruit-bat",
+  "title": "Echolocation click train \u2014 example 2",
+  "kind": "Echolocation click train",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/echolocation2-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/echolocation2-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/echolocation2.png",
+   "t0": 0.0,
+   "t1": 0.0788,
+   "f0": 0.0,
+   "f1": 59570.3,
+   "db_top": -78.8,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.0788,
+   "file": "Echolocation2.wav",
+   "sha256": "5961a2c613a06257e95279321f50faa562cd92a5851a67ac364d34e247c29cb3",
+   "doi": "10.6084/m9.figshare.c.3666502_D35.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D35.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-echolocation1",
+  "species": "egyptian-fruit-bat",
+  "title": "Echolocation click train \u2014 example 1",
+  "kind": "Echolocation click train",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/echolocation1-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/echolocation1-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/echolocation1.png",
+   "t0": 0.0,
+   "t1": 0.3448,
+   "f0": 0.0,
+   "f1": 59570.3,
+   "db_top": -84.0,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.3448,
+   "file": "Echolocation1.wav",
+   "sha256": "fd55acdd1a3a3a1639b867ee5b2deaac4e16c6b7d5c10a8358e8a1137f02854b",
+   "doi": "10.6084/m9.figshare.c.3666502_D35.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D35.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-isolation1",
+  "species": "egyptian-fruit-bat",
+  "title": "Isolation call (pup) \u2014 example 1",
+  "kind": "Isolation call (pup)",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/isolation1-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/isolation1-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/isolation1.png",
+   "t0": 0.0,
+   "t1": 0.15,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -54.7,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.15,
+   "file": "Isolation1.wav",
+   "sha256": "f24036cdeeae4a417b1519a11d5c63e291dae8e84875f06969b51635ad799e06",
+   "doi": "10.6084/m9.figshare.c.3666502_D35.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D35.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-isolation3",
+  "species": "egyptian-fruit-bat",
+  "title": "Isolation call (pup) \u2014 example 3",
+  "kind": "Isolation call (pup)",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/isolation3-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/isolation3-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/isolation3.png",
+   "t0": 0.0,
+   "t1": 0.1303,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -54.8,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.1303,
+   "file": "Isolation3.wav",
+   "sha256": "fdc1a60b9ccc000baa59d8485e4dc8e0d7c2a90e59acbffbfdf9d57fba9ef897",
+   "doi": "10.6084/m9.figshare.c.3666502_D35.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D35.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "bat-isolation2",
+  "species": "egyptian-fruit-bat",
+  "title": "Isolation call (pup) \u2014 example 2",
+  "kind": "Isolation call (pup)",
+  "files": {
+   "realtime": "assets/sound/egyptian-fruit-bat/isolation2-48k.wav",
+   "expanded": "assets/sound/egyptian-fruit-bat/isolation2-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/egyptian-fruit-bat/isolation2.png",
+   "t0": 0.0,
+   "t1": 0.2105,
+   "f0": 0.0,
+   "f1": 39550.8,
+   "db_top": -63.7,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 0.2105,
+   "file": "Isolation2.wav",
+   "sha256": "82929a50e85af4e893615e3913de43900989f0dadf9fcd213159263437055e39",
+   "doi": "10.6084/m9.figshare.c.3666502_D35.v1",
+   "url": "https://doi.org/10.6084/m9.figshare.c.3666502_D35.v1",
+   "licence": "CC0",
+   "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
+  },
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+ },
+ {
+  "id": "marmoset-infant_cry_175492",
+  "species": "common-marmoset",
+  "title": "Infant cry call (file 175492)",
+  "kind": "Infant cry",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/infant_cry_175492.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/infant_cry_175492.png",
+   "t0": 0.0,
+   "t1": 0.9,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -65.3,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 0.9,
+   "file": "Audio_Examples/audios/Infant_cry_175492.wav",
+   "sha256": "b9be97f417e9798967ae76f61666e17b5f4227576573eb9cb4b15f7e66c5f0f8",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-infant_cry_223326",
+  "species": "common-marmoset",
+  "title": "Infant cry call (file 223326)",
+  "kind": "Infant cry",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/infant_cry_223326.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/infant_cry_223326.png",
+   "t0": 0.0,
+   "t1": 0.9,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -66.6,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 0.9,
+   "file": "Audio_Examples/audios/Infant_cry_223326.wav",
+   "sha256": "0e7ed8ec7f23ad3df3e22a2185155ddc724f6c7b5ce3b7a9b427c28cfad746a1",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-phee_223119",
+  "species": "common-marmoset",
+  "title": "Phee call (file 223119)",
+  "kind": "Phee",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/phee_223119.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/phee_223119.png",
+   "t0": 0.0,
+   "t1": 1.75,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -62.5,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 1.75,
+   "file": "Audio_Examples/audios/Phee_223119.wav",
+   "sha256": "27cb39ab34c5e98658633be18cf2c8f1fba28e4360dc57237bd182cbccc36b1b",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-phee_223202",
+  "species": "common-marmoset",
+  "title": "Phee call (file 223202)",
+  "kind": "Phee",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/phee_223202.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/phee_223202.png",
+   "t0": 0.0,
+   "t1": 1.95,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -61.8,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 1.95,
+   "file": "Audio_Examples/audios/Phee_223202.wav",
+   "sha256": "053356f2ff02b44145adc0ab52a4068938d3837d9d8b40f6776fd87837b6cc43",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-seep_152460",
+  "species": "common-marmoset",
+  "title": "Seep call (file 152460)",
+  "kind": "Seep",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/seep_152460.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/seep_152460.png",
+   "t0": 0.0,
+   "t1": 0.65,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -63.2,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 0.65,
+   "file": "Audio_Examples/audios/Seep_152460.wav",
+   "sha256": "d653472e6d3c43c14f3a1c42697751cd47ec10e5d6903facd1ae514ce7e4d92a",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-seep_212109",
+  "species": "common-marmoset",
+  "title": "Seep call (file 212109)",
+  "kind": "Seep",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/seep_212109.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/seep_212109.png",
+   "t0": 0.0,
+   "t1": 0.8,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -64.1,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 0.8,
+   "file": "Audio_Examples/audios/Seep_212109.wav",
+   "sha256": "a9085e753ecca029d5c2b70dafea0eb6e48d2ddd283899d49eddec4e00b52bee",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-trill_223123",
+  "species": "common-marmoset",
+  "title": "Trill call (file 223123)",
+  "kind": "Trill",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/trill_223123.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/trill_223123.png",
+   "t0": 0.0,
+   "t1": 1.05,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -62.6,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 1.05,
+   "file": "Audio_Examples/audios/Trill_223123.wav",
+   "sha256": "ddb7c40fef7ff2b4923aa30dd46cfb88de32523627bf5a66c2f33064c8bbfe6b",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-trill_223263",
+  "species": "common-marmoset",
+  "title": "Trill call (file 223263)",
+  "kind": "Trill",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/trill_223263.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/trill_223263.png",
+   "t0": 0.0,
+   "t1": 1.0,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -63.9,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 1.0,
+   "file": "Audio_Examples/audios/Trill_223263.wav",
+   "sha256": "57edfce8c8bbc82e6032047f70df74eb3176c34c354bab8237dbc45a6dcb0ac5",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-tsik_209901",
+  "species": "common-marmoset",
+  "title": "Tsik call (file 209901)",
+  "kind": "Tsik",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/tsik_209901.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/tsik_209901.png",
+   "t0": 0.0,
+   "t1": 0.8,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -63.8,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 0.8,
+   "file": "Audio_Examples/audios/Tsik_209901.wav",
+   "sha256": "a02304820c1ebb7ea816ad5a49f7913c5d9862becf89676ffa3c2c724bcc4ce2",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-tsik_232662",
+  "species": "common-marmoset",
+  "title": "Tsik call (file 232662)",
+  "kind": "Tsik",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/tsik_232662.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/tsik_232662.png",
+   "t0": 0.0,
+   "t1": 0.8,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -65.2,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 0.8,
+   "file": "Audio_Examples/audios/Tsik_232662.wav",
+   "sha256": "94426e002aa5f44c0e6a90e7e94083e5bc037268e8359732a9bc62c7bebc2043",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-twitter_211828",
+  "species": "common-marmoset",
+  "title": "Twitter call (file 211828)",
+  "kind": "Twitter",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/twitter_211828.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/twitter_211828.png",
+   "t0": 0.0,
+   "t1": 1.45,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -63.9,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 1.45,
+   "file": "Audio_Examples/audios/Twitter_211828.wav",
+   "sha256": "803fdf7d70ee0f8897da10133b4d2211dba4a3455b31f5497221c3f26c0057a2",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-twitter_235475",
+  "species": "common-marmoset",
+  "title": "Twitter call (file 235475)",
+  "kind": "Twitter",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/twitter_235475.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/twitter_235475.png",
+   "t0": 0.0,
+   "t1": 1.05,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -65.3,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 1.05,
+   "file": "Audio_Examples/audios/Twitter_235475.wav",
+   "sha256": "f4cade41f73a1efa05f7cadf0244fcba4371e92d6286756ed4f89011af3fb8ff",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-vocalization_159706",
+  "species": "common-marmoset",
+  "title": "Unlabelled vocalization segment (file 159706)",
+  "kind": "Vocalization",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/vocalization_159706.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/vocalization_159706.png",
+   "t0": 0.0,
+   "t1": 0.9,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -65.5,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 0.9,
+   "file": "Audio_Examples/audios/Vocalization_159706.wav",
+   "sha256": "29903a1032da32cc0f4a56346b4b145bd7b2039ae2163edfc91abd0ea551e140",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "marmoset-vocalization_206623",
+  "species": "common-marmoset",
+  "title": "Unlabelled vocalization segment (file 206623)",
+  "kind": "Vocalization",
+  "files": {
+   "realtime": "assets/sound/common-marmoset/vocalization_206623.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/common-marmoset/vocalization_206623.png",
+   "t0": 0.0,
+   "t1": 0.65,
+   "f0": 0.0,
+   "f1": 24000.0,
+   "db_top": -65.6,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 0.65,
+   "file": "Audio_Examples/audios/Vocalization_206623.wav",
+   "sha256": "e29c454da57e4a9514cf48995e7f4561d02bbbea789035ea0a7ed3ae744b7f93",
+   "doi": "10.5281/zenodo.15017207",
+   "url": "https://doi.org/10.5281/zenodo.15017207",
+   "licence": "CC BY 4.0",
+   "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8"
+  },
+  "playback": "Original 96 kHz samples, peak-normalised. Marmoset calls are audible; nothing is shifted."
+ },
+ {
+  "id": "mouse-usv-0184_85s",
+  "species": "house-mouse",
+  "title": "Ultrasonic vocalizations, 184.85\u2013186.85 s of the source file",
+  "kind": "Ultrasonic vocalizations (USVs)",
+  "files": {
+   "expanded": "assets/sound/house-mouse/usv-0184_85s-te16.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/house-mouse/usv-0184_85s.png",
+   "t0": 0.0,
+   "t1": 2.0,
+   "f0": 0.0,
+   "f1": 129492.2,
+   "db_top": -68.3,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 300000,
+   "duration_s": 2.0,
+   "file": "mM3.5individuality_run3_day2-2016-10-28_17-05-14_0020.WAV",
+   "offset_s": 184.853,
+   "sha256": "939621c7250050635e222af36e20c7c7f1a2701c71302ba1047cf60b8b31a81e",
+   "doi": "10.5281/zenodo.5771669",
+   "url": "https://doi.org/10.5281/zenodo.5771669",
+   "licence": "CC BY 4.0",
+   "citation": "Abbasi R, Balazs P, Marconi MA, Nicolakis D, Zala SM, Penn DJ (2022) Capturing the songs of mice with an improved detection and classification method for ultrasonic vocalizations (BootSnap). PLOS Computational Biology 18:e1010049. doi:10.1371/journal.pcbi.1010049"
+  },
+  "selection": "Window chosen automatically as one of the three 2-s stretches with the most frames whose 35\u2013120 kHz energy exceeded the file median by 12 dB.",
+  "playback": "Mouse USVs (\u2248 40\u2013100 kHz) are above human hearing. The original samples are played 16\u00d7 slower, dividing every frequency by 16. Nothing else is changed except peak normalisation."
+ },
+ {
+  "id": "mouse-usv-0206_12s",
+  "species": "house-mouse",
+  "title": "Ultrasonic vocalizations, 206.12\u2013208.12 s of the source file",
+  "kind": "Ultrasonic vocalizations (USVs)",
+  "files": {
+   "expanded": "assets/sound/house-mouse/usv-0206_12s-te16.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/house-mouse/usv-0206_12s.png",
+   "t0": 0.0,
+   "t1": 2.0,
+   "f0": 0.0,
+   "f1": 129492.2,
+   "db_top": -66.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 300000,
+   "duration_s": 2.0,
+   "file": "mM3.5individuality_run3_day2-2016-10-28_17-05-14_0020.WAV",
+   "offset_s": 206.122,
+   "sha256": "939621c7250050635e222af36e20c7c7f1a2701c71302ba1047cf60b8b31a81e",
+   "doi": "10.5281/zenodo.5771669",
+   "url": "https://doi.org/10.5281/zenodo.5771669",
+   "licence": "CC BY 4.0",
+   "citation": "Abbasi R, Balazs P, Marconi MA, Nicolakis D, Zala SM, Penn DJ (2022) Capturing the songs of mice with an improved detection and classification method for ultrasonic vocalizations (BootSnap). PLOS Computational Biology 18:e1010049. doi:10.1371/journal.pcbi.1010049"
+  },
+  "selection": "Window chosen automatically as one of the three 2-s stretches with the most frames whose 35\u2013120 kHz energy exceeded the file median by 12 dB.",
+  "playback": "Mouse USVs (\u2248 40\u2013100 kHz) are above human hearing. The original samples are played 16\u00d7 slower, dividing every frequency by 16. Nothing else is changed except peak normalisation."
+ },
+ {
+  "id": "mouse-usv-0288_91s",
+  "species": "house-mouse",
+  "title": "Ultrasonic vocalizations, 288.91\u2013290.91 s of the source file",
+  "kind": "Ultrasonic vocalizations (USVs)",
+  "files": {
+   "expanded": "assets/sound/house-mouse/usv-0288_91s-te16.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/house-mouse/usv-0288_91s.png",
+   "t0": 0.0,
+   "t1": 2.0,
+   "f0": 0.0,
+   "f1": 129492.2,
+   "db_top": -68.9,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 300000,
+   "duration_s": 2.0,
+   "file": "mM3.5individuality_run3_day2-2016-10-28_17-05-14_0020.WAV",
+   "offset_s": 288.907,
+   "sha256": "939621c7250050635e222af36e20c7c7f1a2701c71302ba1047cf60b8b31a81e",
+   "doi": "10.5281/zenodo.5771669",
+   "url": "https://doi.org/10.5281/zenodo.5771669",
+   "licence": "CC BY 4.0",
+   "citation": "Abbasi R, Balazs P, Marconi MA, Nicolakis D, Zala SM, Penn DJ (2022) Capturing the songs of mice with an improved detection and classification method for ultrasonic vocalizations (BootSnap). PLOS Computational Biology 18:e1010049. doi:10.1371/journal.pcbi.1010049"
+  },
+  "selection": "Window chosen automatically as one of the three 2-s stretches with the most frames whose 35\u2013120 kHz energy exceeded the file median by 12 dB.",
+  "playback": "Mouse USVs (\u2248 40\u2013100 kHz) are above human hearing. The original samples are played 16\u00d7 slower, dividing every frequency by 16. Nothing else is changed except peak normalisation."
+ },
+ {
+  "id": "bee-waggle-run-1",
+  "species": "honeybee",
+  "title": "Sound during a waggle run, recording 1",
+  "kind": "Waggle-run sound",
+  "files": {
+   "realtime": "assets/sound/honeybee/waggle-run-1.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/honeybee/waggle-run-1.png",
+   "t0": 0.0,
+   "t1": 4.5,
+   "f0": 0.0,
+   "f1": 1991.8,
+   "db_top": -45.8,
+   "db_range": 70,
+   "nperseg": 4096,
+   "hop": 1024,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 44100,
+   "duration_s": 4.5,
+   "file": "Waggle run phase-1.wav",
+   "sha256": "47cf24b5c4a67143d95311eac35cdb84af11191f093016f362fd20137f893ca4",
+   "doi": "10.5281/zenodo.7678084",
+   "url": "https://doi.org/10.5281/zenodo.7678084",
+   "licence": "CC BY 4.0",
+   "citation": "Sharif MZ (2023) Waggle run phase sound during honeybee waggle dance [dataset]. Zenodo. doi:10.5281/zenodo.7678084"
+  },
+  "playback": "Original 44.1 kHz recording, stereo channels averaged, peak-normalised. The deposit gives no microphone placement or colony details, so the source of each sound component is not asserted.",
+  "caution": "Deposited without accompanying methods. Shown as an example only; not used in any analysis."
+ },
+ {
+  "id": "bee-waggle-run-2",
+  "species": "honeybee",
+  "title": "Sound during a waggle run, recording 2",
+  "kind": "Waggle-run sound",
+  "files": {
+   "realtime": "assets/sound/honeybee/waggle-run-2.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/honeybee/waggle-run-2.png",
+   "t0": 0.0,
+   "t1": 4.6475,
+   "f0": 0.0,
+   "f1": 1991.8,
+   "db_top": -42.4,
+   "db_range": 70,
+   "nperseg": 4096,
+   "hop": 1024,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 44100,
+   "duration_s": 4.647,
+   "file": "Waggle run phase-2.wav",
+   "sha256": "15ba3d2d428d6cf3daed3f595ba1ad3da0b651b45063f9aac43bef5c4e431a9f",
+   "doi": "10.5281/zenodo.7678084",
+   "url": "https://doi.org/10.5281/zenodo.7678084",
+   "licence": "CC BY 4.0",
+   "citation": "Sharif MZ (2023) Waggle run phase sound during honeybee waggle dance [dataset]. Zenodo. doi:10.5281/zenodo.7678084"
+  },
+  "playback": "Original 44.1 kHz recording, stereo channels averaged, peak-normalised. The deposit gives no microphone placement or colony details, so the source of each sound component is not asserted.",
+  "caution": "Deposited without accompanying methods. Shown as an example only; not used in any analysis."
+ },
+ {
+  "id": "bee-waggle-run-3",
+  "species": "honeybee",
+  "title": "Sound during a waggle run, recording 3",
+  "kind": "Waggle-run sound",
+  "files": {
+   "realtime": "assets/sound/honeybee/waggle-run-3.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/honeybee/waggle-run-3.png",
+   "t0": 0.0,
+   "t1": 4.6202,
+   "f0": 0.0,
+   "f1": 1991.8,
+   "db_top": -42.9,
+   "db_range": 70,
+   "nperseg": 4096,
+   "hop": 1024,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 44100,
+   "duration_s": 4.62,
+   "file": "Waggle run phase-3.wav",
+   "sha256": "c08dbcc48fcc2477ad0b47e47dbe79f44908e7f22bd9f324ec5cc5998d290130",
+   "doi": "10.5281/zenodo.7678084",
+   "url": "https://doi.org/10.5281/zenodo.7678084",
+   "licence": "CC BY 4.0",
+   "citation": "Sharif MZ (2023) Waggle run phase sound during honeybee waggle dance [dataset]. Zenodo. doi:10.5281/zenodo.7678084"
+  },
+  "playback": "Original 44.1 kHz recording, stereo channels averaged, peak-normalised. The deposit gives no microphone placement or colony details, so the source of each sound component is not asserted.",
+  "caution": "Deposited without accompanying methods. Shown as an example only; not used in any analysis."
+ }
+]

@@ -1,0 +1,204 @@
+{
+ "id": "marmoset-annotation-recount",
+ "species": "common-marmoset",
+ "title": "Recount of the MarmAudio annotation file",
+ "paper": {
+  "citation": "Lamothe C, Obliger-Debouche M, Best P, et al. (2025) A large annotated dataset of vocalizations by common marmosets. Scientific Data 12:782. doi:10.1038/s41597-025-04951-8",
+  "doi": "10.1038/s41597-025-04951-8"
+ },
+ "data": {
+  "files": [
+   "Annotations.tsv (Zenodo 15017207, version 6)",
+   "Metadata.pdf"
+  ],
+  "sha256": {
+   "Annotations.tsv": "8ee81f84c592239c9a68d83fe34ef4007ffc9d9a1712557a86f9c4ee10df12f7"
+  },
+  "licence": "CC BY 4.0"
+ },
+ "claims": [
+  {
+   "claim": "More than 800,000 vocalization files.",
+   "source": "Zenodo record description",
+   "result": "Annotations.tsv has 871,045 rows, one per audio file.",
+   "status": "consistent"
+  },
+  {
+   "claim": "About 215,000 calls are annotated with a vocalization type.",
+   "source": "Zenodo record description / Metadata.pdf",
+   "result": "215,223 rows carry one of six call-type labels; the remaining 655,822 are labelled only 'Vocalization'.",
+   "status": "reproduced"
+  },
+  {
+   "claim": "Type labels were checked by experts on 700 recordings with an average label error of 8.71%.",
+   "source": "Metadata.pdf",
+   "result": "Not re-checked: the expert-review subset is not identified in the annotation file, so this figure cannot be recomputed from the deposited table.",
+   "status": "not checkable here"
+  }
+ ],
+ "tables": {
+  "label_counts": [
+   {
+    "label": "Vocalization",
+    "n": 655822
+   },
+   {
+    "label": "Twitter",
+    "n": 65309
+   },
+   {
+    "label": "Tsik",
+    "n": 46659
+   },
+   {
+    "label": "Phee",
+    "n": 37975
+   },
+   {
+    "label": "Trill",
+    "n": 30979
+   },
+   {
+    "label": "Infant",
+    "n": 29630
+   },
+   {
+    "label": "Seep",
+    "n": 4671
+   }
+  ],
+  "segment_duration_s": {
+   "Vocalization": [
+    0.9,
+    1.05,
+    1.05
+   ],
+   "Twitter": [
+    1.15,
+    1.35,
+    1.65
+   ],
+   "Tsik": [
+    0.75,
+    0.8,
+    0.85
+   ],
+   "Phee": [
+    1.35,
+    1.65,
+    1.85
+   ],
+   "Trill": [
+    0.95,
+    1.0,
+    1.05
+   ],
+   "Infant": [
+    0.9,
+    0.9,
+    0.9
+   ],
+   "Seep": [
+    0.65,
+    0.7,
+    0.75
+   ]
+  },
+  "files_per_month": [
+   {
+    "month": "2019-12",
+    "n": 1306
+   },
+   {
+    "month": "2020-01",
+    "n": 14693
+   },
+   {
+    "month": "2020-02",
+    "n": 20305
+   },
+   {
+    "month": "2020-03",
+    "n": 9970
+   },
+   {
+    "month": "2020-05",
+    "n": 4320
+   },
+   {
+    "month": "2020-06",
+    "n": 695
+   },
+   {
+    "month": "2020-07",
+    "n": 6874
+   },
+   {
+    "month": "2020-09",
+    "n": 6364
+   },
+   {
+    "month": "2020-10",
+    "n": 41241
+   },
+   {
+    "month": "2020-11",
+    "n": 33371
+   },
+   {
+    "month": "2020-12",
+    "n": 22862
+   },
+   {
+    "month": "2021-01",
+    "n": 20963
+   },
+   {
+    "month": "2021-09",
+    "n": 2250
+   },
+   {
+    "month": "2022-01",
+    "n": 62180
+   },
+   {
+    "month": "2022-02",
+    "n": 89896
+   },
+   {
+    "month": "2022-03",
+    "n": 143499
+   },
+   {
+    "month": "2022-04",
+    "n": 78623
+   },
+   {
+    "month": "2022-09",
+    "n": 23391
+   },
+   {
+    "month": "2022-10",
+    "n": 31359
+   },
+   {
+    "month": "2022-12",
+    "n": 42407
+   },
+   {
+    "month": "2023-02",
+    "n": 26765
+   },
+   {
+    "month": "2023-03",
+    "n": 80967
+   },
+   {
+    "month": "2023-04",
+    "n": 106744
+   }
+  ]
+ },
+ "method": "Counts computed with pandas from Annotations.tsv. The 'duration' column is the length of each extracted segment (0.5\u20132.5 s), not a measured call duration.",
+ "limits": "Checks the deposited counts only; label accuracy was not re-assessed."
+}

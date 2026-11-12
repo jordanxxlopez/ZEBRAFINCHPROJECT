@@ -1,0 +1,5654 @@
+{
+ "species": "common-marmoset",
+ "title": "Brain/MINDS 3D Marmoset Reference Brain Atlas 2017 (BMA 2017 ex vivo)",
+ "dims": [
+  226,
+  333,
+  196
+ ],
+ "spacing_mm": [
+  0.12,
+  0.12,
+  0.12
+ ],
+ "axes": {
+  "x": "left \u2192 right (RAS: +x right)",
+  "y": "posterior \u2192 anterior",
+  "z": "inferior \u2192 superior"
+ },
+ "flip_display": {
+  "y": true,
+  "z": true
+ },
+ "images": [
+  {
+   "file": "image-mri.u8.gz",
+   "name": "T2-weighted ex vivo MRI",
+   "window_source_units": [
+    43.17224254608154,
+    187.4120278930664
+   ],
+   "kind": "measured"
+  },
+  {
+   "file": "image-nissl.u8.gz",
+   "name": "Nissl histology registered to the MRI",
+   "window_source_units": [
+    45.93649826049805,
+    218.06996643066407
+   ],
+   "kind": "measured, registered by the atlas authors"
+  }
+ ],
+ "labels": {
+  "file": "labels.u16.gz",
+  "dtype": "uint16",
+  "count": 558
+ },
+ "regions": [
+  {
+   "index": 1,
+   "source_id": 5,
+   "acronym": "OB",
+   "name": "Olfactory bulb",
+   "hemisphere": "RH",
+   "color": "#f4bd35",
+   "voxels_source_grid": 26034,
+   "volume_mm3": 4.6653
+  },
+  {
+   "index": 2,
+   "source_id": 7,
+   "acronym": "AON",
+   "name": "Anterior olfactory nucleus",
+   "hemisphere": "RH",
+   "color": "#aa7a40",
+   "voxels_source_grid": 3196,
+   "volume_mm3": 0.5727
+  },
+  {
+   "index": 3,
+   "source_id": 21,
+   "acronym": "Tu",
+   "name": "Olfactry tubercle",
+   "hemisphere": "RH",
+   "color": "#ffff00",
+   "voxels_source_grid": 21737,
+   "volume_mm3": 3.8953
+  },
+  {
+   "index": 4,
+   "source_id": 24,
+   "acronym": "TT",
+   "name": "Tenia tecta",
+   "hemisphere": "RH",
+   "color": "#d6c949",
+   "voxels_source_grid": 91,
+   "volume_mm3": 0.0163
+  },
+  {
+   "index": 5,
+   "source_id": 26,
+   "acronym": "AI",
+   "name": "Agranular insular cortex",
+   "hemisphere": "RH",
+   "color": "#ebceee",
+   "voxels_source_grid": 12256,
+   "volume_mm3": 2.1963
+  },
+  {
+   "index": 6,
+   "source_id": 27,
+   "acronym": "AIP",
+   "name": "Anterior intraparietal area of cortex",
+   "hemisphere": "RH",
+   "color": "#d0de97",
+   "voxels_source_grid": 26141,
+   "volume_mm3": 4.6845
+  },
+  {
+   "index": 7,
+   "source_id": 28,
+   "acronym": "A1/2",
+   "name": "Areas 1 and 2 of cortex",
+   "hemisphere": "RH",
+   "color": "#bcdd9e",
+   "voxels_source_grid": 100518,
+   "volume_mm3": 18.0128
+  },
+  {
+   "index": 8,
+   "source_id": 29,
+   "acronym": "A3a",
+   "name": "Area 3a of cortex (primary somatosensory)",
+   "hemisphere": "RH",
+   "color": "#b736d2",
+   "voxels_source_grid": 145273,
+   "volume_mm3": 26.0329
+  },
+  {
+   "index": 9,
+   "source_id": 30,
+   "acronym": "A3b",
+   "name": "Area 3b of cortex (primary somatosensory)",
+   "hemisphere": "RH",
+   "color": "#6b6664",
+   "voxels_source_grid": 140838,
+   "volume_mm3": 25.2382
+  },
+  {
+   "index": 10,
+   "source_id": 31,
+   "acronym": "A4ab",
+   "name": "Area 4 of cortex; parts a and b (primary motor)",
+   "hemisphere": "RH",
+   "color": "#91a26f",
+   "voxels_source_grid": 140417,
+   "volume_mm3": 25.1627
+  },
+  {
+   "index": 11,
+   "source_id": 32,
+   "acronym": "A4c",
+   "name": "Area 4 of cortex; part c (primary motor)",
+   "hemisphere": "RH",
+   "color": "#7e4f62",
+   "voxels_source_grid": 6538,
+   "volume_mm3": 1.1716
+  },
+  {
+   "index": 12,
+   "source_id": 33,
+   "acronym": "A6DC",
+   "name": "Area 6 of cortex; dorsocaudal part",
+   "hemisphere": "RH",
+   "color": "#5656aa",
+   "voxels_source_grid": 60674,
+   "volume_mm3": 10.8728
+  },
+  {
+   "index": 13,
+   "source_id": 34,
+   "acronym": "A6DR",
+   "name": "Area 6 of cortex; dorsorostral part",
+   "hemisphere": "RH",
+   "color": "#d3b495",
+   "voxels_source_grid": 80684,
+   "volume_mm3": 14.4586
+  },
+  {
+   "index": 14,
+   "source_id": 35,
+   "acronym": "A6M",
+   "name": "Area 6 of cortex; medial (supplementary motor) part",
+   "hemisphere": "RH",
+   "color": "#5d64ff",
+   "voxels_source_grid": 90004,
+   "volume_mm3": 16.1287
+  },
+  {
+   "index": 15,
+   "source_id": 36,
+   "acronym": "A6Va",
+   "name": "Area 6 of cortex; ventral; part a",
+   "hemisphere": "RH",
+   "color": "#3aa19f",
+   "voxels_source_grid": 69097,
+   "volume_mm3": 12.3822
+  },
+  {
+   "index": 16,
+   "source_id": 37,
+   "acronym": "A6Vb",
+   "name": "Area 6 of cortex; ventral; part b",
+   "hemisphere": "RH",
+   "color": "#9847ff",
+   "voxels_source_grid": 25529,
+   "volume_mm3": 4.5748
+  },
+  {
+   "index": 17,
+   "source_id": 38,
+   "acronym": "A8aD",
+   "name": "Area 8a of cortex; dorsal part",
+   "hemisphere": "RH",
+   "color": "#a3c2f2",
+   "voxels_source_grid": 72617,
+   "volume_mm3": 13.013
+  },
+  {
+   "index": 18,
+   "source_id": 39,
+   "acronym": "A8aV",
+   "name": "Area 8a of cortex; ventral part",
+   "hemisphere": "RH",
+   "color": "#c593fd",
+   "voxels_source_grid": 70091,
+   "volume_mm3": 12.5603
+  },
+  {
+   "index": 19,
+   "source_id": 40,
+   "acronym": "A8b",
+   "name": "Area 8b of cortex",
+   "hemisphere": "RH",
+   "color": "#be601d",
+   "voxels_source_grid": 90846,
+   "volume_mm3": 16.2796
+  },
+  {
+   "index": 20,
+   "source_id": 41,
+   "acronym": "A8C",
+   "name": "Area 8 of cortex; caudal part",
+   "hemisphere": "RH",
+   "color": "#965ffd",
+   "voxels_source_grid": 19644,
+   "volume_mm3": 3.5202
+  },
+  {
+   "index": 21,
+   "source_id": 42,
+   "acronym": "A9",
+   "name": "Area 9 of cortex",
+   "hemisphere": "RH",
+   "color": "#e3c1e0",
+   "voxels_source_grid": 53628,
+   "volume_mm3": 9.6101
+  },
+  {
+   "index": 22,
+   "source_id": 43,
+   "acronym": "A10",
+   "name": "Area 10 of cortex",
+   "hemisphere": "RH",
+   "color": "#3e801c",
+   "voxels_source_grid": 84084,
+   "volume_mm3": 15.0679
+  },
+  {
+   "index": 23,
+   "source_id": 44,
+   "acronym": "A11",
+   "name": "Area 11 of cortex",
+   "hemisphere": "RH",
+   "color": "#e43ff9",
+   "voxels_source_grid": 25672,
+   "volume_mm3": 4.6004
+  },
+  {
+   "index": 24,
+   "source_id": 45,
+   "acronym": "A13a",
+   "name": "Area 13a of cortex",
+   "hemisphere": "RH",
+   "color": "#d3d7b3",
+   "voxels_source_grid": 8905,
+   "volume_mm3": 1.5958
+  },
+  {
+   "index": 25,
+   "source_id": 46,
+   "acronym": "A13b",
+   "name": "Area 13b of cortex",
+   "hemisphere": "RH",
+   "color": "#b300bf",
+   "voxels_source_grid": 10726,
+   "volume_mm3": 1.9221
+  },
+  {
+   "index": 26,
+   "source_id": 47,
+   "acronym": "A13L",
+   "name": "Area 13 of cortex; lateral part",
+   "hemisphere": "RH",
+   "color": "#b84d00",
+   "voxels_source_grid": 61468,
+   "volume_mm3": 11.0151
+  },
+  {
+   "index": 27,
+   "source_id": 48,
+   "acronym": "A13M",
+   "name": "Area 13 of cortex; medial part",
+   "hemisphere": "RH",
+   "color": "#6a6966",
+   "voxels_source_grid": 31454,
+   "volume_mm3": 5.6366
+  },
+  {
+   "index": 28,
+   "source_id": 49,
+   "acronym": "A14C",
+   "name": "Area 14 of cortex; caudal part",
+   "hemisphere": "RH",
+   "color": "#5887cf",
+   "voxels_source_grid": 6813,
+   "volume_mm3": 1.2209
+  },
+  {
+   "index": 29,
+   "source_id": 50,
+   "acronym": "A14R",
+   "name": "Area 14 of cortex; rostral part",
+   "hemisphere": "RH",
+   "color": "#f4daf4",
+   "voxels_source_grid": 22918,
+   "volume_mm3": 4.1069
+  },
+  {
+   "index": 30,
+   "source_id": 51,
+   "acronym": "A19DI",
+   "name": "Area 19 of cortex; dorsointermediate part",
+   "hemisphere": "RH",
+   "color": "#d238b3",
+   "voxels_source_grid": 51890,
+   "volume_mm3": 9.2987
+  },
+  {
+   "index": 31,
+   "source_id": 52,
+   "acronym": "A19M",
+   "name": "Area 19 of cortex; medial part",
+   "hemisphere": "RH",
+   "color": "#7f5918",
+   "voxels_source_grid": 74375,
+   "volume_mm3": 13.328
+  },
+  {
+   "index": 32,
+   "source_id": 53,
+   "acronym": "A23a",
+   "name": "Area 23a of cortex",
+   "hemisphere": "RH",
+   "color": "#7d6d6e",
+   "voxels_source_grid": 50505,
+   "volume_mm3": 9.0505
+  },
+  {
+   "index": 33,
+   "source_id": 54,
+   "acronym": "A23b",
+   "name": "Area 23b of cortex",
+   "hemisphere": "RH",
+   "color": "#8bd5c1",
+   "voxels_source_grid": 92344,
+   "volume_mm3": 16.548
+  },
+  {
+   "index": 34,
+   "source_id": 55,
+   "acronym": "A23c",
+   "name": "Area 23c of cortex",
+   "hemisphere": "RH",
+   "color": "#4f5249",
+   "voxels_source_grid": 23442,
+   "volume_mm3": 4.2008
+  },
+  {
+   "index": 35,
+   "source_id": 56,
+   "acronym": "A23V",
+   "name": "Area 23 of cortex; ventral part",
+   "hemisphere": "RH",
+   "color": "#68b200",
+   "voxels_source_grid": 52964,
+   "volume_mm3": 9.4911
+  },
+  {
+   "index": 36,
+   "source_id": 57,
+   "acronym": "A24a",
+   "name": "Area 24a of cortex",
+   "hemisphere": "RH",
+   "color": "#108900",
+   "voxels_source_grid": 37488,
+   "volume_mm3": 6.7178
+  },
+  {
+   "index": 37,
+   "source_id": 58,
+   "acronym": "A24b",
+   "name": "Area 24b of cortex",
+   "hemisphere": "RH",
+   "color": "#55c822",
+   "voxels_source_grid": 72404,
+   "volume_mm3": 12.9748
+  },
+  {
+   "index": 38,
+   "source_id": 59,
+   "acronym": "A24c",
+   "name": "Area 24c of cortex",
+   "hemisphere": "RH",
+   "color": "#6b5646",
+   "voxels_source_grid": 53944,
+   "volume_mm3": 9.6668
+  },
+  {
+   "index": 39,
+   "source_id": 60,
+   "acronym": "A24d",
+   "name": "Area 24d of cortex",
+   "hemisphere": "RH",
+   "color": "#ebdbef",
+   "voxels_source_grid": 33601,
+   "volume_mm3": 6.0213
+  },
+  {
+   "index": 40,
+   "source_id": 61,
+   "acronym": "A25",
+   "name": "Area 25 of cortex",
+   "hemisphere": "RH",
+   "color": "#368ebd",
+   "voxels_source_grid": 45495,
+   "volume_mm3": 8.1527
+  },
+  {
+   "index": 41,
+   "source_id": 62,
+   "acronym": "A29a-c",
+   "name": "Area 29a-c of cortex",
+   "hemisphere": "RH",
+   "color": "#dde4e8",
+   "voxels_source_grid": 61337,
+   "volume_mm3": 10.9916
+  },
+  {
+   "index": 42,
+   "source_id": 63,
+   "acronym": "A29d",
+   "name": "Area 29d of cortex",
+   "hemisphere": "RH",
+   "color": "#835294",
+   "voxels_source_grid": 31788,
+   "volume_mm3": 5.6964
+  },
+  {
+   "index": 43,
+   "source_id": 64,
+   "acronym": "A30",
+   "name": "Area 30 of cortex",
+   "hemisphere": "RH",
+   "color": "#3d9a89",
+   "voxels_source_grid": 55526,
+   "volume_mm3": 9.9503
+  },
+  {
+   "index": 44,
+   "source_id": 65,
+   "acronym": "A31",
+   "name": "Area 31 of cortex",
+   "hemisphere": "RH",
+   "color": "#b1c165",
+   "voxels_source_grid": 33599,
+   "volume_mm3": 6.0209
+  },
+  {
+   "index": 45,
+   "source_id": 66,
+   "acronym": "A32",
+   "name": "Area 32 of cortex",
+   "hemisphere": "RH",
+   "color": "#55c17d",
+   "voxels_source_grid": 62373,
+   "volume_mm3": 11.1772
+  },
+  {
+   "index": 46,
+   "source_id": 67,
+   "acronym": "A32V",
+   "name": "Area 32 of cortex; ventral part",
+   "hemisphere": "RH",
+   "color": "#3e9636",
+   "voxels_source_grid": 10486,
+   "volume_mm3": 1.8791
+  },
+  {
+   "index": 47,
+   "source_id": 68,
+   "acronym": "A35",
+   "name": "Area 35 of cortex",
+   "hemisphere": "RH",
+   "color": "#adaf77",
+   "voxels_source_grid": 48016,
+   "volume_mm3": 8.6045
+  },
+  {
+   "index": 48,
+   "source_id": 69,
+   "acronym": "A36",
+   "name": "Area 36 of cortex",
+   "hemisphere": "RH",
+   "color": "#7726e3",
+   "voxels_source_grid": 107089,
+   "volume_mm3": 19.1903
+  },
+  {
+   "index": 49,
+   "source_id": 70,
+   "acronym": "A45",
+   "name": "Area 45 of cortex",
+   "hemisphere": "RH",
+   "color": "#714694",
+   "voxels_source_grid": 19561,
+   "volume_mm3": 3.5053
+  },
+  {
+   "index": 50,
+   "source_id": 71,
+   "acronym": "A46D",
+   "name": "Area 46 of cortex; dorsal part",
+   "hemisphere": "RH",
+   "color": "#008ce7",
+   "voxels_source_grid": 12475,
+   "volume_mm3": 2.2355
+  },
+  {
+   "index": 51,
+   "source_id": 72,
+   "acronym": "A46V",
+   "name": "Area 46 of cortex; ventral part",
+   "hemisphere": "RH",
+   "color": "#ebeddd",
+   "voxels_source_grid": 12619,
+   "volume_mm3": 2.2613
+  },
+  {
+   "index": 52,
+   "source_id": 73,
+   "acronym": "A47L",
+   "name": "Area 47 (old 12) of cortex; lateral part",
+   "hemisphere": "RH",
+   "color": "#a38124",
+   "voxels_source_grid": 46024,
+   "volume_mm3": 8.2475
+  },
+  {
+   "index": 53,
+   "source_id": 74,
+   "acronym": "A47M",
+   "name": "Area 47 (old 12) of cortex; medial part",
+   "hemisphere": "RH",
+   "color": "#518ee8",
+   "voxels_source_grid": 32832,
+   "volume_mm3": 5.8835
+  },
+  {
+   "index": 54,
+   "source_id": 75,
+   "acronym": "A47O",
+   "name": "Area 47 (old 12) of cortex; orbital part",
+   "hemisphere": "RH",
+   "color": "#e2ddcc",
+   "voxels_source_grid": 26269,
+   "volume_mm3": 4.7074
+  },
+  {
+   "index": 55,
+   "source_id": 76,
+   "acronym": "AuAL",
+   "name": "Auditory cortex; anterolateral area",
+   "hemisphere": "RH",
+   "color": "#db7b95",
+   "voxels_source_grid": 26684,
+   "volume_mm3": 4.7818
+  },
+  {
+   "index": 56,
+   "source_id": 77,
+   "acronym": "AuCL",
+   "name": "Auditory cortex; caudolateral area",
+   "hemisphere": "RH",
+   "color": "#e4dbc7",
+   "voxels_source_grid": 18637,
+   "volume_mm3": 3.3398
+  },
+  {
+   "index": 57,
+   "source_id": 78,
+   "acronym": "AuCM",
+   "name": "Auditory cortex; caudomedial area",
+   "hemisphere": "RH",
+   "color": "#58a442",
+   "voxels_source_grid": 48306,
+   "volume_mm3": 8.6564
+  },
+  {
+   "index": 58,
+   "source_id": 79,
+   "acronym": "AuCPB",
+   "name": "Auditory cortex; caudal parabelt area",
+   "hemisphere": "RH",
+   "color": "#8fd100",
+   "voxels_source_grid": 25835,
+   "volume_mm3": 4.6296
+  },
+  {
+   "index": 59,
+   "source_id": 80,
+   "acronym": "AuML",
+   "name": "Auditory cortex; middle lateral area",
+   "hemisphere": "RH",
+   "color": "#b098ba",
+   "voxels_source_grid": 18062,
+   "volume_mm3": 3.2367
+  },
+  {
+   "index": 60,
+   "source_id": 81,
+   "acronym": "AuA1",
+   "name": "Auditory cortex; primary area",
+   "hemisphere": "RH",
+   "color": "#cc129a",
+   "voxels_source_grid": 74475,
+   "volume_mm3": 13.3459
+  },
+  {
+   "index": 61,
+   "source_id": 82,
+   "acronym": "AuR",
+   "name": "Auditory cortex; rostral area",
+   "hemisphere": "RH",
+   "color": "#92674c",
+   "voxels_source_grid": 24253,
+   "volume_mm3": 4.3461
+  },
+  {
+   "index": 62,
+   "source_id": 83,
+   "acronym": "AuRPB",
+   "name": "Auditory cortex; rostral parabelt",
+   "hemisphere": "RH",
+   "color": "#a0468e",
+   "voxels_source_grid": 33533,
+   "volume_mm3": 6.0091
+  },
+  {
+   "index": 63,
+   "source_id": 84,
+   "acronym": "AuRM",
+   "name": "Auditory cortex; rostromedial area",
+   "hemisphere": "RH",
+   "color": "#5e4ee5",
+   "voxels_source_grid": 17324,
+   "volume_mm3": 3.1045
+  },
+  {
+   "index": 64,
+   "source_id": 85,
+   "acronym": "AuRTL",
+   "name": "Auditory cortex; rostrotemporal lateral area",
+   "hemisphere": "RH",
+   "color": "#2c92d3",
+   "voxels_source_grid": 18652,
+   "volume_mm3": 3.3424
+  },
+  {
+   "index": 65,
+   "source_id": 86,
+   "acronym": "AuRTM",
+   "name": "Auditory cortex; rostrotemporal medial area",
+   "hemisphere": "RH",
+   "color": "#e47be1",
+   "voxels_source_grid": 21000,
+   "volume_mm3": 3.7632
+  },
+  {
+   "index": 66,
+   "source_id": 87,
+   "acronym": "AuRT",
+   "name": "Auditory cortex; rostrotemporal part",
+   "hemisphere": "RH",
+   "color": "#d0de97",
+   "voxels_source_grid": 23885,
+   "volume_mm3": 4.2802
+  },
+  {
+   "index": 67,
+   "source_id": 88,
+   "acronym": "DI",
+   "name": "Dysgranular insular cortex",
+   "hemisphere": "RH",
+   "color": "#ee4ff5",
+   "voxels_source_grid": 40590,
+   "volume_mm3": 7.2737
+  },
+  {
+   "index": 68,
+   "source_id": 89,
+   "acronym": "Ent",
+   "name": "Entorhinal cortex",
+   "hemisphere": "RH",
+   "color": "#7a8853",
+   "voxels_source_grid": 167963,
+   "volume_mm3": 30.099
+  },
+  {
+   "index": 69,
+   "source_id": 91,
+   "acronym": "FST",
+   "name": "Fundus of superior temporal sulcus area of cortex",
+   "hemisphere": "RH",
+   "color": "#12bf00",
+   "voxels_source_grid": 80057,
+   "volume_mm3": 14.3462
+  },
+  {
+   "index": 70,
+   "source_id": 92,
+   "acronym": "GI",
+   "name": "Granular insular cortex",
+   "hemisphere": "RH",
+   "color": "#a0468e",
+   "voxels_source_grid": 45402,
+   "volume_mm3": 8.136
+  },
+  {
+   "index": 71,
+   "source_id": 93,
+   "acronym": "Gu",
+   "name": "Gustatory cortex",
+   "hemisphere": "RH",
+   "color": "#43b867",
+   "voxels_source_grid": 49767,
+   "volume_mm3": 8.9182
+  },
+  {
+   "index": 72,
+   "source_id": 94,
+   "acronym": "IG",
+   "name": "Indusium griseum",
+   "hemisphere": "RH",
+   "color": "#f3e740",
+   "voxels_source_grid": 1324,
+   "volume_mm3": 0.2373
+  },
+  {
+   "index": 73,
+   "source_id": 95,
+   "acronym": "IPro",
+   "name": "Insular proisocortex",
+   "hemisphere": "RH",
+   "color": "#dd6ac4",
+   "voxels_source_grid": 31218,
+   "volume_mm3": 5.5943
+  },
+  {
+   "index": 74,
+   "source_id": 96,
+   "acronym": "LIP",
+   "name": "Lateral intrapartietal area of cortex",
+   "hemisphere": "RH",
+   "color": "#64612a",
+   "voxels_source_grid": 87399,
+   "volume_mm3": 15.6619
+  },
+  {
+   "index": 75,
+   "source_id": 97,
+   "acronym": "MIP",
+   "name": "Medial intraparietal area of cortex",
+   "hemisphere": "RH",
+   "color": "#ffe3ff",
+   "voxels_source_grid": 56888,
+   "volume_mm3": 10.1943
+  },
+  {
+   "index": 76,
+   "source_id": 98,
+   "acronym": "MST",
+   "name": "Medial superior temporal area of cortex",
+   "hemisphere": "RH",
+   "color": "#5f7dc7",
+   "voxels_source_grid": 49182,
+   "volume_mm3": 8.8134
+  },
+  {
+   "index": 77,
+   "source_id": 100,
+   "acronym": "OPt",
+   "name": "Occipito-parietal transitional area of cortex",
+   "hemisphere": "RH",
+   "color": "#684a00",
+   "voxels_source_grid": 60443,
+   "volume_mm3": 10.8314
+  },
+  {
+   "index": 78,
+   "source_id": 101,
+   "acronym": "OPAl",
+   "name": "Orbital periallocortex",
+   "hemisphere": "RH",
+   "color": "#5bb448",
+   "voxels_source_grid": 15497,
+   "volume_mm3": 2.7771
+  },
+  {
+   "index": 79,
+   "source_id": 102,
+   "acronym": "OPro",
+   "name": "Orbital proisocortex",
+   "hemisphere": "RH",
+   "color": "#8ac800",
+   "voxels_source_grid": 27791,
+   "volume_mm3": 4.9801
+  },
+  {
+   "index": 80,
+   "source_id": 103,
+   "acronym": "PaIL",
+   "name": "Parainsular cortex; lateral part",
+   "hemisphere": "RH",
+   "color": "#57c45b",
+   "voxels_source_grid": 17668,
+   "volume_mm3": 3.1661
+  },
+  {
+   "index": 81,
+   "source_id": 104,
+   "acronym": "PaIM",
+   "name": "Parainsular cortex; medial part",
+   "hemisphere": "RH",
+   "color": "#b29100",
+   "voxels_source_grid": 24264,
+   "volume_mm3": 4.3481
+  },
+  {
+   "index": 82,
+   "source_id": 105,
+   "acronym": "PaS",
+   "name": "Parasubiculum",
+   "hemisphere": "RH",
+   "color": "#7c6379",
+   "voxels_source_grid": 64360,
+   "volume_mm3": 11.5333
+  },
+  {
+   "index": 83,
+   "source_id": 106,
+   "acronym": "PE",
+   "name": "Parietal area PE",
+   "hemisphere": "RH",
+   "color": "#1804ed",
+   "voxels_source_grid": 185858,
+   "volume_mm3": 33.3058
+  },
+  {
+   "index": 84,
+   "source_id": 107,
+   "acronym": "PEC",
+   "name": "Parietal area PE; caudal part",
+   "hemisphere": "RH",
+   "color": "#a4bbf6",
+   "voxels_source_grid": 50594,
+   "volume_mm3": 9.0664
+  },
+  {
+   "index": 85,
+   "source_id": 108,
+   "acronym": "PF",
+   "name": "Parietal area PF",
+   "hemisphere": "RH",
+   "color": "#3494c5",
+   "voxels_source_grid": 30489,
+   "volume_mm3": 5.4636
+  },
+  {
+   "index": 86,
+   "source_id": 109,
+   "acronym": "PFG",
+   "name": "Parietal area PFG",
+   "hemisphere": "RH",
+   "color": "#55a9b8",
+   "voxels_source_grid": 39033,
+   "volume_mm3": 6.9947
+  },
+  {
+   "index": 87,
+   "source_id": 110,
+   "acronym": "PG",
+   "name": "Parietal area PG",
+   "hemisphere": "RH",
+   "color": "#e100fe",
+   "voxels_source_grid": 54923,
+   "volume_mm3": 9.8422
+  },
+  {
+   "index": 88,
+   "source_id": 111,
+   "acronym": "PGa/IPa",
+   "name": "Parietal areas PGa and IPa (fundus of superior temporal ventral area)",
+   "hemisphere": "RH",
+   "color": "#39978a",
+   "voxels_source_grid": 24090,
+   "volume_mm3": 4.3169
+  },
+  {
+   "index": 89,
+   "source_id": 112,
+   "acronym": "PGM",
+   "name": "Parietal area PG; medial part",
+   "hemisphere": "RH",
+   "color": "#b5dec6",
+   "voxels_source_grid": 53529,
+   "volume_mm3": 9.5924
+  },
+  {
+   "index": 90,
+   "source_id": 113,
+   "acronym": "Pir",
+   "name": "Piriform cortex",
+   "hemisphere": "RH",
+   "color": "#3e9c6f",
+   "voxels_source_grid": 115181,
+   "volume_mm3": 20.6404
+  },
+  {
+   "index": 91,
+   "source_id": 117,
+   "acronym": "PrS",
+   "name": "Presubiculum",
+   "hemisphere": "RH",
+   "color": "#a29f99",
+   "voxels_source_grid": 59475,
+   "volume_mm3": 10.6579
+  },
+  {
+   "index": 92,
+   "source_id": 118,
+   "acronym": "ProM",
+   "name": "Proisocortical motor region (precentral opercular cortex)",
+   "hemisphere": "RH",
+   "color": "#d4d494",
+   "voxels_source_grid": 80006,
+   "volume_mm3": 14.3371
+  },
+  {
+   "index": 93,
+   "source_id": 119,
+   "acronym": "ProSt",
+   "name": "Prostriate area",
+   "hemisphere": "RH",
+   "color": "#69c7d1",
+   "voxels_source_grid": 36925,
+   "volume_mm3": 6.617
+  },
+  {
+   "index": 94,
+   "source_id": 121,
+   "acronym": "ReI",
+   "name": "Retroinsular area",
+   "hemisphere": "RH",
+   "color": "#7ab38a",
+   "voxels_source_grid": 18420,
+   "volume_mm3": 3.3009
+  },
+  {
+   "index": 95,
+   "source_id": 122,
+   "acronym": "S2E",
+   "name": "Secondary somatosensory cortex; external part",
+   "hemisphere": "RH",
+   "color": "#958492",
+   "voxels_source_grid": 38023,
+   "volume_mm3": 6.8137
+  },
+  {
+   "index": 96,
+   "source_id": 123,
+   "acronym": "S2I",
+   "name": "Secondary somatosensory cortex; internal part",
+   "hemisphere": "RH",
+   "color": "#70c5ff",
+   "voxels_source_grid": 35758,
+   "volume_mm3": 6.4078
+  },
+  {
+   "index": 97,
+   "source_id": 124,
+   "acronym": "S2PR",
+   "name": "Secondary somatosensory cortex; parietal rostral area",
+   "hemisphere": "RH",
+   "color": "#b8a09e",
+   "voxels_source_grid": 20563,
+   "volume_mm3": 3.6849
+  },
+  {
+   "index": 98,
+   "source_id": 125,
+   "acronym": "S2PV",
+   "name": "Secondary somatosensory cortex; parietal ventral area",
+   "hemisphere": "RH",
+   "color": "#f5f9eb",
+   "voxels_source_grid": 36409,
+   "volume_mm3": 6.5245
+  },
+  {
+   "index": 99,
+   "source_id": 126,
+   "acronym": "STR",
+   "name": "Superior temporal rostral  area",
+   "hemisphere": "RH",
+   "color": "#cd15ff",
+   "voxels_source_grid": 97235,
+   "volume_mm3": 17.4245
+  },
+  {
+   "index": 100,
+   "source_id": 128,
+   "acronym": "TE1",
+   "name": "Temporal area TE1",
+   "hemisphere": "RH",
+   "color": "#e06dff",
+   "voxels_source_grid": 67079,
+   "volume_mm3": 12.0206
+  },
+  {
+   "index": 101,
+   "source_id": 129,
+   "acronym": "TE2",
+   "name": "Temporal area TE2",
+   "hemisphere": "RH",
+   "color": "#ab00da",
+   "voxels_source_grid": 129672,
+   "volume_mm3": 23.2372
+  },
+  {
+   "index": 102,
+   "source_id": 130,
+   "acronym": "TE3",
+   "name": "Temporal area TE3",
+   "hemisphere": "RH",
+   "color": "#cc3333",
+   "voxels_source_grid": 242216,
+   "volume_mm3": 43.4051
+  },
+  {
+   "index": 103,
+   "source_id": 131,
+   "acronym": "TEO",
+   "name": "Temporal area TE; occipital part",
+   "hemisphere": "RH",
+   "color": "#4fb3b0",
+   "voxels_source_grid": 132867,
+   "volume_mm3": 23.8098
+  },
+  {
+   "index": 104,
+   "source_id": 132,
+   "acronym": "TF",
+   "name": "Temporal area TF",
+   "hemisphere": "RH",
+   "color": "#835294",
+   "voxels_source_grid": 110249,
+   "volume_mm3": 19.7566
+  },
+  {
+   "index": 105,
+   "source_id": 133,
+   "acronym": "TFO",
+   "name": "Temporal area TF; occipital part",
+   "hemisphere": "RH",
+   "color": "#c2e893",
+   "voxels_source_grid": 43393,
+   "volume_mm3": 7.776
+  },
+  {
+   "index": 106,
+   "source_id": 134,
+   "acronym": "TH",
+   "name": "Temporal area TH",
+   "hemisphere": "RH",
+   "color": "#e7c9c5",
+   "voxels_source_grid": 60268,
+   "volume_mm3": 10.8
+  },
+  {
+   "index": 107,
+   "source_id": 135,
+   "acronym": "TL",
+   "name": "Temporal area TL",
+   "hemisphere": "RH",
+   "color": "#a0c9d5",
+   "voxels_source_grid": 25608,
+   "volume_mm3": 4.589
+  },
+  {
+   "index": 108,
+   "source_id": 136,
+   "acronym": "TLO",
+   "name": "Temporal area TL; occipital part",
+   "hemisphere": "RH",
+   "color": "#a077d5",
+   "voxels_source_grid": 43832,
+   "volume_mm3": 7.8547
+  },
+  {
+   "index": 109,
+   "source_id": 137,
+   "acronym": "TPro",
+   "name": "Temporal proisocortex",
+   "hemisphere": "RH",
+   "color": "#4aa570",
+   "voxels_source_grid": 6010,
+   "volume_mm3": 1.077
+  },
+  {
+   "index": 110,
+   "source_id": 138,
+   "acronym": "TPO",
+   "name": "Temporo-parieto-occipital association area (superior temporal polysensory cortex)",
+   "hemisphere": "RH",
+   "color": "#e893ff",
+   "voxels_source_grid": 106951,
+   "volume_mm3": 19.1656
+  },
+  {
+   "index": 111,
+   "source_id": 139,
+   "acronym": "TPPro",
+   "name": "Temporopolar proisocortex",
+   "hemisphere": "RH",
+   "color": "#a6c4c1",
+   "voxels_source_grid": 64609,
+   "volume_mm3": 11.5779
+  },
+  {
+   "index": 112,
+   "source_id": 140,
+   "acronym": "TPt",
+   "name": "Temporoparietal transitional area",
+   "hemisphere": "RH",
+   "color": "#a7d0a3",
+   "voxels_source_grid": 25721,
+   "volume_mm3": 4.6092
+  },
+  {
+   "index": 113,
+   "source_id": 141,
+   "acronym": "VIP",
+   "name": "Ventral intraparietal area of cortex",
+   "hemisphere": "RH",
+   "color": "#d5b1ea",
+   "voxels_source_grid": 18708,
+   "volume_mm3": 3.3525
+  },
+  {
+   "index": 114,
+   "source_id": 142,
+   "acronym": "V1",
+   "name": "Visual area 1",
+   "hemisphere": "RH",
+   "color": "#28982a",
+   "voxels_source_grid": 1501467,
+   "volume_mm3": 269.0629
+  },
+  {
+   "index": 115,
+   "source_id": 143,
+   "acronym": "V2",
+   "name": "Visual area 2",
+   "hemisphere": "RH",
+   "color": "#2b648f",
+   "voxels_source_grid": 658601,
+   "volume_mm3": 118.0213
+  },
+  {
+   "index": 116,
+   "source_id": 144,
+   "acronym": "V3",
+   "name": "Visual area 3 (ventrolateral posterior area)",
+   "hemisphere": "RH",
+   "color": "#585345",
+   "voxels_source_grid": 346741,
+   "volume_mm3": 62.136
+  },
+  {
+   "index": 117,
+   "source_id": 145,
+   "acronym": "V3A",
+   "name": "Visual area 3A (dorsoanterior area)",
+   "hemisphere": "RH",
+   "color": "#d7f4b5",
+   "voxels_source_grid": 81381,
+   "volume_mm3": 14.5835
+  },
+  {
+   "index": 118,
+   "source_id": 146,
+   "acronym": "V4",
+   "name": "Visual area 4 (ventrolatereral anterior area)",
+   "hemisphere": "RH",
+   "color": "#6ff45d",
+   "voxels_source_grid": 174688,
+   "volume_mm3": 31.3041
+  },
+  {
+   "index": 119,
+   "source_id": 147,
+   "acronym": "V4T",
+   "name": "Visual area 4; transitional part",
+   "hemisphere": "RH",
+   "color": "#c001fc",
+   "voxels_source_grid": 98792,
+   "volume_mm3": 17.7035
+  },
+  {
+   "index": 120,
+   "source_id": 148,
+   "acronym": "V5",
+   "name": "Visual area 5 (middle temporal area)",
+   "hemisphere": "RH",
+   "color": "#aa8db5",
+   "voxels_source_grid": 81072,
+   "volume_mm3": 14.5281
+  },
+  {
+   "index": 121,
+   "source_id": 149,
+   "acronym": "V6",
+   "name": "Visual area 6 (dorsomedial area)",
+   "hemisphere": "RH",
+   "color": "#0299fe",
+   "voxels_source_grid": 207444,
+   "volume_mm3": 37.174
+  },
+  {
+   "index": 122,
+   "source_id": 150,
+   "acronym": "V6A",
+   "name": "Visual area 6A (posterior parietal medial area)",
+   "hemisphere": "RH",
+   "color": "#029900",
+   "voxels_source_grid": 58642,
+   "volume_mm3": 10.5086
+  },
+  {
+   "index": 123,
+   "source_id": 151,
+   "acronym": "HipF",
+   "name": "Hippocampal formation",
+   "hemisphere": "RH",
+   "color": "#00a9cc",
+   "voxels_source_grid": 673977,
+   "volume_mm3": 120.7767
+  },
+  {
+   "index": 124,
+   "source_id": 169,
+   "acronym": "APir",
+   "name": "Amygdalopiriform transition area",
+   "hemisphere": "RH",
+   "color": "#e740f6",
+   "voxels_source_grid": 11880,
+   "volume_mm3": 2.1289
+  },
+  {
+   "index": 125,
+   "source_id": 172,
+   "acronym": "Ce",
+   "name": "Central amygdaloid nucleus",
+   "hemisphere": "RH",
+   "color": "#9f3e8d",
+   "voxels_source_grid": 19485,
+   "volume_mm3": 3.4917
+  },
+  {
+   "index": 126,
+   "source_id": 178,
+   "acronym": "ACo",
+   "name": "Anterior cortical amygdaloid nucleus",
+   "hemisphere": "RH",
+   "color": "#4a53cd",
+   "voxels_source_grid": 3457,
+   "volume_mm3": 0.6195
+  },
+  {
+   "index": 127,
+   "source_id": 179,
+   "acronym": "LOT",
+   "name": "Nucleus of the lateral olfactry tract",
+   "hemisphere": "RH",
+   "color": "#2c0093",
+   "voxels_source_grid": 4364,
+   "volume_mm3": 0.782
+  },
+  {
+   "index": 128,
+   "source_id": 180,
+   "acronym": "PCo",
+   "name": "Posterior cortical amygdaloid nucleus",
+   "hemisphere": "RH",
+   "color": "#00bba8",
+   "voxels_source_grid": 11391,
+   "volume_mm3": 2.0413
+  },
+  {
+   "index": 129,
+   "source_id": 181,
+   "acronym": "Me",
+   "name": "Medial amygdaloid nucleus",
+   "hemisphere": "RH",
+   "color": "#f6e294",
+   "voxels_source_grid": 4096,
+   "volume_mm3": 0.734
+  },
+  {
+   "index": 130,
+   "source_id": 185,
+   "acronym": "ST",
+   "name": "Bed nucleus of the stria terminalis",
+   "hemisphere": "RH",
+   "color": "#ddeb86",
+   "voxels_source_grid": 33419,
+   "volume_mm3": 5.9887
+  },
+  {
+   "index": 131,
+   "source_id": 197,
+   "acronym": "BL",
+   "name": "Basolateral amygdaloid nucleus",
+   "hemisphere": "RH",
+   "color": "#422c41",
+   "voxels_source_grid": 53451,
+   "volume_mm3": 9.5784
+  },
+  {
+   "index": 132,
+   "source_id": 205,
+   "acronym": "BMMC",
+   "name": "Basomedial amygdaloid nucleus; magnocellular part",
+   "hemisphere": "RH",
+   "color": "#c54d92",
+   "voxels_source_grid": 17973,
+   "volume_mm3": 3.2208
+  },
+  {
+   "index": 133,
+   "source_id": 206,
+   "acronym": "BMPC",
+   "name": "Basomedial amygdaloid nucleus; parvicellular part",
+   "hemisphere": "RH",
+   "color": "#e66686",
+   "voxels_source_grid": 22401,
+   "volume_mm3": 4.0143
+  },
+  {
+   "index": 134,
+   "source_id": 209,
+   "acronym": "La",
+   "name": "Lateral amygdaloid nucleus",
+   "hemisphere": "RH",
+   "color": "#473946",
+   "voxels_source_grid": 33800,
+   "volume_mm3": 6.057
+  },
+  {
+   "index": 135,
+   "source_id": 212,
+   "acronym": "Cl",
+   "name": "Claustrum",
+   "hemisphere": "RH",
+   "color": "#007b50",
+   "voxels_source_grid": 62134,
+   "volume_mm3": 11.1344
+  },
+  {
+   "index": 136,
+   "source_id": 213,
+   "acronym": "DEn",
+   "name": "Dorsal nucleus of the endopiriform claustrum",
+   "hemisphere": "RH",
+   "color": "#007b50",
+   "voxels_source_grid": 18627,
+   "volume_mm3": 3.338
+  },
+  {
+   "index": 137,
+   "source_id": 215,
+   "acronym": "EGP",
+   "name": "External globus pallidus",
+   "hemisphere": "RH",
+   "color": "#82ffe8",
+   "voxels_source_grid": 66059,
+   "volume_mm3": 11.8378
+  },
+  {
+   "index": 138,
+   "source_id": 216,
+   "acronym": "IGP",
+   "name": "Internal globus pallidus",
+   "hemisphere": "RH",
+   "color": "#009985",
+   "voxels_source_grid": 17830,
+   "volume_mm3": 3.1951
+  },
+  {
+   "index": 139,
+   "source_id": 217,
+   "acronym": "IEn",
+   "name": "Intermediate endopiriform nucleus",
+   "hemisphere": "RH",
+   "color": "#007b50",
+   "voxels_source_grid": 5293,
+   "volume_mm3": 0.9485
+  },
+  {
+   "index": 140,
+   "source_id": 220,
+   "acronym": "SNC",
+   "name": "Substantia nigra; compact part",
+   "hemisphere": "RH",
+   "color": "#61d55f",
+   "voxels_source_grid": 9119,
+   "volume_mm3": 1.6341
+  },
+  {
+   "index": 141,
+   "source_id": 224,
+   "acronym": "SNL",
+   "name": "Substantia nigra; lateral part",
+   "hemisphere": "RH",
+   "color": "#96afa9",
+   "voxels_source_grid": 10088,
+   "volume_mm3": 1.8078
+  },
+  {
+   "index": 142,
+   "source_id": 225,
+   "acronym": "SNR",
+   "name": "Substantia nigra; reticular part",
+   "hemisphere": "RH",
+   "color": "#41c3af",
+   "voxels_source_grid": 19352,
+   "volume_mm3": 3.4679
+  },
+  {
+   "index": 143,
+   "source_id": 228,
+   "acronym": "AcbC",
+   "name": "Accumbens nucleus; core",
+   "hemisphere": "RH",
+   "color": "#cad9a5",
+   "voxels_source_grid": 25252,
+   "volume_mm3": 4.5252
+  },
+  {
+   "index": 144,
+   "source_id": 229,
+   "acronym": "AcbSh",
+   "name": "Accumbens nucleus;shell",
+   "hemisphere": "RH",
+   "color": "#a1e2b6",
+   "voxels_source_grid": 54289,
+   "volume_mm3": 9.7286
+  },
+  {
+   "index": 145,
+   "source_id": 233,
+   "acronym": "Cd",
+   "name": "Caudate nucleus",
+   "hemisphere": "RH",
+   "color": "#00a553",
+   "voxels_source_grid": 467168,
+   "volume_mm3": 83.7165
+  },
+  {
+   "index": 146,
+   "source_id": 234,
+   "acronym": "Pu",
+   "name": "Putamen",
+   "hemisphere": "RH",
+   "color": "#d7dd3c",
+   "voxels_source_grid": 270789,
+   "volume_mm3": 48.5254
+  },
+  {
+   "index": 147,
+   "source_id": 235,
+   "acronym": "STh",
+   "name": "Subthalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#6da895",
+   "voxels_source_grid": 6307,
+   "volume_mm3": 1.1302
+  },
+  {
+   "index": 148,
+   "source_id": 236,
+   "acronym": "VEn",
+   "name": "Ventral nucleus of the endopiriform claustrum",
+   "hemisphere": "RH",
+   "color": "#007b50",
+   "voxels_source_grid": 9831,
+   "volume_mm3": 1.7617
+  },
+  {
+   "index": 149,
+   "source_id": 239,
+   "acronym": "HDB",
+   "name": "Nucleus of the horizontal limb of the diagonal band",
+   "hemisphere": "RH",
+   "color": "#850cff",
+   "voxels_source_grid": 2753,
+   "volume_mm3": 0.4933
+  },
+  {
+   "index": 150,
+   "source_id": 240,
+   "acronym": "VDB",
+   "name": "Nucleus of the vertical limb of the diagonal band",
+   "hemisphere": "RH",
+   "color": "#008dba",
+   "voxels_source_grid": 2563,
+   "volume_mm3": 0.4593
+  },
+  {
+   "index": 151,
+   "source_id": 243,
+   "acronym": "LS",
+   "name": "Lateral septal nuclei",
+   "hemisphere": "RH",
+   "color": "#7e7edb",
+   "voxels_source_grid": 41444,
+   "volume_mm3": 7.4268
+  },
+  {
+   "index": 152,
+   "source_id": 247,
+   "acronym": "MS",
+   "name": "Medial septal nucleus",
+   "hemisphere": "RH",
+   "color": "#9dcce0",
+   "voxels_source_grid": 7778,
+   "volume_mm3": 1.3938
+  },
+  {
+   "index": 153,
+   "source_id": 249,
+   "acronym": "SFi",
+   "name": "Septofimbrial nucleus",
+   "hemisphere": "RH",
+   "color": "#6bfafe",
+   "voxels_source_grid": 552,
+   "volume_mm3": 0.0989
+  },
+  {
+   "index": 154,
+   "source_id": 255,
+   "acronym": "MG",
+   "name": "Medial geniculate nucleus",
+   "hemisphere": "RH",
+   "color": "#1f477a",
+   "voxels_source_grid": 28658,
+   "volume_mm3": 5.1355
+  },
+  {
+   "index": 155,
+   "source_id": 261,
+   "acronym": "AD",
+   "name": "Anterodorsal thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#435aa0",
+   "voxels_source_grid": 1215,
+   "volume_mm3": 0.2177
+  },
+  {
+   "index": 156,
+   "source_id": 262,
+   "acronym": "AM",
+   "name": "Anteromedial thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#3a3c4f",
+   "voxels_source_grid": 6927,
+   "volume_mm3": 1.2413
+  },
+  {
+   "index": 157,
+   "source_id": 263,
+   "acronym": "AV",
+   "name": "Anteroventral thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#0086a8",
+   "voxels_source_grid": 14430,
+   "volume_mm3": 2.5859
+  },
+  {
+   "index": 158,
+   "source_id": 265,
+   "acronym": "LD",
+   "name": "Laterodorsal thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#384d98",
+   "voxels_source_grid": 13635,
+   "volume_mm3": 2.4434
+  },
+  {
+   "index": 159,
+   "source_id": 266,
+   "acronym": "LP",
+   "name": "Lateral posterior thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#00519a",
+   "voxels_source_grid": 878,
+   "volume_mm3": 0.1573
+  },
+  {
+   "index": 160,
+   "source_id": 267,
+   "acronym": "MD",
+   "name": "Mediodorsal thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#343d55",
+   "voxels_source_grid": 61501,
+   "volume_mm3": 11.021
+  },
+  {
+   "index": 161,
+   "source_id": 271,
+   "acronym": "PT",
+   "name": "Paratenial nucleus",
+   "hemisphere": "RH",
+   "color": "#5d2842",
+   "voxels_source_grid": 1041,
+   "volume_mm3": 0.1865
+  },
+  {
+   "index": 162,
+   "source_id": 273,
+   "acronym": "APul",
+   "name": "Anterior pulvinar",
+   "hemisphere": "RH",
+   "color": "#c8b199",
+   "voxels_source_grid": 2822,
+   "volume_mm3": 0.5057
+  },
+  {
+   "index": 163,
+   "source_id": 274,
+   "acronym": "IPul",
+   "name": "Inferior pulvinar",
+   "hemisphere": "RH",
+   "color": "#c4c5ad",
+   "voxels_source_grid": 30771,
+   "volume_mm3": 5.5142
+  },
+  {
+   "index": 164,
+   "source_id": 279,
+   "acronym": "LPul",
+   "name": "Lateral pulvinar",
+   "hemisphere": "RH",
+   "color": "#dc9eb4",
+   "voxels_source_grid": 50573,
+   "volume_mm3": 9.0627
+  },
+  {
+   "index": 165,
+   "source_id": 280,
+   "acronym": "MPul",
+   "name": "Medial pulvinar",
+   "hemisphere": "RH",
+   "color": "#9b92cc",
+   "voxels_source_grid": 85622,
+   "volume_mm3": 15.3435
+  },
+  {
+   "index": 166,
+   "source_id": 282,
+   "acronym": "Ang",
+   "name": "Angular thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#b17fd1",
+   "voxels_source_grid": 4017,
+   "volume_mm3": 0.7198
+  },
+  {
+   "index": 167,
+   "source_id": 298,
+   "acronym": "VA",
+   "name": "Ventral anterior thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#4c64b7",
+   "voxels_source_grid": 62560,
+   "volume_mm3": 11.2108
+  },
+  {
+   "index": 168,
+   "source_id": 303,
+   "acronym": "VLLa",
+   "name": "Ventral lateral thalamic nucleus; lateral part",
+   "hemisphere": "RH",
+   "color": "#5f5c65",
+   "voxels_source_grid": 41932,
+   "volume_mm3": 7.5142
+  },
+  {
+   "index": 169,
+   "source_id": 304,
+   "acronym": "VLM",
+   "name": "Ventral lateral thalamic nucleus; medial part",
+   "hemisphere": "RH",
+   "color": "#8b94ba",
+   "voxels_source_grid": 14775,
+   "volume_mm3": 2.6477
+  },
+  {
+   "index": 170,
+   "source_id": 305,
+   "acronym": "VLD",
+   "name": "Ventrolateral thalamic nucleus; dorsal part",
+   "hemisphere": "RH",
+   "color": "#006b8f",
+   "voxels_source_grid": 7153,
+   "volume_mm3": 1.2818
+  },
+  {
+   "index": 171,
+   "source_id": 308,
+   "acronym": "Po",
+   "name": "Posterior thalamic nuclear group",
+   "hemisphere": "RH",
+   "color": "#007bc3",
+   "voxels_source_grid": 12229,
+   "volume_mm3": 2.1914
+  },
+  {
+   "index": 172,
+   "source_id": 311,
+   "acronym": "SG",
+   "name": "Suprageniculate thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#00b3be",
+   "voxels_source_grid": 6044,
+   "volume_mm3": 1.0831
+  },
+  {
+   "index": 173,
+   "source_id": 316,
+   "acronym": "VPL",
+   "name": "Ventral posterolateral thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#223546",
+   "voxels_source_grid": 11797,
+   "volume_mm3": 2.114
+  },
+  {
+   "index": 174,
+   "source_id": 317,
+   "acronym": "VPM",
+   "name": "Ventral posteromedial thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#89acd7",
+   "voxels_source_grid": 10777,
+   "volume_mm3": 1.9312
+  },
+  {
+   "index": 175,
+   "source_id": 320,
+   "acronym": "Rt",
+   "name": "Reticular nucleus",
+   "hemisphere": "RH",
+   "color": "#69639a",
+   "voxels_source_grid": 32039,
+   "volume_mm3": 5.7414
+  },
+  {
+   "index": 176,
+   "source_id": 325,
+   "acronym": "ZI",
+   "name": "Zona incerta",
+   "hemisphere": "RH",
+   "color": "#441984",
+   "voxels_source_grid": 6399,
+   "volume_mm3": 1.1467
+  },
+  {
+   "index": 177,
+   "source_id": 331,
+   "acronym": "DLG",
+   "name": "Dorsal lateral geniculate nucleus",
+   "hemisphere": "RH",
+   "color": "#2b618f",
+   "voxels_source_grid": 74441,
+   "volume_mm3": 13.3398
+  },
+  {
+   "index": 178,
+   "source_id": 342,
+   "acronym": "Hb",
+   "name": "Habenular nucleus",
+   "hemisphere": "RH",
+   "color": "#7967c3",
+   "voxels_source_grid": 6793,
+   "volume_mm3": 1.2173
+  },
+  {
+   "index": 179,
+   "source_id": 345,
+   "acronym": "PV",
+   "name": "Paraventricular thalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#a294c8",
+   "voxels_source_grid": 3458,
+   "volume_mm3": 0.6197
+  },
+  {
+   "index": 180,
+   "source_id": 352,
+   "acronym": "Arc",
+   "name": "Arcuate hypothalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#9042b5",
+   "voxels_source_grid": 3759,
+   "volume_mm3": 0.6736
+  },
+  {
+   "index": 181,
+   "source_id": 356,
+   "acronym": "DM",
+   "name": "Dorsomedial hypothalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#5659ba",
+   "voxels_source_grid": 6414,
+   "volume_mm3": 1.1494
+  },
+  {
+   "index": 182,
+   "source_id": 364,
+   "acronym": "MM",
+   "name": "Medial mammillary nucleus; medial part",
+   "hemisphere": "RH",
+   "color": "#8f669f",
+   "voxels_source_grid": 5237,
+   "volume_mm3": 0.9385
+  },
+  {
+   "index": 183,
+   "source_id": 365,
+   "acronym": "MTu",
+   "name": "Medial tuberal nucleus",
+   "hemisphere": "RH",
+   "color": "#7545e1",
+   "voxels_source_grid": 1291,
+   "volume_mm3": 0.2313
+  },
+  {
+   "index": 184,
+   "source_id": 367,
+   "acronym": "Pa",
+   "name": "Paraventricular hypothalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#614876",
+   "voxels_source_grid": 1230,
+   "volume_mm3": 0.2204
+  },
+  {
+   "index": 185,
+   "source_id": 377,
+   "acronym": "LPO",
+   "name": "Lateral preoptic area",
+   "hemisphere": "RH",
+   "color": "#ddd2e2",
+   "voxels_source_grid": 4057,
+   "volume_mm3": 0.727
+  },
+  {
+   "index": 186,
+   "source_id": 379,
+   "acronym": "MPO",
+   "name": "Medial preoptic nucleus",
+   "hemisphere": "RH",
+   "color": "#5659ba",
+   "voxels_source_grid": 11838,
+   "volume_mm3": 2.1214
+  },
+  {
+   "index": 187,
+   "source_id": 384,
+   "acronym": "SO",
+   "name": "Supraoptic nucleus",
+   "hemisphere": "RH",
+   "color": "#353573",
+   "voxels_source_grid": 858,
+   "volume_mm3": 0.1538
+  },
+  {
+   "index": 188,
+   "source_id": 388,
+   "acronym": "VMH",
+   "name": "Ventromedial hypothalamic nucleus",
+   "hemisphere": "RH",
+   "color": "#576d7a",
+   "voxels_source_grid": 19820,
+   "volume_mm3": 3.5517
+  },
+  {
+   "index": 189,
+   "source_id": 391,
+   "acronym": "APT",
+   "name": "Anterior pretectal nucleus",
+   "hemisphere": "RH",
+   "color": "#aac8ff",
+   "voxels_source_grid": 2464,
+   "volume_mm3": 0.4415
+  },
+  {
+   "index": 190,
+   "source_id": 393,
+   "acronym": "MPT",
+   "name": "Medial pretectal area",
+   "hemisphere": "RH",
+   "color": "#485981",
+   "voxels_source_grid": 2252,
+   "volume_mm3": 0.4036
+  },
+  {
+   "index": 191,
+   "source_id": 394,
+   "acronym": "OT",
+   "name": "Nucleus of the optic tract",
+   "hemisphere": "RH",
+   "color": "#00addc",
+   "voxels_source_grid": 990,
+   "volume_mm3": 0.1774
+  },
+  {
+   "index": 192,
+   "source_id": 402,
+   "acronym": "Dk",
+   "name": "Nucleus of Darkschewitsch",
+   "hemisphere": "RH",
+   "color": "#924d4b",
+   "voxels_source_grid": 425,
+   "volume_mm3": 0.0762
+  },
+  {
+   "index": 193,
+   "source_id": 406,
+   "acronym": "CIC",
+   "name": "Central nucleus of the inferior colliculus",
+   "hemisphere": "RH",
+   "color": "#fbb5b8",
+   "voxels_source_grid": 12923,
+   "volume_mm3": 2.3158
+  },
+  {
+   "index": 194,
+   "source_id": 407,
+   "acronym": "DCIC",
+   "name": "Dorsal cortex of the inferior colliculus",
+   "hemisphere": "RH",
+   "color": "#c6b9b8",
+   "voxels_source_grid": 13739,
+   "volume_mm3": 2.462
+  },
+  {
+   "index": 195,
+   "source_id": 408,
+   "acronym": "ECIC",
+   "name": "External cortex of the inferior colliculus",
+   "hemisphere": "RH",
+   "color": "#da78b8",
+   "voxels_source_grid": 19289,
+   "volume_mm3": 3.4566
+  },
+  {
+   "index": 196,
+   "source_id": 409,
+   "acronym": "InC",
+   "name": "Interstitial nucleus of Cajal",
+   "hemisphere": "RH",
+   "color": "#7f87b8",
+   "voxels_source_grid": 1466,
+   "volume_mm3": 0.2627
+  },
+  {
+   "index": 197,
+   "source_id": 417,
+   "acronym": "Me5",
+   "name": "Mesencephalic trigeminal nucleus",
+   "hemisphere": "RH",
+   "color": "#cf4078",
+   "voxels_source_grid": 2407,
+   "volume_mm3": 0.4313
+  },
+  {
+   "index": 198,
+   "source_id": 418,
+   "acronym": "BIC",
+   "name": "Nucleus of the brachium of the inferior colliculus",
+   "hemisphere": "RH",
+   "color": "#b44176",
+   "voxels_source_grid": 6203,
+   "volume_mm3": 1.1116
+  },
+  {
+   "index": 199,
+   "source_id": 420,
+   "acronym": "3N",
+   "name": "Occulomotor nucleus",
+   "hemisphere": "RH",
+   "color": "#c94093",
+   "voxels_source_grid": 4790,
+   "volume_mm3": 0.8584
+  },
+  {
+   "index": 200,
+   "source_id": 435,
+   "acronym": "R",
+   "name": "Red nucleus",
+   "hemisphere": "RH",
+   "color": "#ff7f8f",
+   "voxels_source_grid": 5278,
+   "volume_mm3": 0.9458
+  },
+  {
+   "index": 201,
+   "source_id": 453,
+   "acronym": "DpG",
+   "name": "Deep gray layer of the superior colliculus",
+   "hemisphere": "RH",
+   "color": "#7e3176",
+   "voxels_source_grid": 25450,
+   "volume_mm3": 4.5606
+  },
+  {
+   "index": 202,
+   "source_id": 455,
+   "acronym": "InG",
+   "name": "Intermediate gray layer of the superior colliculus",
+   "hemisphere": "RH",
+   "color": "#53317d",
+   "voxels_source_grid": 47432,
+   "volume_mm3": 8.4998
+  },
+  {
+   "index": 203,
+   "source_id": 458,
+   "acronym": "SuG",
+   "name": "Superficial gray layer of the superior colliculcus",
+   "hemisphere": "RH",
+   "color": "#a18e8a",
+   "voxels_source_grid": 17766,
+   "volume_mm3": 3.1837
+  },
+  {
+   "index": 204,
+   "source_id": 462,
+   "acronym": "4N",
+   "name": "Trochlear nucleus",
+   "hemisphere": "RH",
+   "color": "#b81a3e",
+   "voxels_source_grid": 986,
+   "volume_mm3": 0.1767
+  },
+  {
+   "index": 205,
+   "source_id": 467,
+   "acronym": "6N",
+   "name": "Abducens nucleus",
+   "hemisphere": "RH",
+   "color": "#94474b",
+   "voxels_source_grid": 4569,
+   "volume_mm3": 0.8188
+  },
+  {
+   "index": 206,
+   "source_id": 473,
+   "acronym": "DC",
+   "name": "Dorsal cochlear nucleus",
+   "hemisphere": "RH",
+   "color": "#ad9393",
+   "voxels_source_grid": 5166,
+   "volume_mm3": 0.9257
+  },
+  {
+   "index": 207,
+   "source_id": 475,
+   "acronym": "VCA",
+   "name": "Ventral cochlear nucleus; anterior part",
+   "hemisphere": "RH",
+   "color": "#cc8a6a",
+   "voxels_source_grid": 2907,
+   "volume_mm3": 0.5209
+  },
+  {
+   "index": 208,
+   "source_id": 476,
+   "acronym": "VCP",
+   "name": "Ventral cochlear nucleus; posterior part",
+   "hemisphere": "RH",
+   "color": "#c2c164",
+   "voxels_source_grid": 7890,
+   "volume_mm3": 1.4139
+  },
+  {
+   "index": 209,
+   "source_id": 477,
+   "acronym": "DLL",
+   "name": "Dorsal nucleus of the lateral lemniscus",
+   "hemisphere": "RH",
+   "color": "#9c5150",
+   "voxels_source_grid": 536,
+   "volume_mm3": 0.0961
+  },
+  {
+   "index": 210,
+   "source_id": 479,
+   "acronym": "7N",
+   "name": "Facial nucleus",
+   "hemisphere": "RH",
+   "color": "#ef454a",
+   "voxels_source_grid": 3130,
+   "volume_mm3": 0.5609
+  },
+  {
+   "index": 211,
+   "source_id": 481,
+   "acronym": "ILL",
+   "name": "Intermediate nucleus of the lateral lemniscus",
+   "hemisphere": "RH",
+   "color": "#a17e54",
+   "voxels_source_grid": 5510,
+   "volume_mm3": 0.9874
+  },
+  {
+   "index": 212,
+   "source_id": 482,
+   "acronym": "LC",
+   "name": "Locus coeruleus",
+   "hemisphere": "RH",
+   "color": "#d1483e",
+   "voxels_source_grid": 1391,
+   "volume_mm3": 0.2493
+  },
+  {
+   "index": 213,
+   "source_id": 498,
+   "acronym": "5N",
+   "name": "Motor trigeminal nucleus",
+   "hemisphere": "RH",
+   "color": "#6d3a33",
+   "voxels_source_grid": 1968,
+   "volume_mm3": 0.3527
+  },
+  {
+   "index": 214,
+   "source_id": 503,
+   "acronym": "Sp5",
+   "name": "Nucleus of the spinal trigeminal tract",
+   "hemisphere": "RH",
+   "color": "#7a453d",
+   "voxels_source_grid": 34413,
+   "volume_mm3": 6.1668
+  },
+  {
+   "index": 215,
+   "source_id": 504,
+   "acronym": "Tz",
+   "name": "Nucleus of the trapezoid body",
+   "hemisphere": "RH",
+   "color": "#7f6057",
+   "voxels_source_grid": 1222,
+   "volume_mm3": 0.219
+  },
+  {
+   "index": 216,
+   "source_id": 505,
+   "acronym": "PBG",
+   "name": "Parabigeminal nucleus",
+   "hemisphere": "RH",
+   "color": "#af83bd",
+   "voxels_source_grid": 304,
+   "volume_mm3": 0.0545
+  },
+  {
+   "index": 217,
+   "source_id": 509,
+   "acronym": "Pn",
+   "name": "Pontine nuclei",
+   "hemisphere": "RH",
+   "color": "#863e33",
+   "voxels_source_grid": 43345,
+   "volume_mm3": 7.7674
+  },
+  {
+   "index": 218,
+   "source_id": 511,
+   "acronym": "Pr5",
+   "name": "Principal sensory trigeminal nucleus",
+   "hemisphere": "RH",
+   "color": "#706352",
+   "voxels_source_grid": 3718,
+   "volume_mm3": 0.6663
+  },
+  {
+   "index": 219,
+   "source_id": 526,
+   "acronym": "RtTg",
+   "name": "Reticulotegmental nucleus of the pons",
+   "hemisphere": "RH",
+   "color": "#b9787a",
+   "voxels_source_grid": 17150,
+   "volume_mm3": 3.0733
+  },
+  {
+   "index": 220,
+   "source_id": 536,
+   "acronym": "LSO",
+   "name": "Lateral superior olive",
+   "hemisphere": "RH",
+   "color": "#7c3d53",
+   "voxels_source_grid": 647,
+   "volume_mm3": 0.1159
+  },
+  {
+   "index": 221,
+   "source_id": 538,
+   "acronym": "MSO",
+   "name": "Medial superior olive",
+   "hemisphere": "RH",
+   "color": "#946b9e",
+   "voxels_source_grid": 366,
+   "volume_mm3": 0.0656
+  },
+  {
+   "index": 222,
+   "source_id": 543,
+   "acronym": "VLL",
+   "name": "Ventral nucleus of the lateral lemniscus",
+   "hemisphere": "RH",
+   "color": "#834b5d",
+   "voxels_source_grid": 1576,
+   "volume_mm3": 0.2824
+  },
+  {
+   "index": 223,
+   "source_id": 548,
+   "acronym": "Amb",
+   "name": "Ambiguus nucleus",
+   "hemisphere": "RH",
+   "color": "#efc6c3",
+   "voxels_source_grid": 397,
+   "volume_mm3": 0.0711
+  },
+  {
+   "index": 224,
+   "source_id": 553,
+   "acronym": "Cu",
+   "name": "Cuneate nucleus",
+   "hemisphere": "RH",
+   "color": "#ce596a",
+   "voxels_source_grid": 12346,
+   "volume_mm3": 2.2124
+  },
+  {
+   "index": 225,
+   "source_id": 556,
+   "acronym": "ECu",
+   "name": "External cuneate nucleus",
+   "hemisphere": "RH",
+   "color": "#ab0055",
+   "voxels_source_grid": 6834,
+   "volume_mm3": 1.2247
+  },
+  {
+   "index": 226,
+   "source_id": 557,
+   "acronym": "Gr",
+   "name": "Gracile nucleus",
+   "hemisphere": "RH",
+   "color": "#9a3b6d",
+   "voxels_source_grid": 13713,
+   "volume_mm3": 2.4574
+  },
+  {
+   "index": 227,
+   "source_id": 558,
+   "acronym": "12N",
+   "name": "Hypoglossal nucleus",
+   "hemisphere": "RH",
+   "color": "#9e413f",
+   "voxels_source_grid": 3260,
+   "volume_mm3": 0.5842
+  },
+  {
+   "index": 228,
+   "source_id": 561,
+   "acronym": "IOBe",
+   "name": "Inferior olive; beta subnucleus of the medial nucleus",
+   "hemisphere": "RH",
+   "color": "#485a41",
+   "voxels_source_grid": 529,
+   "volume_mm3": 0.0948
+  },
+  {
+   "index": 229,
+   "source_id": 562,
+   "acronym": "IOK",
+   "name": "Inferior olive; cap of Kooy of the medial nucleus",
+   "hemisphere": "RH",
+   "color": "#dff263",
+   "voxels_source_grid": 280,
+   "volume_mm3": 0.0502
+  },
+  {
+   "index": 230,
+   "source_id": 563,
+   "acronym": "IOD",
+   "name": "Inferior olive; dorsal nucleus",
+   "hemisphere": "RH",
+   "color": "#798c58",
+   "voxels_source_grid": 174,
+   "volume_mm3": 0.0312
+  },
+  {
+   "index": 231,
+   "source_id": 564,
+   "acronym": "IOM",
+   "name": "Inferior olive; medial nucleus",
+   "hemisphere": "RH",
+   "color": "#8eb39f",
+   "voxels_source_grid": 1475,
+   "volume_mm3": 0.2643
+  },
+  {
+   "index": 232,
+   "source_id": 565,
+   "acronym": "IOPr",
+   "name": "Inferior olive; principal nucleus",
+   "hemisphere": "RH",
+   "color": "#9c9f54",
+   "voxels_source_grid": 1309,
+   "volume_mm3": 0.2346
+  },
+  {
+   "index": 233,
+   "source_id": 589,
+   "acronym": "Pr",
+   "name": "Prepositus nucleus",
+   "hemisphere": "RH",
+   "color": "#b1159e",
+   "voxels_source_grid": 3349,
+   "volume_mm3": 0.6001
+  },
+  {
+   "index": 234,
+   "source_id": 602,
+   "acronym": "LRt",
+   "name": "Lateral reticular nucleus",
+   "hemisphere": "RH",
+   "color": "#952bd1",
+   "voxels_source_grid": 11852,
+   "volume_mm3": 2.1239
+  },
+  {
+   "index": 235,
+   "source_id": 612,
+   "acronym": "Sol",
+   "name": "Solitary nucleus",
+   "hemisphere": "RH",
+   "color": "#793f3f",
+   "voxels_source_grid": 11105,
+   "volume_mm3": 1.99
+  },
+  {
+   "index": 236,
+   "source_id": 625,
+   "acronym": "LVe",
+   "name": "Lateral vestibular nucleus",
+   "hemisphere": "RH",
+   "color": "#ba485d",
+   "voxels_source_grid": 6799,
+   "volume_mm3": 1.2184
+  },
+  {
+   "index": 237,
+   "source_id": 626,
+   "acronym": "MVe",
+   "name": "Medial vestibular nucleus",
+   "hemisphere": "RH",
+   "color": "#e6d5c6",
+   "voxels_source_grid": 27019,
+   "volume_mm3": 4.8418
+  },
+  {
+   "index": 238,
+   "source_id": 630,
+   "acronym": "SpVe",
+   "name": "Spinal vestibular nucleus",
+   "hemisphere": "RH",
+   "color": "#8d3927",
+   "voxels_source_grid": 13977,
+   "volume_mm3": 2.5047
+  },
+  {
+   "index": 239,
+   "source_id": 631,
+   "acronym": "SuVe",
+   "name": "Superior vestibular nucleus",
+   "hemisphere": "RH",
+   "color": "#eb6940",
+   "voxels_source_grid": 5651,
+   "volume_mm3": 1.0127
+  },
+  {
+   "index": 240,
+   "source_id": 632,
+   "acronym": "10N",
+   "name": "Vagus nerve nucleus",
+   "hemisphere": "RH",
+   "color": "#ffadb8",
+   "voxels_source_grid": 919,
+   "volume_mm3": 0.1647
+  },
+  {
+   "index": 241,
+   "source_id": 653,
+   "acronym": "IntA",
+   "name": "Anterior interposed cerebellar nucleus",
+   "hemisphere": "RH",
+   "color": "#ef810f",
+   "voxels_source_grid": 6848,
+   "volume_mm3": 1.2272
+  },
+  {
+   "index": 242,
+   "source_id": 654,
+   "acronym": "Lat",
+   "name": "Lateral (dentate) cerebellar nucleus",
+   "hemisphere": "RH",
+   "color": "#816551",
+   "voxels_source_grid": 10199,
+   "volume_mm3": 1.8277
+  },
+  {
+   "index": 243,
+   "source_id": 656,
+   "acronym": "Med",
+   "name": "Medial cerebellar nucleus",
+   "hemisphere": "RH",
+   "color": "#6d4c33",
+   "voxels_source_grid": 4951,
+   "volume_mm3": 0.8872
+  },
+  {
+   "index": 244,
+   "source_id": 657,
+   "acronym": "IntP",
+   "name": "Posterior interposed cerebellar nucleus",
+   "hemisphere": "RH",
+   "color": "#e39c84",
+   "voxels_source_grid": 4075,
+   "volume_mm3": 0.7302
+  },
+  {
+   "index": 245,
+   "source_id": 663,
+   "acronym": "ac",
+   "name": "Anterior commissure",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 40884,
+   "volume_mm3": 7.3264
+  },
+  {
+   "index": 246,
+   "source_id": 668,
+   "acronym": "bic",
+   "name": "Brachium of the inferior colliculus",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 5219,
+   "volume_mm3": 0.9352
+  },
+  {
+   "index": 247,
+   "source_id": 669,
+   "acronym": "bsc",
+   "name": "Brachium of the superior colliculus",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 9996,
+   "volume_mm3": 1.7913
+  },
+  {
+   "index": 248,
+   "source_id": 670,
+   "acronym": "cp",
+   "name": "Cerebral peduncle",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 55677,
+   "volume_mm3": 9.9773
+  },
+  {
+   "index": 249,
+   "source_id": 671,
+   "acronym": "cg",
+   "name": "Cingulum",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 5946,
+   "volume_mm3": 1.0655
+  },
+  {
+   "index": 250,
+   "source_id": 677,
+   "acronym": "cu",
+   "name": "Cuneate fascicolus",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 16698,
+   "volume_mm3": 2.9923
+  },
+  {
+   "index": 251,
+   "source_id": 687,
+   "acronym": "fr",
+   "name": "Fasciculus retroflexus",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 3591,
+   "volume_mm3": 0.6435
+  },
+  {
+   "index": 252,
+   "source_id": 688,
+   "acronym": "fi",
+   "name": "Finbria of the hippocampus",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 78696,
+   "volume_mm3": 14.1023
+  },
+  {
+   "index": 253,
+   "source_id": 690,
+   "acronym": "f",
+   "name": "Fornix",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 4035,
+   "volume_mm3": 0.7231
+  },
+  {
+   "index": 254,
+   "source_id": 693,
+   "acronym": "gr",
+   "name": "Gracile fasciculus",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 4010,
+   "volume_mm3": 0.7186
+  },
+  {
+   "index": 255,
+   "source_id": 697,
+   "acronym": "icp",
+   "name": "Inferior cerebellar peduncle",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 37542,
+   "volume_mm3": 6.7275
+  },
+  {
+   "index": 256,
+   "source_id": 698,
+   "acronym": "ic",
+   "name": "Internal capsule",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 175536,
+   "volume_mm3": 31.4561
+  },
+  {
+   "index": 257,
+   "source_id": 699,
+   "acronym": "lcs",
+   "name": "Lateral corticospinal tract",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 415,
+   "volume_mm3": 0.0744
+  },
+  {
+   "index": 258,
+   "source_id": 700,
+   "acronym": "ll",
+   "name": "Lateral lemniscus",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 14873,
+   "volume_mm3": 2.6652
+  },
+  {
+   "index": 259,
+   "source_id": 703,
+   "acronym": "lfp",
+   "name": "Longitudinal fasciculs of the pons",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 19633,
+   "volume_mm3": 3.5182
+  },
+  {
+   "index": 260,
+   "source_id": 706,
+   "acronym": "mt",
+   "name": "Mammillothalamic tract",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 3035,
+   "volume_mm3": 0.5439
+  },
+  {
+   "index": 261,
+   "source_id": 708,
+   "acronym": "ml",
+   "name": "Medial lemniscus",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 14791,
+   "volume_mm3": 2.6505
+  },
+  {
+   "index": 262,
+   "source_id": 709,
+   "acronym": "mlf",
+   "name": "Medial longitudinal faciculcus",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 23718,
+   "volume_mm3": 4.2503
+  },
+  {
+   "index": 263,
+   "source_id": 712,
+   "acronym": "mcp",
+   "name": "Middle cerebellar peduncle",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 86765,
+   "volume_mm3": 15.5483
+  },
+  {
+   "index": 264,
+   "source_id": 713,
+   "acronym": "m5",
+   "name": "Motor root of the trigeminal nerve",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 1571,
+   "volume_mm3": 0.2815
+  },
+  {
+   "index": 265,
+   "source_id": 718,
+   "acronym": "opt",
+   "name": "Optic tract",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 97896,
+   "volume_mm3": 17.543
+  },
+  {
+   "index": 266,
+   "source_id": 720,
+   "acronym": "pc",
+   "name": "Posterior commissure",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 2283,
+   "volume_mm3": 0.4091
+  },
+  {
+   "index": 267,
+   "source_id": 721,
+   "acronym": "py",
+   "name": "Pyramidal tract",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 41053,
+   "volume_mm3": 7.3567
+  },
+  {
+   "index": 268,
+   "source_id": 725,
+   "acronym": "rs",
+   "name": "Rubrospinal tract",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 4608,
+   "volume_mm3": 0.8258
+  },
+  {
+   "index": 269,
+   "source_id": 726,
+   "acronym": "s5",
+   "name": "Sensory root of the trigeminal nerve",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 8559,
+   "volume_mm3": 1.5338
+  },
+  {
+   "index": 270,
+   "source_id": 728,
+   "acronym": "sp5",
+   "name": "Spinal trigeminal tract",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 18929,
+   "volume_mm3": 3.3921
+  },
+  {
+   "index": 271,
+   "source_id": 729,
+   "acronym": "sm",
+   "name": "Stria medullaris of the thalamus",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 3480,
+   "volume_mm3": 0.6236
+  },
+  {
+   "index": 272,
+   "source_id": 730,
+   "acronym": "st",
+   "name": "Stria terminalis",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 8629,
+   "volume_mm3": 1.5463
+  },
+  {
+   "index": 273,
+   "source_id": 732,
+   "acronym": "scp",
+   "name": "Superior cerebellar peduncle",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 13013,
+   "volume_mm3": 2.3319
+  },
+  {
+   "index": 274,
+   "source_id": 737,
+   "acronym": "vsc",
+   "name": "Ventral spinocerebellar tract",
+   "hemisphere": "RH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 1062,
+   "volume_mm3": 0.1903
+  },
+  {
+   "index": 275,
+   "source_id": 741,
+   "acronym": "6n",
+   "name": "Abducens nerve",
+   "hemisphere": "RH",
+   "color": "#6e7972",
+   "voxels_source_grid": 2797,
+   "volume_mm3": 0.5012
+  },
+  {
+   "index": 276,
+   "source_id": 743,
+   "acronym": "7n",
+   "name": "Facial nerve",
+   "hemisphere": "RH",
+   "color": "#6e7972",
+   "voxels_source_grid": 6430,
+   "volume_mm3": 1.1523
+  },
+  {
+   "index": 277,
+   "source_id": 746,
+   "acronym": "3n",
+   "name": "Occulomotor nerve",
+   "hemisphere": "RH",
+   "color": "#6e7972",
+   "voxels_source_grid": 7255,
+   "volume_mm3": 1.3001
+  },
+  {
+   "index": 278,
+   "source_id": 749,
+   "acronym": "4n",
+   "name": "Trochlear nerve",
+   "hemisphere": "RH",
+   "color": "#6e7972",
+   "voxels_source_grid": 215,
+   "volume_mm3": 0.0385
+  },
+  {
+   "index": 279,
+   "source_id": 751,
+   "acronym": "8n",
+   "name": "Vestibulocochlear nerve",
+   "hemisphere": "RH",
+   "color": "#6e7972",
+   "voxels_source_grid": 12130,
+   "volume_mm3": 2.1737
+  },
+  {
+   "index": 280,
+   "source_id": 10005,
+   "acronym": "OB",
+   "name": "Olfactory bulb",
+   "hemisphere": "LH",
+   "color": "#f4bd35",
+   "voxels_source_grid": 28696,
+   "volume_mm3": 5.1423
+  },
+  {
+   "index": 281,
+   "source_id": 10007,
+   "acronym": "AON",
+   "name": "Anterior olfactory nucleus",
+   "hemisphere": "LH",
+   "color": "#aa7a40",
+   "voxels_source_grid": 3196,
+   "volume_mm3": 0.5727
+  },
+  {
+   "index": 282,
+   "source_id": 10021,
+   "acronym": "Tu",
+   "name": "Olfactry tubercle",
+   "hemisphere": "LH",
+   "color": "#ffff00",
+   "voxels_source_grid": 21737,
+   "volume_mm3": 3.8953
+  },
+  {
+   "index": 283,
+   "source_id": 10024,
+   "acronym": "TT",
+   "name": "Tenia tecta",
+   "hemisphere": "LH",
+   "color": "#d6c949",
+   "voxels_source_grid": 91,
+   "volume_mm3": 0.0163
+  },
+  {
+   "index": 284,
+   "source_id": 10026,
+   "acronym": "AI",
+   "name": "Agranular insular cortex",
+   "hemisphere": "LH",
+   "color": "#ebceee",
+   "voxels_source_grid": 12256,
+   "volume_mm3": 2.1963
+  },
+  {
+   "index": 285,
+   "source_id": 10027,
+   "acronym": "AIP",
+   "name": "Anterior intraparietal area of cortex",
+   "hemisphere": "LH",
+   "color": "#d0de97",
+   "voxels_source_grid": 26141,
+   "volume_mm3": 4.6845
+  },
+  {
+   "index": 286,
+   "source_id": 10028,
+   "acronym": "A1/2",
+   "name": "Areas 1 and 2 of cortex",
+   "hemisphere": "LH",
+   "color": "#bcdd9e",
+   "voxels_source_grid": 100518,
+   "volume_mm3": 18.0128
+  },
+  {
+   "index": 287,
+   "source_id": 10029,
+   "acronym": "A3a",
+   "name": "Area 3a of cortex (primary somatosensory)",
+   "hemisphere": "LH",
+   "color": "#b736d2",
+   "voxels_source_grid": 145273,
+   "volume_mm3": 26.0329
+  },
+  {
+   "index": 288,
+   "source_id": 10030,
+   "acronym": "A3b",
+   "name": "Area 3b of cortex (primary somatosensory)",
+   "hemisphere": "LH",
+   "color": "#6b6664",
+   "voxels_source_grid": 140838,
+   "volume_mm3": 25.2382
+  },
+  {
+   "index": 289,
+   "source_id": 10031,
+   "acronym": "A4ab",
+   "name": "Area 4 of cortex; parts a and b (primary motor)",
+   "hemisphere": "LH",
+   "color": "#91a26f",
+   "voxels_source_grid": 140417,
+   "volume_mm3": 25.1627
+  },
+  {
+   "index": 290,
+   "source_id": 10032,
+   "acronym": "A4c",
+   "name": "Area 4 of cortex; part c (primary motor)",
+   "hemisphere": "LH",
+   "color": "#7e4f62",
+   "voxels_source_grid": 6538,
+   "volume_mm3": 1.1716
+  },
+  {
+   "index": 291,
+   "source_id": 10033,
+   "acronym": "A6DC",
+   "name": "Area 6 of cortex; dorsocaudal part",
+   "hemisphere": "LH",
+   "color": "#5656aa",
+   "voxels_source_grid": 60674,
+   "volume_mm3": 10.8728
+  },
+  {
+   "index": 292,
+   "source_id": 10034,
+   "acronym": "A6DR",
+   "name": "Area 6 of cortex; dorsorostral part",
+   "hemisphere": "LH",
+   "color": "#d3b495",
+   "voxels_source_grid": 80684,
+   "volume_mm3": 14.4586
+  },
+  {
+   "index": 293,
+   "source_id": 10035,
+   "acronym": "A6M",
+   "name": "Area 6 of cortex; medial (supplementary motor) part",
+   "hemisphere": "LH",
+   "color": "#5d64ff",
+   "voxels_source_grid": 90557,
+   "volume_mm3": 16.2278
+  },
+  {
+   "index": 294,
+   "source_id": 10036,
+   "acronym": "A6Va",
+   "name": "Area 6 of cortex; ventral; part a",
+   "hemisphere": "LH",
+   "color": "#3aa19f",
+   "voxels_source_grid": 69097,
+   "volume_mm3": 12.3822
+  },
+  {
+   "index": 295,
+   "source_id": 10037,
+   "acronym": "A6Vb",
+   "name": "Area 6 of cortex; ventral; part b",
+   "hemisphere": "LH",
+   "color": "#9847ff",
+   "voxels_source_grid": 25529,
+   "volume_mm3": 4.5748
+  },
+  {
+   "index": 296,
+   "source_id": 10038,
+   "acronym": "A8aD",
+   "name": "Area 8a of cortex; dorsal part",
+   "hemisphere": "LH",
+   "color": "#a3c2f2",
+   "voxels_source_grid": 72617,
+   "volume_mm3": 13.013
+  },
+  {
+   "index": 297,
+   "source_id": 10039,
+   "acronym": "A8aV",
+   "name": "Area 8a of cortex; ventral part",
+   "hemisphere": "LH",
+   "color": "#c593fd",
+   "voxels_source_grid": 70091,
+   "volume_mm3": 12.5603
+  },
+  {
+   "index": 298,
+   "source_id": 10040,
+   "acronym": "A8b",
+   "name": "Area 8b of cortex",
+   "hemisphere": "LH",
+   "color": "#be601d",
+   "voxels_source_grid": 90920,
+   "volume_mm3": 16.2929
+  },
+  {
+   "index": 299,
+   "source_id": 10041,
+   "acronym": "A8C",
+   "name": "Area 8 of cortex; caudal part",
+   "hemisphere": "LH",
+   "color": "#965ffd",
+   "voxels_source_grid": 19644,
+   "volume_mm3": 3.5202
+  },
+  {
+   "index": 300,
+   "source_id": 10042,
+   "acronym": "A9",
+   "name": "Area 9 of cortex",
+   "hemisphere": "LH",
+   "color": "#e3c1e0",
+   "voxels_source_grid": 53695,
+   "volume_mm3": 9.6221
+  },
+  {
+   "index": 301,
+   "source_id": 10043,
+   "acronym": "A10",
+   "name": "Area 10 of cortex",
+   "hemisphere": "LH",
+   "color": "#3e801c",
+   "voxels_source_grid": 85168,
+   "volume_mm3": 15.2621
+  },
+  {
+   "index": 302,
+   "source_id": 10044,
+   "acronym": "A11",
+   "name": "Area 11 of cortex",
+   "hemisphere": "LH",
+   "color": "#e43ff9",
+   "voxels_source_grid": 25672,
+   "volume_mm3": 4.6004
+  },
+  {
+   "index": 303,
+   "source_id": 10045,
+   "acronym": "A13a",
+   "name": "Area 13a of cortex",
+   "hemisphere": "LH",
+   "color": "#d3d7b3",
+   "voxels_source_grid": 8905,
+   "volume_mm3": 1.5958
+  },
+  {
+   "index": 304,
+   "source_id": 10046,
+   "acronym": "A13b",
+   "name": "Area 13b of cortex",
+   "hemisphere": "LH",
+   "color": "#b300bf",
+   "voxels_source_grid": 10726,
+   "volume_mm3": 1.9221
+  },
+  {
+   "index": 305,
+   "source_id": 10047,
+   "acronym": "A13L",
+   "name": "Area 13 of cortex; lateral part",
+   "hemisphere": "LH",
+   "color": "#b84d00",
+   "voxels_source_grid": 61468,
+   "volume_mm3": 11.0151
+  },
+  {
+   "index": 306,
+   "source_id": 10048,
+   "acronym": "A13M",
+   "name": "Area 13 of cortex; medial part",
+   "hemisphere": "LH",
+   "color": "#6a6966",
+   "voxels_source_grid": 31454,
+   "volume_mm3": 5.6366
+  },
+  {
+   "index": 307,
+   "source_id": 10049,
+   "acronym": "A14C",
+   "name": "Area 14 of cortex; caudal part",
+   "hemisphere": "LH",
+   "color": "#5887cf",
+   "voxels_source_grid": 6961,
+   "volume_mm3": 1.2474
+  },
+  {
+   "index": 308,
+   "source_id": 10050,
+   "acronym": "A14R",
+   "name": "Area 14 of cortex; rostral part",
+   "hemisphere": "LH",
+   "color": "#f4daf4",
+   "voxels_source_grid": 24117,
+   "volume_mm3": 4.3218
+  },
+  {
+   "index": 309,
+   "source_id": 10051,
+   "acronym": "A19DI",
+   "name": "Area 19 of cortex; dorsointermediate part",
+   "hemisphere": "LH",
+   "color": "#d238b3",
+   "voxels_source_grid": 51890,
+   "volume_mm3": 9.2987
+  },
+  {
+   "index": 310,
+   "source_id": 10052,
+   "acronym": "A19M",
+   "name": "Area 19 of cortex; medial part",
+   "hemisphere": "LH",
+   "color": "#7f5918",
+   "voxels_source_grid": 74375,
+   "volume_mm3": 13.328
+  },
+  {
+   "index": 311,
+   "source_id": 10053,
+   "acronym": "A23a",
+   "name": "Area 23a of cortex",
+   "hemisphere": "LH",
+   "color": "#7d6d6e",
+   "voxels_source_grid": 50505,
+   "volume_mm3": 9.0505
+  },
+  {
+   "index": 312,
+   "source_id": 10054,
+   "acronym": "A23b",
+   "name": "Area 23b of cortex",
+   "hemisphere": "LH",
+   "color": "#8bd5c1",
+   "voxels_source_grid": 92344,
+   "volume_mm3": 16.548
+  },
+  {
+   "index": 313,
+   "source_id": 10055,
+   "acronym": "A23c",
+   "name": "Area 23c of cortex",
+   "hemisphere": "LH",
+   "color": "#4f5249",
+   "voxels_source_grid": 23442,
+   "volume_mm3": 4.2008
+  },
+  {
+   "index": 314,
+   "source_id": 10056,
+   "acronym": "A23V",
+   "name": "Area 23 of cortex; ventral part",
+   "hemisphere": "LH",
+   "color": "#68b200",
+   "voxels_source_grid": 52964,
+   "volume_mm3": 9.4911
+  },
+  {
+   "index": 315,
+   "source_id": 10057,
+   "acronym": "A24a",
+   "name": "Area 24a of cortex",
+   "hemisphere": "LH",
+   "color": "#108900",
+   "voxels_source_grid": 37874,
+   "volume_mm3": 6.787
+  },
+  {
+   "index": 316,
+   "source_id": 10058,
+   "acronym": "A24b",
+   "name": "Area 24b of cortex",
+   "hemisphere": "LH",
+   "color": "#55c822",
+   "voxels_source_grid": 72798,
+   "volume_mm3": 13.0454
+  },
+  {
+   "index": 317,
+   "source_id": 10059,
+   "acronym": "A24c",
+   "name": "Area 24c of cortex",
+   "hemisphere": "LH",
+   "color": "#6b5646",
+   "voxels_source_grid": 54093,
+   "volume_mm3": 9.6935
+  },
+  {
+   "index": 318,
+   "source_id": 10060,
+   "acronym": "A24d",
+   "name": "Area 24d of cortex",
+   "hemisphere": "LH",
+   "color": "#ebdbef",
+   "voxels_source_grid": 33601,
+   "volume_mm3": 6.0213
+  },
+  {
+   "index": 319,
+   "source_id": 10061,
+   "acronym": "A25",
+   "name": "Area 25 of cortex",
+   "hemisphere": "LH",
+   "color": "#368ebd",
+   "voxels_source_grid": 48260,
+   "volume_mm3": 8.6482
+  },
+  {
+   "index": 320,
+   "source_id": 10062,
+   "acronym": "A29a-c",
+   "name": "Area 29a-c of cortex",
+   "hemisphere": "LH",
+   "color": "#dde4e8",
+   "voxels_source_grid": 61337,
+   "volume_mm3": 10.9916
+  },
+  {
+   "index": 321,
+   "source_id": 10063,
+   "acronym": "A29d",
+   "name": "Area 29d of cortex",
+   "hemisphere": "LH",
+   "color": "#835294",
+   "voxels_source_grid": 31788,
+   "volume_mm3": 5.6964
+  },
+  {
+   "index": 322,
+   "source_id": 10064,
+   "acronym": "A30",
+   "name": "Area 30 of cortex",
+   "hemisphere": "LH",
+   "color": "#3d9a89",
+   "voxels_source_grid": 55526,
+   "volume_mm3": 9.9503
+  },
+  {
+   "index": 323,
+   "source_id": 10065,
+   "acronym": "A31",
+   "name": "Area 31 of cortex",
+   "hemisphere": "LH",
+   "color": "#b1c165",
+   "voxels_source_grid": 33599,
+   "volume_mm3": 6.0209
+  },
+  {
+   "index": 324,
+   "source_id": 10066,
+   "acronym": "A32",
+   "name": "Area 32 of cortex",
+   "hemisphere": "LH",
+   "color": "#55c17d",
+   "voxels_source_grid": 65706,
+   "volume_mm3": 11.7745
+  },
+  {
+   "index": 325,
+   "source_id": 10067,
+   "acronym": "A32V",
+   "name": "Area 32 of cortex; ventral part",
+   "hemisphere": "LH",
+   "color": "#3e9636",
+   "voxels_source_grid": 11457,
+   "volume_mm3": 2.0531
+  },
+  {
+   "index": 326,
+   "source_id": 10068,
+   "acronym": "A35",
+   "name": "Area 35 of cortex",
+   "hemisphere": "LH",
+   "color": "#adaf77",
+   "voxels_source_grid": 48016,
+   "volume_mm3": 8.6045
+  },
+  {
+   "index": 327,
+   "source_id": 10069,
+   "acronym": "A36",
+   "name": "Area 36 of cortex",
+   "hemisphere": "LH",
+   "color": "#7726e3",
+   "voxels_source_grid": 107089,
+   "volume_mm3": 19.1903
+  },
+  {
+   "index": 328,
+   "source_id": 10070,
+   "acronym": "A45",
+   "name": "Area 45 of cortex",
+   "hemisphere": "LH",
+   "color": "#714694",
+   "voxels_source_grid": 19561,
+   "volume_mm3": 3.5053
+  },
+  {
+   "index": 329,
+   "source_id": 10071,
+   "acronym": "A46D",
+   "name": "Area 46 of cortex; dorsal part",
+   "hemisphere": "LH",
+   "color": "#008ce7",
+   "voxels_source_grid": 12475,
+   "volume_mm3": 2.2355
+  },
+  {
+   "index": 330,
+   "source_id": 10072,
+   "acronym": "A46V",
+   "name": "Area 46 of cortex; ventral part",
+   "hemisphere": "LH",
+   "color": "#ebeddd",
+   "voxels_source_grid": 12619,
+   "volume_mm3": 2.2613
+  },
+  {
+   "index": 331,
+   "source_id": 10073,
+   "acronym": "A47L",
+   "name": "Area 47 (old 12) of cortex; lateral part",
+   "hemisphere": "LH",
+   "color": "#a38124",
+   "voxels_source_grid": 46024,
+   "volume_mm3": 8.2475
+  },
+  {
+   "index": 332,
+   "source_id": 10074,
+   "acronym": "A47M",
+   "name": "Area 47 (old 12) of cortex; medial part",
+   "hemisphere": "LH",
+   "color": "#518ee8",
+   "voxels_source_grid": 32832,
+   "volume_mm3": 5.8835
+  },
+  {
+   "index": 333,
+   "source_id": 10075,
+   "acronym": "A47O",
+   "name": "Area 47 (old 12) of cortex; orbital part",
+   "hemisphere": "LH",
+   "color": "#e2ddcc",
+   "voxels_source_grid": 26269,
+   "volume_mm3": 4.7074
+  },
+  {
+   "index": 334,
+   "source_id": 10076,
+   "acronym": "AuAL",
+   "name": "Auditory cortex; anterolateral area",
+   "hemisphere": "LH",
+   "color": "#db7b95",
+   "voxels_source_grid": 26684,
+   "volume_mm3": 4.7818
+  },
+  {
+   "index": 335,
+   "source_id": 10077,
+   "acronym": "AuCL",
+   "name": "Auditory cortex; caudolateral area",
+   "hemisphere": "LH",
+   "color": "#e4dbc7",
+   "voxels_source_grid": 18637,
+   "volume_mm3": 3.3398
+  },
+  {
+   "index": 336,
+   "source_id": 10078,
+   "acronym": "AuCM",
+   "name": "Auditory cortex; caudomedial area",
+   "hemisphere": "LH",
+   "color": "#58a442",
+   "voxels_source_grid": 48306,
+   "volume_mm3": 8.6564
+  },
+  {
+   "index": 337,
+   "source_id": 10079,
+   "acronym": "AuCPB",
+   "name": "Auditory cortex; caudal parabelt area",
+   "hemisphere": "LH",
+   "color": "#8fd100",
+   "voxels_source_grid": 25835,
+   "volume_mm3": 4.6296
+  },
+  {
+   "index": 338,
+   "source_id": 10080,
+   "acronym": "AuML",
+   "name": "Auditory cortex; middle lateral area",
+   "hemisphere": "LH",
+   "color": "#b098ba",
+   "voxels_source_grid": 18062,
+   "volume_mm3": 3.2367
+  },
+  {
+   "index": 339,
+   "source_id": 10081,
+   "acronym": "AuA1",
+   "name": "Auditory cortex; primary area",
+   "hemisphere": "LH",
+   "color": "#cc129a",
+   "voxels_source_grid": 74475,
+   "volume_mm3": 13.3459
+  },
+  {
+   "index": 340,
+   "source_id": 10082,
+   "acronym": "AuR",
+   "name": "Auditory cortex; rostral area",
+   "hemisphere": "LH",
+   "color": "#92674c",
+   "voxels_source_grid": 24253,
+   "volume_mm3": 4.3461
+  },
+  {
+   "index": 341,
+   "source_id": 10083,
+   "acronym": "AuRPB",
+   "name": "Auditory cortex; rostral parabelt",
+   "hemisphere": "LH",
+   "color": "#a0468e",
+   "voxels_source_grid": 33533,
+   "volume_mm3": 6.0091
+  },
+  {
+   "index": 342,
+   "source_id": 10084,
+   "acronym": "AuRM",
+   "name": "Auditory cortex; rostromedial area",
+   "hemisphere": "LH",
+   "color": "#5e4ee5",
+   "voxels_source_grid": 17324,
+   "volume_mm3": 3.1045
+  },
+  {
+   "index": 343,
+   "source_id": 10085,
+   "acronym": "AuRTL",
+   "name": "Auditory cortex; rostrotemporal lateral area",
+   "hemisphere": "LH",
+   "color": "#2c92d3",
+   "voxels_source_grid": 18652,
+   "volume_mm3": 3.3424
+  },
+  {
+   "index": 344,
+   "source_id": 10086,
+   "acronym": "AuRTM",
+   "name": "Auditory cortex; rostrotemporal medial area",
+   "hemisphere": "LH",
+   "color": "#e47be1",
+   "voxels_source_grid": 21000,
+   "volume_mm3": 3.7632
+  },
+  {
+   "index": 345,
+   "source_id": 10087,
+   "acronym": "AuRT",
+   "name": "Auditory cortex; rostrotemporal part",
+   "hemisphere": "LH",
+   "color": "#d0de97",
+   "voxels_source_grid": 23885,
+   "volume_mm3": 4.2802
+  },
+  {
+   "index": 346,
+   "source_id": 10088,
+   "acronym": "DI",
+   "name": "Dysgranular insular cortex",
+   "hemisphere": "LH",
+   "color": "#ee4ff5",
+   "voxels_source_grid": 40590,
+   "volume_mm3": 7.2737
+  },
+  {
+   "index": 347,
+   "source_id": 10089,
+   "acronym": "Ent",
+   "name": "Entorhinal cortex",
+   "hemisphere": "LH",
+   "color": "#7a8853",
+   "voxels_source_grid": 167963,
+   "volume_mm3": 30.099
+  },
+  {
+   "index": 348,
+   "source_id": 10091,
+   "acronym": "FST",
+   "name": "Fundus of superior temporal sulcus area of cortex",
+   "hemisphere": "LH",
+   "color": "#12bf00",
+   "voxels_source_grid": 80057,
+   "volume_mm3": 14.3462
+  },
+  {
+   "index": 349,
+   "source_id": 10092,
+   "acronym": "GI",
+   "name": "Granular insular cortex",
+   "hemisphere": "LH",
+   "color": "#a0468e",
+   "voxels_source_grid": 45402,
+   "volume_mm3": 8.136
+  },
+  {
+   "index": 350,
+   "source_id": 10093,
+   "acronym": "Gu",
+   "name": "Gustatory cortex",
+   "hemisphere": "LH",
+   "color": "#43b867",
+   "voxels_source_grid": 49767,
+   "volume_mm3": 8.9182
+  },
+  {
+   "index": 351,
+   "source_id": 10094,
+   "acronym": "IG",
+   "name": "Indusium griseum",
+   "hemisphere": "LH",
+   "color": "#f3e740",
+   "voxels_source_grid": 1405,
+   "volume_mm3": 0.2518
+  },
+  {
+   "index": 352,
+   "source_id": 10095,
+   "acronym": "IPro",
+   "name": "Insular proisocortex",
+   "hemisphere": "LH",
+   "color": "#dd6ac4",
+   "voxels_source_grid": 31218,
+   "volume_mm3": 5.5943
+  },
+  {
+   "index": 353,
+   "source_id": 10096,
+   "acronym": "LIP",
+   "name": "Lateral intrapartietal area of cortex",
+   "hemisphere": "LH",
+   "color": "#64612a",
+   "voxels_source_grid": 87399,
+   "volume_mm3": 15.6619
+  },
+  {
+   "index": 354,
+   "source_id": 10097,
+   "acronym": "MIP",
+   "name": "Medial intraparietal area of cortex",
+   "hemisphere": "LH",
+   "color": "#ffe3ff",
+   "voxels_source_grid": 56888,
+   "volume_mm3": 10.1943
+  },
+  {
+   "index": 355,
+   "source_id": 10098,
+   "acronym": "MST",
+   "name": "Medial superior temporal area of cortex",
+   "hemisphere": "LH",
+   "color": "#5f7dc7",
+   "voxels_source_grid": 49182,
+   "volume_mm3": 8.8134
+  },
+  {
+   "index": 356,
+   "source_id": 10100,
+   "acronym": "OPt",
+   "name": "Occipito-parietal transitional area of cortex",
+   "hemisphere": "LH",
+   "color": "#684a00",
+   "voxels_source_grid": 60443,
+   "volume_mm3": 10.8314
+  },
+  {
+   "index": 357,
+   "source_id": 10101,
+   "acronym": "OPAl",
+   "name": "Orbital periallocortex",
+   "hemisphere": "LH",
+   "color": "#5bb448",
+   "voxels_source_grid": 15497,
+   "volume_mm3": 2.7771
+  },
+  {
+   "index": 358,
+   "source_id": 10102,
+   "acronym": "OPro",
+   "name": "Orbital proisocortex",
+   "hemisphere": "LH",
+   "color": "#8ac800",
+   "voxels_source_grid": 27791,
+   "volume_mm3": 4.9801
+  },
+  {
+   "index": 359,
+   "source_id": 10103,
+   "acronym": "PaIL",
+   "name": "Parainsular cortex; lateral part",
+   "hemisphere": "LH",
+   "color": "#57c45b",
+   "voxels_source_grid": 17668,
+   "volume_mm3": 3.1661
+  },
+  {
+   "index": 360,
+   "source_id": 10104,
+   "acronym": "PaIM",
+   "name": "Parainsular cortex; medial part",
+   "hemisphere": "LH",
+   "color": "#b29100",
+   "voxels_source_grid": 24264,
+   "volume_mm3": 4.3481
+  },
+  {
+   "index": 361,
+   "source_id": 10105,
+   "acronym": "PaS",
+   "name": "Parasubiculum",
+   "hemisphere": "LH",
+   "color": "#7c6379",
+   "voxels_source_grid": 64360,
+   "volume_mm3": 11.5333
+  },
+  {
+   "index": 362,
+   "source_id": 10106,
+   "acronym": "PE",
+   "name": "Parietal area PE",
+   "hemisphere": "LH",
+   "color": "#1804ed",
+   "voxels_source_grid": 185858,
+   "volume_mm3": 33.3058
+  },
+  {
+   "index": 363,
+   "source_id": 10107,
+   "acronym": "PEC",
+   "name": "Parietal area PE; caudal part",
+   "hemisphere": "LH",
+   "color": "#a4bbf6",
+   "voxels_source_grid": 50594,
+   "volume_mm3": 9.0664
+  },
+  {
+   "index": 364,
+   "source_id": 10108,
+   "acronym": "PF",
+   "name": "Parietal area PF",
+   "hemisphere": "LH",
+   "color": "#3494c5",
+   "voxels_source_grid": 30489,
+   "volume_mm3": 5.4636
+  },
+  {
+   "index": 365,
+   "source_id": 10109,
+   "acronym": "PFG",
+   "name": "Parietal area PFG",
+   "hemisphere": "LH",
+   "color": "#55a9b8",
+   "voxels_source_grid": 39033,
+   "volume_mm3": 6.9947
+  },
+  {
+   "index": 366,
+   "source_id": 10110,
+   "acronym": "PG",
+   "name": "Parietal area PG",
+   "hemisphere": "LH",
+   "color": "#e100fe",
+   "voxels_source_grid": 54923,
+   "volume_mm3": 9.8422
+  },
+  {
+   "index": 367,
+   "source_id": 10111,
+   "acronym": "PGa/IPa",
+   "name": "Parietal areas PGa and IPa (fundus of superior temporal ventral area)",
+   "hemisphere": "LH",
+   "color": "#39978a",
+   "voxels_source_grid": 24090,
+   "volume_mm3": 4.3169
+  },
+  {
+   "index": 368,
+   "source_id": 10112,
+   "acronym": "PGM",
+   "name": "Parietal area PG; medial part",
+   "hemisphere": "LH",
+   "color": "#b5dec6",
+   "voxels_source_grid": 53529,
+   "volume_mm3": 9.5924
+  },
+  {
+   "index": 369,
+   "source_id": 10113,
+   "acronym": "Pir",
+   "name": "Piriform cortex",
+   "hemisphere": "LH",
+   "color": "#3e9c6f",
+   "voxels_source_grid": 115181,
+   "volume_mm3": 20.6404
+  },
+  {
+   "index": 370,
+   "source_id": 10117,
+   "acronym": "PrS",
+   "name": "Presubiculum",
+   "hemisphere": "LH",
+   "color": "#a29f99",
+   "voxels_source_grid": 59475,
+   "volume_mm3": 10.6579
+  },
+  {
+   "index": 371,
+   "source_id": 10118,
+   "acronym": "ProM",
+   "name": "Proisocortical motor region (precentral opercular cortex)",
+   "hemisphere": "LH",
+   "color": "#d4d494",
+   "voxels_source_grid": 80006,
+   "volume_mm3": 14.3371
+  },
+  {
+   "index": 372,
+   "source_id": 10119,
+   "acronym": "ProSt",
+   "name": "Prostriate area",
+   "hemisphere": "LH",
+   "color": "#69c7d1",
+   "voxels_source_grid": 36925,
+   "volume_mm3": 6.617
+  },
+  {
+   "index": 373,
+   "source_id": 10121,
+   "acronym": "ReI",
+   "name": "Retroinsular area",
+   "hemisphere": "LH",
+   "color": "#7ab38a",
+   "voxels_source_grid": 18420,
+   "volume_mm3": 3.3009
+  },
+  {
+   "index": 374,
+   "source_id": 10122,
+   "acronym": "S2E",
+   "name": "Secondary somatosensory cortex; external part",
+   "hemisphere": "LH",
+   "color": "#958492",
+   "voxels_source_grid": 38023,
+   "volume_mm3": 6.8137
+  },
+  {
+   "index": 375,
+   "source_id": 10123,
+   "acronym": "S2I",
+   "name": "Secondary somatosensory cortex; internal part",
+   "hemisphere": "LH",
+   "color": "#70c5ff",
+   "voxels_source_grid": 35758,
+   "volume_mm3": 6.4078
+  },
+  {
+   "index": 376,
+   "source_id": 10124,
+   "acronym": "S2PR",
+   "name": "Secondary somatosensory cortex; parietal rostral area",
+   "hemisphere": "LH",
+   "color": "#b8a09e",
+   "voxels_source_grid": 20563,
+   "volume_mm3": 3.6849
+  },
+  {
+   "index": 377,
+   "source_id": 10125,
+   "acronym": "S2PV",
+   "name": "Secondary somatosensory cortex; parietal ventral area",
+   "hemisphere": "LH",
+   "color": "#f5f9eb",
+   "voxels_source_grid": 36409,
+   "volume_mm3": 6.5245
+  },
+  {
+   "index": 378,
+   "source_id": 10126,
+   "acronym": "STR",
+   "name": "Superior temporal rostral  area",
+   "hemisphere": "LH",
+   "color": "#cd15ff",
+   "voxels_source_grid": 97235,
+   "volume_mm3": 17.4245
+  },
+  {
+   "index": 379,
+   "source_id": 10128,
+   "acronym": "TE1",
+   "name": "Temporal area TE1",
+   "hemisphere": "LH",
+   "color": "#e06dff",
+   "voxels_source_grid": 67079,
+   "volume_mm3": 12.0206
+  },
+  {
+   "index": 380,
+   "source_id": 10129,
+   "acronym": "TE2",
+   "name": "Temporal area TE2",
+   "hemisphere": "LH",
+   "color": "#ab00da",
+   "voxels_source_grid": 129672,
+   "volume_mm3": 23.2372
+  },
+  {
+   "index": 381,
+   "source_id": 10130,
+   "acronym": "TE3",
+   "name": "Temporal area TE3",
+   "hemisphere": "LH",
+   "color": "#cc3333",
+   "voxels_source_grid": 242216,
+   "volume_mm3": 43.4051
+  },
+  {
+   "index": 382,
+   "source_id": 10131,
+   "acronym": "TEO",
+   "name": "Temporal area TE; occipital part",
+   "hemisphere": "LH",
+   "color": "#4fb3b0",
+   "voxels_source_grid": 132867,
+   "volume_mm3": 23.8098
+  },
+  {
+   "index": 383,
+   "source_id": 10132,
+   "acronym": "TF",
+   "name": "Temporal area TF",
+   "hemisphere": "LH",
+   "color": "#835294",
+   "voxels_source_grid": 110249,
+   "volume_mm3": 19.7566
+  },
+  {
+   "index": 384,
+   "source_id": 10133,
+   "acronym": "TFO",
+   "name": "Temporal area TF; occipital part",
+   "hemisphere": "LH",
+   "color": "#c2e893",
+   "voxels_source_grid": 43393,
+   "volume_mm3": 7.776
+  },
+  {
+   "index": 385,
+   "source_id": 10134,
+   "acronym": "TH",
+   "name": "Temporal area TH",
+   "hemisphere": "LH",
+   "color": "#e7c9c5",
+   "voxels_source_grid": 60268,
+   "volume_mm3": 10.8
+  },
+  {
+   "index": 386,
+   "source_id": 10135,
+   "acronym": "TL",
+   "name": "Temporal area TL",
+   "hemisphere": "LH",
+   "color": "#a0c9d5",
+   "voxels_source_grid": 25608,
+   "volume_mm3": 4.589
+  },
+  {
+   "index": 387,
+   "source_id": 10136,
+   "acronym": "TLO",
+   "name": "Temporal area TL; occipital part",
+   "hemisphere": "LH",
+   "color": "#a077d5",
+   "voxels_source_grid": 43832,
+   "volume_mm3": 7.8547
+  },
+  {
+   "index": 388,
+   "source_id": 10137,
+   "acronym": "TPro",
+   "name": "Temporal proisocortex",
+   "hemisphere": "LH",
+   "color": "#4aa570",
+   "voxels_source_grid": 6010,
+   "volume_mm3": 1.077
+  },
+  {
+   "index": 389,
+   "source_id": 10138,
+   "acronym": "TPO",
+   "name": "Temporo-parieto-occipital association area (superior temporal polysensory cortex)",
+   "hemisphere": "LH",
+   "color": "#e893ff",
+   "voxels_source_grid": 106951,
+   "volume_mm3": 19.1656
+  },
+  {
+   "index": 390,
+   "source_id": 10139,
+   "acronym": "TPPro",
+   "name": "Temporopolar proisocortex",
+   "hemisphere": "LH",
+   "color": "#a6c4c1",
+   "voxels_source_grid": 64609,
+   "volume_mm3": 11.5779
+  },
+  {
+   "index": 391,
+   "source_id": 10140,
+   "acronym": "TPt",
+   "name": "Temporoparietal transitional area",
+   "hemisphere": "LH",
+   "color": "#a7d0a3",
+   "voxels_source_grid": 25721,
+   "volume_mm3": 4.6092
+  },
+  {
+   "index": 392,
+   "source_id": 10141,
+   "acronym": "VIP",
+   "name": "Ventral intraparietal area of cortex",
+   "hemisphere": "LH",
+   "color": "#d5b1ea",
+   "voxels_source_grid": 18708,
+   "volume_mm3": 3.3525
+  },
+  {
+   "index": 393,
+   "source_id": 10142,
+   "acronym": "V1",
+   "name": "Visual area 1",
+   "hemisphere": "LH",
+   "color": "#28982a",
+   "voxels_source_grid": 1501467,
+   "volume_mm3": 269.0629
+  },
+  {
+   "index": 394,
+   "source_id": 10143,
+   "acronym": "V2",
+   "name": "Visual area 2",
+   "hemisphere": "LH",
+   "color": "#2b648f",
+   "voxels_source_grid": 658601,
+   "volume_mm3": 118.0213
+  },
+  {
+   "index": 395,
+   "source_id": 10144,
+   "acronym": "V3",
+   "name": "Visual area 3 (ventrolateral posterior area)",
+   "hemisphere": "LH",
+   "color": "#585345",
+   "voxels_source_grid": 346741,
+   "volume_mm3": 62.136
+  },
+  {
+   "index": 396,
+   "source_id": 10145,
+   "acronym": "V3A",
+   "name": "Visual area 3A (dorsoanterior area)",
+   "hemisphere": "LH",
+   "color": "#d7f4b5",
+   "voxels_source_grid": 81381,
+   "volume_mm3": 14.5835
+  },
+  {
+   "index": 397,
+   "source_id": 10146,
+   "acronym": "V4",
+   "name": "Visual area 4 (ventrolatereral anterior area)",
+   "hemisphere": "LH",
+   "color": "#6ff45d",
+   "voxels_source_grid": 174688,
+   "volume_mm3": 31.3041
+  },
+  {
+   "index": 398,
+   "source_id": 10147,
+   "acronym": "V4T",
+   "name": "Visual area 4; transitional part",
+   "hemisphere": "LH",
+   "color": "#c001fc",
+   "voxels_source_grid": 98792,
+   "volume_mm3": 17.7035
+  },
+  {
+   "index": 399,
+   "source_id": 10148,
+   "acronym": "V5",
+   "name": "Visual area 5 (middle temporal area)",
+   "hemisphere": "LH",
+   "color": "#aa8db5",
+   "voxels_source_grid": 81072,
+   "volume_mm3": 14.5281
+  },
+  {
+   "index": 400,
+   "source_id": 10149,
+   "acronym": "V6",
+   "name": "Visual area 6 (dorsomedial area)",
+   "hemisphere": "LH",
+   "color": "#0299fe",
+   "voxels_source_grid": 207444,
+   "volume_mm3": 37.174
+  },
+  {
+   "index": 401,
+   "source_id": 10150,
+   "acronym": "V6A",
+   "name": "Visual area 6A (posterior parietal medial area)",
+   "hemisphere": "LH",
+   "color": "#029900",
+   "voxels_source_grid": 58642,
+   "volume_mm3": 10.5086
+  },
+  {
+   "index": 402,
+   "source_id": 10151,
+   "acronym": "HipF",
+   "name": "Hippocampal formation",
+   "hemisphere": "LH",
+   "color": "#00a9cc",
+   "voxels_source_grid": 673977,
+   "volume_mm3": 120.7767
+  },
+  {
+   "index": 403,
+   "source_id": 10169,
+   "acronym": "APir",
+   "name": "Amygdalopiriform transition area",
+   "hemisphere": "LH",
+   "color": "#e740f6",
+   "voxels_source_grid": 11880,
+   "volume_mm3": 2.1289
+  },
+  {
+   "index": 404,
+   "source_id": 10172,
+   "acronym": "Ce",
+   "name": "Central amygdaloid nucleus",
+   "hemisphere": "LH",
+   "color": "#9f3e8d",
+   "voxels_source_grid": 19485,
+   "volume_mm3": 3.4917
+  },
+  {
+   "index": 405,
+   "source_id": 10178,
+   "acronym": "ACo",
+   "name": "Anterior cortical amygdaloid nucleus",
+   "hemisphere": "LH",
+   "color": "#4a53cd",
+   "voxels_source_grid": 3457,
+   "volume_mm3": 0.6195
+  },
+  {
+   "index": 406,
+   "source_id": 10179,
+   "acronym": "LOT",
+   "name": "Nucleus of the lateral olfactry tract",
+   "hemisphere": "LH",
+   "color": "#2c0093",
+   "voxels_source_grid": 4364,
+   "volume_mm3": 0.782
+  },
+  {
+   "index": 407,
+   "source_id": 10180,
+   "acronym": "PCo",
+   "name": "Posterior cortical amygdaloid nucleus",
+   "hemisphere": "LH",
+   "color": "#00bba8",
+   "voxels_source_grid": 11391,
+   "volume_mm3": 2.0413
+  },
+  {
+   "index": 408,
+   "source_id": 10181,
+   "acronym": "Me",
+   "name": "Medial amygdaloid nucleus",
+   "hemisphere": "LH",
+   "color": "#f6e294",
+   "voxels_source_grid": 4096,
+   "volume_mm3": 0.734
+  },
+  {
+   "index": 409,
+   "source_id": 10185,
+   "acronym": "ST",
+   "name": "Bed nucleus of the stria terminalis",
+   "hemisphere": "LH",
+   "color": "#ddeb86",
+   "voxels_source_grid": 33419,
+   "volume_mm3": 5.9887
+  },
+  {
+   "index": 410,
+   "source_id": 10197,
+   "acronym": "BL",
+   "name": "Basolateral amygdaloid nucleus",
+   "hemisphere": "LH",
+   "color": "#422c41",
+   "voxels_source_grid": 53451,
+   "volume_mm3": 9.5784
+  },
+  {
+   "index": 411,
+   "source_id": 10205,
+   "acronym": "BMMC",
+   "name": "Basomedial amygdaloid nucleus; magnocellular part",
+   "hemisphere": "LH",
+   "color": "#c54d92",
+   "voxels_source_grid": 17973,
+   "volume_mm3": 3.2208
+  },
+  {
+   "index": 412,
+   "source_id": 10206,
+   "acronym": "BMPC",
+   "name": "Basomedial amygdaloid nucleus; parvicellular part",
+   "hemisphere": "LH",
+   "color": "#e66686",
+   "voxels_source_grid": 22401,
+   "volume_mm3": 4.0143
+  },
+  {
+   "index": 413,
+   "source_id": 10209,
+   "acronym": "La",
+   "name": "Lateral amygdaloid nucleus",
+   "hemisphere": "LH",
+   "color": "#473946",
+   "voxels_source_grid": 33800,
+   "volume_mm3": 6.057
+  },
+  {
+   "index": 414,
+   "source_id": 10212,
+   "acronym": "Cl",
+   "name": "Claustrum",
+   "hemisphere": "LH",
+   "color": "#007b50",
+   "voxels_source_grid": 62134,
+   "volume_mm3": 11.1344
+  },
+  {
+   "index": 415,
+   "source_id": 10213,
+   "acronym": "DEn",
+   "name": "Dorsal nucleus of the endopiriform claustrum",
+   "hemisphere": "LH",
+   "color": "#007b50",
+   "voxels_source_grid": 18627,
+   "volume_mm3": 3.338
+  },
+  {
+   "index": 416,
+   "source_id": 10215,
+   "acronym": "EGP",
+   "name": "External globus pallidus",
+   "hemisphere": "LH",
+   "color": "#82ffe8",
+   "voxels_source_grid": 66059,
+   "volume_mm3": 11.8378
+  },
+  {
+   "index": 417,
+   "source_id": 10216,
+   "acronym": "IGP",
+   "name": "Internal globus pallidus",
+   "hemisphere": "LH",
+   "color": "#009985",
+   "voxels_source_grid": 17830,
+   "volume_mm3": 3.1951
+  },
+  {
+   "index": 418,
+   "source_id": 10217,
+   "acronym": "IEn",
+   "name": "Intermediate endopiriform nucleus",
+   "hemisphere": "LH",
+   "color": "#007b50",
+   "voxels_source_grid": 5293,
+   "volume_mm3": 0.9485
+  },
+  {
+   "index": 419,
+   "source_id": 10220,
+   "acronym": "SNC",
+   "name": "Substantia nigra; compact part",
+   "hemisphere": "LH",
+   "color": "#61d55f",
+   "voxels_source_grid": 9119,
+   "volume_mm3": 1.6341
+  },
+  {
+   "index": 420,
+   "source_id": 10224,
+   "acronym": "SNL",
+   "name": "Substantia nigra; lateral part",
+   "hemisphere": "LH",
+   "color": "#96afa9",
+   "voxels_source_grid": 10088,
+   "volume_mm3": 1.8078
+  },
+  {
+   "index": 421,
+   "source_id": 10225,
+   "acronym": "SNR",
+   "name": "Substantia nigra; reticular part",
+   "hemisphere": "LH",
+   "color": "#41c3af",
+   "voxels_source_grid": 19352,
+   "volume_mm3": 3.4679
+  },
+  {
+   "index": 422,
+   "source_id": 10228,
+   "acronym": "AcbC",
+   "name": "Accumbens nucleus; core",
+   "hemisphere": "LH",
+   "color": "#cad9a5",
+   "voxels_source_grid": 25252,
+   "volume_mm3": 4.5252
+  },
+  {
+   "index": 423,
+   "source_id": 10229,
+   "acronym": "AcbSh",
+   "name": "Accumbens nucleus;shell",
+   "hemisphere": "LH",
+   "color": "#a1e2b6",
+   "voxels_source_grid": 54289,
+   "volume_mm3": 9.7286
+  },
+  {
+   "index": 424,
+   "source_id": 10233,
+   "acronym": "Cd",
+   "name": "Caudate nucleus",
+   "hemisphere": "LH",
+   "color": "#00a553",
+   "voxels_source_grid": 467168,
+   "volume_mm3": 83.7165
+  },
+  {
+   "index": 425,
+   "source_id": 10234,
+   "acronym": "Pu",
+   "name": "Putamen",
+   "hemisphere": "LH",
+   "color": "#d7dd3c",
+   "voxels_source_grid": 270789,
+   "volume_mm3": 48.5254
+  },
+  {
+   "index": 426,
+   "source_id": 10235,
+   "acronym": "STh",
+   "name": "Subthalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#6da895",
+   "voxels_source_grid": 6307,
+   "volume_mm3": 1.1302
+  },
+  {
+   "index": 427,
+   "source_id": 10236,
+   "acronym": "VEn",
+   "name": "Ventral nucleus of the endopiriform claustrum",
+   "hemisphere": "LH",
+   "color": "#007b50",
+   "voxels_source_grid": 9831,
+   "volume_mm3": 1.7617
+  },
+  {
+   "index": 428,
+   "source_id": 10239,
+   "acronym": "HDB",
+   "name": "Nucleus of the horizontal limb of the diagonal band",
+   "hemisphere": "LH",
+   "color": "#850cff",
+   "voxels_source_grid": 2753,
+   "volume_mm3": 0.4933
+  },
+  {
+   "index": 429,
+   "source_id": 10240,
+   "acronym": "VDB",
+   "name": "Nucleus of the vertical limb of the diagonal band",
+   "hemisphere": "LH",
+   "color": "#008dba",
+   "voxels_source_grid": 2563,
+   "volume_mm3": 0.4593
+  },
+  {
+   "index": 430,
+   "source_id": 10243,
+   "acronym": "LS",
+   "name": "Lateral septal nuclei",
+   "hemisphere": "LH",
+   "color": "#7e7edb",
+   "voxels_source_grid": 42763,
+   "volume_mm3": 7.6631
+  },
+  {
+   "index": 431,
+   "source_id": 10247,
+   "acronym": "MS",
+   "name": "Medial septal nucleus",
+   "hemisphere": "LH",
+   "color": "#9dcce0",
+   "voxels_source_grid": 9244,
+   "volume_mm3": 1.6565
+  },
+  {
+   "index": 432,
+   "source_id": 10249,
+   "acronym": "SFi",
+   "name": "Septofimbrial nucleus",
+   "hemisphere": "LH",
+   "color": "#6bfafe",
+   "voxels_source_grid": 552,
+   "volume_mm3": 0.0989
+  },
+  {
+   "index": 433,
+   "source_id": 10255,
+   "acronym": "MG",
+   "name": "Medial geniculate nucleus",
+   "hemisphere": "LH",
+   "color": "#1f477a",
+   "voxels_source_grid": 28658,
+   "volume_mm3": 5.1355
+  },
+  {
+   "index": 434,
+   "source_id": 10261,
+   "acronym": "AD",
+   "name": "Anterodorsal thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#435aa0",
+   "voxels_source_grid": 1215,
+   "volume_mm3": 0.2177
+  },
+  {
+   "index": 435,
+   "source_id": 10262,
+   "acronym": "AM",
+   "name": "Anteromedial thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#3a3c4f",
+   "voxels_source_grid": 6927,
+   "volume_mm3": 1.2413
+  },
+  {
+   "index": 436,
+   "source_id": 10263,
+   "acronym": "AV",
+   "name": "Anteroventral thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#0086a8",
+   "voxels_source_grid": 14430,
+   "volume_mm3": 2.5859
+  },
+  {
+   "index": 437,
+   "source_id": 10265,
+   "acronym": "LD",
+   "name": "Laterodorsal thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#384d98",
+   "voxels_source_grid": 13635,
+   "volume_mm3": 2.4434
+  },
+  {
+   "index": 438,
+   "source_id": 10266,
+   "acronym": "LP",
+   "name": "Lateral posterior thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#00519a",
+   "voxels_source_grid": 878,
+   "volume_mm3": 0.1573
+  },
+  {
+   "index": 439,
+   "source_id": 10267,
+   "acronym": "MD",
+   "name": "Mediodorsal thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#343d55",
+   "voxels_source_grid": 61501,
+   "volume_mm3": 11.021
+  },
+  {
+   "index": 440,
+   "source_id": 10271,
+   "acronym": "PT",
+   "name": "Paratenial nucleus",
+   "hemisphere": "LH",
+   "color": "#5d2842",
+   "voxels_source_grid": 1041,
+   "volume_mm3": 0.1865
+  },
+  {
+   "index": 441,
+   "source_id": 10273,
+   "acronym": "APul",
+   "name": "Anterior pulvinar",
+   "hemisphere": "LH",
+   "color": "#c8b199",
+   "voxels_source_grid": 2822,
+   "volume_mm3": 0.5057
+  },
+  {
+   "index": 442,
+   "source_id": 10274,
+   "acronym": "IPul",
+   "name": "Inferior pulvinar",
+   "hemisphere": "LH",
+   "color": "#c4c5ad",
+   "voxels_source_grid": 30771,
+   "volume_mm3": 5.5142
+  },
+  {
+   "index": 443,
+   "source_id": 10279,
+   "acronym": "LPul",
+   "name": "Lateral pulvinar",
+   "hemisphere": "LH",
+   "color": "#dc9eb4",
+   "voxels_source_grid": 50573,
+   "volume_mm3": 9.0627
+  },
+  {
+   "index": 444,
+   "source_id": 10280,
+   "acronym": "MPul",
+   "name": "Medial pulvinar",
+   "hemisphere": "LH",
+   "color": "#9b92cc",
+   "voxels_source_grid": 85622,
+   "volume_mm3": 15.3435
+  },
+  {
+   "index": 445,
+   "source_id": 10282,
+   "acronym": "Ang",
+   "name": "Angular thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#b17fd1",
+   "voxels_source_grid": 4017,
+   "volume_mm3": 0.7198
+  },
+  {
+   "index": 446,
+   "source_id": 10298,
+   "acronym": "VA",
+   "name": "Ventral anterior thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#4c64b7",
+   "voxels_source_grid": 62560,
+   "volume_mm3": 11.2108
+  },
+  {
+   "index": 447,
+   "source_id": 10303,
+   "acronym": "VLLa",
+   "name": "Ventral lateral thalamic nucleus; lateral part",
+   "hemisphere": "LH",
+   "color": "#5f5c65",
+   "voxels_source_grid": 41932,
+   "volume_mm3": 7.5142
+  },
+  {
+   "index": 448,
+   "source_id": 10304,
+   "acronym": "VLM",
+   "name": "Ventral lateral thalamic nucleus; medial part",
+   "hemisphere": "LH",
+   "color": "#8b94ba",
+   "voxels_source_grid": 14775,
+   "volume_mm3": 2.6477
+  },
+  {
+   "index": 449,
+   "source_id": 10305,
+   "acronym": "VLD",
+   "name": "Ventrolateral thalamic nucleus; dorsal part",
+   "hemisphere": "LH",
+   "color": "#006b8f",
+   "voxels_source_grid": 7153,
+   "volume_mm3": 1.2818
+  },
+  {
+   "index": 450,
+   "source_id": 10308,
+   "acronym": "Po",
+   "name": "Posterior thalamic nuclear group",
+   "hemisphere": "LH",
+   "color": "#007bc3",
+   "voxels_source_grid": 12229,
+   "volume_mm3": 2.1914
+  },
+  {
+   "index": 451,
+   "source_id": 10311,
+   "acronym": "SG",
+   "name": "Suprageniculate thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#00b3be",
+   "voxels_source_grid": 6044,
+   "volume_mm3": 1.0831
+  },
+  {
+   "index": 452,
+   "source_id": 10316,
+   "acronym": "VPL",
+   "name": "Ventral posterolateral thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#223546",
+   "voxels_source_grid": 11797,
+   "volume_mm3": 2.114
+  },
+  {
+   "index": 453,
+   "source_id": 10317,
+   "acronym": "VPM",
+   "name": "Ventral posteromedial thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#89acd7",
+   "voxels_source_grid": 10777,
+   "volume_mm3": 1.9312
+  },
+  {
+   "index": 454,
+   "source_id": 10320,
+   "acronym": "Rt",
+   "name": "Reticular nucleus",
+   "hemisphere": "LH",
+   "color": "#69639a",
+   "voxels_source_grid": 32039,
+   "volume_mm3": 5.7414
+  },
+  {
+   "index": 455,
+   "source_id": 10325,
+   "acronym": "ZI",
+   "name": "Zona incerta",
+   "hemisphere": "LH",
+   "color": "#441984",
+   "voxels_source_grid": 6399,
+   "volume_mm3": 1.1467
+  },
+  {
+   "index": 456,
+   "source_id": 10331,
+   "acronym": "DLG",
+   "name": "Dorsal lateral geniculate nucleus",
+   "hemisphere": "LH",
+   "color": "#2b618f",
+   "voxels_source_grid": 74441,
+   "volume_mm3": 13.3398
+  },
+  {
+   "index": 457,
+   "source_id": 10342,
+   "acronym": "Hb",
+   "name": "Habenular nucleus",
+   "hemisphere": "LH",
+   "color": "#7967c3",
+   "voxels_source_grid": 6793,
+   "volume_mm3": 1.2173
+  },
+  {
+   "index": 458,
+   "source_id": 10345,
+   "acronym": "PV",
+   "name": "Paraventricular thalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#a294c8",
+   "voxels_source_grid": 3501,
+   "volume_mm3": 0.6274
+  },
+  {
+   "index": 459,
+   "source_id": 10352,
+   "acronym": "Arc",
+   "name": "Arcuate hypothalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#9042b5",
+   "voxels_source_grid": 3759,
+   "volume_mm3": 0.6736
+  },
+  {
+   "index": 460,
+   "source_id": 10356,
+   "acronym": "DM",
+   "name": "Dorsomedial hypothalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#5659ba",
+   "voxels_source_grid": 6414,
+   "volume_mm3": 1.1494
+  },
+  {
+   "index": 461,
+   "source_id": 10364,
+   "acronym": "MM",
+   "name": "Medial mammillary nucleus; medial part",
+   "hemisphere": "LH",
+   "color": "#8f669f",
+   "voxels_source_grid": 5237,
+   "volume_mm3": 0.9385
+  },
+  {
+   "index": 462,
+   "source_id": 10365,
+   "acronym": "MTu",
+   "name": "Medial tuberal nucleus",
+   "hemisphere": "LH",
+   "color": "#7545e1",
+   "voxels_source_grid": 1291,
+   "volume_mm3": 0.2313
+  },
+  {
+   "index": 463,
+   "source_id": 10367,
+   "acronym": "Pa",
+   "name": "Paraventricular hypothalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#614876",
+   "voxels_source_grid": 1230,
+   "volume_mm3": 0.2204
+  },
+  {
+   "index": 464,
+   "source_id": 10377,
+   "acronym": "LPO",
+   "name": "Lateral preoptic area",
+   "hemisphere": "LH",
+   "color": "#ddd2e2",
+   "voxels_source_grid": 4057,
+   "volume_mm3": 0.727
+  },
+  {
+   "index": 465,
+   "source_id": 10379,
+   "acronym": "MPO",
+   "name": "Medial preoptic nucleus",
+   "hemisphere": "LH",
+   "color": "#5659ba",
+   "voxels_source_grid": 11838,
+   "volume_mm3": 2.1214
+  },
+  {
+   "index": 466,
+   "source_id": 10384,
+   "acronym": "SO",
+   "name": "Supraoptic nucleus",
+   "hemisphere": "LH",
+   "color": "#353573",
+   "voxels_source_grid": 858,
+   "volume_mm3": 0.1538
+  },
+  {
+   "index": 467,
+   "source_id": 10388,
+   "acronym": "VMH",
+   "name": "Ventromedial hypothalamic nucleus",
+   "hemisphere": "LH",
+   "color": "#576d7a",
+   "voxels_source_grid": 19820,
+   "volume_mm3": 3.5517
+  },
+  {
+   "index": 468,
+   "source_id": 10391,
+   "acronym": "APT",
+   "name": "Anterior pretectal nucleus",
+   "hemisphere": "LH",
+   "color": "#aac8ff",
+   "voxels_source_grid": 2464,
+   "volume_mm3": 0.4415
+  },
+  {
+   "index": 469,
+   "source_id": 10393,
+   "acronym": "MPT",
+   "name": "Medial pretectal area",
+   "hemisphere": "LH",
+   "color": "#485981",
+   "voxels_source_grid": 2252,
+   "volume_mm3": 0.4036
+  },
+  {
+   "index": 470,
+   "source_id": 10394,
+   "acronym": "OT",
+   "name": "Nucleus of the optic tract",
+   "hemisphere": "LH",
+   "color": "#00addc",
+   "voxels_source_grid": 990,
+   "volume_mm3": 0.1774
+  },
+  {
+   "index": 471,
+   "source_id": 10402,
+   "acronym": "Dk",
+   "name": "Nucleus of Darkschewitsch",
+   "hemisphere": "LH",
+   "color": "#924d4b",
+   "voxels_source_grid": 425,
+   "volume_mm3": 0.0762
+  },
+  {
+   "index": 472,
+   "source_id": 10406,
+   "acronym": "CIC",
+   "name": "Central nucleus of the inferior colliculus",
+   "hemisphere": "LH",
+   "color": "#fbb5b8",
+   "voxels_source_grid": 12923,
+   "volume_mm3": 2.3158
+  },
+  {
+   "index": 473,
+   "source_id": 10407,
+   "acronym": "DCIC",
+   "name": "Dorsal cortex of the inferior colliculus",
+   "hemisphere": "LH",
+   "color": "#c6b9b8",
+   "voxels_source_grid": 13739,
+   "volume_mm3": 2.462
+  },
+  {
+   "index": 474,
+   "source_id": 10408,
+   "acronym": "ECIC",
+   "name": "External cortex of the inferior colliculus",
+   "hemisphere": "LH",
+   "color": "#da78b8",
+   "voxels_source_grid": 19289,
+   "volume_mm3": 3.4566
+  },
+  {
+   "index": 475,
+   "source_id": 10409,
+   "acronym": "InC",
+   "name": "Interstitial nucleus of Cajal",
+   "hemisphere": "LH",
+   "color": "#7f87b8",
+   "voxels_source_grid": 1466,
+   "volume_mm3": 0.2627
+  },
+  {
+   "index": 476,
+   "source_id": 10417,
+   "acronym": "Me5",
+   "name": "Mesencephalic trigeminal nucleus",
+   "hemisphere": "LH",
+   "color": "#cf4078",
+   "voxels_source_grid": 2407,
+   "volume_mm3": 0.4313
+  },
+  {
+   "index": 477,
+   "source_id": 10418,
+   "acronym": "BIC",
+   "name": "Nucleus of the brachium of the inferior colliculus",
+   "hemisphere": "LH",
+   "color": "#b44176",
+   "voxels_source_grid": 6203,
+   "volume_mm3": 1.1116
+  },
+  {
+   "index": 478,
+   "source_id": 10420,
+   "acronym": "3N",
+   "name": "Occulomotor nucleus",
+   "hemisphere": "LH",
+   "color": "#c94093",
+   "voxels_source_grid": 4790,
+   "volume_mm3": 0.8584
+  },
+  {
+   "index": 479,
+   "source_id": 10435,
+   "acronym": "R",
+   "name": "Red nucleus",
+   "hemisphere": "LH",
+   "color": "#ff7f8f",
+   "voxels_source_grid": 5278,
+   "volume_mm3": 0.9458
+  },
+  {
+   "index": 480,
+   "source_id": 10453,
+   "acronym": "DpG",
+   "name": "Deep gray layer of the superior colliculus",
+   "hemisphere": "LH",
+   "color": "#7e3176",
+   "voxels_source_grid": 25450,
+   "volume_mm3": 4.5606
+  },
+  {
+   "index": 481,
+   "source_id": 10455,
+   "acronym": "InG",
+   "name": "Intermediate gray layer of the superior colliculus",
+   "hemisphere": "LH",
+   "color": "#53317d",
+   "voxels_source_grid": 47432,
+   "volume_mm3": 8.4998
+  },
+  {
+   "index": 482,
+   "source_id": 10458,
+   "acronym": "SuG",
+   "name": "Superficial gray layer of the superior colliculcus",
+   "hemisphere": "LH",
+   "color": "#a18e8a",
+   "voxels_source_grid": 17766,
+   "volume_mm3": 3.1837
+  },
+  {
+   "index": 483,
+   "source_id": 10462,
+   "acronym": "4N",
+   "name": "Trochlear nucleus",
+   "hemisphere": "LH",
+   "color": "#b81a3e",
+   "voxels_source_grid": 986,
+   "volume_mm3": 0.1767
+  },
+  {
+   "index": 484,
+   "source_id": 10467,
+   "acronym": "6N",
+   "name": "Abducens nucleus",
+   "hemisphere": "LH",
+   "color": "#94474b",
+   "voxels_source_grid": 4569,
+   "volume_mm3": 0.8188
+  },
+  {
+   "index": 485,
+   "source_id": 10473,
+   "acronym": "DC",
+   "name": "Dorsal cochlear nucleus",
+   "hemisphere": "LH",
+   "color": "#ad9393",
+   "voxels_source_grid": 5166,
+   "volume_mm3": 0.9257
+  },
+  {
+   "index": 486,
+   "source_id": 10475,
+   "acronym": "VCA",
+   "name": "Ventral cochlear nucleus; anterior part",
+   "hemisphere": "LH",
+   "color": "#cc8a6a",
+   "voxels_source_grid": 2907,
+   "volume_mm3": 0.5209
+  },
+  {
+   "index": 487,
+   "source_id": 10476,
+   "acronym": "VCP",
+   "name": "Ventral cochlear nucleus; posterior part",
+   "hemisphere": "LH",
+   "color": "#c2c164",
+   "voxels_source_grid": 7890,
+   "volume_mm3": 1.4139
+  },
+  {
+   "index": 488,
+   "source_id": 10477,
+   "acronym": "DLL",
+   "name": "Dorsal nucleus of the lateral lemniscus",
+   "hemisphere": "LH",
+   "color": "#9c5150",
+   "voxels_source_grid": 536,
+   "volume_mm3": 0.0961
+  },
+  {
+   "index": 489,
+   "source_id": 10479,
+   "acronym": "7N",
+   "name": "Facial nucleus",
+   "hemisphere": "LH",
+   "color": "#ef454a",
+   "voxels_source_grid": 3130,
+   "volume_mm3": 0.5609
+  },
+  {
+   "index": 490,
+   "source_id": 10481,
+   "acronym": "ILL",
+   "name": "Intermediate nucleus of the lateral lemniscus",
+   "hemisphere": "LH",
+   "color": "#a17e54",
+   "voxels_source_grid": 5510,
+   "volume_mm3": 0.9874
+  },
+  {
+   "index": 491,
+   "source_id": 10482,
+   "acronym": "LC",
+   "name": "Locus coeruleus",
+   "hemisphere": "LH",
+   "color": "#d1483e",
+   "voxels_source_grid": 1391,
+   "volume_mm3": 0.2493
+  },
+  {
+   "index": 492,
+   "source_id": 10498,
+   "acronym": "5N",
+   "name": "Motor trigeminal nucleus",
+   "hemisphere": "LH",
+   "color": "#6d3a33",
+   "voxels_source_grid": 1968,
+   "volume_mm3": 0.3527
+  },
+  {
+   "index": 493,
+   "source_id": 10503,
+   "acronym": "Sp5",
+   "name": "Nucleus of the spinal trigeminal tract",
+   "hemisphere": "LH",
+   "color": "#7a453d",
+   "voxels_source_grid": 34413,
+   "volume_mm3": 6.1668
+  },
+  {
+   "index": 494,
+   "source_id": 10504,
+   "acronym": "Tz",
+   "name": "Nucleus of the trapezoid body",
+   "hemisphere": "LH",
+   "color": "#7f6057",
+   "voxels_source_grid": 1222,
+   "volume_mm3": 0.219
+  },
+  {
+   "index": 495,
+   "source_id": 10505,
+   "acronym": "PBG",
+   "name": "Parabigeminal nucleus",
+   "hemisphere": "LH",
+   "color": "#af83bd",
+   "voxels_source_grid": 304,
+   "volume_mm3": 0.0545
+  },
+  {
+   "index": 496,
+   "source_id": 10509,
+   "acronym": "Pn",
+   "name": "Pontine nuclei",
+   "hemisphere": "LH",
+   "color": "#863e33",
+   "voxels_source_grid": 43345,
+   "volume_mm3": 7.7674
+  },
+  {
+   "index": 497,
+   "source_id": 10511,
+   "acronym": "Pr5",
+   "name": "Principal sensory trigeminal nucleus",
+   "hemisphere": "LH",
+   "color": "#706352",
+   "voxels_source_grid": 3718,
+   "volume_mm3": 0.6663
+  },
+  {
+   "index": 498,
+   "source_id": 10526,
+   "acronym": "RtTg",
+   "name": "Reticulotegmental nucleus of the pons",
+   "hemisphere": "LH",
+   "color": "#b9787a",
+   "voxels_source_grid": 17150,
+   "volume_mm3": 3.0733
+  },
+  {
+   "index": 499,
+   "source_id": 10536,
+   "acronym": "LSO",
+   "name": "Lateral superior olive",
+   "hemisphere": "LH",
+   "color": "#7c3d53",
+   "voxels_source_grid": 647,
+   "volume_mm3": 0.1159
+  },
+  {
+   "index": 500,
+   "source_id": 10538,
+   "acronym": "MSO",
+   "name": "Medial superior olive",
+   "hemisphere": "LH",
+   "color": "#946b9e",
+   "voxels_source_grid": 366,
+   "volume_mm3": 0.0656
+  },
+  {
+   "index": 501,
+   "source_id": 10543,
+   "acronym": "VLL",
+   "name": "Ventral nucleus of the lateral lemniscus",
+   "hemisphere": "LH",
+   "color": "#834b5d",
+   "voxels_source_grid": 1576,
+   "volume_mm3": 0.2824
+  },
+  {
+   "index": 502,
+   "source_id": 10548,
+   "acronym": "Amb",
+   "name": "Ambiguus nucleus",
+   "hemisphere": "LH",
+   "color": "#efc6c3",
+   "voxels_source_grid": 397,
+   "volume_mm3": 0.0711
+  },
+  {
+   "index": 503,
+   "source_id": 10553,
+   "acronym": "Cu",
+   "name": "Cuneate nucleus",
+   "hemisphere": "LH",
+   "color": "#ce596a",
+   "voxels_source_grid": 12346,
+   "volume_mm3": 2.2124
+  },
+  {
+   "index": 504,
+   "source_id": 10556,
+   "acronym": "ECu",
+   "name": "External cuneate nucleus",
+   "hemisphere": "LH",
+   "color": "#ab0055",
+   "voxels_source_grid": 6834,
+   "volume_mm3": 1.2247
+  },
+  {
+   "index": 505,
+   "source_id": 10557,
+   "acronym": "Gr",
+   "name": "Gracile nucleus",
+   "hemisphere": "LH",
+   "color": "#9a3b6d",
+   "voxels_source_grid": 12745,
+   "volume_mm3": 2.2839
+  },
+  {
+   "index": 506,
+   "source_id": 10558,
+   "acronym": "12N",
+   "name": "Hypoglossal nucleus",
+   "hemisphere": "LH",
+   "color": "#9e413f",
+   "voxels_source_grid": 3260,
+   "volume_mm3": 0.5842
+  },
+  {
+   "index": 507,
+   "source_id": 10561,
+   "acronym": "IOBe",
+   "name": "Inferior olive; beta subnucleus of the medial nucleus",
+   "hemisphere": "LH",
+   "color": "#485a41",
+   "voxels_source_grid": 529,
+   "volume_mm3": 0.0948
+  },
+  {
+   "index": 508,
+   "source_id": 10562,
+   "acronym": "IOK",
+   "name": "Inferior olive; cap of Kooy of the medial nucleus",
+   "hemisphere": "LH",
+   "color": "#dff263",
+   "voxels_source_grid": 280,
+   "volume_mm3": 0.0502
+  },
+  {
+   "index": 509,
+   "source_id": 10563,
+   "acronym": "IOD",
+   "name": "Inferior olive; dorsal nucleus",
+   "hemisphere": "LH",
+   "color": "#798c58",
+   "voxels_source_grid": 174,
+   "volume_mm3": 0.0312
+  },
+  {
+   "index": 510,
+   "source_id": 10564,
+   "acronym": "IOM",
+   "name": "Inferior olive; medial nucleus",
+   "hemisphere": "LH",
+   "color": "#8eb39f",
+   "voxels_source_grid": 1475,
+   "volume_mm3": 0.2643
+  },
+  {
+   "index": 511,
+   "source_id": 10565,
+   "acronym": "IOPr",
+   "name": "Inferior olive; principal nucleus",
+   "hemisphere": "LH",
+   "color": "#9c9f54",
+   "voxels_source_grid": 1309,
+   "volume_mm3": 0.2346
+  },
+  {
+   "index": 512,
+   "source_id": 10589,
+   "acronym": "Pr",
+   "name": "Prepositus nucleus",
+   "hemisphere": "LH",
+   "color": "#b1159e",
+   "voxels_source_grid": 3349,
+   "volume_mm3": 0.6001
+  },
+  {
+   "index": 513,
+   "source_id": 10602,
+   "acronym": "LRt",
+   "name": "Lateral reticular nucleus",
+   "hemisphere": "LH",
+   "color": "#952bd1",
+   "voxels_source_grid": 11852,
+   "volume_mm3": 2.1239
+  },
+  {
+   "index": 514,
+   "source_id": 10612,
+   "acronym": "Sol",
+   "name": "Solitary nucleus",
+   "hemisphere": "LH",
+   "color": "#793f3f",
+   "voxels_source_grid": 11105,
+   "volume_mm3": 1.99
+  },
+  {
+   "index": 515,
+   "source_id": 10625,
+   "acronym": "LVe",
+   "name": "Lateral vestibular nucleus",
+   "hemisphere": "LH",
+   "color": "#ba485d",
+   "voxels_source_grid": 6799,
+   "volume_mm3": 1.2184
+  },
+  {
+   "index": 516,
+   "source_id": 10626,
+   "acronym": "MVe",
+   "name": "Medial vestibular nucleus",
+   "hemisphere": "LH",
+   "color": "#e6d5c6",
+   "voxels_source_grid": 27019,
+   "volume_mm3": 4.8418
+  },
+  {
+   "index": 517,
+   "source_id": 10630,
+   "acronym": "SpVe",
+   "name": "Spinal vestibular nucleus",
+   "hemisphere": "LH",
+   "color": "#8d3927",
+   "voxels_source_grid": 13977,
+   "volume_mm3": 2.5047
+  },
+  {
+   "index": 518,
+   "source_id": 10631,
+   "acronym": "SuVe",
+   "name": "Superior vestibular nucleus",
+   "hemisphere": "LH",
+   "color": "#eb6940",
+   "voxels_source_grid": 5651,
+   "volume_mm3": 1.0127
+  },
+  {
+   "index": 519,
+   "source_id": 10632,
+   "acronym": "10N",
+   "name": "Vagus nerve nucleus",
+   "hemisphere": "LH",
+   "color": "#ffadb8",
+   "voxels_source_grid": 919,
+   "volume_mm3": 0.1647
+  },
+  {
+   "index": 520,
+   "source_id": 10653,
+   "acronym": "IntA",
+   "name": "Anterior interposed cerebellar nucleus",
+   "hemisphere": "LH",
+   "color": "#ef810f",
+   "voxels_source_grid": 6848,
+   "volume_mm3": 1.2272
+  },
+  {
+   "index": 521,
+   "source_id": 10654,
+   "acronym": "Lat",
+   "name": "Lateral (dentate) cerebellar nucleus",
+   "hemisphere": "LH",
+   "color": "#816551",
+   "voxels_source_grid": 10199,
+   "volume_mm3": 1.8277
+  },
+  {
+   "index": 522,
+   "source_id": 10656,
+   "acronym": "Med",
+   "name": "Medial cerebellar nucleus",
+   "hemisphere": "LH",
+   "color": "#6d4c33",
+   "voxels_source_grid": 4951,
+   "volume_mm3": 0.8872
+  },
+  {
+   "index": 523,
+   "source_id": 10657,
+   "acronym": "IntP",
+   "name": "Posterior interposed cerebellar nucleus",
+   "hemisphere": "LH",
+   "color": "#e39c84",
+   "voxels_source_grid": 4075,
+   "volume_mm3": 0.7302
+  },
+  {
+   "index": 524,
+   "source_id": 10663,
+   "acronym": "ac",
+   "name": "Anterior commissure",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 40900,
+   "volume_mm3": 7.3293
+  },
+  {
+   "index": 525,
+   "source_id": 10668,
+   "acronym": "bic",
+   "name": "Brachium of the inferior colliculus",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 5219,
+   "volume_mm3": 0.9352
+  },
+  {
+   "index": 526,
+   "source_id": 10669,
+   "acronym": "bsc",
+   "name": "Brachium of the superior colliculus",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 9996,
+   "volume_mm3": 1.7913
+  },
+  {
+   "index": 527,
+   "source_id": 10670,
+   "acronym": "cp",
+   "name": "Cerebral peduncle",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 55677,
+   "volume_mm3": 9.9773
+  },
+  {
+   "index": 528,
+   "source_id": 10671,
+   "acronym": "cg",
+   "name": "Cingulum",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 5946,
+   "volume_mm3": 1.0655
+  },
+  {
+   "index": 529,
+   "source_id": 10677,
+   "acronym": "cu",
+   "name": "Cuneate fascicolus",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 16698,
+   "volume_mm3": 2.9923
+  },
+  {
+   "index": 530,
+   "source_id": 10687,
+   "acronym": "fr",
+   "name": "Fasciculus retroflexus",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 3591,
+   "volume_mm3": 0.6435
+  },
+  {
+   "index": 531,
+   "source_id": 10688,
+   "acronym": "fi",
+   "name": "Finbria of the hippocampus",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 79075,
+   "volume_mm3": 14.1702
+  },
+  {
+   "index": 532,
+   "source_id": 10690,
+   "acronym": "f",
+   "name": "Fornix",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 4035,
+   "volume_mm3": 0.7231
+  },
+  {
+   "index": 533,
+   "source_id": 10693,
+   "acronym": "gr",
+   "name": "Gracile fasciculus",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 3445,
+   "volume_mm3": 0.6173
+  },
+  {
+   "index": 534,
+   "source_id": 10697,
+   "acronym": "icp",
+   "name": "Inferior cerebellar peduncle",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 37542,
+   "volume_mm3": 6.7275
+  },
+  {
+   "index": 535,
+   "source_id": 10698,
+   "acronym": "ic",
+   "name": "Internal capsule",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 175536,
+   "volume_mm3": 31.4561
+  },
+  {
+   "index": 536,
+   "source_id": 10699,
+   "acronym": "lcs",
+   "name": "Lateral corticospinal tract",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 415,
+   "volume_mm3": 0.0744
+  },
+  {
+   "index": 537,
+   "source_id": 10700,
+   "acronym": "ll",
+   "name": "Lateral lemniscus",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 14873,
+   "volume_mm3": 2.6652
+  },
+  {
+   "index": 538,
+   "source_id": 10703,
+   "acronym": "lfp",
+   "name": "Longitudinal fasciculs of the pons",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 19633,
+   "volume_mm3": 3.5182
+  },
+  {
+   "index": 539,
+   "source_id": 10706,
+   "acronym": "mt",
+   "name": "Mammillothalamic tract",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 3035,
+   "volume_mm3": 0.5439
+  },
+  {
+   "index": 540,
+   "source_id": 10708,
+   "acronym": "ml",
+   "name": "Medial lemniscus",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 14791,
+   "volume_mm3": 2.6505
+  },
+  {
+   "index": 541,
+   "source_id": 10709,
+   "acronym": "mlf",
+   "name": "Medial longitudinal faciculcus",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 23718,
+   "volume_mm3": 4.2503
+  },
+  {
+   "index": 542,
+   "source_id": 10712,
+   "acronym": "mcp",
+   "name": "Middle cerebellar peduncle",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 86765,
+   "volume_mm3": 15.5483
+  },
+  {
+   "index": 543,
+   "source_id": 10713,
+   "acronym": "m5",
+   "name": "Motor root of the trigeminal nerve",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 1571,
+   "volume_mm3": 0.2815
+  },
+  {
+   "index": 544,
+   "source_id": 10718,
+   "acronym": "opt",
+   "name": "Optic tract",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 97896,
+   "volume_mm3": 17.543
+  },
+  {
+   "index": 545,
+   "source_id": 10720,
+   "acronym": "pc",
+   "name": "Posterior commissure",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 2283,
+   "volume_mm3": 0.4091
+  },
+  {
+   "index": 546,
+   "source_id": 10721,
+   "acronym": "py",
+   "name": "Pyramidal tract",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 41053,
+   "volume_mm3": 7.3567
+  },
+  {
+   "index": 547,
+   "source_id": 10725,
+   "acronym": "rs",
+   "name": "Rubrospinal tract",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 4608,
+   "volume_mm3": 0.8258
+  },
+  {
+   "index": 548,
+   "source_id": 10726,
+   "acronym": "s5",
+   "name": "Sensory root of the trigeminal nerve",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 8559,
+   "volume_mm3": 1.5338
+  },
+  {
+   "index": 549,
+   "source_id": 10728,
+   "acronym": "sp5",
+   "name": "Spinal trigeminal tract",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 18929,
+   "volume_mm3": 3.3921
+  },
+  {
+   "index": 550,
+   "source_id": 10729,
+   "acronym": "sm",
+   "name": "Stria medullaris of the thalamus",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 3480,
+   "volume_mm3": 0.6236
+  },
+  {
+   "index": 551,
+   "source_id": 10730,
+   "acronym": "st",
+   "name": "Stria terminalis",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 8629,
+   "volume_mm3": 1.5463
+  },
+  {
+   "index": 552,
+   "source_id": 10732,
+   "acronym": "scp",
+   "name": "Superior cerebellar peduncle",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 13013,
+   "volume_mm3": 2.3319
+  },
+  {
+   "index": 553,
+   "source_id": 10737,
+   "acronym": "vsc",
+   "name": "Ventral spinocerebellar tract",
+   "hemisphere": "LH",
+   "color": "#9c9c9c",
+   "voxels_source_grid": 1062,
+   "volume_mm3": 0.1903
+  },
+  {
+   "index": 554,
+   "source_id": 10741,
+   "acronym": "6n",
+   "name": "Abducens nerve",
+   "hemisphere": "LH",
+   "color": "#6e7972",
+   "voxels_source_grid": 2797,
+   "volume_mm3": 0.5012
+  },
+  {
+   "index": 555,
+   "source_id": 10743,
+   "acronym": "7n",
+   "name": "Facial nerve",
+   "hemisphere": "LH",
+   "color": "#6e7972",
+   "voxels_source_grid": 6430,
+   "volume_mm3": 1.1523
+  },
+  {
+   "index": 556,
+   "source_id": 10746,
+   "acronym": "3n",
+   "name": "Occulomotor nerve",
+   "hemisphere": "LH",
+   "color": "#6e7972",
+   "voxels_source_grid": 7255,
+   "volume_mm3": 1.3001
+  },
+  {
+   "index": 557,
+   "source_id": 10749,
+   "acronym": "4n",
+   "name": "Trochlear nerve",
+   "hemisphere": "LH",
+   "color": "#6e7972",
+   "voxels_source_grid": 215,
+   "volume_mm3": 0.0385
+  },
+  {
+   "index": 558,
+   "source_id": 10751,
+   "acronym": "8n",
+   "name": "Vestibulocochlear nerve",
+   "hemisphere": "LH",
+   "color": "#6e7972",
+   "voxels_source_grid": 12130,
+   "volume_mm3": 2.1737
+  }
+ ],
+ "meshes": "meshes.json",
+ "mesh_units": "mm",
+ "provenance": {
+  "dataset": "https://doi.org/10.24475/bma.2799 (files from https://datasets.brainminds.jp/brainminds/BMA-2017)",
+  "citation": "Woodward A, Hashikawa T, Maeda M, et al. (2018) The Brain/MINDS 3D digital marmoset brain atlas. Scientific Data 5:180009. doi:10.1038/sdata.2018.9",
+  "licence": "CC BY 4.0",
+  "sha256": {
+   "bma-1-mri.nii.gz": "b4e18b7aedf642a3cf39bfb03c0c57abc2f331193c52a3afde4d4ec40be4057c",
+   "bma-1-nissl.nii.gz": "5ebf19c4f9c425e53a08e2db6d23e9f1a15a044e6d00098e2a6b46d1f9fdb074",
+   "bma-1-region_seg.nii.gz": "8e0515d2c2414586244de5d1ffe1a01178d1bdbe24c90f00283773f19c52aafe",
+   "bma-1-clut.ctbl": "04e5df3c718c34fdfba96fdae5ec52edf609477946960709ccec49383cad0cb2"
+  }
+ },
+ "processing": [
+  "Source grid 678 \u00d7 1000 \u00d7 210 at 0.04 \u00d7 0.04 \u00d7 0.112 mm resampled to 0.12 mm isotropic for the browser (linear for images, nearest-neighbour for labels).",
+  "Region volumes are counted on the original source grid, not the resampled grid.",
+  "Display windows are the 0.5th\u201399.7th percentiles of labelled-brain voxels.",
+  "Meshes are marching-cubes surfaces of the resampled labels, decimated for display; they are not the atlas authors' surfaces."
+ ],
+ "sizes_bytes": {
+  "image-mri.u8.gz": 3813339,
+  "image-nissl.u8.gz": 3847240,
+  "labels.u16.gz": 473938
+ }
+}
