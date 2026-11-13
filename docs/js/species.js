@@ -91,9 +91,6 @@ export const FINCH_SECTIONS = [
 // Chapter plan for the other species: chapter titles and the figure shown beside each body paragraph,
 // key facts for the page head, and additional cited paragraphs. Indexes follow each species' `body`.
 export const CHAPTER_PLAN = {
-  'sperm-whale': {titles: ['The codas', 'What the evidence shows'], inst: ['sounds', ''],
-    facts: [['8,719', 'codas in the deposited table [[sharma2024]]'], ['No open', 'brain atlas located']],
-    extra: {0: 'Rhythm and tempo describe the pattern of intervals within a coda and its overall duration. Rubato is the authors’ term for gradual changes in duration across successive codas, and ornamentation for an extra click added to a coda. [[sharma2024]]'}},
   'egyptian-fruit-bat': {titles: ['The calls', 'Learning from the colony', 'Echolocation with the tongue', 'The brain'], inst: ['sounds', '', '', 'atlas3d'],
     facts: [['91,080', 'annotated calls in the open dataset [[prat2017data]]'], ['Tongue clicks', 'used for echolocation [[lee2017]]']]},
   'common-marmoset': {titles: ['The phee call', 'Taking turns', 'The brain'], inst: ['sounds', '', 'atlas3d'],

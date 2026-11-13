@@ -1,19 +1,20 @@
-@font-face{font-family:'Source Sans 3';font-weight:400;font-display:swap;src:url('../assets/fonts/source-sans-3-400.woff2') format('woff2')}
-@font-face{font-family:'Source Sans 3';font-weight:600;font-display:swap;src:url('../assets/fonts/source-sans-3-600.woff2') format('woff2')}
+@font-face{font-family:'Geist';font-weight:400;font-display:swap;src:url('../assets/fonts/geist-400.woff2') format('woff2')}
+@font-face{font-family:'Geist';font-weight:500;font-display:swap;src:url('../assets/fonts/geist-500.woff2') format('woff2')}
+@font-face{font-family:'Geist';font-weight:600;font-display:swap;src:url('../assets/fonts/geist-600.woff2') format('woff2')}
 
-/* Neutral scientific palette: white, slate ink, one deep blue. */
+/* White paper, neutral charcoal for dark areas (no navy), one blue accent for links and controls. */
 :root{
-  --bg:#ffffff; --surface:#f4f6f7; --ink:#14181c; --ink-2:#48515a; --ink-3:#5f6871; --rule:#dde1e5; --rule-2:#868f98;
-  --c1:#0f4c81; --c2:#8a949e; --c3:#2a7f86; --c4:#7a5c99;
-  --link:#0f4c81; --accent:#0f4c81; --focus:#1a73c9; --plot:#0b0d0f; --plot-ink:#e6e9ec; --plot-ink-2:#9aa4ae; --plot-rule:#252b31;
-  --ok:#1d6b45; --info:#0f4c81; --warn:#7a5200;
-  --font:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif; --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --bg:#ffffff; --surface:#f5f5f3; --ink:#141414; --ink-2:#4a4a47; --ink-3:#62625e; --rule:#e4e4e0; --rule-2:#8b8b86;
+  --c1:#254ea0; --c2:#8a949e; --c3:#2a7f86; --c4:#7a5c99;
+  --link:#254ea0; --accent:#254ea0; --focus:#2f6fe0; --plot:#0c0c0c; --plot-ink:#ececea; --plot-ink-2:#a3a39f; --plot-rule:#2c2c2c; --coal:#121212; --coal-2:#1c1c1c;
+  --ok:#1d6b45; --info:#254ea0; --warn:#7a5200;
+  --font:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif; --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --fs:16.5px; --wide:1180px; --text:66ch; color-scheme:light;
-  --paper:var(--bg); --paper-2:var(--surface); --card:var(--bg); --night:var(--plot); --night-2:#12161a; --night-3:#1b2126; --night-ink:var(--plot-ink); --night-ink-2:var(--plot-ink-2); --night-rule:var(--plot-rule);
-  --ok-bg:transparent; --info-bg:#e9f0f6; --warn-bg:#f8f3e6; --mute-bg:var(--surface);
+  --paper:var(--bg); --paper-2:var(--surface); --card:var(--bg); --night:var(--plot); --night-2:#161616; --night-3:#202020; --night-ink:var(--plot-ink); --night-ink-2:var(--plot-ink-2); --night-rule:var(--plot-rule);
+  --ok-bg:transparent; --info-bg:#eef2fa; --warn-bg:#f8f3e6; --mute-bg:var(--surface);
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1214;--surface:#161a1e;--ink:#e8ebee;--ink-2:#b4bcc4;--ink-3:#8a939c;--rule:#272d33;--rule-2:#68727c;--c1:#8fbde8;--c2:#7d8791;--c3:#5fc0c8;--c4:#b79ad6;--link:#8fbde8;--accent:#8fbde8;--ok:#7fcf9f;--info:#8fbde8;--warn:#e4bd6a;--info-bg:#17222d;--warn-bg:#2a2414;color-scheme:dark}}
-:root[data-theme=dark]{--bg:#0f1214;--surface:#161a1e;--ink:#e8ebee;--ink-2:#b4bcc4;--ink-3:#8a939c;--rule:#272d33;--rule-2:#68727c;--c1:#8fbde8;--c2:#7d8791;--c3:#5fc0c8;--c4:#b79ad6;--link:#8fbde8;--accent:#8fbde8;--ok:#7fcf9f;--info:#8fbde8;--warn:#e4bd6a;--info-bg:#17222d;--warn-bg:#2a2414;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#121212;--surface:#1a1a1a;--ink:#ececea;--ink-2:#bdbdb8;--ink-3:#8f8f8a;--rule:#2c2c2c;--rule-2:#6c6c68;--c1:#8fbde8;--c2:#7d8791;--c3:#5fc0c8;--c4:#b79ad6;--link:#8fbde8;--accent:#8fbde8;--ok:#7fcf9f;--info:#8fbde8;--warn:#e4bd6a;--info-bg:#22221f;--warn-bg:#2a2414;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#121212;--surface:#1a1a1a;--ink:#ececea;--ink-2:#bdbdb8;--ink-3:#8f8f8a;--rule:#2c2c2c;--rule-2:#6c6c68;--c1:#8fbde8;--c2:#7d8791;--c3:#5fc0c8;--c4:#b79ad6;--link:#8fbde8;--accent:#8fbde8;--ok:#7fcf9f;--info:#8fbde8;--warn:#e4bd6a;--info-bg:#22221f;--warn-bg:#2a2414;color-scheme:dark}
 :root[data-contrast=high]{--ink-2:var(--ink);--ink-3:var(--ink);--rule:var(--ink);--rule-2:var(--ink)}
 :root[data-size=large]{--fs:18.5px}:root[data-size=larger]{--fs:21px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -299,3 +300,30 @@ dialog.figure-dialog{max-width:96vw;padding:8px}dialog.figure-dialog img{max-hei
   .plate-view{height:360px}
 }
 @media print{.top,.subnav,.foot{display:none}}
+
+/* ---------- Header and footer (November 2026 redesign) ---------- */
+h1,h2,h3{letter-spacing:-.02em}
+.top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--rule)}
+.top .bar{display:flex;align-items:center;gap:2rem;height:60px}
+.top .logo{font-size:1.02rem;white-space:nowrap}
+.top nav{flex:1;min-width:0}
+.top .nav{border:0;gap:1.5rem}
+.top .nav a{margin:0;padding:1.15rem 0 1rem;font-size:.93rem}
+.top .nav a[aria-current=page]{border-bottom-color:var(--ink)}
+.top .mast-util{gap:1rem}
+.top .search-pop{top:64px}
+@media (max-width:860px){
+  .top .bar{flex-wrap:wrap;height:auto;gap:0 1rem;padding-top:.7rem}
+  .top .logo{flex:1}
+  .top nav{order:3;flex-basis:100%;margin:0 -24px;padding:0 24px;overflow-x:auto}
+  .top .nav{flex-wrap:nowrap;overflow-x:auto;gap:1.3rem}
+  .top .nav a{margin:0;padding:.6rem 0 .55rem}
+}
+@media (max-width:560px){
+  .top .logo{white-space:normal;font-size:.98rem;line-height:1.2;max-width:16ch}
+  .top nav{margin:0 -16px;padding:0 16px}
+}
+.foot{background:var(--coal);color:#a7a7a2;border:0;margin-top:0;padding:3.5rem 0 4rem}
+.foot h2{color:#f2f2f0;font-size:.95rem}
+.foot a{color:#d8d8d4;text-decoration:none}.foot a:hover{color:#fff;text-decoration:underline}
+.foot .fine{border-top-color:#2c2c2c;color:#8a8a85}
