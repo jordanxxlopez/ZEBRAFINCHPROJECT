@@ -1,0 +1,396 @@
+{
+ "species": "european-starling",
+ "title": "3D MRI atlas of the European starling brain",
+ "dims": [
+  256,
+  256,
+  256
+ ],
+ "spacing_mm": [
+  0.085,
+  0.085,
+  0.085
+ ],
+ "view": {
+  "up": "+z",
+  "names": {
+   "x": "Grid X section",
+   "y": "Grid Y section",
+   "z": "Grid Z section"
+  },
+  "ends": null
+ },
+ "flip_display": {
+  "y": true,
+  "z": true
+ },
+ "images": [
+  {
+   "file": "image-t2.u8.gz",
+   "name": "T2-weighted MRI",
+   "window_source_units": [
+    520.0,
+    12527.0
+   ],
+   "kind": "measured"
+  }
+ ],
+ "labels": {
+  "file": "labels.u16.gz",
+  "dtype": "uint16",
+  "count": 33
+ },
+ "regions": [
+  {
+   "index": 1,
+   "source_id": 1,
+   "acronym": "",
+   "name": "Nidopallium",
+   "kind": "region",
+   "color": "#98b0ea",
+   "voxels": 796730,
+   "volume_mm3": 489.2918
+  },
+  {
+   "index": 2,
+   "source_id": 2,
+   "acronym": "",
+   "name": "Mesopallium",
+   "kind": "region",
+   "color": "#c8ea98",
+   "voxels": 291264,
+   "volume_mm3": 178.8725
+  },
+  {
+   "index": 3,
+   "source_id": 3,
+   "acronym": "",
+   "name": "Arcopallium",
+   "kind": "region",
+   "color": "#ea98e0",
+   "voxels": 43663,
+   "volume_mm3": 26.8145
+  },
+  {
+   "index": 4,
+   "source_id": 4,
+   "acronym": "",
+   "name": "Hyperpallium",
+   "kind": "region",
+   "color": "#98eadc",
+   "voxels": 249403,
+   "volume_mm3": 153.1646
+  },
+  {
+   "index": 5,
+   "source_id": 5,
+   "acronym": "",
+   "name": "Hippocampus",
+   "kind": "region",
+   "color": "#eac498",
+   "voxels": 37106,
+   "volume_mm3": 22.7877
+  },
+  {
+   "index": 6,
+   "source_id": 6,
+   "acronym": "",
+   "name": "Striatum",
+   "kind": "region",
+   "color": "#ac98ea",
+   "voxels": 203143,
+   "volume_mm3": 124.7552
+  },
+  {
+   "index": 7,
+   "source_id": 7,
+   "acronym": "",
+   "name": "Olfactory Bulb",
+   "kind": "region",
+   "color": "#9bea98",
+   "voxels": 3402,
+   "volume_mm3": 2.0893
+  },
+  {
+   "index": 8,
+   "source_id": 8,
+   "acronym": "",
+   "name": "Midbrain",
+   "kind": "region",
+   "color": "#ea98b3",
+   "voxels": 253887,
+   "volume_mm3": 155.9184
+  },
+  {
+   "index": 9,
+   "source_id": 9,
+   "acronym": "",
+   "name": "Diencephalon",
+   "kind": "region",
+   "color": "#98cbea",
+   "voxels": 76623,
+   "volume_mm3": 47.0561
+  },
+  {
+   "index": 10,
+   "source_id": 10,
+   "acronym": "",
+   "name": "Cerebellum",
+   "kind": "region",
+   "color": "#e3ea98",
+   "voxels": 226331,
+   "volume_mm3": 138.9955
+  },
+  {
+   "index": 11,
+   "source_id": 11,
+   "acronym": "",
+   "name": "Pont",
+   "kind": "region",
+   "color": "#d998ea",
+   "voxels": 124392,
+   "volume_mm3": 76.3922
+  },
+  {
+   "index": 12,
+   "source_id": 12,
+   "acronym": "Field L",
+   "name": "Field L (primary auditory forebrain)",
+   "kind": "nucleus",
+   "color": "#3aea92",
+   "voxels": 10994,
+   "volume_mm3": 6.7517
+  },
+  {
+   "index": 13,
+   "source_id": 13,
+   "acronym": "NCM",
+   "name": "NCM, caudomedial nidopallium",
+   "kind": "nucleus",
+   "color": "#ea5f3a",
+   "voxels": 26101,
+   "volume_mm3": 16.0293
+  },
+  {
+   "index": 14,
+   "source_id": 14,
+   "acronym": "Ov",
+   "name": "Ov, nucleus ovoidalis (auditory thalamus)",
+   "kind": "nucleus",
+   "color": "#3a49ea",
+   "voxels": 508,
+   "volume_mm3": 0.312
+  },
+  {
+   "index": 15,
+   "source_id": 15,
+   "acronym": "MLd",
+   "name": "MLd, auditory midbrain",
+   "kind": "nucleus",
+   "color": "#7cea3a",
+   "voxels": 1764,
+   "volume_mm3": 1.0833
+  },
+  {
+   "index": 16,
+   "source_id": 16,
+   "acronym": "CMM",
+   "name": "CMM, caudomedial mesopallium",
+   "kind": "nucleus",
+   "color": "#ea3ab0",
+   "voxels": 6722,
+   "volume_mm3": 4.1281
+  },
+  {
+   "index": 17,
+   "source_id": 17,
+   "acronym": "TeO",
+   "name": "TeO, optic tectum",
+   "kind": "nucleus",
+   "color": "#3ae3ea",
+   "voxels": 116502,
+   "volume_mm3": 71.5468
+  },
+  {
+   "index": 18,
+   "source_id": 18,
+   "acronym": "Entopallium",
+   "name": "Entopallium",
+   "kind": "nucleus",
+   "color": "#eabe3a",
+   "voxels": 21796,
+   "volume_mm3": 13.3855
+  },
+  {
+   "index": 19,
+   "source_id": 19,
+   "acronym": "Rt",
+   "name": "Rt, nucleus rotundus",
+   "kind": "nucleus",
+   "color": "#8a3aea",
+   "voxels": 629,
+   "volume_mm3": 0.3863
+  },
+  {
+   "index": 20,
+   "source_id": 20,
+   "acronym": "HVC",
+   "name": "HVC",
+   "kind": "nucleus",
+   "color": "#3aea57",
+   "voxels": 15143,
+   "volume_mm3": 9.2997
+  },
+  {
+   "index": 21,
+   "source_id": 21,
+   "acronym": "Area X",
+   "name": "Area X",
+   "kind": "nucleus",
+   "color": "#ea3a51",
+   "voxels": 23892,
+   "volume_mm3": 14.6727
+  },
+  {
+   "index": 22,
+   "source_id": 22,
+   "acronym": "RA",
+   "name": "RA, robust nucleus of the arcopallium",
+   "kind": "nucleus",
+   "color": "#3a84ea",
+   "voxels": 2590,
+   "volume_mm3": 1.5906
+  },
+  {
+   "index": 23,
+   "source_id": 23,
+   "acronym": "DLM",
+   "name": "DLM",
+   "kind": "nucleus",
+   "color": "#b7ea3a",
+   "voxels": 808,
+   "volume_mm3": 0.4962
+  },
+  {
+   "index": 24,
+   "source_id": 24,
+   "acronym": "MAN",
+   "name": "MAN, magnocellular nucleus of the anterior nidopallium",
+   "kind": "nucleus",
+   "color": "#ea3aea",
+   "voxels": 2493,
+   "volume_mm3": 1.531
+  },
+  {
+   "index": 25,
+   "source_id": 25,
+   "acronym": "Olfactory Bulb",
+   "name": "Olfactory Bulb",
+   "kind": "nucleus",
+   "color": "#3aeab6",
+   "voxels": 2341,
+   "volume_mm3": 1.4377
+  },
+  {
+   "index": 26,
+   "source_id": 26,
+   "acronym": "POM",
+   "name": "POM, medial preoptic nucleus",
+   "kind": "nucleus",
+   "color": "#ea833a",
+   "voxels": 771,
+   "volume_mm3": 0.4735
+  },
+  {
+   "index": 27,
+   "source_id": 27,
+   "acronym": "TnA",
+   "name": "TnA, nucleus taeniae of the amygdala",
+   "kind": "nucleus",
+   "color": "#503aea",
+   "voxels": 3959,
+   "volume_mm3": 2.4313
+  },
+  {
+   "index": 28,
+   "source_id": 28,
+   "acronym": "GCt",
+   "name": "GCt, midbrain central gray",
+   "kind": "nucleus",
+   "color": "#58ea3a",
+   "voxels": 694,
+   "volume_mm3": 0.4262
+  },
+  {
+   "index": 29,
+   "source_id": 29,
+   "acronym": "LS",
+   "name": "LS, lateral septum",
+   "kind": "nucleus",
+   "color": "#ea3a8b",
+   "voxels": 891,
+   "volume_mm3": 0.5472
+  },
+  {
+   "index": 30,
+   "source_id": 30,
+   "acronym": "MS",
+   "name": "MS, medial septum",
+   "kind": "nucleus",
+   "color": "#3abfea",
+   "voxels": 749,
+   "volume_mm3": 0.46
+  },
+  {
+   "index": 31,
+   "source_id": 31,
+   "acronym": "PVN",
+   "name": "PVN, paraventricular nucleus",
+   "kind": "nucleus",
+   "color": "#eae23a",
+   "voxels": 137,
+   "volume_mm3": 0.0841
+  },
+  {
+   "index": 32,
+   "source_id": 32,
+   "acronym": "VMH",
+   "name": "VMH, ventromedial hypothalamus",
+   "kind": "nucleus",
+   "color": "#af3aea",
+   "voxels": 179,
+   "volume_mm3": 0.1099
+  },
+  {
+   "index": 33,
+   "source_id": 33,
+   "acronym": "VTA",
+   "name": "VTA, ventral tegmental area",
+   "kind": "nucleus",
+   "color": "#3aea7b",
+   "voxels": 136,
+   "volume_mm3": 0.0835
+  }
+ ],
+ "meshes": "meshes.json",
+ "mesh_units": "mm",
+ "mesh_note": "Marching-cubes surfaces of the atlas authors' label masks (nuclei at full resolution, whole brain at half), decimated for display.",
+ "provenance": {
+  "dataset": "Zenodo doi:10.5281/zenodo.22107945 (Starling atlas.zip)",
+  "licence": "CC BY 4.0",
+  "citation": "De Groof G, George I, Touj S, Stacho M, Jonckers E, Cousillas H, Hausberger M, G\u00fcnt\u00fcrk\u00fcn O, Van der Linden A (2016). A three-dimensional digital atlas of the starling brain. Brain Structure and Function 221:1899\u20131909. doi:10.1007/s00429-015-1011-1",
+  "sha256": {
+   "starling.zip": "7da2a223d1ee129f6744c37691560323a17d52803ebd7e60c9779945ca7fd1f5"
+  }
+ },
+ "processing": [
+  "Volumes used: T2.img with delineations/Nuclei.img, Brainregions.img and Brain.img (all 256 x 256 x 256).",
+  "Scale: the Analyze headers and Amira bounding boxes give a spacing of 0.85 without a usable unit, which would make the brain over 20 cm wide. We read it as 0.085 mm (21.8 mm field of view), matching the factor-of-ten issue documented for the zebra finch atlas from the same laboratory. With that scale the whole-brain mask measures about 1,585 mm\u00b3, a plausible size for a starling brain. This is an inference and has not been confirmed against the paper's methods.",
+  "Nuclei and broad regions are combined in one label volume; where they overlap the nucleus is shown. The Tracts and Ventricle label volumes are not included.",
+  "Region colours are assigned by this site. Grid axes are the storage axes; anatomical directions are not asserted."
+ ],
+ "sizes_bytes": {
+  "image-t2.u8.gz": 5016265,
+  "labels.u16.gz": 222884
+ }
+}

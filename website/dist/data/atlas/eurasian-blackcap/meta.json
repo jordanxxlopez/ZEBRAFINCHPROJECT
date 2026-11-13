@@ -1,0 +1,699 @@
+{
+ "species": "eurasian-blackcap",
+ "title": "Eurasian blackcap 3D brain atlas (25 \u00b5m)",
+ "dims": [
+  256,
+  204,
+  183
+ ],
+ "spacing_mm": [
+  0.05,
+  0.05,
+  0.05
+ ],
+ "view": {
+  "up": "-z",
+  "names": {
+   "x": "Sagittal",
+   "y": "Coronal",
+   "z": "Horizontal"
+  },
+  "ends": {
+   "x": [
+    "R",
+    "L"
+   ],
+   "y": [
+    "A",
+    "P"
+   ],
+   "z": [
+    "D",
+    "V"
+   ]
+  }
+ },
+ "flip_display": {
+  "y": false,
+  "z": false
+ },
+ "images": [
+  {
+   "file": "image-reference.u8.gz",
+   "name": "Reference image (atlas template)",
+   "window_source_units": [
+    623.125,
+    34495.35049999994
+   ],
+   "kind": "measured template"
+  }
+ ],
+ "labels": {
+  "file": "labels.u16.gz",
+  "dtype": "uint16",
+  "count": 44
+ },
+ "regions": [
+  {
+   "index": 1,
+   "source_id": 2,
+   "acronym": "St",
+   "name": "Striatum",
+   "color": "#00ff00",
+   "path": [
+    "root",
+    "St"
+   ],
+   "voxels_source_grid": 3889714,
+   "volume_mm3": 60.7768
+  },
+  {
+   "index": 2,
+   "source_id": 3,
+   "acronym": "Di",
+   "name": "Diencephalon",
+   "color": "#0000ff",
+   "path": [
+    "root",
+    "Di"
+   ],
+   "voxels_source_grid": 2171532,
+   "volume_mm3": 33.9302
+  },
+  {
+   "index": 3,
+   "source_id": 4,
+   "acronym": "Me",
+   "name": "Mesencephalon",
+   "color": "#ffff00",
+   "path": [
+    "root",
+    "Me"
+   ],
+   "voxels_source_grid": 2193638,
+   "volume_mm3": 34.2756
+  },
+  {
+   "index": 4,
+   "source_id": 5,
+   "acronym": "Pn",
+   "name": "Pons",
+   "color": "#00ffff",
+   "path": [
+    "root",
+    "Pn"
+   ],
+   "voxels_source_grid": 1139972,
+   "volume_mm3": 17.8121
+  },
+  {
+   "index": 5,
+   "source_id": 6,
+   "acronym": "Cb",
+   "name": "Cerebellum",
+   "color": "#ff00ff",
+   "path": [
+    "root",
+    "Cb"
+   ],
+   "voxels_source_grid": 3150068,
+   "volume_mm3": 49.2198
+  },
+  {
+   "index": 6,
+   "source_id": 7,
+   "acronym": "NB",
+   "name": "Nucleus Basalis",
+   "color": "#fbff00",
+   "path": [
+    "root",
+    "P",
+    "NB"
+   ],
+   "voxels_source_grid": 12626,
+   "volume_mm3": 0.1973
+  },
+  {
+   "index": 7,
+   "source_id": 10,
+   "acronym": "PrVd",
+   "name": "Principal sensory trigeminal brainstem nuclei, dorsal part",
+   "color": "#ff9100",
+   "path": [
+    "root",
+    "Pn",
+    "PrVd"
+   ],
+   "voxels_source_grid": 4996,
+   "volume_mm3": 0.0781
+  },
+  {
+   "index": 8,
+   "source_id": 17,
+   "acronym": "PrVv",
+   "name": "Principal sensory trigeminal brainstem nuclei, ventral part",
+   "color": "#ff00ff",
+   "path": [
+    "root",
+    "Pn",
+    "PrVv"
+   ],
+   "voxels_source_grid": 3520,
+   "volume_mm3": 0.055
+  },
+  {
+   "index": 9,
+   "source_id": 18,
+   "acronym": "SpVl",
+   "name": "Spinal sensory trigeminal brainstem nuclei, lateral part",
+   "color": "#ff4000",
+   "path": [
+    "root",
+    "Pn",
+    "SpVl"
+   ],
+   "voxels_source_grid": 20228,
+   "volume_mm3": 0.3161
+  },
+  {
+   "index": 10,
+   "source_id": 19,
+   "acronym": "SpVm",
+   "name": "Spinal sensory trigeminal brainstem nuclei, medial part",
+   "color": "#2200ff",
+   "path": [
+    "root",
+    "Pn",
+    "SpVm"
+   ],
+   "voxels_source_grid": 42434,
+   "volume_mm3": 0.663
+  },
+  {
+   "index": 11,
+   "source_id": 20,
+   "acronym": "Ento",
+   "name": "Entopallium",
+   "color": "#0078bd",
+   "path": [
+    "root",
+    "P",
+    "Ento"
+   ],
+   "voxels_source_grid": 332110,
+   "volume_mm3": 5.1892
+  },
+  {
+   "index": 12,
+   "source_id": 30,
+   "acronym": "HP",
+   "name": "Hippocampus",
+   "color": "#b06c6c",
+   "path": [
+    "root",
+    "P",
+    "HP"
+   ],
+   "voxels_source_grid": 1266078,
+   "volume_mm3": 19.7825
+  },
+  {
+   "index": 13,
+   "source_id": 40,
+   "acronym": "N",
+   "name": "Nidopallium",
+   "color": "#ee82ee",
+   "path": [
+    "root",
+    "P",
+    "N"
+   ],
+   "voxels_source_grid": 8185038,
+   "volume_mm3": 127.8912
+  },
+  {
+   "index": 14,
+   "source_id": 50,
+   "acronym": "H",
+   "name": "Hyperpallium",
+   "color": "#fcf569",
+   "path": [
+    "root",
+    "P",
+    "H"
+   ],
+   "voxels_source_grid": 2378950,
+   "volume_mm3": 37.1711
+  },
+  {
+   "index": 15,
+   "source_id": 60,
+   "acronym": "M",
+   "name": "Mesopallium",
+   "color": "#f4a460",
+   "path": [
+    "root",
+    "P",
+    "M"
+   ],
+   "voxels_source_grid": 3416596,
+   "volume_mm3": 53.3843
+  },
+  {
+   "index": 16,
+   "source_id": 61,
+   "acronym": "MC",
+   "name": "Caudal Mesopallium",
+   "color": "#ff0004",
+   "path": [
+    "root",
+    "P",
+    "M",
+    "MC"
+   ],
+   "voxels_source_grid": 37084,
+   "volume_mm3": 0.5794
+  },
+  {
+   "index": 17,
+   "source_id": 70,
+   "acronym": "A",
+   "name": "Arcopallium",
+   "color": "#ff0000",
+   "path": [
+    "root",
+    "P",
+    "A"
+   ],
+   "voxels_source_grid": 824974,
+   "volume_mm3": 12.8902
+  },
+  {
+   "index": 18,
+   "source_id": 80,
+   "acronym": "OB",
+   "name": "Olfactory bulb",
+   "color": "#87ceeb",
+   "path": [
+    "root",
+    "P",
+    "OB"
+   ],
+   "voxels_source_grid": 90642,
+   "volume_mm3": 1.4163
+  },
+  {
+   "index": 19,
+   "source_id": 90,
+   "acronym": "CDL",
+   "name": "Dorsolateral Corticoid Area",
+   "color": "#02bbf3",
+   "path": [
+    "root",
+    "P",
+    "CDL"
+   ],
+   "voxels_source_grid": 171960,
+   "volume_mm3": 2.6869
+  },
+  {
+   "index": 20,
+   "source_id": 110,
+   "acronym": "N.Rot",
+   "name": "Nucleus Rotundus",
+   "color": "#c71585",
+   "path": [
+    "root",
+    "Di",
+    "N.Rot"
+   ],
+   "voxels_source_grid": 117054,
+   "volume_mm3": 1.829
+  },
+  {
+   "index": 21,
+   "source_id": 140,
+   "acronym": "Gld",
+   "name": "Nucleus geniculatus lateralis par dorsalis",
+   "color": "#d2b48c",
+   "path": [
+    "root",
+    "Di",
+    "Gld"
+   ],
+   "voxels_source_grid": 121248,
+   "volume_mm3": 1.8945
+  },
+  {
+   "index": 22,
+   "source_id": 220,
+   "acronym": "OT",
+   "name": "Optic Tectum",
+   "color": "#ff7f00",
+   "path": [
+    "root",
+    "Me",
+    "OT"
+   ],
+   "voxels_source_grid": 3074968,
+   "volume_mm3": 48.0464
+  },
+  {
+   "index": 23,
+   "source_id": 305,
+   "acronym": "CN-HP",
+   "name": "Cluster N in Hippocampus",
+   "color": "#ff0000",
+   "path": [
+    "root",
+    "P",
+    "HP",
+    "CN-HP"
+   ],
+   "voxels_source_grid": 132202,
+   "volume_mm3": 2.0657
+  },
+  {
+   "index": 24,
+   "source_id": 402,
+   "acronym": "NFT",
+   "name": "Telencephalic frontal nidopallium",
+   "color": "#dd4031",
+   "path": [
+    "root",
+    "P",
+    "N",
+    "NFT"
+   ],
+   "voxels_source_grid": 150426,
+   "volume_mm3": 2.3504
+  },
+  {
+   "index": 25,
+   "source_id": 505,
+   "acronym": "CN-H",
+   "name": "Cluster N in Hyperpallium",
+   "color": "#00fa9a",
+   "path": [
+    "root",
+    "P",
+    "H",
+    "CN-H"
+   ],
+   "voxels_source_grid": 548790,
+   "volume_mm3": 8.5748
+  },
+  {
+   "index": 26,
+   "source_id": 511,
+   "acronym": "LVe",
+   "name": "Lateral Vestibular nucleus",
+   "color": "#76cf11",
+   "path": [
+    "root",
+    "Pn",
+    "LVe"
+   ],
+   "voxels_source_grid": 11102,
+   "volume_mm3": 0.1735
+  },
+  {
+   "index": 27,
+   "source_id": 512,
+   "acronym": "SpVe",
+   "name": "Spinal Vestibular nucleus",
+   "color": "#f89c06",
+   "path": [
+    "root",
+    "Pn",
+    "SpVe"
+   ],
+   "voxels_source_grid": 18746,
+   "volume_mm3": 0.2929
+  },
+  {
+   "index": 28,
+   "source_id": 513,
+   "acronym": "IO",
+   "name": "Nucleus isthmo-opticu",
+   "color": "#0000cd",
+   "path": [
+    "root",
+    "Me",
+    "IO"
+   ],
+   "voxels_source_grid": 4408,
+   "volume_mm3": 0.0689
+  },
+  {
+   "index": 29,
+   "source_id": 514,
+   "acronym": "PT",
+   "name": "Nucleus pretectalis",
+   "color": "#00bd94",
+   "path": [
+    "root",
+    "Di",
+    "PT"
+   ],
+   "voxels_source_grid": 15994,
+   "volume_mm3": 0.2499
+  },
+  {
+   "index": 30,
+   "source_id": 516,
+   "acronym": "mMAN",
+   "name": "Medial Magnocellular nucleus of the Anterior Nidopallium",
+   "color": "#fd001d",
+   "path": [
+    "root",
+    "P",
+    "N",
+    "mMAN"
+   ],
+   "voxels_source_grid": 1930,
+   "volume_mm3": 0.0302
+  },
+  {
+   "index": 31,
+   "source_id": 517,
+   "acronym": "MVe",
+   "name": "Medial Vestibular nucleus",
+   "color": "#000080",
+   "path": [
+    "root",
+    "Pn",
+    "MVe"
+   ],
+   "voxels_source_grid": 45994,
+   "volume_mm3": 0.7187
+  },
+  {
+   "index": 32,
+   "source_id": 518,
+   "acronym": "LM",
+   "name": "Nucleus lentiformis mesencephali",
+   "color": "#07ffff",
+   "path": [
+    "root",
+    "Di",
+    "LM"
+   ],
+   "voxels_source_grid": 22916,
+   "volume_mm3": 0.3581
+  },
+  {
+   "index": 33,
+   "source_id": 519,
+   "acronym": "SP",
+   "name": "Nucleus subpretectalis",
+   "color": "#2e8b57",
+   "path": [
+    "root",
+    "Me",
+    "SP"
+   ],
+   "voxels_source_grid": 20378,
+   "volume_mm3": 0.3184
+  },
+  {
+   "index": 34,
+   "source_id": 520,
+   "acronym": "Glv",
+   "name": "Nucleus geniculatus lateralis par ventralis",
+   "color": "#ef1d06",
+   "path": [
+    "root",
+    "Di",
+    "Glv"
+   ],
+   "voxels_source_grid": 36126,
+   "volume_mm3": 0.5645
+  },
+  {
+   "index": 35,
+   "source_id": 526,
+   "acronym": "Imc",
+   "name": "Nucleus isthmi pars magnocellularis",
+   "color": "#ff0037",
+   "path": [
+    "root",
+    "Me",
+    "Imc"
+   ],
+   "voxels_source_grid": 20656,
+   "volume_mm3": 0.3227
+  },
+  {
+   "index": 36,
+   "source_id": 527,
+   "acronym": "Ipc",
+   "name": "Nucleus isthmi pars parvocellularis",
+   "color": "#8789ea",
+   "path": [
+    "root",
+    "Me",
+    "Ipc"
+   ],
+   "voxels_source_grid": 49112,
+   "volume_mm3": 0.7674
+  },
+  {
+   "index": 37,
+   "source_id": 546,
+   "acronym": "SuVe",
+   "name": "Superior Vestibular nucleus",
+   "color": "#bd1058",
+   "path": [
+    "root",
+    "Pn",
+    "SuVe"
+   ],
+   "voxels_source_grid": 11056,
+   "volume_mm3": 0.1728
+  },
+  {
+   "index": 38,
+   "source_id": 566,
+   "acronym": "Area X",
+   "name": "Area X",
+   "color": "#ef0a28",
+   "path": [
+    "root",
+    "St",
+    "Area X"
+   ],
+   "voxels_source_grid": 36352,
+   "volume_mm3": 0.568
+  },
+  {
+   "index": 39,
+   "source_id": 596,
+   "acronym": "HVC",
+   "name": "High Vocal Center",
+   "color": "#f4170f",
+   "path": [
+    "root",
+    "P",
+    "N",
+    "HVC"
+   ],
+   "voxels_source_grid": 62300,
+   "volume_mm3": 0.9734
+  },
+  {
+   "index": 40,
+   "source_id": 597,
+   "acronym": "RA",
+   "name": "Robust nucleus of the Arcopallium",
+   "color": "#1dff00",
+   "path": [
+    "root",
+    "P",
+    "A",
+    "RA"
+   ],
+   "voxels_source_grid": 17150,
+   "volume_mm3": 0.268
+  },
+  {
+   "index": 41,
+   "source_id": 908,
+   "acronym": "lMAN",
+   "name": "Lateral Magnocellular nucleus of the Anterior Nidopallium",
+   "color": "#06efef",
+   "path": [
+    "root",
+    "P",
+    "N",
+    "lMAN"
+   ],
+   "voxels_source_grid": 29878,
+   "volume_mm3": 0.4668
+  },
+  {
+   "index": 42,
+   "source_id": 916,
+   "acronym": "DLM",
+   "name": "Medial portion of the dorsolateral thalamic nucleus",
+   "color": "#408699",
+   "path": [
+    "root",
+    "Di",
+    "DLM"
+   ],
+   "voxels_source_grid": 25278,
+   "volume_mm3": 0.395
+  },
+  {
+   "index": 43,
+   "source_id": 1019,
+   "acronym": "DMA",
+   "name": "Dorsomedial nucleus of the Anterior thalamus",
+   "color": "#adfd00",
+   "path": [
+    "root",
+    "Di",
+    "DMA"
+   ],
+   "voxels_source_grid": 29410,
+   "volume_mm3": 0.4595
+  },
+  {
+   "index": 44,
+   "source_id": 1020,
+   "acronym": "OV",
+   "name": "Nucleus ovoidalis",
+   "color": "#ff001d",
+   "path": [
+    "root",
+    "Di",
+    "OV"
+   ],
+   "voxels_source_grid": 8196,
+   "volume_mm3": 0.1281
+  }
+ ],
+ "meshes": "meshes.json",
+ "mesh_units": "mm",
+ "mesh_note": "Surfaces are the atlas package's own structure meshes, decimated for display.",
+ "provenance": {
+  "dataset": "BrainGlobe atlas package eurasian_blackcap_25um_v1.5 (https://gin.g-node.org/brainglobe/atlases); original: https://uol.de/en/ibu/animal-navigation",
+  "citation": "Sirmpilatze N, Felder A, Abdulazhanova D, et al. (2026). An open-source three-dimensional digital brain atlas of a migratory bird, the Eurasian blackcap. Current Biology 36:2063\u20132077.e5. doi:10.1016/j.cub.2026.03.034",
+  "licence": "Open source; distributed through BrainGlobe (see the paper for terms)",
+  "package_species": "Sylvia atricapilla",
+  "sha256": {
+   "eurasian_blackcap_25um_v1.5.tar.gz": "95ee6862ec27012a90709df875fe6b8313f1635712e01d0b80afc932a8657b32"
+  }
+ },
+ "processing": [
+  "Source grid 408 \u00d7 366 \u00d7 512 at 25.0 \u00d7 25.0 \u00d7 25.0 \u00b5m (orientation 'asr').",
+  "Reference image block-averaged by [2, 2, 2] and labels subsampled by nearest neighbour to 0.050 \u00d7 0.050 \u00d7 0.050 mm for the browser.",
+  "Region volumes are counted on the original grid. Structures smaller than the display grid may not appear in the sections.",
+  "Display window: 0.5th\u201399.7th percentile of in-brain voxels. 21 of 46 packaged surfaces are shown, chosen for auditory, vocal and social relevance."
+ ],
+ "sizes_bytes": {
+  "image-reference.u8.gz": 3822665,
+  "labels.u16.gz": 229406
+ }
+}

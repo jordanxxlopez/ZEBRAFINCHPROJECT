@@ -261,6 +261,118 @@
    "licence": "CC0 / CC BY-SA (per image; see media/photography-manifest-2026-11.json)",
    "use": "Species pages",
    "files": []
+  },
+  {
+   "species": "zebra-finch",
+   "name": "Le, Bjoring & Meliza auditory-restoration dataset (figshare 29203457)",
+   "url": "https://doi.org/10.6084/m9.figshare.29203457",
+   "licence": "CC BY 4.0",
+   "use": "STRF models, restoration check, song players",
+   "files": [
+    {
+     "path": "data/raw/finch-auditory/zebf-auditory-restoration-1.zip",
+     "bytes": 110128028,
+     "sha256": "c255dd04c0660eb38b86d78305652955a534c39eeae957524501c5718ca99adc"
+    }
+   ]
+  },
+  {
+   "species": "zebra-finch",
+   "name": "FALCON B1 RA Neuropixels (DANDI 001046), held-in-minival 2021-06-26",
+   "url": "https://dandiarchive.org/dandiset/001046",
+   "licence": "CC BY 4.0",
+   "use": "Singing-brain heatmap",
+   "files": [
+    {
+     "path": "data/raw/finch-ra/minival_ses-20210626.nwb",
+     "bytes": 40999840,
+     "sha256": "dadcb12db523336b6ddfe89ea06b06d2490d3d0811b898088121852d94e42e97"
+    }
+   ]
+  },
+  {
+   "species": "all",
+   "name": "NeuroMorpho.org CNG reconstructions (73 neurons; Long, Meliza, Roberts archives)",
+   "url": "https://neuromorpho.org",
+   "licence": "Free use with citation of the original papers",
+   "use": "3D neurons",
+   "files": [
+    {
+     "path": "data/raw/neuromorpho/manifest.json",
+     "bytes": 44909,
+     "sha256": "a5a53d84de93410a7e91e43e044891bdcb6be7e2fc0863409a6ba4f7c3123808"
+    }
+   ]
+  },
+  {
+   "species": "eurasian-blackcap",
+   "name": "Eurasian blackcap atlas, BrainGlobe package v1.5 (Sirmpilatze et al. 2026, doi:10.1016/j.cub.2026.03.034)",
+   "url": "https://gin.g-node.org/brainglobe/atlases/raw/master/eurasian_blackcap_25um_v1.5.tar.gz",
+   "licence": "Open source via BrainGlobe; see paper",
+   "use": "Brain lab 3D atlas",
+   "files": [
+    {
+     "path": "data/raw/atlases/eurasian_blackcap_25um_v1.5.tar.gz",
+     "bytes": 111551039,
+     "sha256": "95ee6862ec27012a90709df875fe6b8313f1635712e01d0b80afc932a8657b32"
+    }
+   ]
+  },
+  {
+   "species": "prairie-vole",
+   "name": "Prairie vole atlas, BrainGlobe package v1.0 (Gustison et al. 2024, doi:10.7554/eLife.87029)",
+   "url": "https://gin.g-node.org/brainglobe/atlases/raw/master/prairie_vole_25um_v1.0.tar.gz",
+   "licence": "Article CC BY 4.0; atlas via BrainGlobe",
+   "use": "Brain lab 3D atlas",
+   "files": [
+    {
+     "path": "data/raw/atlases/prairie_vole_25um_v1.0.tar.gz",
+     "bytes": 141580451,
+     "sha256": "600b0b146eec462955500ecdff8c03ed9868a907c515d612872e10200a1d7826"
+    }
+   ]
+  },
+  {
+   "species": "norway-rat",
+   "name": "Waxholm Space rat atlas v4, BrainGlobe package v1.2 (Kleven et al. 2023, doi:10.1038/s41592-023-02034-3)",
+   "url": "https://gin.g-node.org/brainglobe/atlases/raw/master/whs_sd_rat_39um_v1.2.tar.gz",
+   "licence": "CC BY-SA 4.0",
+   "use": "Brain lab 3D atlas",
+   "files": [
+    {
+     "path": "data/raw/atlases/whs_sd_rat_39um_v1.2.tar.gz",
+     "bytes": 222310542,
+     "sha256": "88a96ed404ff3d2afad5ae09d6c461ec29fbbdbb5ac9ef450f96b5b3a272a9fa"
+    }
+   ]
+  },
+  {
+   "species": "domestic-cat",
+   "name": "CATLAS cat atlas, BrainGlobe package v1.0 (Stolzberg et al. 2017, doi:10.1002/cne.24271)",
+   "url": "https://gin.g-node.org/brainglobe/atlases/raw/master/csl_cat_500um_v1.0.tar.gz",
+   "licence": "See CATLAS repository",
+   "use": "Brain lab 3D atlas",
+   "files": [
+    {
+     "path": "data/raw/atlases/csl_cat_500um_v1.0.tar.gz",
+     "bytes": 2461493,
+     "sha256": "8dfd0f02f6bb7adeb8af8dfe7e41234d86b0fbf5da041d535ca01f5fa336462a"
+    }
+   ]
+  },
+  {
+   "species": "european-starling",
+   "name": "Starling MRI atlas (De Groof et al. 2016, doi:10.1007/s00429-015-1011-1)",
+   "url": "https://doi.org/10.5281/zenodo.22107945",
+   "licence": "CC BY 4.0",
+   "use": "Brain lab 3D atlas",
+   "files": [
+    {
+     "path": "data/raw/atlases/starling.zip",
+     "bytes": 295235507,
+     "sha256": "7da2a223d1ee129f6744c37691560323a17d52803ebd7e60c9779945ca7fd1f5"
+    }
+   ]
   }
  ]
 }

@@ -1,0 +1,1644 @@
+{
+"source": "NeuroMorpho.org (CNG versions); cite the original reconstruction paper for each neuron and Ascoli et al. (2007) J Neurosci 27:9247",
+"licence": "NeuroMorpho.org terms: free to use with citation of the original publication",
+"neurons": [
+{
+"name": "NB28_registered_SpatialGraph",
+"file": "data/models/neurons/NB28_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"robust nucleus of the arcopallium- and area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB28_registered_SpatialGraph",
+"length_um": null,
+"segments": 9152
+},
+{
+"name": "NB75_registered_SpatialGraph",
+"file": "data/models/neurons/NB75_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"robust nucleus of the arcopallium- and area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB75_registered_SpatialGraph",
+"length_um": null,
+"segments": 13387
+},
+{
+"name": "NB136p_registered_SpatialGraph",
+"file": "data/models/neurons/NB136p_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB136p_registered_SpatialGraph",
+"length_um": null,
+"segments": 3129
+},
+{
+"name": "NB66_registered_SpatialGraph",
+"file": "data/models/neurons/NB66_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB66_registered_SpatialGraph",
+"length_um": null,
+"segments": 6552
+},
+{
+"name": "NB132p_registered_SpatialGraph",
+"file": "data/models/neurons/NB132p_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB132p_registered_SpatialGraph",
+"length_um": null,
+"segments": 17508
+},
+{
+"name": "NB63_registered_SpatialGraph",
+"file": "data/models/neurons/NB63_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB63_registered_SpatialGraph",
+"length_um": null,
+"segments": 6649
+},
+{
+"name": "NB67p_registered_SpatialGraph",
+"file": "data/models/neurons/NB67p_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB67p_registered_SpatialGraph",
+"length_um": null,
+"segments": 9731
+},
+{
+"name": "NB142a_registered_SpatialGraph",
+"file": "data/models/neurons/NB142a_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB142a_registered_SpatialGraph",
+"length_um": null,
+"segments": 1915
+},
+{
+"name": "NB135p_registered_SpatialGraph",
+"file": "data/models/neurons/NB135p_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB135p_registered_SpatialGraph",
+"length_um": null,
+"segments": 8622
+},
+{
+"name": "NB140p_registered_SpatialGraph",
+"file": "data/models/neurons/NB140p_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB140p_registered_SpatialGraph",
+"length_um": null,
+"segments": 8971
+},
+{
+"name": "NB48_registered_SpatialGraph",
+"file": "data/models/neurons/NB48_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB48_registered_SpatialGraph",
+"length_um": null,
+"segments": 12211
+},
+{
+"name": "NB80_registered_SpatialGraph",
+"file": "data/models/neurons/NB80_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB80_registered_SpatialGraph",
+"length_um": null,
+"segments": 5751
+},
+{
+"name": "NB136a_registered_SpatialGraph",
+"file": "data/models/neurons/NB136a_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB136a_registered_SpatialGraph",
+"length_um": null,
+"segments": 4917
+},
+{
+"name": "NB142p_registered_SpatialGraph",
+"file": "data/models/neurons/NB142p_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB142p_registered_SpatialGraph",
+"length_um": null,
+"segments": 5050
+},
+{
+"name": "NB67a_registered_SpatialGraph",
+"file": "data/models/neurons/NB67a_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB67a_registered_SpatialGraph",
+"length_um": null,
+"segments": 13407
+},
+{
+"name": "NB57_registered_SpatialGraph",
+"file": "data/models/neurons/NB57_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB57_registered_SpatialGraph",
+"length_um": null,
+"segments": 5865
+},
+{
+"name": "NB45_registered_SpatialGraph",
+"file": "data/models/neurons/NB45_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB45_registered_SpatialGraph",
+"length_um": null,
+"segments": 12110
+},
+{
+"name": "NB35_registered_SpatialGraph",
+"file": "data/models/neurons/NB35_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB35_registered_SpatialGraph",
+"length_um": null,
+"segments": 5142
+},
+{
+"name": "NB43_registered_SpatialGraph",
+"file": "data/models/neurons/NB43_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB43_registered_SpatialGraph",
+"length_um": null,
+"segments": 6648
+},
+{
+"name": "NB54_registered_SpatialGraph",
+"file": "data/models/neurons/NB54_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB54_registered_SpatialGraph",
+"length_um": null,
+"segments": 4955
+},
+{
+"name": "NB78_registered_SpatialGraph",
+"file": "data/models/neurons/NB78_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB78_registered_SpatialGraph",
+"length_um": null,
+"segments": 2858
+},
+{
+"name": "NB140a_registered_SpatialGraph",
+"file": "data/models/neurons/NB140a_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB140a_registered_SpatialGraph",
+"length_um": null,
+"segments": 2903
+},
+{
+"name": "NB135a_registered_SpatialGraph",
+"file": "data/models/neurons/NB135a_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB135a_registered_SpatialGraph",
+"length_um": null,
+"segments": 5076
+},
+{
+"name": "NB38_registered_SpatialGraph",
+"file": "data/models/neurons/NB38_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"robust nucleus of the arcopallium projecting",
+"glutamatergic"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB38_registered_SpatialGraph",
+"length_um": null,
+"segments": 14182
+},
+{
+"name": "NB129p_registered_SpatialGraph",
+"file": "data/models/neurons/NB129p_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB129p_registered_SpatialGraph",
+"length_um": null,
+"segments": 19458
+},
+{
+"name": "NB106_registered_SpatialGraph",
+"file": "data/models/neurons/NB106_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB106_registered_SpatialGraph",
+"length_um": null,
+"segments": 7960
+},
+{
+"name": "NB103_registered_SpatialGraph",
+"file": "data/models/neurons/NB103_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB103_registered_SpatialGraph",
+"length_um": null,
+"segments": 12241
+},
+{
+"name": "NB128a_registered_SpatialGraph",
+"file": "data/models/neurons/NB128a_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB128a_registered_SpatialGraph",
+"length_um": null,
+"segments": 18920
+},
+{
+"name": "NB81_registered_SpatialGraph",
+"file": "data/models/neurons/NB81_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB81_registered_SpatialGraph",
+"length_um": null,
+"segments": 11234
+},
+{
+"name": "NB130a_registered_SpatialGraph",
+"file": "data/models/neurons/NB130a_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB130a_registered_SpatialGraph",
+"length_um": null,
+"segments": 16538
+},
+{
+"name": "NB127a_registered_SpatialGraph",
+"file": "data/models/neurons/NB127a_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB127a_registered_SpatialGraph",
+"length_um": null,
+"segments": 8604
+},
+{
+"name": "NB132a_registered_SpatialGraph",
+"file": "data/models/neurons/NB132a_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB132a_registered_SpatialGraph",
+"length_um": null,
+"segments": 14733
+},
+{
+"name": "NB129a_registered_SpatialGraph",
+"file": "data/models/neurons/NB129a_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB129a_registered_SpatialGraph",
+"length_um": null,
+"segments": 15634
+},
+{
+"name": "NB97_registered_SpatialGraph",
+"file": "data/models/neurons/NB97_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB97_registered_SpatialGraph",
+"length_um": null,
+"segments": 15498
+},
+{
+"name": "NB128p_registered_SpatialGraph",
+"file": "data/models/neurons/NB128p_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB128p_registered_SpatialGraph",
+"length_um": null,
+"segments": 19721
+},
+{
+"name": "NB130p_registered_SpatialGraph",
+"file": "data/models/neurons/NB130p_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB130p_registered_SpatialGraph",
+"length_um": null,
+"segments": 21204
+},
+{
+"name": "NB110_registered_SpatialGraph",
+"file": "data/models/neurons/NB110_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB110_registered_SpatialGraph",
+"length_um": null,
+"segments": 5416
+},
+{
+"name": "NB22_registered_SpatialGraph",
+"file": "data/models/neurons/NB22_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB22_registered_SpatialGraph",
+"length_um": null,
+"segments": 13864
+},
+{
+"name": "NB91_registered_SpatialGraph",
+"file": "data/models/neurons/NB91_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB91_registered_SpatialGraph",
+"length_um": null,
+"segments": 13468
+},
+{
+"name": "NB127p_registered_SpatialGraph",
+"file": "data/models/neurons/NB127p_registered_SpatialGraph.json",
+"species": "zebra-finch",
+"archive": "Long",
+"region": [
+"pallium",
+"cortex",
+"high vocal center"
+],
+"cell_type": [
+"principal cell",
+"glutamatergic",
+"Area X-projecting"
+],
+"doi": [
+"10.1002/cne.24437"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=NB127p_registered_SpatialGraph",
+"length_um": null,
+"segments": 3299
+},
+{
+"name": "20150210_2_2",
+"file": "data/models/neurons/20150210_2_2.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"intermediate-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150210_2_2",
+"length_um": null,
+"segments": 179
+},
+{
+"name": "20150122_2_1",
+"file": "data/models/neurons/20150122_2_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"intermediate-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150122_2_1",
+"length_um": null,
+"segments": 190
+},
+{
+"name": "20150303_2_2",
+"file": "data/models/neurons/20150303_2_2.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"intermediate-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150303_2_2",
+"length_um": null,
+"segments": 51
+},
+{
+"name": "20150303_3_1",
+"file": "data/models/neurons/20150303_3_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"intermediate-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150303_3_1",
+"length_um": null,
+"segments": 87
+},
+{
+"name": "20150304_1_2",
+"file": "data/models/neurons/20150304_1_2.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"intermediate-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150304_1_2",
+"length_um": null,
+"segments": 199
+},
+{
+"name": "20150211_2_1",
+"file": "data/models/neurons/20150211_2_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"intermediate-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150211_2_1",
+"length_um": null,
+"segments": 437
+},
+{
+"name": "20150130_2_2",
+"file": "data/models/neurons/20150130_2_2.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"intermediate-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150130_2_2",
+"length_um": null,
+"segments": 344
+},
+{
+"name": "20150202_1_2",
+"file": "data/models/neurons/20150202_1_2.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"tonic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150202_1_2",
+"length_um": null,
+"segments": 760
+},
+{
+"name": "20150227_2_1",
+"file": "data/models/neurons/20150227_2_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"tonic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150227_2_1",
+"length_um": null,
+"segments": 195
+},
+{
+"name": "20141211_3_1",
+"file": "data/models/neurons/20141211_3_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"tonic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20141211_3_1",
+"length_um": null,
+"segments": 512
+},
+{
+"name": "20141211_2_3",
+"file": "data/models/neurons/20141211_2_3.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"tonic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20141211_2_3",
+"length_um": null,
+"segments": 331
+},
+{
+"name": "20150113_1_1",
+"file": "data/models/neurons/20150113_1_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"tonic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150113_1_1",
+"length_um": null,
+"segments": 401
+},
+{
+"name": "20150311_2_1",
+"file": "data/models/neurons/20150311_2_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"phasic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150311_2_1",
+"length_um": null,
+"segments": 103
+},
+{
+"name": "20150227_1_1",
+"file": "data/models/neurons/20150227_1_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"phasic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150227_1_1",
+"length_um": null,
+"segments": 48
+},
+{
+"name": "20150210_1_1",
+"file": "data/models/neurons/20150210_1_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"phasic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150210_1_1",
+"length_um": null,
+"segments": 70
+},
+{
+"name": "20160127_2_1",
+"file": "data/models/neurons/20160127_2_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"phasic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20160127_2_1",
+"length_um": null,
+"segments": 176
+},
+{
+"name": "20150204_2_1",
+"file": "data/models/neurons/20150204_2_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"phasic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150204_2_1",
+"length_um": null,
+"segments": 286
+},
+{
+"name": "20150204_3_2",
+"file": "data/models/neurons/20150204_3_2.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell",
+"broad-spiking",
+"phasic-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150204_3_2",
+"length_um": null,
+"segments": 290
+},
+{
+"name": "20160208_2_2",
+"file": "data/models/neurons/20160208_2_2.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"interneuron",
+"Fast-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20160208_2_2",
+"length_um": null,
+"segments": 104
+},
+{
+"name": "20160126_1_1",
+"file": "data/models/neurons/20160126_1_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"interneuron",
+"Fast-spiking"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20160126_1_1",
+"length_um": null,
+"segments": 117
+},
+{
+"name": "20150303_1_1",
+"file": "data/models/neurons/20150303_1_1.json",
+"species": "zebra-finch",
+"archive": "Meliza",
+"region": [
+"pallium",
+"Mesopallium",
+"caudal"
+],
+"cell_type": [
+"principal cell"
+],
+"doi": [
+"10.1152/jn.00694.2017"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=20150303_1_1",
+"length_um": null,
+"segments": 198
+},
+{
+"name": "PTM_170829_01",
+"file": "data/models/neurons/PTM_170829_01.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"central nucleus"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=PTM_170829_01",
+"length_um": null,
+"segments": 614
+},
+{
+"name": "PTM_170825_B",
+"file": "data/models/neurons/PTM_170825_B.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"central nucleus"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=PTM_170825_B",
+"length_um": null,
+"segments": 931
+},
+{
+"name": "PTM_161118_02",
+"file": "data/models/neurons/PTM_161118_02.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"cortex"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=PTM_161118_02",
+"length_um": null,
+"segments": 1362
+},
+{
+"name": "PTM_170802_01",
+"file": "data/models/neurons/PTM_170802_01.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"central nucleus"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=PTM_170802_01",
+"length_um": null,
+"segments": 570
+},
+{
+"name": "PTM_160804_02",
+"file": "data/models/neurons/PTM_160804_02.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"cortex"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=PTM_160804_02",
+"length_um": null,
+"segments": 501
+},
+{
+"name": "PTM_160727_01_tilescan_dendrites",
+"file": "data/models/neurons/PTM_160727_01_tilescan_dendrites.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"central nucleus"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=PTM_160727_01_tilescan_dendrites",
+"length_um": null,
+"segments": 785
+},
+{
+"name": "DG_170525_B",
+"file": "data/models/neurons/DG_170525_B.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"central nucleus"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=DG_170525_B",
+"length_um": null,
+"segments": 1158
+},
+{
+"name": "DG_161123_B",
+"file": "data/models/neurons/DG_161123_B.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"cortex"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=DG_161123_B",
+"length_um": null,
+"segments": 229
+},
+{
+"name": "PTM_161011_01",
+"file": "data/models/neurons/PTM_161011_01.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"central nucleus"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=PTM_161011_01",
+"length_um": null,
+"segments": 1101
+},
+{
+"name": "PTM_161010_01",
+"file": "data/models/neurons/PTM_161010_01.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"central nucleus"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=PTM_161010_01",
+"length_um": null,
+"segments": 1288
+},
+{
+"name": "PTM_160804_01",
+"file": "data/models/neurons/PTM_160804_01.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"central nucleus"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=PTM_160804_01",
+"length_um": null,
+"segments": 708
+},
+{
+"name": "PTM_170816_02",
+"file": "data/models/neurons/PTM_170816_02.json",
+"species": "house-mouse",
+"archive": "Roberts",
+"region": [
+"mesencephalon",
+"tectum",
+"inferior colliculus",
+"central nucleus"
+],
+"cell_type": [
+"principal cell",
+"stellate",
+"glutamatergic",
+"Vasoactive Intestinal Peptide (VIP) expressing",
+"auditory thalamus projecting"
+],
+"doi": [
+"10.7554/eLife.43770"
+],
+"page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=PTM_170816_02",
+"length_um": null,
+"segments": 471
+}
+]
+}

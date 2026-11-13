@@ -4,211 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Animal Communication &amp; Neuroscience</title>
-<meta name="description" content="An independent research collection: animal recordings, brain atlases for six species, and transparent checks of published claims against deposited data.">
+<meta name="description" content="How animals hear, call and learn: real recordings, real brains and models built from real neurons for six species.">
 <meta name="color-scheme" content="light dark">
-<link rel="stylesheet" href="css/site.css?v=20261112">
-<script>
-// apply saved display settings before first paint
-try{const s=JSON.parse(localStorage.getItem('acn-display')||'{}');for(const k of ['theme','size','contrast','motion','plain'])if(s[k])document.documentElement.dataset[k]=s[k];}catch(e){}
-if(location.protocol==='file:')document.documentElement.dataset.file='1';
-</script>
+<link rel="stylesheet" href="css/app.css?v=20261112g">
+<script>try{const s=JSON.parse(localStorage.getItem('acn-display')||'{}');for(const k of ['theme','size','contrast','motion'])if(s[k])document.documentElement.dataset[k]=s[k];}catch(e){}</script>
 <script type="importmap">{"imports":{"three":"./assets/three.module.js"}}</script>
-<script type="module" src="js/app.js?v=20261112"></script>
+<script type="module" src="js/main.js?v=20261112g"></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to main content</a>
-<div class="utility"><div class="wrap">
-  <p>An independent research collection · Data and claims checked against deposited sources</p>
-  <div class="util-links">
-    <a class="hide-sm" href="#about">Accessibility</a>
-    <a class="hide-sm" href="https://github.com/jordanxxlopez/animal-communication-neuroscience">Source code</a>
-    <button class="settings-btn" type="button" id="open-settings" aria-haspopup="dialog">Display settings</button>
-  </div>
-</div></div>
-<header class="masthead"><div class="wrap">
-  <a class="brand" href="#home"><b>Animal Communication &amp; Neuroscience</b><span>Recordings, brain atlases and verified research across species</span></a>
-  <form class="site-search" role="search" id="site-search" autocomplete="off">
-    <label class="visually-hidden" for="q">Search species, brain regions, sounds and reviews</label>
-    <input id="q" type="search" placeholder="Search: HVC, phee, waggle dance, amygdala…" aria-controls="search-results" aria-expanded="false">
-    <button type="submit">Search</button>
-    <div class="search-results" id="search-results" role="listbox" hidden></div>
-  </form>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#home" aria-label="Animal Communication and Neuroscience, home">
+    <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#15181b"/><path d="M5 15h3l2-6 3 12 3-9 2 5 2-2h5" fill="none" stroke="#e9a487" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Animal Communication &amp; Neuroscience<small>Hearing, voice and the brain</small></span></a>
+  <ul class="nav" id="nav">
+    <li><a href="#animals">Animals</a></li><li><a href="#listen">Listen</a></li><li><a href="#lab">Brain lab</a></li><li><a href="#research">Research</a></li><li><a href="#about">About</a></li>
+  </ul>
+  <button class="icon-btn" id="open-search" type="button" aria-label="Search" aria-controls="search"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <button class="icon-btn" id="open-settings" type="button" aria-label="Display settings" aria-haspopup="dialog"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="7" r="2.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="17" r="2.2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+  <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <div class="search-pop" id="search" hidden><label class="vh" for="q">Search</label><input id="q" type="search" placeholder="Search animals, brain regions, sounds, research" autocomplete="off"><div class="res" id="search-res" role="listbox"></div></div>
 </div></header>
-<nav class="primary-nav" aria-label="Main"><div class="wrap"><ul>
-  <li><a href="#home">Overview</a></li>
-  <li><a href="#species">Species</a></li>
-  <li><a href="#sounds">Sound library</a></li>
-  <li><a href="#atlas">Brain atlases</a></li>
-  <li><a href="#review">Research review</a></li>
-  <li><a href="#films">Video</a></li>
-  <li><a href="#studies">Literature</a></li>
-  <li><a href="#methods">Data &amp; methods</a></li>
-</ul></div></nav>
-
-<main id="main" tabindex="-1">
-<div class="wrap"><div id="global-status" class="status-msg" role="status" hidden></div></div>
-
-<!-- ============================== HOME -->
-<section class="page" id="home" aria-labelledby="home-title"><div class="wrap">
-  <div class="home-intro">
-    <div>
-      <p class="kicker">Comparative neuroethology</p>
-      <h1 id="home-title">How animals communicate, and the brains that make it possible</h1>
-      <p class="lede">Real recordings, brain atlases and published data for six species, from songbirds to honeybees. Each claim we present is linked to its source, and we recheck published numbers against the authors’ deposited data where we can.</p>
-      <div class="plain"><strong>In plain language</strong>Listen to animal calls, explore 3D brain maps, and see what we found when we checked recent studies against their own data.</div>
-      <div class="link-row"><a class="btn primary" href="#species">Browse species</a><a class="btn" href="#review">Read the research review</a><a class="btn" href="#atlas">Open a brain atlas</a></div>
-    </div>
-    <div>
-      <h2 class="kicker">In this collection</h2>
-      <ul class="stat-list" id="home-stats"><li>Loading…</li></ul>
-      <p class="small faint" style="margin-top:.5rem">Counts are computed from the site’s data files when the page loads.</p>
-    </div>
-  </div>
-  <div class="section">
-    <h2>Species collections</h2>
-    <div class="table-scroll"><table class="species-table" id="home-species"><caption class="visually-hidden">Species with available data</caption>
-      <thead><tr><th scope="col"><span class="visually-hidden">Photo</span></th><th scope="col">Species</th><th scope="col" class="hide-sm">Communication signals</th><th scope="col">Available data</th></tr></thead><tbody></tbody></table></div>
-  </div>
-  <div class="section two-col">
-    <div>
-      <h2>Latest from the research review</h2>
-      <ul class="review-list" id="home-reviews"></ul>
-      <p><a href="#review">All reviews and how we rate them →</a></p>
-    </div>
-    <div>
-      <h2>Our standards</h2>
-      <ul class="refs" style="padding-left:1.1rem;font-size:.95rem">
-        <li>Only real data from named, licensed sources. No generated images or invented measurements.</li>
-        <li>Every derived figure is computed by a published script from the original files, with checksums.</li>
-        <li>We say when something could not be checked, and we never treat an unreproduced result as misconduct.</li>
-        <li>Plain-language summaries, captions and keyboard-operable tools on every page.</li>
-      </ul>
-      <p><a href="#about">Integrity and accessibility policy →</a></p>
-    </div>
-  </div>
-</div></section>
-
-<!-- ============================== SPECIES DIRECTORY -->
-<section class="page" id="species" hidden aria-labelledby="species-title"><div class="wrap">
-  <p class="breadcrumb"><a href="#home">Overview</a> / Species</p>
-  <h1 id="species-title">Species</h1>
-  <p class="lede">Six species chosen because open, citable data exist for both their communication and their brains. Collections are not all equally complete; the table states what is available.</p>
-  <div class="table-scroll"><table class="species-table" id="species-table"><thead><tr><th scope="col"><span class="visually-hidden">Photo</span></th><th scope="col">Species</th><th scope="col" class="hide-sm">Group</th><th scope="col" class="hide-sm">Communication signals</th><th scope="col">Data</th></tr></thead><tbody></tbody></table></div>
-</div></section>
-
-<!-- ============================== SPECIES DETAIL (rendered) -->
-<section class="page" id="species-detail" hidden><div class="wrap" id="species-detail-body"></div></section>
-
-<!-- ============================== SOUNDS -->
-<section class="page" id="sounds" hidden aria-labelledby="sounds-title"><div class="wrap">
-  <p class="breadcrumb"><a href="#home">Overview</a> / Sound library</p>
-  <h1 id="sounds-title">Sound library</h1>
-  <p class="lede">Original recordings with spectrograms computed from the same samples. Ultrasonic calls are slowed down so they can be heard, and each record says exactly what was changed for playback.</p>
-  <div class="plain"><strong>How to read a spectrogram</strong>Time runs left to right and pitch runs bottom to top. Brighter colours mean louder sound. Hover over or tap the picture to read the time and pitch at that point.</div>
-  <div class="filters">
-    <label class="field" for="snd-species">Species<select id="snd-species"></select></label>
-    <label class="field" for="snd-kind">Signal type<select id="snd-kind"><option value="">All</option></select></label>
-    <label class="field" for="snd-q">Filter by name<input id="snd-q" type="search" placeholder="e.g. Grey644, phee"></label>
-  </div>
-  <div class="sound-layout">
-    <div class="player" id="player" aria-live="polite">
-      <div class="player-head"><p class="kicker" id="pl-species">—</p><h2 id="pl-title">Select a recording</h2></div>
-      <div class="spec-wrap" id="pl-spec" hidden>
-        <div class="spec-yaxis" id="pl-yaxis" aria-hidden="true"></div>
-        <div class="spec-img-wrap" id="pl-imgwrap"><img id="pl-img" alt=""><div class="spec-cursor" id="pl-cursor"></div><div class="spec-hover" id="pl-hover" hidden></div></div>
-        <div class="spec-xaxis" id="pl-xaxis" aria-hidden="true"></div>
-      </div>
-      <div class="player-controls" id="pl-controls" hidden>
-        <audio id="pl-audio" controls preload="none"></audio>
-        <div id="pl-mode" class="seg" role="group" aria-label="Playback version"></div>
-      </div>
-      <div class="player-meta" id="pl-meta"><p class="muted">Choose a recording from the list. Use the arrow keys to move through the list once it has focus.</p></div>
-    </div>
-    <div>
-      <div class="sound-list" id="snd-list" role="listbox" aria-label="Recordings" tabindex="0"></div>
-      <div class="pager" id="snd-pager"></div>
-    </div>
-  </div>
-</div></section>
-
-<!-- ============================== ATLAS -->
-<section class="page" id="atlas" hidden aria-labelledby="atlas-title"><div class="wrap">
-  <p class="breadcrumb" id="atlas-crumb"><a href="#home">Overview</a> / Brain atlases</p>
-  <div id="atlas-directory">
-    <h1 id="atlas-title">Brain atlases</h1>
-    <p class="lede">One atlas per species, each from its original source. Atlases differ in kind: population averages, single specimens, labelled and unlabelled. They are never registered to one another, and one species’ anatomy is never shown as another’s.</p>
-    <div class="plain"><strong>What is a brain atlas?</strong>A brain atlas is a 3D map of a brain, made from scans or tissue sections, with the parts labelled. Scientists use it to know exactly where they are recording from.</div>
-    <div class="atlas-cards" id="atlas-cards"></div>
-  </div>
-  <div id="atlas-viewer" hidden>
-    <h1 id="av-title">—</h1>
-    <p class="muted" id="av-sub"></p>
-    <div class="atlas-grid">
-      <aside class="atlas-side" aria-label="Atlas controls">
-        <section><h2>Image</h2><label class="visually-hidden" for="av-image">Image volume</label><select id="av-image" style="width:100%"></select>
-          <label style="display:flex;gap:.4rem;align-items:center;margin-top:.5rem;font-size:.9rem"><input type="checkbox" id="av-overlay" checked> Show region colours</label>
-          <label style="display:flex;gap:.4rem;align-items:center;margin-top:.3rem;font-size:.9rem"><input type="checkbox" id="av-outline"> Outline selected region only</label></section>
-        <section id="av-regions-sec"><h2>Regions</h2>
-          <label class="visually-hidden" for="av-rsearch">Search regions</label><input id="av-rsearch" class="region-search" type="search" placeholder="Search name or acronym">
-          <ul class="region-list" id="av-regions"></ul>
-          <p class="small faint" id="av-rcount" style="margin:.4rem 0 0"></p></section>
-        <section><h2>Source</h2><div class="provenance" id="av-prov"></div></section>
-      </aside>
-      <div class="atlas-main">
-        <div class="view-tabs" role="tablist" aria-label="Atlas view">
-          <button role="tab" id="tab-slices" aria-selected="true" aria-controls="panel-slices">Sections</button>
-          <button role="tab" id="tab-3d" aria-selected="false" aria-controls="panel-3d">3D surfaces</button>
-          <button role="tab" id="tab-diff" aria-selected="false" aria-controls="panel-diff" hidden>Diffusion</button>
-        </div>
-        <div id="panel-slices" role="tabpanel" aria-labelledby="tab-slices">
-          <div class="readout" id="av-readout" aria-live="polite">Click a section to place the cursor; the other two sections follow.</div>
-          <div class="planes" id="av-planes"></div>
-          <p class="small faint" id="av-note"></p>
-        </div>
-        <div id="panel-3d" role="tabpanel" aria-labelledby="tab-3d" hidden>
-          <div class="three-wrap" id="av-three"><span class="three-help">Drag to rotate · scroll or pinch to zoom · right-drag to pan</span></div>
-          <p class="small faint" id="av-mesh-note"></p>
-        </div>
-        <div id="panel-diff" role="tabpanel" aria-labelledby="tab-diff" hidden>
-          <div class="notice info"><p id="av-diff-note"></p></div>
-          <label class="field" style="max-width:340px" for="av-diff-image">Map<select id="av-diff-image"></select></label>
-          <div class="planes" id="av-diff-planes" style="margin-top:.6rem"></div>
-          <div class="readout" id="av-diff-readout"></div>
-        </div>
-        <h2 style="margin-top:1.6rem">How this atlas was prepared</h2>
-        <ul class="provenance" id="av-processing"></ul>
-      </div>
-    </div>
-  </div>
-</div></section>
-
-<!-- ============================== REVIEW -->
-<section class="page" id="review" hidden aria-labelledby="review-title"><div class="wrap" id="review-body">
-  <p class="breadcrumb"><a href="#home">Overview</a> / Research review</p>
-  <h1 id="review-title">Research review</h1>
-  <p class="lede">We read recent studies and datasets, then check what we can: published counts against deposited files, results against independent reanalyses, and every citation against retraction and correction notices.</p>
-  <div class="plain"><strong>Why this matters</strong>Science works best when results can be checked. Here we show our working: what each study claimed, what we tested, what we found, and what we could not test.</div>
-  <div class="two-col">
-    <div><h2>Reviews</h2><div class="filters"><label class="field" for="rv-species">Species<select id="rv-species"></select></label></div><ul class="review-list" id="review-list"></ul></div>
-    <div>
-      <h2>How results are rated</h2>
-      <div class="verdict-key" id="verdict-key"></div>
-      <div class="method-box"><h3>What a check involves</h3>
-        <ol style="padding-left:1.1rem;margin:.3rem 0">
-          <li>Identify a specific, testable statement in the paper or data record.</li>
-          <li>Download the authors’ deposited data and record its checksum.</li>
-          <li>Recompute the number, or run an independent analysis, with a published script.</li>
-          <li>Verify all cited DOIs and check for retractions, corrections and contrasting citations (via Crossref and scite).</li>
-          <li>Report the result, the method and its limits, including what we could not test.</li>
-        </ol></div>
-      <p class="small muted">Citation status last checked 12 November 2026. Found an error in a review? Please <a href="https://github.com/jordanxxlopez/animal-communication-neuroscience/issues">open an issue</a>; corrections are logged in the repository history.</p>
-    </div>
-  </div>
-</div></section>
-<section class="page" id="review-detail" hidden><div class="wrap" id="review-detail-body"></div></section>
-
-<!-- ============================== LEGACY REVIEW PAGES (unchanged text from the previous release) -->
-<section class="page" id="paper-hamaguchi" hidden><div class="wrap"><p class="breadcrumb"><a href="#home">Overview</a> / <a href="#review">Research review</a> / Zebra finch</p>
+<main id="main" tabindex="-1"></main>
+<footer class="foot"><div class="wrap">
+  <div><h2>Animal Communication &amp; Neuroscience</h2><p>An independent, non-commercial resource on how animals hear, call and learn. Real data only; every figure links to its source.</p></div>
+  <div><h2>Explore</h2><ul><li><a href="#animals">Animals</a></li><li><a href="#listen">Listen</a></li><li><a href="#lab">Brain lab</a></li></ul></div>
+  <div><h2>Research</h2><ul><li><a href="#research">Reviews &amp; models</a></li><li><a href="#research/literature">Literature</a></li><li><a href="#research/data">Data &amp; methods</a></li></ul></div>
+  <div><h2>Site</h2><ul><li><a href="#about">About &amp; accessibility</a></li><li><a href="https://github.com/jordanxxlopez/animal-communication-neuroscience">Source code</a></li></ul></div>
+  <p class="fine">Third-party recordings, images, brain data and videos keep their original licences; see each source.</p>
+</div></footer>
+<dialog class="settings" id="settings" aria-labelledby="st"><header><h2 id="st">Display</h2><button class="btn sm" type="button" id="close-settings">Done</button></header>
+<form id="settings-form" method="dialog">
+  <fieldset><legend>Text size</legend><div class="seg"><label><input type="radio" name="size" value="">Standard</label><label><input type="radio" name="size" value="large">Large</label><label><input type="radio" name="size" value="larger">Larger</label></div></fieldset>
+  <fieldset><legend>Theme</legend><div class="seg"><label><input type="radio" name="theme" value="">Device</label><label><input type="radio" name="theme" value="light">Light</label><label><input type="radio" name="theme" value="dark">Dark</label></div></fieldset>
+  <fieldset><legend>Contrast</legend><div class="seg"><label><input type="radio" name="contrast" value="">Standard</label><label><input type="radio" name="contrast" value="high">High</label></div></fieldset>
+  <fieldset><legend>Motion</legend><div class="seg"><label><input type="radio" name="motion" value="">Device</label><label><input type="radio" name="motion" value="reduce">Reduce</label></div></fieldset>
+</form></dialog>
+<dialog class="figure-dialog" id="fig-dlg"><form method="dialog"><button class="btn sm">Close</button></form><img id="big-img" alt=""></dialog>
+<div class="tooltip" id="tooltip" hidden></div>
+<template id="tpl-paper-hamaguchi">
   <article class="paper-article">
    <div class="paper-title"><h1>Does HVC hear feedback while a finch sings?</h1><p class="paper-deck">Inside a 2014 experiment that recorded the voltage of individual neurons while a bird sang and heard altered feedback.</p><p class="paper-citation">A guide to Kosuke Hamaguchi, Katherine A. Tschida, Inho Yoon, Bruce R. Donald &amp; Richard Mooney (2014), <a href="https://doi.org/10.7554/eLife.01833"><i>Auditory synapses to song premotor neurons are gated off during vocalization in zebra finches</i></a>. eLife 3:e01833.</p><p class="review-scope">Full text and methods inspected · Original Figures 1 and 2 · Methodological review of the electrophysiology experiment · Raw-data replication not performed</p></div>
    <div class="paper-prose"><h2>Listening to a song is different from singing it</h2><p>A bird that practices a learned song must somehow compare what it produces with what it has learned to produce. That makes auditory feedback—the sound of its own voice—an important experimental variable. But which neurons receive that information while the bird is singing?</p><p>HVC is a forebrain region in the song system. Some of its neurons project to Area X, part of the basal ganglia pathway associated with song learning. These cells are called HVC<sub>X</sub> neurons. In this study the question was particularly precise: can a sudden alteration of sound change the membrane potential of these neurons during singing? Membrane potential is the electrical voltage across a cell’s membrane. Recording it can reveal input that is too small to trigger an action potential, or spike.</p><p>The authors used a sharp intracellular electrode in freely behaving male zebra finches. They recorded 72 HVC<sub>X</sub> cells across 11 birds in the recording experiments. The key feedback-perturbation analysis used a subset of 34 cells. Those counts describe different levels of sampling: many recordings from one bird do not become many independent animals.</p></div>
@@ -217,100 +51,8 @@ if(location.protocol==='file:')document.documentElement.dataset.file='1';
    <figure class="published-figure" id="published-figure-2"><div class="figure-toolbar"><h2>Figure 2. Testing for a feedback response</h2><button data-enlarge="paper-figure-2">Enlarge original figure</button></div><img id="paper-figure-2" src="assets/elife-01833-fig2-v1.jpg" width="1500" height="862" loading="lazy" alt="Published Figure 2: example hit and catch voltage traces in panel A; average membrane-potential differences in fast and slow windows in B; postsynaptic-potential onset rasters in C; comparison of onset timing between conditions in D."><figcaption>Original published Figure 2, Hamaguchi et al. (2014). <a href="https://doi.org/10.7554/eLife.01833.007">Figure DOI and complete original legend</a>. © 2014 the authors, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Publisher-supplied JPEG, without editing. Panel B summarizes condition differences; panels C–D address the timing of depolarizing postsynaptic potentials.</figcaption></figure>
    <div class="paper-prose"><p>The authors compared the baseline-subtracted voltage in a fast window, 20–60 milliseconds after playback onset, and a slower window, 60–200 milliseconds. They reported no systematic perturbation-related shift in the HVC<sub>X</sub> sample. The timing analysis in Figure 2D contains 45 postsynaptic-potential onsets from 18 cells; those are events within cells, not 45 birds.</p><p>Two useful controls strengthen the interpretation. Some cells that lacked a response to altered feedback during singing responded to playback when the bird was not singing (<a href="https://elifesciences.org/articles/01833/figures#fig3">original Figure 3</a>). Cells just ventral to HVC could show perturbation-related voltage responses during singing (<a href="https://elifesciences.org/articles/01833/figures#fig5">original Figure 5</a>). Together, those observations address whether the method was capable of detecting auditory input at all.</p><h2>How far does that conclusion reach?</h2><p>A failure to detect a difference is not an equivalence test proving that every possible feedback signal is absent. Detection depends on recording sensitivity, sample selection, stimulus type and the chosen time windows. The measurements here are from somatic voltage, and the timing analysis emphasizes relatively sharp-rising postsynaptic potentials. A slower process, an unsampled cell class or a signal in another compartment would require a different test.</p><p>Cells are also nested within birds. Animal-level clustering matters when assessing how broadly a result generalizes. This guide reports the paper’s cell and animal counts separately; we have not reconstructed the raw trial-to-cell-to-bird hierarchy or refit a hierarchical model. The paper’s additional lesion and spine-imaging experiments address a different, longer-timescale question and require their own analysis.</p><p>The supported interpretation is that these recordings do not reveal a rapid auditory-feedback signal in the sampled HVC<sub>X</sub> activity during the analyzed singing conditions. The term “gating” is the authors’ account of that state dependence; Figure 1 alone does not demonstrate a synaptic mechanism. The published statistical results have not been independently reproduced in this guide.</p><details class="research-review"><summary>Methods and reproducibility record</summary><p>The source methods describe spike removal with a 5 ms median filter, baseline subtraction from −200 to 0 ms, voltage grouping, and t-tests for the fast and slow windows. At least 14 motifs were required for a voltage group. The authors also describe exclusions for overlapping postsynaptic potentials and song timing changes. The detailed review above concerns the electrophysiology experiment, not all experiments in the paper.</p><p>The article provides an original control/acquisition-code repository: <a href="https://github.com/hamaguchikosuke/RealSong_control">RealSong_control</a>. That code has not been executed here. Raw trial-level electrophysiology files were not acquired in this pass; plots shown here are original published figures, not independently regenerated results.</p><p>Figure files, source URLs, license, dimensions and SHA-256 hashes are in the <a href="data/published-figures.json">figure provenance record</a>. Selected panels are explained without cropping or redrawing the source figure.</p></details><h2>Watch the recording preparation</h2><video controls playsinline preload="none" src="assets/elife-01833-media1.mp4" aria-label="Original Hamaguchi et al. Video 1 of intracellular recording during singing"></video><p class="citation">Original Video 1, Hamaguchi et al. (2014), CC BY. The paper reports normal-speed playback. This illustrative clip is not the full raw electrophysiology dataset.</p><p><a href="#atlas">Open the anatomical atlas</a> · <a href="#zebra-finch">Return to the zebra finch collection</a> · <a href="https://elifesciences.org/articles/01833">Read the complete paper and references</a></p></div>
   </article>
- </div></section>
-<section class="page" id="paper-sperm-whale" hidden><div class="wrap"><p class="breadcrumb"><a href="#home">Overview</a> / <a href="#review">Research review</a> / Sperm whale</p><article class="paper-article"><div class="paper-title"><h1>Measuring the structure of a coda</h1><p class="paper-deck">A reading of Sharma and colleagues’ 2024 study, with the original exchange plot and an independent inspection of the deposited timing table.</p><p class="paper-citation">Pratyusha Sharma, Shane Gero, Roger Payne, David F. Gruber, Daniela Rus, Antonio Torralba &amp; Jacob Andreas. <a href="https://doi.org/10.1038/s41467-024-47221-8">Contextual and combinatorial structure in sperm whale vocalisations</a>. Nature Communications 15, 3617 (2024).</p><p class="review-scope">Primary text and methods inspected · Original Figure 1 · Descriptive CSV analysis · Published clustering and inferential tests not independently reproduced</p></div><div class="paper-prose"><h2>Two timescales in one recording</h2><p>A coda is a sequence of clicks. Its inter-click intervals describe the spacing within that sequence, while the gaps between codas describe the timing of the wider exchange. Comparing only isolated patterns can lose information about how a whale’s signal changes alongside those of other whales.</p><p>Sharma and colleagues introduce an exchange plot to examine these timescales together. They distinguish rhythm and tempo from two context-dependent features, called rubato and ornamentation. These are the authors’ analytical terms; they do not by themselves translate a coda into a human word.</p></div><figure class="published-figure"><div class="figure-toolbar"><h2>Original Figure 1 · Reading an exchange plot</h2><button data-enlarge="whale-figure-1">Enlarge published figure</button></div><img id="whale-figure-1" src="assets/sharma-2024-figure1.png" alt="Original Sharma et al. figure: schematic of two sperm whales and an exchange plot relating coda click intervals to elapsed exchange time" loading="lazy"><figcaption>Sharma et al. (2024), Figure 1. <a href="https://www.nature.com/articles/s41467-024-47221-8/figures/1">Original figure and full legend</a>. © The Author(s), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Publisher rendition displayed unchanged. The schematic is from the paper; it was not created for this project.</figcaption></figure><div class="paper-prose"><h2>Read the axes before the pattern</h2><p>The horizontal axis tracks elapsed time in an exchange. The vertical axis marks time after the first click of a coda. Thus a vertical stack describes one coda, and successive stacks show how that pattern develops across an exchange. Panel B explains the construction; panel C presents an annotated example with the authors’ interpretations of rhythm, tempo, ornamentation and rubato.</p><p>Similarity between neighboring signals is consistent with context-sensitive production. It does not establish the referential meaning of a signal, the receiver’s perceptual categories, or a neural mechanism. Those questions need further behavioral, playback or neural evidence.</p><h2>An inspection of the deposited annotations</h2><p>We read the paper-linked <code>DominicaCodas.csv</code> directly using Python and NumPy, retaining the supplied <code>Clan</code> and <code>CodaType</code> fields. The table below is a descriptive summary of that file, not a recreation of the paper’s rhythm/tempo clustering.</p></div><section class="coda-workspace" aria-label="Derived coda annotation summary"><div class="list-toolbar"><label for="coda-clan">Deposited clan label<select id="coda-clan"><option value="all">All rows</option><option value="EC1">EC1</option><option value="EC2">EC2</option></select></label><span id="coda-summary-count" aria-live="polite"></span><a href="data/marine-coda-summary.json" download>Derived statistics JSON</a></div><div class="table-scroll"><table><thead><tr><th>Supplied label</th><th>Codas</th><th>Median duration (s)</th><th>10th–90th percentile (s)</th></tr></thead><tbody id="coda-summary"></tbody></table></div><p class="data-caution">Cohort reconciliation: the article describes 8,719 codas from EC1. The deposited CSV has 8,719 rows, including 7,770 labeled EC1 and 949 labeled EC2. We have not reconciled that difference. The table reports the deposited labels and does not substitute them for the article’s analysis cohort.</p></div></section>
-<section class="page" id="perception-model" hidden><div class="wrap"><p class="breadcrumb"><a href="#home">Overview</a> / <a href="#review">Research review</a> / Zebra finch</p><article class="paper-article"><p class="kicker">Independent baseline · Zebra finch</p><h1 class="paper-title">A simple baseline for zebra finch perceptual choices</h1><p><span class="chip consistent">Consistent</span></p><p>This independent logistic baseline predicts the bird’s left/right probe choice using the difference between published Luscinia distances to the two options. It uses the documented ML4BL CSVs, with 16 birds for fitting and six birds held out.</p><table class="model-results"><tbody><tr><th>Rows with matched distances</th><td>16,319 from 22 birds</td></tr><tr><th>Held-out accuracy</th><td>56.3%</td></tr><tr><th>Held-out ROC AUC</th><td>0.568</td></tr><tr><th>Bird-cluster bootstrap interval</th><td>Accuracy 41.8–70.5%; AUC 0.527–0.630</td></tr></tbody></table><p>About 38% of probe rows were excluded for unmatched distances. Sounds may overlap across fitting and held-out birds, so this does not test wholly novel-stimulus generalization. With only six held-out birds, cluster uncertainty is wide. This baseline models behavioral choices, not neural activity, and does not reproduce the source paper’s deep-learning model.</p><p><a href="data/perceptual-choice-regression.json">Full results and limitations</a> · <a href="https://github.com/jordanxxlopez/animal-communication-neuroscience/blob/main/scripts/model_perceptual_choices.py">Reproduction script</a> · <a href="https://doi.org/10.1371/journal.pcbi.1012329">Source study</a></p></article></div></section>
-
-<!-- ============================== FILMS -->
-<section class="page" id="films" hidden aria-labelledby="films-title"><div class="wrap">
-  <p class="breadcrumb"><a href="#home">Overview</a> / Video</p>
-  <h1 id="films-title">Research video</h1>
-  <p class="lede">Unaltered research videos from published supplements and open datasets. Where a clip had to be re-encoded so browsers can play it, that is stated with the original’s checksum.</p>
-  <div id="film-list"></div>
-</div></section>
-
-<!-- ============================== LITERATURE -->
-<section class="page" id="studies" hidden aria-labelledby="studies-title"><div class="wrap">
-  <p class="breadcrumb"><a href="#home">Overview</a> / Literature</p>
-  <h1 id="studies-title">Literature and data sources</h1>
-  <p class="lede">Every paper and dataset cited on this site. DOIs were resolved against Crossref and checked for retractions and editorial notices on 12 November 2026.</p>
-  <div class="filters"><label class="field" for="lit-species">Species<select id="lit-species"></select></label><label class="field" for="lit-q">Search<input id="lit-q" type="search" placeholder="Author, title, year"></label></div>
-  <div class="table-scroll"><table id="lit-table"><thead><tr><th scope="col">Reference</th><th scope="col">Species</th><th scope="col">Type</th><th scope="col">Status</th></tr></thead><tbody></tbody></table></div>
-</div></section>
-
-<!-- ============================== METHODS -->
-<section class="page" id="methods" hidden aria-labelledby="methods-title"><div class="wrap">
-  <p class="breadcrumb"><a href="#home">Overview</a> / Data &amp; methods</p>
-  <h1 id="methods-title">Data &amp; methods</h1>
-  <p class="lede">Where every file on this site came from, under what licence, and how it was processed. The scripts named here are in the <a href="https://github.com/jordanxxlopez/animal-communication-neuroscience/tree/main/scripts">repository</a> and rebuild every derived file from the originals.</p>
-  <section class="section" id="data-registry"><h2>Source registry</h2><div class="table-scroll"><table id="registry"><thead><tr><th>Species</th><th>Resource</th><th>Licence</th><th>Used for</th></tr></thead><tbody></tbody></table></div></section>
-  <section class="section" id="acoustic-method"><h2>Spectrograms and playback</h2>
-    <p>Spectrograms are short-time Fourier transforms (SciPy, Hann window) of the original samples, shown in decibels relative to the 99.8th-percentile level of each recording; they are not calibrated sound-pressure levels. Window lengths are listed with each recording. Images contain no drawn axes; the page draws axes from the recorded time and frequency limits so that the playback cursor is exact.</p>
-    <p>For playback, ultrasonic recordings are <em>time-expanded</em>: the same samples are played at a lower rate (16× slower for mice, 10× for bats), which divides every frequency by the same factor. Real-time bat playback is resampled to 48 kHz with an anti-aliasing filter. Only peak normalisation is applied otherwise. Zebra finch and sperm whale files are served unchanged.</p></section>
-  <section class="section" id="scale-audit"><h2>Atlas scale and orientation</h2>
-    <p>Each atlas keeps its source spacing or states the resampling. The zebra finch atlas is distributed on a 0.08 mm grid from an 80 × 160 × 160 µm acquisition; the mouse atlas is the native 50 µm release; marmoset and bat volumes were resampled to 0.12 mm and 0.15 mm for download size, while marmoset region volumes are counted on the original 0.04 × 0.04 × 0.112 mm grid. No surgical coordinates are assigned and no atlas is registered to another.</p></section>
-  <section class="section" id="quality-note"><h2>Reproduce</h2>
-<pre style="background:var(--bg-alt);border:1px solid var(--rule);padding:.8rem;overflow:auto;font-size:.85rem">python scripts/build_atlases.py        # atlas volumes, labels and surfaces
-python scripts/build_collections.py    # sounds, spectrograms and claim checks
-python scripts/sync_github_pages.py    # copy website/dist to docs/</pre>
-    <p>Original downloads go to <code>data/raw/</code> (not stored in Git). URLs, licences and SHA-256 checksums are in <a href="https://github.com/jordanxxlopez/animal-communication-neuroscience/blob/main/research/sources-2026-11.json"><code>research/sources-2026-11.json</code></a>.</p></section>
-</div></section>
-
-<!-- ============================== ABOUT -->
-<section class="page" id="about" hidden aria-labelledby="about-title"><div class="wrap">
-  <p class="breadcrumb"><a href="#home">Overview</a> / About</p>
-  <h1 id="about-title">About, integrity and accessibility</h1>
-  <div class="two-col">
-    <div>
-      <h2>What this is</h2>
-      <p>An independent, non-commercial collection about animal communication and the nervous systems behind it. It is not affiliated with the institutions whose data it uses. It is a research and teaching resource, not a validated brain simulation.</p>
-      <h2>Academic integrity</h2>
-      <ul class="refs">
-        <li><b>Real data only.</b> Recordings, images, atlases and videos come from named sources under open or research licences. Nothing is AI-generated, redrawn or simulated.</li>
-        <li><b>Derived is labelled as derived.</b> Spectrograms, slowed playback, fractional-anisotropy maps and resampled volumes are marked, and the method is linked.</li>
-        <li><b>Claims are sourced and checked.</b> Each statement cites a paper whose DOI resolves; citations were screened for retractions, corrections and contrasting evidence.</li>
-        <li><b>Limits are stated.</b> We say what a dataset cannot show, and we do not treat a discrepancy or an unreproduced result as evidence of misconduct.</li>
-        <li><b>Corrections are public.</b> All changes are in the Git history.</li>
-      </ul>
-    </div>
-    <div>
-      <h2>Accessibility</h2>
-      <p>We aim to meet WCAG 2.2 level AA.</p>
-      <ul class="refs">
-        <li>Display settings (top right) change text size, contrast, colour theme and motion, and switch plain-language summaries on or off. Choices are saved in this browser only.</li>
-        <li>Every page works with a keyboard. Atlas sections accept arrow keys; the sound list accepts arrow keys and Enter.</li>
-        <li>Charts have a data-table alternative, spectrograms have text descriptions, and videos come with written descriptions from their authors.</li>
-        <li>Colour is never the only carrier of meaning: review ratings have text labels.</li>
-      </ul>
-      <h2>How to cite this site</h2>
-      <p class="small">Animal Communication &amp; Neuroscience: an independent research collection (2026). https://jordanxxlopez.github.io/animal-communication-neuroscience/. Please also cite the original data sources listed on each page.</p>
-    </div>
-  </div>
-</div></section>
-</main>
-
-<footer class="site-footer"><div class="wrap">
-  <div><h2>Animal Communication &amp; Neuroscience</h2><p>An independent research collection. Third-party data, images and videos keep their original licences; see each record. Site code is in the public repository.</p></div>
-  <div><h2>Explore</h2><ul><li><a href="#species">Species</a></li><li><a href="#sounds">Sound library</a></li><li><a href="#atlas">Brain atlases</a></li><li><a href="#review">Research review</a></li></ul></div>
-  <div><h2>About</h2><ul><li><a href="#about">Integrity &amp; accessibility</a></li><li><a href="#methods">Data &amp; methods</a></li><li><a href="https://github.com/jordanxxlopez/animal-communication-neuroscience">Source code</a></li></ul></div>
-</div></footer>
-
-<dialog class="settings" id="settings" aria-labelledby="settings-title">
-  <header><h2 id="settings-title">Display settings</h2><button class="btn" type="button" id="close-settings">Close</button></header>
-  <form class="body" method="dialog" id="settings-form">
-    <fieldset><legend>Text size</legend><div class="seg">
-      <label><input type="radio" name="size" value=""> Standard</label><label><input type="radio" name="size" value="large"> Large</label><label><input type="radio" name="size" value="larger"> Larger</label></div></fieldset>
-    <fieldset><legend>Colour theme</legend><div class="seg">
-      <label><input type="radio" name="theme" value=""> Match device</label><label><input type="radio" name="theme" value="light"> Light</label><label><input type="radio" name="theme" value="dark"> Dark</label></div></fieldset>
-    <fieldset><legend>Contrast</legend><div class="seg">
-      <label><input type="radio" name="contrast" value=""> Standard</label><label><input type="radio" name="contrast" value="high"> High</label></div></fieldset>
-    <fieldset><legend>Plain-language summaries</legend><div class="seg">
-      <label><input type="radio" name="plain" value=""> Show</label><label><input type="radio" name="plain" value="off"> Hide</label></div></fieldset>
-    <fieldset><legend>Motion</legend><div class="seg">
-      <label><input type="radio" name="motion" value=""> Match device</label><label><input type="radio" name="motion" value="reduce"> Reduce</label></div></fieldset>
-  </form>
-</dialog>
-<dialog class="figure-dialog" id="figure-dialog"><form method="dialog"><button class="btn">Close</button></form><img id="enlarged-original-figure" alt=""></dialog>
-<div class="tooltip" id="tooltip" hidden></div>
+ </template>
+<template id="tpl-paper-sperm-whale"><article class="paper-article"><div class="paper-title"><h1>Measuring the structure of a coda</h1><p class="paper-deck">A reading of Sharma and colleagues’ 2024 study, with the original exchange plot and an independent inspection of the deposited timing table.</p><p class="paper-citation">Pratyusha Sharma, Shane Gero, Roger Payne, David F. Gruber, Daniela Rus, Antonio Torralba &amp; Jacob Andreas. <a href="https://doi.org/10.1038/s41467-024-47221-8">Contextual and combinatorial structure in sperm whale vocalisations</a>. Nature Communications 15, 3617 (2024).</p><p class="review-scope">Primary text and methods inspected · Original Figure 1 · Descriptive CSV analysis · Published clustering and inferential tests not independently reproduced</p></div><div class="paper-prose"><h2>Two timescales in one recording</h2><p>A coda is a sequence of clicks. Its inter-click intervals describe the spacing within that sequence, while the gaps between codas describe the timing of the wider exchange. Comparing only isolated patterns can lose information about how a whale’s signal changes alongside those of other whales.</p><p>Sharma and colleagues introduce an exchange plot to examine these timescales together. They distinguish rhythm and tempo from two context-dependent features, called rubato and ornamentation. These are the authors’ analytical terms; they do not by themselves translate a coda into a human word.</p></div><figure class="published-figure"><div class="figure-toolbar"><h2>Original Figure 1 · Reading an exchange plot</h2><button data-enlarge="whale-figure-1">Enlarge published figure</button></div><img id="whale-figure-1" src="assets/sharma-2024-figure1.png" alt="Original Sharma et al. figure: schematic of two sperm whales and an exchange plot relating coda click intervals to elapsed exchange time" loading="lazy"><figcaption>Sharma et al. (2024), Figure 1. <a href="https://www.nature.com/articles/s41467-024-47221-8/figures/1">Original figure and full legend</a>. © The Author(s), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Publisher rendition displayed unchanged. The schematic is from the paper; it was not created for this project.</figcaption></figure><div class="paper-prose"><h2>Read the axes before the pattern</h2><p>The horizontal axis tracks elapsed time in an exchange. The vertical axis marks time after the first click of a coda. Thus a vertical stack describes one coda, and successive stacks show how that pattern develops across an exchange. Panel B explains the construction; panel C presents an annotated example with the authors’ interpretations of rhythm, tempo, ornamentation and rubato.</p><p>Similarity between neighboring signals is consistent with context-sensitive production. It does not establish the referential meaning of a signal, the receiver’s perceptual categories, or a neural mechanism. Those questions need further behavioral, playback or neural evidence.</p><h2>An inspection of the deposited annotations</h2><p>We read the paper-linked <code>DominicaCodas.csv</code> directly using Python and NumPy, retaining the supplied <code>Clan</code> and <code>CodaType</code> fields. The table below is a descriptive summary of that file, not a recreation of the paper’s rhythm/tempo clustering.</p></div><section class="coda-workspace" aria-label="Derived coda annotation summary"><div class="list-toolbar"><label for="coda-clan">Deposited clan label<select id="coda-clan"><option value="all">All rows</option><option value="EC1">EC1</option><option value="EC2">EC2</option></select></label><span id="coda-summary-count" aria-live="polite"></span><a href="data/marine-coda-summary.json" download>Derived statistics JSON</a></div><div class="table-scroll"><table><thead><tr><th>Supplied label</th><th>Codas</th><th>Median duration (s)</th><th>10th–90th percentile (s)</th></tr></thead><tbody id="coda-summary"></tbody></table></div><p class="data-caution">Cohort reconciliation: the article describes 8,719 codas from EC1. The deposited CSV has 8,719 rows, including 7,770 labeled EC1 and 949 labeled EC2. We have not reconciled that difference. The table reports the deposited labels and does not substitute them for the article’s analysis cohort.</p></template>
+<template id="tpl-perception-model"><article class="paper-article"><p class="eyebrow">Independent baseline · Zebra finch</p><h1 class="paper-title">A simple baseline for zebra finch perceptual choices</h1><p><span class="chip consistent">Consistent</span></p><p>This independent logistic baseline predicts the bird’s left/right probe choice using the difference between published Luscinia distances to the two options. It uses the documented ML4BL CSVs, with 16 birds for fitting and six birds held out.</p><table class="model-results"><tbody><tr><th>Rows with matched distances</th><td>16,319 from 22 birds</td></tr><tr><th>Held-out accuracy</th><td>56.3%</td></tr><tr><th>Held-out ROC AUC</th><td>0.568</td></tr><tr><th>Bird-cluster bootstrap interval</th><td>Accuracy 41.8–70.5%; AUC 0.527–0.630</td></tr></tbody></table><p>About 38% of probe rows were excluded for unmatched distances. Sounds may overlap across fitting and held-out birds, so this does not test wholly novel-stimulus generalization. With only six held-out birds, cluster uncertainty is wide. This baseline models behavioral choices, not neural activity, and does not reproduce the source paper’s deep-learning model.</p><p><a href="data/perceptual-choice-regression.json">Full results and limitations</a> · <a href="https://github.com/jordanxxlopez/ZEBRAFINCHPROJECT/blob/main/scripts/model_perceptual_choices.py">Reproduction script</a> · <a href="https://doi.org/10.1371/journal.pcbi.1012329">Source study</a></p></article></template>
 </body>
 </html>

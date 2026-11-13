@@ -1,6 +1,6 @@
 # Animal Communication & Neuroscience
 
-An independent research collection covering six species: zebra finch, sperm whale, Egyptian fruit bat, common marmoset, house mouse and western honeybee. It has real recordings, a brain atlas for every species where open data exist, and a Research review that checks published claims against deposited data. [November 2026 rebuild notes](research/REBUILD_2026-11.md). Zebra Finch Project was the first collection. [Design review and implemented changes](research/DESIGN_REVIEW.md).
+An independent research collection covering six species: zebra finch, sperm whale, Egyptian fruit bat, common marmoset, house mouse and western honeybee. It has real recordings, a brain atlas for every species where open data exist, and a Research review that checks published claims against deposited data. [November 2026 rebuild notes](research/REBUILD_2026-11.md) · [redesign and models](research/REDESIGN_2026-11.md) · [website analysis](research/WEBSITE_ANALYSIS.md). Zebra Finch Project was the first collection. [Design review and implemented changes](research/DESIGN_REVIEW.md).
 
 A research foundation for a public zebra finch resource: measured anatomy, original recordings, evidence-linked connectivity, and reproducible computational work. No AI-generated images or invented biological data.
 

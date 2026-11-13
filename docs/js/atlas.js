@@ -30,7 +30,7 @@ export async function openAtlas(id, ctx) {
   if (S?.three) { S.three.renderer.dispose(); S.three.renderer.domElement.remove(); cancelAnimationFrame(S.three.raf); }
   const base = `data/atlas/${id}/`;
   const meta = await getJSON(base + 'meta.json');
-  const view = VIEW[id] || {};
+  const view = VIEW[id] || meta.view || {};
   const params = new URLSearchParams(location.hash.split('?')[1] || '');
   S = {id, meta, base, view, vol: null, lab: null, sel: 0, cur: null, regions: meta.regions || [], byIndex: new Map((meta.regions || []).map(r => [r.index, r])), esc, three: null, diff: null};
   $('#av-title').textContent = `${sp.common} brain atlas`;
@@ -263,7 +263,7 @@ async function init3D() {
   });
   // surface checklist
   const note = $('#av-mesh-note');
-  note.innerHTML = `<span id="av-mesh-sel">${meshes.length} surfaces. </span>${S.id === 'zebra-finch' ? 'Marching-cubes surfaces of the source masks, without smoothing.' : S.id === 'house-mouse' ? 'Allen-provided structure meshes, decimated for display.' : S.id === 'honeybee' ? 'InsectBrainDB display meshes (Honeybee Standard Brain).' : 'Marching-cubes surfaces of the atlas labels, decimated for display.'} Click a surface to identify it.
+  note.innerHTML = `<span id="av-mesh-sel">${meshes.length} surfaces. </span>${S.meta.mesh_note ? S.esc(S.meta.mesh_note) : S.id === 'zebra-finch' ? 'Marching-cubes surfaces of the source masks, without smoothing.' : S.id === 'house-mouse' ? 'Allen-provided structure meshes, decimated for display.' : S.id === 'honeybee' ? 'InsectBrainDB display meshes (Honeybee Standard Brain).' : 'Marching-cubes surfaces of the atlas labels, decimated for display.'} Click a surface to identify it.
     <details class="data-table"><summary>Show or hide surfaces</summary><div style="columns:2;font-size:.86rem;margin-top:.4rem">${meshes.map((m, i) => `<label style="display:block"><input type="checkbox" data-mesh="${i}" checked> ${S.esc(m.name)}</label>`).join('')}</div></details>`;
   $$('[data-mesh]', note).forEach(cb => cb.onchange = () => { objs[+cb.dataset.mesh].visible = cb.checked; });
   highlightMesh();

@@ -1,0 +1,1042 @@
+{
+ "species": "domestic-cat",
+ "title": "CATLAS: MRI template and cortical atlas of the domestic cat",
+ "dims": [
+  150,
+  192,
+  96
+ ],
+ "spacing_mm": [
+  0.5,
+  0.5,
+  0.5
+ ],
+ "view": {
+  "up": "-z",
+  "names": {
+   "x": "Sagittal",
+   "y": "Coronal",
+   "z": "Horizontal"
+  },
+  "ends": {
+   "x": [
+    "R",
+    "L"
+   ],
+   "y": [
+    "A",
+    "P"
+   ],
+   "z": [
+    "D",
+    "V"
+   ]
+  }
+ },
+ "flip_display": {
+  "y": false,
+  "z": false
+ },
+ "images": [
+  {
+   "file": "image-reference.u8.gz",
+   "name": "Reference image (atlas template)",
+   "window_source_units": [
+    12595.445,
+    45193.927000000025
+   ],
+   "kind": "measured template"
+  }
+ ],
+ "labels": {
+  "file": "labels.u16.gz",
+  "dtype": "uint16",
+  "count": 74
+ },
+ "regions": [
+  {
+   "index": 1,
+   "source_id": 1,
+   "acronym": "17",
+   "name": "Area 17",
+   "color": "#edb11c",
+   "path": [
+    "root",
+    "17"
+   ],
+   "voxels_source_grid": 7615,
+   "volume_mm3": 951.875
+  },
+  {
+   "index": 2,
+   "source_id": 2,
+   "acronym": "18",
+   "name": "Area 18",
+   "color": "#7e2f8e",
+   "path": [
+    "root",
+    "18"
+   ],
+   "voxels_source_grid": 1330,
+   "volume_mm3": 166.25
+  },
+  {
+   "index": 3,
+   "source_id": 3,
+   "acronym": "19",
+   "name": "Area 19",
+   "color": "#4d7e93",
+   "path": [
+    "root",
+    "19"
+   ],
+   "voxels_source_grid": 3409,
+   "volume_mm3": 426.125
+  },
+  {
+   "index": 4,
+   "source_id": 4,
+   "acronym": "20a",
+   "name": "Area 20a",
+   "color": "#a20c2f",
+   "path": [
+    "root",
+    "20a"
+   ],
+   "voxels_source_grid": 1080,
+   "volume_mm3": 135.0
+  },
+  {
+   "index": 5,
+   "source_id": 5,
+   "acronym": "20b",
+   "name": "Area 20b",
+   "color": "#d93619",
+   "path": [
+    "root",
+    "20b"
+   ],
+   "voxels_source_grid": 1112,
+   "volume_mm3": 139.0
+  },
+  {
+   "index": 6,
+   "source_id": 6,
+   "acronym": "21a",
+   "name": "Area 21a",
+   "color": "#d9530f",
+   "path": [
+    "root",
+    "21a"
+   ],
+   "voxels_source_grid": 247,
+   "volume_mm3": 30.875
+  },
+  {
+   "index": 7,
+   "source_id": 7,
+   "acronym": "21b",
+   "name": "Area 21b",
+   "color": "#4dbeee",
+   "path": [
+    "root",
+    "21b"
+   ],
+   "voxels_source_grid": 628,
+   "volume_mm3": 78.5
+  },
+  {
+   "index": 8,
+   "source_id": 8,
+   "acronym": "36",
+   "name": "Perirhinal cortex",
+   "color": "#865319",
+   "path": [
+    "root",
+    "36"
+   ],
+   "voxels_source_grid": 1806,
+   "volume_mm3": 225.75
+  },
+  {
+   "index": 9,
+   "source_id": 9,
+   "acronym": "4Delta",
+   "name": "Area praecentralis macropyramidalis",
+   "color": "#7e2e8e",
+   "path": [
+    "root",
+    "4Delta"
+   ],
+   "voxels_source_grid": 303,
+   "volume_mm3": 37.875
+  },
+  {
+   "index": 10,
+   "source_id": 10,
+   "acronym": "4fu",
+   "name": "Area praecentralis in fundo",
+   "color": "#edb120",
+   "path": [
+    "root",
+    "4fu"
+   ],
+   "voxels_source_grid": 109,
+   "volume_mm3": 13.625
+  },
+  {
+   "index": 11,
+   "source_id": 11,
+   "acronym": "4Gamma",
+   "name": "Area praecentralis",
+   "color": "#93b120",
+   "path": [
+    "root",
+    "4Gamma"
+   ],
+   "voxels_source_grid": 1119,
+   "volume_mm3": 139.875
+  },
+  {
+   "index": 12,
+   "source_id": 12,
+   "acronym": "4sfu",
+   "name": "Area praecentralis supra fundo",
+   "color": "#7e2f8e",
+   "path": [
+    "root",
+    "4sfu"
+   ],
+   "voxels_source_grid": 560,
+   "volume_mm3": 70.0
+  },
+  {
+   "index": 13,
+   "source_id": 13,
+   "acronym": "5m",
+   "name": "Area 5, medial division",
+   "color": "#4d8cee",
+   "path": [
+    "root",
+    "5m"
+   ],
+   "voxels_source_grid": 1060,
+   "volume_mm3": 132.5
+  },
+  {
+   "index": 14,
+   "source_id": 14,
+   "acronym": "6aAlpha",
+   "name": "Area frontalis agranularis mediopyramidalis",
+   "color": "#d93619",
+   "path": [
+    "root",
+    "6aAlpha"
+   ],
+   "voxels_source_grid": 541,
+   "volume_mm3": 67.625
+  },
+  {
+   "index": 15,
+   "source_id": 15,
+   "acronym": "6aBeta",
+   "name": "Area frontalis agranularis macropyramidalis",
+   "color": "#4dbeee",
+   "path": [
+    "root",
+    "6aBeta"
+   ],
+   "voxels_source_grid": 714,
+   "volume_mm3": 89.25
+  },
+  {
+   "index": 16,
+   "source_id": 16,
+   "acronym": "6aGamma",
+   "name": "Area 6, lateral division",
+   "color": "#5dac22",
+   "path": [
+    "root",
+    "6aGamma"
+   ],
+   "voxels_source_grid": 69,
+   "volume_mm3": 8.625
+  },
+  {
+   "index": 17,
+   "source_id": 17,
+   "acronym": "6iffu",
+   "name": "Area 6, infra fundum",
+   "color": "#427ab9",
+   "path": [
+    "root",
+    "6iffu"
+   ],
+   "voxels_source_grid": 361,
+   "volume_mm3": 45.125
+  },
+  {
+   "index": 18,
+   "source_id": 18,
+   "acronym": "7a",
+   "name": "Area 7",
+   "color": "#d93713",
+   "path": [
+    "root",
+    "7a"
+   ],
+   "voxels_source_grid": 1203,
+   "volume_mm3": 150.375
+  },
+  {
+   "index": 19,
+   "source_id": 19,
+   "acronym": "7m",
+   "name": "Area 7",
+   "color": "#0072bd",
+   "path": [
+    "root",
+    "7m"
+   ],
+   "voxels_source_grid": 219,
+   "volume_mm3": 27.375
+  },
+  {
+   "index": 20,
+   "source_id": 20,
+   "acronym": "7p",
+   "name": "Area 7",
+   "color": "#a2122d",
+   "path": [
+    "root",
+    "7p"
+   ],
+   "voxels_source_grid": 815,
+   "volume_mm3": 101.875
+  },
+  {
+   "index": 21,
+   "source_id": 21,
+   "acronym": "A1",
+   "name": "Primary auditory cortex",
+   "color": "#4d94ee",
+   "path": [
+    "root",
+    "A1"
+   ],
+   "voxels_source_grid": 934,
+   "volume_mm3": 116.75
+  },
+  {
+   "index": 22,
+   "source_id": 22,
+   "acronym": "A2",
+   "name": "Second auditory cortex",
+   "color": "#a2142f",
+   "path": [
+    "root",
+    "A2"
+   ],
+   "voxels_source_grid": 1484,
+   "volume_mm3": 185.5
+  },
+  {
+   "index": 23,
+   "source_id": 23,
+   "acronym": "AAF",
+   "name": "Anterior auditory field",
+   "color": "#7e296a",
+   "path": [
+    "root",
+    "AAF"
+   ],
+   "voxels_source_grid": 1009,
+   "volume_mm3": 126.125
+  },
+  {
+   "index": 24,
+   "source_id": 24,
+   "acronym": "AEV",
+   "name": "Anterior ectosylvian visual area",
+   "color": "#edb120",
+   "path": [
+    "root",
+    "AEV"
+   ],
+   "voxels_source_grid": 513,
+   "volume_mm3": 64.125
+  },
+  {
+   "index": 25,
+   "source_id": 25,
+   "acronym": "AId",
+   "name": "Agranular insular area, dorsal division",
+   "color": "#77ac30",
+   "path": [
+    "root",
+    "AId"
+   ],
+   "voxels_source_grid": 1409,
+   "volume_mm3": 176.125
+  },
+  {
+   "index": 26,
+   "source_id": 26,
+   "acronym": "AIv",
+   "name": "Agranular insular area, ventral division",
+   "color": "#edb11b",
+   "path": [
+    "root",
+    "AIv"
+   ],
+   "voxels_source_grid": 1381,
+   "volume_mm3": 172.625
+  },
+  {
+   "index": 27,
+   "source_id": 27,
+   "acronym": "ALLS",
+   "name": "Anterolateral lateral suprasylvian area",
+   "color": "#7e238e",
+   "path": [
+    "root",
+    "ALLS"
+   ],
+   "voxels_source_grid": 504,
+   "volume_mm3": 63.0
+  },
+  {
+   "index": 28,
+   "source_id": 28,
+   "acronym": "AMLS",
+   "name": "Anteromedial lateral suprasylvian area",
+   "color": "#0072bd",
+   "path": [
+    "root",
+    "AMLS"
+   ],
+   "voxels_source_grid": 481,
+   "volume_mm3": 60.125
+  },
+  {
+   "index": 29,
+   "source_id": 29,
+   "acronym": "CGa",
+   "name": "Anterior cingulate area",
+   "color": "#a2142f",
+   "path": [
+    "root",
+    "CGa"
+   ],
+   "voxels_source_grid": 195,
+   "volume_mm3": 24.375
+  },
+  {
+   "index": 30,
+   "source_id": 30,
+   "acronym": "CGp",
+   "name": "Posterior cingulate area",
+   "color": "#0072b2",
+   "path": [
+    "root",
+    "CGp"
+   ],
+   "voxels_source_grid": 2268,
+   "volume_mm3": 283.5
+  },
+  {
+   "index": 31,
+   "source_id": 31,
+   "acronym": "CVA",
+   "name": "Cingulate visual area",
+   "color": "#d94c19",
+   "path": [
+    "root",
+    "CVA"
+   ],
+   "voxels_source_grid": 1206,
+   "volume_mm3": 150.75
+  },
+  {
+   "index": 32,
+   "source_id": 32,
+   "acronym": "Cbm",
+   "name": "Cerebellum",
+   "color": "#512f5e",
+   "path": [
+    "root",
+    "Cbm"
+   ],
+   "voxels_source_grid": 19111,
+   "volume_mm3": 2388.875
+  },
+  {
+   "index": 33,
+   "source_id": 33,
+   "acronym": "DLS",
+   "name": "Dorsolateral suprasylvian visual area",
+   "color": "#005bbd",
+   "path": [
+    "root",
+    "DLS"
+   ],
+   "voxels_source_grid": 109,
+   "volume_mm3": 13.625
+  },
+  {
+   "index": 34,
+   "source_id": 34,
+   "acronym": "DP",
+   "name": "Posterior ectosylvian auditory cortex, dorsal division",
+   "color": "#778129",
+   "path": [
+    "root",
+    "DP"
+   ],
+   "voxels_source_grid": 580,
+   "volume_mm3": 72.5
+  },
+  {
+   "index": 35,
+   "source_id": 35,
+   "acronym": "DZ",
+   "name": "Dorsal zone of auditory cortex",
+   "color": "#d94419",
+   "path": [
+    "root",
+    "DZ"
+   ],
+   "voxels_source_grid": 272,
+   "volume_mm3": 34.0
+  },
+  {
+   "index": 36,
+   "source_id": 36,
+   "acronym": "EPp",
+   "name": "Posterior ectosylvian gyrus, posterior division",
+   "color": "#ac3417",
+   "path": [
+    "root",
+    "EPp"
+   ],
+   "voxels_source_grid": 137,
+   "volume_mm3": 17.125
+  },
+  {
+   "index": 37,
+   "source_id": 37,
+   "acronym": "FAES",
+   "name": "FAES, Field of the anterior ectosylvian sulcus",
+   "color": "#b1ed20",
+   "path": [
+    "root",
+    "FAES"
+   ],
+   "voxels_source_grid": 783,
+   "volume_mm3": 97.875
+  },
+  {
+   "index": 38,
+   "source_id": 38,
+   "acronym": "G",
+   "name": "Primary gustatory area",
+   "color": "#4dbeda",
+   "path": [
+    "root",
+    "G"
+   ],
+   "voxels_source_grid": 450,
+   "volume_mm3": 56.25
+  },
+  {
+   "index": 39,
+   "source_id": 39,
+   "acronym": "IN",
+   "name": "Auditory insular cortex",
+   "color": "#0ea22f",
+   "path": [
+    "root",
+    "IN"
+   ],
+   "voxels_source_grid": 1485,
+   "volume_mm3": 185.625
+  },
+  {
+   "index": 40,
+   "source_id": 40,
+   "acronym": "MZ",
+   "name": "Multisensory zone",
+   "color": "#a2142f",
+   "path": [
+    "root",
+    "MZ"
+   ],
+   "voxels_source_grid": 186,
+   "volume_mm3": 23.25
+  },
+  {
+   "index": 41,
+   "source_id": 41,
+   "acronym": "PAF",
+   "name": "Posterior auditory field",
+   "color": "#77ac30",
+   "path": [
+    "root",
+    "PAF"
+   ],
+   "voxels_source_grid": 582,
+   "volume_mm3": 72.75
+  },
+  {
+   "index": 42,
+   "source_id": 42,
+   "acronym": "PFdm",
+   "name": "Prefrontal cortex, dorsomedial division",
+   "color": "#004880",
+   "path": [
+    "root",
+    "PFdm"
+   ],
+   "voxels_source_grid": 750,
+   "volume_mm3": 93.75
+  },
+  {
+   "index": 43,
+   "source_id": 43,
+   "acronym": "PFv",
+   "name": "Prefrontal cortex, ventral division",
+   "color": "#77ac28",
+   "path": [
+    "root",
+    "PFv"
+   ],
+   "voxels_source_grid": 1073,
+   "volume_mm3": 134.125
+  },
+  {
+   "index": 44,
+   "source_id": 44,
+   "acronym": "PL",
+   "name": "Prelimbic area",
+   "color": "#0072af",
+   "path": [
+    "root",
+    "PL"
+   ],
+   "voxels_source_grid": 1415,
+   "volume_mm3": 176.875
+  },
+  {
+   "index": 45,
+   "source_id": 45,
+   "acronym": "PLLS",
+   "name": "Posterolateral lateral suprasylvian area",
+   "color": "#a2142c",
+   "path": [
+    "root",
+    "PLLS"
+   ],
+   "voxels_source_grid": 921,
+   "volume_mm3": 115.125
+  },
+  {
+   "index": 46,
+   "source_id": 46,
+   "acronym": "PMLS",
+   "name": "Posteromedial lateral suprasylvian area",
+   "color": "#77ac27",
+   "path": [
+    "root",
+    "PMLS"
+   ],
+   "voxels_source_grid": 809,
+   "volume_mm3": 101.125
+  },
+  {
+   "index": 47,
+   "source_id": 47,
+   "acronym": "PS",
+   "name": "Posterior suprasylvian visual area",
+   "color": "#0072bd",
+   "path": [
+    "root",
+    "PS"
+   ],
+   "voxels_source_grid": 415,
+   "volume_mm3": 51.875
+  },
+  {
+   "index": 48,
+   "source_id": 48,
+   "acronym": "RS",
+   "name": "Retrosplenial area",
+   "color": "#a2142f",
+   "path": [
+    "root",
+    "RS"
+   ],
+   "voxels_source_grid": 735,
+   "volume_mm3": 91.875
+  },
+  {
+   "index": 49,
+   "source_id": 49,
+   "acronym": "1",
+   "name": "Area 1, primary somatosensory cortex",
+   "color": "#77ac30",
+   "path": [
+    "root",
+    "1"
+   ],
+   "voxels_source_grid": 1460,
+   "volume_mm3": 182.5
+  },
+  {
+   "index": 50,
+   "source_id": 50,
+   "acronym": "S2",
+   "name": "Second somatosensory cortex",
+   "color": "#edb11c",
+   "path": [
+    "root",
+    "S2"
+   ],
+   "voxels_source_grid": 556,
+   "volume_mm3": 69.5
+  },
+  {
+   "index": 51,
+   "source_id": 51,
+   "acronym": "S2m",
+   "name": "Second somatosensory cortex, medial division",
+   "color": "#a21125",
+   "path": [
+    "root",
+    "S2m"
+   ],
+   "voxels_source_grid": 719,
+   "volume_mm3": 89.875
+  },
+  {
+   "index": 52,
+   "source_id": 52,
+   "acronym": "S3",
+   "name": "Third somatosensory cortex",
+   "color": "#4dbcee",
+   "path": [
+    "root",
+    "S3"
+   ],
+   "voxels_source_grid": 485,
+   "volume_mm3": 60.625
+  },
+  {
+   "index": 53,
+   "source_id": 53,
+   "acronym": "S4",
+   "name": "Fourth somatosensory cortex",
+   "color": "#1120eb",
+   "path": [
+    "root",
+    "S4"
+   ],
+   "voxels_source_grid": 854,
+   "volume_mm3": 106.75
+  },
+  {
+   "index": 54,
+   "source_id": 54,
+   "acronym": "S5",
+   "name": "Fifth somatosensory cortex",
+   "color": "#73ac27",
+   "path": [
+    "root",
+    "S5"
+   ],
+   "voxels_source_grid": 746,
+   "volume_mm3": 93.25
+  },
+  {
+   "index": 55,
+   "source_id": 55,
+   "acronym": "TE",
+   "name": "Temporal cortex",
+   "color": "#4c2f8e",
+   "path": [
+    "root",
+    "TE"
+   ],
+   "voxels_source_grid": 1872,
+   "volume_mm3": 234.0
+  },
+  {
+   "index": 56,
+   "source_id": 56,
+   "acronym": "VAF",
+   "name": "Ventral auditory field",
+   "color": "#3ba5ae",
+   "path": [
+    "root",
+    "VAF"
+   ],
+   "voxels_source_grid": 335,
+   "volume_mm3": 41.875
+  },
+  {
+   "index": 57,
+   "source_id": 57,
+   "acronym": "VLS",
+   "name": "Ventrolateral suprasylvian area",
+   "color": "#d95314",
+   "path": [
+    "root",
+    "VLS"
+   ],
+   "voxels_source_grid": 216,
+   "volume_mm3": 27.0
+  },
+  {
+   "index": 58,
+   "source_id": 58,
+   "acronym": "iPE",
+   "name": "Posterior ectosylvian auditory cortex, intermediate division",
+   "color": "#77ac2e",
+   "path": [
+    "root",
+    "iPE"
+   ],
+   "voxels_source_grid": 1235,
+   "volume_mm3": 154.375
+  },
+  {
+   "index": 59,
+   "source_id": 59,
+   "acronym": "vPAF",
+   "name": "Posterior auditory field, ventral division",
+   "color": "#eda317",
+   "path": [
+    "root",
+    "vPAF"
+   ],
+   "voxels_source_grid": 194,
+   "volume_mm3": 24.25
+  },
+  {
+   "index": 60,
+   "source_id": 60,
+   "acronym": "vPE",
+   "name": "Posterior ectosylvian auditory cortex, ventral division",
+   "color": "#b85319",
+   "path": [
+    "root",
+    "vPE"
+   ],
+   "voxels_source_grid": 1416,
+   "volume_mm3": 177.0
+  },
+  {
+   "index": 61,
+   "source_id": 61,
+   "acronym": "5bm",
+   "name": "Area 5b, medial division",
+   "color": "#a2142f",
+   "path": [
+    "root",
+    "5bm"
+   ],
+   "voxels_source_grid": 445,
+   "volume_mm3": 55.625
+  },
+  {
+   "index": 62,
+   "source_id": 62,
+   "acronym": "5bl",
+   "name": "Area 5b, lateral division",
+   "color": "#ac2a75",
+   "path": [
+    "root",
+    "5bl"
+   ],
+   "voxels_source_grid": 667,
+   "volume_mm3": 83.375
+  },
+  {
+   "index": 63,
+   "source_id": 63,
+   "acronym": "5am",
+   "name": "Area 5a, medial division",
+   "color": "#ed7d17",
+   "path": [
+    "root",
+    "5am"
+   ],
+   "voxels_source_grid": 638,
+   "volume_mm3": 79.75
+  },
+  {
+   "index": 64,
+   "source_id": 64,
+   "acronym": "5al",
+   "name": "Area 5a, lateral division",
+   "color": "#d95312",
+   "path": [
+    "root",
+    "5al"
+   ],
+   "voxels_source_grid": 440,
+   "volume_mm3": 55.0
+  },
+  {
+   "index": 65,
+   "source_id": 65,
+   "acronym": "3a",
+   "name": "Area 3a primary somatosensory cortex",
+   "color": "#4dbeb7",
+   "path": [
+    "root",
+    "3a"
+   ],
+   "voxels_source_grid": 464,
+   "volume_mm3": 58.0
+  },
+  {
+   "index": 66,
+   "source_id": 66,
+   "acronym": "3b",
+   "name": "Area 3b primary somatosensory cortex",
+   "color": "#005bbd",
+   "path": [
+    "root",
+    "3b"
+   ],
+   "voxels_source_grid": 599,
+   "volume_mm3": 74.875
+  },
+  {
+   "index": 67,
+   "source_id": 67,
+   "acronym": "PFdl",
+   "name": "Prefrontal cortex, dorsolateral division",
+   "color": "#a2142f",
+   "path": [
+    "root",
+    "PFdl"
+   ],
+   "voxels_source_grid": 507,
+   "volume_mm3": 63.375
+  },
+  {
+   "index": 68,
+   "source_id": 68,
+   "acronym": "2",
+   "name": "Area 2, primary somatosensory cortex",
+   "color": "#c5b114",
+   "path": [
+    "root",
+    "2"
+   ],
+   "voxels_source_grid": 637,
+   "volume_mm3": 79.625
+  },
+  {
+   "index": 69,
+   "source_id": 69,
+   "acronym": "ALd",
+   "name": "ALd",
+   "color": "#a05319",
+   "path": [
+    "root",
+    "ALd"
+   ],
+   "voxels_source_grid": 292,
+   "volume_mm3": 36.5
+  },
+  {
+   "index": 70,
+   "source_id": 70,
+   "acronym": "ALv",
+   "name": "ALv",
+   "color": "#7e2f85",
+   "path": [
+    "root",
+    "ALv"
+   ],
+   "voxels_source_grid": 472,
+   "volume_mm3": 59.0
+  },
+  {
+   "index": 71,
+   "source_id": 71,
+   "acronym": "GI",
+   "name": "Granular insular area",
+   "color": "#007279",
+   "path": [
+    "root",
+    "GI"
+   ],
+   "voxels_source_grid": 394,
+   "volume_mm3": 49.25
+  },
+  {
+   "index": 72,
+   "source_id": 72,
+   "acronym": "DI",
+   "name": "Dysgranular insular area",
+   "color": "#641f8e",
+   "path": [
+    "root",
+    "DI"
+   ],
+   "voxels_source_grid": 130,
+   "volume_mm3": 16.25
+  },
+  {
+   "index": 73,
+   "source_id": 73,
+   "acronym": "Pp",
+   "name": "Prepyriform cortex",
+   "color": "#77ac29",
+   "path": [
+    "root",
+    "Pp"
+   ],
+   "voxels_source_grid": 586,
+   "volume_mm3": 73.25
+  },
+  {
+   "index": 74,
+   "source_id": 74,
+   "acronym": "SVA",
+   "name": "Splenial visual area",
+   "color": "#0ac835",
+   "path": [
+    "root",
+    "SVA"
+   ],
+   "voxels_source_grid": 444,
+   "volume_mm3": 55.5
+  }
+ ],
+ "meshes": "meshes.json",
+ "mesh_units": "mm",
+ "mesh_note": "Surfaces are the atlas package's own structure meshes, decimated for display.",
+ "provenance": {
+  "dataset": "BrainGlobe atlas package csl_cat_500um_v1.0 (https://gin.g-node.org/brainglobe/atlases); original: https://github.com/CerebralSystemsLab/CATLAS",
+  "citation": "Stolzberg D, Wong C, Butler BE, Lomber SG (2017). Catlas: an magnetic resonance imaging-based three-dimensional cortical atlas and tissue probability maps for the domestic cat (Felis catus). Journal of Comparative Neurology 525:3190\u20133206. doi:10.1002/cne.24271",
+  "licence": "See CATLAS repository (github.com/CerebralSystemsLab/CATLAS)",
+  "package_species": "Felis catus",
+  "sha256": {
+   "csl_cat_500um_v1.0.tar.gz": "8dfd0f02f6bb7adeb8af8dfe7e41234d86b0fbf5da041d535ca01f5fa336462a"
+  }
+ },
+ "processing": [
+  "Source grid 192 \u00d7 96 \u00d7 150 at 500.0 \u00d7 500.0 \u00d7 500.0 \u00b5m (orientation 'asr').",
+  "Reference image block-averaged by [1, 1, 1] and labels subsampled by nearest neighbour to 0.500 \u00d7 0.500 \u00d7 0.500 mm for the browser.",
+  "Region volumes are counted on the original grid. Structures smaller than the display grid may not appear in the sections.",
+  "Display window: 0.5th\u201399.7th percentile of in-brain voxels. 22 of 75 packaged surfaces are shown, chosen for auditory, vocal and social relevance."
+ ],
+ "sizes_bytes": {
+  "image-reference.u8.gz": 191675,
+  "labels.u16.gz": 33150
+ }
+}

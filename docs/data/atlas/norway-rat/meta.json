@@ -1,0 +1,4104 @@
+{
+ "species": "norway-rat",
+ "title": "Waxholm Space atlas of the Sprague Dawley rat brain (v4)",
+ "dims": [
+  128,
+  256,
+  128
+ ],
+ "spacing_mm": [
+  0.156,
+  0.156,
+  0.156
+ ],
+ "view": {
+  "up": "-z",
+  "names": {
+   "x": "Sagittal",
+   "y": "Coronal",
+   "z": "Horizontal"
+  },
+  "ends": {
+   "x": [
+    "R",
+    "L"
+   ],
+   "y": [
+    "A",
+    "P"
+   ],
+   "z": [
+    "D",
+    "V"
+   ]
+  }
+ },
+ "flip_display": {
+  "y": false,
+  "z": false
+ },
+ "images": [
+  {
+   "file": "image-reference.u8.gz",
+   "name": "Reference image (atlas template)",
+   "window_source_units": [
+    2426.91390625,
+    15952.948390625115
+   ],
+   "kind": "measured template"
+  }
+ ],
+ "labels": {
+  "file": "labels.u16.gz",
+  "dtype": "uint16",
+  "count": 224
+ },
+ "regions": [
+  {
+   "index": 1,
+   "source_id": 1,
+   "acronym": "ic-cp-lfp-py",
+   "name": "corticofugal tract and corona radiata",
+   "color": "#ff3427",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "cfp",
+    "ic-cp-lfp-py"
+   ],
+   "voxels_source_grid": 523109,
+   "volume_mm3": 31.0303
+  },
+  {
+   "index": 2,
+   "source_id": 3,
+   "acronym": "STh",
+   "name": "Subthalamic nucleus",
+   "color": "#0000ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "BRF",
+    "STh"
+   ],
+   "voxels_source_grid": 6097,
+   "volume_mm3": 0.3617
+  },
+  {
+   "index": 3,
+   "source_id": 4,
+   "acronym": "Cb-m",
+   "name": "Molecular cell layer of the cerebellum",
+   "color": "#ffff01",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Met",
+    "Cb",
+    "Cb-m"
+   ],
+   "voxels_source_grid": 2777095,
+   "volume_mm3": 164.7345
+  },
+  {
+   "index": 4,
+   "source_id": 5,
+   "acronym": "Cb-u",
+   "name": "Cerebellum, unspecified",
+   "color": "#00ffff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Met",
+    "Cb",
+    "Cb-u"
+   ],
+   "voxels_source_grid": 2790196,
+   "volume_mm3": 165.5116
+  },
+  {
+   "index": 5,
+   "source_id": 6,
+   "acronym": "alv",
+   "name": "alveus of the hippocampus",
+   "color": "#ff00ff",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "hiw",
+    "alv"
+   ],
+   "voxels_source_grid": 11006,
+   "volume_mm3": 0.6529
+  },
+  {
+   "index": 6,
+   "source_id": 7,
+   "acronym": "icp",
+   "name": "inferior cerebellar peduncle",
+   "color": "#34ff0d",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "cbt",
+    "icp"
+   ],
+   "voxels_source_grid": 94048,
+   "volume_mm3": 5.5788
+  },
+  {
+   "index": 7,
+   "source_id": 10,
+   "acronym": "Cg2",
+   "name": "Cingulate area 2",
+   "color": "#1d68eb",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "CgR",
+    "Cg",
+    "Cg2"
+   ],
+   "voxels_source_grid": 161085,
+   "volume_mm3": 9.5554
+  },
+  {
+   "index": 8,
+   "source_id": 32,
+   "acronym": "EP",
+   "name": "Entopeduncular nucleus",
+   "color": "#1ae7ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "PAL",
+    "EP"
+   ],
+   "voxels_source_grid": 12925,
+   "volume_mm3": 0.7667
+  },
+  {
+   "index": 9,
+   "source_id": 33,
+   "acronym": "V-u",
+   "name": "ventricular system, unspecified",
+   "color": "#022cff",
+   "path": [
+    "root",
+    "Brain",
+    "V",
+    "V-u"
+   ],
+   "voxels_source_grid": 419051,
+   "volume_mm3": 24.8577
+  },
+  {
+   "index": 10,
+   "source_id": 34,
+   "acronym": "ml-u",
+   "name": "medial lemniscus, unspecified",
+   "color": "#d4ff00",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "ml",
+    "ml-u"
+   ],
+   "voxels_source_grid": 32620,
+   "volume_mm3": 1.935
+  },
+  {
+   "index": 11,
+   "source_id": 35,
+   "acronym": "7n-u",
+   "name": "facial nerve, unspecified",
+   "color": "#ff19f0",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "7n",
+    "7n-u"
+   ],
+   "voxels_source_grid": 50228,
+   "volume_mm3": 2.9795
+  },
+  {
+   "index": 12,
+   "source_id": 36,
+   "acronym": "aca",
+   "name": "anterior commissure, anterior limb",
+   "color": "#7cfc00",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "ac",
+    "aca"
+   ],
+   "voxels_source_grid": 41017,
+   "volume_mm3": 2.4331
+  },
+  {
+   "index": 13,
+   "source_id": 37,
+   "acronym": "acp",
+   "name": "anterior commissure, posterior limb",
+   "color": "#ffba00",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "ac",
+    "acp"
+   ],
+   "voxels_source_grid": 13128,
+   "volume_mm3": 0.7787
+  },
+  {
+   "index": 14,
+   "source_id": 38,
+   "acronym": "vhc",
+   "name": "ventral hippocampal commissure",
+   "color": "#ae00e8",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "hiw",
+    "vhc"
+   ],
+   "voxels_source_grid": 13073,
+   "volume_mm3": 0.7755
+  },
+  {
+   "index": 15,
+   "source_id": 40,
+   "acronym": "Sep",
+   "name": "Septal region",
+   "color": "#ff0800",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "BRF",
+    "Sep"
+   ],
+   "voxels_source_grid": 209049,
+   "volume_mm3": 12.4006
+  },
+  {
+   "index": 16,
+   "source_id": 41,
+   "acronym": "2n",
+   "name": "optic nerve",
+   "color": "#30da00",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "ofs",
+    "2n"
+   ],
+   "voxels_source_grid": 85554,
+   "volume_mm3": 5.075
+  },
+  {
+   "index": 17,
+   "source_id": 42,
+   "acronym": "opt-och",
+   "name": "optic tract and optic chiasm",
+   "color": "#267eff",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "ofs",
+    "opt-och"
+   ],
+   "voxels_source_grid": 107565,
+   "volume_mm3": 6.3806
+  },
+  {
+   "index": 18,
+   "source_id": 43,
+   "acronym": "PG",
+   "name": "Pineal gland",
+   "color": "#daaa3e",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-EPI",
+    "PG"
+   ],
+   "voxels_source_grid": 34724,
+   "volume_mm3": 2.0598
+  },
+  {
+   "index": 19,
+   "source_id": 45,
+   "acronym": "SpC",
+   "name": "spinal cord",
+   "color": "#86ff5a",
+   "path": [
+    "root",
+    "SpC"
+   ],
+   "voxels_source_grid": 1636557,
+   "volume_mm3": 97.0789
+  },
+  {
+   "index": 20,
+   "source_id": 46,
+   "acronym": "csc",
+   "name": "commissure of the superior colliculus",
+   "color": "#21e6ff",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tew",
+    "csc"
+   ],
+   "voxels_source_grid": 2253,
+   "volume_mm3": 0.1336
+  },
+  {
+   "index": 21,
+   "source_id": 47,
+   "acronym": "BS-u",
+   "name": "Brainstem, unspecified",
+   "color": "#9953ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "BS-u"
+   ],
+   "voxels_source_grid": 3150047,
+   "volume_mm3": 186.8576
+  },
+  {
+   "index": 22,
+   "source_id": 48,
+   "acronym": "HTh-u",
+   "name": "Hypothalamic region, unspecified",
+   "color": "#e278a1",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "HY",
+    "HTh-u"
+   ],
+   "voxels_source_grid": 450494,
+   "volume_mm3": 26.7229
+  },
+  {
+   "index": 23,
+   "source_id": 50,
+   "acronym": "SuG",
+   "name": "Superficial gray layer of the superior colliculus",
+   "color": "#5600dd",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tc",
+    "Su",
+    "SuG"
+   ],
+   "voxels_source_grid": 111529,
+   "volume_mm3": 6.6158
+  },
+  {
+   "index": 24,
+   "source_id": 51,
+   "acronym": "PAG",
+   "name": "Periaqueductal gray",
+   "color": "#07ff59",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tg",
+    "PAG"
+   ],
+   "voxels_source_grid": 304883,
+   "volume_mm3": 18.0854
+  },
+  {
+   "index": 25,
+   "source_id": 52,
+   "acronym": "f",
+   "name": "fornix",
+   "color": "#15c0ff",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "hiw",
+    "f"
+   ],
+   "voxels_source_grid": 18556,
+   "volume_mm3": 1.1007
+  },
+  {
+   "index": 26,
+   "source_id": 53,
+   "acronym": "mtg",
+   "name": "mammillotegmental tract",
+   "color": "#eeba00",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "mtg"
+   ],
+   "voxels_source_grid": 8221,
+   "volume_mm3": 0.4877
+  },
+  {
+   "index": 27,
+   "source_id": 54,
+   "acronym": "cst",
+   "name": "commissural stria terminalis",
+   "color": "#adff2f",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "cst"
+   ],
+   "voxels_source_grid": 1540,
+   "volume_mm3": 0.0914
+  },
+  {
+   "index": 28,
+   "source_id": 55,
+   "acronym": "SuD",
+   "name": "Deeper layers of the superior colliculus",
+   "color": "#e1970f",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tc",
+    "Su",
+    "SuD"
+   ],
+   "voxels_source_grid": 407665,
+   "volume_mm3": 24.1823
+  },
+  {
+   "index": 29,
+   "source_id": 56,
+   "acronym": "PVG",
+   "name": "Periventricular gray",
+   "color": "#eb57ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "PVG"
+   ],
+   "voxels_source_grid": 249614,
+   "volume_mm3": 14.8069
+  },
+  {
+   "index": 30,
+   "source_id": 57,
+   "acronym": "g7",
+   "name": "genu of the facial nerve",
+   "color": "#faf4f7",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "7n",
+    "g7"
+   ],
+   "voxels_source_grid": 6278,
+   "volume_mm3": 0.3724
+  },
+  {
+   "index": 31,
+   "source_id": 58,
+   "acronym": "Pn",
+   "name": "Pontine nuclei",
+   "color": "#00d70b",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Met",
+    "Pn"
+   ],
+   "voxels_source_grid": 86701,
+   "volume_mm3": 5.143
+  },
+  {
+   "index": 32,
+   "source_id": 59,
+   "acronym": "fi",
+   "name": "fimbria of the hippocampus",
+   "color": "#00ff1d",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "hiw",
+    "fi"
+   ],
+   "voxels_source_grid": 182636,
+   "volume_mm3": 10.8338
+  },
+  {
+   "index": 33,
+   "source_id": 60,
+   "acronym": "fr",
+   "name": "fasciculus retroflexus",
+   "color": "#f44345",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "fr"
+   ],
+   "voxels_source_grid": 10704,
+   "volume_mm3": 0.635
+  },
+  {
+   "index": 34,
+   "source_id": 61,
+   "acronym": "sm",
+   "name": "stria medullaris thalami",
+   "color": "#00ff00",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "sm"
+   ],
+   "voxels_source_grid": 28847,
+   "volume_mm3": 1.7112
+  },
+  {
+   "index": 35,
+   "source_id": 62,
+   "acronym": "st",
+   "name": "stria terminalis",
+   "color": "#ee7533",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "st"
+   ],
+   "voxels_source_grid": 42394,
+   "volume_mm3": 2.5148
+  },
+  {
+   "index": 36,
+   "source_id": 63,
+   "acronym": "pc",
+   "name": "posterior commissure",
+   "color": "#ff00da",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "pc"
+   ],
+   "voxels_source_grid": 4198,
+   "volume_mm3": 0.249
+  },
+  {
+   "index": 37,
+   "source_id": 64,
+   "acronym": "GlA",
+   "name": "Glomerular layer of the accessory olfactory bulb",
+   "color": "#0f6de6",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "OB",
+    "GlA"
+   ],
+   "voxels_source_grid": 28191,
+   "volume_mm3": 1.6723
+  },
+  {
+   "index": 38,
+   "source_id": 65,
+   "acronym": "Gl",
+   "name": "Glomerular layer of the olfactory bulb",
+   "color": "#ffe300",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "OB",
+    "Gl"
+   ],
+   "voxels_source_grid": 332194,
+   "volume_mm3": 19.7054
+  },
+  {
+   "index": 39,
+   "source_id": 66,
+   "acronym": "OB-u",
+   "name": "Olfactory bulb, unspecified",
+   "color": "#ff8700",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "OB",
+    "OB-u"
+   ],
+   "voxels_source_grid": 1451508,
+   "volume_mm3": 86.102
+  },
+  {
+   "index": 40,
+   "source_id": 67,
+   "acronym": "cc-ec-cing-dwm",
+   "name": "corpus callosum and associated subcortical white matter",
+   "color": "#ff6e00",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "cc-ec-cing-dwm"
+   ],
+   "voxels_source_grid": 1320323,
+   "volume_mm3": 78.3202
+  },
+  {
+   "index": 41,
+   "source_id": 68,
+   "acronym": "bsc",
+   "name": "brachium of the superior colliculus",
+   "color": "#bc20ad",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tew",
+    "bsc"
+   ],
+   "voxels_source_grid": 11038,
+   "volume_mm3": 0.6548
+  },
+  {
+   "index": 42,
+   "source_id": 69,
+   "acronym": "cic",
+   "name": "inferior colliculus, commissure",
+   "color": "#ff2a27",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tew",
+    "cic"
+   ],
+   "voxels_source_grid": 17317,
+   "volume_mm3": 1.0272
+  },
+  {
+   "index": 43,
+   "source_id": 70,
+   "acronym": "CC",
+   "name": "central canal",
+   "color": "#27f4fd",
+   "path": [
+    "root",
+    "Brain",
+    "V",
+    "CC"
+   ],
+   "voxels_source_grid": 1128,
+   "volume_mm3": 0.0669
+  },
+  {
+   "index": 44,
+   "source_id": 71,
+   "acronym": "IP",
+   "name": "Interpeduncular nucleus",
+   "color": "#3fc0ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tg",
+    "IP"
+   ],
+   "voxels_source_grid": 21213,
+   "volume_mm3": 1.2583
+  },
+  {
+   "index": 45,
+   "source_id": 72,
+   "acronym": "asc7",
+   "name": "ascending fibers of the facial nerve",
+   "color": "#b31c35",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "7n",
+    "asc7"
+   ],
+   "voxels_source_grid": 2686,
+   "volume_mm3": 0.1593
+  },
+  {
+   "index": 46,
+   "source_id": 73,
+   "acronym": "aci",
+   "name": "anterior commissure, intrabulbar part",
+   "color": "#ff4fce",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "ac",
+    "aci"
+   ],
+   "voxels_source_grid": 23357,
+   "volume_mm3": 1.3855
+  },
+  {
+   "index": 47,
+   "source_id": 74,
+   "acronym": "IO",
+   "name": "Inferior olive",
+   "color": "#00f60e",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "IO"
+   ],
+   "voxels_source_grid": 41076,
+   "volume_mm3": 2.4366
+  },
+  {
+   "index": 48,
+   "source_id": 75,
+   "acronym": "Sp5n",
+   "name": "Spinal trigeminal nucleus",
+   "color": "#5bf1ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "Sp5n"
+   ],
+   "voxels_source_grid": 263989,
+   "volume_mm3": 15.6596
+  },
+  {
+   "index": 49,
+   "source_id": 77,
+   "acronym": "FrA",
+   "name": "Frontal association cortex",
+   "color": "#ced307",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "FrA"
+   ],
+   "voxels_source_grid": 202289,
+   "volume_mm3": 11.9996
+  },
+  {
+   "index": 50,
+   "source_id": 78,
+   "acronym": "mcp",
+   "name": "middle cerebellar peduncle",
+   "color": "#86cc4c",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "cbt",
+    "mcp"
+   ],
+   "voxels_source_grid": 78481,
+   "volume_mm3": 4.6554
+  },
+  {
+   "index": 51,
+   "source_id": 79,
+   "acronym": "tfp",
+   "name": "transverse fibers of the pons",
+   "color": "#80aaff",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "cbt",
+    "tfp"
+   ],
+   "voxels_source_grid": 61933,
+   "volume_mm3": 3.6738
+  },
+  {
+   "index": 52,
+   "source_id": 80,
+   "acronym": "hbc",
+   "name": "habenular commissure",
+   "color": "#45ebca",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "hbc"
+   ],
+   "voxels_source_grid": 1420,
+   "volume_mm3": 0.0842
+  },
+  {
+   "index": 53,
+   "source_id": 81,
+   "acronym": "SMn",
+   "name": "Nucleus of the stria medullaris",
+   "color": "#de07ed",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-EPI",
+    "SMn"
+   ],
+   "voxels_source_grid": 1691,
+   "volume_mm3": 0.1003
+  },
+  {
+   "index": 54,
+   "source_id": 82,
+   "acronym": "BFR-u",
+   "name": "Basal forebrain region, unspecified",
+   "color": "#e1f00d",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "BRF",
+    "BFR-u"
+   ],
+   "voxels_source_grid": 993987,
+   "volume_mm3": 58.9623
+  },
+  {
+   "index": 55,
+   "source_id": 83,
+   "acronym": "sox",
+   "name": "supraoptic decussation",
+   "color": "#faaa40",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "ofs",
+    "sox"
+   ],
+   "voxels_source_grid": 17668,
+   "volume_mm3": 1.048
+  },
+  {
+   "index": 56,
+   "source_id": 84,
+   "acronym": "mlx",
+   "name": "medial lemniscus decussation",
+   "color": "#4196ff",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "ml",
+    "mlx"
+   ],
+   "voxels_source_grid": 1113,
+   "volume_mm3": 0.066
+  },
+  {
+   "index": 57,
+   "source_id": 85,
+   "acronym": "pyx",
+   "name": "pyramidal decussation",
+   "color": "#7209d4",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "cfp",
+    "pyx"
+   ],
+   "voxels_source_grid": 7070,
+   "volume_mm3": 0.4194
+  },
+  {
+   "index": 58,
+   "source_id": 93,
+   "acronym": "BNST",
+   "name": "Bed nucleus of the stria terminalis",
+   "color": "#0008b6",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "BRF",
+    "BNST"
+   ],
+   "voxels_source_grid": 40303,
+   "volume_mm3": 2.3907
+  },
+  {
+   "index": 59,
+   "source_id": 94,
+   "acronym": "PRT",
+   "name": "Pretectal region",
+   "color": "#ff571e",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "PreT",
+    "PRT"
+   ],
+   "voxels_source_grid": 146700,
+   "volume_mm3": 8.7021
+  },
+  {
+   "index": 60,
+   "source_id": 95,
+   "acronym": "CA3",
+   "name": "Cornu ammonis 3",
+   "color": "#a5836b",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "HF",
+    "CA",
+    "CA3"
+   ],
+   "voxels_source_grid": 458686,
+   "volume_mm3": 27.2088
+  },
+  {
+   "index": 61,
+   "source_id": 96,
+   "acronym": "DG",
+   "name": "Dentate gyrus",
+   "color": "#5b2d0a",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "HF",
+    "DG"
+   ],
+   "voxels_source_grid": 532325,
+   "volume_mm3": 31.577
+  },
+  {
+   "index": 62,
+   "source_id": 97,
+   "acronym": "CA2",
+   "name": "Cornu ammonis 2",
+   "color": "#ffff00",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "HF",
+    "CA",
+    "CA2"
+   ],
+   "voxels_source_grid": 79482,
+   "volume_mm3": 4.7148
+  },
+  {
+   "index": 63,
+   "source_id": 98,
+   "acronym": "CA1",
+   "name": "Cornu ammonis 1",
+   "color": "#d9680d",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "HF",
+    "CA",
+    "CA1"
+   ],
+   "voxels_source_grid": 534354,
+   "volume_mm3": 31.6973
+  },
+  {
+   "index": 64,
+   "source_id": 99,
+   "acronym": "FC",
+   "name": "Fasciola cinereum",
+   "color": "#ff0000",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "HF",
+    "FC"
+   ],
+   "voxels_source_grid": 46133,
+   "volume_mm3": 2.7366
+  },
+  {
+   "index": 65,
+   "source_id": 100,
+   "acronym": "SUB",
+   "name": "Subiculum",
+   "color": "#ffc000",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "HF",
+    "SUB"
+   ],
+   "voxels_source_grid": 284651,
+   "volume_mm3": 16.8852
+  },
+  {
+   "index": 66,
+   "source_id": 108,
+   "acronym": "POR",
+   "name": "Postrhinal cortex",
+   "color": "#287082",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "PHR",
+    "POR"
+   ],
+   "voxels_source_grid": 202561,
+   "volume_mm3": 12.0157
+  },
+  {
+   "index": 67,
+   "source_id": 109,
+   "acronym": "PrS",
+   "name": "Presubiculum",
+   "color": "#507baf",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "PHR",
+    "PrS"
+   ],
+   "voxels_source_grid": 156051,
+   "volume_mm3": 9.2568
+  },
+  {
+   "index": 68,
+   "source_id": 110,
+   "acronym": "PaS",
+   "name": "Parasubiculum",
+   "color": "#173660",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "PHR",
+    "PaS"
+   ],
+   "voxels_source_grid": 128095,
+   "volume_mm3": 7.5985
+  },
+  {
+   "index": 69,
+   "source_id": 112,
+   "acronym": "PER35",
+   "name": "Perirhinal area 35",
+   "color": "#cd33ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "PHR",
+    "PER",
+    "PER35"
+   ],
+   "voxels_source_grid": 100121,
+   "volume_mm3": 5.9391
+  },
+  {
+   "index": 70,
+   "source_id": 113,
+   "acronym": "PER36",
+   "name": "Perirhinal area 36",
+   "color": "#7030a0",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "PHR",
+    "PER",
+    "PER36"
+   ],
+   "voxels_source_grid": 151119,
+   "volume_mm3": 8.9642
+  },
+  {
+   "index": 71,
+   "source_id": 114,
+   "acronym": "MEC",
+   "name": "Medial entorhinal cortex",
+   "color": "#7abb33",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "PHR",
+    "EC",
+    "MEC"
+   ],
+   "voxels_source_grid": 407082,
+   "volume_mm3": 24.1477
+  },
+  {
+   "index": 72,
+   "source_id": 115,
+   "acronym": "LEC",
+   "name": "Lateral entorhinal cortex",
+   "color": "#5a6f2f",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "HR",
+    "PHR",
+    "EC",
+    "LEC"
+   ],
+   "voxels_source_grid": 424403,
+   "volume_mm3": 25.1752
+  },
+  {
+   "index": 73,
+   "source_id": 119,
+   "acronym": "VeA",
+   "name": "vestibular apparatus",
+   "color": "#009037",
+   "path": [
+    "root",
+    "IE",
+    "VeA"
+   ],
+   "voxels_source_grid": 75693,
+   "volume_mm3": 4.49
+  },
+  {
+   "index": 74,
+   "source_id": 120,
+   "acronym": "Co",
+   "name": "cochlea",
+   "color": "#00ff1c",
+   "path": [
+    "root",
+    "IE",
+    "Co"
+   ],
+   "voxels_source_grid": 121956,
+   "volume_mm3": 7.2343
+  },
+  {
+   "index": 75,
+   "source_id": 121,
+   "acronym": "8cn",
+   "name": "cochlear nerve",
+   "color": "#fd9400",
+   "path": [
+    "root",
+    "IE",
+    "8cn"
+   ],
+   "voxels_source_grid": 31191,
+   "volume_mm3": 1.8502
+  },
+  {
+   "index": 76,
+   "source_id": 122,
+   "acronym": "8vn",
+   "name": "vestibular nerve",
+   "color": "#fd3200",
+   "path": [
+    "root",
+    "IE",
+    "8vn"
+   ],
+   "voxels_source_grid": 24755,
+   "volume_mm3": 1.4684
+  },
+  {
+   "index": 77,
+   "source_id": 123,
+   "acronym": "GCL",
+   "name": "Ventral cochlear nucleus, granule cell layer",
+   "color": "#000cff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "VCN",
+    "GCL"
+   ],
+   "voxels_source_grid": 18610,
+   "volume_mm3": 1.1039
+  },
+  {
+   "index": 78,
+   "source_id": 125,
+   "acronym": "4V",
+   "name": "4th ventricle",
+   "color": "#341d90",
+   "path": [
+    "root",
+    "Brain",
+    "V",
+    "4V"
+   ],
+   "voxels_source_grid": 171150,
+   "volume_mm3": 10.1524
+  },
+  {
+   "index": 79,
+   "source_id": 126,
+   "acronym": "DCNM",
+   "name": "Dorsal cochlear nucleus, molecular layer",
+   "color": "#5c9cd3",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "DCN",
+    "DCNM"
+   ],
+   "voxels_source_grid": 15968,
+   "volume_mm3": 0.9472
+  },
+  {
+   "index": 80,
+   "source_id": 127,
+   "acronym": "DCNFG",
+   "name": "Dorsal cochlear nucleus, fusiform and granule layer",
+   "color": "#00509c",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "DCN",
+    "DCNFG"
+   ],
+   "voxels_source_grid": 10098,
+   "volume_mm3": 0.599
+  },
+  {
+   "index": 81,
+   "source_id": 128,
+   "acronym": "DCND",
+   "name": "Dorsal cochlear nucleus, deep core",
+   "color": "#c5eeff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "DCN",
+    "DCND"
+   ],
+   "voxels_source_grid": 12949,
+   "volume_mm3": 0.7681
+  },
+  {
+   "index": 82,
+   "source_id": 129,
+   "acronym": "as",
+   "name": "acoustic striae",
+   "color": "#ffd900",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "bsw",
+    "as"
+   ],
+   "voxels_source_grid": 8322,
+   "volume_mm3": 0.4937
+  },
+  {
+   "index": 83,
+   "source_id": 130,
+   "acronym": "tz",
+   "name": "trapezoid body",
+   "color": "#d5ff00",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "bsw",
+    "tz"
+   ],
+   "voxels_source_grid": 111159,
+   "volume_mm3": 6.5938
+  },
+  {
+   "index": 84,
+   "source_id": 131,
+   "acronym": "NTB",
+   "name": "Nucleus of the trapezoid body",
+   "color": "#00ff51",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "SO",
+    "NTB"
+   ],
+   "voxels_source_grid": 14047,
+   "volume_mm3": 0.8333
+  },
+  {
+   "index": 85,
+   "source_id": 132,
+   "acronym": "SPN",
+   "name": "Superior paraolivary nucleus",
+   "color": "#00eeff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "SO",
+    "SPN"
+   ],
+   "voxels_source_grid": 3948,
+   "volume_mm3": 0.2342
+  },
+  {
+   "index": 86,
+   "source_id": 133,
+   "acronym": "MSO",
+   "name": "Medial superior olive",
+   "color": "#dbef3d",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "SO",
+    "MSO"
+   ],
+   "voxels_source_grid": 1892,
+   "volume_mm3": 0.1122
+  },
+  {
+   "index": 87,
+   "source_id": 134,
+   "acronym": "LSO",
+   "name": "Lateral superior olive",
+   "color": "#234cbe",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "SO",
+    "LSO"
+   ],
+   "voxels_source_grid": 8423,
+   "volume_mm3": 0.4996
+  },
+  {
+   "index": 88,
+   "source_id": 135,
+   "acronym": "SPR",
+   "name": "Superior periolivary region",
+   "color": "#019915",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "SO",
+    "SPR"
+   ],
+   "voxels_source_grid": 53422,
+   "volume_mm3": 3.1689
+  },
+  {
+   "index": 89,
+   "source_id": 136,
+   "acronym": "VPO",
+   "name": "Ventral periolivary nuclei",
+   "color": "#00aeff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "SO",
+    "VPO"
+   ],
+   "voxels_source_grid": 10096,
+   "volume_mm3": 0.5989
+  },
+  {
+   "index": 90,
+   "source_id": 137,
+   "acronym": "VLL",
+   "name": "Lateral lemniscus, ventral nucleus",
+   "color": "#ff0073",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "NLL",
+    "VLL"
+   ],
+   "voxels_source_grid": 14295,
+   "volume_mm3": 0.848
+  },
+  {
+   "index": 91,
+   "source_id": 138,
+   "acronym": "ILL",
+   "name": "Lateral lemniscus, intermediate nucleus",
+   "color": "#ab105b",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "NLL",
+    "ILL"
+   ],
+   "voxels_source_grid": 8893,
+   "volume_mm3": 0.5275
+  },
+  {
+   "index": 92,
+   "source_id": 139,
+   "acronym": "DLL",
+   "name": "Lateral lemniscus, dorsal nucleus",
+   "color": "#6c125b",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "NLL",
+    "DLL"
+   ],
+   "voxels_source_grid": 7384,
+   "volume_mm3": 0.438
+  },
+  {
+   "index": 93,
+   "source_id": 140,
+   "acronym": "ll-c",
+   "name": "lateral lemniscus, commissure",
+   "color": "#ff1d00",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "bsw",
+    "ll",
+    "ll-c"
+   ],
+   "voxels_source_grid": 3064,
+   "volume_mm3": 0.1818
+  },
+  {
+   "index": 94,
+   "source_id": 141,
+   "acronym": "ll-u",
+   "name": "lateral lemniscus, unspecified",
+   "color": "#ffa600",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "bsw",
+    "ll",
+    "ll-u"
+   ],
+   "voxels_source_grid": 80338,
+   "volume_mm3": 4.7656
+  },
+  {
+   "index": 95,
+   "source_id": 142,
+   "acronym": "DCIC",
+   "name": "Inferior colliculus, dorsal cortex",
+   "color": "#ceff8e",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tc",
+    "IC",
+    "DCIC"
+   ],
+   "voxels_source_grid": 59078,
+   "volume_mm3": 3.5044
+  },
+  {
+   "index": 96,
+   "source_id": 143,
+   "acronym": "CNIC",
+   "name": "Inferior colliculus, central nucleus",
+   "color": "#00eefe",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tc",
+    "IC",
+    "CNIC"
+   ],
+   "voxels_source_grid": 135244,
+   "volume_mm3": 8.0225
+  },
+  {
+   "index": 97,
+   "source_id": 145,
+   "acronym": "ECIC",
+   "name": "Inferior colliculus, external cortex",
+   "color": "#3088cb",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tc",
+    "IC",
+    "ECIC"
+   ],
+   "voxels_source_grid": 255564,
+   "volume_mm3": 15.1598
+  },
+  {
+   "index": 98,
+   "source_id": 146,
+   "acronym": "bic",
+   "name": "inferior colliculus, brachium",
+   "color": "#b03a48",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tew",
+    "bic"
+   ],
+   "voxels_source_grid": 27215,
+   "volume_mm3": 1.6144
+  },
+  {
+   "index": 99,
+   "source_id": 150,
+   "acronym": "MG-mz",
+   "name": "Medial geniculate body, marginal zone",
+   "color": "#ff2ff2",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "MG",
+    "MG-mz"
+   ],
+   "voxels_source_grid": 15979,
+   "volume_mm3": 0.9479
+  },
+  {
+   "index": 100,
+   "source_id": 151,
+   "acronym": "Au1",
+   "name": "Primary auditory area",
+   "color": "#ffd700",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Te",
+    "Au",
+    "Au1"
+   ],
+   "voxels_source_grid": 241090,
+   "volume_mm3": 14.3012
+  },
+  {
+   "index": 101,
+   "source_id": 152,
+   "acronym": "Au2-d",
+   "name": "Secondary auditory area, dorsal part",
+   "color": "#f0ffff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Te",
+    "Au",
+    "Au2",
+    "Au2-d"
+   ],
+   "voxels_source_grid": 208236,
+   "volume_mm3": 12.3524
+  },
+  {
+   "index": 102,
+   "source_id": 153,
+   "acronym": "Au2-v",
+   "name": "Secondary auditory area, ventral part",
+   "color": "#d8bfd8",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Te",
+    "Au",
+    "Au2",
+    "Au2-v"
+   ],
+   "voxels_source_grid": 188189,
+   "volume_mm3": 11.1632
+  },
+  {
+   "index": 103,
+   "source_id": 157,
+   "acronym": "eml-ar",
+   "name": "external medullary lamina, auditory radiation",
+   "color": "#f49cff",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "eml",
+    "eml-ar"
+   ],
+   "voxels_source_grid": 13147,
+   "volume_mm3": 0.7799
+  },
+  {
+   "index": 104,
+   "source_id": 158,
+   "acronym": "AVCN",
+   "name": "Ventral cochlear nucleus, anterior part",
+   "color": "#2298ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "VCN",
+    "AVCN"
+   ],
+   "voxels_source_grid": 29111,
+   "volume_mm3": 1.7268
+  },
+  {
+   "index": 105,
+   "source_id": 159,
+   "acronym": "PVCN",
+   "name": "Ventral cochlear nucleus, posterior part",
+   "color": "#00e6cf",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "VCN",
+    "PVCN"
+   ],
+   "voxels_source_grid": 15509,
+   "volume_mm3": 0.92
+  },
+  {
+   "index": 106,
+   "source_id": 160,
+   "acronym": "Cap",
+   "name": "Ventral cochlear nucleus, cap area",
+   "color": "#00ff6a",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Rho",
+    "Myel",
+    "VCN",
+    "Cap"
+   ],
+   "voxels_source_grid": 12944,
+   "volume_mm3": 0.7678
+  },
+  {
+   "index": 107,
+   "source_id": 162,
+   "acronym": "SpG",
+   "name": "spiral ganglion",
+   "color": "#b9ffe9",
+   "path": [
+    "root",
+    "IE",
+    "SpG"
+   ],
+   "voxels_source_grid": 4009,
+   "volume_mm3": 0.2378
+  },
+  {
+   "index": 108,
+   "source_id": 163,
+   "acronym": "Sag",
+   "name": "Nucleus sagulum",
+   "color": "#63cd00",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "PreT",
+    "Sag"
+   ],
+   "voxels_source_grid": 10534,
+   "volume_mm3": 0.6249
+  },
+  {
+   "index": 109,
+   "source_id": 164,
+   "acronym": "RT-a",
+   "name": "Reticular (pre)thalamic nucleus, auditory segment",
+   "color": "#6e00ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "RT",
+    "RT-a"
+   ],
+   "voxels_source_grid": 6245,
+   "volume_mm3": 0.3704
+  },
+  {
+   "index": 110,
+   "source_id": 180,
+   "acronym": "lot",
+   "name": "lateral olfactory tract",
+   "color": "#ff00dd",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "olf",
+    "lot"
+   ],
+   "voxels_source_grid": 96994,
+   "volume_mm3": 5.7536
+  },
+  {
+   "index": 111,
+   "source_id": 181,
+   "acronym": "PIR1",
+   "name": "Piriform cortex, layer 1",
+   "color": "#00ccff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "PIR",
+    "PIR1"
+   ],
+   "voxels_source_grid": 346910,
+   "volume_mm3": 20.5784
+  },
+  {
+   "index": 112,
+   "source_id": 182,
+   "acronym": "PIR2",
+   "name": "Piriform cortex, layer 2",
+   "color": "#0000fe",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "PIR",
+    "PIR2"
+   ],
+   "voxels_source_grid": 146421,
+   "volume_mm3": 8.6855
+  },
+  {
+   "index": 113,
+   "source_id": 183,
+   "acronym": "PIR3",
+   "name": "Piriform cortex, layer 3",
+   "color": "#a578dd",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "PIR",
+    "PIR3"
+   ],
+   "voxels_source_grid": 380156,
+   "volume_mm3": 22.5505
+  },
+  {
+   "index": 114,
+   "source_id": 184,
+   "acronym": "NAc-c",
+   "name": "Nucleus accumbens, core",
+   "color": "#e6d8fa",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "Str",
+    "NAc",
+    "NAc-c"
+   ],
+   "voxels_source_grid": 112450,
+   "volume_mm3": 6.6704
+  },
+  {
+   "index": 115,
+   "source_id": 187,
+   "acronym": "SN-r",
+   "name": "Substantia nigra, reticular part",
+   "color": "#63c512",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tg",
+    "SN",
+    "SN-r"
+   ],
+   "voxels_source_grid": 107741,
+   "volume_mm3": 6.3911
+  },
+  {
+   "index": 116,
+   "source_id": 188,
+   "acronym": "SN-c",
+   "name": "Substantia nigra, compact part",
+   "color": "#ffff7f",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tg",
+    "SN",
+    "SN-c"
+   ],
+   "voxels_source_grid": 23878,
+   "volume_mm3": 1.4164
+  },
+  {
+   "index": 117,
+   "source_id": 189,
+   "acronym": "SN-l",
+   "name": "Substantia nigra, lateral part",
+   "color": "#009f9f",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tg",
+    "SN",
+    "SN-l"
+   ],
+   "voxels_source_grid": 8215,
+   "volume_mm3": 0.4873
+  },
+  {
+   "index": 118,
+   "source_id": 192,
+   "acronym": "NAc-sh",
+   "name": "Nucleus accumbens, shell",
+   "color": "#582f6c",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "Str",
+    "NAc",
+    "NAc-sh"
+   ],
+   "voxels_source_grid": 140295,
+   "volume_mm3": 8.3222
+  },
+  {
+   "index": 119,
+   "source_id": 193,
+   "acronym": "VP",
+   "name": "Ventral pallidum",
+   "color": "#00a2ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "PAL",
+    "VP"
+   ],
+   "voxels_source_grid": 118625,
+   "volume_mm3": 7.0367
+  },
+  {
+   "index": 120,
+   "source_id": 195,
+   "acronym": "GPe-m",
+   "name": "Globus pallidus external, medial part",
+   "color": "#ff55ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "PAL",
+    "GPe",
+    "GPe-m"
+   ],
+   "voxels_source_grid": 26377,
+   "volume_mm3": 1.5647
+  },
+  {
+   "index": 121,
+   "source_id": 196,
+   "acronym": "VTA",
+   "name": "Ventral tegmental area",
+   "color": "#7fffd4",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tg",
+    "VTA"
+   ],
+   "voxels_source_grid": 43427,
+   "volume_mm3": 2.576
+  },
+  {
+   "index": 122,
+   "source_id": 197,
+   "acronym": "CPu",
+   "name": "Caudate putamen",
+   "color": "#814f9b",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "Str",
+    "CPu"
+   ],
+   "voxels_source_grid": 1628975,
+   "volume_mm3": 96.6292
+  },
+  {
+   "index": 123,
+   "source_id": 198,
+   "acronym": "GPe-l",
+   "name": "Globus pallidus external, lateral part",
+   "color": "#c819c8",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "PAL",
+    "GPe",
+    "GPe-l"
+   ],
+   "voxels_source_grid": 147361,
+   "volume_mm3": 8.7413
+  },
+  {
+   "index": 124,
+   "source_id": 199,
+   "acronym": "VSR-u",
+   "name": "Ventral striatal region, unspecified",
+   "color": "#dc143c",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "SubPAL",
+    "Str",
+    "VSR-u"
+   ],
+   "voxels_source_grid": 51657,
+   "volume_mm3": 3.0642
+  },
+  {
+   "index": 125,
+   "source_id": 200,
+   "acronym": "RT-u",
+   "name": "Reticular (pre)thalamic nucleus, unspecified",
+   "color": "#00d9ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "RT",
+    "RT-u"
+   ],
+   "voxels_source_grid": 70911,
+   "volume_mm3": 4.2064
+  },
+  {
+   "index": 126,
+   "source_id": 201,
+   "acronym": "PP",
+   "name": "Peripeduncular nucleus",
+   "color": "#b7c788",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Mes",
+    "MB",
+    "Tg",
+    "PP"
+   ],
+   "voxels_source_grid": 1497,
+   "volume_mm3": 0.0888
+  },
+  {
+   "index": 127,
+   "source_id": 204,
+   "acronym": "PrG",
+   "name": "Pregeniculate nucleus",
+   "color": "#ff1900",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "PrG"
+   ],
+   "voxels_source_grid": 21770,
+   "volume_mm3": 1.2914
+  },
+  {
+   "index": 128,
+   "source_id": 205,
+   "acronym": "DLG",
+   "name": "Dorsal lateral geniculate nucleus",
+   "color": "#ffe200",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "LD",
+    "DLG"
+   ],
+   "voxels_source_grid": 45200,
+   "volume_mm3": 2.6812
+  },
+  {
+   "index": 129,
+   "source_id": 206,
+   "acronym": "LHb",
+   "name": "Lateral habenular nucleus",
+   "color": "#d96c00",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-EPI",
+    "LHb"
+   ],
+   "voxels_source_grid": 15860,
+   "volume_mm3": 0.9408
+  },
+  {
+   "index": 130,
+   "source_id": 207,
+   "acronym": "MHb",
+   "name": "Medial habenular nucleus",
+   "color": "#cd0018",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-EPI",
+    "MHb"
+   ],
+   "voxels_source_grid": 9390,
+   "volume_mm3": 0.557
+  },
+  {
+   "index": 131,
+   "source_id": 208,
+   "acronym": "PIL",
+   "name": "Posterior intralaminar nucleus",
+   "color": "#e470d6",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ANT",
+    "PIL"
+   ],
+   "voxels_source_grid": 8229,
+   "volume_mm3": 0.4881
+  },
+  {
+   "index": 132,
+   "source_id": 210,
+   "acronym": "Po-t",
+   "name": "Posterior thalamic nuclear group, triangular part",
+   "color": "#ffffc8",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "PoC",
+    "Po-t"
+   ],
+   "voxels_source_grid": 16351,
+   "volume_mm3": 0.9699
+  },
+  {
+   "index": 133,
+   "source_id": 211,
+   "acronym": "PT",
+   "name": "Parataenial thalamic nucleus",
+   "color": "#cd0006",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ANT",
+    "PT"
+   ],
+   "voxels_source_grid": 10952,
+   "volume_mm3": 0.6497
+  },
+  {
+   "index": 134,
+   "source_id": 213,
+   "acronym": "AD",
+   "name": "Anterodorsal thalamic nucleus",
+   "color": "#830a79",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ANT",
+    "AD"
+   ],
+   "voxels_source_grid": 7401,
+   "volume_mm3": 0.439
+  },
+  {
+   "index": 135,
+   "source_id": 214,
+   "acronym": "AV-dm",
+   "name": "Anteroventral thalamic nucleus, dorsomedial part",
+   "color": "#ef79da",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ANT",
+    "AV",
+    "AV-dm"
+   ],
+   "voxels_source_grid": 12655,
+   "volume_mm3": 0.7507
+  },
+  {
+   "index": 136,
+   "source_id": 215,
+   "acronym": "AV-vl",
+   "name": "Anteroventral thalamic nucleus, ventrolateral part",
+   "color": "#65238e",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ANT",
+    "AV",
+    "AV-vl"
+   ],
+   "voxels_source_grid": 17292,
+   "volume_mm3": 1.0257
+  },
+  {
+   "index": 137,
+   "source_id": 216,
+   "acronym": "Rh",
+   "name": "Rhomboid thalamic nucleus",
+   "color": "#00ff11",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "V-MID",
+    "Rh"
+   ],
+   "voxels_source_grid": 6814,
+   "volume_mm3": 0.4042
+  },
+  {
+   "index": 138,
+   "source_id": 218,
+   "acronym": "Xi",
+   "name": "Xiphoid thalamic nucleus",
+   "color": "#23ffec",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "V-MID",
+    "Xi"
+   ],
+   "voxels_source_grid": 6279,
+   "volume_mm3": 0.3725
+  },
+  {
+   "index": 139,
+   "source_id": 219,
+   "acronym": "Re",
+   "name": "Reuniens thalamic nucleus",
+   "color": "#ffaa00",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "V-MID",
+    "Re"
+   ],
+   "voxels_source_grid": 39725,
+   "volume_mm3": 2.3564
+  },
+  {
+   "index": 140,
+   "source_id": 221,
+   "acronym": "VM",
+   "name": "Ventromedial thalamic nucleus",
+   "color": "#00b97e",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "VENT",
+    "VM"
+   ],
+   "voxels_source_grid": 49793,
+   "volume_mm3": 2.9537
+  },
+  {
+   "index": 141,
+   "source_id": 222,
+   "acronym": "SMT",
+   "name": "Submedius thalamic nucleus",
+   "color": "#8200d9",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "VENT",
+    "SMT"
+   ],
+   "voxels_source_grid": 11996,
+   "volume_mm3": 0.7116
+  },
+  {
+   "index": 142,
+   "source_id": 223,
+   "acronym": "Ang",
+   "name": "Angular thalamic nucleus",
+   "color": "#8b5d8b",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "VENT",
+    "Ang"
+   ],
+   "voxels_source_grid": 3665,
+   "volume_mm3": 0.2174
+  },
+  {
+   "index": 143,
+   "source_id": 227,
+   "acronym": "VPM",
+   "name": "Ventral posteromedial thalamic nucleus",
+   "color": "#ff00fe",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "VENT",
+    "VPN",
+    "VPM"
+   ],
+   "voxels_source_grid": 87791,
+   "volume_mm3": 5.2077
+  },
+  {
+   "index": 144,
+   "source_id": 228,
+   "acronym": "LD-dm",
+   "name": "Laterodorsal thalamic nucleus, dorsomedial part",
+   "color": "#ff7b00",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "LD",
+    "LD-dm"
+   ],
+   "voxels_source_grid": 15747,
+   "volume_mm3": 0.9341
+  },
+  {
+   "index": 145,
+   "source_id": 229,
+   "acronym": "LD-vl",
+   "name": "Laterodorsal thalamic nucleus, ventrolateral part",
+   "color": "#2b991f",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "LD",
+    "LD-vl"
+   ],
+   "voxels_source_grid": 55767,
+   "volume_mm3": 3.308
+  },
+  {
+   "index": 146,
+   "source_id": 230,
+   "acronym": "Po",
+   "name": "Posterior thalamic nucleus",
+   "color": "#ffff02",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "PoC",
+    "Po"
+   ],
+   "voxels_source_grid": 109125,
+   "volume_mm3": 6.4732
+  },
+  {
+   "index": 147,
+   "source_id": 231,
+   "acronym": "VL",
+   "name": "Ventrolateral thalamic nucleus",
+   "color": "#aaaaff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "VENT",
+    "VL"
+   ],
+   "voxels_source_grid": 58356,
+   "volume_mm3": 3.4616
+  },
+  {
+   "index": 148,
+   "source_id": 232,
+   "acronym": "MD-l",
+   "name": "Mediodorsal thalamic nucleus, lateral part",
+   "color": "#ff557f",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "MD",
+    "MD-l"
+   ],
+   "voxels_source_grid": 24654,
+   "volume_mm3": 1.4625
+  },
+  {
+   "index": 149,
+   "source_id": 233,
+   "acronym": "MD-c",
+   "name": "Mediodorsal thalamic nucleus, central part",
+   "color": "#55aa00",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "MD",
+    "MD-c"
+   ],
+   "voxels_source_grid": 14496,
+   "volume_mm3": 0.8599
+  },
+  {
+   "index": 150,
+   "source_id": 235,
+   "acronym": "ZI-d",
+   "name": "Zona incerta, dorsal part",
+   "color": "#d8bfd9",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "ZI",
+    "ZI-d"
+   ],
+   "voxels_source_grid": 27916,
+   "volume_mm3": 1.6559
+  },
+  {
+   "index": 151,
+   "source_id": 236,
+   "acronym": "ZI-v",
+   "name": "Zona incerta, ventral part",
+   "color": "#4bc88a",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "ZI",
+    "ZI-v"
+   ],
+   "voxels_source_grid": 32748,
+   "volume_mm3": 1.9426
+  },
+  {
+   "index": 152,
+   "source_id": 238,
+   "acronym": "ZI-A13",
+   "name": "Zona incerta, A13 dopamine cells",
+   "color": "#c2474f",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "ZI",
+    "ZI-A13"
+   ],
+   "voxels_source_grid": 2967,
+   "volume_mm3": 0.176
+  },
+  {
+   "index": 153,
+   "source_id": 239,
+   "acronym": "ptl",
+   "name": "pretectothalamic lamina",
+   "color": "#db8ff7",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "ptl"
+   ],
+   "voxels_source_grid": 10070,
+   "volume_mm3": 0.5973
+  },
+  {
+   "index": 154,
+   "source_id": 240,
+   "acronym": "MD-m",
+   "name": "Mediodorsal thalamic nucleus, medial part",
+   "color": "#aaffff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "MD",
+    "MD-m"
+   ],
+   "voxels_source_grid": 35482,
+   "volume_mm3": 2.1048
+  },
+  {
+   "index": 155,
+   "source_id": 242,
+   "acronym": "PV",
+   "name": "Paraventricular thalamic nuclei (anterior and posterior)",
+   "color": "#9c3333",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ANT",
+    "PV"
+   ],
+   "voxels_source_grid": 25304,
+   "volume_mm3": 1.501
+  },
+  {
+   "index": 156,
+   "source_id": 246,
+   "acronym": "PCN",
+   "name": "Paracentral thalamic nucleus",
+   "color": "#f0f8ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ILM",
+    "PCN"
+   ],
+   "voxels_source_grid": 23675,
+   "volume_mm3": 1.4044
+  },
+  {
+   "index": 157,
+   "source_id": 247,
+   "acronym": "CM",
+   "name": "Central medial thalamic nucleus",
+   "color": "#e0b640",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ILM",
+    "CM"
+   ],
+   "voxels_source_grid": 25778,
+   "volume_mm3": 1.5291
+  },
+  {
+   "index": 158,
+   "source_id": 248,
+   "acronym": "CL",
+   "name": "Central lateral thalamic nucleus",
+   "color": "#9932cc",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ILM",
+    "CL"
+   ],
+   "voxels_source_grid": 17153,
+   "volume_mm3": 1.0175
+  },
+  {
+   "index": 159,
+   "source_id": 249,
+   "acronym": "eml-u",
+   "name": "external medullary lamina, unspecified",
+   "color": "#aaff00",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "eml",
+    "eml-u"
+   ],
+   "voxels_source_grid": 59306,
+   "volume_mm3": 3.518
+  },
+  {
+   "index": 160,
+   "source_id": 254,
+   "acronym": "AM",
+   "name": "Anteromedial thalamic nucleus",
+   "color": "#0055ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ANT",
+    "AM"
+   ],
+   "voxels_source_grid": 32295,
+   "volume_mm3": 1.9157
+  },
+  {
+   "index": 161,
+   "source_id": 255,
+   "acronym": "IAM",
+   "name": "Interanteromedial thalamic nucleus",
+   "color": "#f875de",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ANT",
+    "IAM"
+   ],
+   "voxels_source_grid": 3805,
+   "volume_mm3": 0.2257
+  },
+  {
+   "index": 162,
+   "source_id": 257,
+   "acronym": "ZI-r",
+   "name": "Zona incerta, rostral part",
+   "color": "#1e90ff",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "ZI",
+    "ZI-r"
+   ],
+   "voxels_source_grid": 7610,
+   "volume_mm3": 0.4514
+  },
+  {
+   "index": 163,
+   "source_id": 260,
+   "acronym": "IMD",
+   "name": "Intermediodorsal thalamic nucleus",
+   "color": "#a0522d",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ANT",
+    "IMD"
+   ],
+   "voxels_source_grid": 4214,
+   "volume_mm3": 0.25
+  },
+  {
+   "index": 164,
+   "source_id": 266,
+   "acronym": "VP-pc",
+   "name": "Ventral posterior nucleus of the thalamus, parvicellular part",
+   "color": "#00ff08",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "VENT",
+    "VPN",
+    "VP-pc"
+   ],
+   "voxels_source_grid": 8701,
+   "volume_mm3": 0.5161
+  },
+  {
+   "index": 165,
+   "source_id": 267,
+   "acronym": "PF",
+   "name": "Parafascicular thalamic nucleus",
+   "color": "#ffefd5",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ILM",
+    "PF"
+   ],
+   "voxels_source_grid": 16650,
+   "volume_mm3": 0.9877
+  },
+  {
+   "index": 166,
+   "source_id": 268,
+   "acronym": "RRe",
+   "name": "Retroreuniens thalamic nucleus",
+   "color": "#0000cd",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "V-MID",
+    "RRe"
+   ],
+   "voxels_source_grid": 1954,
+   "volume_mm3": 0.1159
+  },
+  {
+   "index": 167,
+   "source_id": 270,
+   "acronym": "scp-pr",
+   "name": "superior cerebellar peduncle and prerubral field",
+   "color": "#d2b68c",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "scp-pr"
+   ],
+   "voxels_source_grid": 16909,
+   "volume_mm3": 1.003
+  },
+  {
+   "index": 168,
+   "source_id": 272,
+   "acronym": "IGL",
+   "name": "Intergeniculate leaflet",
+   "color": "#000080",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "IGL"
+   ],
+   "voxels_source_grid": 3636,
+   "volume_mm3": 0.2157
+  },
+  {
+   "index": 169,
+   "source_id": 278,
+   "acronym": "SPF",
+   "name": "Subparafascicular nucleus",
+   "color": "#e9967a",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ANT",
+    "SPF"
+   ],
+   "voxels_source_grid": 6411,
+   "volume_mm3": 0.3803
+  },
+  {
+   "index": 170,
+   "source_id": 280,
+   "acronym": "FoF",
+   "name": "Fields of Forel",
+   "color": "#fffafa",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "ZI",
+    "FoF"
+   ],
+   "voxels_source_grid": 4269,
+   "volume_mm3": 0.2532
+  },
+  {
+   "index": 171,
+   "source_id": 281,
+   "acronym": "SubG",
+   "name": "Subgeniculate nucleus",
+   "color": "#9370db",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "SubG"
+   ],
+   "voxels_source_grid": 10160,
+   "volume_mm3": 0.6027
+  },
+  {
+   "index": 172,
+   "source_id": 282,
+   "acronym": "Eth",
+   "name": "Ethmoid-Limitans nucleus",
+   "color": "#833280",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "ILM",
+    "Eth"
+   ],
+   "voxels_source_grid": 3498,
+   "volume_mm3": 0.2075
+  },
+  {
+   "index": 173,
+   "source_id": 283,
+   "acronym": "LP-l",
+   "name": "Lateral posterior thalamic nucleus, lateral part",
+   "color": "#c7573d",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "LP",
+    "LP-l"
+   ],
+   "voxels_source_grid": 21503,
+   "volume_mm3": 1.2755
+  },
+  {
+   "index": 174,
+   "source_id": 284,
+   "acronym": "ZI-A11",
+   "name": "Zona incerta, A11 dopamine cells",
+   "color": "#ffb6c1",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "ZI",
+    "ZI-A11"
+   ],
+   "voxels_source_grid": 4903,
+   "volume_mm3": 0.2908
+  },
+  {
+   "index": 175,
+   "source_id": 285,
+   "acronym": "LP-mr",
+   "name": "Lateral posterior thalamic nucleus, mediorostral part",
+   "color": "#3cb371",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "LP",
+    "LP-mr"
+   ],
+   "voxels_source_grid": 33996,
+   "volume_mm3": 2.0166
+  },
+  {
+   "index": 176,
+   "source_id": 286,
+   "acronym": "LP-mc",
+   "name": "Lateral posterior thalamic nucleus, mediocaudal part",
+   "color": "#ffebcd",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "LP",
+    "LP-mc"
+   ],
+   "voxels_source_grid": 12570,
+   "volume_mm3": 0.7456
+  },
+  {
+   "index": 177,
+   "source_id": 287,
+   "acronym": "ZI-c",
+   "name": "Zona incerta, caudal part",
+   "color": "#ffe4c4",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-Pre",
+    "ZI",
+    "ZI-c"
+   ],
+   "voxels_source_grid": 24718,
+   "volume_mm3": 1.4662
+  },
+  {
+   "index": 178,
+   "source_id": 290,
+   "acronym": "ima",
+   "name": "intramedullary thalamic area",
+   "color": "#9b946f",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "ima"
+   ],
+   "voxels_source_grid": 2203,
+   "volume_mm3": 0.1307
+  },
+  {
+   "index": 179,
+   "source_id": 291,
+   "acronym": "iml",
+   "name": "internal medullary lamina",
+   "color": "#ff5c0a",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "tht",
+    "iml"
+   ],
+   "voxels_source_grid": 6110,
+   "volume_mm3": 0.3624
+  },
+  {
+   "index": 180,
+   "source_id": 293,
+   "acronym": "VA",
+   "name": "Ventral anterior thalamic nucleus",
+   "color": "#ff8800",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "VENT",
+    "VA"
+   ],
+   "voxels_source_grid": 11315,
+   "volume_mm3": 0.6712
+  },
+  {
+   "index": 181,
+   "source_id": 294,
+   "acronym": "VPL",
+   "name": "Ventral posterolateral thalamic nucleus",
+   "color": "#ab563e",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "VENT",
+    "VPN",
+    "VPL"
+   ],
+   "voxels_source_grid": 56265,
+   "volume_mm3": 3.3376
+  },
+  {
+   "index": 182,
+   "source_id": 295,
+   "acronym": "MG-d",
+   "name": "Medial geniculate body, dorsal division",
+   "color": "#efa300",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "MG",
+    "MG-d"
+   ],
+   "voxels_source_grid": 16128,
+   "volume_mm3": 0.9567
+  },
+  {
+   "index": 183,
+   "source_id": 297,
+   "acronym": "MG-m",
+   "name": "Medial geniculate body, medial division",
+   "color": "#0af4d9",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "MG",
+    "MG-m"
+   ],
+   "voxels_source_grid": 10114,
+   "volume_mm3": 0.6
+  },
+  {
+   "index": 184,
+   "source_id": 298,
+   "acronym": "MG-v",
+   "name": "Medial geniculate body, ventral division",
+   "color": "#833a1f",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "MG",
+    "MG-v"
+   ],
+   "voxels_source_grid": 32423,
+   "volume_mm3": 1.9233
+  },
+  {
+   "index": 185,
+   "source_id": 299,
+   "acronym": "MG-sg",
+   "name": "Medial geniculate body, suprageniculate nucleus",
+   "color": "#0af496",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Dien",
+    "Thal-D",
+    "MG",
+    "MG-sg"
+   ],
+   "voxels_source_grid": 6858,
+   "volume_mm3": 0.4068
+  },
+  {
+   "index": 186,
+   "source_id": 400,
+   "acronym": "VLO",
+   "name": "Ventrolateral orbital area",
+   "color": "#ff0001",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "Orb",
+    "VLO"
+   ],
+   "voxels_source_grid": 99349,
+   "volume_mm3": 5.8933
+  },
+  {
+   "index": 187,
+   "source_id": 401,
+   "acronym": "LO",
+   "name": "Lateral orbital area",
+   "color": "#ffaec9",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "Orb",
+    "LO"
+   ],
+   "voxels_source_grid": 203532,
+   "volume_mm3": 12.0733
+  },
+  {
+   "index": 188,
+   "source_id": 402,
+   "acronym": "VO",
+   "name": "Ventral orbital area",
+   "color": "#c8bfe7",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "Orb",
+    "VO"
+   ],
+   "voxels_source_grid": 102482,
+   "volume_mm3": 6.0791
+  },
+  {
+   "index": 189,
+   "source_id": 403,
+   "acronym": "MO",
+   "name": "Medial orbital area",
+   "color": "#3f48cc",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "Orb",
+    "MO"
+   ],
+   "voxels_source_grid": 57835,
+   "volume_mm3": 3.4307
+  },
+  {
+   "index": 190,
+   "source_id": 404,
+   "acronym": "DLO",
+   "name": "Dorsolateral orbital area",
+   "color": "#b97a57",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "Orb",
+    "DLO"
+   ],
+   "voxels_source_grid": 165671,
+   "volume_mm3": 9.8274
+  },
+  {
+   "index": 191,
+   "source_id": 405,
+   "acronym": "PrL",
+   "name": "Prelimbic area",
+   "color": "#a349a4",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "MFC",
+    "PrL"
+   ],
+   "voxels_source_grid": 276112,
+   "volume_mm3": 16.3787
+  },
+  {
+   "index": 192,
+   "source_id": 406,
+   "acronym": "M2",
+   "name": "Secondary motor area",
+   "color": "#00a2e8",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "M",
+    "M2"
+   ],
+   "voxels_source_grid": 912462,
+   "volume_mm3": 54.1263
+  },
+  {
+   "index": 193,
+   "source_id": 407,
+   "acronym": "Ma",
+   "name": "Motor association area",
+   "color": "#880015",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "M",
+    "Ma"
+   ],
+   "voxels_source_grid": 166151,
+   "volume_mm3": 9.8559
+  },
+  {
+   "index": 194,
+   "source_id": 408,
+   "acronym": "M1",
+   "name": "Primary motor area",
+   "color": "#99d9ea",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "M",
+    "M1"
+   ],
+   "voxels_source_grid": 681928,
+   "volume_mm3": 40.4513
+  },
+  {
+   "index": 195,
+   "source_id": 409,
+   "acronym": "AI-v",
+   "name": "Agranular insular cortex, ventral area",
+   "color": "#ffc90e",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "INS",
+    "AI",
+    "AI-v"
+   ],
+   "voxels_source_grid": 87783,
+   "volume_mm3": 5.2072
+  },
+  {
+   "index": 196,
+   "source_id": 410,
+   "acronym": "AI-d",
+   "name": "Agranular insular cortex dorsal area ",
+   "color": "#ff7f27",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "INS",
+    "AI",
+    "AI-d"
+   ],
+   "voxels_source_grid": 114557,
+   "volume_mm3": 6.7954
+  },
+  {
+   "index": 197,
+   "source_id": 411,
+   "acronym": "Cg1",
+   "name": "Cingulate area 1",
+   "color": "#008080",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "CgR",
+    "Cg",
+    "Cg1"
+   ],
+   "voxels_source_grid": 257192,
+   "volume_mm3": 15.2564
+  },
+  {
+   "index": 198,
+   "source_id": 412,
+   "acronym": "CLA",
+   "name": "Claustrum",
+   "color": "#99d9c8",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "N-LamP",
+    "CLA"
+   ],
+   "voxels_source_grid": 94513,
+   "volume_mm3": 5.6064
+  },
+  {
+   "index": 199,
+   "source_id": 413,
+   "acronym": "IL",
+   "name": "Infralimbic area",
+   "color": "#22b14c",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Front",
+    "MFC",
+    "IL"
+   ],
+   "voxels_source_grid": 60187,
+   "volume_mm3": 3.5702
+  },
+  {
+   "index": 200,
+   "source_id": 414,
+   "acronym": "DI",
+   "name": "Dysgranular insular cortex",
+   "color": "#fff200",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "INS",
+    "DI"
+   ],
+   "voxels_source_grid": 199504,
+   "volume_mm3": 11.8344
+  },
+  {
+   "index": 201,
+   "source_id": 416,
+   "acronym": "GI",
+   "name": "Granular insular cortex",
+   "color": "#efe4b0",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "INS",
+    "GI"
+   ],
+   "voxels_source_grid": 184252,
+   "volume_mm3": 10.9296
+  },
+  {
+   "index": 202,
+   "source_id": 417,
+   "acronym": "S1-fl",
+   "name": "Primary somatosensory area, forelimb representation",
+   "color": "#b90e83",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Par",
+    "SS",
+    "S1",
+    "S1-fl"
+   ],
+   "voxels_source_grid": 418498,
+   "volume_mm3": 24.8249
+  },
+  {
+   "index": 203,
+   "source_id": 418,
+   "acronym": "S1-dz",
+   "name": "Primary somatosensory area, dysgranular zone",
+   "color": "#ed1c24",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Par",
+    "SS",
+    "S1",
+    "S1-dz"
+   ],
+   "voxels_source_grid": 131406,
+   "volume_mm3": 7.7949
+  },
+  {
+   "index": 204,
+   "source_id": 420,
+   "acronym": "S1-f",
+   "name": "Primary somatosensory area, face representation",
+   "color": "#ff80c0",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Par",
+    "SS",
+    "S1",
+    "S1-f"
+   ],
+   "voxels_source_grid": 658454,
+   "volume_mm3": 39.0588
+  },
+  {
+   "index": 205,
+   "source_id": 422,
+   "acronym": "S2",
+   "name": "Secondary somatosensory area",
+   "color": "#c864fa",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Par",
+    "SS",
+    "S2"
+   ],
+   "voxels_source_grid": 497481,
+   "volume_mm3": 29.5101
+  },
+  {
+   "index": 206,
+   "source_id": 423,
+   "acronym": "S1-hl",
+   "name": "Primary somatosensory area, hindlimb representation",
+   "color": "#886415",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Par",
+    "SS",
+    "S1",
+    "S1-hl"
+   ],
+   "voxels_source_grid": 203954,
+   "volume_mm3": 12.0983
+  },
+  {
+   "index": 207,
+   "source_id": 424,
+   "acronym": "AI-p",
+   "name": "Agranular insular cortex, posterior area ",
+   "color": "#b5e61d",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "INS",
+    "AI",
+    "AI-p"
+   ],
+   "voxels_source_grid": 104170,
+   "volume_mm3": 6.1793
+  },
+  {
+   "index": 208,
+   "source_id": 425,
+   "acronym": "S1-bf",
+   "name": "Primary somatosensory area, barrel field",
+   "color": "#78b14c",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Par",
+    "SS",
+    "S1",
+    "S1-bf"
+   ],
+   "voxels_source_grid": 612200,
+   "volume_mm3": 36.3151
+  },
+  {
+   "index": 209,
+   "source_id": 427,
+   "acronym": "RSD",
+   "name": "Retrosplenial dysgranular area",
+   "color": "#c849a4",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "CgR",
+    "RS",
+    "RSD"
+   ],
+   "voxels_source_grid": 296232,
+   "volume_mm3": 17.5722
+  },
+  {
+   "index": 210,
+   "source_id": 429,
+   "acronym": "S1-tr",
+   "name": "Primary somatosensory area, trunk representation",
+   "color": "#e196c9",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Par",
+    "SS",
+    "S1",
+    "S1-tr"
+   ],
+   "voxels_source_grid": 206486,
+   "volume_mm3": 12.2485
+  },
+  {
+   "index": 211,
+   "source_id": 430,
+   "acronym": "RSG",
+   "name": "Retrosplenial granular area",
+   "color": "#1964c8",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "CgR",
+    "RS",
+    "RSG"
+   ],
+   "voxels_source_grid": 345032,
+   "volume_mm3": 20.467
+  },
+  {
+   "index": 212,
+   "source_id": 432,
+   "acronym": "lPPC",
+   "name": "Parietal association cortex, lateral area",
+   "color": "#fff01d",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Par",
+    "PPC",
+    "lPPC"
+   ],
+   "voxels_source_grid": 58242,
+   "volume_mm3": 3.4549
+  },
+  {
+   "index": 213,
+   "source_id": 433,
+   "acronym": "mPPC",
+   "name": "Parietal association cortex, medial area",
+   "color": "#6c006c",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Par",
+    "PPC",
+    "mPPC"
+   ],
+   "voxels_source_grid": 52614,
+   "volume_mm3": 3.121
+  },
+  {
+   "index": 214,
+   "source_id": 436,
+   "acronym": "PtP",
+   "name": "Parietal association cortex, posterior area ",
+   "color": "#800040",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Par",
+    "PPC",
+    "PtP"
+   ],
+   "voxels_source_grid": 75834,
+   "volume_mm3": 4.4984
+  },
+  {
+   "index": 215,
+   "source_id": 442,
+   "acronym": "V1",
+   "name": "Primary visual area",
+   "color": "#543423",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Oc",
+    "Vis",
+    "V1"
+   ],
+   "voxels_source_grid": 713587,
+   "volume_mm3": 42.3293
+  },
+  {
+   "index": 216,
+   "source_id": 443,
+   "acronym": "V2L",
+   "name": "Secondary visual area, lateral part",
+   "color": "#ff6464",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Oc",
+    "Vis",
+    "V2",
+    "V2L"
+   ],
+   "voxels_source_grid": 246825,
+   "volume_mm3": 14.6414
+  },
+  {
+   "index": 217,
+   "source_id": 444,
+   "acronym": "TeA",
+   "name": "Temporal association cortex",
+   "color": "#008000",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Te",
+    "TeA"
+   ],
+   "voxels_source_grid": 207656,
+   "volume_mm3": 12.3179
+  },
+  {
+   "index": 218,
+   "source_id": 448,
+   "acronym": "V2M",
+   "name": "Secondary visual area, medial part",
+   "color": "#800064",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "Cx",
+    "Oc",
+    "Vis",
+    "V2",
+    "V2M"
+   ],
+   "voxels_source_grid": 382898,
+   "volume_mm3": 22.7131
+  },
+  {
+   "index": 219,
+   "source_id": 500,
+   "acronym": "Endo",
+   "name": "Endopiriform nucleus",
+   "color": "#010a64",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "N-LamP",
+    "Endo"
+   ],
+   "voxels_source_grid": 154235,
+   "volume_mm3": 9.1491
+  },
+  {
+   "index": 220,
+   "source_id": 501,
+   "acronym": "Am-u",
+   "name": "Amygdaloid area, unspecified",
+   "color": "#0214c8",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "N-LamP",
+    "Am-u"
+   ],
+   "voxels_source_grid": 845285,
+   "volume_mm3": 50.1415
+  },
+  {
+   "index": 221,
+   "source_id": 502,
+   "acronym": "NLOT",
+   "name": "Nucleus of the lateral olfactory tract",
+   "color": "#e6b843",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "OB",
+    "NLOT"
+   ],
+   "voxels_source_grid": 31566,
+   "volume_mm3": 1.8725
+  },
+  {
+   "index": 222,
+   "source_id": 504,
+   "acronym": "5n",
+   "name": "trigeminal nerve",
+   "color": "#87cefa",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "bsw",
+    "5n"
+   ],
+   "voxels_source_grid": 1431942,
+   "volume_mm3": 84.9414
+  },
+  {
+   "index": 223,
+   "source_id": 505,
+   "acronym": "msp5t",
+   "name": "medullary spinal trigeminal tract",
+   "color": "#556b2f",
+   "path": [
+    "root",
+    "Brain",
+    "wmt",
+    "bsw",
+    "msp5t"
+   ],
+   "voxels_source_grid": 256307,
+   "volume_mm3": 15.2039
+  },
+  {
+   "index": 224,
+   "source_id": 506,
+   "acronym": "AOA-u",
+   "name": "Anterior olfactory area, unspecified",
+   "color": "#40e0d0",
+   "path": [
+    "root",
+    "Brain",
+    "GM",
+    "Tel",
+    "LamP",
+    "OB",
+    "AOA-u"
+   ],
+   "voxels_source_grid": 230639,
+   "volume_mm3": 13.6813
+  }
+ ],
+ "meshes": "meshes.json",
+ "mesh_units": "mm",
+ "mesh_note": "Surfaces are the atlas package's own structure meshes, decimated for display.",
+ "provenance": {
+  "dataset": "BrainGlobe atlas package whs_sd_rat_39um_v1.2 (https://gin.g-node.org/brainglobe/atlases); original: https://www.nitrc.org/projects/whs-sd-atlas",
+  "citation": "Kleven H, Bjerke IE, Clasc\u00e1 F, Groenewegen HJ, Bjaalie JG, Leergaard TB (2023). Waxholm Space atlas of the rat brain: a 3D atlas supporting data analysis and integration. Nature Methods 20:1822\u20131829. doi:10.1038/s41592-023-02034-3",
+  "licence": "CC BY-SA 4.0 (Waxholm Space atlas, NITRC)",
+  "package_species": "Rattus norvegicus",
+  "sha256": {
+   "whs_sd_rat_39um_v1.2.tar.gz": "88a96ed404ff3d2afad5ae09d6c461ec29fbbdbb5ac9ef450f96b5b3a272a9fa"
+  }
+ },
+ "processing": [
+  "Source grid 1024 \u00d7 512 \u00d7 512 at 39.0 \u00d7 39.0 \u00d7 39.0 \u00b5m (orientation 'asr').",
+  "Reference image block-averaged by [4, 4, 4] and labels subsampled by nearest neighbour to 0.156 \u00d7 0.156 \u00d7 0.156 mm for the browser.",
+  "Region volumes are counted on the original grid. Structures smaller than the display grid may not appear in the sections.",
+  "Display window: 0.5th\u201399.7th percentile of in-brain voxels. 18 of 314 packaged surfaces are shown, chosen for auditory, vocal and social relevance."
+ ],
+ "sizes_bytes": {
+  "image-reference.u8.gz": 642063,
+  "labels.u16.gz": 154131
+ }
+}

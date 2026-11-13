@@ -1,0 +1,215 @@
+// Interactive instruments built from real data. Each export mounts into a host element.
+import {decode, bandSpectrogram, gammatone, paintMatrix, dbNormalise, normaliseMax, magma, diverging, stftPower, makePlayer, PLAY_ICON, PAUSE_ICON} from './dsp.js?v=20261112g';
+
+const V = '20261112b';
+const getJSON = (() => { const c = new Map(); return p => { if (!c.has(p)) c.set(p, fetch(`${p}?v=${V}`).then(r => { if (!r.ok) throw Error(`Could not load ${p}`); return r.json(); })); return c.get(p); }; })();
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+const $ = (s, el) => el.querySelector(s);
+
+function playButton(audio) {
+  const b = document.createElement('button'); b.className = 'play'; b.type = 'button';
+  const set = () => { b.innerHTML = (audio.paused ? PLAY_ICON + 'Play' : PAUSE_ICON + 'Pause'); b.setAttribute('aria-label', audio.paused ? 'Play' : 'Pause'); };
+  audio.addEventListener('play', set); audio.addEventListener('pause', set); audio.addEventListener('ended', set); set();
+  b.onclick = () => audio.paused ? audio.play().catch(() => {}) : audio.pause();
+  return b;
+}
+function bindTrackSeek(tracks, audio) {
+  for (const t of tracks) t.addEventListener('click', e => { const r = t.getBoundingClientRect(); if (audio.duration) { audio.currentTime = (e.clientX - r.left) / r.width * audio.duration; audio.play().catch(() => {}); } });
+}
+
+// ------------------------------------------------------------------ 1. The ear: spectrogram vs gammatone filterbank
+export const EAR_SOUNDS = [
+  {id: 'finch', label: 'Zebra finch song', url: 'assets/models/zebra-finch/B189.wav', range: [200, 7000], note: 'Filter range 0.2–7 kHz, the zebra finch hearing range.'},
+  {id: 'marmoset', label: 'Marmoset phee call', url: 'assets/sound/common-marmoset/phee_223119.wav', range: [200, 16000], note: 'Filter range set to cover the recording, not a marmoset cochlea.'},
+  {id: 'bat', label: 'Fruit bat social call', url: 'assets/sound/egyptian-fruit-bat/social1-48k.wav', range: [200, 20000], note: 'Filter range set to cover the 48 kHz copy of the recording.'},
+  {id: 'mouse', label: 'Mouse USVs (slowed 16×)', url: 'assets/sound/house-mouse/usv-0184_85s-te16.wav', range: [500, 9000], note: 'Slowed recording: every frequency is divided by 16.'},
+  {id: 'bee', label: 'Honeybee waggle-run sound', url: 'assets/sound/honeybee/waggle-run-1.wav', range: [50, 4000], note: 'Filter range set to cover the recording.'},
+];
+export async function mountEar(host, {initial = 'finch'} = {}) {
+  host.innerHTML = `<div class="inst">
+    <div class="inst-bar"><span class="title">What the ear does with a sound</span>
+      <div class="ctl"><label class="vh" for="ear-src">Sound</label><select id="ear-src">${EAR_SOUNDS.map(s => `<option value="${s.id}">${s.label}</option>`).join('')}</select></div></div>
+    <div class="inst-body">
+      <div class="track"><canvas class="t-spec" height="120"></canvas><span class="lbl">SPECTROGRAM · what a microphone records</span><div class="ph"></div></div>
+      <div class="track"><canvas class="t-coch" height="120"></canvas><span class="lbl">MODEL EAR · output of 48 gammatone filters (low → high pitch, bottom → top)</span><div class="ph"></div></div>
+      <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-top:.6rem"><span class="pb"></span><span class="small" style="color:var(--night-ink-2)" data-note></span></div>
+    </div>
+    <div class="inst-foot"><span>Model: gammatone filterbank (Holdsworth et al. 1988 implementation; bandwidths from Glasberg &amp; Moore 1990, measured in humans and used here as an approximation). Envelopes cube-root compressed.</span><span>Computed live in your browser from the original recording.</span></div></div>`;
+  const audio = new Audio(); audio.preload = 'auto';
+  $('.pb', host).appendChild(playButton(audio));
+  const phs = host.querySelectorAll('.ph');
+  makePlayer(audio, f => phs.forEach(p => p.style.left = (f * 100) + '%'));
+  bindTrackSeek(host.querySelectorAll('.track'), audio);
+  const sel = $('#ear-src', host); sel.value = initial;
+  const run = async () => {
+    const s = EAR_SOUNDS.find(e => e.id === sel.value); audio.src = s.url + '?v=' + V; $('[data-note]', host).textContent = s.note;
+    const {x, sr} = await decode(s.url);
+    const top = Math.min(s.range[1], sr / 2 * 0.95);
+    const sp = bandSpectrogram(x, sr, {fmin: s.range[0], fmax: top, nbands: 96});
+    paintMatrix($('.t-spec', host), dbNormalise(sp.M, 70));
+    const g = gammatone(x, sr, {fmin: s.range[0], fmax: top, n: 48});
+    { const flat = g.M.flatMap(r => Array.from(r)).sort((a, b) => a - b), p99 = flat[Math.floor(flat.length * .995)] || 1; paintMatrix($('.t-coch', host), g.M.map(r => Array.from(r, v => Math.min(1, v / p99))), magma); }
+  };
+  sel.onchange = run; await run();
+}
+
+// ------------------------------------------------------------------ 2. Auditory neurons: STRF models fitted to real spikes
+export async function mountSTRF(host) {
+  const d = await getJSON('data/models/zebra-finch/strf.json');
+  const songs = Object.keys(d.songs);
+  const areaName = {FL: 'Field L (primary)', CM: 'CM (secondary)', NCM: 'NCM (secondary)'};
+  host.innerHTML = `<div class="inst">
+    <div class="inst-bar"><span class="title">Play a song to a real neuron</span>
+      <div class="ctl">
+        <label class="vh" for="sn">Neuron</label><select id="sn">${['FL', 'CM', 'NCM'].map(a => `<optgroup label="${areaName[a]}">${d.examples.filter(e => e.area === a).map(e => `<option value="${e.id}">${a} · neuron ${e.id.split('_').slice(-1)[0].replace('c', '#')} (bird ${e.bird})</option>`).join('')}</optgroup>`).join('')}</select>
+        <label class="vh" for="ss">Song</label><select id="ss">${songs.map((s, i) => `<option value="${s}">Song ${i + 1} (bird ${s})</option>`).join('')}</select>
+      </div></div>
+    <div class="inst-body strf-grid">
+      <div>
+        <div class="track"><canvas class="t-spec" height="100"></canvas><span class="lbl">SONG (0.5–8 kHz)</span><div class="ph"></div></div>
+        <div class="track"><canvas class="t-raster" height="90"></canvas><span class="lbl">REAL SPIKES · 10 repeats</span><div class="ph"></div></div>
+        <div class="track"><canvas class="t-rate" height="110"></canvas><span class="lbl">FIRING RATE</span><div class="ph"></div></div>
+        <div class="legend"><span><i style="background:#fff"></i>Measured (average of repeats)</span><span><i style="background:var(--accent)"></i>Model prediction (this song was not used to fit the model)</span></div>
+        <div style="display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap;margin-top:.8rem"><span class="pb"></span>
+          <span class="stat"><b data-r>–</b><span>match on this song (r)</span></span>
+          <span class="stat"><b data-rall>–</b><span>average over 8 held-out songs</span></span>
+          <span class="stat"><b data-rel>–</b><span>repeat-to-repeat reliability</span></span></div>
+      </div>
+      <div class="strf-side">
+        <p class="small" style="margin:0 0 .35rem;color:var(--night-ink-2)">THE NEURON'S RECEPTIVE FIELD</p>
+        <canvas class="t-strf" width="20" height="24" style="aspect-ratio:1/1.1"></canvas>
+        <div class="axis"><span>0 ms</span><span>time before spike →</span><span>95</span></div>
+        <p class="small" style="margin:.5rem 0 0;color:var(--night-ink-2)">Red: sound energy at that pitch and delay makes the neuron fire more. Blue: it fires less. Pitch runs from 0.5 kHz (bottom) to 8 kHz (top).</p>
+      </div>
+    </div>
+    <div class="inst-foot"><span>Data: Le, Bjoring &amp; Meliza, anaesthetised zebra finches, single units (<a href="https://doi.org/10.6084/m9.figshare.29203457">figshare, CC BY 4.0</a>). Model: linear spectro-temporal receptive field, ridge regression, leave-one-song-out.</span><a href="#research/finch-strf">Methods and all ${d.units_fitted} neurons →</a></div></div>`;
+  const audio = new Audio(); audio.preload = 'auto';
+  $('.pb', host).appendChild(playButton(audio));
+  const phs = host.querySelectorAll('.ph');
+  makePlayer(audio, f => phs.forEach(p => p.style.left = (f * 100) + '%'));
+  bindTrackSeek(host.querySelectorAll('.track'), audio);
+  const draw = () => {
+    const e = d.examples.find(x => x.id === $('#sn', host).value), s = $('#ss', host).value, song = d.songs[s];
+    audio.src = song.audio + '?v=' + V;
+    const img = new Image(); img.onload = () => { const c = $('.t-spec', host); c.width = img.width; c.height = 100; c.getContext('2d').drawImage(img, 0, 0, img.width, 100); }; img.src = song.spec + '?v=' + V;
+    const dur = song.dur;
+    // raster
+    const cr = $('.t-raster', host), W = 800; cr.width = W; cr.height = 90; const g = cr.getContext('2d'); g.fillStyle = '#000'; g.fillRect(0, 0, W, 90);
+    const trials = e.rasters[s] || []; g.fillStyle = '#e9edf0';
+    trials.forEach((tr, i) => tr.forEach(t => { if (t >= 0 && t <= dur) g.fillRect(t / dur * W, 4 + i * 8.4, 1.6, 6.5); }));
+    // rates
+    const real = e.psth[s] || [], pred = e.pred[s] || [], cv = $('.t-rate', host); cv.width = W; cv.height = 110; const h = cv.getContext('2d'); h.fillStyle = '#000'; h.fillRect(0, 0, W, 110);
+    const mx = Math.max(1, ...real, ...pred), n = real.length;
+    const line = (arr, col, lw) => { h.strokeStyle = col; h.lineWidth = lw; h.beginPath(); arr.forEach((v, i) => { const X = i / (n - 1) * W, Y = 104 - v / mx * 96; i ? h.lineTo(X, Y) : h.moveTo(X, Y); }); h.stroke(); };
+    line(real, '#ffffff', 1.6); line(pred, getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#c4532d', 2);
+    h.fillStyle = '#9aa6b1'; h.font = '11px sans-serif'; h.fillText(`${Math.round(mx)} spikes/s`, W - 80, 14);
+    const si = songs.indexOf(s);
+    $('[data-r]', host).textContent = e.r_songs[si] != null ? e.r_songs[si].toFixed(2) : '–';
+    $('[data-rall]', host).textContent = e.r.toFixed(2);
+    $('[data-rel]', host).textContent = e.reliability.toFixed(2);
+    // STRF
+    const S = e.strf, mxs = Math.max(...S.flat().map(Math.abs)) || 1;
+    paintMatrix($('.t-strf', host), S.map(row => row.map(v => v / mxs)), diverging);
+  };
+  $('#sn', host).onchange = draw; $('#ss', host).onchange = draw; draw();
+  return d;
+}
+
+// ------------------------------------------------------------------ 3. RA during singing
+export async function mountRA(host) {
+  const d = await getJSON('data/models/zebra-finch/ra.json');
+  host.innerHTML = `<div class="inst">
+    <div class="inst-bar"><span class="title">Inside a singing bird: RA, the song's motor output</span><span class="pb"></span></div>
+    <div class="inst-body">
+      <div class="track"><canvas class="t-spec" height="110"></canvas><span class="lbl">THE BIRD'S OWN SONG · two motifs</span><div class="ph"></div></div>
+      <div class="track"><canvas class="t-ras" height="260"></canvas><span class="lbl">85 RECORDING SITES IN RA · brighter = more active than that site's average (20 ms bins)</span><div class="ph"></div></div>
+      <div class="track"><canvas class="t-pop" height="70"></canvas><span class="lbl">ALL SITES TOGETHER</span><div class="ph"></div></div>
+      <p class="small" style="color:var(--night-ink-2);margin:.6rem 0 0">Population activity in the first motif matches the second (r = ${d.motif_consistency.population_r} at ${d.motif_consistency.bin_s * 1000} ms resolution), above the 95th percentile of ${d.motif_consistency.shuffle_n} time-shuffled controls (${d.motif_consistency.shuffle_p95}). Two motifs are a small sample.</p>
+    </div>
+    <div class="inst-foot"><span>Data: FALCON B1, Neuropixels in RA of a singing zebra finch (<a href="https://dandiarchive.org/dandiset/001046">DANDI 001046</a>, CC BY 4.0). Unsorted threshold crossings, rows ordered by time of peak activity.</span></div></div>`;
+  const audio = new Audio(d.audio + '?v=' + V); audio.preload = 'auto';
+  $('.pb', host).appendChild(playButton(audio));
+  const phs = host.querySelectorAll('.ph'); makePlayer(audio, f => phs.forEach(p => p.style.left = (f * 100) + '%'));
+  bindTrackSeek(host.querySelectorAll('.track'), audio);
+  { const im = new Image(); im.onload = () => { const cs = $(".t-spec", host); cs.width = 900; cs.height = 110; cs.getContext("2d").drawImage(im, 0, 0, 900, 110); }; im.src = d.spec + "?v=" + V; }
+  const W = 900, c = $('.t-ras', host), NB = 90, bw = d.duration / NB; c.width = NB; c.height = d.spikes.length;
+  const g = c.getContext('2d'), img = g.createImageData(NB, d.spikes.length), bins = new Float32Array(W / 4);
+  d.spikes.forEach((row, i) => { const hh = new Float32Array(NB); row.forEach(t => { hh[Math.min(NB - 1, Math.floor(t / bw))]++; bins[Math.min(bins.length - 1, Math.floor(t / d.duration * W / 4))]++; });
+    const m = hh.reduce((x, y) => x + y, 0) / NB, sd = Math.sqrt(hh.reduce((x, y) => x + (y - m) ** 2, 0) / NB) || 1;
+    hh.forEach((v, j) => { const z = Math.max(0, Math.min(1, ((v - m) / sd + 1) / 3.5)), [R, G, B] = magma(z), o = (i * NB + j) * 4; img.data[o] = R; img.data[o + 1] = G; img.data[o + 2] = B; img.data[o + 3] = 255; }); });
+  g.putImageData(img, 0, 0); c.style.height = '260px'; c.style.width = '100%'; c.style.imageRendering = 'pixelated';
+  const p = $('.t-pop', host); p.width = W; p.height = 70; const h = p.getContext('2d'); h.fillStyle = '#000'; h.fillRect(0, 0, W, 70);
+  const sm = Array.from(bins, (_, i) => (bins[i - 1] || 0) * .25 + bins[i] * .5 + (bins[i + 1] || 0) * .25), mx = Math.max(...sm);
+  h.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#c4532d';
+  sm.forEach((v, i) => { const H = v / mx * 64; h.fillRect(i * 4, 70 - H, 3, H); });
+}
+
+// ------------------------------------------------------------------ 4. Reconstructed neurons (NeuroMorpho)
+let THREEP = null;
+const loadThree = () => (THREEP ||= Promise.all([import('three'), import('../assets/OrbitControls.js')]));
+function makeScene(hostEl) {
+  return loadThree().then(([THREE, {OrbitControls}]) => {
+    const renderer = new THREE.WebGLRenderer({antialias: true}); renderer.setPixelRatio(Math.min(2, devicePixelRatio));
+    hostEl.prepend(renderer.domElement); renderer.domElement.tabIndex = 0;
+    const scene = new THREE.Scene(); scene.background = new THREE.Color('#05070a');
+    const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100000); scene.add(camera);
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x334455, 1.1)); const dl = new THREE.DirectionalLight(0xffffff, 1.3); dl.position.set(1, 2, 3); camera.add(dl);
+    const controls = new OrbitControls(camera, renderer.domElement); controls.enableDamping = true;
+    const resize = () => { const w = hostEl.clientWidth, h = hostEl.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); };
+    new ResizeObserver(resize).observe(hostEl); resize();
+    let alive = true; const loop = () => { if (!alive || !hostEl.isConnected) { renderer.dispose(); return; } requestAnimationFrame(loop); controls.update(); renderer.render(scene, camera); }; loop();
+    return {THREE, renderer, scene, camera, controls, frame(obj, k = 1.25) { const b = new THREE.Box3().setFromObject(obj), c = b.getCenter(new THREE.Vector3()), s = b.getSize(new THREE.Vector3()).length(); obj.position.sub(c); camera.position.set(0, 0, s * k); controls.target.set(0, 0, 0); camera.near = s / 1000; camera.far = s * 20; camera.updateProjectionMatrix(); }};
+  });
+}
+export async function mountNeurons(host, {species = 'zebra-finch'} = {}) {
+  const d = await getJSON('data/models/neurons.json');
+  const list = d.neurons.filter(n => n.species === species);
+  const label = n => { const ct = n.cell_type.join(' '); if (/arcopallium- and area X-projecting/.test(ct)) return 'HVC neuron projecting to RA and Area X'; if (/Area X-projecting/.test(ct) && !/robust/.test(ct)) return 'HVC → Area X neuron'; if (/robust nucleus of the arcopallium projecting/.test(ct)) return 'HVC → RA neuron'; if (/phasic/.test(ct)) return 'CM neuron, phasic firing'; if (/tonic/.test(ct)) return 'CM neuron, tonic firing'; if (/intermediate/.test(ct)) return 'CM neuron, intermediate firing'; if (/Fast-spiking/.test(ct)) return 'CM interneuron, fast-spiking'; if (/stellate/.test(ct)) return 'Inferior colliculus stellate neuron'; if (n.archive === 'Meliza') return 'CM principal cell (firing type not reported)'; return n.cell_type[0]; };
+  const ORDER = ['HVC → RA neuron', 'HVC → Area X neuron', 'HVC neuron projecting to RA and Area X', 'CM neuron, phasic firing', 'CM neuron, tonic firing', 'CM neuron, intermediate firing', 'CM interneuron, fast-spiking'];
+  const groups = {}; [...list].sort((a, b) => ((ORDER.indexOf(label(a)) + 99) % 99) - ((ORDER.indexOf(label(b)) + 99) % 99)).forEach(n => (groups[label(n)] ||= []).push(n));
+  host.innerHTML = `<div class="inst">
+    <div class="inst-bar"><span class="title">Real neurons, reconstructed from the microscope</span>
+      <div class="ctl"><label class="vh" for="nn">Neuron</label><select id="nn">${Object.entries(groups).map(([k, v]) => `<optgroup label="${esc(k)} (${v.length})">${v.map(n => `<option value="${esc(n.name)}">${esc(k)} · ${esc(n.name)}</option>`).join('')}</optgroup>`).join('')}</select></div></div>
+    <div class="three-host"><span class="hint">Drag to rotate · scroll to zoom</span><div class="hud" data-hud></div></div>
+    <div class="inst-foot"><span>Reconstructions from <a href="https://neuromorpho.org">NeuroMorpho.org</a> (standardised CNG versions). <span style="color:#e9edf0">■</span> dendrites · <span style="color:#f08a5d">■</span> axon · <span style="color:#7fc8ff">■</span> soma</span></div></div>`;
+  const S = await makeScene($('.three-host', host));
+  let obj = null;
+  const show = async () => {
+    const meta = list.find(x => x.name === $('#nn', host).value); const n = {...meta, ...(await getJSON(meta.file))};
+    if (obj) { S.scene.remove(obj); obj.geometry.dispose(); }
+    const pos = new Float32Array(n.segments), col = new Float32Array(n.segments.length);
+    const C = {1: [.5, .78, 1], 2: [.94, .54, .36], 3: [.91, .93, .94], 4: [.8, .85, .95]};
+    n.types.forEach((t, i) => { const c = C[t] || C[3]; for (let k = 0; k < 2; k++) col.set(c, i * 6 + k * 3); });
+    const g = new S.THREE.BufferGeometry(); g.setAttribute('position', new S.THREE.BufferAttribute(pos, 3)); g.setAttribute('color', new S.THREE.BufferAttribute(col, 3));
+    let len = 0; for (let i = 0; i < n.segments.length; i += 6) len += Math.hypot(n.segments[i + 3] - n.segments[i], n.segments[i + 4] - n.segments[i + 1], n.segments[i + 5] - n.segments[i + 2]);
+    obj = new S.THREE.LineSegments(g, new S.THREE.LineBasicMaterial({vertexColors: true})); S.scene.add(obj); S.frame(obj, 1.1);
+    $('[data-hud]', host).innerHTML = `<b>${esc(label(n))}</b><br><span style="color:var(--night-ink-2)">${esc(n.region.join(' › '))}</span><br>Traced length ≈ ${Math.round(len).toLocaleString()} µm<br><a href="${esc(n.page)}">NeuroMorpho record</a>${n.doi ? ` · <a href="https://doi.org/${esc(n.doi[0] || n.doi)}">original paper</a>` : ''}`;
+  };
+  $('#nn', host).onchange = show; show();
+}
+
+// ------------------------------------------------------------------ 5. The pathway on real anatomy (finch MRI atlas surfaces)
+export async function mountPathway(host, steps) {
+  const meshes = await getJSON('data/atlas/zebra-finch/meshes.json');
+  host.innerHTML = `<div class="inst"><div class="inst-bar"><span class="title">Follow the signal through a real zebra finch brain</span><a class="btn sm" href="#lab/zebra-finch">Open full atlas</a></div>
+    <div class="three-host"><span class="hint">Drag to rotate · scroll to zoom</span><div class="hud" data-hud>Choose a step on the left.</div></div>
+    <div class="inst-foot"><span>Surfaces: Poirier et al. (2008) 3D MRI atlas, marching cubes from the original masks. Regions not segmented in that atlas (CM, NCM, the ear and brainstem nuclei) cannot be shown.</span></div></div>`;
+  const S = await makeScene($('.three-host', host));
+  const group = new S.THREE.Group(); S.scene.add(group);
+  const objs = {};
+  meshes.forEach(m => {
+    const v = m.vertices, pos = new Float32Array(v.length);
+    for (let i = 0; i < v.length; i += 3) { pos[i] = v[i]; pos[i + 1] = v[i + 2]; pos[i + 2] = -v[i + 1]; }
+    const g = new S.THREE.BufferGeometry(); g.setAttribute('position', new S.THREE.BufferAttribute(pos, 3)); g.setIndex(m.faces); g.computeVertexNormals();
+    const shell = m.id === 0;
+    if (/Optic tectum|Olfactory|Entopallium|Rotundus/.test(m.name)) return;
+    const mat = new S.THREE.MeshStandardMaterial({color: shell ? '#9aa4ad' : '#3a4450', transparent: true, opacity: shell ? .1 : .35, depthWrite: !shell, roughness: .7, side: S.THREE.DoubleSide});
+    const o = new S.THREE.Mesh(g, mat); group.add(o); objs[m.name] = o;
+  });
+  S.frame(group, 1.05); { const L = S.camera.position.length(); S.camera.position.set(L * .62, L * .42, L * .66); }
+  return name => {
+    const step = steps.find(s => s.region === name);
+    for (const [k, o] of Object.entries(objs)) { if (k === 'Whole brain') continue; const on = k === name; o.material.color.set(on ? '#ff7a45' : (step?.also || []).includes(k) ? '#d9a05b' : '#3a4450'); o.material.opacity = on ? 1 : (step?.also || []).includes(k) ? .8 : .28; o.material.depthWrite = on; }
+    $('[data-hud]', host).innerHTML = step ? `<b>${esc(step.title)}</b><br><span style="color:var(--night-ink-2)">${esc(step.where)}</span>` : '';
+  };
+}
