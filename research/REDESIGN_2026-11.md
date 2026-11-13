@@ -46,3 +46,13 @@ Built by `scripts/build_brainglobe_atlases.py`. All have a template image, label
 | Domestic cat | BrainGlobe `csl_cat_500um` v1.0; CATLAS, Stolzberg et al. 2017 | 0.5 mm (native) | 74 | 13 auditory cortical fields |
 
 These are atlas-only entries (`LAB_EXTRA` in `js/main.js`); they have no chapter, photo or recordings yet. Also downloaded but not used: African mole-rat (`african_molerat_20um`). Searched and not found as open labelled 3D data: fruit bat, dolphin or whale, cricket.
+
+## Identity pass (13 Nov 2026): removing the generic look, proper 3D
+
+Feedback: the site read as "AI-made" and resembled an app. Changes follow the user's collected advice (repetition is the tell: pill buttons, uppercase eyebrow labels, rounded card grids, badges) plus research on 3D presentation (three.js forum and guides: environment lighting, filmic tone mapping, one shadow-casting key light; museum and anatomy viewers: hotspot labels, one consistent template).
+
+- **Masthead**: journal-style wordmark over a ruled navigation row; text links for Search and Display; no app icon, no sticky blurred bar. A sonogram logo mark was tried and dropped because it was illegible at small size.
+- **Home**: opens on the real zebra finch brain as an anatomical plate (`js/viewer3d.js`): procedural studio environment via PMREM, ACES tone mapping, soft ground shadow, labels on leader lines in two columns, a scale bar computed from the camera (meshes are in mm), colours that encode three functional systems. Then a real song figure, a ruled species index, two captioned data figures, and the research list. No hero buttons, cover cards or eyebrow labels.
+- **Sitewide**: squared controls, plain section numerals, flat light footer.
+- **Chapter pathway figure** now uses the same specimen viewer; the Brain lab 3D tab uses the same lighting.
+- Surfaces remain unsmoothed marching-cubes meshes of the atlas masks (decimated for the home page: `data/models/finch-hero.json`).

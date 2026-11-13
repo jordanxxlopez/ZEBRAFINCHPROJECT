@@ -1,9 +1,9 @@
-import {SPECIES, REFS as BASEREFS, ATLASES, REVIEWS, VERDICTS} from './content.js?v=20261112g';
-import {NEWREFS, HOOKS, ACCENT, FINCH, OTHER} from './chapters.js?v=20261112g';
-import * as charts from './charts.js?v=20261112g';
-import * as M from './models.js?v=20261112g';
+import {SPECIES, REFS as BASEREFS, ATLASES, REVIEWS, VERDICTS} from './content.js?v=20261113b';
+import {NEWREFS, HOOKS, ACCENT, FINCH, OTHER, FINCH_PARTS, FINCH_GROUPS} from './chapters.js?v=20261113b';
+import * as charts from './charts.js?v=20261113b';
+import * as M from './models.js?v=20261113b';
 
-const V = '20261112b';
+const V = '20261113b';
 const REFS = {...BASEREFS, ...NEWREFS};
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -124,47 +124,60 @@ async function home() {
   setTitle('');
   const sounds = await loadSounds();
   main.innerHTML = `
-  <section class="hero"><div class="wrap">
-    <p class="eyebrow">Neuroethology of hearing and voice</p>
-    <h1>How do animals hear, call and learn?</h1>
-    <p class="lede">Explore real recordings, real brains and models built from real neurons, across six species from songbirds to honeybees.</p>
-    <div class="hero-spec" id="hero-spec" role="button" tabindex="0" aria-label="Play a zebra finch song"><img src="assets/models/zebra-finch/R56.png?v=${V}" alt="Spectrogram of a zebra finch song"><div class="ph"></div><span class="cap"><b>${'▶'}</b> A zebra finch song · tap to play</span></div>
-    <div class="actions"><a class="btn accent" href="#animals/zebra-finch">Start with the zebra finch</a><a class="btn" href="#animals">Meet all six animals</a><a class="btn" href="#lab">Open the brain lab</a></div>
-  </div></section>
-  <section class="band"><div class="wrap">
-    <div class="band-head"><div><p class="eyebrow">Animals</p><h2>Six species, one question</h2></div><p class="muted">Each animal is a chapter: the sound it makes, how its ear and brain handle sound, and what researchers have found.</p></div>
-    <div class="covers">${SPECIES.map(s => cover(s)).join('')}</div>
-  </div></section>
-  <section class="band night"><div class="wrap">
-    <div class="band-head"><div><p class="eyebrow">Brain lab</p><h2>Models built from real brain data</h2></div><p>Every model on this site is fitted to, or drawn from, data that scientists have shared openly. You can see exactly which.</p></div>
-    <div class="labcards">
-      <a class="labcard" href="#animals/zebra-finch/ear"><canvas id="lc-ear" width="600" height="170" aria-hidden="true"></canvas><div><h3>Hear like a finch’s ear</h3><p>Run a model inner ear on real recordings of six animals.</p></div></a>
-      <a class="labcard" href="#animals/zebra-finch/listen"><canvas id="lc-strf" width="600" height="170" aria-hidden="true"></canvas><div><h3>Play a song to a neuron</h3><p>Receptive-field models of 531 real neurons predict their spikes to songs they never heard.</p></div></a>
-      <a class="labcard" href="#lab"><img src="assets/models/mouse-ccf-coronal.jpg" alt="Coronal section of the Allen mouse brain atlas with regions coloured"><div><h3>Five 3D brain atlases</h3><p>Mouse, marmoset, finch, bat and honeybee brains from their original sources.</p></div></a>
+  <section class="home-top"><div class="wrap home-grid">
+    <div class="home-text">
+      <h1>How animals hear, call and learn</h1>
+      <p class="lede">Recordings, brain atlases and models of real neurons for six species, built from data that researchers have shared openly.</p>
+      <ul class="plain-links">
+        <li><a href="#animals/zebra-finch">The zebra finch, from song to neurons</a></li>
+        <li><a href="#lab">Ten brain atlases in 3D</a></li>
+        <li><a href="#listen">${fmt(sounds.length)} recordings</a></li>
+      </ul>
     </div>
+    <figure class="plate">
+      <div class="plate-view" id="home-brain"><p class="faint small" style="padding:1rem">Loading the brain…</p></div>
+      <figcaption>Brain of a zebra finch, <i>Taeniopygia guttata</i>, from an MRI atlas (Poirier et al. 2008). Coloured structures process sound or produce song. Drag to turn it; choose a label to read about a structure. <span class="keys" id="home-keys"></span></figcaption>
+    </figure>
   </div></section>
+
   <section class="band"><div class="wrap">
-    <div class="band-head"><div><p class="eyebrow">Research</p><h2>We check the science</h2></div><p class="muted">We recompute published numbers from the authors’ own data, and say plainly what could not be checked.</p></div>
+    <h2>A song, as the ear receives it</h2>
+    <div class="sono-fig"><div class="hero-spec" id="hero-spec" role="button" tabindex="0" aria-label="Play a zebra finch song"><img src="assets/models/zebra-finch/R56.png?v=${V}" alt="Spectrogram of a zebra finch song: about one second, 0.5 to 8 kilohertz"><div class="ph"></div></div>
+    <p class="figcap">One song of a male zebra finch, about one second long. Time runs left to right and pitch from 0.5 kHz at the bottom to 8 kHz at the top. Select the image to play it. Recording from Le, Bjoring &amp; Meliza (2025).</p></div>
+  </div></section>
+
+  <section class="band"><div class="wrap">
+    <h2>Animals</h2>
+    <ol class="sp-index">${SPECIES.map(s => `<li><a href="#animals/${s.id}"><img src="${esc(s.photo.src)}" alt="" loading="lazy"><span class="nm"><b>${esc(s.common)}</b><i>${esc(s.latin)}</i></span><span class="q">${esc(HOOKS[s.id])}</span><span class="has">${esc(s.signal)}</span></a></li>`).join('')}</ol>
+  </div></section>
+
+  <section class="band"><div class="wrap two-figs">
+    <figure><a href="#animals/zebra-finch/listen"><canvas id="lc-strf" width="600" height="230" aria-hidden="true"></canvas></a><figcaption><b>What one neuron listens for.</b> The receptive field of an auditory neuron in Field L, fitted to its recorded spikes. Red marks pitches and delays that excite it; blue, those that suppress it. <a href="#animals/zebra-finch/listen">Play songs to 12 neurons</a></figcaption></figure>
+    <figure><a href="#animals/zebra-finch/ear"><canvas id="lc-ear" width="600" height="230" aria-hidden="true"></canvas></a><figcaption><b>The same song after a model inner ear.</b> Forty filters split the sound into pitch channels, as hair cells do. <a href="#animals/zebra-finch/ear">Try it on other animals</a></figcaption></figure>
+  </div></section>
+
+  <section class="band"><div class="wrap">
+    <h2>Checked against the data</h2>
+    <p class="muted text">We recompute published numbers from the authors’ own files and say what could not be checked.</p>
     <ul class="storylist">${[{id: 'finch-restoration', species: 'zebra-finch', kind: 'Claim check', verdict: 'partial', title: 'Do finch neurons fill in missing syllables?', summary: 'An independent look at the gap responses in the open dataset behind a 2025 Nature Communications paper.'}, ...REVIEWS.slice(0, 5)].map(story).join('')}</ul>
-    <p style="margin-top:1.4rem"><a class="btn" href="#research">All research</a></p>
-  </div></section>
-  <section class="band alt"><div class="wrap">
-    <div class="paths">
-      <a class="path" href="#listen"><p class="eyebrow">Listen</p><h3>${fmt(sounds.length)} recordings</h3><p>Calls, songs, clicks and dances, with live spectrograms. Ultrasound slowed so you can hear it.</p><span class="go">Open the sound library →</span></a>
-      <a class="path" href="#lab"><p class="eyebrow">Explore</p><h3>Brains you can rotate</h3><p>Slice through real scans and find the regions that process sound.</p><span class="go">Enter the brain lab →</span></a>
-      <a class="path" href="#about"><p class="eyebrow">About</p><h3>Real data only</h3><p>No generated images or invented numbers. Every figure links to its source.</p><span class="go">How we work →</span></a>
-    </div>
+    <p style="margin-top:1.2rem"><a href="#research">All research</a></p>
   </div></section>`;
   const audio = new Audio('assets/models/zebra-finch/R56.wav?v=' + V), hs = $('#hero-spec'), ph = $('.ph', hs);
-  const {makePlayer} = await import('./dsp.js?v=20261112g'); const p = makePlayer(audio, f => ph.style.left = (f * 100) + '%');
-  hs.onclick = () => p.toggle(); hs.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.toggle(); } };
+  const {makePlayer} = await import('./dsp.js?v=20261113b'); const pl = makePlayer(audio, f => ph.style.left = (f * 100) + '%');
+  hs.onclick = () => pl.toggle(); hs.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pl.toggle(); } };
   thumbs();
+  try {
+    const [{createSpecimen}, meshes] = await Promise.all([import('./viewer3d.js?v=20261113b'), getJSON('data/models/finch-hero.json')]);
+    const el = $('#home-brain'); if (!el) return;
+    $('#home-keys').innerHTML = Object.values(FINCH_GROUPS).map(g => `<span><i style="background:${g.color}"></i>${esc(g.label)}</span>`).join('');
+    await createSpecimen(el, {meshes, up: '+z', shell: 'Whole brain', parts: FINCH_PARTS, groups: FINCH_GROUPS, caption: ''});
+  } catch (e) { console.warn(e); const el = $('#home-brain'); if (el) el.innerHTML = '<p class="small faint" style="padding:1rem">The 3D view needs WebGL, which this browser has turned off.</p>'; }
 }
 const cover = s => `<a class="cover" href="#animals/${s.id}"><img src="${esc(s.photo.src)}" alt="" loading="lazy"><span class="tag">${esc(s.group)}</span><div class="meta"><p class="q">${esc(HOOKS[s.id])}</p><p class="nm">${esc(s.common)} <i>${esc(s.latin)}</i></p></div></a>`;
 const story = r => `<li><p class="small faint">${esc(SP[r.species].common)} · ${esc(r.kind)} ${chip(r.verdict)}</p><h3><a href="#${r.legacy ? r.id : 'research/' + r.id}">${esc(r.title)}</a></h3><p>${esc(r.summary)}</p></li>`;
 async function thumbs() {
   try {
-    const d = await getJSON('data/models/zebra-finch/strf.json'); const {paintMatrix, diverging, decode, gammatone, normaliseMax} = await import('./dsp.js?v=20261112g');
+    const d = await getJSON('data/models/zebra-finch/strf.json'); const {paintMatrix, diverging, decode, gammatone, normaliseMax} = await import('./dsp.js?v=20261113b');
     const c = $('#lc-strf'); if (!c) return; const tmp = document.createElement('canvas'); const e = d.examples[0]; const S = e.strf, mx = Math.max(...S.flat().map(Math.abs));
     paintMatrix(tmp, S.map(r => r.map(v => v / mx)), diverging); const g = c.getContext("2d"); g.imageSmoothingEnabled = true; g.drawImage(tmp, 0, 0, 600, 170);
     const {x, sr} = await decode('assets/models/zebra-finch/R56.wav'); const gt = gammatone(x.subarray(0, Math.round(sr * .8)), sr, {fmin: 200, fmax: 7000, n: 40});
@@ -240,7 +253,7 @@ async function songPlayer(el) {
     <div class="seg" role="group" aria-label="Choose a song" style="margin-top:.6rem">${songs.map(([k], i) => `<button type="button" data-s="${k}" aria-pressed="${i === 0}">${i + 1}</button>`).join('')}</div>
     <p class="small" style="color:var(--night-ink-2);margin:.6rem 0 0">Each song belongs to a different bird. Notice how each repeats a few distinct syllables in a fixed order.</p></div>
     <div class="inst-foot"><span>Stimuli from Le, Bjoring &amp; Meliza (figshare, CC BY 4.0). Spectrogram 0.5–8 kHz.</span></div></div>`;
-  const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261112g');
+  const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261113b');
   const audio = new Audio(); const ph = $('.ph', el); makePlayer(audio, f => ph.style.left = (f * 100) + '%');
   const b = document.createElement('button'); b.className = 'play'; const setB = () => b.innerHTML = audio.paused ? PLAY_ICON + 'Play' : PAUSE_ICON + 'Pause'; ['play', 'pause', 'ended'].forEach(ev => audio.addEventListener(ev, setB)); setB(); b.onclick = () => audio.paused ? audio.play() : audio.pause(); $('.pb', el).appendChild(b);
   const pick = k => { const s = d.songs[k]; audio.src = s.audio + '?v=' + V; const img = new Image(); img.onload = () => { const c = $('.t', el); c.width = img.width; c.height = 150; c.getContext('2d').drawImage(img, 0, 0, img.width, 150); }; img.src = s.spec + '?v=' + V; $$('[data-s]', el).forEach(x => x.setAttribute('aria-pressed', String(x.dataset.s === k))); };
@@ -254,7 +267,7 @@ async function soundStrip(el, id) {
     <div style="display:flex;gap:.6rem;align-items:center;margin:.7rem 0;flex-wrap:wrap"><span class="pb"></span><span class="small" data-cap style="color:var(--night-ink-2)"></span></div>
     <div class="seg" role="group" aria-label="Recordings">${list.map((s, i) => `<button type="button" data-i="${i}" aria-pressed="${i === 0}">${esc(s.title.replace(/ — example /, ' ').replace(/Ultrasonic vocalizations, /, 'USVs '))}</button>`).join('')}</div></div>
     <div class="inst-foot"><span data-src></span></div></div>`;
-  const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261112g'); const audio = new Audio(); const ph = $('.ph', el); makePlayer(audio, f => ph.style.left = (f * 100) + '%');
+  const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261113b'); const audio = new Audio(); const ph = $('.ph', el); makePlayer(audio, f => ph.style.left = (f * 100) + '%');
   const b = document.createElement('button'); b.className = 'play'; const setB = () => b.innerHTML = audio.paused ? PLAY_ICON + 'Play' : PAUSE_ICON + 'Pause'; ['play', 'pause', 'ended'].forEach(ev => audio.addEventListener(ev, setB)); setB(); b.onclick = () => audio.paused ? audio.play() : audio.pause(); $('.pb', el).appendChild(b);
   const pick = i => { const s = list[i]; const f = s.files.realtime || s.files.expanded || s.files.original; audio.src = f; $('[data-img]', el).src = s.spectrogram?.file || ''; $('[data-cap]', el).textContent = `${s.kind} · ${(+s.source.duration_s).toFixed(2)} s${s.files.expanded && !s.files.realtime ? ' · slowed for human hearing' : ''}`; $('[data-src]', el).innerHTML = `${esc(s.source.citation.split('.')[0])}. ${s.source.licence ? esc(s.source.licence) : ''}`; $$('[data-i]', el).forEach(x => x.setAttribute('aria-pressed', String(+x.dataset.i === i))); };
   $$('[data-i]', el).forEach(x => x.onclick = () => { pick(+x.dataset.i); audio.play().catch(() => {}); }); pick(0);
@@ -286,7 +299,7 @@ async function listen(arg) {
         <div><div class="lib-list" id="lib-list" role="listbox" aria-label="Recordings"></div><div class="pager" id="lib-pager"></div></div></div></div>`;
     const kinds = () => { const sp = $('#f-sp').value; $('#f-k').innerHTML = '<option value="">All</option>' + [...new Set(all.filter(s => !sp || s.species === sp).map(s => s.kind))].sort().map(k => `<option>${esc(k)}</option>`).join(''); };
     kinds(); $('#f-sp').onchange = () => { kinds(); lib.page = 0; libList(all); }; $('#f-k').onchange = $('#f-q').oninput = () => { lib.page = 0; libList(all); };
-    const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261112g');
+    const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261113b');
     lib.audio = new Audio(); const ph = $('#pl-box .ph'); makePlayer(lib.audio, f => ph.style.left = (f * 100) + '%');
     const b = document.createElement('button'); b.className = 'play'; const setB = () => b.innerHTML = lib.audio.paused ? PLAY_ICON + 'Play' : PAUSE_ICON + 'Pause'; ['play', 'pause', 'ended'].forEach(ev => lib.audio.addEventListener(ev, setB)); setB(); b.onclick = () => lib.audio.paused ? lib.audio.play() : lib.audio.pause(); $('#pl .pb').appendChild(b);
     const box = $('#pl-box'), hov = $('#pl-hov');
@@ -351,7 +364,7 @@ async function lab(id) {
     return;
   }
   main.innerHTML = `<div class="lab"><div class="wrap"><p class="crumb" style="padding-top:1.2rem"><a href="#home">Home</a> / <a href="#lab">Brain lab</a> / ${esc(LAB[id]?.common || id)}</p>${LAB_MARKUP}</div></div>`;
-  const {openAtlas} = await import('./atlas.js?v=20261112g');
+  const {openAtlas} = await import('./atlas.js?v=20261113b');
   await openAtlas(id, {status: t => { const r = $('#av-readout'); if (r) r.textContent = t || 'Click a section to move the cursor; the other two follow. Arrow keys work too.'; }, esc, getJSON, sp: LAB[id]});
 }
 

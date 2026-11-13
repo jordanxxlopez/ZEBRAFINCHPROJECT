@@ -1,5 +1,5 @@
 // Interactive instruments built from real data. Each export mounts into a host element.
-import {decode, bandSpectrogram, gammatone, paintMatrix, dbNormalise, normaliseMax, magma, diverging, stftPower, makePlayer, PLAY_ICON, PAUSE_ICON} from './dsp.js?v=20261112g';
+import {decode, bandSpectrogram, gammatone, paintMatrix, dbNormalise, normaliseMax, magma, diverging, stftPower, makePlayer, PLAY_ICON, PAUSE_ICON} from './dsp.js?v=20261113b';
 
 const V = '20261112b';
 const getJSON = (() => { const c = new Map(); return p => { if (!c.has(p)) c.set(p, fetch(`${p}?v=${V}`).then(r => { if (!r.ok) throw Error(`Could not load ${p}`); return r.json(); })); return c.get(p); }; })();
@@ -190,26 +190,8 @@ export async function mountNeurons(host, {species = 'zebra-finch'} = {}) {
 
 // ------------------------------------------------------------------ 5. The pathway on real anatomy (finch MRI atlas surfaces)
 export async function mountPathway(host, steps) {
-  const meshes = await getJSON('data/atlas/zebra-finch/meshes.json');
-  host.innerHTML = `<div class="inst"><div class="inst-bar"><span class="title">Follow the signal through a real zebra finch brain</span><a class="btn sm" href="#lab/zebra-finch">Open full atlas</a></div>
-    <div class="three-host"><span class="hint">Drag to rotate · scroll to zoom</span><div class="hud" data-hud>Choose a step on the left.</div></div>
-    <div class="inst-foot"><span>Surfaces: Poirier et al. (2008) 3D MRI atlas, marching cubes from the original masks. Regions not segmented in that atlas (CM, NCM, the ear and brainstem nuclei) cannot be shown.</span></div></div>`;
-  const S = await makeScene($('.three-host', host));
-  const group = new S.THREE.Group(); S.scene.add(group);
-  const objs = {};
-  meshes.forEach(m => {
-    const v = m.vertices, pos = new Float32Array(v.length);
-    for (let i = 0; i < v.length; i += 3) { pos[i] = v[i]; pos[i + 1] = v[i + 2]; pos[i + 2] = -v[i + 1]; }
-    const g = new S.THREE.BufferGeometry(); g.setAttribute('position', new S.THREE.BufferAttribute(pos, 3)); g.setIndex(m.faces); g.computeVertexNormals();
-    const shell = m.id === 0;
-    if (/Optic tectum|Olfactory|Entopallium|Rotundus/.test(m.name)) return;
-    const mat = new S.THREE.MeshStandardMaterial({color: shell ? '#9aa4ad' : '#3a4450', transparent: true, opacity: shell ? .1 : .35, depthWrite: !shell, roughness: .7, side: S.THREE.DoubleSide});
-    const o = new S.THREE.Mesh(g, mat); group.add(o); objs[m.name] = o;
-  });
-  S.frame(group, 1.05); { const L = S.camera.position.length(); S.camera.position.set(L * .62, L * .42, L * .66); }
-  return name => {
-    const step = steps.find(s => s.region === name);
-    for (const [k, o] of Object.entries(objs)) { if (k === 'Whole brain') continue; const on = k === name; o.material.color.set(on ? '#ff7a45' : (step?.also || []).includes(k) ? '#d9a05b' : '#3a4450'); o.material.opacity = on ? 1 : (step?.also || []).includes(k) ? .8 : .28; o.material.depthWrite = on; }
-    $('[data-hud]', host).innerHTML = step ? `<b>${esc(step.title)}</b><br><span style="color:var(--night-ink-2)">${esc(step.where)}</span>` : '';
-  };
+  const [{createSpecimen}, {FINCH_PARTS, FINCH_GROUPS}, meshes] = await Promise.all([import('./viewer3d.js?v=20261113b'), import('./chapters.js?v=20261113b'), getJSON('data/models/finch-hero.json')]);
+  host.innerHTML = `<figure class="plate"><div class="plate-view" style="height:min(64vh,540px)"></div><figcaption>Zebra finch brain from the 3D MRI atlas of Poirier et al. (2008). Surfaces are marching-cubes meshes of the authors' masks. The ear, brainstem auditory nuclei, CM and NCM are not delineated in this atlas. <a href="#lab/zebra-finch">Open the full atlas</a></figcaption></figure>`;
+  const v = await createSpecimen(host.querySelector('.plate-view'), {meshes, up: '+z', shell: 'Whole brain', parts: FINCH_PARTS, groups: FINCH_GROUPS, caption: 'Choose a step on the left, or a label.'});
+  return name => v.select(name);
 }

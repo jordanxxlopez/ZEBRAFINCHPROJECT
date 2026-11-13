@@ -219,16 +219,16 @@ async function loadMeshes() { if (!S.meshes) S.meshes = await fetch(`${S.base}${
 async function init3D() {
   if (S.three) { S.three.resize(); return; }
   const host = $('#av-three');
-  const [THREE, {OrbitControls}, meshes] = await Promise.all([import('three'), import('../assets/OrbitControls.js'), loadMeshes()]);
+  const [THREE, {OrbitControls}, meshes, {dress}] = await Promise.all([import('three'), import('../assets/OrbitControls.js'), loadMeshes(), import('./viewer3d.js?v=20261113b')]);
   const renderer = new THREE.WebGLRenderer({antialias: true, preserveDrawingBuffer: false});
   renderer.setPixelRatio(Math.min(2, devicePixelRatio));
   host.prepend(renderer.domElement);
   renderer.domElement.setAttribute('aria-label', 'Interactive 3D view of brain surfaces');
   renderer.domElement.tabIndex = 0;
-  const scene = new THREE.Scene(); scene.background = new THREE.Color('#0f1215');
+  const scene = new THREE.Scene(); scene.background = new THREE.Color('#101214'); dress(THREE, renderer, scene);
   const camera = new THREE.PerspectiveCamera(35, 1, 0.01, 1000);
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x334455, 1.1));
-  const dl = new THREE.DirectionalLight(0xffffff, 1.4); dl.position.set(1, 2, 3); camera.add(dl); scene.add(camera);
+  
+  const dl = new THREE.DirectionalLight(0xfff4e6, 1.1); dl.position.set(1, 2, 3); camera.add(dl); scene.add(camera);
   const group = new THREE.Group(); scene.add(group);
   const up = S.view.up || '+z';
   const map = (x, y, z) => up === '-z' ? [x, -z, y] : up === '+z' ? [x, z, -y] : up === '-y' ? [x, -y, -z] : [x, y, z];
@@ -239,7 +239,7 @@ async function init3D() {
     for (let i = 0; i < v.length; i += 3) { const p = map(v[i], v[i + 1], v[i + 2]); pos[i] = p[0]; pos[i + 1] = p[1]; pos[i + 2] = p[2]; }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setIndex(m.faces); g.computeVertexNormals();
     const shell = (S.id === 'house-mouse' && m.id === 997) || m.id === 0 || /whole brain/i.test(m.name);
-    const mat = new THREE.MeshStandardMaterial({color: m.color || '#cccccc', roughness: .65, metalness: 0, transparent: shell, opacity: shell ? .16 : 1, depthWrite: !shell, side: THREE.DoubleSide});
+    const mat = new THREE.MeshStandardMaterial({color: m.color || '#cccccc', roughness: shell ? .5 : .45, metalness: 0, transparent: shell, opacity: shell ? .2 : 1, depthWrite: !shell, side: THREE.DoubleSide});
     const mesh = new THREE.Mesh(g, mat); mesh.userData = {m, shell}; group.add(mesh); objs.push(mesh);
     g.computeBoundingBox(); box.union(g.boundingBox);
   });

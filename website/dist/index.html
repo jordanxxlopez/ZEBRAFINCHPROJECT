@@ -6,23 +6,23 @@
 <title>Animal Communication &amp; Neuroscience</title>
 <meta name="description" content="How animals hear, call and learn: real recordings, real brains and models built from real neurons for six species.">
 <meta name="color-scheme" content="light dark">
-<link rel="stylesheet" href="css/app.css?v=20261112g">
+<link rel="stylesheet" href="css/app.css?v=20261113b">
 <script>try{const s=JSON.parse(localStorage.getItem('acn-display')||'{}');for(const k of ['theme','size','contrast','motion'])if(s[k])document.documentElement.dataset[k]=s[k];}catch(e){}</script>
 <script type="importmap">{"imports":{"three":"./assets/three.module.js"}}</script>
-<script type="module" src="js/main.js?v=20261112g"></script>
+<script type="module" src="js/main.js?v=20261113b"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="wrap">
-  <a class="logo" href="#home" aria-label="Animal Communication and Neuroscience, home">
-    <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#15181b"/><path d="M5 15h3l2-6 3 12 3-9 2 5 2-2h5" fill="none" stroke="#e9a487" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <span>Animal Communication &amp; Neuroscience<small>Hearing, voice and the brain</small></span></a>
-  <ul class="nav" id="nav">
-    <li><a href="#animals">Animals</a></li><li><a href="#listen">Listen</a></li><li><a href="#lab">Brain lab</a></li><li><a href="#research">Research</a></li><li><a href="#about">About</a></li>
-  </ul>
-  <button class="icon-btn" id="open-search" type="button" aria-label="Search" aria-controls="search"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-  <button class="icon-btn" id="open-settings" type="button" aria-label="Display settings" aria-haspopup="dialog"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="7" r="2.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="17" r="2.2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
-  <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <div class="mast">
+    <a class="logo" href="#home" aria-label="Animal Communication and Neuroscience, home"><span class="wm">Animal Communication <em>&amp;</em> Neuroscience</span></a>
+    <p class="mast-sub">Hearing, voice and the brain, from open data</p>
+    <div class="mast-util"><button class="txt-btn" id="open-search" type="button" aria-controls="search">Search</button><button class="txt-btn" id="open-settings" type="button" aria-haspopup="dialog">Display</button></div>
+  </div>
+  <nav aria-label="Main"><ul class="nav" id="nav">
+    <li><a href="#home">Overview</a></li><li><a href="#animals">Animals</a></li><li><a href="#listen">Recordings</a></li><li><a href="#lab">Brain atlases</a></li><li><a href="#research">Research</a></li><li><a href="#about">About</a></li>
+  </ul></nav>
+  <button id="menu-btn" hidden></button>
   <div class="search-pop" id="search" hidden><label class="vh" for="q">Search</label><input id="q" type="search" placeholder="Search animals, brain regions, sounds, research" autocomplete="off"><div class="res" id="search-res" role="listbox"></div></div>
 </div></header>
 <main id="main" tabindex="-1"></main>

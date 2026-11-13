@@ -66,3 +66,17 @@ export const OTHER = {
   'house-mouse': {facts: [['> 30 kHz', 'most song energy, above human hearing [[kikusui2011]]'], ['670', 'annotated structures in the Allen atlas [[wang2020]]'], ['×16', 'slower playback so you can hear it']]},
   'honeybee': {facts: [['Angle', 'of the waggle encodes direction [[su2008]]'], ['Duration', 'encodes distance [[su2008]]'], ['793', 'tracked dances we reanalysed [[dormagen2023]]']]},
 };
+
+// Labels for the zebra finch 3D specimen. Colours mark functional systems, not arbitrary regions.
+export const FINCH_GROUPS = {aud: {label: 'Hearing pathway', color: '#2f8f8a'}, motor: {label: 'Song motor pathway', color: '#c4532d'}, loop: {label: 'Learning loop', color: '#c79a2b'}};
+export const FINCH_PARTS = {
+  'MLd': {label: 'MLd', title: 'MLd · auditory midbrain', group: 'aud', text: 'Counterpart of the mammalian inferior colliculus. Sound information from the brainstem converges here.'},
+  'Ovoidalis': {label: 'Ov', title: 'Ovoidalis · auditory thalamus', group: 'aud', text: 'Relays sound from the midbrain to the forebrain.'},
+  'Field L': {label: 'Field L', title: 'Field L · primary auditory forebrain', group: 'aud', text: 'Receives the thalamic input and passes it to the secondary areas NCM and CM, which this atlas does not delineate.'},
+  'HVC': {label: 'HVC', title: 'HVC · song timing', group: 'motor', text: 'Neurons that project to RA each fire one brief burst at a particular moment of the song.'},
+  'RA': {label: 'RA', title: 'RA · song motor output', group: 'motor', text: 'Receives HVC input and drives the brainstem motor neurons of the vocal organ.'},
+  'nXIIts': {label: 'nXIIts', title: 'nXIIts · vocal motor nucleus', group: 'motor', text: 'Brainstem motor nucleus for the syrinx, the bird’s vocal organ.'},
+  'Area X': {label: 'Area X', title: 'Area X · basal ganglia', group: 'loop', text: 'First station of the loop needed for learning and adjusting song.'},
+  'DLM': {label: 'DLM', title: 'DLM · thalamic relay', group: 'loop', text: 'Passes the output of Area X on to LMAN.'},
+  'LMAN': {label: 'LMAN', title: 'LMAN · loop output', group: 'loop', text: 'Sends the loop’s output to RA and contributes to variability in song.'},
+};
