@@ -1160,5 +1160,723 @@
    "citation": "Tobias Puderer, Wikimedia Commons (Felis silvestris catus meows.ogg)"
   },
   "playback": "Decoded to mono WAV and limited to the first 20 s. No filtering."
+ },
+ {
+  "id": "lemur-commons-001",
+  "species": "grey-mouse-lemur",
+  "title": "Vocalization 001",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/grey-mouse-lemur/commons-001.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/grey-mouse-lemur/commons-001.png",
+   "t1": 20.0,
+   "f0": 0.0,
+   "f1": 19968.8,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 96000,
+   "duration_s": 20.0,
+   "file": "Microcebus murinus vocalization 001.ogg",
+   "sha256": "cd035b71ac1ad74f9903e682dc3c31c771de7d9f484207e0e8c40d403563d95c",
+   "url": "https://commons.wikimedia.org/wiki/File:Microcebus_murinus_vocalization_001.ogg",
+   "licence": "CC BY-SA 3.0",
+   "citation": "Chris Mercer, Wikimedia Commons (Microcebus murinus vocalization 001.ogg)"
+  },
+  "playback": "Decoded to mono WAV, at most the first 20 s. No filtering. Uploader's description: “Vocalization by Microcebus murinus (Gray Mouse Lemur) -- possibly an alarm call”. The recording conditions are not documented."
+ },
+ {
+  "id": "lemur-commons-002",
+  "species": "grey-mouse-lemur",
+  "title": "Vocalization 002",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/grey-mouse-lemur/commons-002.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/grey-mouse-lemur/commons-002.png",
+   "t1": 20.0,
+   "f0": 0.0,
+   "f1": 19982.8,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 44100,
+   "duration_s": 20.0,
+   "file": "Microcebus murinus vocalization 002.ogg",
+   "sha256": "5781c4613dd4398bde17b9b55baaf8c1f63f0ee08b02670af50fad17deeee347",
+   "url": "https://commons.wikimedia.org/wiki/File:Microcebus_murinus_vocalization_002.ogg",
+   "licence": "CC BY-SA 3.0",
+   "citation": "Chris Mercer, Wikimedia Commons (Microcebus murinus vocalization 002.ogg)"
+  },
+  "playback": "Decoded to mono WAV, at most the first 20 s. No filtering. Uploader's description: “Vocalization by Microcebus murinus (Gray Mouse Lemur) -- possibly an territorial call”. The recording conditions are not documented."
+ },
+ {
+  "id": "micklemi-sm0749",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0749",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0749.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0749.png",
+   "t1": 4.463,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 4.463,
+   "file": "tbio_a_841085_sm0749.wav",
+   "sha256": "53405aac1a4a3319f5576c83266883338a592c73c199c9eec9f0515b1797fe80",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0754",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0754",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0754.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0754.png",
+   "t1": 3.3518,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 3.352,
+   "file": "tbio_a_841085_sm0754.wav",
+   "sha256": "9d04948f10d621c6362561433929e683e39b3130b6305702dc6c3675c843f47b",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0758",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0758",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0758.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0758.png",
+   "t1": 2.8756,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 2.876,
+   "file": "tbio_a_841085_sm0758.wav",
+   "sha256": "09b67c37c0eadeba87cc5a9f4e22ef0da3c627982f08f641cefde945ec602dd1",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0761",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0761",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0761.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0761.png",
+   "t1": 7.5756,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 7.576,
+   "file": "tbio_a_841085_sm0761.wav",
+   "sha256": "01f904a16567286f136c2fc7ec0bf944622d0e44b0e28be12c7b05e859dedbe5",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0764",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0764",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0764.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0764.png",
+   "t1": 3.7372,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 3.737,
+   "file": "tbio_a_841085_sm0764.wav",
+   "sha256": "d2f66634a6f238b846e53a288cba7b8f0df1ad45ec697896af4184624e59bb6f",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0767",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0767",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0767.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0767.png",
+   "t1": 4.1667,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 4.167,
+   "file": "tbio_a_841085_sm0767.wav",
+   "sha256": "4fe8ddd4b08b986434fbe275f27041f9fc45bcd166ad1f751a7df23c5254af90",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0769",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0769",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0769.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0769.png",
+   "t1": 5.3205,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 5.321,
+   "file": "tbio_a_841085_sm0769.wav",
+   "sha256": "8503945b451df5712c859bc8f99d994649b768f0dec7ffaac053a9cbdc15e680",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0771",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0771",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0771.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0771.png",
+   "t1": 4.7051,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 4.705,
+   "file": "tbio_a_841085_sm0771.wav",
+   "sha256": "a6a2a9e318520352f1c39f15ac040638e7a61f9442acca7111943da4b523f35e",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0778",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0778",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0778.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0778.png",
+   "t1": 3.3533,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 3.353,
+   "file": "tbio_a_841085_sm0778.wav",
+   "sha256": "844fc28aece9443b894d90c9e2f360e4567c15e5a9ad4e87766164079162367d",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0784",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0784",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0784.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0784.png",
+   "t1": 7.8124,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 7.812,
+   "file": "tbio_a_841085_sm0784.wav",
+   "sha256": "29d9c6d7ce329d2f83b925a929a9fa8bc112528f75a8cce28d645026eab5a5d3",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0785",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0785",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0785.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0785.png",
+   "t1": 4.5396,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 4.54,
+   "file": "tbio_a_841085_sm0785.wav",
+   "sha256": "98936a725d6dd33f06103d14386a2ada7c3cae885211d3030cb4cc77ed0c8838",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0788",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0788",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0788.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0788.png",
+   "t1": 3.7459,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 3.746,
+   "file": "tbio_a_841085_sm0788.wav",
+   "sha256": "d6e64b11a3d7828cb5b25c51a381ef856369b972e2ffaa1241662b27707a0c33",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0794",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0794",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0794.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0794.png",
+   "t1": 4.1026,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 4.103,
+   "file": "tbio_a_841085_sm0794.wav",
+   "sha256": "8e405aeece47c3a7986d501b64613d6ae072b89a7b2900ba68858293245d52f9",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0797",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0797",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0797.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0797.png",
+   "t1": 3.8333,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 3.833,
+   "file": "tbio_a_841085_sm0797.wav",
+   "sha256": "53ab327ec8143db1f5dc3fe63035d1617aea72c101dbe6c65bcbbcdc13af2908",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0798",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0798",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0798.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0798.png",
+   "t1": 4.2692,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 4.269,
+   "file": "tbio_a_841085_sm0798.wav",
+   "sha256": "2b75acacdf03457e0617af321a535b567426144a3a2a254f1528f6666d08e927",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0807",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0807",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0807.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0807.png",
+   "t1": 4.1816,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 4.182,
+   "file": "tbio_a_841085_sm0807.wav",
+   "sha256": "ff8f301a5b4887a77cc349d58640c3f2441002da5f7a49eb285b34e620ebff26",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0809",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0809",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0809.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0809.png",
+   "t1": 9.1608,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 9.161,
+   "file": "tbio_a_841085_sm0809.wav",
+   "sha256": "c759e7cea1b84a53812ca436d18e8dbe49d625327527ab51c0bcb52964d930a4",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "micklemi-sm0810",
+  "species": "micklems-mole-rat",
+  "title": "Call recording 0810",
+  "kind": "Call",
+  "files": {
+   "original": "assets/sound/micklems-mole-rat/sm0810.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/micklems-mole-rat/sm0810.png",
+   "t1": 4.359,
+   "f0": 0.0,
+   "f1": 15937.5,
+   "db_range": 70,
+   "nperseg": 512,
+   "hop": 128,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 4.359,
+   "file": "tbio_a_841085_sm0810.wav",
+   "sha256": "bd4c6c3ffc049bc1c4326ea31c833c0bf624e6c7e11454216df132b0da50f4ac",
+   "doi": "10.6084/m9.figshare.825719.v2",
+   "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+   "licence": "CC BY 4.0",
+   "citation": "Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014) Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160. doi:10.1080/09524622.2013.841085"
+  },
+  "playback": "Supplementary file, first channel, scaled to a common peak level. The deposit does not state the call type of each file."
+ },
+ {
+  "id": "rat-usv-22khz",
+  "species": "norway-rat",
+  "title": "22-kHz ultrasonic calls",
+  "kind": "Ultrasonic call series",
+  "files": {
+   "expanded": "assets/sound/norway-rat/usv-22khz-te10.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/norway-rat/usv-22khz.png",
+   "t1": 8.0,
+   "f0": 0.0,
+   "f1": 99853.5,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 250000,
+   "duration_s": 8.0,
+   "file": "USCMed_Context/audio_files/PTSD16_Context01.wav",
+   "sha256": "99b982970dc70ae55c8c85221db276520411d87dfb32defed8425612f5394cd3",
+   "doi": "10.5281/zenodo.15029872",
+   "url": "https://doi.org/10.5281/zenodo.15029872",
+   "licence": "CC BY 4.0",
+   "citation": "Shahnoor Anis, Sabah; M. Kellis, Devin; Ford Kaigler, Kris; O'Reilly, Christian; A. Wilson, Marlene (2025) USCMed Dataset - Rat Ultrasonic Vocalizations. Zenodo. doi:10.5281/zenodo.15029872"
+  },
+  "playback": "Excerpt from 158.6 s to 166.6 s of the source file, played at 1/10 speed; all frequencies are divided by 10. The deposited annotation file marks 4 calls in this excerpt, labelled 22kHz, between 18 and 30 kHz."
+ },
+ {
+  "id": "starling-b1125-1",
+  "species": "european-starling",
+  "title": "Song of male b1125, recording 1",
+  "kind": "Song",
+  "files": {
+   "original": "assets/sound/european-starling/b1125-1.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/european-starling/b1125-1.png",
+   "t1": 30.0,
+   "f0": 0.0,
+   "f1": 11972.5,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 44100,
+   "duration_s": 30.0,
+   "file": "b1125/wavs/2018-03-05_18-36-51-290000.wav",
+   "sha256": "bd6a7cad0b52a58bc786f1c5e9aba55ea0dad38446e2f23cca47dc9ae15481da",
+   "doi": "10.5281/zenodo.3237218",
+   "url": "https://doi.org/10.5281/zenodo.3237218",
+   "licence": "CC BY 4.0",
+   "citation": "Arneodo Z, Sainburg T, Jeanne J, Gentner T (2019) An acoustically isolated European starling song library. Zenodo. doi:10.5281/zenodo.3237218"
+  },
+  "playback": "First channel, at most the first 30 s, scaled to a common peak level. Recorded from a single bird in an acoustically isolated chamber."
+ },
+ {
+  "id": "starling-b1125-2",
+  "species": "european-starling",
+  "title": "Song of male b1125, recording 2",
+  "kind": "Song",
+  "files": {
+   "original": "assets/sound/european-starling/b1125-2.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/european-starling/b1125-2.png",
+   "t1": 30.0,
+   "f0": 0.0,
+   "f1": 11972.5,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 44100,
+   "duration_s": 30.0,
+   "file": "b1125/wavs/2018-03-06_06-40-51-990000.wav",
+   "sha256": "061bf06b187de8f8f581ed386a80afd483c5eeaa2f9d5dc532292cf5ecda8178",
+   "doi": "10.5281/zenodo.3237218",
+   "url": "https://doi.org/10.5281/zenodo.3237218",
+   "licence": "CC BY 4.0",
+   "citation": "Arneodo Z, Sainburg T, Jeanne J, Gentner T (2019) An acoustically isolated European starling song library. Zenodo. doi:10.5281/zenodo.3237218"
+  },
+  "playback": "First channel, at most the first 30 s, scaled to a common peak level. Recorded from a single bird in an acoustically isolated chamber."
+ },
+ {
+  "id": "starling-b1125-3",
+  "species": "european-starling",
+  "title": "Song of male b1125, recording 3",
+  "kind": "Song",
+  "files": {
+   "original": "assets/sound/european-starling/b1125-3.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/european-starling/b1125-3.png",
+   "t1": 30.0,
+   "f0": 0.0,
+   "f1": 11972.5,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 44100,
+   "duration_s": 30.0,
+   "file": "b1125/wavs/2018-03-06_12-04-07-110000.wav",
+   "sha256": "608bd15942474a39dc2c92c34361702fd440c0e48a4fa75ad7e197bc45c20745",
+   "doi": "10.5281/zenodo.3237218",
+   "url": "https://doi.org/10.5281/zenodo.3237218",
+   "licence": "CC BY 4.0",
+   "citation": "Arneodo Z, Sainburg T, Jeanne J, Gentner T (2019) An acoustically isolated European starling song library. Zenodo. doi:10.5281/zenodo.3237218"
+  },
+  "playback": "First channel, at most the first 30 s, scaled to a common peak level. Recorded from a single bird in an acoustically isolated chamber."
  }
 ]

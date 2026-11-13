@@ -9,6 +9,8 @@ export const MORE_REFS = {
   olszynski2024: {cite: 'Olszyński KH, Polowy R, Wardak AD, Łaska IA, et al. (2024). Male rats emit aversive 44-kHz ultrasonic vocalizations during prolonged Pavlovian fear conditioning. eLife 12:RP88810.', doi: '10.7554/eLife.88810'},
   gustison2024: {cite: 'Gustison ML, Muñoz-Castañeda R, Osten P, Phelps SM (2024). Sexual coordination in a whole-brain map of prairie vole pair bonding. eLife 12:RP87029.', doi: '10.7554/eLife.87029'},
   stolzberg2017: {cite: 'Stolzberg D, Wong C, Butler BE, Lomber SG (2017). Catlas: an magnetic resonance imaging-based three-dimensional cortical atlas and tissue probability maps for the domestic cat (Felis catus). Journal of Comparative Neurology 525:3190–3206.', doi: '10.1002/cne.24271'},
+  nadkarni2019: {cite: 'Nadkarni NA, Bougacha S, Garin C, Dhenain M, Picq J-L (2019). A 3D population-based brain atlas of the mouse lemur primate with examples of applications in aging studies and comparative anatomy. NeuroImage 185:85–95.', doi: '10.1016/j.neuroimage.2018.10.010'},
+  vandenhole2014: {cite: 'Vanden Hole C, Van Daele PAAG, Desmet N, Devos P, Adriaens D (2014). Does sociality imply a complex vocal communication system? A case study for Fukomys micklemi (Bathyergidae, Rodentia). Bioacoustics 23:143–160.', doi: '10.1080/09524622.2013.841085'},
   butler2015: {cite: 'Butler BE, Hall AJ, Lomber SG (2015). High-field functional imaging of pitch processing in auditory cortex of the cat. PLOS ONE 10:e0134362.', doi: '10.1371/journal.pone.0134362'},
 };
 
@@ -47,8 +49,18 @@ export const MORE_SPECIES = [
    photo: ph('ansells-mole-rat', 'Ruben Undheim, Wikimedia Commons', 'CC BY-SA 2.0', 'https://commons.wikimedia.org/wiki/File:Fukomys_anselli_(6337862458).jpg'),
    plain: 'A subterranean African mole-rat with a 20 µm digital brain atlas.',
    body: [], reviews: []},
+  {id: 'micklems-mole-rat', common: 'Micklem’s mole-rat', latin: 'Fukomys micklemi', group: 'Rodent', signal: 'Audible calls; fifteen adult and four juvenile call types described', photo: null, noAtlas: true,
+   atlasNote: 'No brain atlas of this species is in the collection.', related: ['ansells-mole-rat', 'An atlas of a species of the same genus, Ansell’s mole-rat (Fukomys anselli), is available.'],
+   plain: 'A social African mole-rat whose vocal repertoire has been described from recordings.',
+   body: [['Vocal repertoire', 'Micklem’s mole-rat is a social African mole-rat of the family Bathyergidae. A study of its vocalizations distinguished fifteen call types specific to adults and four specific to juveniles. The recordings here are the supplementary audio files of that study.', ['vandenhole2014']]],
+   reviews: []},
+  {id: 'grey-mouse-lemur', common: 'Grey mouse lemur', latin: 'Microcebus murinus', group: 'Primate', signal: 'Calls (two undocumented field recordings)',
+   photo: ph('grey-mouse-lemur', 'Лариса Артемьева, Wikimedia Commons', 'CC0', 'https://commons.wikimedia.org/wiki/File:Microcebus_murinus_452184379.jpg', 'Photographed in Madagascar; not a subject of the atlas study.'),
+   plain: 'A small primate with an MRI brain template and an atlas of 120 structures.',
+   body: [['The atlas', 'The template is the mean of 34 animals aged 15 to 58 months, scanned at 7 T with a T2-weighted sequence at 115 × 115 × 230 µm. It was up-sampled to 91 µm for manual segmentation of 120 structures.', ['nadkarni2019']]],
+   reviews: []},
 ];
-export const MORE_ATLASES = Object.fromEntries(MORE_SPECIES.map(s => [s.id, {status: 'available', refs: []}]));
+export const MORE_ATLASES = Object.fromEntries(MORE_SPECIES.filter(s => !s.noAtlas).map(s => [s.id, {status: 'available', refs: []}]));
 
 // Zebra finch sections. `inst` names an interactive figure in models.js.
 export const FINCH_FACTS = [['0.2–7 kHz', 'hearing range [[okanoya1987]]'], ['≈25–65 days', 'after hatching: the tutor’s song is memorised [[gobes2019]]'], ['794 neurons', 'recorded during playback of the songs on this page [[le2025]]']];
@@ -97,4 +109,6 @@ export const CHAPTER_PLAN = {
   'prairie-vole': {titles: ['Pair bonding'], inst: [''], facts: []},
   'domestic-cat': {titles: ['Auditory cortex', 'The brain'], inst: ['', 'atlas3d'], facts: []},
   'ansells-mole-rat': {titles: [], inst: [], facts: []},
+  'micklems-mole-rat': {titles: ['The calls'], inst: ['sounds'], facts: [['15 + 4', 'adult and juvenile call types described [[vandenhole2014]]']]},
+  'grey-mouse-lemur': {titles: ['The brain'], inst: ['atlas3d'], facts: [['34', 'animals averaged in the MRI template [[nadkarni2019]]']]},
 };

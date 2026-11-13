@@ -1,0 +1,1279 @@
+{
+ "species": "grey-mouse-lemur",
+ "title": "MIRCen mouse lemur MRI template and atlas (v0.01)",
+ "dims": [
+  253,
+  379,
+  253
+ ],
+ "spacing_mm": [
+  0.091,
+  0.091,
+  0.091
+ ],
+ "view": {
+  "up": "+z",
+  "names": {
+   "x": "Sagittal",
+   "y": "Coronal",
+   "z": "Axial"
+  },
+  "ends": {
+   "x": [
+    "L",
+    "R"
+   ],
+   "y": [
+    "P",
+    "A"
+   ],
+   "z": [
+    "I",
+    "S"
+   ]
+  }
+ },
+ "flip_display": {
+  "y": true,
+  "z": true
+ },
+ "images": [
+  {
+   "file": "image-t2.u8.gz",
+   "name": "T2-weighted MRI template of the head, mean of 34 animals",
+   "window_source_units": [
+    568.7173376464843,
+    1535.4833901367151
+   ],
+   "kind": "measured average"
+  }
+ ],
+ "labels": {
+  "file": "labels.u16.gz",
+  "dtype": "uint16",
+  "count": 120
+ },
+ "regions": [
+  {
+   "index": 1,
+   "source_id": 1,
+   "acronym": "",
+   "name": "hippocampal formation",
+   "hemisphere": "left",
+   "color": "#f8a48a",
+   "voxels": 53638,
+   "volume_mm3": 40.42
+  },
+  {
+   "index": 2,
+   "source_id": 2,
+   "acronym": "",
+   "name": "hippocampal formation",
+   "hemisphere": "right",
+   "color": "#60eefd",
+   "voxels": 55026,
+   "volume_mm3": 41.466
+  },
+  {
+   "index": 3,
+   "source_id": 3,
+   "acronym": "",
+   "name": "amygdala",
+   "hemisphere": "left",
+   "color": "#dba9eb",
+   "voxels": 20396,
+   "volume_mm3": 15.3698
+  },
+  {
+   "index": 4,
+   "source_id": 4,
+   "acronym": "",
+   "name": "amygdala",
+   "hemisphere": "right",
+   "color": "#c761a5",
+   "voxels": 20894,
+   "volume_mm3": 15.7451
+  },
+  {
+   "index": 5,
+   "source_id": 5,
+   "acronym": "",
+   "name": "caudate nucleus",
+   "hemisphere": "left",
+   "color": "#90ee90",
+   "voxels": 23049,
+   "volume_mm3": 17.3691
+  },
+  {
+   "index": 6,
+   "source_id": 6,
+   "acronym": "",
+   "name": "caudate nucleus",
+   "hemisphere": "right",
+   "color": "#d8a8a4",
+   "voxels": 23864,
+   "volume_mm3": 17.9832
+  },
+  {
+   "index": 7,
+   "source_id": 7,
+   "acronym": "",
+   "name": "stria terminalis",
+   "hemisphere": "left",
+   "color": "#1406d2",
+   "voxels": 2431,
+   "volume_mm3": 1.8319
+  },
+  {
+   "index": 8,
+   "source_id": 8,
+   "acronym": "",
+   "name": "stria terminalis",
+   "hemisphere": "right",
+   "color": "#586ad7",
+   "voxels": 2378,
+   "volume_mm3": 1.792
+  },
+  {
+   "index": 9,
+   "source_id": 9,
+   "acronym": "",
+   "name": "CSF",
+   "hemisphere": "",
+   "color": "#ffffff",
+   "voxels": 423594,
+   "volume_mm3": 319.2081
+  },
+  {
+   "index": 10,
+   "source_id": 10,
+   "acronym": "",
+   "name": "anterior commissure",
+   "hemisphere": "",
+   "color": "#4e3f00",
+   "voxels": 3494,
+   "volume_mm3": 2.633
+  },
+  {
+   "index": 11,
+   "source_id": 11,
+   "acronym": "",
+   "name": "arbor vitae of cerebellum",
+   "hemisphere": "left",
+   "color": "#fffadc",
+   "voxels": 38708,
+   "volume_mm3": 29.1692
+  },
+  {
+   "index": 12,
+   "source_id": 12,
+   "acronym": "",
+   "name": "corpus callosum",
+   "hemisphere": "",
+   "color": "#646482",
+   "voxels": 147597,
+   "volume_mm3": 111.2248
+  },
+  {
+   "index": 13,
+   "source_id": 13,
+   "acronym": "",
+   "name": "fasciculus retroflexus",
+   "hemisphere": "left",
+   "color": "#c8c8eb",
+   "voxels": 660,
+   "volume_mm3": 0.4974
+  },
+  {
+   "index": 14,
+   "source_id": 14,
+   "acronym": "",
+   "name": "fasciculus retroflexus",
+   "hemisphere": "right",
+   "color": "#a7a75a",
+   "voxels": 706,
+   "volume_mm3": 0.532
+  },
+  {
+   "index": 15,
+   "source_id": 15,
+   "acronym": "",
+   "name": "fornix",
+   "hemisphere": "left",
+   "color": "#f4d631",
+   "voxels": 5333,
+   "volume_mm3": 4.0188
+  },
+  {
+   "index": 16,
+   "source_id": 16,
+   "acronym": "",
+   "name": "fornix",
+   "hemisphere": "right",
+   "color": "#0097ce",
+   "voxels": 5668,
+   "volume_mm3": 4.2712
+  },
+  {
+   "index": 17,
+   "source_id": 17,
+   "acronym": "",
+   "name": "mamillothalamic tract",
+   "hemisphere": "left",
+   "color": "#d8654f",
+   "voxels": 474,
+   "volume_mm3": 0.3572
+  },
+  {
+   "index": 18,
+   "source_id": 18,
+   "acronym": "",
+   "name": "mamillothalamic tract",
+   "hemisphere": "right",
+   "color": "#7908dc",
+   "voxels": 508,
+   "volume_mm3": 0.3828
+  },
+  {
+   "index": 19,
+   "source_id": 19,
+   "acronym": "",
+   "name": "optic tract",
+   "hemisphere": "left",
+   "color": "#b7d6d3",
+   "voxels": 4724,
+   "volume_mm3": 3.5599
+  },
+  {
+   "index": 20,
+   "source_id": 20,
+   "acronym": "",
+   "name": "optic tract",
+   "hemisphere": "right",
+   "color": "#98bdcf",
+   "voxels": 4928,
+   "volume_mm3": 3.7136
+  },
+  {
+   "index": 21,
+   "source_id": 21,
+   "acronym": "",
+   "name": "commissure of the inferior colliculus",
+   "hemisphere": "",
+   "color": "#6fb8d2",
+   "voxels": 601,
+   "volume_mm3": 0.4529
+  },
+  {
+   "index": 22,
+   "source_id": 22,
+   "acronym": "",
+   "name": "stria medullaris of the thalamus",
+   "hemisphere": "left",
+   "color": "#b2d4f2",
+   "voxels": 1090,
+   "volume_mm3": 0.8214
+  },
+  {
+   "index": 23,
+   "source_id": 23,
+   "acronym": "",
+   "name": "stria medullaris of the thalamus",
+   "hemisphere": "right",
+   "color": "#44ac64",
+   "voxels": 1194,
+   "volume_mm3": 0.8998
+  },
+  {
+   "index": 24,
+   "source_id": 24,
+   "acronym": "",
+   "name": "basal forebrain",
+   "hemisphere": "left",
+   "color": "#c397c6",
+   "voxels": 4168,
+   "volume_mm3": 3.1409
+  },
+  {
+   "index": 25,
+   "source_id": 25,
+   "acronym": "",
+   "name": "basal forebrain",
+   "hemisphere": "right",
+   "color": "#55bcff",
+   "voxels": 4209,
+   "volume_mm3": 3.1718
+  },
+  {
+   "index": 26,
+   "source_id": 26,
+   "acronym": "",
+   "name": "substancia nigra",
+   "hemisphere": "right",
+   "color": "#ffcdf0",
+   "voxels": 1834,
+   "volume_mm3": 1.382
+  },
+  {
+   "index": 27,
+   "source_id": 27,
+   "acronym": "",
+   "name": "substancia nigra",
+   "hemisphere": "left",
+   "color": "#ff8800",
+   "voxels": 1613,
+   "volume_mm3": 1.2155
+  },
+  {
+   "index": 28,
+   "source_id": 28,
+   "acronym": "",
+   "name": "midbrain",
+   "hemisphere": "left",
+   "color": "#4e3f00",
+   "voxels": 30225,
+   "volume_mm3": 22.7767
+  },
+  {
+   "index": 29,
+   "source_id": 29,
+   "acronym": "",
+   "name": "midbrain",
+   "hemisphere": "right",
+   "color": "#daffff",
+   "voxels": 31392,
+   "volume_mm3": 23.6561
+  },
+  {
+   "index": 30,
+   "source_id": 30,
+   "acronym": "",
+   "name": "subthalamic nucleus",
+   "hemisphere": "left",
+   "color": "#bc8f8f",
+   "voxels": 96,
+   "volume_mm3": 0.0723
+  },
+  {
+   "index": 31,
+   "source_id": 31,
+   "acronym": "",
+   "name": "subthalamic nucleus",
+   "hemisphere": "right",
+   "color": "#ff69b4",
+   "voxels": 94,
+   "volume_mm3": 0.0708
+  },
+  {
+   "index": 32,
+   "source_id": 32,
+   "acronym": "",
+   "name": "globus pallidus",
+   "hemisphere": "left",
+   "color": "#bc411c",
+   "voxels": 8103,
+   "volume_mm3": 6.1062
+  },
+  {
+   "index": 33,
+   "source_id": 33,
+   "acronym": "",
+   "name": "globus pallidus",
+   "hemisphere": "right",
+   "color": "#d8bfd8",
+   "voxels": 8180,
+   "volume_mm3": 6.1642
+  },
+  {
+   "index": 34,
+   "source_id": 34,
+   "acronym": "",
+   "name": "putamen",
+   "hemisphere": "left",
+   "color": "#913c42",
+   "voxels": 18838,
+   "volume_mm3": 14.1958
+  },
+  {
+   "index": 35,
+   "source_id": 35,
+   "acronym": "",
+   "name": "putamen",
+   "hemisphere": "right",
+   "color": "#966253",
+   "voxels": 19128,
+   "volume_mm3": 14.4143
+  },
+  {
+   "index": 36,
+   "source_id": 36,
+   "acronym": "",
+   "name": "habenula",
+   "hemisphere": "left",
+   "color": "#b17a65",
+   "voxels": 581,
+   "volume_mm3": 0.4378
+  },
+  {
+   "index": 37,
+   "source_id": 37,
+   "acronym": "",
+   "name": "habenula",
+   "hemisphere": "right",
+   "color": "#f4d631",
+   "voxels": 605,
+   "volume_mm3": 0.4559
+  },
+  {
+   "index": 38,
+   "source_id": 38,
+   "acronym": "",
+   "name": "septum",
+   "hemisphere": "left",
+   "color": "#d4d458",
+   "voxels": 8458,
+   "volume_mm3": 6.3737
+  },
+  {
+   "index": 39,
+   "source_id": 39,
+   "acronym": "",
+   "name": "septum",
+   "hemisphere": "right",
+   "color": "#c8c8d7",
+   "voxels": 8336,
+   "volume_mm3": 6.2818
+  },
+  {
+   "index": 40,
+   "source_id": 40,
+   "acronym": "",
+   "name": "claustrum",
+   "hemisphere": "left",
+   "color": "#ee82ee",
+   "voxels": 6803,
+   "volume_mm3": 5.1265
+  },
+  {
+   "index": 41,
+   "source_id": 41,
+   "acronym": "",
+   "name": "claustrum",
+   "hemisphere": "right",
+   "color": "#faf3b3",
+   "voxels": 6575,
+   "volume_mm3": 4.9547
+  },
+  {
+   "index": 42,
+   "source_id": 42,
+   "acronym": "",
+   "name": "hypothalamus",
+   "hemisphere": "left",
+   "color": "#5392a4",
+   "voxels": 18405,
+   "volume_mm3": 13.8695
+  },
+  {
+   "index": 43,
+   "source_id": 43,
+   "acronym": "",
+   "name": "hypothalamus",
+   "hemisphere": "right",
+   "color": "#9cab6c",
+   "voxels": 18468,
+   "volume_mm3": 13.9169
+  },
+  {
+   "index": 44,
+   "source_id": 44,
+   "acronym": "",
+   "name": "thalamus",
+   "hemisphere": "left",
+   "color": "#a20336",
+   "voxels": 55573,
+   "volume_mm3": 41.8782
+  },
+  {
+   "index": 45,
+   "source_id": 45,
+   "acronym": "",
+   "name": "thalamus",
+   "hemisphere": "right",
+   "color": "#fb9fff",
+   "voxels": 55017,
+   "volume_mm3": 41.4592
+  },
+  {
+   "index": 46,
+   "source_id": 46,
+   "acronym": "",
+   "name": "central gray of the midbrain",
+   "hemisphere": "",
+   "color": "#8d5d89",
+   "voxels": 16011,
+   "volume_mm3": 12.0654
+  },
+  {
+   "index": 47,
+   "source_id": 47,
+   "acronym": "",
+   "name": "inferior colliculus",
+   "hemisphere": "left",
+   "color": "#aafafa",
+   "voxels": 14087,
+   "volume_mm3": 10.6156
+  },
+  {
+   "index": 48,
+   "source_id": 48,
+   "acronym": "",
+   "name": "inferior colliculus",
+   "hemisphere": "right",
+   "color": "#b6a66e",
+   "voxels": 14423,
+   "volume_mm3": 10.8688
+  },
+  {
+   "index": 49,
+   "source_id": 49,
+   "acronym": "",
+   "name": "superior colliculus",
+   "hemisphere": "left",
+   "color": "#44ac64",
+   "voxels": 11398,
+   "volume_mm3": 8.5892
+  },
+  {
+   "index": 50,
+   "source_id": 50,
+   "acronym": "",
+   "name": "superior colliculus",
+   "hemisphere": "right",
+   "color": "#bc87a6",
+   "voxels": 11560,
+   "volume_mm3": 8.7113
+  },
+  {
+   "index": 51,
+   "source_id": 51,
+   "acronym": "",
+   "name": "olfactory bulb",
+   "hemisphere": "left",
+   "color": "#2028bc",
+   "voxels": 41780,
+   "volume_mm3": 31.4842
+  },
+  {
+   "index": 52,
+   "source_id": 52,
+   "acronym": "",
+   "name": "olfactory bulb",
+   "hemisphere": "right",
+   "color": "#9a96c9",
+   "voxels": 39899,
+   "volume_mm3": 30.0667
+  },
+  {
+   "index": 53,
+   "source_id": 53,
+   "acronym": "",
+   "name": "cerebral peduncle",
+   "hemisphere": "left",
+   "color": "#9a96c9",
+   "voxels": 3416,
+   "volume_mm3": 2.5742
+  },
+  {
+   "index": 54,
+   "source_id": 54,
+   "acronym": "",
+   "name": "cerebral peduncle",
+   "hemisphere": "right",
+   "color": "#b18cbe",
+   "voxels": 3764,
+   "volume_mm3": 2.8364
+  },
+  {
+   "index": 55,
+   "source_id": 55,
+   "acronym": "",
+   "name": "internal capsule",
+   "hemisphere": "left",
+   "color": "#4169e1",
+   "voxels": 15150,
+   "volume_mm3": 11.4166
+  },
+  {
+   "index": 56,
+   "source_id": 56,
+   "acronym": "",
+   "name": "internal capsule",
+   "hemisphere": "right",
+   "color": "#ff6347",
+   "voxels": 15711,
+   "volume_mm3": 11.8394
+  },
+  {
+   "index": 57,
+   "source_id": 57,
+   "acronym": "",
+   "name": "lateral ventricle",
+   "hemisphere": "left",
+   "color": "#2ac292",
+   "voxels": 14634,
+   "volume_mm3": 11.0278
+  },
+  {
+   "index": 58,
+   "source_id": 58,
+   "acronym": "",
+   "name": "lateral ventricle",
+   "hemisphere": "right",
+   "color": "#167a2d",
+   "voxels": 14309,
+   "volume_mm3": 10.7828
+  },
+  {
+   "index": 59,
+   "source_id": 59,
+   "acronym": "",
+   "name": "third ventricle",
+   "hemisphere": "",
+   "color": "#755926",
+   "voxels": 15282,
+   "volume_mm3": 11.5161
+  },
+  {
+   "index": 60,
+   "source_id": 60,
+   "acronym": "",
+   "name": "fourth ventricle",
+   "hemisphere": "",
+   "color": "#bccb57",
+   "voxels": 5663,
+   "volume_mm3": 4.2675
+  },
+  {
+   "index": 61,
+   "source_id": 61,
+   "acronym": "",
+   "name": "mammillary body",
+   "hemisphere": "left",
+   "color": "#915c6d",
+   "voxels": 660,
+   "volume_mm3": 0.4974
+  },
+  {
+   "index": 62,
+   "source_id": 62,
+   "acronym": "",
+   "name": "mammillary body",
+   "hemisphere": "right",
+   "color": "#d29da6",
+   "voxels": 654,
+   "volume_mm3": 0.4928
+  },
+  {
+   "index": 63,
+   "source_id": 63,
+   "acronym": "",
+   "name": "hypophysis",
+   "hemisphere": "",
+   "color": "#629970",
+   "voxels": 184,
+   "volume_mm3": 0.1387
+  },
+  {
+   "index": 64,
+   "source_id": 64,
+   "acronym": "",
+   "name": "pons",
+   "hemisphere": "left",
+   "color": "#456e35",
+   "voxels": 67260,
+   "volume_mm3": 50.6852
+  },
+  {
+   "index": 65,
+   "source_id": 65,
+   "acronym": "",
+   "name": "pons",
+   "hemisphere": "right",
+   "color": "#a67189",
+   "voxels": 68875,
+   "volume_mm3": 51.9022
+  },
+  {
+   "index": 66,
+   "source_id": 66,
+   "acronym": "",
+   "name": "nucleus accumbens",
+   "hemisphere": "left",
+   "color": "#dcf514",
+   "voxels": 4499,
+   "volume_mm3": 3.3903
+  },
+  {
+   "index": 67,
+   "source_id": 67,
+   "acronym": "",
+   "name": "nucleus accumbens",
+   "hemisphere": "right",
+   "color": "#a4914e",
+   "voxels": 4521,
+   "volume_mm3": 3.4069
+  },
+  {
+   "index": 68,
+   "source_id": 68,
+   "acronym": "",
+   "name": "basal forebrain nucleus",
+   "hemisphere": "left",
+   "color": "#8fbc8f",
+   "voxels": 233,
+   "volume_mm3": 0.1756
+  },
+  {
+   "index": 69,
+   "source_id": 69,
+   "acronym": "",
+   "name": "basal forebrain nucleus",
+   "hemisphere": "right",
+   "color": "#dc143c",
+   "voxels": 239,
+   "volume_mm3": 0.1801
+  },
+  {
+   "index": 70,
+   "source_id": 70,
+   "acronym": "",
+   "name": "cerebellum",
+   "hemisphere": "left",
+   "color": "#53b9ef",
+   "voxels": 94978,
+   "volume_mm3": 71.5727
+  },
+  {
+   "index": 71,
+   "source_id": 71,
+   "acronym": "",
+   "name": "cerebellum",
+   "hemisphere": "right",
+   "color": "#016c70",
+   "voxels": 98977,
+   "volume_mm3": 74.5862
+  },
+  {
+   "index": 72,
+   "source_id": 72,
+   "acronym": "",
+   "name": "arbor vitae of cerebellum",
+   "hemisphere": "right",
+   "color": "#bbfffd",
+   "voxels": 39976,
+   "volume_mm3": 30.1248
+  },
+  {
+   "index": 73,
+   "source_id": 73,
+   "acronym": "",
+   "name": "cerebral aqueduct",
+   "hemisphere": "",
+   "color": "#c2b200",
+   "voxels": 4890,
+   "volume_mm3": 3.685
+  },
+  {
+   "index": 74,
+   "source_id": 74,
+   "acronym": "",
+   "name": "posterior commissure",
+   "hemisphere": "",
+   "color": "#800080",
+   "voxels": 550,
+   "volume_mm3": 0.4145
+  },
+  {
+   "index": 75,
+   "source_id": 75,
+   "acronym": "",
+   "name": "cerebral cortex: area 6",
+   "hemisphere": "left",
+   "color": "#e35da3",
+   "voxels": 52783,
+   "volume_mm3": 39.7757
+  },
+  {
+   "index": 76,
+   "source_id": 76,
+   "acronym": "",
+   "name": "cerebral cortex: area 4",
+   "hemisphere": "left",
+   "color": "#ba5597",
+   "voxels": 38548,
+   "volume_mm3": 29.0487
+  },
+  {
+   "index": 77,
+   "source_id": 77,
+   "acronym": "",
+   "name": "cerebral cortex: area 8",
+   "hemisphere": "left",
+   "color": "#aa0000",
+   "voxels": 10535,
+   "volume_mm3": 7.9389
+  },
+  {
+   "index": 78,
+   "source_id": 78,
+   "acronym": "",
+   "name": "cerebral cortex: area 1-3",
+   "hemisphere": "left",
+   "color": "#78c24d",
+   "voxels": 28378,
+   "volume_mm3": 21.3848
+  },
+  {
+   "index": 79,
+   "source_id": 79,
+   "acronym": "",
+   "name": "cerebral cortex: area 5",
+   "hemisphere": "left",
+   "color": "#2b461c",
+   "voxels": 37858,
+   "volume_mm3": 28.5287
+  },
+  {
+   "index": 80,
+   "source_id": 80,
+   "acronym": "",
+   "name": "cerebral cortex: area 7",
+   "hemisphere": "left",
+   "color": "#26ffac",
+   "voxels": 9195,
+   "volume_mm3": 6.9291
+  },
+  {
+   "index": 81,
+   "source_id": 81,
+   "acronym": "",
+   "name": "cerebral cortex: area 13-16",
+   "hemisphere": "left",
+   "color": "#ffff7f",
+   "voxels": 20301,
+   "volume_mm3": 15.2982
+  },
+  {
+   "index": 82,
+   "source_id": 82,
+   "acronym": "",
+   "name": "cerebral cortex: area 21",
+   "hemisphere": "left",
+   "color": "#42edff",
+   "voxels": 47485,
+   "volume_mm3": 35.7833
+  },
+  {
+   "index": 83,
+   "source_id": 83,
+   "acronym": "",
+   "name": "cerebral cortex: area 22-(41-42)",
+   "hemisphere": "left",
+   "color": "#9c6000",
+   "voxels": 51765,
+   "volume_mm3": 39.0086
+  },
+  {
+   "index": 84,
+   "source_id": 84,
+   "acronym": "",
+   "name": "cerebral cortex: area 20",
+   "hemisphere": "left",
+   "color": "#9c2c42",
+   "voxels": 5356,
+   "volume_mm3": 4.0361
+  },
+  {
+   "index": 85,
+   "source_id": 85,
+   "acronym": "",
+   "name": "cerebral cortex: area 18",
+   "hemisphere": "left",
+   "color": "#163632",
+   "voxels": 23785,
+   "volume_mm3": 17.9237
+  },
+  {
+   "index": 86,
+   "source_id": 86,
+   "acronym": "",
+   "name": "cerebral cortex: area 17",
+   "hemisphere": "left",
+   "color": "#161836",
+   "voxels": 63123,
+   "volume_mm3": 47.5677
+  },
+  {
+   "index": 87,
+   "source_id": 87,
+   "acronym": "",
+   "name": "cerebral cortex: area 28",
+   "hemisphere": "left",
+   "color": "#e2ff22",
+   "voxels": 28608,
+   "volume_mm3": 21.5582
+  },
+  {
+   "index": 88,
+   "source_id": 88,
+   "acronym": "",
+   "name": "cerebral cortex: area 24",
+   "hemisphere": "left",
+   "color": "#85ff7f",
+   "voxels": 8115,
+   "volume_mm3": 6.1152
+  },
+  {
+   "index": 89,
+   "source_id": 89,
+   "acronym": "",
+   "name": "cerebral cortex: area 23",
+   "hemisphere": "left",
+   "color": "#fff4b3",
+   "voxels": 8976,
+   "volume_mm3": 6.7641
+  },
+  {
+   "index": 90,
+   "source_id": 90,
+   "acronym": "",
+   "name": "cerebral cortex: area 30",
+   "hemisphere": "left",
+   "color": "#6c3804",
+   "voxels": 3856,
+   "volume_mm3": 2.9058
+  },
+  {
+   "index": 91,
+   "source_id": 91,
+   "acronym": "",
+   "name": "cerebral cortex: area 26-29 (retrosplenial area)",
+   "hemisphere": "left",
+   "color": "#c36cf8",
+   "voxels": 12811,
+   "volume_mm3": 9.654
+  },
+  {
+   "index": 92,
+   "source_id": 92,
+   "acronym": "",
+   "name": "cerebral cortex: area 27",
+   "hemisphere": "left",
+   "color": "#1a14b5",
+   "voxels": 2508,
+   "volume_mm3": 1.89
+  },
+  {
+   "index": 93,
+   "source_id": 93,
+   "acronym": "",
+   "name": "cerebral cortex: prepyriform and periamygdalar areas",
+   "hemisphere": "left",
+   "color": "#f8df4e",
+   "voxels": 11658,
+   "volume_mm3": 8.7851
+  },
+  {
+   "index": 94,
+   "source_id": 94,
+   "acronym": "",
+   "name": "cerebral cortex: area 25",
+   "hemisphere": "left",
+   "color": "#ffa75a",
+   "voxels": 1414,
+   "volume_mm3": 1.0655
+  },
+  {
+   "index": 95,
+   "source_id": 95,
+   "acronym": "",
+   "name": "cerebral cortex: area 6",
+   "hemisphere": "right",
+   "color": "#ff8eff",
+   "voxels": 53873,
+   "volume_mm3": 40.5971
+  },
+  {
+   "index": 96,
+   "source_id": 96,
+   "acronym": "",
+   "name": "cerebral cortex: area 4",
+   "hemisphere": "right",
+   "color": "#e367be",
+   "voxels": 39538,
+   "volume_mm3": 29.7947
+  },
+  {
+   "index": 97,
+   "source_id": 97,
+   "acronym": "",
+   "name": "cerebral cortex: area 8",
+   "hemisphere": "right",
+   "color": "#f14949",
+   "voxels": 10105,
+   "volume_mm3": 7.6148
+  },
+  {
+   "index": 98,
+   "source_id": 98,
+   "acronym": "",
+   "name": "cerebral cortex: area 1-3",
+   "hemisphere": "right",
+   "color": "#9eff66",
+   "voxels": 29064,
+   "volume_mm3": 21.9018
+  },
+  {
+   "index": 99,
+   "source_id": 99,
+   "acronym": "",
+   "name": "cerebral cortex: area 5",
+   "hemisphere": "right",
+   "color": "#599039",
+   "voxels": 38100,
+   "volume_mm3": 28.7111
+  },
+  {
+   "index": 100,
+   "source_id": 100,
+   "acronym": "",
+   "name": "cerebral cortex: area 7",
+   "hemisphere": "right",
+   "color": "#8afef5",
+   "voxels": 9832,
+   "volume_mm3": 7.4091
+  },
+  {
+   "index": 101,
+   "source_id": 101,
+   "acronym": "",
+   "name": "cerebral cortex: area 13-16",
+   "hemisphere": "right",
+   "color": "#d4d469",
+   "voxels": 19522,
+   "volume_mm3": 14.7112
+  },
+  {
+   "index": 102,
+   "source_id": 102,
+   "acronym": "",
+   "name": "cerebral cortex: area 21",
+   "hemisphere": "right",
+   "color": "#27949c",
+   "voxels": 46206,
+   "volume_mm3": 34.8195
+  },
+  {
+   "index": 103,
+   "source_id": 103,
+   "acronym": "",
+   "name": "cerebral cortex: area 22-(41-42)",
+   "hemisphere": "right",
+   "color": "#e69900",
+   "voxels": 49796,
+   "volume_mm3": 37.5248
+  },
+  {
+   "index": 104,
+   "source_id": 104,
+   "acronym": "",
+   "name": "cerebral cortex: area 20",
+   "hemisphere": "right",
+   "color": "#2c7b9c",
+   "voxels": 5024,
+   "volume_mm3": 3.7859
+  },
+  {
+   "index": 105,
+   "source_id": 105,
+   "acronym": "",
+   "name": "cerebral cortex: area 18",
+   "hemisphere": "right",
+   "color": "#2b6b60",
+   "voxels": 24342,
+   "volume_mm3": 18.3434
+  },
+  {
+   "index": 106,
+   "source_id": 106,
+   "acronym": "",
+   "name": "cerebral cortex: area 17",
+   "hemisphere": "right",
+   "color": "#4248a2",
+   "voxels": 60843,
+   "volume_mm3": 45.8495
+  },
+  {
+   "index": 107,
+   "source_id": 107,
+   "acronym": "",
+   "name": "cerebral cortex: area 28",
+   "hemisphere": "right",
+   "color": "#c24076",
+   "voxels": 26755,
+   "volume_mm3": 20.1618
+  },
+  {
+   "index": 108,
+   "source_id": 108,
+   "acronym": "",
+   "name": "cerebral cortex: area 24",
+   "hemisphere": "right",
+   "color": "#d2e15a",
+   "voxels": 7855,
+   "volume_mm3": 5.9193
+  },
+  {
+   "index": 109,
+   "source_id": 109,
+   "acronym": "",
+   "name": "cerebral cortex: area 23",
+   "hemisphere": "right",
+   "color": "#cfc691",
+   "voxels": 9198,
+   "volume_mm3": 6.9313
+  },
+  {
+   "index": 110,
+   "source_id": 110,
+   "acronym": "",
+   "name": "cerebral cortex: area 30",
+   "hemisphere": "right",
+   "color": "#c22e47",
+   "voxels": 4098,
+   "volume_mm3": 3.0881
+  },
+  {
+   "index": 111,
+   "source_id": 111,
+   "acronym": "",
+   "name": "cerebral cortex: area 26-29 (retrosplenial area)",
+   "hemisphere": "right",
+   "color": "#775dd5",
+   "voxels": 13409,
+   "volume_mm3": 10.1046
+  },
+  {
+   "index": 112,
+   "source_id": 112,
+   "acronym": "",
+   "name": "cerebral cortex: area 27",
+   "hemisphere": "right",
+   "color": "#6c4536",
+   "voxels": 2722,
+   "volume_mm3": 2.0512
+  },
+  {
+   "index": 113,
+   "source_id": 113,
+   "acronym": "",
+   "name": "cerebral cortex: prepyriform and periamygdalar areas",
+   "hemisphere": "right",
+   "color": "#f8d64e",
+   "voxels": 11461,
+   "volume_mm3": 8.6367
+  },
+  {
+   "index": 114,
+   "source_id": 114,
+   "acronym": "",
+   "name": "cerebral cortex: area 25",
+   "hemisphere": "right",
+   "color": "#efae75",
+   "voxels": 1418,
+   "volume_mm3": 1.0686
+  },
+  {
+   "index": 115,
+   "source_id": 115,
+   "acronym": "",
+   "name": "olfactory tubercle",
+   "hemisphere": "left",
+   "color": "#00fa9a",
+   "voxels": 3939,
+   "volume_mm3": 2.9683
+  },
+  {
+   "index": 116,
+   "source_id": 116,
+   "acronym": "",
+   "name": "olfactory tubercle",
+   "hemisphere": "right",
+   "color": "#556b2f",
+   "voxels": 3972,
+   "volume_mm3": 2.9932
+  },
+  {
+   "index": 117,
+   "source_id": 117,
+   "acronym": "",
+   "name": "olfactory tract",
+   "hemisphere": "left",
+   "color": "#7f3f00",
+   "voxels": 2870,
+   "volume_mm3": 2.1627
+  },
+  {
+   "index": 118,
+   "source_id": 118,
+   "acronym": "",
+   "name": "olfactory tract",
+   "hemisphere": "right",
+   "color": "#9932cc",
+   "voxels": 2971,
+   "volume_mm3": 2.2389
+  },
+  {
+   "index": 119,
+   "source_id": 119,
+   "acronym": "",
+   "name": "optic chiasm",
+   "hemisphere": "",
+   "color": "#cd5c5c",
+   "voxels": 2746,
+   "volume_mm3": 2.0693
+  },
+  {
+   "index": 120,
+   "source_id": 120,
+   "acronym": "",
+   "name": "medulla",
+   "hemisphere": "",
+   "color": "#fafad2",
+   "voxels": 35338,
+   "volume_mm3": 26.6297
+  }
+ ],
+ "meshes": "meshes.json",
+ "mesh_units": "mm",
+ "mesh_note": "Marching-cubes surfaces of the atlas labels, decimated for display.",
+ "provenance": {
+  "dataset": "https://doi.org/10.5281/zenodo.8403785 (MIRCen-MouseLemurAtlas_V0.01)",
+  "citation": "Nadkarni NA, Bougacha S, Garin C, Dhenain M, Picq J-L (2019) A 3D population-based brain atlas of the mouse lemur primate with examples of applications in aging studies and comparative anatomy. NeuroImage 185:85–95. doi:10.1016/j.neuroimage.2018.10.010",
+  "licence": "CC BY 4.0",
+  "sha256": {
+   "MIRCen-MouseLemurAtlas_V0.01.tar.gz": "327dd8efc73cc2c2ca34bc8b86a4afd88f083be283431e1fb3f063d901da9de3"
+  }
+ },
+ "processing": [
+  "The 91 µm template and label volumes are shown on their source grid; axes were reordered to right–anterior–superior using the orientation stored in the file header, without resampling.",
+  "Left and right were checked against the label names: structures labelled L lie on the low-x side of the volume.",
+  "The display window is the 0.5th–99.7th percentile of labelled-brain voxels.",
+  "The label CSF is listed as a region; it is excluded from the whole-brain surface."
+ ],
+ "sizes_bytes": {
+  "image-t2.u8.gz": 9014367,
+  "labels.u16.gz": 318437
+ }
+}

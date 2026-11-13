@@ -68,5 +68,40 @@
   "url": "https://commons.wikimedia.org/",
   "licence": "CC BY-SA / CC0 per file",
   "use": "Species photographs; starling, blackcap and cat recordings"
+ },
+ {
+  "species": "grey-mouse-lemur",
+  "name": "MIRCen mouse lemur MRI template and atlas (v0.01)",
+  "url": "https://doi.org/10.5281/zenodo.8403785",
+  "licence": "CC BY 4.0",
+  "use": "Brain atlas sections and surfaces"
+ },
+ {
+  "species": "grey-mouse-lemur",
+  "name": "Mouse lemur vocalizations 001 and 002 (C. Mercer, Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Microcebus_murinus_vocalization_001.ogg",
+  "licence": "CC BY-SA 3.0",
+  "use": "Two recordings"
+ },
+ {
+  "species": "norway-rat",
+  "name": "USCMed dataset of rat ultrasonic vocalizations",
+  "url": "https://doi.org/10.5281/zenodo.15029872",
+  "licence": "CC BY 4.0",
+  "use": "One excerpt with annotated 22-kHz calls"
+ },
+ {
+  "species": "european-starling",
+  "name": "Acoustically isolated European starling song library",
+  "url": "https://doi.org/10.5281/zenodo.3237218",
+  "licence": "CC BY 4.0",
+  "use": "Three recordings of one male"
+ },
+ {
+  "species": "micklems-mole-rat",
+  "name": "Fukomys micklemi call recordings (supplementary audio)",
+  "url": "https://doi.org/10.6084/m9.figshare.825719.v2",
+  "licence": "CC BY 4.0",
+  "use": "Eighteen recordings"
  }
 ]

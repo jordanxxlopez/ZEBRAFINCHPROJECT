@@ -1,5 +1,5 @@
 // Small DSP toolkit used by the interactive models. Everything runs on decoded samples of real recordings.
-const V = '20261116a';
+const V = '20261117a';
 const audioCache = new Map();
 
 export async function decode(url, sampleRate) {

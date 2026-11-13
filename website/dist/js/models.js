@@ -1,7 +1,7 @@
 // Interactive instruments built from real data. Each export mounts into a host element.
-import {decode, bandSpectrogram, gammatone, paintMatrix, dbNormalise, normaliseMax, magma, diverging, stftPower, makePlayer, PLAY_ICON, PAUSE_ICON} from './dsp.js?v=20261116a';
+import {decode, bandSpectrogram, gammatone, paintMatrix, dbNormalise, normaliseMax, magma, diverging, stftPower, makePlayer, PLAY_ICON, PAUSE_ICON} from './dsp.js?v=20261117a';
 
-const V = '20261116a';
+const V = '20261117a';
 const getJSON = (() => { const c = new Map(); return p => { if (!c.has(p)) c.set(p, fetch(`${p}?v=${V}`).then(r => { if (!r.ok) throw Error(`Could not load ${p}`); return r.json(); })); return c.get(p); }; })();
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const $ = (s, el) => el.querySelector(s);
@@ -202,7 +202,7 @@ export async function mountNeurons(host, {species = 'zebra-finch'} = {}) {
 
 // ------------------------------------------------------------------ 5. The pathway on real anatomy (finch MRI atlas surfaces)
 export async function mountPathway(host, steps) {
-  const [{createSpecimen}, {FINCH_PARTS, FINCH_GROUPS}, meshes] = await Promise.all([import('./viewer3d.js?v=20261116a'), import('./chapters.js?v=20261116a'), getJSON('data/models/finch-hero.json')]);
+  const [{createSpecimen}, {FINCH_PARTS, FINCH_GROUPS}, meshes] = await Promise.all([import('./viewer3d.js?v=20261117a'), import('./chapters.js?v=20261117a'), getJSON('data/models/finch-hero.json')]);
   host.innerHTML = `<figure class="plate"><div class="plate-view" style="height:min(64vh,540px)"></div><figcaption>Zebra finch brain from the 3D MRI atlas of Poirier et al. (2008). Surfaces are marching-cubes meshes of the authors' masks. The ear, brainstem auditory nuclei, CM and NCM are not delineated in this atlas. <a href="#lab/zebra-finch">Open the full atlas</a></figcaption></figure>`;
   const v = await createSpecimen(host.querySelector('.plate-view'), {meshes, up: '+z', shell: 'Whole brain', parts: FINCH_PARTS, groups: FINCH_GROUPS, caption: 'Choose a step on the left, or a label.'});
   return name => v.select(name);
