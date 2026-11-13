@@ -1,0 +1,62 @@
+[
+ {
+  "species": "european-starling",
+  "asset": "assets/photos/european-starling.jpg",
+  "title": "File:Sturnus vulgaris (European starling) at Bodega Head-1209.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Sturnus_vulgaris_(European_starling)_at_Bodega_Head-1209.jpg",
+  "artist": "Frank Schulenburg",
+  "licence": "CC BY-SA 4.0",
+  "source_sha256": "8a748ff3ba12280b4a03e03eb47d210b70227339faee61cdfa0ba63e28479e45",
+  "transformation": "Resized to at most 1200 px; no other edits"
+ },
+ {
+  "species": "eurasian-blackcap",
+  "asset": "assets/photos/eurasian-blackcap.jpg",
+  "title": "File:Eurasian blackcap (Sylvia atricapilla) male Drenthe.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Eurasian_blackcap_(Sylvia_atricapilla)_male_Drenthe.jpg",
+  "artist": "Charles J. Sharp",
+  "licence": "CC BY-SA 4.0",
+  "source_sha256": "3d37db4d10bb72acdc307b98cc97acb9c122da190e8c7c97012f224d7800055f",
+  "transformation": "Resized to at most 1200 px; no other edits"
+ },
+ {
+  "species": "norway-rat",
+  "asset": "assets/photos/norway-rat.jpg",
+  "title": "File:Brown rat (Rattus norvegicus) Drenthe 2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg",
+  "artist": "Charles J. Sharp",
+  "licence": "CC BY-SA 4.0",
+  "source_sha256": "867ac36e907e0ceb735c499b0566e5b493967f5b5b6f62a3cee41ae05df460cc",
+  "transformation": "Resized to at most 1200 px; no other edits"
+ },
+ {
+  "species": "prairie-vole",
+  "asset": "assets/photos/prairie-vole.jpg",
+  "title": "File:Prairie Vole Nastacia Goodwin CC BY-SA.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Prairie_Vole_Nastacia_Goodwin_CC_BY-SA.png",
+  "artist": "Nastacia Goodwin",
+  "licence": "CC BY-SA 4.0",
+  "source_sha256": "9e6bb8f9f95819c1496b942a39f5c313700fea08e6a7ccc96bf8abf331f2e090",
+  "transformation": "Resized to at most 1200 px; no other edits"
+ },
+ {
+  "species": "domestic-cat",
+  "asset": "assets/photos/domestic-cat.jpg",
+  "title": "File:Felis silvestris catus lying on rice straw.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Felis_silvestris_catus_lying_on_rice_straw.jpg",
+  "artist": "Basile Morin",
+  "licence": "CC BY-SA 4.0",
+  "source_sha256": "c41c197b78c5a68746ebd2ce3b1206a16e3fe3918ec868a93642b4b358ab8dd3",
+  "transformation": "Resized to at most 1200 px; no other edits"
+ },
+ {
+  "species": "ansells-mole-rat",
+  "asset": "assets/photos/ansells-mole-rat.jpg",
+  "title": "File:Fukomys anselli (6337862458).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Fukomys_anselli_(6337862458).jpg",
+  "artist": "Ruben Undheim from Trondheim, Norway",
+  "licence": "CC BY-SA 2.0",
+  "source_sha256": "c136aa24580262f5bfd101f96bd97ff7fbba2c9326556882d86bcdd2fe9f1d7d",
+  "transformation": "Resized to at most 1200 px; no other edits"
+ }
+]

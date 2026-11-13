@@ -2,7 +2,7 @@
 // Volumes are stored x-fastest (index = x + nx*(y + ny*z)). Nothing is interpolated in the browser.
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-const V = '20261112';
+const V = '20261114d';
 
 // display mapping per species: three.js "up" and plane names
 const VIEW = {
@@ -23,6 +23,7 @@ async function gunzip(path, type) {
   const buf = await new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
   return type === 'u16' ? new Uint16Array(buf) : new Uint8Array(buf);
 }
+const nice = n => /^root$/i.test(n) ? 'Whole brain' : n;
 const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
 
 export async function openAtlas(id, ctx) {
@@ -34,7 +35,7 @@ export async function openAtlas(id, ctx) {
   const params = new URLSearchParams(location.hash.split('?')[1] || '');
   S = {id, meta, base, view, vol: null, lab: null, sel: 0, cur: null, regions: meta.regions || [], byIndex: new Map((meta.regions || []).map(r => [r.index, r])), esc, three: null, diff: null};
   $('#av-title').textContent = `${sp.common} brain atlas`;
-  $('#av-sub').innerHTML = `${esc(meta.title)}. <span class="faint">${meta.dims ? `${meta.dims.join(' × ')} voxels at ${meta.spacing_mm[0]} mm.` : ''}</span>`;
+  $('#av-sub').innerHTML = `${esc(meta.title)}. ${meta.dims ? `${meta.dims.join(' × ')} voxels${meta.unit === 'voxel' ? '' : ` at ${meta.spacing_mm[0]} mm`}.` : ''}`;
   $('#av-prov').innerHTML = `<p>${esc(meta.provenance.citation)}</p><p class="small"><b>Data:</b> ${esc(meta.provenance.dataset || meta.provenance.volumes)}</p><p class="small"><b>Licence:</b> ${esc(meta.provenance.licence)}</p>`;
   $('#av-processing').innerHTML = (meta.processing || []).map(p => `<li>${esc(p)}</li>`).join('') + (meta.notes ? `<li>${esc(meta.notes)}</li>` : '');
   const hasVol = !!meta.dims;
@@ -75,7 +76,7 @@ export async function openAtlas(id, ctx) {
     buildPlanes($('#av-planes'), meta.dims, meta.spacing_mm, false);
     $('#av-note').textContent = id === 'zebra-finch' ? 'Grid coordinates in millimetres from the first voxel centre; anatomical axis signs and a surgical origin are not assigned.' :
       id === 'egyptian-fruit-bat' ? 'The specimen is a fixed head: skull, eyes and other tissue are visible around the brain. No region labels exist for this scan. Planes follow the axes in the NIfTI header; for ex vivo specimens these may not match true anatomical directions, so no anatomical labels are asserted.' :
-      'Coordinates are millimetres from the first voxel of the volume, not stereotaxic coordinates.';
+      (meta.unit === 'voxel' ? 'Coordinates are voxel indices of the distributed volume.' : 'Coordinates in millimetres from the first voxel of the volume; not stereotaxic.');
     select('slices');
     const r0 = +params.get('r'); if (r0 && S.byIndex.has(r0)) selectRegion(r0, true); else drawAll();
   } else {
@@ -95,7 +96,7 @@ function buildRegionList() {
     const src = isMeshOnly ? S.regionsFromMesh : items;
     const list = src.filter(r => !q || r.name.toLowerCase().includes(q) || (r.acronym || '').toLowerCase().includes(q)).sort((a, b) => (b.volume_mm3 || 0) - (a.volume_mm3 || 0));
     const shown = list.slice(0, 400);
-    $('#av-regions').innerHTML = shown.map(r => `<li><button type="button" data-r="${r.index}" aria-pressed="${r.index === S.sel}"><span class="swatch" style="background:${esc(r.color)}"></span><span>${esc(r.name)}${r.hemisphere ? ` <span class="faint">(${esc(r.hemisphere.replace(':', ''))})</span>` : ''}</span><span class="acr">${r.acronym && r.acronym !== r.name ? esc(r.acronym) : ''}</span></button></li>`).join('') || '<li class="small faint" style="padding:.4rem">No regions match.</li>';
+    $('#av-regions').innerHTML = shown.map(r => `<li><button type="button" data-r="${r.index}" aria-pressed="${r.index === S.sel}"><span class="swatch" style="background:${esc(r.color)}"></span><span>${esc(nice(r.name))}${r.hemisphere ? ` <span class="faint">(${esc(r.hemisphere.replace(':', ''))})</span>` : ''}</span><span class="acr">${r.acronym && r.acronym !== r.name ? esc(r.acronym) : ''}</span></button></li>`).join('') || '<li class="small faint" style="padding:.4rem">No regions match.</li>';
     $('#av-rcount').textContent = S.regions.length ? `${list.length} of ${S.regions.length} labelled regions${list.length > shown.length ? ', first 400 shown (sorted by volume)' : ' (sorted by volume)'}.` : `${src.length} surfaces from the source database.`;
     $$('#av-regions button').forEach(b => b.onclick = () => selectRegion(+b.dataset.r === S.sel ? 0 : +b.dataset.r, true));
   }
@@ -118,7 +119,7 @@ function buildPlanes(host, dims, spacing, diffusion) {
   const names = S.view.names || {x: 'X section', y: 'Y section', z: 'Z section'};
   host.innerHTML = PLANES.map(p => { const nu = dims[AX[p.u]], nv = dims[AX[p.v]];
     return `<div style="flex:${(nu * spacing[AX[p.u]]) / (nv * spacing[AX[p.v]])} 1 0"><div class="plane"><canvas data-axis="${p.axis}" width="${nu}" height="${nv}" tabindex="0" style="aspect-ratio:${nu}/${nv}" aria-label="${names[p.axis]}. Arrow keys move the cursor; Page Up and Page Down change the section."></canvas><span class="plabel">${names[p.axis]}</span>${orientMarks(p)}</div>
-      <div class="plane-ctl"><label class="visually-hidden" for="sl-${diffusion ? 'd' : ''}${p.axis}">${names[p.axis]} position</label><input type="range" id="sl-${diffusion ? 'd' : ''}${p.axis}" data-axis="${p.axis}" min="0" max="${dims[AX[p.axis]] - 1}"><span class="mono" data-pos="${p.axis}"></span></div></div>`; }).join('');
+      <div class="plane-ctl"><label class="vh" for="sl-${diffusion ? 'd' : ''}${p.axis}">${names[p.axis]} position</label><input type="range" id="sl-${diffusion ? 'd' : ''}${p.axis}" data-axis="${p.axis}" min="0" max="${dims[AX[p.axis]] - 1}"><span class="mono" data-pos="${p.axis}"></span></div></div>`; }).join('');
   const state = diffusion ? S.diff : S;
   $$('canvas', host).forEach(cv => {
     const p = PLANES.find(q => q.axis === cv.dataset.axis);
@@ -147,7 +148,7 @@ function orientMarks(p) {
 }
 
 function drawAll() { for (const cv of $$('#av-planes canvas')) drawPlane(cv, S, S.meta.dims, S.vol, S.lab); syncSliders('#av-planes', S); }
-function syncSliders(host, st) { const sp = (st === S ? S.meta.spacing_mm : S.meta.diffusion.spacing_mm); $$(`${host} input[type=range]`).forEach(sl => { const a = AX[sl.dataset.axis]; sl.value = st.cur[a]; $(`${host} [data-pos="${sl.dataset.axis}"]`).textContent = `${(st.cur[a] * sp[a]).toFixed(2)} mm`; }); }
+function syncSliders(host, st) { const sp = (st === S ? S.meta.spacing_mm : S.meta.diffusion.spacing_mm); $$(`${host} input[type=range]`).forEach(sl => { const a = AX[sl.dataset.axis]; sl.value = st.cur[a]; const txt = S.meta.unit === 'voxel' ? `voxel ${st.cur[a]}` : `${(st.cur[a] * sp[a]).toFixed(2)} mm`; sl.setAttribute('aria-valuetext', txt); $(`${host} [data-pos="${sl.dataset.axis}"]`).textContent = txt.replace('voxel ', ''); }); }
 
 function drawPlane(cv, st, dims, vol, lab, rgb) {
   const p = PLANES.find(q => q.axis === cv.dataset.axis);
@@ -181,11 +182,11 @@ function drawPlane(cv, st, dims, vol, lab, rgb) {
 
 function describe(c = S.cur, hovering = false) {
   const {esc, meta} = S; const [nx, ny] = meta.dims; const i = c[0] + nx * (c[1] + ny * c[2]);
-  const mm = c.map((v, k) => (v * meta.spacing_mm[k]).toFixed(2));
+  const vox = meta.unit === 'voxel'; const mm = c.map((v, k) => vox ? String(v) : (v * meta.spacing_mm[k]).toFixed(2));
   const L = S.lab ? S.lab[i] : 0, reg = L ? S.byIndex.get(L) : null;
   const selReg = S.sel ? S.byIndex.get(S.sel) : null;
   const regText = reg ? `<span><b>${esc(reg.name)}</b>${reg.acronym ? ` <span class="mono">${esc(reg.acronym)}</span>` : ''}${reg.hemisphere ? ` (${esc(reg.hemisphere.replace(':', ''))})` : ''}</span>${reg.path ? `<span class="faint small">${esc(reg.path.slice(1, -1).join(' › '))}</span>` : ''}` : (S.lab ? '<span class="faint">No label at this point</span>' : '');
-  $('#av-readout').innerHTML = `<span class="mono">${hovering ? 'Pointer' : 'Cursor'} (${mm.join(', ')}) mm</span><span>Intensity ${S.vol[i]}</span>${regText}${selReg ? `<span>Selected: <b>${esc(selReg.name)}</b> · ${selReg.volume_mm3 != null ? (+selReg.volume_mm3).toFixed(3) + ' mm³' : ''}</span>` : ''}`;
+  $('#av-readout').innerHTML = `<span class="mono">${hovering ? 'Pointer' : 'Cursor'} (${mm.join(', ')}) ${vox ? 'voxels' : 'mm'}</span><span>Intensity ${S.vol[i]}</span>${regText}${selReg ? `<span>Selected: <b>${esc(selReg.name)}</b> · ${selReg.volume_mm3 != null ? (+selReg.volume_mm3).toFixed(3) + ' mm³' : selReg.voxels ? selReg.voxels.toLocaleString() + ' voxels' : ''}</span>` : ''}`;
 }
 
 // ------------------------------------------------------------------ diffusion (bat)
@@ -219,16 +220,20 @@ async function loadMeshes() { if (!S.meshes) S.meshes = await fetch(`${S.base}${
 async function init3D() {
   if (S.three) { S.three.resize(); return; }
   const host = $('#av-three');
-  const [THREE, {OrbitControls}, meshes, {dress}] = await Promise.all([import('three'), import('../assets/OrbitControls.js'), loadMeshes(), import('./viewer3d.js?v=20261113b')]);
-  const renderer = new THREE.WebGLRenderer({antialias: true, preserveDrawingBuffer: false});
+  const wait = document.createElement('p'); wait.className = 'loading'; wait.setAttribute('role', 'status'); wait.textContent = 'Loading 3D surfaces…'; host.append(wait);
+  const [THREE, {OrbitControls}, meshes, {dress}] = await Promise.all([import('three'), import('../assets/OrbitControls.js'), loadMeshes(), import('./viewer3d.js?v=20261114d')]);
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({antialias: true, preserveDrawingBuffer: false}); }
+  catch (e) { wait.textContent = 'The 3D view could not be started in this browser (WebGL is unavailable). The Sections view and the region list remain available.'; host.querySelector('.three-help')?.remove(); return; }
+  wait.remove();
   renderer.setPixelRatio(Math.min(2, devicePixelRatio));
   host.prepend(renderer.domElement);
-  renderer.domElement.setAttribute('aria-label', 'Interactive 3D view of brain surfaces');
+  renderer.domElement.setAttribute('role', 'img'); renderer.domElement.setAttribute('aria-label', 'Three-dimensional view of the brain surfaces listed under Regions. Drag to rotate.');
   renderer.domElement.tabIndex = 0;
   const scene = new THREE.Scene(); scene.background = new THREE.Color('#101214'); dress(THREE, renderer, scene);
   const camera = new THREE.PerspectiveCamera(35, 1, 0.01, 1000);
   
-  const dl = new THREE.DirectionalLight(0xfff4e6, 1.1); dl.position.set(1, 2, 3); camera.add(dl); scene.add(camera);
+  const dl = new THREE.DirectionalLight(0xffffff, 1.1); dl.position.set(1, 2, 3); camera.add(dl); scene.add(camera);
   const group = new THREE.Group(); scene.add(group);
   const up = S.view.up || '+z';
   const map = (x, y, z) => up === '-z' ? [x, -z, y] : up === '+z' ? [x, z, -y] : up === '-y' ? [x, -y, -z] : [x, y, z];
@@ -263,8 +268,8 @@ async function init3D() {
   });
   // surface checklist
   const note = $('#av-mesh-note');
-  note.innerHTML = `<span id="av-mesh-sel">${meshes.length} surfaces. </span>${S.meta.mesh_note ? S.esc(S.meta.mesh_note) : S.id === 'zebra-finch' ? 'Marching-cubes surfaces of the source masks, without smoothing.' : S.id === 'house-mouse' ? 'Allen-provided structure meshes, decimated for display.' : S.id === 'honeybee' ? 'InsectBrainDB display meshes (Honeybee Standard Brain).' : 'Marching-cubes surfaces of the atlas labels, decimated for display.'} Click a surface to identify it.
-    <details class="data-table"><summary>Show or hide surfaces</summary><div style="columns:2;font-size:.86rem;margin-top:.4rem">${meshes.map((m, i) => `<label style="display:block"><input type="checkbox" data-mesh="${i}" checked> ${S.esc(m.name)}</label>`).join('')}</div></details>`;
+  note.innerHTML = `<span id="av-mesh-sel">${meshes.length} surfaces. </span>${S.meta.mesh_note ? S.esc(S.meta.mesh_note) : S.id === 'zebra-finch' ? 'Marching-cubes surfaces of the source masks, without smoothing.' : S.id === 'house-mouse' ? 'Allen-provided structure meshes, decimated for display.' : S.id === 'honeybee' ? 'InsectBrainDB display meshes (Honeybee Standard Brain).' : 'Marching-cubes surfaces of the atlas labels, decimated for display.'} 
+    <details class="data-table"><summary>Show or hide surfaces</summary><div style="columns:2;font-size:.86rem;margin-top:.4rem">${meshes.map((m, i) => `<label style="display:block"><input type="checkbox" data-mesh="${i}" checked> ${S.esc(nice(m.name))}</label>`).join('')}</div></details>`;
   $$('[data-mesh]', note).forEach(cb => cb.onchange = () => { objs[+cb.dataset.mesh].visible = cb.checked; });
   highlightMesh();
 }
@@ -275,5 +280,5 @@ function highlightMesh() {
   const any = target != null && T.objs.some(o => o.userData.m.id === target);
   T.objs.forEach(o => { if (o.userData.shell) return; const on = !any || o.userData.m.id === target; o.material.opacity = on ? 1 : .12; o.material.transparent = !on; o.material.depthWrite = on; o.material.emissive?.set(any && on ? 0x332200 : 0x000000); });
   const name = reg?.name || T.objs.find(o => o.userData.m.id === target)?.userData.m.name;
-  $('#av-mesh-sel').textContent = target != null ? (any ? `Selected: ${name}. ` : `${name}: no surface is provided for this region; select it in Sections to see its voxels. `) : `${T.objs.length} surfaces. `;
+  $('#av-mesh-sel').textContent = target != null ? (any ? `${name}. ` : `${name}: no surface is provided for this region; select it in Sections to see its voxels. `) : `${T.objs.length} surfaces. `;
 }

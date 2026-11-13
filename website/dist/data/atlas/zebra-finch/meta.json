@@ -157,7 +157,7 @@
  "provenance": {
   "dataset": "https://doi.org/10.1016/j.neuroimage.2008.01.069",
   "citation": "Poirier C, Vellema M, Verhoye M, et al. (2008) A three-dimensional MRI atlas of the zebra finch brain in stereotaxic coordinates. NeuroImage 41:1\u20136. doi:10.1016/j.neuroimage.2008.01.069",
-  "licence": "See research/acquisition-manifest.json"
+  "licence": "CC BY 4.0 (Zenodo record 10.5281/zenodo.22107510)"
  },
  "processing": [
   "Analyze storage-grid x,y,z, origin at first voxel centre; anatomical axis signs and posterior commissure origin not assigned",

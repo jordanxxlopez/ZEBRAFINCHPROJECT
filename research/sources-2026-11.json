@@ -373,6 +373,92 @@
      "sha256": "7da2a223d1ee129f6744c37691560323a17d52803ebd7e60c9779945ca7fd1f5"
     }
    ]
+  },
+  {
+   "species": "ansells-mole-rat",
+   "name": "Ansell's mole-rat atlas, BrainGlobe package african_molerat_20um v1.1 (unpublished)",
+   "url": "https://gin.g-node.org/brainglobe/atlases",
+   "licence": "Open via BrainGlobe",
+   "use": "Brain atlas",
+   "files": [
+    {
+     "path": "data/raw/atlases/african_molerat_20um_v1.1.tar.gz",
+     "bytes": 102510064,
+     "sha256": "af52815136477a5799fa13864ba2a8ec06ab7fb0608ebdd8326159a247e8d833"
+    }
+   ]
+  },
+  {
+   "species": "several",
+   "name": "Wikimedia Commons photographs and recordings (see data/raw/commons/manifest.json)",
+   "url": "https://commons.wikimedia.org/",
+   "licence": "Per file",
+   "use": "Species photographs; recordings",
+   "files": [
+    {
+     "path": "data/raw/commons/european-starling.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Sturnus_vulgaris_(European_starling)_at_Bodega_Head-1209.jpg",
+     "artist": "Frank Schulenburg",
+     "licence": "CC BY-SA 4.0",
+     "sha256": "8a748ff3ba12280b4a03e03eb47d210b70227339faee61cdfa0ba63e28479e45"
+    },
+    {
+     "path": "data/raw/commons/eurasian-blackcap.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Eurasian_blackcap_(Sylvia_atricapilla)_male_Drenthe.jpg",
+     "artist": "Charles J. Sharp",
+     "licence": "CC BY-SA 4.0",
+     "sha256": "3d37db4d10bb72acdc307b98cc97acb9c122da190e8c7c97012f224d7800055f"
+    },
+    {
+     "path": "data/raw/commons/norway-rat.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg",
+     "artist": "Charles J. Sharp",
+     "licence": "CC BY-SA 4.0",
+     "sha256": "867ac36e907e0ceb735c499b0566e5b493967f5b5b6f62a3cee41ae05df460cc"
+    },
+    {
+     "path": "data/raw/commons/prairie-vole.png",
+     "page": "https://commons.wikimedia.org/wiki/File:Prairie_Vole_Nastacia_Goodwin_CC_BY-SA.png",
+     "artist": "Nastacia Goodwin",
+     "licence": "CC BY-SA 4.0",
+     "sha256": "9e6bb8f9f95819c1496b942a39f5c313700fea08e6a7ccc96bf8abf331f2e090"
+    },
+    {
+     "path": "data/raw/commons/domestic-cat.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Felis_silvestris_catus_lying_on_rice_straw.jpg",
+     "artist": "Basile Morin",
+     "licence": "CC BY-SA 4.0",
+     "sha256": "c41c197b78c5a68746ebd2ce3b1206a16e3fe3918ec868a93642b4b358ab8dd3"
+    },
+    {
+     "path": "data/raw/commons/ansells-mole-rat.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Fukomys_anselli_(6337862458).jpg",
+     "artist": "Ruben Undheim from Trondheim, Norway",
+     "licence": "CC BY-SA 2.0",
+     "sha256": "c136aa24580262f5bfd101f96bd97ff7fbba2c9326556882d86bcdd2fe9f1d7d"
+    },
+    {
+     "path": "data/raw/commons/european-starling-audio.mp3",
+     "page": "https://commons.wikimedia.org/wiki/File:Sturnus_vulgaris_-_Common_Starling_XC474427.mp3",
+     "artist": "Marie-Lan Taÿ Pamart",
+     "licence": "CC BY-SA 4.0",
+     "sha256": "b26e1ea11d7e4ad62676e12f0f373fc485dd548a97f0b912ddb6e3a6fe3dafa8"
+    },
+    {
+     "path": "data/raw/commons/eurasian-blackcap-audio.mp3",
+     "page": "https://commons.wikimedia.org/wiki/File:Sylvia_atricapilla_-_Eurasian_Blackcap_XC543215.mp3",
+     "artist": "Benoît Van Hecke",
+     "licence": "CC BY-SA 4.0",
+     "sha256": "3c10a6f8caecbd0dfbc61e30ee98452eefb6507210d2d62964ae32072e1d7f56"
+    },
+    {
+     "path": "data/raw/commons/domestic-cat-audio.ogg",
+     "page": "https://commons.wikimedia.org/wiki/File:Felis_silvestris_catus_meows.ogg",
+     "artist": "Tobias Puderer",
+     "licence": "CC BY-SA 3.0",
+     "sha256": "c5c2b838676975b2095c57d36d74ec9519a9a58f6993d84df039cc6cfaed4a85"
+    }
+   ]
   }
  ]
 }

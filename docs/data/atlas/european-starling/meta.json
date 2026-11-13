@@ -7,10 +7,11 @@
   256
  ],
  "spacing_mm": [
-  0.085,
-  0.085,
-  0.085
+  1.0,
+  1.0,
+  1.0
  ],
+ "unit": "voxel",
  "view": {
   "up": "+z",
   "names": {
@@ -49,7 +50,7 @@
    "kind": "region",
    "color": "#98b0ea",
    "voxels": 796730,
-   "volume_mm3": 489.2918
+   "volume_mm3": null
   },
   {
    "index": 2,
@@ -59,7 +60,7 @@
    "kind": "region",
    "color": "#c8ea98",
    "voxels": 291264,
-   "volume_mm3": 178.8725
+   "volume_mm3": null
   },
   {
    "index": 3,
@@ -69,7 +70,7 @@
    "kind": "region",
    "color": "#ea98e0",
    "voxels": 43663,
-   "volume_mm3": 26.8145
+   "volume_mm3": null
   },
   {
    "index": 4,
@@ -79,7 +80,7 @@
    "kind": "region",
    "color": "#98eadc",
    "voxels": 249403,
-   "volume_mm3": 153.1646
+   "volume_mm3": null
   },
   {
    "index": 5,
@@ -89,7 +90,7 @@
    "kind": "region",
    "color": "#eac498",
    "voxels": 37106,
-   "volume_mm3": 22.7877
+   "volume_mm3": null
   },
   {
    "index": 6,
@@ -99,7 +100,7 @@
    "kind": "region",
    "color": "#ac98ea",
    "voxels": 203143,
-   "volume_mm3": 124.7552
+   "volume_mm3": null
   },
   {
    "index": 7,
@@ -109,7 +110,7 @@
    "kind": "region",
    "color": "#9bea98",
    "voxels": 3402,
-   "volume_mm3": 2.0893
+   "volume_mm3": null
   },
   {
    "index": 8,
@@ -119,7 +120,7 @@
    "kind": "region",
    "color": "#ea98b3",
    "voxels": 253887,
-   "volume_mm3": 155.9184
+   "volume_mm3": null
   },
   {
    "index": 9,
@@ -129,7 +130,7 @@
    "kind": "region",
    "color": "#98cbea",
    "voxels": 76623,
-   "volume_mm3": 47.0561
+   "volume_mm3": null
   },
   {
    "index": 10,
@@ -139,7 +140,7 @@
    "kind": "region",
    "color": "#e3ea98",
    "voxels": 226331,
-   "volume_mm3": 138.9955
+   "volume_mm3": null
   },
   {
    "index": 11,
@@ -149,7 +150,7 @@
    "kind": "region",
    "color": "#d998ea",
    "voxels": 124392,
-   "volume_mm3": 76.3922
+   "volume_mm3": null
   },
   {
    "index": 12,
@@ -159,7 +160,7 @@
    "kind": "nucleus",
    "color": "#3aea92",
    "voxels": 10994,
-   "volume_mm3": 6.7517
+   "volume_mm3": null
   },
   {
    "index": 13,
@@ -169,7 +170,7 @@
    "kind": "nucleus",
    "color": "#ea5f3a",
    "voxels": 26101,
-   "volume_mm3": 16.0293
+   "volume_mm3": null
   },
   {
    "index": 14,
@@ -179,7 +180,7 @@
    "kind": "nucleus",
    "color": "#3a49ea",
    "voxels": 508,
-   "volume_mm3": 0.312
+   "volume_mm3": null
   },
   {
    "index": 15,
@@ -189,7 +190,7 @@
    "kind": "nucleus",
    "color": "#7cea3a",
    "voxels": 1764,
-   "volume_mm3": 1.0833
+   "volume_mm3": null
   },
   {
    "index": 16,
@@ -199,7 +200,7 @@
    "kind": "nucleus",
    "color": "#ea3ab0",
    "voxels": 6722,
-   "volume_mm3": 4.1281
+   "volume_mm3": null
   },
   {
    "index": 17,
@@ -209,7 +210,7 @@
    "kind": "nucleus",
    "color": "#3ae3ea",
    "voxels": 116502,
-   "volume_mm3": 71.5468
+   "volume_mm3": null
   },
   {
    "index": 18,
@@ -219,7 +220,7 @@
    "kind": "nucleus",
    "color": "#eabe3a",
    "voxels": 21796,
-   "volume_mm3": 13.3855
+   "volume_mm3": null
   },
   {
    "index": 19,
@@ -229,7 +230,7 @@
    "kind": "nucleus",
    "color": "#8a3aea",
    "voxels": 629,
-   "volume_mm3": 0.3863
+   "volume_mm3": null
   },
   {
    "index": 20,
@@ -239,7 +240,7 @@
    "kind": "nucleus",
    "color": "#3aea57",
    "voxels": 15143,
-   "volume_mm3": 9.2997
+   "volume_mm3": null
   },
   {
    "index": 21,
@@ -249,7 +250,7 @@
    "kind": "nucleus",
    "color": "#ea3a51",
    "voxels": 23892,
-   "volume_mm3": 14.6727
+   "volume_mm3": null
   },
   {
    "index": 22,
@@ -259,7 +260,7 @@
    "kind": "nucleus",
    "color": "#3a84ea",
    "voxels": 2590,
-   "volume_mm3": 1.5906
+   "volume_mm3": null
   },
   {
    "index": 23,
@@ -269,7 +270,7 @@
    "kind": "nucleus",
    "color": "#b7ea3a",
    "voxels": 808,
-   "volume_mm3": 0.4962
+   "volume_mm3": null
   },
   {
    "index": 24,
@@ -279,7 +280,7 @@
    "kind": "nucleus",
    "color": "#ea3aea",
    "voxels": 2493,
-   "volume_mm3": 1.531
+   "volume_mm3": null
   },
   {
    "index": 25,
@@ -289,7 +290,7 @@
    "kind": "nucleus",
    "color": "#3aeab6",
    "voxels": 2341,
-   "volume_mm3": 1.4377
+   "volume_mm3": null
   },
   {
    "index": 26,
@@ -299,7 +300,7 @@
    "kind": "nucleus",
    "color": "#ea833a",
    "voxels": 771,
-   "volume_mm3": 0.4735
+   "volume_mm3": null
   },
   {
    "index": 27,
@@ -309,7 +310,7 @@
    "kind": "nucleus",
    "color": "#503aea",
    "voxels": 3959,
-   "volume_mm3": 2.4313
+   "volume_mm3": null
   },
   {
    "index": 28,
@@ -319,7 +320,7 @@
    "kind": "nucleus",
    "color": "#58ea3a",
    "voxels": 694,
-   "volume_mm3": 0.4262
+   "volume_mm3": null
   },
   {
    "index": 29,
@@ -329,7 +330,7 @@
    "kind": "nucleus",
    "color": "#ea3a8b",
    "voxels": 891,
-   "volume_mm3": 0.5472
+   "volume_mm3": null
   },
   {
    "index": 30,
@@ -339,7 +340,7 @@
    "kind": "nucleus",
    "color": "#3abfea",
    "voxels": 749,
-   "volume_mm3": 0.46
+   "volume_mm3": null
   },
   {
    "index": 31,
@@ -349,7 +350,7 @@
    "kind": "nucleus",
    "color": "#eae23a",
    "voxels": 137,
-   "volume_mm3": 0.0841
+   "volume_mm3": null
   },
   {
    "index": 32,
@@ -359,7 +360,7 @@
    "kind": "nucleus",
    "color": "#af3aea",
    "voxels": 179,
-   "volume_mm3": 0.1099
+   "volume_mm3": null
   },
   {
    "index": 33,
@@ -369,7 +370,7 @@
    "kind": "nucleus",
    "color": "#3aea7b",
    "voxels": 136,
-   "volume_mm3": 0.0835
+   "volume_mm3": null
   }
  ],
  "meshes": "meshes.json",
@@ -385,7 +386,7 @@
  },
  "processing": [
   "Volumes used: T2.img with delineations/Nuclei.img, Brainregions.img and Brain.img (all 256 x 256 x 256).",
-  "Scale: the Analyze headers and Amira bounding boxes give a spacing of 0.85 without a usable unit, which would make the brain over 20 cm wide. We read it as 0.085 mm (21.8 mm field of view), matching the factor-of-ten issue documented for the zebra finch atlas from the same laboratory. With that scale the whole-brain mask measures about 1,585 mm\u00b3, a plausible size for a starling brain. This is an inference and has not been confirmed against the paper's methods.",
+  "Coordinates and volumes are given in voxels of the distributed 256-cubed grid. The files do not state a usable physical unit, so no millimetre scale is shown.",
   "Nuclei and broad regions are combined in one label volume; where they overlap the nucleus is shown. The Tracts and Ventricle label volumes are not included.",
   "Region colours are assigned by this site. Grid axes are the storage axes; anatomical directions are not asserted."
  ],

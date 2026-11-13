@@ -37,24 +37,33 @@ export async function createSpecimen(host, opts) {
   const dark = isDark();
   host.classList.add('specimen');
   host.innerHTML = `<svg class="sp-lines" aria-hidden="true"></svg><div class="sp-labels"></div><div class="sp-scale" aria-hidden="true"><span></span><b></b></div><div class="sp-cap" aria-live="polite"></div>`;
-  const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({antialias: true, alpha: true}); }
+  catch (e) { host.innerHTML = '<p class="loading">The 3D view could not be started in this browser (WebGL is unavailable).</p>'; return {select() {}, names: []}; }
   renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setClearColor(0x000000, 0);
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  host.prepend(renderer.domElement); renderer.domElement.setAttribute('aria-label', opts.aria || 'Interactive 3D brain. Drag to rotate.'); renderer.domElement.tabIndex = 0;
+  host.prepend(renderer.domElement); renderer.domElement.setAttribute('role', 'img'); renderer.domElement.setAttribute('aria-label', opts.aria || 'Three-dimensional brain surface. Drag, or use the arrow keys, to rotate.'); renderer.domElement.tabIndex = 0;
   const scene = new THREE.Scene(); dress(THREE, renderer, scene);
   const camera = new THREE.PerspectiveCamera(28, 1, 0.1, 2000); scene.add(camera);
-  const key = new THREE.DirectionalLight(0xfff4e6, 1.6); key.castShadow = true; key.shadow.mapSize.set(1024, 1024); key.shadow.radius = 9; key.shadow.bias = -0.0005; scene.add(key);
+  const key = new THREE.DirectionalLight(0xffffff, 1.6); key.castShadow = true; key.shadow.mapSize.set(1024, 1024); key.shadow.radius = 9; key.shadow.bias = -0.0005; scene.add(key);
 
-  const map = opts.up === '-z' ? (x, y, z) => [x, -z, y] : (x, y, z) => [x, z, -y];
+  const map = opts.up === '-z' ? (x, y, z) => [x, -z, y] : opts.up === '-y' ? (x, y, z) => [x, -y, -z] : (x, y, z) => [x, z, -y];
+  if (opts.auto) {   // generic atlas: label the packaged surfaces with their own names and (softened) colours
+    const isShell = m => m.id === 0 || m.id === 997 || /^(whole brain|root|labelled brain)/i.test(m.name);
+    const shellMesh = opts.meshes.find(isShell); opts.shell = shellMesh ? shellMesh.name : null; opts.parts = {}; opts.groups = {};
+    const grey = new THREE.Color(0x8b9197);
+    opts.meshes.filter(m => !isShell(m)).slice(0, 14).forEach((m, i) => { const short = m.acronym && m.acronym.length <= 9 && !/^honeybee|_/.test(m.acronym) ? m.acronym : m.name.length > 22 ? m.name.slice(0, 20) + '…' : m.name;
+      opts.groups['g' + i] = {label: '', color: '#' + new THREE.Color(m.color || '#999999').lerp(grey, .25).getHexString()}; opts.parts[m.name] = {label: short, title: m.name, group: 'g' + i, text: ''}; });
+  }
   const group = new THREE.Group(); scene.add(group);
   const parts = {}; let shell = null;
   for (const m of opts.meshes) {
     const v = m.vertices, pos = new Float32Array(v.length);
     for (let i = 0; i < v.length; i += 3) { const p = map(v[i], v[i + 1], v[i + 2]); pos[i] = p[0]; pos[i + 1] = p[1]; pos[i + 2] = p[2]; }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setIndex(m.faces); g.computeVertexNormals();
-    if (m.name === opts.shell) {
-      const front = new THREE.Mesh(g, new THREE.MeshStandardMaterial({color: dark ? 0xd9d0c2 : 0x9a8f80, roughness: .5, metalness: 0, transparent: true, opacity: dark ? .2 : .24, depthWrite: false}));
-      const back = new THREE.Mesh(g, new THREE.MeshStandardMaterial({color: dark ? 0x8f887c : 0x6f665b, roughness: .9, transparent: true, opacity: .13, depthWrite: false, side: THREE.BackSide}));
+    if (opts.shell && m.name === opts.shell) {
+      const front = new THREE.Mesh(g, new THREE.MeshStandardMaterial({color: dark ? 0xcfd4d9 : 0x8b9197, roughness: .5, metalness: 0, transparent: true, opacity: dark ? .2 : .24, depthWrite: false}));
+      const back = new THREE.Mesh(g, new THREE.MeshStandardMaterial({color: dark ? 0x858c93 : 0x5f666d, roughness: .9, transparent: true, opacity: .13, depthWrite: false, side: THREE.BackSide}));
       front.renderOrder = 3; back.renderOrder = 1; front.castShadow = true; group.add(back, front); shell = front; continue;
     }
     const info = opts.parts[m.name]; if (!info) continue;
@@ -72,11 +81,19 @@ export async function createSpecimen(host, opts) {
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(R * 8, R * 8), new THREE.ShadowMaterial({opacity: dark ? .45 : .2}));
   ground.rotation.x = -Math.PI / 2; ground.position.y = -size.y / 2 - R * .06; ground.receiveShadow = true; scene.add(ground);
   key.position.set(R * 1.2, R * 3.2, R * 1.6); Object.assign(key.shadow.camera, {left: -R * 1.6, right: R * 1.6, top: R * 1.6, bottom: -R * 1.6, near: .1, far: R * 8}); key.shadow.camera.updateProjectionMatrix();
-  const dist = R / Math.sin(camera.fov / 2 * Math.PI / 180) * 1.02;
+  const dist = R / Math.sin(camera.fov / 2 * Math.PI / 180) * .8;
   camera.position.set(dist * .62, dist * .3, dist * .72);
   const controls = new OrbitControls(camera, renderer.domElement);
-  Object.assign(controls, {enableDamping: true, dampingFactor: .07, enablePan: false, minDistance: dist * .45, maxDistance: dist * 1.6, autoRotate: !matchMedia('(prefers-reduced-motion: reduce)').matches && document.documentElement.dataset.motion !== 'reduce', autoRotateSpeed: .55});
-  const stop = () => { controls.autoRotate = false; }; renderer.domElement.addEventListener('pointerdown', stop); renderer.domElement.addEventListener('wheel', stop, {passive: true});
+  Object.assign(controls, {enableDamping: true, dampingFactor: .07, enablePan: false, enableZoom: false, minDistance: dist * .45, maxDistance: dist * 1.6, autoRotate: !matchMedia('(prefers-reduced-motion: reduce)').matches && document.documentElement.dataset.motion !== 'reduce', autoRotateSpeed: .55});
+  const stop = () => { controls.autoRotate = false; }; renderer.domElement.addEventListener('pointerdown', stop);
+  renderer.domElement.style.touchAction = 'pan-y';   // vertical swipes scroll the page; horizontal drags rotate
+  renderer.domElement.addEventListener('keydown', e => {
+    const k = {ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1]}[e.key]; if (!k) return;
+    e.preventDefault(); stop();
+    const sph = new THREE.Spherical().setFromVector3(camera.position.clone().sub(controls.target));
+    sph.theta += k[0] * .14; sph.phi = Math.max(.15, Math.min(Math.PI - .15, sph.phi + k[1] * .14));
+    camera.position.setFromSpherical(sph).add(controls.target);
+  });
 
   // ---- labels
   const labHost = host.querySelector('.sp-labels'), svg = host.querySelector('.sp-lines'), cap = host.querySelector('.sp-cap');
@@ -87,10 +104,10 @@ export async function createSpecimen(host, opts) {
   let sel = null, W = 1, H = 1, side = names.map(() => 0);
   function select(nm) {
     sel = nm;
-    for (const [k, p] of Object.entries(parts)) { const on = !nm || k === nm; p.mesh.material.color.copy(p.base).lerp(new THREE.Color(dark ? 0x3a3f45 : 0xbab3a8), on ? 0 : .78); p.mesh.material.roughness = on ? .42 : .8; }
+    for (const [k, p] of Object.entries(parts)) { const on = !nm || k === nm; p.mesh.material.color.copy(p.base).lerp(new THREE.Color(dark ? 0x3a3f45 : 0xb5bbc1), on ? 0 : .78); p.mesh.material.roughness = on ? .42 : .8; }
     els.forEach((e, i) => e.setAttribute('aria-pressed', String(names[i] === nm)));
     const p = nm && parts[nm];
-    cap.innerHTML = p ? `<b>${p.info.title || p.info.label}</b> <span class="g">${opts.groups[p.info.group].label}</span><p>${p.info.text}</p>` : (opts.caption || '');
+    cap.innerHTML = p ? `<b>${p.info.title || p.info.label}</b> <span class="g">${opts.groups[p.info.group].label}</span>${p.info.text ? `<p>${p.info.text}</p>` : ''}` : '';
     opts.onSelect?.(nm);
   }
   const v = new THREE.Vector3();
@@ -111,7 +128,7 @@ export async function createSpecimen(host, opts) {
     }
     // scale bar: millimetres per pixel at the orbit target
     const d = camera.position.distanceTo(controls.target), mmPerPx = 2 * d * Math.tan(camera.fov / 2 * Math.PI / 180) / H, bar = niceBar(mmPerPx * 90);
-    const sb = host.querySelector('.sp-scale'); sb.firstChild.style.width = (bar / mmPerPx) + 'px'; sb.lastChild.textContent = bar + ' mm';
+    const sb = host.querySelector('.sp-scale'); if (opts.scale === false) { sb.hidden = true; return; } sb.firstChild.style.width = (bar / mmPerPx) + 'px'; sb.lastChild.textContent = bar + ' mm';
   }
   const resize = () => { W = host.clientWidth; H = host.clientHeight; renderer.setSize(W, H, false); camera.aspect = W / H; camera.updateProjectionMatrix(); svg.setAttribute('viewBox', `0 0 ${W} ${H}`); };
   new ResizeObserver(resize).observe(host); resize();

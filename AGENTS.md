@@ -13,3 +13,8 @@
 - Brain atlases is a species directory. Never show one species' anatomy as another's, never register atlases to each other, and state when no open atlas exists (currently the sperm whale). The bat scan is an unlabelled fixed head: do not draw regions or assert anatomical axes.
 - Research review entries must state the claim, the data used (with checksums), the method, the result and its limits, using the verdict scale in `content.js`. A discrepancy is never presented as misconduct.
 - Rebuild derived data with `scripts/build_atlases.py` and `scripts/build_collections.py` from originals in `data/raw/` (see `research/sources-2026-11.json`).
+
+- Voice: site copy is written in a neutral, third-person scientific register for outside readers. No first or second person, no process commentary, no notes addressed to the site owner.
+- Palette: white, slate ink and one deep blue (`css/base.css`). No orange or cream. Figures and images are sized modestly (plots max ~880 px wide).
+- Do not assert measurements that the source does not state (for example, the starling atlas is shown in voxel units because its files give no physical unit).
+- Current entry points: `website/dist/js/site.js` (router and pages), `js/species.js` (added species and finch section text), `css/base.css`.

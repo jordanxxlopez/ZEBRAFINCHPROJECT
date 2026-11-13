@@ -19,7 +19,7 @@
  },
  "processing": [
   "Meshes are the database's display OBJ files, centred, divided by 1000 and decimated to at most 5,000 triangles each for web display.",
-  "Region names are taken from the file names. The database tags the central-body file as 'Nodulus' and the pedunculus/lobe files as 'Medial lobe'; we report the file-name meaning and keep the tag."
+  "Region names are taken from the file names. The database tags the central-body file as 'Nodulus' and the pedunculus/lobe files as 'Medial lobe'; the file-name meaning is shown and the tag is kept."
  ],
  "notes": "Surface atlas only: the standard brain is an average shape of 20 immunostained brains; no intensity volume is distributed here."
 }

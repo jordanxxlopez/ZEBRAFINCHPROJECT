@@ -56,3 +56,15 @@ Feedback: the site read as "AI-made" and resembled an app. Changes follow the us
 - **Sitewide**: squared controls, plain section numerals, flat light footer.
 - **Chapter pathway figure** now uses the same specimen viewer; the Brain lab 3D tab uses the same lighting.
 - Surfaces remain unsmoothed marching-cubes meshes of the atlas masks (decimated for the home page: `data/models/finch-hero.json`).
+
+## Professional pass (13 Nov 2026, second revision)
+
+- New entry points: `js/site.js`, `css/base.css` (the earlier `main.js` and `app.css` are removed). Navigation: Overview, Brain atlases, Species, Recordings, Research, Data, About.
+- Palette changed to white, slate and one deep blue; no orange or cream.
+- All copy rewritten in a neutral third-person register; process commentary and rating explanations moved to the Data page.
+- Overview leads with the atlas gallery (11 atlases), then the zebra finch 3D figure, species table and analyses table.
+- Twelve species pages; each embeds its 3D atlas where one exists. New pages: European starling, Eurasian blackcap, Norway rat, prairie vole, domestic cat, Ansell's mole-rat.
+- New data: Ansell's mole-rat atlas (BrainGlobe); six photographs and three recordings (starling, blackcap, cat) from Wikimedia Commons; preview images for every atlas (`scripts/build_media_2026_11b.py`).
+- Starling atlas: the inferred 0.085 mm scale was removed. The paper's methods could not be accessed, so coordinates and volumes are reported in voxels.
+- Figures reduced in size; the embedded 3D view no longer captures page scrolling.
+- New references verified against Crossref and scite: Cornez 2017, Leberecht 2023, Olszyński 2024, Butler 2015, Gustison 2024, Sirmpilatze 2026, Kleven 2023, Stolzberg 2017, De Groof 2016.

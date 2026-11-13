@@ -2,7 +2,7 @@
  {
   "id": "bat-social6",
   "species": "egyptian-fruit-bat",
-  "title": "Social call \u2014 example 6",
+  "title": "Social call — example 6",
   "kind": "Social call",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/social6-48k.wav",
@@ -30,12 +30,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-social7",
   "species": "egyptian-fruit-bat",
-  "title": "Social call \u2014 example 7",
+  "title": "Social call — example 7",
   "kind": "Social call",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/social7-48k.wav",
@@ -63,12 +63,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-social4",
   "species": "egyptian-fruit-bat",
-  "title": "Social call \u2014 example 4",
+  "title": "Social call — example 4",
   "kind": "Social call",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/social4-48k.wav",
@@ -96,12 +96,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-social5",
   "species": "egyptian-fruit-bat",
-  "title": "Social call \u2014 example 5",
+  "title": "Social call — example 5",
   "kind": "Social call",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/social5-48k.wav",
@@ -129,12 +129,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-social2",
   "species": "egyptian-fruit-bat",
-  "title": "Social call \u2014 example 2",
+  "title": "Social call — example 2",
   "kind": "Social call",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/social2-48k.wav",
@@ -162,12 +162,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-social1",
   "species": "egyptian-fruit-bat",
-  "title": "Social call \u2014 example 1",
+  "title": "Social call — example 1",
   "kind": "Social call",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/social1-48k.wav",
@@ -195,12 +195,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-social3",
   "species": "egyptian-fruit-bat",
-  "title": "Social call \u2014 example 3",
+  "title": "Social call — example 3",
   "kind": "Social call",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/social3-48k.wav",
@@ -228,12 +228,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-isolation4",
   "species": "egyptian-fruit-bat",
-  "title": "Isolation call (pup) \u2014 example 4",
+  "title": "Isolation call (pup) — example 4",
   "kind": "Isolation call (pup)",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/isolation4-48k.wav",
@@ -261,12 +261,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-echolocation2",
   "species": "egyptian-fruit-bat",
-  "title": "Echolocation click train \u2014 example 2",
+  "title": "Echolocation click train — example 2",
   "kind": "Echolocation click train",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/echolocation2-48k.wav",
@@ -294,12 +294,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-echolocation1",
   "species": "egyptian-fruit-bat",
-  "title": "Echolocation click train \u2014 example 1",
+  "title": "Echolocation click train — example 1",
   "kind": "Echolocation click train",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/echolocation1-48k.wav",
@@ -327,12 +327,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-isolation1",
   "species": "egyptian-fruit-bat",
-  "title": "Isolation call (pup) \u2014 example 1",
+  "title": "Isolation call (pup) — example 1",
   "kind": "Isolation call (pup)",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/isolation1-48k.wav",
@@ -360,12 +360,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-isolation3",
   "species": "egyptian-fruit-bat",
-  "title": "Isolation call (pup) \u2014 example 3",
+  "title": "Isolation call (pup) — example 3",
   "kind": "Isolation call (pup)",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/isolation3-48k.wav",
@@ -393,12 +393,12 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "bat-isolation2",
   "species": "egyptian-fruit-bat",
-  "title": "Isolation call (pup) \u2014 example 2",
+  "title": "Isolation call (pup) — example 2",
   "kind": "Isolation call (pup)",
   "files": {
    "realtime": "assets/sound/egyptian-fruit-bat/isolation2-48k.wav",
@@ -426,7 +426,7 @@
    "licence": "CC0",
    "citation": "Prat Y, Taub M, Pratt E, Yovel Y (2017) An annotated dataset of Egyptian fruit bat vocalizations across varying contexts and during vocal ontogeny. Scientific Data 4:170143. doi:10.1038/sdata.2017.143"
   },
-  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10\u00d7 slower; every frequency is divided by 10. Peak-normalised; no filtering."
+  "playback": "Real time: resampled from 250 kHz to 48 kHz, so content above 24 kHz is removed. Time-expanded: the original samples played 10× slower; every frequency is divided by 10. Peak-normalised; no filtering."
  },
  {
   "id": "marmoset-infant_cry_175492",
@@ -879,7 +879,7 @@
  {
   "id": "mouse-usv-0184_85s",
   "species": "house-mouse",
-  "title": "Ultrasonic vocalizations, 184.85\u2013186.85 s of the source file",
+  "title": "Ultrasonic vocalizations, 184.85–186.85 s of the source file",
   "kind": "Ultrasonic vocalizations (USVs)",
   "files": {
    "expanded": "assets/sound/house-mouse/usv-0184_85s-te16.wav"
@@ -907,13 +907,13 @@
    "licence": "CC BY 4.0",
    "citation": "Abbasi R, Balazs P, Marconi MA, Nicolakis D, Zala SM, Penn DJ (2022) Capturing the songs of mice with an improved detection and classification method for ultrasonic vocalizations (BootSnap). PLOS Computational Biology 18:e1010049. doi:10.1371/journal.pcbi.1010049"
   },
-  "selection": "Window chosen automatically as one of the three 2-s stretches with the most frames whose 35\u2013120 kHz energy exceeded the file median by 12 dB.",
-  "playback": "Mouse USVs (\u2248 40\u2013100 kHz) are above human hearing. The original samples are played 16\u00d7 slower, dividing every frequency by 16. Nothing else is changed except peak normalisation."
+  "selection": "Window chosen automatically as one of the three 2-s stretches with the most frames whose 35–120 kHz energy exceeded the file median by 12 dB.",
+  "playback": "Mouse USVs (≈ 40–100 kHz) are above human hearing. The original samples are played 16× slower, dividing every frequency by 16. Nothing else is changed except peak normalisation."
  },
  {
   "id": "mouse-usv-0206_12s",
   "species": "house-mouse",
-  "title": "Ultrasonic vocalizations, 206.12\u2013208.12 s of the source file",
+  "title": "Ultrasonic vocalizations, 206.12–208.12 s of the source file",
   "kind": "Ultrasonic vocalizations (USVs)",
   "files": {
    "expanded": "assets/sound/house-mouse/usv-0206_12s-te16.wav"
@@ -941,13 +941,13 @@
    "licence": "CC BY 4.0",
    "citation": "Abbasi R, Balazs P, Marconi MA, Nicolakis D, Zala SM, Penn DJ (2022) Capturing the songs of mice with an improved detection and classification method for ultrasonic vocalizations (BootSnap). PLOS Computational Biology 18:e1010049. doi:10.1371/journal.pcbi.1010049"
   },
-  "selection": "Window chosen automatically as one of the three 2-s stretches with the most frames whose 35\u2013120 kHz energy exceeded the file median by 12 dB.",
-  "playback": "Mouse USVs (\u2248 40\u2013100 kHz) are above human hearing. The original samples are played 16\u00d7 slower, dividing every frequency by 16. Nothing else is changed except peak normalisation."
+  "selection": "Window chosen automatically as one of the three 2-s stretches with the most frames whose 35–120 kHz energy exceeded the file median by 12 dB.",
+  "playback": "Mouse USVs (≈ 40–100 kHz) are above human hearing. The original samples are played 16× slower, dividing every frequency by 16. Nothing else is changed except peak normalisation."
  },
  {
   "id": "mouse-usv-0288_91s",
   "species": "house-mouse",
-  "title": "Ultrasonic vocalizations, 288.91\u2013290.91 s of the source file",
+  "title": "Ultrasonic vocalizations, 288.91–290.91 s of the source file",
   "kind": "Ultrasonic vocalizations (USVs)",
   "files": {
    "expanded": "assets/sound/house-mouse/usv-0288_91s-te16.wav"
@@ -975,8 +975,8 @@
    "licence": "CC BY 4.0",
    "citation": "Abbasi R, Balazs P, Marconi MA, Nicolakis D, Zala SM, Penn DJ (2022) Capturing the songs of mice with an improved detection and classification method for ultrasonic vocalizations (BootSnap). PLOS Computational Biology 18:e1010049. doi:10.1371/journal.pcbi.1010049"
   },
-  "selection": "Window chosen automatically as one of the three 2-s stretches with the most frames whose 35\u2013120 kHz energy exceeded the file median by 12 dB.",
-  "playback": "Mouse USVs (\u2248 40\u2013100 kHz) are above human hearing. The original samples are played 16\u00d7 slower, dividing every frequency by 16. Nothing else is changed except peak normalisation."
+  "selection": "Window chosen automatically as one of the three 2-s stretches with the most frames whose 35–120 kHz energy exceeded the file median by 12 dB.",
+  "playback": "Mouse USVs (≈ 40–100 kHz) are above human hearing. The original samples are played 16× slower, dividing every frequency by 16. Nothing else is changed except peak normalisation."
  },
  {
   "id": "bee-waggle-run-1",
@@ -1076,5 +1076,89 @@
   },
   "playback": "Original 44.1 kHz recording, stereo channels averaged, peak-normalised. The deposit gives no microphone placement or colony details, so the source of each sound component is not asserted.",
   "caution": "Deposited without accompanying methods. Shown as an example only; not used in any analysis."
+ },
+ {
+  "id": "commons-european-starling",
+  "species": "european-starling",
+  "title": "European starling song",
+  "kind": "Song",
+  "files": {
+   "original": "assets/sound/european-starling/commons.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/european-starling/commons.png",
+   "t1": 20.0,
+   "f1": 12000.0,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 44100,
+   "duration_s": 20.0,
+   "file": "Sturnus vulgaris - Common Starling XC474427.mp3",
+   "sha256": "b26e1ea11d7e4ad62676e12f0f373fc485dd548a97f0b912ddb6e3a6fe3dafa8",
+   "url": "https://commons.wikimedia.org/wiki/File:Sturnus_vulgaris_-_Common_Starling_XC474427.mp3",
+   "licence": "CC BY-SA 4.0",
+   "citation": "Marie-Lan Taÿ Pamart, Wikimedia Commons (Sturnus vulgaris - Common Starling XC474427.mp3)"
+  },
+  "playback": "Decoded to mono WAV and limited to the first 20 s. No filtering."
+ },
+ {
+  "id": "commons-eurasian-blackcap",
+  "species": "eurasian-blackcap",
+  "title": "Eurasian blackcap song",
+  "kind": "Song",
+  "files": {
+   "original": "assets/sound/eurasian-blackcap/commons.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/eurasian-blackcap/commons.png",
+   "t1": 20.0,
+   "f1": 12000.0,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 48000,
+   "duration_s": 20.0,
+   "file": "Sylvia atricapilla - Eurasian Blackcap XC543215.mp3",
+   "sha256": "3c10a6f8caecbd0dfbc61e30ee98452eefb6507210d2d62964ae32072e1d7f56",
+   "url": "https://commons.wikimedia.org/wiki/File:Sylvia_atricapilla_-_Eurasian_Blackcap_XC543215.mp3",
+   "licence": "CC BY-SA 4.0",
+   "citation": "Benoît Van Hecke, Wikimedia Commons (Sylvia atricapilla - Eurasian Blackcap XC543215.mp3)"
+  },
+  "playback": "Decoded to mono WAV and limited to the first 20 s. No filtering."
+ },
+ {
+  "id": "commons-domestic-cat",
+  "species": "domestic-cat",
+  "title": "Domestic cat meows",
+  "kind": "Meow",
+  "files": {
+   "original": "assets/sound/domestic-cat/commons.wav"
+  },
+  "spectrogram": {
+   "file": "assets/sound/domestic-cat/commons.png",
+   "t1": 10.635,
+   "f1": 12000.0,
+   "db_range": 70,
+   "nperseg": 1024,
+   "hop": 256,
+   "window": "hann"
+  },
+  "source": {
+   "sample_rate": 44100,
+   "duration_s": 10.635,
+   "file": "Felis silvestris catus meows.ogg",
+   "sha256": "c5c2b838676975b2095c57d36d74ec9519a9a58f6993d84df039cc6cfaed4a85",
+   "url": "https://commons.wikimedia.org/wiki/File:Felis_silvestris_catus_meows.ogg",
+   "licence": "CC BY-SA 3.0",
+   "citation": "Tobias Puderer, Wikimedia Commons (Felis silvestris catus meows.ogg)"
+  },
+  "playback": "Decoded to mono WAV and limited to the first 20 s. No filtering."
  }
 ]

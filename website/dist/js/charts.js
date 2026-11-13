@@ -1,7 +1,7 @@
 // Minimal SVG charts drawn from the deposited-data results. Every chart is followed by its data as a table.
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const fmt = (n, d = 0) => Number(n).toLocaleString('en-US', {maximumFractionDigits: d, minimumFractionDigits: d});
-const COLORS = ['#3b6e8f', '#c27c2c', '#5a8f4e', '#8a5a9e'];
+const COLORS = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c4)'];
 function ticks(min, max, n = 5) { const span = max - min || 1, raw = span / n, p = 10 ** Math.floor(Math.log10(raw)); const step = [1, 2, 2.5, 5, 10].map(m => m * p).find(s => s >= raw); const out = []; for (let v = Math.ceil(min / step) * step; v <= max + 1e-9; v += step) out.push(+v.toFixed(8)); return out; }
 const tip = document.getElementById('tooltip');
 function bindTips(svg) {
@@ -64,12 +64,12 @@ export function scatterPanels(host, {title, note, panels, xlabel, ylabel}) {
     const x = v => L + (W - L - R) * (v - x0) / (x1 - x0), y = v => T + (H - T - B) * (180 - v) / 360;
     let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(p.title)}"><text x="${L}" y="14" style="font-weight:600;fill:var(--ink)">${esc(p.title)}</text>`;
     s += `<g class="grid">${[-180, -90, 0, 90, 180].map(v => `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/>`).join('')}</g>`;
-    s += p.points.map(q => `<circle class="pt" cx="${x(q.x).toFixed(1)}" cy="${y(q.y).toFixed(1)}" r="2.4" fill="${COLORS[0]}" data-tip="${esc(q.tip)}"/>`).join('');
+    s += p.points.map(q => `<circle class="pt" cx="${x(q.x).toFixed(1)}" cy="${y(q.y).toFixed(1)}" r="2.4" style="fill:${COLORS[0]}" data-tip="${esc(q.tip)}"/>`).join('');
     if (p.line != null) { // y = c + slope*x, wrapped
       const seg = []; let prev = null;
       for (let v = x0; v <= x1; v += 1) { let yy = ((p.line + p.slope * v + 180) % 360 + 360) % 360 - 180; if (prev != null && Math.abs(yy - prev) > 180) seg.push(null); seg.push([x(v), y(yy)]); prev = yy; }
       let d = '', pen = false; seg.forEach(pt => { if (!pt) { pen = false; return; } d += (pen ? 'L' : 'M') + pt[0].toFixed(1) + ' ' + pt[1].toFixed(1); pen = true; });
-      s += `<path d="${d}" fill="none" stroke="${COLORS[1]}" stroke-width="2"/>`;
+      s += `<path d="${d}" fill="none" style="stroke:${COLORS[1]}" stroke-width="2"/>`;
     }
     s += `<g class="axis"><line x1="${L}" x2="${W - R}" y1="${H - B}" y2="${H - B}"/><line x1="${L}" x2="${L}" y1="${T}" y2="${H - B}"/></g>`;
     s += ticks(x0, x1, 5).map(v => `<text x="${x(v)}" y="${H - B + 14}" text-anchor="middle">${v}°</text>`).join('') + [-180, -90, 0, 90, 180].map(v => `<text x="${L - 5}" y="${y(v) + 4}" text-anchor="end">${v}°</text>`).join('');

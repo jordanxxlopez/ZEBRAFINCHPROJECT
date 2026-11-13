@@ -1,0 +1,509 @@
+{
+ "species": "ansells-mole-rat",
+ "title": "Ansell's mole-rat brain atlas (20 \u00b5m)",
+ "dims": [
+  127,
+  169,
+  93
+ ],
+ "spacing_mm": [
+  0.08,
+  0.08,
+  0.08
+ ],
+ "view": {
+  "up": "-z",
+  "names": {
+   "x": "Sagittal",
+   "y": "Coronal",
+   "z": "Horizontal"
+  },
+  "ends": {
+   "x": [
+    "R",
+    "L"
+   ],
+   "y": [
+    "A",
+    "P"
+   ],
+   "z": [
+    "D",
+    "V"
+   ]
+  }
+ },
+ "flip_display": {
+  "y": false,
+  "z": false
+ },
+ "images": [
+  {
+   "file": "image-reference.u8.gz",
+   "name": "Reference image (atlas template)",
+   "window_source_units": [
+    43.25,
+    252.09375
+   ],
+   "kind": "measured template"
+  }
+ ],
+ "labels": {
+  "file": "labels.u16.gz",
+  "dtype": "uint16",
+  "count": 33
+ },
+ "regions": [
+  {
+   "index": 1,
+   "source_id": 5,
+   "acronym": "OLF",
+   "name": "Olfactory areas",
+   "color": "#002040",
+   "path": [
+    "CTX",
+    "OLF"
+   ],
+   "voxels_source_grid": 2051966,
+   "volume_mm3": 16.4157
+  },
+  {
+   "index": 2,
+   "source_id": 17,
+   "acronym": "IC",
+   "name": "Inferior colliculus",
+   "color": "#008040",
+   "path": [
+    "MB",
+    "IC"
+   ],
+   "voxels_source_grid": 459572,
+   "volume_mm3": 3.6766
+  },
+  {
+   "index": 3,
+   "source_id": 28,
+   "acronym": "MY",
+   "name": "Medulla",
+   "color": "#00e000",
+   "path": [
+    "root",
+    "MY"
+   ],
+   "voxels_source_grid": 3433110,
+   "volume_mm3": 27.4649
+  },
+  {
+   "index": 4,
+   "source_id": 36,
+   "acronym": "PA",
+   "name": "Posterior amygdalar nucleus",
+   "color": "#202000",
+   "path": [
+    "CTX",
+    "PA"
+   ],
+   "voxels_source_grid": 30440,
+   "volume_mm3": 0.2435
+  },
+  {
+   "index": 5,
+   "source_id": 39,
+   "acronym": "STR",
+   "name": "Striatum",
+   "color": "#2020c0",
+   "path": [
+    "root",
+    "STR"
+   ],
+   "voxels_source_grid": 779782,
+   "volume_mm3": 6.2383
+  },
+  {
+   "index": 6,
+   "source_id": 43,
+   "acronym": "MB",
+   "name": "Midbrain",
+   "color": "#2040c0",
+   "path": [
+    "root",
+    "MB"
+   ],
+   "voxels_source_grid": 1215566,
+   "volume_mm3": 9.7245
+  },
+  {
+   "index": 7,
+   "source_id": 50,
+   "acronym": "BMA",
+   "name": "Basomedial amygdalar nucleus",
+   "color": "#208080",
+   "path": [
+    "CTX",
+    "BMA"
+   ],
+   "voxels_source_grid": 96180,
+   "volume_mm3": 0.7694
+  },
+  {
+   "index": 8,
+   "source_id": 59,
+   "acronym": "TH",
+   "name": "Thalamus",
+   "color": "#20c0c0",
+   "path": [
+    "root",
+    "TH"
+   ],
+   "voxels_source_grid": 1742866,
+   "volume_mm3": 13.9429
+  },
+  {
+   "index": 9,
+   "source_id": 60,
+   "acronym": "SC",
+   "name": "Superior colliculus",
+   "color": "#20e000",
+   "path": [
+    "MB",
+    "SC"
+   ],
+   "voxels_source_grid": 263150,
+   "volume_mm3": 2.1052
+  },
+  {
+   "index": 10,
+   "source_id": 68,
+   "acronym": "BST",
+   "name": "Bed nuclei of the stria terminalis",
+   "color": "#402000",
+   "path": [
+    "PAL",
+    "BST"
+   ],
+   "voxels_source_grid": 121326,
+   "volume_mm3": 0.9706
+  },
+  {
+   "index": 11,
+   "source_id": 76,
+   "acronym": "COA",
+   "name": "Cortical amygdalar area",
+   "color": "#406000",
+   "path": [
+    "OLF",
+    "COA"
+   ],
+   "voxels_source_grid": 440944,
+   "volume_mm3": 3.5276
+  },
+  {
+   "index": 12,
+   "source_id": 77,
+   "acronym": "CTX",
+   "name": "Cerebral cortex",
+   "color": "#406040",
+   "path": [
+    "root",
+    "CTX"
+   ],
+   "voxels_source_grid": 17998016,
+   "volume_mm3": 143.9841
+  },
+  {
+   "index": 13,
+   "source_id": 86,
+   "acronym": "LG",
+   "name": "Lateral geniculate complex",
+   "color": "#40a080",
+   "path": [
+    "TH",
+    "LG"
+   ],
+   "voxels_source_grid": 50536,
+   "volume_mm3": 0.4043
+  },
+  {
+   "index": 14,
+   "source_id": 90,
+   "acronym": "AAA",
+   "name": "Anterior amygdalar area",
+   "color": "#40c080",
+   "path": [
+    "STR",
+    "AAA"
+   ],
+   "voxels_source_grid": 79818,
+   "volume_mm3": 0.6385
+  },
+  {
+   "index": 15,
+   "source_id": 99,
+   "acronym": "CN",
+   "name": "Cochlear nuclei",
+   "color": "#6000c0",
+   "path": [
+    "MY",
+    "CN"
+   ],
+   "voxels_source_grid": 92114,
+   "volume_mm3": 0.7369
+  },
+  {
+   "index": 16,
+   "source_id": 104,
+   "acronym": "LA",
+   "name": "Lateral amygdalar nucleus",
+   "color": "#604000",
+   "path": [
+    "CTX",
+    "LA"
+   ],
+   "voxels_source_grid": 117384,
+   "volume_mm3": 0.9391
+  },
+  {
+   "index": 17,
+   "source_id": 110,
+   "acronym": "STRd",
+   "name": "Striatum dorsal region",
+   "color": "#606080",
+   "path": [
+    "STR",
+    "STRd"
+   ],
+   "voxels_source_grid": 3368732,
+   "volume_mm3": 26.9499
+  },
+  {
+   "index": 18,
+   "source_id": 122,
+   "acronym": "OP",
+   "name": "Olivary pretectal nucleus",
+   "color": "#60c080",
+   "path": [
+    "MB",
+    "OP"
+   ],
+   "voxels_source_grid": 12678,
+   "volume_mm3": 0.1014
+  },
+  {
+   "index": 19,
+   "source_id": 128,
+   "acronym": "CB",
+   "name": "Cerebellum",
+   "color": "#800000",
+   "path": [
+    "root",
+    "CB"
+   ],
+   "voxels_source_grid": 7778070,
+   "volume_mm3": 62.2246
+  },
+  {
+   "index": 20,
+   "source_id": 131,
+   "acronym": "MG",
+   "name": "Medial geniculate complex",
+   "color": "#8000c0",
+   "path": [
+    "TH",
+    "MG"
+   ],
+   "voxels_source_grid": 255260,
+   "volume_mm3": 2.0421
+  },
+  {
+   "index": 21,
+   "source_id": 139,
+   "acronym": "PAL",
+   "name": "Pallidum",
+   "color": "#8040c0",
+   "path": [
+    "root",
+    "PAL"
+   ],
+   "voxels_source_grid": 1224436,
+   "volume_mm3": 9.7955
+  },
+  {
+   "index": 22,
+   "source_id": 140,
+   "acronym": "PG",
+   "name": "Pontine gray",
+   "color": "#806000",
+   "path": [
+    "P",
+    "PG"
+   ],
+   "voxels_source_grid": 79236,
+   "volume_mm3": 0.6339
+  },
+  {
+   "index": 23,
+   "source_id": 145,
+   "acronym": "PAG",
+   "name": "Periaqueductal gray",
+   "color": "#808040",
+   "path": [
+    "MB",
+    "PAG"
+   ],
+   "voxels_source_grid": 241674,
+   "volume_mm3": 1.9334
+  },
+  {
+   "index": 24,
+   "source_id": 159,
+   "acronym": "CEA",
+   "name": "Central amygdalar nucleus",
+   "color": "#80e0c0",
+   "path": [
+    "STR",
+    "CEA"
+   ],
+   "voxels_source_grid": 109424,
+   "volume_mm3": 0.8754
+  },
+  {
+   "index": 25,
+   "source_id": 168,
+   "acronym": "HIP",
+   "name": "Hippocampal region",
+   "color": "#a04000",
+   "path": [
+    "CTX",
+    "HIP"
+   ],
+   "voxels_source_grid": 3837522,
+   "volume_mm3": 30.7002
+  },
+  {
+   "index": 26,
+   "source_id": 177,
+   "acronym": "BLA",
+   "name": "Basolateral amygdalar nucleus",
+   "color": "#a08040",
+   "path": [
+    "CTX",
+    "BLA"
+   ],
+   "voxels_source_grid": 274288,
+   "volume_mm3": 2.1943
+  },
+  {
+   "index": 27,
+   "source_id": 185,
+   "acronym": "PAA",
+   "name": "Piriform-amygdalar area",
+   "color": "#a0c040",
+   "path": [
+    "CTX",
+    "PAA"
+   ],
+   "voxels_source_grid": 155254,
+   "volume_mm3": 1.242
+  },
+  {
+   "index": 28,
+   "source_id": 195,
+   "acronym": "SCH",
+   "name": "Suprachiasmatic nucleus",
+   "color": "#c000c0",
+   "path": [
+    "HY",
+    "SCH"
+   ],
+   "voxels_source_grid": 5016,
+   "volume_mm3": 0.0401
+  },
+  {
+   "index": 29,
+   "source_id": 200,
+   "acronym": "P",
+   "name": "Pons",
+   "color": "#c04000",
+   "path": [
+    "root",
+    "P"
+   ],
+   "voxels_source_grid": 1988974,
+   "volume_mm3": 15.9118
+  },
+  {
+   "index": 30,
+   "source_id": 213,
+   "acronym": "MEA",
+   "name": "Medial amygdalar nucleus",
+   "color": "#c0a040",
+   "path": [
+    "STR",
+    "MEA"
+   ],
+   "voxels_source_grid": 87152,
+   "volume_mm3": 0.6972
+  },
+  {
+   "index": 31,
+   "source_id": 221,
+   "acronym": "HY",
+   "name": "Hypothalumus",
+   "color": "#c0e040",
+   "path": [
+    "root",
+    "HY"
+   ],
+   "voxels_source_grid": 1972678,
+   "volume_mm3": 15.7814
+  },
+  {
+   "index": 32,
+   "source_id": 231,
+   "acronym": "ENT",
+   "name": "Entorhinal area",
+   "color": "#e020c0",
+   "path": [
+    "CTX",
+    "ENT"
+   ],
+   "voxels_source_grid": 1828756,
+   "volume_mm3": 14.63
+  },
+  {
+   "index": 33,
+   "source_id": 250,
+   "acronym": "SCs",
+   "name": "Superior colliculus, superfical layer",
+   "color": "#e0c080",
+   "path": [
+    "SC",
+    "SCs"
+   ],
+   "voxels_source_grid": 79716,
+   "volume_mm3": 0.6377
+  }
+ ],
+ "meshes": "meshes.json",
+ "mesh_units": "mm",
+ "mesh_note": "Surfaces are the atlas package's own structure meshes, decimated for display.",
+ "provenance": {
+  "dataset": "BrainGlobe atlas package african_molerat_20um_v1.1 (https://gin.g-node.org/brainglobe/atlases); original: https://www.malkemper-lab.com/",
+  "citation": "BrainGlobe atlas african_molerat_20um v1.1 (Fukomys anselli), Malkemper laboratory; listed by the packagers as unpublished.",
+  "licence": "Distributed openly through BrainGlobe; atlas listed as unpublished (Malkemper laboratory)",
+  "package_species": "Fukomys anselli",
+  "sha256": {
+   "african_molerat_20um_v1.1.tar.gz": "af52815136477a5799fa13864ba2a8ec06ab7fb0608ebdd8326159a247e8d833"
+  }
+ },
+ "processing": [
+  "Source grid 677 \u00d7 375 \u00d7 508 at 20.0 \u00d7 20.0 \u00d7 20.0 \u00b5m (orientation 'asr').",
+  "Reference image block-averaged by [4, 4, 4] and labels subsampled by nearest neighbour to 0.080 \u00d7 0.080 \u00d7 0.080 mm for the browser.",
+  "Region volumes are counted on the original grid. Structures smaller than the display grid may not appear in the sections.",
+  "Display window: 0.5th\u201399.7th percentile of in-brain voxels. 13 of 34 packaged surfaces are shown, chosen for auditory, vocal and social relevance."
+ ],
+ "sizes_bytes": {
+  "image-reference.u8.gz": 781088,
+  "labels.u16.gz": 74218
+ }
+}

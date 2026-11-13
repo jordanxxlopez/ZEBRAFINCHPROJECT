@@ -34,7 +34,9 @@ ATLASES = {
     "domestic-cat": dict(pkg="csl_cat_500um_v1.0", target=0.5, title="CATLAS: MRI template and cortical atlas of the domestic cat", licence="See CATLAS repository (github.com/CerebralSystemsLab/CATLAS)",
                          citation="Stolzberg D, Wong C, Butler BE, Lomber SG (2017). Catlas: an magnetic resonance imaging-based three-dimensional cortical atlas and tissue probability maps for the domestic cat (Felis catus). Journal of Comparative Neurology 525:3190–3206. doi:10.1002/cne.24271",
                          prefer=["A1", "A2", "AAF", "PAF", "VAF", "vPAF", "DZ", "DP", "iPE", "vPE", "IN", "FAES", "TE", "EPp", "17", "18", "4Gamma", "3b", "CGa", "PFdl", "Cbm"]),
-    "mole-rat": dict(pkg="african_molerat_20um_v1.1", target=0.1, prefer=["auditory", "inferior colliculus", "geniculate", "cochlear", "hippocamp", "cerebell", "olfactory"]),
+    "ansells-mole-rat": dict(pkg="african_molerat_20um_v1.1", target=0.08, title="Ansell's mole-rat brain atlas (20 µm)", licence="Distributed openly through BrainGlobe; atlas listed as unpublished (Malkemper laboratory)",
+                             citation="BrainGlobe atlas african_molerat_20um v1.1 (Fukomys anselli), Malkemper laboratory; listed by the packagers as unpublished.",
+                             prefer=["Auditory areas", "Inferior colliculus", "Medial geniculate complex", "Cochlear nuclei", "Periaqueductal gray", "Hippocampal formation", "Caudoputamen", "Main olfactory bulb", "Cerebellum", "Thalamus", "Isocortex", "Superior colliculus"]),
 }
 
 
@@ -163,7 +165,7 @@ def build(sid):
 
 
 if __name__ == "__main__":
-    for s in sys.argv[1:] or [k for k in ATLASES if k != "mole-rat"]:
+    for s in sys.argv[1:] or list(ATLASES):
         if s in ATLASES:
             build(s)
 
@@ -188,7 +190,7 @@ def build_starling():
             "POM": "POM, medial preoptic nucleus", "TnA": "TnA, nucleus taeniae of the amygdala", "GCt": "GCt, midbrain central gray", "LS": "LS, lateral septum", "MS": "MS, medial septum",
             "PVN": "PVN, paraventricular nucleus", "VMH": "VMH, ventromedial hypothalamus", "VTA": "VTA, ventral tegmental area"}
     # physical scale: Analyze headers and Amira bounds both say 0.85 with no usable unit; x0.1 gives a 21.8 mm field of view
-    SP = 0.085
+    SP = 1.0   # voxel units: the files give no usable physical unit, so no millimetre scale is asserted
     rng = np.random.default_rng(7)
     def colour(i, n, s=0.62, v=0.92):
         import colorsys
@@ -201,7 +203,7 @@ def build_starling():
             k += 1; lab[m] = k
             nm = table[i]
             regions.append(dict(index=k, source_id=k, acronym=nm.split(",")[0] if kind == "nucleus" else "", name=full.get(nm, nm), kind=kind, color=colour(k, 40, 0.35 if kind == "region" else 0.75),
-                                voxels=int(m.sum()), volume_mm3=round(float(m.sum()) * SP ** 3, 4)))
+                                voxels=int(m.sum()), volume_mm3=None))
     lo, hi = np.percentile(t2[brain], [0.5, 99.7])
     img = (np.clip((t2 - lo) / (hi - lo), 0, 1) * 255).round().astype(np.uint8)
     sizes = {"image-t2.u8.gz": write_gz(out / "image-t2.u8.gz", img), "labels.u16.gz": write_gz(out / "labels.u16.gz", lab)}
@@ -219,7 +221,7 @@ def build_starling():
         meshes.append(dict(id=r["index"], acronym=r["acronym"], name=r["name"], color=r["color"], vertices=np.round(v, 3).ravel().tolist(), faces=f.ravel().tolist()))
     json.dump(meshes, open(out / "meshes.json", "w"), separators=(",", ":"))
     zipf = RAW / "starling.zip"
-    meta = dict(species="european-starling", title="3D MRI atlas of the European starling brain", dims=list(img.shape), spacing_mm=[SP] * 3,
+    meta = dict(species="european-starling", title="3D MRI atlas of the European starling brain", dims=list(img.shape), spacing_mm=[SP] * 3, unit="voxel",
                 view=dict(up="+z", names={"x": "Grid X section", "y": "Grid Y section", "z": "Grid Z section"}, ends=None), flip_display={"y": True, "z": True},
                 images=[dict(file="image-t2.u8.gz", name="T2-weighted MRI", window_source_units=[float(lo), float(hi)], kind="measured")],
                 labels=dict(file="labels.u16.gz", dtype="uint16", count=len(regions)), regions=regions, meshes="meshes.json", mesh_units="mm",
@@ -228,12 +230,12 @@ def build_starling():
                                 citation="De Groof G, George I, Touj S, Stacho M, Jonckers E, Cousillas H, Hausberger M, Güntürkün O, Van der Linden A (2016). A three-dimensional digital atlas of the starling brain. Brain Structure and Function 221:1899–1909. doi:10.1007/s00429-015-1011-1",
                                 sha256={zipf.name: sha(zipf)}),
                 processing=["Volumes used: T2.img with delineations/Nuclei.img, Brainregions.img and Brain.img (all 256 x 256 x 256).",
-                            "Scale: the Analyze headers and Amira bounding boxes give a spacing of 0.85 without a usable unit, which would make the brain over 20 cm wide. We read it as 0.085 mm (21.8 mm field of view), matching the factor-of-ten issue documented for the zebra finch atlas from the same laboratory. With that scale the whole-brain mask measures about 1,585 mm³, a plausible size for a starling brain. This is an inference and has not been confirmed against the paper's methods.",
+                            "Coordinates and volumes are given in voxels of the distributed 256-cubed grid. The files do not state a usable physical unit, so no millimetre scale is shown.",
                             "Nuclei and broad regions are combined in one label volume; where they overlap the nucleus is shown. The Tracts and Ventricle label volumes are not included.",
                             "Region colours are assigned by this site. Grid axes are the storage axes; anatomical directions are not asserted."],
                 sizes_bytes=sizes)
     json.dump(meta, open(out / "meta.json", "w"), indent=1)
-    print("starling", img.shape, len(regions), "regions", len(meshes), "meshes", "brain volume mm3", round(float(brain.sum()) * SP ** 3, 1))
+    print("starling", img.shape, len(regions), "regions", len(meshes), "meshes")
 
 
 if "european-starling" in sys.argv[1:] or (__name__ == "__main__" and len(sys.argv) == 1):

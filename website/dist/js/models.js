@@ -1,7 +1,7 @@
 // Interactive instruments built from real data. Each export mounts into a host element.
-import {decode, bandSpectrogram, gammatone, paintMatrix, dbNormalise, normaliseMax, magma, diverging, stftPower, makePlayer, PLAY_ICON, PAUSE_ICON} from './dsp.js?v=20261113b';
+import {decode, bandSpectrogram, gammatone, paintMatrix, dbNormalise, normaliseMax, magma, diverging, stftPower, makePlayer, PLAY_ICON, PAUSE_ICON} from './dsp.js?v=20261114d';
 
-const V = '20261112b';
+const V = '20261114d';
 const getJSON = (() => { const c = new Map(); return p => { if (!c.has(p)) c.set(p, fetch(`${p}?v=${V}`).then(r => { if (!r.ok) throw Error(`Could not load ${p}`); return r.json(); })); return c.get(p); }; })();
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const $ = (s, el) => el.querySelector(s);
@@ -19,22 +19,22 @@ function bindTrackSeek(tracks, audio) {
 
 // ------------------------------------------------------------------ 1. The ear: spectrogram vs gammatone filterbank
 export const EAR_SOUNDS = [
-  {id: 'finch', label: 'Zebra finch song', url: 'assets/models/zebra-finch/B189.wav', range: [200, 7000], note: 'Filter range 0.2–7 kHz, the zebra finch hearing range.'},
-  {id: 'marmoset', label: 'Marmoset phee call', url: 'assets/sound/common-marmoset/phee_223119.wav', range: [200, 16000], note: 'Filter range set to cover the recording, not a marmoset cochlea.'},
-  {id: 'bat', label: 'Fruit bat social call', url: 'assets/sound/egyptian-fruit-bat/social1-48k.wav', range: [200, 20000], note: 'Filter range set to cover the 48 kHz copy of the recording.'},
-  {id: 'mouse', label: 'Mouse USVs (slowed 16×)', url: 'assets/sound/house-mouse/usv-0184_85s-te16.wav', range: [500, 9000], note: 'Slowed recording: every frequency is divided by 16.'},
-  {id: 'bee', label: 'Honeybee waggle-run sound', url: 'assets/sound/honeybee/waggle-run-1.wav', range: [50, 4000], note: 'Filter range set to cover the recording.'},
+  {id: 'finch', label: 'Zebra finch song', url: 'assets/models/zebra-finch/B189.wav', range: [200, 7000], note: 'Filters span 0.2–7 kHz.'},
+  {id: 'marmoset', label: 'Marmoset phee call', url: 'assets/sound/common-marmoset/phee_223119.wav', range: [200, 16000], note: 'Filters span the recording bandwidth.'},
+  {id: 'bat', label: 'Fruit bat social call', url: 'assets/sound/egyptian-fruit-bat/social1-48k.wav', range: [200, 20000], note: 'Filters span the recording bandwidth.'},
+  {id: 'mouse', label: 'Mouse USVs, 1/16 speed', url: 'assets/sound/house-mouse/usv-0184_85s-te16.wav', range: [500, 9000], note: 'Recording at 1/16 speed; frequencies divided by 16.'},
+  {id: 'bee', label: 'Honeybee waggle-run sound', url: 'assets/sound/honeybee/waggle-run-1.wav', range: [50, 4000], note: 'Filters span the recording bandwidth.'},
 ];
 export async function mountEar(host, {initial = 'finch'} = {}) {
   host.innerHTML = `<div class="inst">
-    <div class="inst-bar"><span class="title">What the ear does with a sound</span>
+    <div class="inst-bar"><span class="title">Cochlear filterbank model</span>
       <div class="ctl"><label class="vh" for="ear-src">Sound</label><select id="ear-src">${EAR_SOUNDS.map(s => `<option value="${s.id}">${s.label}</option>`).join('')}</select></div></div>
     <div class="inst-body">
-      <div class="track"><canvas class="t-spec" height="120"></canvas><span class="lbl">SPECTROGRAM · what a microphone records</span><div class="ph"></div></div>
-      <div class="track"><canvas class="t-coch" height="120"></canvas><span class="lbl">MODEL EAR · output of 48 gammatone filters (low → high pitch, bottom → top)</span><div class="ph"></div></div>
-      <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-top:.6rem"><span class="pb"></span><span class="small" style="color:var(--night-ink-2)" data-note></span></div>
+      <div class="track"><canvas class="t-spec" height="120"></canvas><span class="lbl">SPECTROGRAM</span><div class="ph"></div></div>
+      <div class="track"><canvas class="t-coch" height="120"></canvas><span class="lbl">GAMMATONE FILTERBANK · 48 channels</span><div class="ph"></div></div>
+      <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-top:.6rem"><span class="pb"></span><span class="small" style="color:var(--ink-3)" data-note></span></div>
     </div>
-    <div class="inst-foot"><span>Model: gammatone filterbank (Holdsworth et al. 1988 implementation; bandwidths from Glasberg &amp; Moore 1990, measured in humans and used here as an approximation). Envelopes cube-root compressed.</span><span>Computed live in your browser from the original recording.</span></div></div>`;
+    <div class="inst-foot"><span>Gammatone filterbank (Holdsworth et al. 1988); bandwidths after Glasberg &amp; Moore (1990). Envelopes cube-root compressed. Computed from the original recording.</span></div></div>`;
   const audio = new Audio(); audio.preload = 'auto';
   $('.pb', host).appendChild(playButton(audio));
   const phs = host.querySelectorAll('.ph');
@@ -59,7 +59,7 @@ export async function mountSTRF(host) {
   const songs = Object.keys(d.songs);
   const areaName = {FL: 'Field L (primary)', CM: 'CM (secondary)', NCM: 'NCM (secondary)'};
   host.innerHTML = `<div class="inst">
-    <div class="inst-bar"><span class="title">Play a song to a real neuron</span>
+    <div class="inst-bar"><span class="title">Single-unit responses and receptive-field predictions</span>
       <div class="ctl">
         <label class="vh" for="sn">Neuron</label><select id="sn">${['FL', 'CM', 'NCM'].map(a => `<optgroup label="${areaName[a]}">${d.examples.filter(e => e.area === a).map(e => `<option value="${e.id}">${a} · neuron ${e.id.split('_').slice(-1)[0].replace('c', '#')} (bird ${e.bird})</option>`).join('')}</optgroup>`).join('')}</select>
         <label class="vh" for="ss">Song</label><select id="ss">${songs.map((s, i) => `<option value="${s}">Song ${i + 1} (bird ${s})</option>`).join('')}</select>
@@ -67,22 +67,22 @@ export async function mountSTRF(host) {
     <div class="inst-body strf-grid">
       <div>
         <div class="track"><canvas class="t-spec" height="100"></canvas><span class="lbl">SONG (0.5–8 kHz)</span><div class="ph"></div></div>
-        <div class="track"><canvas class="t-raster" height="90"></canvas><span class="lbl">REAL SPIKES · 10 repeats</span><div class="ph"></div></div>
+        <div class="track"><canvas class="t-raster" height="90"></canvas><span class="lbl">SPIKES · 10 trials</span><div class="ph"></div></div>
         <div class="track"><canvas class="t-rate" height="110"></canvas><span class="lbl">FIRING RATE</span><div class="ph"></div></div>
-        <div class="legend"><span><i style="background:#fff"></i>Measured (average of repeats)</span><span><i style="background:var(--accent)"></i>Model prediction (this song was not used to fit the model)</span></div>
+        <div class="legend"><span><i style="background:#fff;outline:1px solid var(--ink-3)"></i>Measured, trial average</span><span><i style="background:var(--accent)"></i>STRF prediction, song held out of fitting</span></div>
         <div style="display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap;margin-top:.8rem"><span class="pb"></span>
-          <span class="stat"><b data-r>–</b><span>match on this song (r)</span></span>
-          <span class="stat"><b data-rall>–</b><span>average over 8 held-out songs</span></span>
-          <span class="stat"><b data-rel>–</b><span>repeat-to-repeat reliability</span></span></div>
+          <span class="stat"><b data-r>–</b><span>r, this song</span></span>
+          <span class="stat"><b data-rall>–</b><span>mean r, 8 held-out songs</span></span>
+          <span class="stat"><b data-rel>–</b><span>split-half reliability</span></span></div>
       </div>
       <div class="strf-side">
-        <p class="small" style="margin:0 0 .35rem;color:var(--night-ink-2)">THE NEURON'S RECEPTIVE FIELD</p>
+        <p class="small" style="margin:0 0 .35rem;color:var(--ink-3)">RECEPTIVE FIELD</p>
         <canvas class="t-strf" width="20" height="24" style="aspect-ratio:1/1.1"></canvas>
-        <div class="axis"><span>0 ms</span><span>time before spike →</span><span>95</span></div>
-        <p class="small" style="margin:.5rem 0 0;color:var(--night-ink-2)">Red: sound energy at that pitch and delay makes the neuron fire more. Blue: it fires less. Pitch runs from 0.5 kHz (bottom) to 8 kHz (top).</p>
+        <div class="axis"><span>0 ms</span><span>delay</span><span>95</span></div>
+        <p class="small" style="margin:.5rem 0 0;color:var(--ink-3)">Red, excitatory; blue, suppressive. Frequency 0.5–8 kHz, bottom to top.</p>
       </div>
     </div>
-    <div class="inst-foot"><span>Data: Le, Bjoring &amp; Meliza, anaesthetised zebra finches, single units (<a href="https://doi.org/10.6084/m9.figshare.29203457">figshare, CC BY 4.0</a>). Model: linear spectro-temporal receptive field, ridge regression, leave-one-song-out.</span><a href="#research/finch-strf">Methods and all ${d.units_fitted} neurons →</a></div></div>`;
+    <div class="inst-foot"><span>Data: Le, Bjoring &amp; Meliza, anaesthetised zebra finches, single units (<a href="https://doi.org/10.6084/m9.figshare.29203457">figshare, CC BY 4.0</a>). Model: linear spectro-temporal receptive field, ridge regression, leave-one-song-out.</span><a href="#research/finch-strf">Model report, ${d.units_fitted} neurons</a></div></div>`;
   const audio = new Audio(); audio.preload = 'auto';
   $('.pb', host).appendChild(playButton(audio));
   const phs = host.querySelectorAll('.ph');
@@ -119,12 +119,12 @@ export async function mountSTRF(host) {
 export async function mountRA(host) {
   const d = await getJSON('data/models/zebra-finch/ra.json');
   host.innerHTML = `<div class="inst">
-    <div class="inst-bar"><span class="title">Inside a singing bird: RA, the song's motor output</span><span class="pb"></span></div>
+    <div class="inst-bar"><span class="title">RA population activity during song</span><span class="pb"></span></div>
     <div class="inst-body">
-      <div class="track"><canvas class="t-spec" height="110"></canvas><span class="lbl">THE BIRD'S OWN SONG · two motifs</span><div class="ph"></div></div>
-      <div class="track"><canvas class="t-ras" height="260"></canvas><span class="lbl">85 RECORDING SITES IN RA · brighter = more active than that site's average (20 ms bins)</span><div class="ph"></div></div>
-      <div class="track"><canvas class="t-pop" height="70"></canvas><span class="lbl">ALL SITES TOGETHER</span><div class="ph"></div></div>
-      <p class="small" style="color:var(--night-ink-2);margin:.6rem 0 0">Population activity in the first motif matches the second (r = ${d.motif_consistency.population_r} at ${d.motif_consistency.bin_s * 1000} ms resolution), above the 95th percentile of ${d.motif_consistency.shuffle_n} time-shuffled controls (${d.motif_consistency.shuffle_p95}). Two motifs are a small sample.</p>
+      <div class="track"><canvas class="t-spec" height="110"></canvas><span class="lbl">SONG · two motifs</span><div class="ph"></div></div>
+      <div class="track"><canvas class="t-ras" height="260"></canvas><span class="lbl">85 RECORDING SITES IN RA · z-scored activity, 20 ms bins</span><div class="ph"></div></div>
+      <div class="track"><canvas class="t-pop" height="70"></canvas><span class="lbl">SUMMED ACTIVITY</span><div class="ph"></div></div>
+      <p class="small muted" style="margin:.6rem 0 0">Correlation of summed activity between the two motifs: r = ${d.motif_consistency.population_r} (${d.motif_consistency.bin_s * 1000} ms bins); 95th percentile of ${d.motif_consistency.shuffle_n} circular shifts: ${d.motif_consistency.shuffle_p95}.</p>
     </div>
     <div class="inst-foot"><span>Data: FALCON B1, Neuropixels in RA of a singing zebra finch (<a href="https://dandiarchive.org/dandiset/001046">DANDI 001046</a>, CC BY 4.0). Unsorted threshold crossings, rows ordered by time of peak activity.</span></div></div>`;
   const audio = new Audio(d.audio + '?v=' + V); audio.preload = 'auto';
@@ -168,9 +168,9 @@ export async function mountNeurons(host, {species = 'zebra-finch'} = {}) {
   const ORDER = ['HVC → RA neuron', 'HVC → Area X neuron', 'HVC neuron projecting to RA and Area X', 'CM neuron, phasic firing', 'CM neuron, tonic firing', 'CM neuron, intermediate firing', 'CM interneuron, fast-spiking'];
   const groups = {}; [...list].sort((a, b) => ((ORDER.indexOf(label(a)) + 99) % 99) - ((ORDER.indexOf(label(b)) + 99) % 99)).forEach(n => (groups[label(n)] ||= []).push(n));
   host.innerHTML = `<div class="inst">
-    <div class="inst-bar"><span class="title">Real neurons, reconstructed from the microscope</span>
-      <div class="ctl"><label class="vh" for="nn">Neuron</label><select id="nn">${Object.entries(groups).map(([k, v]) => `<optgroup label="${esc(k)} (${v.length})">${v.map(n => `<option value="${esc(n.name)}">${esc(k)} · ${esc(n.name)}</option>`).join('')}</optgroup>`).join('')}</select></div></div>
-    <div class="three-host"><span class="hint">Drag to rotate · scroll to zoom</span><div class="hud" data-hud></div></div>
+    <div class="inst-bar"><span class="title">Reconstructed neurons</span>
+      <div class="ctl"><label class="vh" for="nn">Neuron</label><select id="nn">${Object.entries(groups).map(([k, v]) => `<optgroup label="${esc(k)} (${v.length})">${v.map((n, i) => `<option value="${esc(n.name)}">${esc(k)} ${i + 1}</option>`).join('')}</optgroup>`).join('')}</select></div></div>
+    <div class="three-host"><span class="hint">Drag to rotate; scroll or pinch to zoom</span><div class="hud" data-hud></div></div>
     <div class="inst-foot"><span>Reconstructions from <a href="https://neuromorpho.org">NeuroMorpho.org</a> (standardised CNG versions). <span style="color:#e9edf0">■</span> dendrites · <span style="color:#f08a5d">■</span> axon · <span style="color:#7fc8ff">■</span> soma</span></div></div>`;
   const S = await makeScene($('.three-host', host));
   let obj = null;
@@ -183,14 +183,14 @@ export async function mountNeurons(host, {species = 'zebra-finch'} = {}) {
     const g = new S.THREE.BufferGeometry(); g.setAttribute('position', new S.THREE.BufferAttribute(pos, 3)); g.setAttribute('color', new S.THREE.BufferAttribute(col, 3));
     let len = 0; for (let i = 0; i < n.segments.length; i += 6) len += Math.hypot(n.segments[i + 3] - n.segments[i], n.segments[i + 4] - n.segments[i + 1], n.segments[i + 5] - n.segments[i + 2]);
     obj = new S.THREE.LineSegments(g, new S.THREE.LineBasicMaterial({vertexColors: true})); S.scene.add(obj); S.frame(obj, 1.1);
-    $('[data-hud]', host).innerHTML = `<b>${esc(label(n))}</b><br><span style="color:var(--night-ink-2)">${esc(n.region.join(' › '))}</span><br>Traced length ≈ ${Math.round(len).toLocaleString()} µm<br><a href="${esc(n.page)}">NeuroMorpho record</a>${n.doi ? ` · <a href="https://doi.org/${esc(n.doi[0] || n.doi)}">original paper</a>` : ''}`;
+    $('[data-hud]', host).innerHTML = `<b>${esc(label(n))}</b><br><span style="color:var(--ink-3)">${esc(n.region.join(' › '))}</span><br>Traced length ≈ ${Math.round(len).toLocaleString()} µm<br><a href="${esc(n.page)}">NeuroMorpho record <span class="mono">${esc(n.name)}</span></a>${n.doi ? ` · <a href="https://doi.org/${esc(n.doi[0] || n.doi)}">original paper</a>` : ''}`;
   };
   $('#nn', host).onchange = show; show();
 }
 
 // ------------------------------------------------------------------ 5. The pathway on real anatomy (finch MRI atlas surfaces)
 export async function mountPathway(host, steps) {
-  const [{createSpecimen}, {FINCH_PARTS, FINCH_GROUPS}, meshes] = await Promise.all([import('./viewer3d.js?v=20261113b'), import('./chapters.js?v=20261113b'), getJSON('data/models/finch-hero.json')]);
+  const [{createSpecimen}, {FINCH_PARTS, FINCH_GROUPS}, meshes] = await Promise.all([import('./viewer3d.js?v=20261114d'), import('./chapters.js?v=20261114d'), getJSON('data/models/finch-hero.json')]);
   host.innerHTML = `<figure class="plate"><div class="plate-view" style="height:min(64vh,540px)"></div><figcaption>Zebra finch brain from the 3D MRI atlas of Poirier et al. (2008). Surfaces are marching-cubes meshes of the authors' masks. The ear, brainstem auditory nuclei, CM and NCM are not delineated in this atlas. <a href="#lab/zebra-finch">Open the full atlas</a></figcaption></figure>`;
   const v = await createSpecimen(host.querySelector('.plate-view'), {meshes, up: '+z', shell: 'Whole brain', parts: FINCH_PARTS, groups: FINCH_GROUPS, caption: 'Choose a step on the left, or a label.'});
   return name => v.select(name);

@@ -1,0 +1,72 @@
+[
+ {
+  "species": "zebra-finch",
+  "name": "Le, Bjoring & Meliza: auditory-forebrain single units and stimuli",
+  "url": "https://doi.org/10.6084/m9.figshare.29203457",
+  "licence": "CC BY 4.0",
+  "use": "Receptive-field models; song figures"
+ },
+ {
+  "species": "zebra-finch",
+  "name": "FALCON B1: RA Neuropixels recordings during song (DANDI 001046)",
+  "url": "https://dandiarchive.org/dandiset/001046",
+  "licence": "CC BY 4.0",
+  "use": "RA activity figure"
+ },
+ {
+  "species": "several",
+  "name": "NeuroMorpho.org reconstructions (Long, Meliza and Roberts archives)",
+  "url": "https://neuromorpho.org",
+  "licence": "Free use with citation",
+  "use": "Neuron morphology"
+ },
+ {
+  "species": "european-starling",
+  "name": "3D MRI atlas of the starling brain (Zenodo)",
+  "url": "https://doi.org/10.5281/zenodo.22107945",
+  "licence": "CC BY 4.0",
+  "use": "Brain atlas"
+ },
+ {
+  "species": "eurasian-blackcap",
+  "name": "Eurasian blackcap atlas (BrainGlobe)",
+  "url": "https://doi.org/10.1016/j.cub.2026.03.034",
+  "licence": "Open; see publication",
+  "use": "Brain atlas"
+ },
+ {
+  "species": "norway-rat",
+  "name": "Waxholm Space atlas of the Sprague Dawley rat v4 (BrainGlobe)",
+  "url": "https://www.nitrc.org/projects/whs-sd-atlas",
+  "licence": "CC BY-SA 4.0",
+  "use": "Brain atlas"
+ },
+ {
+  "species": "prairie-vole",
+  "name": "Prairie vole reference brain (BrainGlobe)",
+  "url": "https://doi.org/10.7554/eLife.87029",
+  "licence": "Article CC BY 4.0",
+  "use": "Brain atlas"
+ },
+ {
+  "species": "domestic-cat",
+  "name": "CATLAS (BrainGlobe)",
+  "url": "https://github.com/CerebralSystemsLab/CATLAS",
+  "licence": "See repository",
+  "use": "Brain atlas"
+ },
+ {
+  "species": "ansells-mole-rat",
+  "name": "Ansell's mole-rat atlas (BrainGlobe, unpublished)",
+  "url": "https://gin.g-node.org/brainglobe/atlases",
+  "licence": "Open via BrainGlobe",
+  "use": "Brain atlas"
+ },
+ {
+  "species": "several",
+  "name": "Wikimedia Commons photographs and recordings",
+  "url": "https://commons.wikimedia.org/",
+  "licence": "CC BY-SA / CC0 per file",
+  "use": "Species photographs; starling, blackcap and cat recordings"
+ }
+]

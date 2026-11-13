@@ -3,14 +3,14 @@
   "species": "zebra-finch",
   "name": "Poirier et al. 3D MRI atlas (2008)",
   "url": "https://doi.org/10.1016/j.neuroimage.2008.01.069",
-  "licence": "See research/acquisition-manifest.json",
+  "licence": "CC BY 4.0",
   "use": "Brain atlas sections and surfaces"
  },
  {
   "species": "zebra-finch",
   "name": "ML4BL zebra finch perceptual dataset",
   "url": "https://doi.org/10.5281/zenodo.5545872",
-  "licence": "See research/acquisition-manifest.json",
+  "licence": "CC BY 4.0",
   "use": "887 syllables; perceptual-choice baseline"
  },
  {
@@ -24,7 +24,7 @@
   "species": "sperm-whale",
   "name": "DSWP coda table and supplementary recordings",
   "url": "https://doi.org/10.1038/s41467-024-47221-8",
-  "licence": "See media/marine-recordings.json",
+  "licence": "CC BY 4.0",
   "use": "Coda reading guide; field recordings"
  },
  {
