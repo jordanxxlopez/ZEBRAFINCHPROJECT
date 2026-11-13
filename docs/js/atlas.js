@@ -2,7 +2,7 @@
 // Volumes are stored x-fastest (index = x + nx*(y + ny*z)). Nothing is interpolated in the browser.
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-const V = '20261114d';
+const V = '20261115b';
 
 // display mapping per species: three.js "up" and plane names
 const VIEW = {
@@ -28,23 +28,35 @@ const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
 
 export async function openAtlas(id, ctx) {
   const {esc, getJSON, status, sp} = ctx;
-  if (S?.three) { S.three.renderer.dispose(); S.three.renderer.domElement.remove(); cancelAnimationFrame(S.three.raf); }
+  if (S?.three) { cancelAnimationFrame(S.three.raf); S.three.renderer.dispose(); S.three.renderer.domElement.remove(); }
   const base = `data/atlas/${id}/`;
   const meta = await getJSON(base + 'meta.json');
   const view = VIEW[id] || meta.view || {};
   const params = new URLSearchParams(location.hash.split('?')[1] || '');
   S = {id, meta, base, view, vol: null, lab: null, sel: 0, cur: null, regions: meta.regions || [], byIndex: new Map((meta.regions || []).map(r => [r.index, r])), esc, three: null, diff: null};
   $('#av-title').textContent = `${sp.common} brain atlas`;
-  $('#av-sub').innerHTML = `${esc(meta.title)}. ${meta.dims ? `${meta.dims.join(' × ')} voxels${meta.unit === 'voxel' ? '' : ` at ${meta.spacing_mm[0]} mm`}.` : ''}`;
-  $('#av-prov').innerHTML = `<p>${esc(meta.provenance.citation)}</p><p class="small"><b>Data:</b> ${esc(meta.provenance.dataset || meta.provenance.volumes)}</p><p class="small"><b>Licence:</b> ${esc(meta.provenance.licence)}</p>`;
+  $('#av-sub').textContent = meta.title;
+  const link = s => esc(s).replace(/(https?:\/\/[^\s<)]+[^\s<).,;])/g, '<a href="$1">$1</a>').replace(/doi:\s*(10\.[^\s<]+[^\s<.,;)])/g, '<a href="https://doi.org/$1">doi:$1</a>');
+  const pv = meta.provenance, paper = (pv.citation || '').split(/\.? doi:/)[0];
+  $('#av-facts').innerHTML = [
+    ['Images', (meta.images || []).map(im => im.name).join('; ') || (meta.meshes ? 'Surface models only' : '')],
+    ['Regions', meta.regions?.length ? `${meta.regions.length.toLocaleString('en-US')} labelled` : meta.labels ? '' : 'Not delineated'],
+    ['Display grid', meta.dims ? `${meta.dims.join(' × ')} voxels${meta.unit === 'voxel' ? '; the source files state no physical unit' : `, ${meta.spacing_mm[0]} mm`}` : ''],
+    ['Source', paper], ['Licence', pv.licence]].filter(f => f[1]).map(f => `<dt>${f[0]}</dt><dd>${esc(f[1])}</dd>`).join('');
+  $('#av-prov').innerHTML = `<p>${link(pv.dataset || pv.volumes || '')}</p><p><b>Licence:</b> ${link(pv.licence || '')}</p>`;
+  $('#av-cite').innerHTML = `<p>${link(pv.citation || '')}</p><p>Viewer: Animal Communication &amp; Neuroscience (2026). ${esc(sp.common)} brain atlas. ${esc(location.origin + location.pathname)}#atlas/${id}</p>`;
+  const files = [['Metadata and region table (JSON)', 'meta.json'], ...(meta.images || []).map(im => [`${im.name} (8-bit volume, gzip)`, im.file]), ...(meta.labels ? [['Region labels (16-bit volume, gzip)', meta.labels.file]] : []), ...(meta.meshes ? [['Surfaces (JSON)', meta.meshes]] : [])];
+  $('#av-files').innerHTML = files.map(f => `<li><a href="${base}${esc(f[1])}" download>${esc(f[0])}</a>${meta.sizes_bytes?.[f[1]] ? ` <span class="faint">${(meta.sizes_bytes[f[1]] / 1e6).toFixed(1)} MB</span>` : ''}</li>`).join('') + '<li class="faint">Display copies prepared as described under Data preparation; originals are at the source.</li>';
+  $('#av-copy').onclick = () => { syncURL(); setTimeout(() => navigator.clipboard?.writeText(location.href).then(() => { $('#av-copied').textContent = 'Link copied.'; setTimeout(() => { const el = $('#av-copied'); if (el) el.textContent = ''; }, 2500); }, () => { $('#av-copied').textContent = 'Copy the address from the address bar.'; }), 320); };
   $('#av-processing').innerHTML = (meta.processing || []).map(p => `<li>${esc(p)}</li>`).join('') + (meta.notes ? `<li>${esc(meta.notes)}</li>` : '');
   const hasVol = !!meta.dims;
-  const tabs = {slices: $('#tab-slices'), '3d': $('#tab-3d'), diff: $('#tab-diff')};
-  tabs.slices.hidden = !hasVol; tabs['3d'].hidden = !meta.meshes; tabs.diff.hidden = !meta.diffusion;
+  const tabs = {slices: $('#tab-slices'), diff: $('#tab-diff')}, has3d = !!meta.meshes;
+  tabs.diff.hidden = !meta.diffusion; $('#av-tabs').hidden = !meta.diffusion;
   $('#av-regions-sec').hidden = !(meta.regions?.length || meta.meshes);
   const select = name => {
-    for (const [k, b] of Object.entries(tabs)) { b.setAttribute('aria-selected', String(k === name)); $('#panel-' + (k === '3d' ? '3d' : k === 'diff' ? 'diff' : 'slices')).hidden = k !== name; }
-    if (name === '3d') init3D().catch(e => status(e.message));
+    for (const [k, b] of Object.entries(tabs)) b.setAttribute('aria-selected', String(k === name));
+    $('#panel-diff').hidden = name !== 'diff'; $('#panel-3d').hidden = name === 'diff' || !has3d; $('#panel-slices').hidden = name === 'diff' || !hasVol;
+    if (name !== 'diff' && has3d) init3D().catch(e => status(e.message));
     if (name === 'diff') initDiff().catch(e => status(e.message));
   };
   for (const [k, b] of Object.entries(tabs)) b.onclick = () => select(k);
@@ -69,6 +81,7 @@ export async function openAtlas(id, ctx) {
     const [nx, ny, nz] = meta.dims;
     if (vol.length !== nx * ny * nz) throw Error('Atlas volume size does not match its metadata');
     S.cur = [nx >> 1, ny >> 1, nz >> 1];
+    const c0 = (params.get('c') || '').split(',').map(Number); if (c0.length === 3 && c0.every(Number.isInteger)) S.cur = c0.map((v, k) => clamp(v, meta.dims[k]));
     S.colors = new Uint8Array(((meta.regions?.length || 0) + 2) * 3);
     for (const r of meta.regions || []) S.colors.set(hex(r.color), r.index * 3);
     $('#av-image').onchange = async () => { status('Loading image…'); S.vol = await gunzip(base + meta.images[+$('#av-image').value].file); status(''); drawAll(); };
@@ -78,9 +91,9 @@ export async function openAtlas(id, ctx) {
       id === 'egyptian-fruit-bat' ? 'The specimen is a fixed head: skull, eyes and other tissue are visible around the brain. No region labels exist for this scan. Planes follow the axes in the NIfTI header; for ex vivo specimens these may not match true anatomical directions, so no anatomical labels are asserted.' :
       (meta.unit === 'voxel' ? 'Coordinates are voxel indices of the distributed volume.' : 'Coordinates in millimetres from the first voxel of the volume; not stereotaxic.');
     select('slices');
-    const r0 = +params.get('r'); if (r0 && S.byIndex.has(r0)) selectRegion(r0, true); else drawAll();
+    const r0 = +params.get('r'); if (r0 && S.byIndex.has(r0)) selectRegion(r0, !params.get('c')); else { drawAll(); describe(); }
   } else {
-    select('3d');
+    select('slices');
   }
 }
 
@@ -98,20 +111,26 @@ function buildRegionList() {
     const shown = list.slice(0, 400);
     $('#av-regions').innerHTML = shown.map(r => `<li><button type="button" data-r="${r.index}" aria-pressed="${r.index === S.sel}"><span class="swatch" style="background:${esc(r.color)}"></span><span>${esc(nice(r.name))}${r.hemisphere ? ` <span class="faint">(${esc(r.hemisphere.replace(':', ''))})</span>` : ''}</span><span class="acr">${r.acronym && r.acronym !== r.name ? esc(r.acronym) : ''}</span></button></li>`).join('') || '<li class="small faint" style="padding:.4rem">No regions match.</li>';
     $('#av-rcount').textContent = S.regions.length ? `${list.length} of ${S.regions.length} labelled regions${list.length > shown.length ? ', first 400 shown (sorted by volume)' : ' (sorted by volume)'}.` : `${src.length} surfaces from the source database.`;
-    $$('#av-regions button').forEach(b => b.onclick = () => selectRegion(+b.dataset.r === S.sel ? 0 : +b.dataset.r, true));
+    const bs = $$('#av-regions button'); bs.forEach((b, i) => { b.tabIndex = (S.sel ? +b.dataset.r === S.sel : i === 0) ? 0 : -1; b.onclick = () => { bs.forEach(x => x.tabIndex = x === b ? 0 : -1); selectRegion(+b.dataset.r === S.sel ? 0 : +b.dataset.r, true); }; });
+    if (bs.length && !bs.some(b => b.tabIndex === 0)) bs[0].tabIndex = 0;
+    $('#av-regions').onkeydown = e => { const i = bs.indexOf(document.activeElement); if (i < 0) return; const j = {ArrowDown: i + 1, ArrowUp: i - 1, Home: 0, End: bs.length - 1}[e.key]; if (j == null) return; e.preventDefault(); bs[Math.max(0, Math.min(bs.length - 1, j))].focus(); };
   }
 }
 
 function selectRegion(idx, jump) {
-  S.sel = idx;
+  S.sel = idx; if (idx) S.pick = null;
   $$('#av-regions button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.r === idx)));
   if (idx && jump && S.lab) {
-    const [nx, ny] = S.meta.dims; let sx = 0, sy = 0, sz = 0, n = 0; const L = S.lab;
-    for (let i = 0; i < L.length; i++) if (L[i] === idx) { const x = i % nx, t = (i / nx) | 0; sx += x; sy += t % ny; sz += (t / ny) | 0; n++; }
-    if (n) S.cur = [Math.round(sx / n), Math.round(sy / n), Math.round(sz / n)];
+    const [nx, ny] = S.meta.dims, L = S.lab; let mxs = 0, n = 0;
+    for (let i = 0; i < L.length; i++) if (L[i] === idx) { mxs += i % nx; n++; }
+    if (n) { const mid = mxs / n; let sx = 0, sy = 0, sz = 0, m = 0;   // centroid of the half with larger x, then the nearest labelled voxel
+      for (let i = 0; i < L.length; i++) if (L[i] === idx) { const x = i % nx; if (x < mid) continue; const t = (i / nx) | 0; sx += x; sy += t % ny; sz += (t / ny) | 0; m++; }
+      sx /= m; sy /= m; sz /= m; let best = Infinity;
+      for (let i = 0; i < L.length; i++) if (L[i] === idx) { const x = i % nx, t = (i / nx) | 0, y = t % ny, z = (t / ny) | 0, d = (x - sx) ** 2 + (y - sy) ** 2 + (z - sz) ** 2; if (d < best) { best = d; S.cur = [x, y, z]; } } }
   }
   if (S.vol) { drawAll(); describe(); }
   if (S.three) highlightMesh();
+  syncURL();
 }
 
 // ------------------------------------------------------------------ section planes
@@ -136,7 +155,7 @@ function buildPlanes(host, dims, spacing, diffusion) {
     });
   });
   $$('input[type=range]', host).forEach(sl => sl.oninput = () => { state.cur[AX[sl.dataset.axis]] = +sl.value; redraw(); });
-  function redraw() { if (diffusion) { drawDiff(); } else { drawAll(); describe(); } }
+  function redraw() { if (diffusion) { drawDiff(); } else { drawAll(); describe(); syncURL(); } }
   function hover(c) { if (!diffusion) describe(c, true); }
 }
 const clamp = (v, n) => Math.max(0, Math.min(n - 1, v));
@@ -217,68 +236,153 @@ function drawDiff() {
 
 // ------------------------------------------------------------------ 3D
 async function loadMeshes() { if (!S.meshes) S.meshes = await fetch(`${S.base}${S.meta.meshes}?v=${V}`).then(r => r.json()); return S.meshes; }
+const mapFor = up => (x, y, z) => up === '-z' ? [x, -z, y] : up === '+z' ? [x, z, -y] : up === '-y' ? [x, -y, -z] : [x, y, z];
+
+// Surface of one labelled region, computed from its voxels (naive surface nets, then two smoothing passes).
+// Vertices are in voxel-index units; voxel centres sit at integer coordinates, as in the packaged surfaces.
+function regionSurface(idx) {
+  const [nx, ny, nz] = S.meta.dims, L = S.lab;
+  let x0 = nx, y0 = ny, z0 = nz, x1 = -1, y1 = -1, z1 = -1;
+  for (let z = 0, i = 0; z < nz; z++) for (let y = 0; y < ny; y++) for (let x = 0; x < nx; x++, i++) if (L[i] === idx) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; if (z < z0) z0 = z; if (z > z1) z1 = z; }
+  if (x1 < 0) return null;
+  const ox = x0 - 1, oy = y0 - 1, oz = z0 - 1, mx = x1 - x0 + 3, my = y1 - y0 + 3, mz = z1 - z0 + 3, M = new Uint8Array(mx * my * mz);
+  for (let z = z0; z <= z1; z++) for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) if (L[x + nx * (y + ny * z)] === idx) M[(x - ox) + mx * ((y - oy) + my * (z - oz))] = 1;
+  const cx = mx - 1, cy = my - 1, cz = mz - 1, vid = new Int32Array(cx * cy * cz).fill(-1), pos = [];
+  const CO = [[0, 0, 0], [1, 0, 0], [0, 1, 0], [1, 1, 0], [0, 0, 1], [1, 0, 1], [0, 1, 1], [1, 1, 1]], ED = [[0, 1], [2, 3], [4, 5], [6, 7], [0, 2], [1, 3], [4, 6], [5, 7], [0, 4], [1, 5], [2, 6], [3, 7]];
+  const c = new Uint8Array(8);
+  for (let k = 0; k < cz; k++) for (let j = 0; j < cy; j++) for (let i = 0; i < cx; i++) {
+    let s = 0; for (let q = 0; q < 8; q++) s += c[q] = M[(i + CO[q][0]) + mx * ((j + CO[q][1]) + my * (k + CO[q][2]))];
+    if (s === 0 || s === 8) continue;
+    let px = 0, py = 0, pz = 0, n = 0;
+    for (const [a, b] of ED) if (c[a] !== c[b]) { px += (CO[a][0] + CO[b][0]) / 2; py += (CO[a][1] + CO[b][1]) / 2; pz += (CO[a][2] + CO[b][2]) / 2; n++; }
+    vid[i + cx * (j + cy * k)] = pos.length / 3; pos.push(i + px / n, j + py / n, k + pz / n);
+  }
+  const tri = [], E = [[1, 0, 0], [0, 1, 0], [0, 0, 1]];
+  for (let a = 0; a < 3; a++) { const ea = E[a], eb = E[(a + 1) % 3], ec = E[(a + 2) % 3];
+    for (let k = 0; k < mz - ea[2]; k++) for (let j = 0; j < my - ea[1]; j++) for (let i = 0; i < mx - ea[0]; i++) {
+      const m0 = M[i + mx * (j + my * k)], m1 = M[(i + ea[0]) + mx * ((j + ea[1]) + my * (k + ea[2]))]; if (m0 === m1) continue;
+      const cell = (di, dj, dk) => vid[(i + di) + cx * ((j + dj) + cy * (k + dk))];
+      const v0 = cell(-eb[0] - ec[0], -eb[1] - ec[1], -eb[2] - ec[2]), v1 = cell(-ec[0], -ec[1], -ec[2]), v2 = cell(0, 0, 0), v3 = cell(-eb[0], -eb[1], -eb[2]);
+      if (v0 < 0 || v1 < 0 || v2 < 0 || v3 < 0) continue;
+      if (m0) tri.push(v0, v1, v2, v0, v2, v3); else tri.push(v0, v2, v1, v0, v3, v2);
+    } }
+  const nv = pos.length / 3; let P = Float32Array.from(pos);
+  for (let it = 0; it < 2; it++) {
+    const acc = new Float32Array(nv * 3), cnt = new Uint16Array(nv);
+    for (let t = 0; t < tri.length; t += 3) for (let e = 0; e < 3; e++) { const a = tri[t + e], b = tri[t + (e + 1) % 3]; acc[a * 3] += P[b * 3]; acc[a * 3 + 1] += P[b * 3 + 1]; acc[a * 3 + 2] += P[b * 3 + 2]; cnt[a]++; }
+    const Q = new Float32Array(nv * 3); for (let v = 0; v < nv; v++) for (let d = 0; d < 3; d++) Q[v * 3 + d] = cnt[v] ? P[v * 3 + d] * .5 + acc[v * 3 + d] / cnt[v] * .5 : P[v * 3 + d];
+    P = Q;
+  }
+  const sp = S.meta.spacing_mm, off = [ox, oy, oz];
+  for (let v = 0; v < nv; v++) for (let d = 0; d < 3; d++) P[v * 3 + d] = (P[v * 3 + d] + off[d]) * sp[d];
+  return {vertices: P, faces: tri};
+}
+
 async function init3D() {
   if (S.three) { S.three.resize(); return; }
-  const host = $('#av-three');
+  if (S.threeStarting) return; S.threeStarting = true;
+  const host = $('#av-three'), mine = S;
   const wait = document.createElement('p'); wait.className = 'loading'; wait.setAttribute('role', 'status'); wait.textContent = 'Loading 3D surfaces…'; host.append(wait);
-  const [THREE, {OrbitControls}, meshes, {dress}] = await Promise.all([import('three'), import('../assets/OrbitControls.js'), loadMeshes(), import('./viewer3d.js?v=20261114d')]);
+  const [THREE, {OrbitControls}, meshes, {dress}] = await Promise.all([import('three'), import('../assets/OrbitControls.js'), loadMeshes(), import('./viewer3d.js?v=20261115b')]);
+  if (S !== mine || !host.isConnected) return;
   let renderer;
-  try { renderer = new THREE.WebGLRenderer({antialias: true, preserveDrawingBuffer: false}); }
-  catch (e) { wait.textContent = 'The 3D view could not be started in this browser (WebGL is unavailable). The Sections view and the region list remain available.'; host.querySelector('.three-help')?.remove(); return; }
+  try { renderer = new THREE.WebGLRenderer({antialias: true, alpha: true}); }
+  catch (e) { wait.textContent = 'The 3D view could not be started in this browser (WebGL is unavailable). The sections and the region list remain available.'; host.querySelector('.three-help')?.remove(); return; }
   wait.remove();
-  renderer.setPixelRatio(Math.min(2, devicePixelRatio));
+  renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setClearColor(0x000000, 0);
   host.prepend(renderer.domElement);
-  renderer.domElement.setAttribute('role', 'img'); renderer.domElement.setAttribute('aria-label', 'Three-dimensional view of the brain surfaces listed under Regions. Drag to rotate.');
-  renderer.domElement.tabIndex = 0;
-  const scene = new THREE.Scene(); scene.background = new THREE.Color('#101214'); dress(THREE, renderer, scene);
-  const camera = new THREE.PerspectiveCamera(35, 1, 0.01, 1000);
-  
-  const dl = new THREE.DirectionalLight(0xffffff, 1.1); dl.position.set(1, 2, 3); camera.add(dl); scene.add(camera);
-  const group = new THREE.Group(); scene.add(group);
-  const up = S.view.up || '+z';
-  const map = (x, y, z) => up === '-z' ? [x, -z, y] : up === '+z' ? [x, z, -y] : up === '-y' ? [x, -y, -z] : [x, y, z];
-  const objs = [];
-  const box = new THREE.Box3();
-  meshes.forEach((m, k) => {
-    const v = m.vertices, pos = new Float32Array(v.length);
-    for (let i = 0; i < v.length; i += 3) { const p = map(v[i], v[i + 1], v[i + 2]); pos[i] = p[0]; pos[i + 1] = p[1]; pos[i + 2] = p[2]; }
-    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setIndex(m.faces); g.computeVertexNormals();
-    const shell = (S.id === 'house-mouse' && m.id === 997) || m.id === 0 || /whole brain/i.test(m.name);
-    const mat = new THREE.MeshStandardMaterial({color: m.color || '#cccccc', roughness: shell ? .5 : .45, metalness: 0, transparent: shell, opacity: shell ? .2 : 1, depthWrite: !shell, side: THREE.DoubleSide});
-    const mesh = new THREE.Mesh(g, mat); mesh.userData = {m, shell}; group.add(mesh); objs.push(mesh);
+  const cvs = renderer.domElement; cvs.setAttribute('role', 'img'); cvs.setAttribute('aria-label', 'Three-dimensional view of the brain surfaces listed under Regions. Drag, or use the arrow keys, to rotate.'); cvs.tabIndex = 0;
+  const dark = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim().startsWith('#0');
+  const scene = new THREE.Scene(); dress(THREE, renderer, scene);
+  const camera = new THREE.PerspectiveCamera(30, 1, 0.01, 4000);
+  const dl = new THREE.DirectionalLight(0xffffff, 1.2); dl.position.set(1, 2, 3); camera.add(dl); scene.add(camera);
+  const group = new THREE.Group(), dyn = new THREE.Group(); scene.add(group); group.add(dyn);
+  const map = mapFor(S.view.up || '+z');
+  const geom = (v, faces) => { const pos = new Float32Array(v.length); for (let i = 0; i < v.length; i += 3) { const p = map(v[i], v[i + 1], v[i + 2]); pos[i] = p[0]; pos[i + 1] = p[1]; pos[i + 2] = p[2]; }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setIndex(faces); g.computeVertexNormals(); return g; };
+  const objs = [], box = new THREE.Box3();
+  meshes.forEach(m => {
+    const g = geom(m.vertices, m.faces), shell = m.id === 0 || m.id === 997 || /^(whole brain|root|labelled brain)/i.test(m.name);
+    const mat = shell ? new THREE.MeshStandardMaterial({color: dark ? 0xcfd4d9 : 0x8b9197, roughness: .5, metalness: 0, transparent: true, opacity: dark ? .2 : .24, depthWrite: false})
+      : new THREE.MeshStandardMaterial({color: m.color || '#cccccc', roughness: .45, metalness: 0, side: THREE.DoubleSide});
+    const mesh = new THREE.Mesh(g, mat); mesh.userData = {m, shell}; mesh.renderOrder = shell ? 3 : 2; group.add(mesh); objs.push(mesh);
     g.computeBoundingBox(); box.union(g.boundingBox);
   });
-  const c = box.getCenter(new THREE.Vector3()), size = box.getSize(new THREE.Vector3()).length();
+  const c = box.getCenter(new THREE.Vector3()), R = box.getSize(new THREE.Vector3()).length() / 2;
   group.position.sub(c);
-  camera.position.set(size * .55, size * .45, size * 1.15);
-  const controls = new OrbitControls(camera, renderer.domElement); controls.enableDamping = true; controls.target.set(0, 0, 0);
-  const resize = () => { const w = host.clientWidth, h = host.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); };
-  const ro = new ResizeObserver(resize); ro.observe(host); resize();
-  const loop = () => { S.three && (S.three.raf = requestAnimationFrame(loop)); controls.update(); renderer.render(scene, camera); };
-  S.three = {renderer, scene, camera, controls, objs, resize, raf: 0, THREE};
+  const dist = R / Math.sin(camera.fov / 2 * Math.PI / 180) * .85;
+  const controls = new OrbitControls(camera, cvs); Object.assign(controls, {enableDamping: true, dampingFactor: .08, minDistance: dist * .2, maxDistance: dist * 2.5}); controls.target.set(0, 0, 0);
+  // the page keeps the scroll wheel unless Ctrl or the Command key is held
+  host.addEventListener('wheel', e => { if (!e.ctrlKey && !e.metaKey) e.stopPropagation(); }, {capture: true});
+  cvs.addEventListener('keydown', e => { const k = {ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1]}[e.key]; if (!k) return; e.preventDefault();
+    const sph = new THREE.Spherical().setFromVector3(camera.position.clone().sub(controls.target)); sph.theta += k[0] * .14; sph.phi = Math.max(.05, Math.min(Math.PI - .05, sph.phi + k[1] * .14)); camera.position.setFromSpherical(sph).add(controls.target); syncURL(); });
+
+  // view directions, from the axis labels of the source volume where the source states them
+  const unit = (ax, sign) => new THREE.Vector3(...map(...[0, 1, 2].map(k => k === ax ? sign : 0)));
+  const toward = letters => { const e = S.view.ends; if (!e) return null; for (const [ax, k] of [['x', 0], ['y', 1], ['z', 2]]) { const i = (e[ax] || []).findIndex(l => letters.includes(l)); if (i >= 0) return unit(k, i === 0 ? -1 : 1); } return null; };
+  const up3 = new THREE.Vector3(0, 1, 0), home = new THREE.Vector3(.62, .3, .72).normalize();
+  const views = [['Oblique', home]];
+  const lat = toward(['L']), ant = toward(['A']), dor = toward(['D', 'S']);
+  if (lat && ant && dor) views.push(['Left', lat], ['Anterior', ant], ['Dorsal', dor.clone().multiplyScalar(.999).addScaledVector(ant, -.04)]);
+  else views.push(['Along X', unit(0, 1)], ['Along Y', unit(1, 1)], ['Along Z', unit(2, 1).multiplyScalar(.999).add(new THREE.Vector3(.02, 0, .03))]);
+  const setView = d => { const v = d.clone().normalize(); if (Math.abs(v.dot(up3)) > .9995) v.add(new THREE.Vector3(0, 0, .03)).normalize(); camera.position.copy(v.multiplyScalar(dist)); controls.target.set(0, 0, 0); controls.update(); syncURL(); };
+  $('#av-views').innerHTML = views.map((v, i) => `<button type="button" data-v="${i}">${v[0]}</button>`).join('');
+  $$('#av-views button').forEach(b => b.onclick = () => setView(views[+b.dataset.v][1]));
+  const cam0 = (new URLSearchParams(location.hash.split('?')[1] || '').get('cam') || '').split(',').map(Number);
+  if (cam0.length === 3 && cam0.every(Number.isFinite) && Math.hypot(...cam0) > 0) camera.position.set(...cam0); else camera.position.copy(home.clone().multiplyScalar(dist));
+  controls.addEventListener('end', syncURL);
+
+  const scaleEl = $('#av-scale'), showScale = S.meta.unit !== 'voxel' && S.id !== 'honeybee'; scaleEl.hidden = !showScale;
+  const nice = mm => [0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50].reduce((a, b) => Math.abs(b - mm) < Math.abs(a - mm) ? b : a);
+  let H = 1;
+  const resize = () => { const w = host.clientWidth, h = host.clientHeight; if (!w || !h) return; H = h; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); };
+  new ResizeObserver(resize).observe(host); resize();
+  const loop = () => { if (S !== mine || !host.isConnected) { renderer.dispose(); return; } mine.three.raf = requestAnimationFrame(loop); controls.update(); renderer.render(scene, camera);
+    if (showScale) { const mmPerPx = 2 * camera.position.distanceTo(controls.target) * Math.tan(camera.fov / 2 * Math.PI / 180) / H, bar = nice(mmPerPx * 90); scaleEl.firstChild.style.width = (bar / mmPerPx) + 'px'; scaleEl.lastChild.textContent = bar + ' mm'; } };
+  S.three = {renderer, scene, camera, controls, objs, dyn, geom, resize, raf: 0, THREE, cache: new Map()};
   loop();
   // picking
   const ray = new THREE.Raycaster(), ptr = new THREE.Vector2(); let down = null;
-  renderer.domElement.addEventListener('pointerdown', e => down = [e.clientX, e.clientY]);
-  renderer.domElement.addEventListener('pointerup', e => {
+  cvs.addEventListener('pointerdown', e => down = [e.clientX, e.clientY]);
+  cvs.addEventListener('pointerup', e => {
     if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 4) return;
-    const r = renderer.domElement.getBoundingClientRect(); ptr.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
+    const r = cvs.getBoundingClientRect(); ptr.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
     ray.setFromCamera(ptr, camera); const hit = ray.intersectObjects(objs.filter(o => o.visible && !o.userData.shell))[0];
-    if (hit) { const m = hit.object.userData.m; const reg = S.regions.find(r => r.source_id === m.id); selectRegion(reg ? reg.index : (S.regions.length ? 0 : m.id), false); }
+    if (!hit) return; const m = hit.object.userData.m, reg = S.regions.find(r => r.source_id === m.id);
+    if (reg) selectRegion(reg.index === S.sel ? 0 : reg.index, true); else { S.pick = S.pick === m.id ? null : m.id; selectRegion(0, false); }
   });
-  // surface checklist
-  const note = $('#av-mesh-note');
-  note.innerHTML = `<span id="av-mesh-sel">${meshes.length} surfaces. </span>${S.meta.mesh_note ? S.esc(S.meta.mesh_note) : S.id === 'zebra-finch' ? 'Marching-cubes surfaces of the source masks, without smoothing.' : S.id === 'house-mouse' ? 'Allen-provided structure meshes, decimated for display.' : S.id === 'honeybee' ? 'InsectBrainDB display meshes (Honeybee Standard Brain).' : 'Marching-cubes surfaces of the atlas labels, decimated for display.'} 
-    <details class="data-table"><summary>Show or hide surfaces</summary><div style="columns:2;font-size:.86rem;margin-top:.4rem">${meshes.map((m, i) => `<label style="display:block"><input type="checkbox" data-mesh="${i}" checked> ${S.esc(nice(m.name))}</label>`).join('')}</div></details>`;
-  $$('[data-mesh]', note).forEach(cb => cb.onchange = () => { objs[+cb.dataset.mesh].visible = cb.checked; });
+  const note = $('#av-mesh-note'), n = meshes.length;
+  note.innerHTML = `<span id="av-mesh-sel"></span>${S.meta.mesh_note ? S.esc(S.meta.mesh_note) : S.id === 'zebra-finch' ? 'Marching-cubes surfaces of the source masks, without smoothing.' : S.id === 'house-mouse' ? 'Allen-provided structure meshes, decimated for display.' : S.id === 'honeybee' ? 'InsectBrainDB display meshes (Honeybee Standard Brain).' : 'Marching-cubes surfaces of the atlas labels, decimated for display.'}${S.lab ? ' The surface of any other region is computed in the browser from its label voxels when the region is selected.' : ''}
+    <details class="data-table"><summary>Show or hide the ${n} packaged surfaces</summary><div style="columns:2;font-size:.86rem;margin-top:.4rem">${meshes.map((m, i) => `<label style="display:block"><input type="checkbox" data-mesh="${i}" checked> ${S.esc(nice2(m.name))}</label>`).join('')}</div></details>`;
+  $$('[data-mesh]', note).forEach(cb => cb.onchange = () => { const o = objs[+cb.dataset.mesh]; o.userData.show = cb.checked; o.visible = cb.checked && o.userData.on !== false; });
   highlightMesh();
 }
+const nice2 = n => /^root$/i.test(n) ? 'Whole brain' : n;
 function highlightMesh() {
   const T = S.three; if (!T) return;
   const reg = S.regions.length ? S.byIndex.get(S.sel) : null;
-  const target = reg ? reg.source_id : (S.regions.length ? null : S.sel || null);
-  const any = target != null && T.objs.some(o => o.userData.m.id === target);
-  T.objs.forEach(o => { if (o.userData.shell) return; const on = !any || o.userData.m.id === target; o.material.opacity = on ? 1 : .12; o.material.transparent = !on; o.material.depthWrite = on; o.material.emissive?.set(any && on ? 0x332200 : 0x000000); });
+  let target = reg ? reg.source_id : (S.regions.length ? null : S.sel || null);
+  if (target == null && S.pick != null) target = S.pick;
+  const packaged = target != null && T.objs.some(o => o.userData.m.id === target && !o.userData.shell);
+  T.dyn.clear();
+  let built = false, empty = false;
+  if (reg && !packaged && S.lab) {
+    if (!T.cache.has(reg.index)) T.cache.set(reg.index, regionSurface(reg.index));
+    const s = T.cache.get(reg.index);
+    if (s && s.faces.length) { const mesh = new T.THREE.Mesh(T.geom(s.vertices, s.faces), new T.THREE.MeshStandardMaterial({color: reg.color || '#cccccc', roughness: .45, metalness: 0, side: T.THREE.DoubleSide})); mesh.renderOrder = 2; T.dyn.add(mesh); built = true; } else empty = true;
+  }
+  const any = packaged || built;
+  T.objs.forEach(o => { if (o.userData.shell) return; const on = !any || (packaged && o.userData.m.id === target); o.userData.on = on; o.visible = on && o.userData.show !== false; });
   const name = reg?.name || T.objs.find(o => o.userData.m.id === target)?.userData.m.name;
-  $('#av-mesh-sel').textContent = target != null ? (any ? `${name}. ` : `${name}: no surface is provided for this region; select it in Sections to see its voxels. `) : `${T.objs.length} surfaces. `;
+  $('#av-mesh-sel').textContent = !name ? '' : built ? `${name}: surface computed from the label voxels. ` : empty ? `${name}: no voxels carry this label at the display resolution. ` : `${nice2(name)}. `;
+}
+
+// ------------------------------------------------------------------ shareable state
+let urlTimer = 0;
+function syncURL() {
+  clearTimeout(urlTimer); const mine = S;
+  urlTimer = setTimeout(() => { if (S !== mine || !location.hash.startsWith('#atlas/' + S.id)) return; const q = new URLSearchParams();
+    if (S.sel) q.set('r', S.sel); if (S.cur) q.set('c', S.cur.join(','));
+    if (S.three) q.set('cam', S.three.camera.position.toArray().map(v => +v.toPrecision(4)).join(','));
+    const s = q.toString().replace(/%2C/g, ','); history.replaceState(null, '', `#atlas/${S.id}${s ? '?' + s : ''}`); }, 250);
 }

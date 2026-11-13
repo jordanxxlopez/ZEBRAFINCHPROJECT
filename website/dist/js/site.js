@@ -1,10 +1,10 @@
-import {SPECIES as BASE_SPECIES, REFS as BASE_REFS, ATLASES as BASE_ATLASES, REVIEWS, VERDICTS} from './content.js?v=20261114d';
-import {NEWREFS, FINCH_PARTS, FINCH_GROUPS} from './chapters.js?v=20261114d';
-import {MORE_REFS, MORE_SPECIES, MORE_ATLASES, FINCH_SECTIONS, FINCH_FACTS, CHAPTER_PLAN} from './species.js?v=20261114d';
-import * as charts from './charts.js?v=20261114d';
-import * as M from './models.js?v=20261114d';
+import {SPECIES as BASE_SPECIES, REFS as BASE_REFS, ATLASES as BASE_ATLASES, REVIEWS, VERDICTS} from './content.js?v=20261115b';
+import {NEWREFS, FINCH_PARTS, FINCH_GROUPS} from './chapters.js?v=20261115b';
+import {MORE_REFS, MORE_SPECIES, MORE_ATLASES, FINCH_SECTIONS, FINCH_FACTS, CHAPTER_PLAN} from './species.js?v=20261115b';
+import * as charts from './charts.js?v=20261115b';
+import * as M from './models.js?v=20261115b';
 
-const V = '20261114d';
+const V = '20261115b';
 const SPECIES = [...BASE_SPECIES, ...MORE_SPECIES];
 const ATLASES = {...BASE_ATLASES, ...MORE_ATLASES};
 const REFS = {...BASE_REFS, ...NEWREFS, ...MORE_REFS};
@@ -126,7 +126,7 @@ function speciesTable(sounds) {
 const UP = {'house-mouse': '-z', 'common-marmoset': '+z', 'zebra-finch': '+z', 'honeybee': '-y'};
 async function specimen(el, id, onSelect) {
   el.innerHTML = LOADING3D;
-  const {createSpecimen} = await import('./viewer3d.js?v=20261114d');
+  const {createSpecimen} = await import('./viewer3d.js?v=20261115b');
   if (id === 'zebra-finch') return createSpecimen(el, {meshes: await getJSON('data/models/finch-hero.json'), up: '+z', shell: 'Whole brain', parts: FINCH_PARTS, groups: FINCH_GROUPS, onSelect});
   const [meta, meshes] = await Promise.all([atlasMeta(id), getJSON(`data/atlas/${id}/meshes.json`)]);
   return createSpecimen(el, {meshes, up: UP[id] || meta.view?.up || '+z', auto: true, scale: meta.unit !== 'voxel' && id !== 'honeybee'});
@@ -134,7 +134,7 @@ async function specimen(el, id, onSelect) {
 async function player(el, list, {title = 'Recordings', all} = {}) {
   el.innerHTML = `<div class="inst"><div class="inst-bar"><span class="title">${esc(title)}</span><span class="ctl"><span class="pb"></span>${all ? `<a class="btn sm" href="${all}">All recordings</a>` : ''}</span></div><div class="inst-body"><div class="spec-box"><img alt="" data-img><div class="ph"></div></div>
     <p class="small muted" data-cap style="margin:.4rem 0 .6rem"></p><div class="seg" role="group" aria-label="Recording">${list.map((s, i) => `<button type="button" data-i="${i}" aria-pressed="${i === 0}">${esc(s.short || s.title)}</button>`).join('')}</div></div><div class="inst-foot"><span data-src></span></div></div>`;
-  const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261114d'); const audio = new Audio(), phd = $('.ph', el); makePlayer(audio, f => phd.style.left = (f * 100) + '%');
+  const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261115b'); const audio = new Audio(), phd = $('.ph', el); makePlayer(audio, f => phd.style.left = (f * 100) + '%');
   const b = document.createElement('button'); b.className = 'play'; const setB = () => b.innerHTML = audio.paused ? PLAY_ICON + 'Play' : PAUSE_ICON + 'Pause'; ['play', 'pause', 'ended'].forEach(ev => audio.addEventListener(ev, setB)); setB(); b.onclick = () => audio.paused ? audio.play() : audio.pause(); $('.pb', el).appendChild(b);
   const pick = i => { const s = list[i]; audio.src = s.files.realtime || s.files.expanded || s.files.original; $('[data-img]', el).src = s.spectrogram?.file || ''; $('[data-img]', el).alt = `Spectrogram of ${s.title}`;
     $('[data-cap]', el).textContent = `${s.kind}, ${(+s.source.duration_s).toFixed(2)} s${s.spectrogram ? `. Frequency axis 0–${(s.spectrogram.f1 / 1000).toFixed(0)} kHz` : ''}${s.files.expanded && !s.files.realtime ? '. Played at reduced speed' : ''}.`;
@@ -189,21 +189,22 @@ async function atlasIndex() {
       <tr><td>Sperm whale<br><i>Physeter macrocephalus</i></td><td class="muted" colspan="4">No openly licensed brain imaging is available for this species.</td></tr></tbody></table></div></div>`;
 }
 const ATLAS_MARKUP = `<div id="atlas-viewer"><div class="atlas-grid"><aside class="atlas-side" aria-label="Atlas controls">
+    <section id="av-regions-sec"><h2>Regions</h2><label class="vh" for="av-rsearch">Search regions</label><input id="av-rsearch" type="search" placeholder="Name or acronym"><ul class="region-list" id="av-regions"></ul><p class="small faint" id="av-rcount" style="margin:.4rem 0 0"></p></section>
     <section><h2>Image</h2><label class="vh" for="av-image">Image</label><select id="av-image"></select>
       <label style="display:flex;gap:.4rem;align-items:center;margin-top:.5rem;font-size:.88rem"><input type="checkbox" id="av-overlay" checked> Region colours</label>
-      <label style="display:flex;gap:.4rem;align-items:center;margin-top:.3rem;font-size:.88rem"><input type="checkbox" id="av-outline"> Outline selected region</label></section>
-    <section id="av-regions-sec"><h2>Regions</h2><label class="vh" for="av-rsearch">Search regions</label><input id="av-rsearch" type="search" placeholder="Name or acronym"><ul class="region-list" id="av-regions"></ul><p class="small faint" id="av-rcount" style="margin:.4rem 0 0"></p></section>
-    <section><h2>Source</h2><div class="provenance" id="av-prov"></div></section></aside>
-  <div><div class="view-tabs" role="tablist" aria-label="Atlas view"><button role="tab" id="tab-slices" aria-selected="true" aria-controls="panel-slices">Sections</button><button role="tab" id="tab-3d" aria-selected="false" aria-controls="panel-3d">3D</button><button role="tab" id="tab-diff" aria-selected="false" aria-controls="panel-diff" hidden>Diffusion</button></div>
+      <label style="display:flex;gap:.4rem;align-items:center;margin-top:.3rem;font-size:.88rem"><input type="checkbox" id="av-outline"> Outline selected region</label></section></aside>
+  <div><div class="view-tabs" role="tablist" aria-label="Atlas view" id="av-tabs"><button role="tab" id="tab-slices" aria-selected="true" aria-controls="panel-slices">Anatomy</button><button role="tab" id="tab-diff" aria-selected="false" aria-controls="panel-diff" hidden>Diffusion</button></div>
+    <div id="panel-3d" hidden><div class="three-bar"><span class="seg" id="av-views" role="group" aria-label="View direction"></span></div>
+      <div class="three-wrap" id="av-three"><div class="sp-scale" id="av-scale" aria-hidden="true" hidden><span></span><b></b></div><span class="three-help">Drag to rotate. Pinch, or hold Ctrl and scroll, to zoom.</span></div><p class="small faint" id="av-mesh-note"></p></div>
     <div id="panel-slices" role="tabpanel"><div class="readout" id="av-readout" aria-live="polite"></div><div class="planes" id="av-planes"></div><p class="small faint" id="av-note"></p></div>
-    <div id="panel-3d" role="tabpanel" hidden><div class="three-wrap" id="av-three"><span class="three-help">Drag to rotate; scroll or pinch to zoom</span></div><p class="small faint" id="av-mesh-note"></p></div>
     <div id="panel-diff" role="tabpanel" hidden><p class="notice" id="av-diff-note"></p><label class="field" for="av-diff-image">Map<select id="av-diff-image"></select></label><div class="planes" id="av-diff-planes" style="margin-top:.6rem"></div><div class="readout" id="av-diff-readout"></div></div>
-    <details class="data-table" style="margin-top:1rem"><summary>Data preparation</summary><ul class="provenance" id="av-processing"></ul></details></div></div></div>`;
+    <details class="data-table" style="margin-top:1rem"><summary>Data preparation</summary><ul class="provenance" id="av-processing"></ul></details></div></div>
+  <section class="cite-block" aria-label="Source, citation and files"><div><h2>Source and licence</h2><div class="provenance" id="av-prov"></div></div><div><h2>Citation</h2><div class="provenance" id="av-cite"></div></div><div><h2>Files</h2><ul class="provenance" id="av-files"></ul></div></section></div>`;
 async function atlasPage(id) {
   const s = SP[id]; if (!s || !hasAtlas(id)) return atlasIndex();
   setTitle(`${s.common} brain atlas`);
-  main.innerHTML = `<div class="wrap"><header class="page-head" style="padding-bottom:.6rem"><p class="crumb"><a href="#atlas">Brain atlases</a> / <a href="#species/${id}">${esc(s.common)}</a></p><h1 id="av-title"></h1><p class="muted" id="av-sub" style="margin:0"></p></header>${ATLAS_MARKUP}</div>`;
-  const {openAtlas} = await import('./atlas.js?v=20261114d');
+  main.innerHTML = `<div class="wrap"><header class="page-head" style="padding-bottom:.6rem"><p class="crumb"><a href="#atlas">Brain atlases</a> / <a href="#species/${id}">${esc(s.common)}</a></p><h1 id="av-title"></h1><p class="muted" id="av-sub" style="margin:0 0 .9rem"></p><dl class="meta" id="av-facts"></dl><p style="margin:.9rem 0 0"><button class="btn sm" type="button" id="av-copy">Copy link to this view</button> <span class="small muted" id="av-copied" role="status"></span></p></header>${ATLAS_MARKUP}</div>`;
+  const {openAtlas} = await import('./atlas.js?v=20261115b');
   await openAtlas(id, {status: t => { const r = $('#av-readout'); if (r) r.textContent = t || ''; }, esc, getJSON, sp: s});
 }
 
@@ -276,7 +277,7 @@ async function recordings(arg) {
         <div><div class="lib-list" id="lib-list" aria-label="Recordings"></div><div class="pager" id="lib-pager"></div></div></div></div>`;
     const kinds = () => { const sp = $('#f-sp').value; $('#f-k').innerHTML = '<option value="">All</option>' + [...new Set(all.filter(s => !sp || s.species === sp).map(s => s.kind))].sort().map(k => `<option>${esc(k)}</option>`).join(''); };
     kinds(); $('#f-sp').onchange = () => { kinds(); lib.page = 0; libList(all); }; $('#f-k').onchange = $('#f-q').oninput = () => { lib.page = 0; libList(all); };
-    const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261114d');
+    const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261115b');
     lib.audio = new Audio(); const phd = $('#pl-box .ph'); makePlayer(lib.audio, f => phd.style.left = (f * 100) + '%');
     const b = document.createElement('button'); b.className = 'play'; const setB = () => b.innerHTML = lib.audio.paused ? PLAY_ICON + 'Play' : PAUSE_ICON + 'Pause'; ['play', 'pause', 'ended'].forEach(ev => lib.audio.addEventListener(ev, setB)); setB(); b.onclick = () => lib.audio.paused ? lib.audio.play() : lib.audio.pause(); $('#pl .pb').appendChild(b);
     const box = $('#pl-box'), hov = $('#pl-hov');
