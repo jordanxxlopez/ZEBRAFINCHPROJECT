@@ -47,18 +47,6 @@ export const SPECIES = [
     reviews: ['paper-hamaguchi', 'perception-model'], soundsLink: 'zebra-finch',
   },
   {
-    id: 'sperm-whale', common: 'Sperm whale', latin: 'Physeter macrocephalus', group: 'Toothed whale',
-    photo: {src: 'assets/sperm-whale-barathieu.jpg', credit: 'Gabriel Barathieu, Wikimedia Commons', licence: 'CC BY-SA 2.0', url: 'https://commons.wikimedia.org/wiki/File:Mother_and_baby_sperm_whale.jpg', note: 'Photographed off Mauritius; not a subject of the Caribbean studies.'},
-    signal: 'Codas (patterned click sequences); echolocation clicks',
-    plain: 'A toothed whale that exchanges codas, short patterned click sequences, in social contexts.',
-    body: [
-      ['Codas', 'Sperm whales produce regular echolocation clicks and fast foraging buzzes as well as codas, short stereotyped click sequences exchanged in social settings. Sharma and colleagues analysed codas recorded off Dominica and described their structure using rhythm and tempo plus two context-dependent features they call rubato and ornamentation.', ['sharma2024']],
-      ['Scope of the evidence', 'Timing regularities are behavioural evidence. They do not translate a coda into words and they do not identify a neural circuit. No openly licensed brain imaging of Physeter macrocephalus was located for this collection.', []],
-    ],
-    data: [['Sound', '5 supplementary field recordings'], ['Brain', 'No open atlas located'], ['Figure', 'Published Figure 1 (CC BY 4.0)'], ['Reviews', 'Coda structure study with deposited-table check']],
-    reviews: ['paper-sperm-whale'], soundsLink: 'sperm-whale',
-  },
-  {
     id: 'egyptian-fruit-bat', common: 'Egyptian fruit bat', latin: 'Rousettus aegyptiacus', group: 'Bat',
     photo: {src: 'assets/photos/egyptian-fruit-bat.jpg', credit: 'MinoZig, Wikimedia Commons', licence: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Rousettus_aegyptiacus_7_-_Israel.jpg', note: 'Roosting colony in Israel; not the recorded colony.'},
     signal: 'Social calls; pup isolation calls; tongue-click echolocation',
@@ -119,7 +107,6 @@ export const ATLASES = {
   'common-marmoset': {status: 'available', kind: 'MRI + Nissl, 558 labelled regions, 3D surfaces', refs: ['woodward2018']},
   'egyptian-fruit-bat': {status: 'available', kind: 'Single-specimen MRI + diffusion; no labels', refs: ['tsurugizawa2025']},
   'honeybee': {status: 'available', kind: 'Standard-brain surfaces (22)', refs: ['brandt2005', 'heinze2021']},
-  'sperm-whale': {status: 'none', kind: 'No openly licensed brain imaging located', refs: []},
 };
 
 // Research review registry. `kind`: reanalysis | recount | guide | baseline
@@ -132,8 +119,6 @@ export const REVIEWS = [
    summary: '871,045 segments, of which 215,223 carry a call-type label, matching the “about 215,000” stated by the authors. The expert error rate could not be rechecked.'},
   {id: 'mouse-separation-calls', species: 'house-mouse', kind: 'Data check', verdict: 'partial', title: 'Low-frequency calls of mice during separation', paper: null,
    summary: 'Low-frequency calls are present in all 19 separated mice (median 31% of calls). The tables contain no control condition, so specificity to separation cannot be tested.'},
-  {id: 'paper-sperm-whale', species: 'sperm-whale', kind: 'Reading guide + table check', verdict: 'partial', title: 'Structure of sperm whale codas', paper: 'sharma2024',
-   summary: 'The published exchange plot explained, with a descriptive summary of the deposited coda table. The paper’s clustering and tests were not reproduced.', legacy: true},
   {id: 'paper-hamaguchi', species: 'zebra-finch', kind: 'Methods review', verdict: 'guide', title: 'Auditory feedback to HVC neurons during singing', paper: 'hamaguchi2014',
    summary: 'How the hit/catch feedback experiment was designed, what its controls rule out, and what the population analysis can and cannot show.', legacy: true},
   {id: 'perception-model', species: 'zebra-finch', kind: 'Independent baseline', verdict: 'partial', title: 'Baseline model of zebra finch perceptual choices', paper: 'zandberg2024',

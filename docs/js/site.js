@@ -3,6 +3,7 @@ import {NEWREFS, FINCH_PARTS, FINCH_GROUPS} from './chapters.js?v=20261117a';
 import {MORE_REFS, MORE_SPECIES, MORE_ATLASES, FINCH_SECTIONS, FINCH_FACTS, CHAPTER_PLAN} from './species.js?v=20261117a';
 import * as charts from './charts.js?v=20261117a';
 import * as M from './models.js?v=20261117a';
+import {renderHome, teardown as homeTeardown} from './home.js?v=20261113a';
 
 const V = '20261117a';
 const SPECIES = [...BASE_SPECIES, ...MORE_SPECIES];
@@ -18,6 +19,7 @@ const getJSON = p => { if (!cache.has(p)) cache.set(p, fetch(`${p}?v=${V}`).then
 const fmt = n => Number(n).toLocaleString('en-US');
 const chip = (v, label) => `<span class="chip ${esc(v)}">${esc(label ?? VERDICTS[v]?.label ?? (v === 'model' ? 'Model' : v))}</span>`;
 const main = $('#main');
+{ const top = $('.top'), set = () => document.documentElement.style.setProperty('--top-h', top.offsetHeight + 'px'); new ResizeObserver(set).observe(top); set(); }
 const TITLE = 'Animal Communication & Neuroscience';
 const setTitle = t => document.title = t ? `${t} · ${TITLE}` : TITLE;
 const atlasMeta = id => getJSON(`data/atlas/${id}/meta.json`);
@@ -46,11 +48,10 @@ document.addEventListener('click', e => {
 let SOUNDS = null;
 async function loadSounds() {
   if (SOUNDS) return SOUNDS;
-  const [finch, marine, specs, extra, songs] = await Promise.all([getJSON('data/recordings.json'), getJSON('data/marine-recordings.json'), getJSON('data/spectrograms.json'), getJSON('data/sounds.json'), getJSON('data/finch-songs.json')]);
+  const [finch, specs, extra, songs] = await Promise.all([getJSON('data/recordings.json'), getJSON('data/spectrograms.json'), getJSON('data/sounds.json'), getJSON('data/finch-songs.json')]);
   const ls = n => { const s = specs[n]; return s ? {file: s.url, t1: s.time_end_seconds, f1: s.frequency_max_hz, db_range: 80} : null; };
   const order = id => SPECIES.findIndex(s => s.id === id);
   SOUNDS = [...[...songs, ...extra].sort((a, b) => order(a.species) - order(b.species)),
-    ...marine.map(r => ({id: r.name, species: 'sperm-whale', title: r.name.replace(/_/g, ' '), kind: r.kind || 'Field recording', files: {original: r.url}, spectrogram: ls(r.name), source: {sample_rate: r.sample_rate, duration_s: r.duration_seconds, file: r.archive_member, sha256: r.sha256, url: r.source_url, licence: r.license ? r.license.replace(/^CC-BY-/, 'CC BY ') : 'See source record', citation: r.context || ''}, playback: 'Original file.'})),
     ...finch.map(r => ({id: r.name, species: 'zebra-finch', title: `Syllable ${r.name}`, kind: 'Song syllable', files: {original: r.url}, spectrogram: ls(r.name), source: {sample_rate: r.sample_rate, duration_s: r.duration_seconds, file: r.archive_member, sha256: r.sha256, url: 'https://doi.org/10.5281/zenodo.5545872', licence: 'CC BY 4.0', citation: 'ML4BL dataset; Zandberg et al. (2024). doi:10.1371/journal.pcbi.1012329'}, playback: 'Original file.'}))];
   return SOUNDS;
 }
@@ -80,7 +81,7 @@ async function buildIndex() {
 }
 
 // ---------------------------------------------------------------- router
-const ALIAS = {animals: 'species', lab: 'atlas', listen: 'recordings', sounds: 'recordings', review: 'research', studies: 'literature', methods: 'data', films: 'recordings/video', 'zebra-finch': 'species/zebra-finch', 'sperm-whale': 'species/sperm-whale',
+const ALIAS = {animals: 'species', lab: 'atlas', listen: 'recordings', sounds: 'recordings', review: 'research', studies: 'literature', methods: 'data', films: 'recordings/video', 'zebra-finch': 'species/zebra-finch', 'sperm-whale': 'species', 'paper-sperm-whale': 'species',
   'data-registry': 'data', 'scale-audit': 'data', 'acoustic-method': 'data', 'quality-note': 'data'};
 async function route() {
   const h = decodeURIComponent(location.hash.slice(1)); if (h === 'main' && main.children.length) return;
@@ -89,9 +90,10 @@ async function route() {
   if (parts[0] === 'research' && parts[1] === 'literature') parts = ['literature'];
   if (parts[0] === 'research' && parts[1] === 'data') parts = ['data'];
   const [page, a, b] = parts;
-  const navKey = ['paper-hamaguchi', 'paper-sperm-whale', 'perception-model', 'literature'].includes(page) ? 'research' : page || 'home';
+  const navKey = ['paper-hamaguchi', 'perception-model', 'literature'].includes(page) ? 'research' : page || 'home';
   $$('#nav a').forEach(x => x.hash === '#' + navKey ? x.setAttribute('aria-current', 'page') : x.removeAttribute('aria-current'));
   $$('audio,video').forEach(m => m.pause());
+  homeTeardown(); main.classList.remove('h-static'); document.body.classList.toggle('is-home', !page || page === 'home' || page === 'main');
   try {
     if (!page || page === 'home') await home();
     else if (page === 'atlas') await (a ? atlasPage(a) : atlasIndex());
@@ -101,7 +103,7 @@ async function route() {
     else if (page === 'data') await dataPage();
     else if (page === 'literature') await literature();
     else if (page === 'about') about();
-    else if (['paper-hamaguchi', 'paper-sperm-whale', 'perception-model'].includes(page)) legacy(page);
+    else if (['paper-hamaguchi', 'perception-model'].includes(page)) legacy(page);
     else if (page === 'main') await home();
     else notFound();
   } catch (e) { console.error(e); main.innerHTML = `<div class="wrap" style="padding:3rem 0"><p class="notice">${esc(e.message)}</p></div>`; }
@@ -155,33 +157,7 @@ async function player(el, list, {title = 'Recordings', all} = {}) {
 async function home() {
   setTitle('');
   const sounds = await loadSounds();
-  const withAtlas = SPECIES.filter(s => hasAtlas(s.id));
-  const metas = await Promise.all(withAtlas.map(s => atlasMeta(s.id).catch(() => null)));
-  const regions = metas.reduce((n, m) => n + (m?.regions?.length || 0), 0);
-  main.innerHTML = `
-  <section class="intro"><div class="wrap">
-    <h1>Brain atlases, recordings and neural data for the study of animal communication</h1>
-    <p class="lede">An open collection covering ${SPECIES.length} species, from songbirds and rodents to the honeybee. Three-dimensional brain atlases are presented alongside vocal recordings, single-neuron data and reanalyses of published results.</p>
-    <ul class="facts-row"><li><b>${withAtlas.length}</b> brain atlases</li><li><b>${fmt(regions)}</b> delineated brain regions</li><li><b>${fmt(sounds.length)}</b> recordings</li><li><b>531</b> modelled auditory neurons</li><li><b>${ANALYSES.length}</b> analyses</li></ul>
-  </div></section>
-  <section class="band"><div class="wrap">
-    <div class="h-row"><h2>Brain atlases</h2><a href="#atlas">All atlases</a></div>
-    <div class="atlas-grid-s">${withAtlas.map((s, i) => atlasTile(s, metas[i])).join('')}</div>
-  </div></section>
-  <section class="band"><div class="wrap feature">
-    <div class="text"><h2>The zebra finch song system</h2>
-      <p>The zebra finch is the most widely used laboratory model of vocal learning. Its atlas delineates the ascending auditory pathway (MLd, ovoidalis, Field L), the song motor pathway (HVC, RA, nXIIts) and the basal-ganglia loop required for song learning (Area X, DLM, LMAN).</p>
-      <p><a href="#species/zebra-finch">Zebra finch: atlas, neurons and song</a></p></div>
-    <figure><div class="plate-view" id="home-brain"></div><figcaption>Zebra finch brain, MRI atlas of Poirier et al. (2008). <span class="keys" id="home-keys"></span></figcaption></figure>
-  </div></section>
-  <section class="band"><div class="wrap">
-    <div class="h-row"><h2>Species</h2><a href="#species">Species index</a></div>${speciesTable(sounds)}
-  </div></section>
-  <section class="band"><div class="wrap">
-    <div class="h-row"><h2>Recent analyses</h2><a href="#research">All research</a></div>${analysisTable(ANALYSES.slice(0, 5))}
-  </div></section>`;
-  $('#home-keys').innerHTML = Object.values(FINCH_GROUPS).map(g => `<span><i style="background:${g.color}"></i>${esc(g.label)}</span>`).join('');
-  specimen($('#home-brain'), 'zebra-finch').catch(() => { const el = $('#home-brain'); if (el) el.innerHTML = '<p class="loading">The 3D view could not be started in this browser.</p>'; });
+  renderHome(main, {SPECIES, SP, sounds, hasAtlas, cited, refList: refItem, esc, fmt, reduced, V});
 }
 
 // ---------------------------------------------------------------- atlases
@@ -192,8 +168,7 @@ async function atlasIndex() {
   main.innerHTML = `<div class="wrap"><header class="page-head"><h1>Brain atlases</h1><p class="lede">${list.length} atlases from their original sources. Each can be viewed as orthogonal sections and as three-dimensional surfaces, with delineated regions searchable by name.</p></header>
     <div class="atlas-grid-s" style="margin-bottom:2.4rem">${list.map((s, i) => atlasTile(s, metas[i])).join('')}</div>
     <div class="tbl" style="margin-bottom:3rem"><table><thead><tr><th>Species</th><th>Atlas</th><th class="num">Regions</th><th class="hide-sm">Display grid</th><th class="hide-sm">Licence</th></tr></thead><tbody>
-      ${list.map((s, i) => { const m = metas[i]; return `<tr><td><a href="#atlas/${s.id}">${esc(s.common)}</a><br><i>${esc(s.latin)}</i></td><td>${esc(m?.title || '')}<div class="small muted">${esc((m?.provenance?.citation || '').split('. doi')[0])}</div></td><td class="num">${m?.regions?.length || '–'}</td><td class="hide-sm">${res(m)}</td><td class="hide-sm small">${esc(m?.provenance?.licence || '')}</td></tr>`; }).join('')}
-      <tr><td>Sperm whale<br><i>Physeter macrocephalus</i></td><td class="muted" colspan="4">No openly licensed brain imaging is available for this species.</td></tr></tbody></table></div></div>`;
+      ${list.map((s, i) => { const m = metas[i]; return `<tr><td><a href="#atlas/${s.id}">${esc(s.common)}</a><br><i>${esc(s.latin)}</i></td><td>${esc(m?.title || '')}<div class="small muted">${esc((m?.provenance?.citation || '').split('. doi')[0])}</div></td><td class="num">${m?.regions?.length || '–'}</td><td class="hide-sm">${res(m)}</td><td class="hide-sm small">${esc(m?.provenance?.licence || '')}</td></tr>`; }).join('')}</tbody></table></div></div>`;
 }
 const ATLAS_MARKUP = `<div id="atlas-viewer"><div class="atlas-grid"><aside class="atlas-side" aria-label="Atlas controls">
     <section id="av-regions-sec"><h2>Regions</h2><label class="vh" for="av-rsearch">Search regions</label><input id="av-rsearch" type="search" placeholder="Name or acronym"><ul class="region-list" id="av-regions"></ul><p class="small faint" id="av-rcount" style="margin:.4rem 0 0"></p></section>
@@ -239,7 +214,6 @@ async function speciesPage(id, secId) {
     s.body.forEach((b, i) => { let inst = plan.inst[i] || ''; if (inst === 'sounds' && !sounds.length) inst = ''; if (inst === 'atlas3d' && !meta) inst = ''; const isBrain = inst === 'atlas3d'; brainDone ||= isBrain;
       secs.push({id: isBrain ? 'atlas' : 's' + i, title: plan.titles[i] || b[0], inst, textOnly: !inst, html: `<p>${cited(b[1] + ' ' + b[2].map(k => `[[${k}]]`).join(' '), used)}</p>${plan.extra?.[i] ? `<p>${cited(plan.extra[i], used)}</p>` : ''}${isBrain ? brain() : ''}`}); });
     if (meta && !brainDone) secs.push({id: 'atlas', title: 'The brain', inst: 'atlas3d', html: brain()});
-    else if (id === 'sperm-whale') secs.push({id: 'atlas', title: 'The brain', html: '<p class="muted">No openly licensed brain imaging was located for this species.</p>', textOnly: true});
     else if (s.atlasNote) secs.push({id: 'atlas', title: 'The brain', html: `<p>${esc(s.atlasNote)}${s.related ? ` <a href="#atlas/${s.related[0]}">${esc(s.related[1])}</a>` : ''}</p>`, textOnly: true});
     if (id === 'house-mouse') secs.push({id: 'cells', title: 'The cells themselves', inst: 'neurons', html: '<p>Stellate neurons of the inferior colliculus, the auditory midbrain, reconstructed from microscope images and distributed by NeuroMorpho.org.</p>'});
   }
@@ -379,13 +353,12 @@ async function restorationReport() {
     <p class="small"><a href="data/models/zebra-finch/strf.json" download>Results (JSON, field “restoration”)</a> · <a href="${GH}/blob/main/scripts/build_finch_models.py">Analysis script</a></p></div></article></div>`;
 }
 function legacy(id) {
-  setTitle({'paper-hamaguchi': 'Auditory feedback to HVC neurons', 'paper-sperm-whale': 'Structure of sperm whale codas', 'perception-model': 'Perceptual-choice baseline'}[id]);
+  setTitle({'paper-hamaguchi': 'Auditory feedback to HVC neurons', 'perception-model': 'Perceptual-choice baseline'}[id]);
   main.innerHTML = `<div class="wrap" style="padding:1.6rem 0 3rem"><p class="crumb"><a href="#research">Research</a></p></div>`;
   $('.wrap', main).appendChild(document.getElementById('tpl-' + id).content.cloneNode(true));
   const notes = {a: 'Panel A: schematic of the preparation. Red, song motor pathway; blue, anterior forebrain pathway. The electrode records an HVC neuron projecting to Area X.', b: 'Panel B: spike-collision test identifying an HVC neuron that projects to Area X.', c: 'Panel C: feedback manipulation. Hit trials trigger playback; catch trials withhold it.', d: 'Panel D: song spectrogram with intracellular voltage. The orange interval marks feedback playback. Figure 2 gives the population analysis.'};
   $$('[data-paper-panel]').forEach(b => b.onclick = () => { $$('[data-paper-panel]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); $('#figure-panel-note').textContent = notes[b.dataset.paperPanel]; });
   $$('[data-enlarge]').forEach(b => b.onclick = () => { const o = document.getElementById(b.dataset.enlarge); $('#big-img').src = o.src; $('#big-img').alt = o.alt; $('#fig-dlg').showModal(); });
-  if (id === 'paper-sperm-whale') getJSON('data/marine-coda-summary.json').then(c => { const sel = $('#coda-clan'); if (!sel) return; const draw = () => { const g = c.groups[sel.value]; if (!g) return; $('#coda-summary-count').textContent = `${g.n.toLocaleString()} rows, ${g.type_count} labels, median ${g.duration_median_s.toFixed(3)} s`; $('#coda-summary').innerHTML = g.types.map(t => `<tr><td>${esc(t.label)}</td><td class="num">${t.count}</td><td class="num">${t.duration_median_s.toFixed(3)}</td><td class="num">${t.duration_q10_s.toFixed(3)}–${t.duration_q90_s.toFixed(3)}</td></tr>`).join(''); }; sel.onchange = draw; draw(); });
 }
 async function literature() {
   setTitle('Literature');
@@ -413,6 +386,7 @@ async function dataPage() {
       <h2 style="margin-top:1.6rem">Reproducibility</h2><p>Derived files are generated from the original downloads by scripts in the <a href="${GH}">repository</a>. Source URLs and SHA-256 checksums are listed in <a href="${GH}/blob/main/research/sources-2026-11.json">sources-2026-11.json</a>.</p></div></div></div>`;
 }
 const RELEASES = [
+  ['3.0', '13 November 2026', 'New overview page: recordings drawn as live spectrograms while they play, a scroll-linked introduction and a wall of the animals. New typeface (Geist) and a neutral charcoal palette. The sperm whale was removed because no openly licensed brain imaging of the species exists.'],
   ['2.4', '12 November 2026', 'Mouse lemur brain atlas (120 structures). Recordings added: rat 22-kHz ultrasonic calls, three starling song recordings, eighteen call recordings of Micklem’s mole-rat, two mouse lemur calls.'],
   ['2.3', '12 November 2026', 'Axes, units and colour scales on all figures; one colour map for all spectrograms; recordings listed in a table with source and licence; whole zebra finch songs added to the recordings.'],
   ['2.2', '12 November 2026', 'Atlas viewer shows the three-dimensional view and sections together; a surface for every labelled region; view links; source, citation and file listing on each atlas page.'],
