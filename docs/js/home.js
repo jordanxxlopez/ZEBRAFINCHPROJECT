@@ -8,12 +8,13 @@ const STOP = '<svg viewBox="0 0 10 10" aria-hidden="true"><rect width="10" heigh
 const FEATURE = {'zebra-finch': 'finch-song-B189', 'common-marmoset': 'marmoset-phee_223119', 'egyptian-fruit-bat': 'bat-social6', 'european-starling': 'starling-b1125-1'};
 const ORDER = ['zebra-finch', 'common-marmoset', 'house-mouse', 'egyptian-fruit-bat', 'european-starling', 'norway-rat', 'eurasian-blackcap', 'grey-mouse-lemur', 'domestic-cat', 'micklems-mole-rat', 'honeybee'];
 
+const lc = n => /^(Egyptian|Norway|European|Eurasian|Micklem|Ansell)/.test(n) ? n : n[0].toLowerCase() + n.slice(1);
 let cleanup = [];
 export function teardown() { cleanup.forEach(f => { try { f(); } catch {} }); cleanup = []; }
 
 const short = c => { const m = (c || '').match(/^(.*?\(\d{4}\))/); return m ? m[1] : (c || '').split(' (')[0]; };
 
-export function renderHome(main, {SPECIES, SP, sounds, hasAtlas, cited, refList, esc, fmt, reduced, V}) {
+export function renderHome(main, {SPECIES, SP, sounds, hasAtlas, cited, refList, esc, fmt, reduced, V, explainedCards, explainedCount}) {
   teardown();
   // Only species with their own photograph appear here; another species' photo is never substituted.
   const feat = ORDER.filter(id => SP[id]?.photo).map(id => {
@@ -76,9 +77,12 @@ export function renderHome(main, {SPECIES, SP, sounds, hasAtlas, cited, refList,
       <img src="${esc(a.sp.photo.src)}" alt="" loading="lazy">
       <button type="button" class="hit" aria-label="Play: ${esc(a.sp.common)}, ${esc(a.s.kind.toLowerCase())}" aria-pressed="false"></button>
       ${a.speed > 1 ? `<span class="badge">${a.speed}× slower</span>` : ''}<span class="ring" aria-hidden="true">${PLAY}</span>
-      <span class="meta"><b>${esc(a.sp.common)}</b><small>${esc(a.s.kind)}</small><span class="hook">${esc(a.sp.plain)}</span><a href="#species/${a.sp.id}">About the ${esc(a.sp.common.toLowerCase())}</a></span><span class="bar"></span></div>`).join('')}</div>
+      <span class="meta"><b>${esc(a.sp.common)}</b><small>${esc(a.s.kind)}</small><span class="hook">${esc(a.sp.plain)}</span><a href="#species/${a.sp.id}">About the ${esc(lc(a.sp.common))}</a></span><span class="bar"></span></div>`).join('')}</div>
     <p class="h-credits">Photos and recordings: ${feat.map(a => `${esc(a.sp.common)}, ${esc(a.sp.photo.credit)} (${esc(a.sp.photo.licence)}) and ${esc(a.credit)}`).join('; ')}.</p>
   </div></section>
+
+  <section class="wrap h-ex-sec"><div class="h-ex-head"><div><p class="eyebrow">Studies explained</p><h2>The research behind the sounds, in plain language</h2></div><a href="#explained">All ${explainedCount} studies</a></div>
+    <p class="h-ex-lede">Each summary takes one published study and sets out the question, what was done, what was found and what the result does not show, with a link to the original paper.</p>${explainedCards()}</section>
 
   <section class="wrap h-doors-sec"><h2>Go deeper</h2><div class="h-doors">
     <a class="h-door" href="#recordings"><b>Listen</b><p>Every recording in the collection, with its spectrogram, source and licence.</p><span>Recordings</span></a>
@@ -156,6 +160,7 @@ export function renderHome(main, {SPECIES, SP, sounds, hasAtlas, cited, refList,
     G.set('.h-tile', {opacity: 0, y: 48});
     ScrollTrigger.batch('.h-tile', {start: 'top 92%', onEnter: els => G.to(els, {opacity: 1, y: 0, duration: .8, stagger: .07, ease: 'power3.out'})});
     $$('.h-tile img').forEach(img => G.fromTo(img, {yPercent: -5}, {yPercent: 5, ease: 'none', scrollTrigger: {trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true}}));
+    G.from('.h-ex-sec .ex-card', {opacity: 0, y: 40, duration: .8, stagger: .1, ease: 'power3.out', scrollTrigger: {trigger: '.h-ex-sec .ex-cards', start: 'top 88%'}});
     G.from('.h-door', {opacity: 0, y: 36, duration: .8, stagger: .1, ease: 'power3.out', scrollTrigger: {trigger: '.h-doors', start: 'top 90%'}});
   });
   document.fonts.ready.then(() => { if (!main.contains(mq)) return; ctx.add(() => {
@@ -165,7 +170,7 @@ export function renderHome(main, {SPECIES, SP, sounds, hasAtlas, cited, refList,
       .from('.h-lede', {opacity: 0, y: 24, duration: .9}, '-=.6')
       .from('.h-chip', {opacity: 0, y: 18, duration: .6, stagger: .03}, '-=.6')
       .from('#h-band', {clipPath: 'inset(0 100% 0 0)', duration: 1.4, ease: 'power3.inOut'}, '-=.8');
-    G.utils.toArray('.h-intro h2, .h-wall-head h2, .h-doors-sec h2, .h-step h3').forEach(el => {
+    G.utils.toArray('.h-intro h2, .h-wall-head h2, .h-ex-head h2, .h-doors-sec h2, .h-step h3').forEach(el => {
       const st = SplitText.create(el, {type: 'words', mask: 'words'});
       G.from(st.words, {yPercent: 100, duration: .8, stagger: .035, ease: 'power3.out', scrollTrigger: {trigger: el, start: 'top 85%'}});
     });

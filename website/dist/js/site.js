@@ -3,7 +3,8 @@ import {NEWREFS, FINCH_PARTS, FINCH_GROUPS} from './chapters.js?v=20261117a';
 import {MORE_REFS, MORE_SPECIES, MORE_ATLASES, FINCH_SECTIONS, FINCH_FACTS, CHAPTER_PLAN} from './species.js?v=20261117a';
 import * as charts from './charts.js?v=20261117a';
 import * as M from './models.js?v=20261117a';
-import {renderHome, teardown as homeTeardown} from './home.js?v=20261113a';
+import {renderHome, teardown as homeTeardown} from './home.js?v=20261113c';
+import {ARTICLES, articleCards, renderIndex as explainedIndex, renderArticle, teardown as exTeardown} from './explained.js?v=20261113c';
 
 const V = '20261117a';
 const SPECIES = [...BASE_SPECIES, ...MORE_SPECIES];
@@ -64,6 +65,7 @@ let INDEX = null;
 async function buildIndex() {
   if (INDEX) return INDEX; const it = [];
   SPECIES.forEach(s => it.push({t: s.common, s: `${s.latin} · species`, h: '#species/' + s.id}));
+  ARTICLES.forEach(a => it.push({t: a.title, s: `Study explained · ${SP[a.species].common}`, h: '#explained/' + a.id}));
   ANALYSES.forEach(r => it.push({t: r.title, s: `Research · ${SP[r.species].common}`, h: aHref(r)}));
   const metas = (await Promise.all(SPECIES.filter(s => hasAtlas(s.id)).map(s => atlasMeta(s.id).then(m => [s.id, m]).catch(() => null)))).filter(Boolean);
   for (const [k, m] of metas) for (const r of m.regions || []) it.push({t: r.name + (r.hemisphere ? ` (${r.hemisphere.replace(':', '')})` : ''), s: `Brain region · ${SP[k].common}${r.acronym && r.acronym !== r.name ? ' · ' + r.acronym : ''}`, h: `#atlas/${k}?r=${r.index}`});
@@ -93,13 +95,14 @@ async function route() {
   const navKey = ['paper-hamaguchi', 'perception-model', 'literature'].includes(page) ? 'research' : page || 'home';
   $$('#nav a').forEach(x => x.hash === '#' + navKey ? x.setAttribute('aria-current', 'page') : x.removeAttribute('aria-current'));
   $$('audio,video').forEach(m => m.pause());
-  homeTeardown(); main.classList.remove('h-static'); document.body.classList.toggle('is-home', !page || page === 'home' || page === 'main');
+  homeTeardown(); exTeardown(); main.classList.remove('h-static'); document.body.classList.toggle('is-home', !page || page === 'home' || page === 'main');
   try {
     if (!page || page === 'home') await home();
     else if (page === 'atlas') await (a ? atlasPage(a) : atlasIndex());
     else if (page === 'species') await (a ? speciesPage(a, b) : speciesIndex());
     else if (page === 'recordings') await recordings(a);
     else if (page === 'research') await research(a);
+    else if (page === 'explained') await explained(a);
     else if (page === 'data') await dataPage();
     else if (page === 'literature') await literature();
     else if (page === 'about') about();
@@ -157,7 +160,12 @@ async function player(el, list, {title = 'Recordings', all} = {}) {
 async function home() {
   setTitle('');
   const sounds = await loadSounds();
-  renderHome(main, {SPECIES, SP, sounds, hasAtlas, cited, refList: refItem, esc, fmt, reduced, V});
+  renderHome(main, {SPECIES, SP, sounds, hasAtlas, cited, refList: refItem, esc, fmt, reduced, V, explainedCards: () => articleCards(ARTICLES.slice(0, 3), {SP, esc}), explainedCount: ARTICLES.length});
+}
+async function explained(id) {
+  const sounds = await loadSounds(), ctx = {SP, sounds, cited, refList: refItem, esc, REFS, reduced};
+  if (id) { const a = renderArticle(main, id, ctx); if (a) return setTitle(a.title); }
+  setTitle('Studies explained'); explainedIndex(main, ctx);
 }
 
 // ---------------------------------------------------------------- atlases
@@ -218,6 +226,8 @@ async function speciesPage(id, secId) {
     if (id === 'house-mouse') secs.push({id: 'cells', title: 'The cells themselves', inst: 'neurons', html: '<p>Stellate neurons of the inferior colliculus, the auditory midbrain, reconstructed from microscope images and distributed by NeuroMorpho.org.</p>'});
   }
   if (sounds.length && (id === 'zebra-finch' || !secs.some(x => x.inst === 'sounds'))) secs.push({id: 'recordings', title: 'Recordings', inst: 'sounds', html: `<p>${fmt(sounds.length)} recording${sounds.length > 1 ? 's' : ''}: ${[...new Set(sounds.map(x => x.kind.toLowerCase()))].slice(0, 6).join(', ')}.</p>`});
+  const ex = ARTICLES.filter(x => x.species === id);
+  if (ex.length) secs.splice(Math.min(1, secs.length), 0, {id: 'explained', title: 'Studies explained', full: articleCards(ex, {SP, esc})});
   if (analyses.length) secs.push({id: 'analyses', title: 'Analyses', full: analysisTable(analyses)});
   const atlasFig = meta && !secs.some(x => x.inst === 'atlas3d' || x.inst === 'pathway');
   main.innerHTML = `<div class="wrap"><div class="sp-head"><div><p class="crumb"><a href="#species">Species</a> / ${esc(s.group)}</p><h1>${esc(s.common)}</h1><p class="latin">${esc(s.latin)}</p><p class="lede">${esc(s.plain)}</p>${(() => { const F = id === 'zebra-finch' ? FINCH_FACTS : [...(CHAPTER_PLAN[id]?.facts || []), ...(meta?.regions?.length ? [[fmt(meta.regions.length), 'regions in the brain atlas']] : []), ...(sounds.length ? [[fmt(sounds.length), sounds.length > 1 ? 'recordings' : 'recording']] : [])]; return F.length ? `<ul class="facts-row">${F.map(f => `<li><b>${esc(f[0])}</b> ${cited(f[1], used)}</li>`).join('')}</ul>` : ''; })()}
@@ -386,6 +396,7 @@ async function dataPage() {
       <h2 style="margin-top:1.6rem">Reproducibility</h2><p>Derived files are generated from the original downloads by scripts in the <a href="${GH}">repository</a>. Source URLs and SHA-256 checksums are listed in <a href="${GH}/blob/main/research/sources-2026-11.json">sources-2026-11.json</a>.</p></div></div></div>`;
 }
 const RELEASES = [
+  ['3.1', '13 November 2026', 'Studies explained: plain-language summaries of five published studies (zebra finch, house mouse, Egyptian fruit bat, Norway rat, honeybee), each written from the full text of the paper, with its limits and a glossary.'],
   ['3.0', '13 November 2026', 'New overview page: recordings drawn as live spectrograms while they play, a scroll-linked introduction and a wall of the animals. New typeface (Geist) and a neutral charcoal palette. The sperm whale was removed because no openly licensed brain imaging of the species exists.'],
   ['2.4', '12 November 2026', 'Mouse lemur brain atlas (120 structures). Recordings added: rat 22-kHz ultrasonic calls, three starling song recordings, eighteen call recordings of Micklem’s mole-rat, two mouse lemur calls.'],
   ['2.3', '12 November 2026', 'Axes, units and colour scales on all figures; one colour map for all spectrograms; recordings listed in a table with source and licence; whole zebra finch songs added to the recordings.'],

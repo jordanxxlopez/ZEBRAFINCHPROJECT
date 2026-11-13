@@ -9,20 +9,21 @@
 <link rel="preload" href="assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/base.css?v=20261113a">
-<link rel="stylesheet" href="css/home.css?v=20261113a">
+<link rel="stylesheet" href="css/home.css?v=20261113b">
+<link rel="stylesheet" href="css/explained.css?v=20261113b">
 <script>try{const s=JSON.parse(localStorage.getItem('acn-display')||'{}');for(const k of ['theme','size','contrast','motion'])if(s[k])document.documentElement.dataset[k]=s[k];}catch(e){}</script>
 <script type="importmap">{"imports":{"three":"./assets/three.module.js"}}</script>
 <script defer src="assets/vendor/gsap.min.js"></script>
 <script defer src="assets/vendor/ScrollTrigger.min.js"></script>
 <script defer src="assets/vendor/SplitText.min.js"></script>
 <script defer src="assets/vendor/lenis.min.js"></script>
-<script type="module" src="js/site.js?v=20261113a"></script>
+<script type="module" src="js/site.js?v=20261113c"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="wrap bar">
   <a class="logo" href="#home" aria-label="Animal Communication and Neuroscience, home"><span class="wm">Animal Communication <em>&amp;</em> Neuroscience</span></a>
-  <nav aria-label="Main"><ul class="nav" id="nav"><li><a href="#species">Animals</a></li><li><a href="#recordings">Listen</a></li><li><a href="#atlas">Brain atlases</a></li><li><a href="#research">Research</a></li><li><a href="#data">Data</a></li><li><a href="#about">About</a></li></ul></nav>
+  <nav aria-label="Main"><ul class="nav" id="nav"><li><a href="#species">Animals</a></li><li><a href="#explained">Explained</a></li><li><a href="#recordings">Listen</a></li><li><a href="#atlas">Brain atlases</a></li><li><a href="#research">Research</a></li><li><a href="#data">Data</a></li><li><a href="#about">About</a></li></ul></nav>
   <div class="mast-util"><button class="txt-btn" id="open-search" type="button" aria-controls="search">Search</button><button class="txt-btn" id="open-settings" type="button" aria-haspopup="dialog">Display</button></div>
   <button id="menu-btn" hidden></button>
   <div class="search-pop" id="search" hidden><label class="vh" for="q">Search</label><input id="q" type="search" role="combobox" aria-expanded="false" aria-controls="search-res" aria-autocomplete="list" placeholder="Search animals, brain regions, recordings, research" autocomplete="off"><div class="res" id="search-res" role="listbox" aria-label="Search results"></div></div>
@@ -31,7 +32,7 @@
 <footer class="foot"><div class="wrap">
   <div><h2>Animal Communication &amp; Neuroscience</h2><p>An independent, non-commercial collection. Every recording, brain scan and figure is credited to its original source and keeps its original licence.</p></div>
   <div><h2>Explore</h2><ul><li><a href="#species">Animals</a></li><li><a href="#recordings">Listen</a></li><li><a href="#atlas">Brain atlases</a></li></ul></div>
-  <div><h2>Research</h2><ul><li><a href="#research">Analyses</a></li><li><a href="#literature">Literature</a></li><li><a href="#data">Data and methods</a></li></ul></div>
+  <div><h2>Research</h2><ul><li><a href="#explained">Studies explained</a></li><li><a href="#research">Analyses</a></li><li><a href="#literature">Literature</a></li><li><a href="#data">Data and methods</a></li></ul></div>
   <div><h2>About</h2><ul><li><a href="#about">About and accessibility</a></li><li><a href="https://github.com/jordanxxlopez/animal-communication-neuroscience">Source code</a></li></ul></div>
   <p class="fine">Third-party data, images and recordings retain their original licences. Typeface: Geist (SIL Open Font License). Motion: GSAP and Lenis.</p>
 </div></footer>
