@@ -4,12 +4,12 @@ import {MORE_REFS, MORE_SPECIES, MORE_ATLASES, FINCH_SECTIONS, FINCH_FACTS, CHAP
 import * as charts from './charts.js?v=20261117a';
 import * as M from './models.js?v=20261117a';
 import {renderHome, teardown as homeTeardown} from './home.js?v=20261113c';
-import {ARTICLES, articleCards, renderIndex as explainedIndex, renderArticle, teardown as exTeardown} from './explained.js?v=20261113c';
+import {ARTICLES, EX_REFS, articleCards, renderIndex as explainedIndex, renderArticle, teardown as exTeardown} from './explained.js?v=20261113d';
 
 const V = '20261117a';
 const SPECIES = [...BASE_SPECIES, ...MORE_SPECIES];
 const ATLASES = {...BASE_ATLASES, ...MORE_ATLASES};
-const REFS = {...BASE_REFS, ...NEWREFS, ...MORE_REFS};
+const REFS = {...BASE_REFS, ...NEWREFS, ...MORE_REFS, ...EX_REFS};
 const SP = Object.fromEntries(SPECIES.map(s => [s.id, s]));
 const hasAtlas = id => ATLASES[id]?.status === 'available';
 const $ = (s, el = document) => el.querySelector(s);
@@ -396,7 +396,7 @@ async function dataPage() {
       <h2 style="margin-top:1.6rem">Reproducibility</h2><p>Derived files are generated from the original downloads by scripts in the <a href="${GH}">repository</a>. Source URLs and SHA-256 checksums are listed in <a href="${GH}/blob/main/research/sources-2026-11.json">sources-2026-11.json</a>.</p></div></div></div>`;
 }
 const RELEASES = [
-  ['3.1', '13 November 2026', 'Studies explained: plain-language summaries of five published studies (zebra finch, house mouse, Egyptian fruit bat, Norway rat, honeybee), each written from the full text of the paper, with its limits and a glossary.'],
+  ['3.1', '13 November 2026', 'Studies explained: plain-language summaries of ten published studies covering ten species, each written from the full text of the paper, with its limits and a glossary.'],
   ['3.0', '13 November 2026', 'New overview page: recordings drawn as live spectrograms while they play, a scroll-linked introduction and a wall of the animals. New typeface (Geist) and a neutral charcoal palette. The sperm whale was removed because no openly licensed brain imaging of the species exists.'],
   ['2.4', '12 November 2026', 'Mouse lemur brain atlas (120 structures). Recordings added: rat 22-kHz ultrasonic calls, three starling song recordings, eighteen call recordings of Micklem’s mole-rat, two mouse lemur calls.'],
   ['2.3', '12 November 2026', 'Axes, units and colour scales on all figures; one colour map for all spectrograms; recordings listed in a table with source and licence; whole zebra finch songs added to the recordings.'],

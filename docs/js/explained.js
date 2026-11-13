@@ -107,7 +107,118 @@ export const ARTICLES = [
     terms: [['Waggle dance', 'A figure-of-eight run on the comb whose angle and length encode direction and distance to food.'], ['Forager', 'A worker bee that collects food outside the hive.'], ['Recruit', 'A bee that flies out to a food source after following a dance.']],
     links: [['#atlas/honeybee', 'Honeybee brain atlas'], ['#research/honeybee-dance-sun', 'This site’s test of dance angle and the sun']],
   },
+  {
+    id: 'marmoset-turn-taking', species: 'common-marmoset', ref: 'takahashi2016', year: 2016, journal: 'Philosophical Transactions of the Royal Society B', sound: 'marmoset-phee_223119', soundNote: 'Adult phee call from a different, later dataset (Lamothe et al. 2025).',
+    title: 'Baby marmosets learn to take turns in conversation',
+    dek: 'Infant marmosets at first call over their parents. During their first two months they learn to wait their turn, and their calls sound more grown-up straight after a parent answers.',
+    question: [
+      'Human conversation runs on turn-taking: speakers avoid talking at the same time and keep the gaps between turns short. Babies are not born with this. In their first months they often vocalise over their parents, and adult-like turn-taking appears at around 8–12 months.',
+      'Adult marmosets, small South American monkeys, also take turns when they call back and forth. This study asked whether infant marmosets go through the same development as human babies, and what the parents contribute.'],
+    method: [
+      'The study followed 10 infant marmosets and their parents (three adult pairs) in a captive colony at Princeton University, from the first day after birth until two months of age.',
+      'In each session an infant was placed in a small cage in a recording room and one parent in another cage nearby. A curtain kept them from seeing each other, so they could only call. The first ten minutes of each session were analysed: who called when, how often calls overlapped, and how mature each infant call sounded.',
+      'Marmosets develop about 12 times faster than humans, so in the authors’ comparison these two months correspond to roughly the first two years of a human life.'],
+    found: [
+      'Soon after birth, infants overlapped their parents’ calls about 25% of the time, a rate similar to that of three-month-old human babies. By two months this had fallen to about 15%, similar to 18-month-old children. Adult marmosets rarely overlap.',
+      'In the first week infants barely responded to their parents, but they engaged more and more over the first month. The parents’ own calling behaviour did not change over that time.',
+      'Infant calls made just after a parent called were longer and more tonal, that is, more adult-like. How often parents answered did not predict how quickly an infant’s turn-taking matured.'],
+    matters: [
+      'Marmosets and humans are not close relatives, yet turn-taking develops along a similar path and at a similar life stage. The authors argue that it evolved independently in both, possibly because both raise their young cooperatively and are highly vocal.'],
+    limits: [
+      'The study involved 10 captive infants, and the data are a subset of an earlier dataset from the same laboratory. Parents and infants could hear but not see each other.',
+      'The link between parent calls and more mature infant calls is a pattern in timing; the authors interpret the early lack of interaction as immature self-monitoring, which was inferred rather than measured directly.'],
+    terms: [['Turn-taking', 'Alternating calls or speech so that partners rarely talk at the same time.'], ['Overlap', 'Two individuals calling at the same moment.'], ['Phee call', 'The long, whistle-like contact call of marmosets.'], ['Self-monitoring', 'Telling one’s own voice apart from the voices of others.'], ['Convergent evolution', 'Similar traits evolving separately in unrelated species.']],
+    links: [['#atlas/common-marmoset', 'Marmoset brain atlas'], ['#research/marmoset-annotation-recount', 'This site’s recount of a large marmoset call dataset']],
+  },
+  {
+    id: 'lemur-friends-sound-alike', species: 'grey-mouse-lemur', ref: 'langehennig2024', year: 2024, journal: 'Philosophical Transactions of the Royal Society B', sound: 'lemur-commons-001', soundNote: 'Recording from Wikimedia Commons, not from the study.',
+    title: 'Female mouse lemurs sound more alike the longer they live together',
+    dek: 'In a captive colony of grey mouse lemurs, the trill calls of females converged with those of their companions. Males’ calls instead followed family ties, or grew apart.',
+    question: [
+      'Many social birds and mammals adjust their calls to sound more like their companions, a form of vocal learning called vocal accommodation. It has mostly been studied in species that live in pairs or groups.',
+      'Grey mouse lemurs live differently. Females forage alone at night but gather in sleeping groups at dawn; males live alone. The question was whether this difference in social life changes whether their calls converge.'],
+    method: [
+      'The researchers analysed 482 trill calls from 36 grey mouse lemurs in their breeding colony at the University of Veterinary Medicine Hannover, Germany.',
+      'For every pair of animals they measured how different their trills sounded, and compared that with how closely related the two were, how long they had lived together as cage partners, and how different their body weights were.'],
+    found: [
+      'Females’ trills became more similar the more time two females had spent together, regardless of whether they were related or similar in size.',
+      'For males as a whole, family ties mattered more: related males sounded more alike. Among males that had lived together, more time together went with more different trills.',
+      'Every animal had its own recognisable vocal signature, and males’ signatures were more distinctive than females’.'],
+    matters: [
+      'Female mouse lemurs exchange trills as they come together to form sleeping groups at dawn. The authors suggest that a shared, converged trill could work like a password for group membership, while males may benefit from sounding individually distinct.'],
+    limits: [
+      'The animals were captive, and the study is based on correlations rather than an experiment. Because the lemurs could not choose their cage partners, the authors argue that the similarity was caused by living together rather than by similar-sounding animals choosing each other.',
+      'The recordings came from different situations for each sex: mostly mother–infant reunions for females and male–female encounters for males.'],
+    terms: [['Trill', 'A rapid series of repeated notes, used by mouse lemurs in social contact.'], ['Vocal accommodation', 'Adjusting one’s calls to become more or less similar to those of others.'], ['Vocal signature', 'Features of a call that identify the individual making it.'], ['Convergence', 'Calls of two individuals becoming more similar over time.']],
+    links: [['#atlas/grey-mouse-lemur', 'Mouse lemur brain atlas']],
+  },
+  {
+    id: 'cat-pitch', species: 'domestic-cat', ref: 'butler2015', year: 2015, journal: 'PLOS ONE', sound: 'commons-domestic-cat', soundNote: 'Recording from Wikimedia Commons, not from the study.',
+    title: 'Where a cat’s brain hears pitch',
+    dek: 'Brain scans of ten cats listening to sounds with and without a clear pitch pointed to an auditory area beyond the primary auditory cortex.',
+    question: [
+      'Pitch is what makes a melody, lets a listener tell two voices apart, and helps pick out one sound in a noisy room. Cats have long been known to perceive the pitch of complex sounds, but the part of their cortex that handles pitch had not been identified.',
+      'In people and monkeys, evidence points to auditory areas beyond the primary auditory cortex. This study looked for the equivalent area in cats.'],
+    method: [
+      'Ten adult cats were anaesthetised and scanned in a 7-tesla MRI scanner. Functional MRI tracks changes in blood oxygen, an indirect sign of brain activity.',
+      'The cats heard a sound engineered to have a clear pitch (iterated rippled noise, with a pitch of 400 Hz) and a plain noise covering the same frequency band (around 10 kHz) with no pitch. Areas more active for the pitch sound were taken as candidates for pitch processing.'],
+    found: [
+      'Across the group, the pitch sound produced the most extra activity in the posterior auditory field, an area around the posterior ectosylvian sulcus, and not in the core areas A1 and AAF. In individual cats, active clusters spread over several auditory fields.'],
+    matters: [
+      'The result fits the idea, from human and monkey studies, that the sense of pitch is built in areas beyond the primary auditory cortex. It gives a specific target for more detailed recordings in cats, a long-standing model of hearing.'],
+    limits: [
+      'The cats were anaesthetised, and functional MRI is an indirect and coarse measure of activity. A second comparison, against a control sound designed to keep the frequency content of the pitch sound but remove its pitch, showed no significant activity, so the result depends on which control is used. The study included ten animals.'],
+    terms: [['Pitch', 'How high or low a sound is heard to be.'], ['Harmonics', 'Frequencies at whole-number multiples of the lowest one; together they produce one perceived pitch.'], ['Functional MRI', 'A scan that detects changes in blood oxygen linked to brain activity.'], ['Primary auditory cortex (A1)', 'The first stage of sound processing in the cortex.']],
+    links: [['#atlas/domestic-cat', 'Cat brain atlas, with its auditory fields']],
+  },
+  {
+    id: 'blackcap-compass', species: 'eurasian-blackcap', ref: 'leberecht2023', year: 2023, journal: 'PNAS', sound: 'commons-eurasian-blackcap', soundNote: 'Recording from Wikimedia Commons, not from the study.',
+    title: 'Radio noise and the songbird’s magnetic compass',
+    dek: 'Migrating blackcaps lose their magnetic sense of direction in some radio noise but not in others. Finding where the effect stops points to the molecule behind the compass.',
+    question: [
+      'Songbirds that migrate at night steer with a magnetic compass that depends on light. Information from the eyes is processed in Cluster N, a region of the forebrain. The leading explanation is a light-triggered chemical reaction in a protein called cryptochrome, which creates short-lived “radical pairs” that are sensitive to magnetic fields.',
+      'An earlier study found that broadband radio noise at 75–85 MHz disoriented blackcaps. Theory predicts that above a certain frequency, estimated at 120–220 MHz for the leading candidate, radio noise should have no effect. This study tested that prediction.'],
+    method: [
+      'Wild blackcaps were caught during autumn migration near the University of Oldenburg, Germany, and tested during the migration seasons of 2020–2022 in magnetically shielded chambers, where the direction each bird tried to head was recorded.',
+      'Birds were exposed to broadband radio noise at either 235–245 MHz or 140–150 MHz, at strengths similar to those that had disoriented birds before. Control birds were tested in the normal magnetic field and in a field turned by 120°. The authors also refined the theoretical prediction to about 116 MHz.'],
+    found: [
+      'Birds stayed oriented in both radio-noise bands. When the magnetic field was turned, control birds turned with it, showing that they were using their magnetic compass.',
+      'Together with earlier studies, the frequencies known to disturb the compass now begin above 100 kHz and end below about 145 MHz, a range that includes the predicted 116 MHz.'],
+    matters: [
+      'A sharp upper limit close to the predicted value is difficult to explain with other proposed mechanisms, such as tiny magnetic particles. The authors conclude that the result is strong evidence that the compass relies on a radical pair containing a flavin, the light-absorbing part of cryptochrome.'],
+    limits: [
+      'The study measured behaviour; it did not identify the sensor molecule directly. The cutoff is pinned down only to somewhere between about 80 and 145 MHz, and the overall picture combines studies on two species at somewhat different field strengths.',
+      'In the autumn tests, the control group in the normal magnetic field was not significantly oriented on its own; the turned-field control was.'],
+    terms: [['Magnetic compass', 'A sense of direction based on the Earth’s magnetic field.'], ['Cryptochrome', 'A light-sensitive protein found in the eye, proposed as the compass sensor.'], ['Radical pair', 'Two molecules with unpaired electrons whose chemistry can be nudged by magnetic fields.'], ['MHz', 'Megahertz: millions of oscillations per second, used here for radio frequencies.']],
+    links: [['#atlas/eurasian-blackcap', 'Blackcap brain atlas, including Cluster N']],
+  },
+  {
+    id: 'starling-neurons', species: 'european-starling', ref: 'kozlov2016', year: 2016, journal: 'PNAS', sound: 'starling-b1125-1', soundNote: 'Song from a dataset published by the same laboratory (Arneodo et al. 2019).',
+    title: 'One starling neuron, a dozen sounds',
+    dek: 'Neurons in a starling’s auditory brain each respond to many different pieces of song, from clicks to tones. A computer network trained on starling song developed the same kind of mix.',
+    question: [
+      'An auditory neuron is often described by the single sound feature that makes it fire. Starlings, however, have large and unpredictable song repertoires: each adult male has several dozen motifs, most of them unique to that bird.',
+      'This study asked how neurons in a higher auditory area of the starling brain represent such complex sounds.'],
+    method: [
+      'In anaesthetised adult male starlings, the researchers recorded the spikes of single neurons in NCM, a secondary auditory region comparable to auditory cortex. The birds heard six one-minute songs from three unfamiliar males, containing over 200 motifs, each repeated 30 times. A few neurons were held for ten hours or more and played 60 songs.',
+      'A statistical model (maximum noise entropy) was used to find every sound feature linked to a neuron’s firing. Separately, a two-layer artificial network was trained on the same 60 songs, following two rules seen in real brains: sparseness (each unit responds rarely) and normalization (units suppress each other).'],
+    found: [
+      'On average, each of the 37 neurons analysed responded to about six features that excited it and six that suppressed it. The features mixed brief clicks with tone-like and harmonic sounds, and were of similar strength. The authors call these composite receptive fields.',
+      'This model predicted responses to new songs better than a standard receptive-field model (average correlation 0.23 compared with 0.16), though both captured only part of the response. Units in the network’s second layer developed similar composite receptive fields.'],
+    matters: [
+      'A neuron that responds to many features can take part in many different groups of neurons, which may suit a large and unpredictable repertoire of sounds. Similar arrangements have been described in the smell systems of mammals and insects, and the network shows that two simple circuit rules can be enough to produce them.'],
+    limits: [
+      'The recordings were made under anaesthesia, from 37 neurons in one brain region, and the model’s predictions were modest. The network shows that sparseness and normalization are sufficient to produce composite receptive fields, not that the starling brain actually uses these rules.'],
+    terms: [['Receptive field', 'The set of sound features that changes a neuron’s firing.'], ['NCM', 'Caudomedial nidopallium, a secondary auditory area of the songbird forebrain.'], ['Motif', 'A short, recognisable segment of starling song.'], ['Sparseness', 'Each neuron responding to only a few of all possible sounds.']],
+    links: [['#atlas/european-starling', 'Starling brain atlas, including NCM'], ['#research/finch-strf', 'This site’s receptive-field models of zebra finch neurons']],
+  },
 ];
+
+// References used only by these summaries (DOIs checked with Scite, November 2026).
+export const EX_REFS = {
+  takahashi2016: {cite: 'Takahashi DY, Fenley AR, Ghazanfar AA (2016). Early development of turn-taking with parents shapes vocal acoustics in infant marmoset monkeys. Philosophical Transactions of the Royal Society B 371:20150370.', doi: '10.1098/rstb.2015.0370'},
+  langehennig2024: {cite: 'Langehennig-Peristenidou A, Scheumann M (2024). Sex differences in the impact of social relationships on individual vocal signatures in grey mouse lemurs (Microcebus murinus). Philosophical Transactions of the Royal Society B 379:20230193.', doi: '10.1098/rstb.2023.0193'},
+};
 
 const words = a => [a.dek, ...a.question, ...a.method, ...a.found, ...a.matters, ...a.limits].join(' ').split(/\s+/).length;
 const minutes = a => Math.max(2, Math.round(words(a) / 220));
