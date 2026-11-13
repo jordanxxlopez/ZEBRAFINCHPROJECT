@@ -1,0 +1,218 @@
+[
+ {
+  "id": "finch-song-B189",
+  "species": "zebra-finch",
+  "title": "Song of male B189",
+  "kind": "Song",
+  "files": {
+   "original": "assets/models/zebra-finch/B189.wav"
+  },
+  "spectrogram": {
+   "file": "assets/models/zebra-finch/B189.png",
+   "t1": 0.8388,
+   "f0": 500,
+   "f1": 8000,
+   "scale": "log",
+   "db_range": 70
+  },
+  "source": {
+   "sample_rate": 40000,
+   "duration_s": 0.8388,
+   "file": "B189 (stimulus, continuous version)",
+   "sha256": "eba2c6deebb14a97fdb645625d0e5c6b812f198cccb40d766de6f3d8061a5ea4",
+   "url": "https://doi.org/10.6084/m9.figshare.29203457",
+   "licence": "CC BY 4.0",
+   "citation": "Le B, Bjoring MC, Meliza CD (2025) The zebra finch auditory cortex reconstructs occluded syllables in conspecific song. Nature Communications 16:8452. doi:10.1038/s41467-025-63182-y"
+  },
+  "playback": "Stimulus file scaled to a common peak level. Spectrogram: 24 log-spaced bands, 0.5\u20138 kHz."
+ },
+ {
+  "id": "finch-song-B2",
+  "species": "zebra-finch",
+  "title": "Song of male B2",
+  "kind": "Song",
+  "files": {
+   "original": "assets/models/zebra-finch/B2.wav"
+  },
+  "spectrogram": {
+   "file": "assets/models/zebra-finch/B2.png",
+   "t1": 1.0883,
+   "f0": 500,
+   "f1": 8000,
+   "scale": "log",
+   "db_range": 70
+  },
+  "source": {
+   "sample_rate": 40000,
+   "duration_s": 1.0883,
+   "file": "B2 (stimulus, continuous version)",
+   "sha256": "30595c24ed1afd42c7a7a835ec3f53fcd9fe4d8ce346e536ddb6fa0f781ea06e",
+   "url": "https://doi.org/10.6084/m9.figshare.29203457",
+   "licence": "CC BY 4.0",
+   "citation": "Le B, Bjoring MC, Meliza CD (2025) The zebra finch auditory cortex reconstructs occluded syllables in conspecific song. Nature Communications 16:8452. doi:10.1038/s41467-025-63182-y"
+  },
+  "playback": "Stimulus file scaled to a common peak level. Spectrogram: 24 log-spaced bands, 0.5\u20138 kHz."
+ },
+ {
+  "id": "finch-song-B30",
+  "species": "zebra-finch",
+  "title": "Song of male B30",
+  "kind": "Song",
+  "files": {
+   "original": "assets/models/zebra-finch/B30.wav"
+  },
+  "spectrogram": {
+   "file": "assets/models/zebra-finch/B30.png",
+   "t1": 0.8388,
+   "f0": 500,
+   "f1": 8000,
+   "scale": "log",
+   "db_range": 70
+  },
+  "source": {
+   "sample_rate": 40000,
+   "duration_s": 0.8388,
+   "file": "B30 (stimulus, continuous version)",
+   "sha256": "a7208e9a99d02892f5f775c0b96f5b362f5ac92f0406254dfb4f1189c976e191",
+   "url": "https://doi.org/10.6084/m9.figshare.29203457",
+   "licence": "CC BY 4.0",
+   "citation": "Le B, Bjoring MC, Meliza CD (2025) The zebra finch auditory cortex reconstructs occluded syllables in conspecific song. Nature Communications 16:8452. doi:10.1038/s41467-025-63182-y"
+  },
+  "playback": "Stimulus file scaled to a common peak level. Spectrogram: 24 log-spaced bands, 0.5\u20138 kHz."
+ },
+ {
+  "id": "finch-song-B72",
+  "species": "zebra-finch",
+  "title": "Song of male B72",
+  "kind": "Song",
+  "files": {
+   "original": "assets/models/zebra-finch/B72.wav"
+  },
+  "spectrogram": {
+   "file": "assets/models/zebra-finch/B72.png",
+   "t1": 1.0203,
+   "f0": 500,
+   "f1": 8000,
+   "scale": "log",
+   "db_range": 70
+  },
+  "source": {
+   "sample_rate": 40000,
+   "duration_s": 1.0203,
+   "file": "B72 (stimulus, continuous version)",
+   "sha256": "acfca8e895b7a3a86f42025afd8ed9b110fc1413d041c1bfcb688925f29a50e9",
+   "url": "https://doi.org/10.6084/m9.figshare.29203457",
+   "licence": "CC BY 4.0",
+   "citation": "Le B, Bjoring MC, Meliza CD (2025) The zebra finch auditory cortex reconstructs occluded syllables in conspecific song. Nature Communications 16:8452. doi:10.1038/s41467-025-63182-y"
+  },
+  "playback": "Stimulus file scaled to a common peak level. Spectrogram: 24 log-spaced bands, 0.5\u20138 kHz."
+ },
+ {
+  "id": "finch-song-O129",
+  "species": "zebra-finch",
+  "title": "Song of male O129",
+  "kind": "Song",
+  "files": {
+   "original": "assets/models/zebra-finch/O129.wav"
+  },
+  "spectrogram": {
+   "file": "assets/models/zebra-finch/O129.png",
+   "t1": 0.9523,
+   "f0": 500,
+   "f1": 8000,
+   "scale": "log",
+   "db_range": 70
+  },
+  "source": {
+   "sample_rate": 40000,
+   "duration_s": 0.9523,
+   "file": "O129 (stimulus, continuous version)",
+   "sha256": "45be0f03b75c58d520cd86b962f621fe66d0db009df1db6f60076deeab6881ef",
+   "url": "https://doi.org/10.6084/m9.figshare.29203457",
+   "licence": "CC BY 4.0",
+   "citation": "Le B, Bjoring MC, Meliza CD (2025) The zebra finch auditory cortex reconstructs occluded syllables in conspecific song. Nature Communications 16:8452. doi:10.1038/s41467-025-63182-y"
+  },
+  "playback": "Stimulus file scaled to a common peak level. Spectrogram: 24 log-spaced bands, 0.5\u20138 kHz."
+ },
+ {
+  "id": "finch-song-R180",
+  "species": "zebra-finch",
+  "title": "Song of male R180",
+  "kind": "Song",
+  "files": {
+   "original": "assets/models/zebra-finch/R180.wav"
+  },
+  "spectrogram": {
+   "file": "assets/models/zebra-finch/R180.png",
+   "t1": 1.1563,
+   "f0": 500,
+   "f1": 8000,
+   "scale": "log",
+   "db_range": 70
+  },
+  "source": {
+   "sample_rate": 40000,
+   "duration_s": 1.1563,
+   "file": "R180 (stimulus, continuous version)",
+   "sha256": "9c2de2b1966031a6a0b9ee80c5cf0676c4802776313d7f621cdb7313aede198d",
+   "url": "https://doi.org/10.6084/m9.figshare.29203457",
+   "licence": "CC BY 4.0",
+   "citation": "Le B, Bjoring MC, Meliza CD (2025) The zebra finch auditory cortex reconstructs occluded syllables in conspecific song. Nature Communications 16:8452. doi:10.1038/s41467-025-63182-y"
+  },
+  "playback": "Stimulus file scaled to a common peak level. Spectrogram: 24 log-spaced bands, 0.5\u20138 kHz."
+ },
+ {
+  "id": "finch-song-R253",
+  "species": "zebra-finch",
+  "title": "Song of male R253",
+  "kind": "Song",
+  "files": {
+   "original": "assets/models/zebra-finch/R253.wav"
+  },
+  "spectrogram": {
+   "file": "assets/models/zebra-finch/R253.png",
+   "t1": 0.9069,
+   "f0": 500,
+   "f1": 8000,
+   "scale": "log",
+   "db_range": 70
+  },
+  "source": {
+   "sample_rate": 40000,
+   "duration_s": 0.9069,
+   "file": "R253 (stimulus, continuous version)",
+   "sha256": "74fc8f79f61ceb882504f5461f977a047c6dbd4f2aa943bc4cca1aa35788ff69",
+   "url": "https://doi.org/10.6084/m9.figshare.29203457",
+   "licence": "CC BY 4.0",
+   "citation": "Le B, Bjoring MC, Meliza CD (2025) The zebra finch auditory cortex reconstructs occluded syllables in conspecific song. Nature Communications 16:8452. doi:10.1038/s41467-025-63182-y"
+  },
+  "playback": "Stimulus file scaled to a common peak level. Spectrogram: 24 log-spaced bands, 0.5\u20138 kHz."
+ },
+ {
+  "id": "finch-song-R56",
+  "species": "zebra-finch",
+  "title": "Song of male R56",
+  "kind": "Song",
+  "files": {
+   "original": "assets/models/zebra-finch/R56.wav"
+  },
+  "spectrogram": {
+   "file": "assets/models/zebra-finch/R56.png",
+   "t1": 1.2017,
+   "f0": 500,
+   "f1": 8000,
+   "scale": "log",
+   "db_range": 70
+  },
+  "source": {
+   "sample_rate": 40000,
+   "duration_s": 1.2017,
+   "file": "R56 (stimulus, continuous version)",
+   "sha256": "46ec708f6857c207b7029676b3737d16f56ea22e442a35a7873940ff59d2b5d5",
+   "url": "https://doi.org/10.6084/m9.figshare.29203457",
+   "licence": "CC BY 4.0",
+   "citation": "Le B, Bjoring MC, Meliza CD (2025) The zebra finch auditory cortex reconstructs occluded syllables in conspecific song. Nature Communications 16:8452. doi:10.1038/s41467-025-63182-y"
+  },
+  "playback": "Stimulus file scaled to a common peak level. Spectrogram: 24 log-spaced bands, 0.5\u20138 kHz."
+ }
+]

@@ -1,11 +1,20 @@
 // Interactive instruments built from real data. Each export mounts into a host element.
-import {decode, bandSpectrogram, gammatone, paintMatrix, dbNormalise, normaliseMax, magma, diverging, stftPower, makePlayer, PLAY_ICON, PAUSE_ICON} from './dsp.js?v=20261115b';
+import {decode, bandSpectrogram, gammatone, paintMatrix, dbNormalise, normaliseMax, magma, diverging, stftPower, makePlayer, PLAY_ICON, PAUSE_ICON} from './dsp.js?v=20261116a';
 
-const V = '20261115b';
+const V = '20261116a';
 const getJSON = (() => { const c = new Map(); return p => { if (!c.has(p)) c.set(p, fetch(`${p}?v=${V}`).then(r => { if (!r.ok) throw Error(`Could not load ${p}`); return r.json(); })); return c.get(p); }; })();
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const $ = (s, el) => el.querySelector(s);
 
+const track = (cls, h, label) => `<div class="track"><div class="tl">${label}</div><div class="yax" data-y="${cls}"><span></span><em></em><span></span></div><div class="plot"><canvas class="${cls}" height="${h}"></canvas><div class="ph"></div></div></div>`;
+const setY = (host, cls, top, unit, bottom) => { const y = host.querySelector(`[data-y="${cls}"]`); if (!y) return; y.children[0].textContent = top; y.children[1].textContent = unit; y.children[2].textContent = bottom; };
+export function xAxis(dur) {
+  const ms = dur < 1, D = ms ? dur * 1000 : dur, raw = D / 5, p = 10 ** Math.floor(Math.log10(raw)), step = [1, 2, 5, 10].find(m => m * p >= raw) * p, ticks = [];
+  for (let t = 0; t <= D + 1e-9; t += step) ticks.push(+t.toFixed(6));
+  return `<div class="xax"><div>${ticks.map(t => `<span style="left:${(t / D * 100).toFixed(2)}%">${t}</span>`).join('')}</div><em>Time (${ms ? 'ms' : 's'})</em></div>`;
+}
+const cbar = (lo, hi, label, fn) => `<div class="cbar"><span>${lo}</span><i${fn ? ` style="background:linear-gradient(to right,${Array.from({length: 9}, (_, i) => `rgb(${fn(-1 + i / 4).map(v => v | 0).join(',')})`).join(',')})"` : ' class="magma"'}></i><span>${hi}</span><em>${label}</em></div>`;
+const khz = f => String(+(f / 1000).toFixed(f < 1000 ? 2 : 1));
 function playButton(audio) {
   const b = document.createElement('button'); b.className = 'play'; b.type = 'button';
   const set = () => { b.innerHTML = (audio.paused ? PLAY_ICON + 'Play' : PAUSE_ICON + 'Pause'); b.setAttribute('aria-label', audio.paused ? 'Play' : 'Pause'); };
@@ -30,8 +39,8 @@ export async function mountEar(host, {initial = 'finch'} = {}) {
     <div class="inst-bar"><span class="title">Cochlear filterbank model</span>
       <div class="ctl"><label class="vh" for="ear-src">Sound</label><select id="ear-src">${EAR_SOUNDS.map(s => `<option value="${s.id}">${s.label}</option>`).join('')}</select></div></div>
     <div class="inst-body">
-      <div class="track"><canvas class="t-spec" height="120"></canvas><span class="lbl">SPECTROGRAM</span><div class="ph"></div></div>
-      <div class="track"><canvas class="t-coch" height="120"></canvas><span class="lbl">GAMMATONE FILTERBANK · 48 channels</span><div class="ph"></div></div>
+      ${track('t-spec', 120, 'Spectrogram, 96 log-spaced bands')}${cbar('−70', '0', 'dB relative to the loudest point')}
+      ${track('t-coch', 120, 'Gammatone filterbank output, 48 channels')}<div data-x></div>${cbar('0', 'max', 'envelope, cube-root compressed; clipped at the 99.5th percentile')}
       <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-top:.6rem"><span class="pb"></span><span class="small" style="color:var(--ink-3)" data-note></span></div>
     </div>
     <div class="inst-foot"><span>Gammatone filterbank (Holdsworth et al. 1988); bandwidths after Glasberg &amp; Moore (1990). Envelopes cube-root compressed. Computed from the original recording.</span></div></div>`;
@@ -39,12 +48,13 @@ export async function mountEar(host, {initial = 'finch'} = {}) {
   $('.pb', host).appendChild(playButton(audio));
   const phs = host.querySelectorAll('.ph');
   makePlayer(audio, f => phs.forEach(p => p.style.left = (f * 100) + '%'));
-  bindTrackSeek(host.querySelectorAll('.track'), audio);
+  bindTrackSeek(host.querySelectorAll('.plot'), audio);
   const sel = $('#ear-src', host); sel.value = initial;
   const run = async () => {
     const s = EAR_SOUNDS.find(e => e.id === sel.value); audio.src = s.url + '?v=' + V; $('[data-note]', host).textContent = s.note;
     const {x, sr} = await decode(s.url);
     const top = Math.min(s.range[1], sr / 2 * 0.95);
+    setY(host, 't-spec', khz(top), 'kHz, log', khz(s.range[0])); setY(host, 't-coch', khz(top), 'kHz, ERB', khz(s.range[0])); $('[data-x]', host).innerHTML = xAxis(x.length / sr);
     const sp = bandSpectrogram(x, sr, {fmin: s.range[0], fmax: top, nbands: 96});
     paintMatrix($('.t-spec', host), dbNormalise(sp.M, 70));
     const g = gammatone(x, sr, {fmin: s.range[0], fmax: top, n: 48});
@@ -66,9 +76,9 @@ export async function mountSTRF(host) {
       </div></div>
     <div class="inst-body strf-grid">
       <div>
-        <div class="track"><canvas class="t-spec" height="100"></canvas><span class="lbl">SONG (0.5–8 kHz)</span><div class="ph"></div></div>
-        <div class="track"><canvas class="t-raster" height="90"></canvas><span class="lbl">SPIKES · 10 trials</span><div class="ph"></div></div>
-        <div class="track"><canvas class="t-rate" height="110"></canvas><span class="lbl">FIRING RATE</span><div class="ph"></div></div>
+        ${track('t-spec', 100, 'Song spectrogram')}${cbar('−70', '0', 'dB relative to the loudest point')}
+        ${track('t-raster', 90, 'Spikes')}
+        ${track('t-rate', 110, 'Firing rate')}<div data-x></div>
         <div class="legend"><span><i style="background:#fff;outline:1px solid var(--ink-3)"></i>Measured, trial average</span><span><i style="background:var(--accent)"></i>STRF prediction, song held out of fitting</span></div>
         <div style="display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap;margin-top:.8rem"><span class="pb"></span>
           <span class="stat"><b data-r>–</b><span>r, this song</span></span>
@@ -79,7 +89,8 @@ export async function mountSTRF(host) {
         <p class="small" style="margin:0 0 .35rem;color:var(--ink-3)">RECEPTIVE FIELD</p>
         <canvas class="t-strf" width="20" height="24" style="aspect-ratio:1/1.1"></canvas>
         <div class="axis"><span>0 ms</span><span>delay</span><span>95</span></div>
-        <p class="small" style="margin:.5rem 0 0;color:var(--ink-3)">Red, excitatory; blue, suppressive. Frequency 0.5–8 kHz, bottom to top.</p>
+        ${cbar('−', '+', 'weight, scaled to the largest absolute value', diverging)}
+        <p class="small" style="margin:.5rem 0 0;color:var(--ink-3)">Red, excitatory; blue, suppressive. Vertical axis: frequency, 0.5 kHz (bottom) to 8 kHz (top), log-spaced.</p>
       </div>
     </div>
     <div class="inst-foot"><span>Data: Le, Bjoring &amp; Meliza, anaesthetised zebra finches, single units (<a href="https://doi.org/10.6084/m9.figshare.29203457">figshare, CC BY 4.0</a>). Model: linear spectro-temporal receptive field, ridge regression, leave-one-song-out.</span><a href="#research/finch-strf">Model report, ${d.units_fitted} neurons</a></div></div>`;
@@ -87,7 +98,7 @@ export async function mountSTRF(host) {
   $('.pb', host).appendChild(playButton(audio));
   const phs = host.querySelectorAll('.ph');
   makePlayer(audio, f => phs.forEach(p => p.style.left = (f * 100) + '%'));
-  bindTrackSeek(host.querySelectorAll('.track'), audio);
+  bindTrackSeek(host.querySelectorAll('.plot'), audio);
   const draw = () => {
     const e = d.examples.find(x => x.id === $('#sn', host).value), s = $('#ss', host).value, song = d.songs[s];
     audio.src = song.audio + '?v=' + V;
@@ -102,7 +113,7 @@ export async function mountSTRF(host) {
     const mx = Math.max(1, ...real, ...pred), n = real.length;
     const line = (arr, col, lw) => { h.strokeStyle = col; h.lineWidth = lw; h.beginPath(); arr.forEach((v, i) => { const X = i / (n - 1) * W, Y = 104 - v / mx * 96; i ? h.lineTo(X, Y) : h.moveTo(X, Y); }); h.stroke(); };
     line(real, '#ffffff', 1.6); line(pred, getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#c4532d', 2);
-    h.fillStyle = '#9aa6b1'; h.font = '11px sans-serif'; h.fillText(`${Math.round(mx)} spikes/s`, W - 80, 14);
+    setY(host, 't-spec', '8', 'kHz, log', '0.5'); setY(host, 't-raster', '1', 'trial', String(trials.length || '')); setY(host, 't-rate', String(Math.round(mx)), 'spikes/s', '0'); $('[data-x]', host).innerHTML = xAxis(dur);
     const si = songs.indexOf(s);
     $('[data-r]', host).textContent = e.r_songs[si] != null ? e.r_songs[si].toFixed(2) : '–';
     $('[data-rall]', host).textContent = e.r.toFixed(2);
@@ -121,16 +132,16 @@ export async function mountRA(host) {
   host.innerHTML = `<div class="inst">
     <div class="inst-bar"><span class="title">RA population activity during song</span><span class="pb"></span></div>
     <div class="inst-body">
-      <div class="track"><canvas class="t-spec" height="110"></canvas><span class="lbl">SONG · two motifs</span><div class="ph"></div></div>
-      <div class="track"><canvas class="t-ras" height="260"></canvas><span class="lbl">85 RECORDING SITES IN RA · z-scored activity, 20 ms bins</span><div class="ph"></div></div>
-      <div class="track"><canvas class="t-pop" height="70"></canvas><span class="lbl">SUMMED ACTIVITY</span><div class="ph"></div></div>
+      ${track('t-spec', 110, 'Song spectrogram, two motifs')}${cbar('−70', '0', 'dB relative to the loudest point')}
+      ${track('t-ras', 260, 'Threshold crossings at 85 recording sites in RA, 20 ms bins')}${cbar('−1', '+2.5', 'activity, z-scored per site')}
+      ${track('t-pop', 70, 'Threshold crossings summed over sites')}<div data-x></div>
       <p class="small muted" style="margin:.6rem 0 0">Correlation of summed activity between the two motifs: r = ${d.motif_consistency.population_r} (${d.motif_consistency.bin_s * 1000} ms bins); 95th percentile of ${d.motif_consistency.shuffle_n} circular shifts: ${d.motif_consistency.shuffle_p95}.</p>
     </div>
     <div class="inst-foot"><span>Data: FALCON B1, Neuropixels in RA of a singing zebra finch (<a href="https://dandiarchive.org/dandiset/001046">DANDI 001046</a>, CC BY 4.0). Unsorted threshold crossings, rows ordered by time of peak activity.</span></div></div>`;
   const audio = new Audio(d.audio + '?v=' + V); audio.preload = 'auto';
   $('.pb', host).appendChild(playButton(audio));
   const phs = host.querySelectorAll('.ph'); makePlayer(audio, f => phs.forEach(p => p.style.left = (f * 100) + '%'));
-  bindTrackSeek(host.querySelectorAll('.track'), audio);
+  bindTrackSeek(host.querySelectorAll('.plot'), audio);
   { const im = new Image(); im.onload = () => { const cs = $(".t-spec", host); cs.width = 900; cs.height = 110; cs.getContext("2d").drawImage(im, 0, 0, 900, 110); }; im.src = d.spec + "?v=" + V; }
   const W = 900, c = $('.t-ras', host), NB = 90, bw = d.duration / NB; c.width = NB; c.height = d.spikes.length;
   const g = c.getContext('2d'), img = g.createImageData(NB, d.spikes.length), bins = new Float32Array(W / 4);
@@ -142,6 +153,7 @@ export async function mountRA(host) {
   const sm = Array.from(bins, (_, i) => (bins[i - 1] || 0) * .25 + bins[i] * .5 + (bins[i + 1] || 0) * .25), mx = Math.max(...sm);
   h.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#c4532d';
   sm.forEach((v, i) => { const H = v / mx * 64; h.fillRect(i * 4, 70 - H, 3, H); });
+  setY(host, 't-spec', '10', 'kHz', '0'); setY(host, 't-ras', '1', 'site', String(d.spikes.length)); setY(host, 't-pop', String(Math.round(mx)), `per ${Math.round(d.duration / bins.length * 1000)} ms`, '0'); $('[data-x]', host).innerHTML = xAxis(d.duration);
 }
 
 // ------------------------------------------------------------------ 4. Reconstructed neurons (NeuroMorpho)
@@ -190,7 +202,7 @@ export async function mountNeurons(host, {species = 'zebra-finch'} = {}) {
 
 // ------------------------------------------------------------------ 5. The pathway on real anatomy (finch MRI atlas surfaces)
 export async function mountPathway(host, steps) {
-  const [{createSpecimen}, {FINCH_PARTS, FINCH_GROUPS}, meshes] = await Promise.all([import('./viewer3d.js?v=20261115b'), import('./chapters.js?v=20261115b'), getJSON('data/models/finch-hero.json')]);
+  const [{createSpecimen}, {FINCH_PARTS, FINCH_GROUPS}, meshes] = await Promise.all([import('./viewer3d.js?v=20261116a'), import('./chapters.js?v=20261116a'), getJSON('data/models/finch-hero.json')]);
   host.innerHTML = `<figure class="plate"><div class="plate-view" style="height:min(64vh,540px)"></div><figcaption>Zebra finch brain from the 3D MRI atlas of Poirier et al. (2008). Surfaces are marching-cubes meshes of the authors' masks. The ear, brainstem auditory nuclei, CM and NCM are not delineated in this atlas. <a href="#lab/zebra-finch">Open the full atlas</a></figcaption></figure>`;
   const v = await createSpecimen(host.querySelector('.plate-view'), {meshes, up: '+z', shell: 'Whole brain', parts: FINCH_PARTS, groups: FINCH_GROUPS, caption: 'Choose a step on the left, or a label.'});
   return name => v.select(name);

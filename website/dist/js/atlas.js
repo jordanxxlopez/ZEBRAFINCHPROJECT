@@ -2,7 +2,7 @@
 // Volumes are stored x-fastest (index = x + nx*(y + ny*z)). Nothing is interpolated in the browser.
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-const V = '20261115b';
+const V = '20261116a';
 
 // display mapping per species: three.js "up" and plane names
 const VIEW = {
@@ -283,7 +283,7 @@ async function init3D() {
   if (S.threeStarting) return; S.threeStarting = true;
   const host = $('#av-three'), mine = S;
   const wait = document.createElement('p'); wait.className = 'loading'; wait.setAttribute('role', 'status'); wait.textContent = 'Loading 3D surfaces…'; host.append(wait);
-  const [THREE, {OrbitControls}, meshes, {dress}] = await Promise.all([import('three'), import('../assets/OrbitControls.js'), loadMeshes(), import('./viewer3d.js?v=20261115b')]);
+  const [THREE, {OrbitControls}, meshes, {dress}] = await Promise.all([import('three'), import('../assets/OrbitControls.js'), loadMeshes(), import('./viewer3d.js?v=20261116a')]);
   if (S !== mine || !host.isConnected) return;
   let renderer;
   try { renderer = new THREE.WebGLRenderer({antialias: true, alpha: true}); }

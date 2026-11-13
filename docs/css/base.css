@@ -137,7 +137,7 @@ pre{background:var(--surface);border:1px solid var(--rule);padding:.8rem;overflo
 .sec-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:2.5rem;align-items:start}
 .sec-grid.wide{grid-template-columns:1fr}
 .sec-grid.wide .prose{max-width:var(--text)}
-.sec-grid.wide>[data-inst]{max-width:880px}
+.sec-grid.wide>[data-inst]{max-width:720px}
 .pathway{list-style:none;padding:0;margin:.6rem 0 0;border-top:1px solid var(--rule)}
 .pathway button{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--rule);padding:.45rem 0;font:inherit;font-size:.92rem;color:var(--ink);cursor:pointer}
 .pathway button[aria-pressed=true]{font-weight:600}
@@ -153,7 +153,22 @@ pre{background:var(--surface);border:1px solid var(--rule);padding:.8rem;overflo
 .inst-bar .ctl{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
 .inst-body{padding:.75rem}
 .inst-foot{padding:.5rem .75rem;border-top:1px solid var(--rule);font-size:.8rem;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;justify-content:space-between}
-.track{position:relative;margin:.3rem 0}
+.track{display:grid;grid-template-columns:50px minmax(0,1fr);column-gap:6px;margin:.6rem 0 .15rem}
+.track .tl{grid-column:2;font-size:.76rem;color:var(--ink-2);margin-bottom:2px}
+.yax{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;text-align:right;font-size:.7rem;line-height:1;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.yax em,.xax em,.cbar em{font-style:normal;color:var(--ink-3)}
+.track .yax{grid-column:1;grid-row:2}.track .plot{grid-column:2;grid-row:2;position:relative}
+.xax{margin-left:56px;font-size:.7rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.xax>div{position:relative;height:1.15rem;border-top:1px solid var(--rule-2)}
+.xax span{position:absolute;top:3px;transform:translateX(-50%)}.xax span:first-child{transform:none}
+.xax em{display:block;text-align:center}
+.cbar{display:flex;align-items:center;flex-wrap:wrap;gap:.2rem .4rem;font-size:.7rem;color:var(--ink-2);margin:.25rem 0 0 56px}
+.cbar i{display:block;width:110px;height:8px}
+.cbar i.magma{background:linear-gradient(to right,#000004,#1c1044,#4f127b,#812581,#b5367a,#e55064,#fb8761,#fec287,#fcfdbf)}
+.strf-side .cbar{margin-left:0;margin-top:.5rem}
+.axbox{display:grid;grid-template-columns:50px minmax(0,1fr);column-gap:6px}
+.row-btn{font:inherit;color:var(--link);background:none;border:0;padding:0;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+tr[aria-current=true]{background:var(--surface);box-shadow:inset 2px 0 0 var(--accent)}
 .track canvas{display:block;width:100%;background:#000}
 .track canvas.t-spec,.track canvas.t,.track canvas.t-coch{height:96px}
 .track canvas.t-raster{height:76px}.track canvas.t-rate{height:92px}.track canvas.t-pop{height:54px}
@@ -229,7 +244,7 @@ pre{background:var(--surface);border:1px solid var(--rule);padding:.8rem;overflo
 .claim p{margin:.25rem 0;max-width:var(--text)}
 .method-box{border-top:1px solid var(--rule);padding:1rem 0;font-size:.93rem;max-width:80ch}
 .method-box h3{margin-top:.8rem}
-.chart{border:1px solid var(--rule);padding:10px;margin:1rem 0;max-width:680px}
+.chart{border:1px solid var(--rule);padding:10px;margin:1rem 0;max-width:720px}
 .chart svg{display:block;width:100%;height:auto;overflow:visible}
 .chart text{fill:var(--ink-2);font-family:var(--font);font-size:12px}
 .chart .axis line{stroke:var(--rule-2)}.chart .grid line{stroke:var(--rule);stroke-dasharray:2 3}

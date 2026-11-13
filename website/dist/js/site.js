@@ -1,10 +1,10 @@
-import {SPECIES as BASE_SPECIES, REFS as BASE_REFS, ATLASES as BASE_ATLASES, REVIEWS, VERDICTS} from './content.js?v=20261115b';
-import {NEWREFS, FINCH_PARTS, FINCH_GROUPS} from './chapters.js?v=20261115b';
-import {MORE_REFS, MORE_SPECIES, MORE_ATLASES, FINCH_SECTIONS, FINCH_FACTS, CHAPTER_PLAN} from './species.js?v=20261115b';
-import * as charts from './charts.js?v=20261115b';
-import * as M from './models.js?v=20261115b';
+import {SPECIES as BASE_SPECIES, REFS as BASE_REFS, ATLASES as BASE_ATLASES, REVIEWS, VERDICTS} from './content.js?v=20261116a';
+import {NEWREFS, FINCH_PARTS, FINCH_GROUPS} from './chapters.js?v=20261116a';
+import {MORE_REFS, MORE_SPECIES, MORE_ATLASES, FINCH_SECTIONS, FINCH_FACTS, CHAPTER_PLAN} from './species.js?v=20261116a';
+import * as charts from './charts.js?v=20261116a';
+import * as M from './models.js?v=20261116a';
 
-const V = '20261115b';
+const V = '20261116a';
 const SPECIES = [...BASE_SPECIES, ...MORE_SPECIES];
 const ATLASES = {...BASE_ATLASES, ...MORE_ATLASES};
 const REFS = {...BASE_REFS, ...NEWREFS, ...MORE_REFS};
@@ -46,9 +46,10 @@ document.addEventListener('click', e => {
 let SOUNDS = null;
 async function loadSounds() {
   if (SOUNDS) return SOUNDS;
-  const [finch, marine, specs, extra] = await Promise.all([getJSON('data/recordings.json'), getJSON('data/marine-recordings.json'), getJSON('data/spectrograms.json'), getJSON('data/sounds.json')]);
-  const ls = n => { const s = specs[n]; return s ? {file: s.url, t1: s.time_end_seconds, f1: s.frequency_max_hz} : null; };
-  SOUNDS = [...extra,
+  const [finch, marine, specs, extra, songs] = await Promise.all([getJSON('data/recordings.json'), getJSON('data/marine-recordings.json'), getJSON('data/spectrograms.json'), getJSON('data/sounds.json'), getJSON('data/finch-songs.json')]);
+  const ls = n => { const s = specs[n]; return s ? {file: s.url, t1: s.time_end_seconds, f1: s.frequency_max_hz, db_range: 80} : null; };
+  const order = id => SPECIES.findIndex(s => s.id === id);
+  SOUNDS = [...[...songs, ...extra].sort((a, b) => order(a.species) - order(b.species)),
     ...marine.map(r => ({id: r.name, species: 'sperm-whale', title: r.name.replace(/_/g, ' '), kind: r.kind || 'Field recording', files: {original: r.url}, spectrogram: ls(r.name), source: {sample_rate: r.sample_rate, duration_s: r.duration_seconds, file: r.archive_member, sha256: r.sha256, url: r.source_url, licence: r.license ? r.license.replace(/^CC-BY-/, 'CC BY ') : 'See source record', citation: r.context || ''}, playback: 'Original file.'})),
     ...finch.map(r => ({id: r.name, species: 'zebra-finch', title: `Syllable ${r.name}`, kind: 'Song syllable', files: {original: r.url}, spectrogram: ls(r.name), source: {sample_rate: r.sample_rate, duration_s: r.duration_seconds, file: r.archive_member, sha256: r.sha256, url: 'https://doi.org/10.5281/zenodo.5545872', licence: 'CC BY 4.0', citation: 'ML4BL dataset; Zandberg et al. (2024). doi:10.1371/journal.pcbi.1012329'}, playback: 'Original file.'}))];
   return SOUNDS;
@@ -65,7 +66,7 @@ async function buildIndex() {
   ANALYSES.forEach(r => it.push({t: r.title, s: `Research · ${SP[r.species].common}`, h: aHref(r)}));
   const metas = (await Promise.all(SPECIES.filter(s => hasAtlas(s.id)).map(s => atlasMeta(s.id).then(m => [s.id, m]).catch(() => null)))).filter(Boolean);
   for (const [k, m] of metas) for (const r of m.regions || []) it.push({t: r.name + (r.hemisphere ? ` (${r.hemisphere.replace(':', '')})` : ''), s: `Brain region · ${SP[k].common}${r.acronym && r.acronym !== r.name ? ' · ' + r.acronym : ''}`, h: `#atlas/${k}?r=${r.index}`});
-  (await loadSounds()).filter(s => s.species !== 'zebra-finch').forEach(s => it.push({t: s.title, s: `Recording · ${SP[s.species].common}`, h: '#recordings/' + s.id}));
+  (await loadSounds()).filter(s => s.kind !== 'Song syllable').forEach(s => it.push({t: s.title, s: `Recording · ${SP[s.species].common}`, h: '#recordings/' + s.id}));
   INDEX = it.map(i => ({...i, k: (i.t + ' ' + i.s).toLowerCase()})); return INDEX;
 }
 {
@@ -126,18 +127,24 @@ function speciesTable(sounds) {
 const UP = {'house-mouse': '-z', 'common-marmoset': '+z', 'zebra-finch': '+z', 'honeybee': '-y'};
 async function specimen(el, id, onSelect) {
   el.innerHTML = LOADING3D;
-  const {createSpecimen} = await import('./viewer3d.js?v=20261115b');
+  const {createSpecimen} = await import('./viewer3d.js?v=20261116a');
   if (id === 'zebra-finch') return createSpecimen(el, {meshes: await getJSON('data/models/finch-hero.json'), up: '+z', shell: 'Whole brain', parts: FINCH_PARTS, groups: FINCH_GROUPS, onSelect});
   const [meta, meshes] = await Promise.all([atlasMeta(id), getJSON(`data/atlas/${id}/meshes.json`)]);
   return createSpecimen(el, {meshes, up: UP[id] || meta.view?.up || '+z', auto: true, scale: meta.unit !== 'voxel' && id !== 'honeybee'});
 }
+const specAxes = (inner, id = '') => `<div class="axbox"><div class="yax"><span data-f1></span><em data-fu></em><span data-f0></span></div><div class="spec-box"${id ? ` id="${id}"` : ''}>${inner}</div></div><div data-x></div><div class="cbar"><span data-db></span><i class="magma"></i><span>0</span><em>dB relative to the loudest point</em></div>`;
+function setSpecAxes(el, sg, dur) {
+  const k = v => String(+(v / 1000).toFixed(v < 1000 ? 2 : 1));
+  $('[data-f1]', el).textContent = sg ? k(sg.f1) : ''; $('[data-f0]', el).textContent = sg ? k(sg.f0 || 0) : ''; $('[data-fu]', el).textContent = sg ? (sg.scale === 'log' ? 'kHz, log' : 'kHz') : '';
+  $('[data-x]', el).innerHTML = sg ? M.xAxis(+sg.t1 || +dur) : ''; $('[data-db]', el).textContent = sg ? '−' + (sg.db_range || 70) : ''; $('.cbar', el).hidden = !sg;
+}
 async function player(el, list, {title = 'Recordings', all} = {}) {
-  el.innerHTML = `<div class="inst"><div class="inst-bar"><span class="title">${esc(title)}</span><span class="ctl"><span class="pb"></span>${all ? `<a class="btn sm" href="${all}">All recordings</a>` : ''}</span></div><div class="inst-body"><div class="spec-box"><img alt="" data-img><div class="ph"></div></div>
+  el.innerHTML = `<div class="inst"><div class="inst-bar"><span class="title">${esc(title)}</span><span class="ctl"><span class="pb"></span>${all ? `<a class="btn sm" href="${all}">All recordings</a>` : ''}</span></div><div class="inst-body">${specAxes('<img alt="" data-img><div class="ph"></div>')}
     <p class="small muted" data-cap style="margin:.4rem 0 .6rem"></p><div class="seg" role="group" aria-label="Recording">${list.map((s, i) => `<button type="button" data-i="${i}" aria-pressed="${i === 0}">${esc(s.short || s.title)}</button>`).join('')}</div></div><div class="inst-foot"><span data-src></span></div></div>`;
-  const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261115b'); const audio = new Audio(), phd = $('.ph', el); makePlayer(audio, f => phd.style.left = (f * 100) + '%');
+  const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261116a'); const audio = new Audio(), phd = $('.ph', el); makePlayer(audio, f => phd.style.left = (f * 100) + '%');
   const b = document.createElement('button'); b.className = 'play'; const setB = () => b.innerHTML = audio.paused ? PLAY_ICON + 'Play' : PAUSE_ICON + 'Pause'; ['play', 'pause', 'ended'].forEach(ev => audio.addEventListener(ev, setB)); setB(); b.onclick = () => audio.paused ? audio.play() : audio.pause(); $('.pb', el).appendChild(b);
   const pick = i => { const s = list[i]; audio.src = s.files.realtime || s.files.expanded || s.files.original; $('[data-img]', el).src = s.spectrogram?.file || ''; $('[data-img]', el).alt = `Spectrogram of ${s.title}`;
-    $('[data-cap]', el).textContent = `${s.kind}, ${(+s.source.duration_s).toFixed(2)} s${s.spectrogram ? `. Frequency axis 0–${(s.spectrogram.f1 / 1000).toFixed(0)} kHz` : ''}${s.files.expanded && !s.files.realtime ? '. Played at reduced speed' : ''}.`;
+    $('[data-cap]', el).textContent = `${s.kind}, ${(+s.source.duration_s).toFixed(2)} s${s.files.expanded && !s.files.realtime ? '. Played at reduced speed; axes show the recording as made' : ''}.`; setSpecAxes(el, s.spectrogram, s.source.duration_s);
     $('[data-src]', el).textContent = `${s.source.citation.split('. doi')[0]}. ${s.source.licence}`; $$('[data-i]', el).forEach(x => x.setAttribute('aria-pressed', String(+x.dataset.i === i))); };
   $$('[data-i]', el).forEach(x => x.onclick = () => { pick(+x.dataset.i); audio.play().catch(() => {}); });
   $('.spec-box', el).onclick = e => { const r = e.currentTarget.getBoundingClientRect(); if (audio.duration) { audio.currentTime = (e.clientX - r.left) / r.width * audio.duration; audio.play(); } };
@@ -204,7 +211,7 @@ async function atlasPage(id) {
   const s = SP[id]; if (!s || !hasAtlas(id)) return atlasIndex();
   setTitle(`${s.common} brain atlas`);
   main.innerHTML = `<div class="wrap"><header class="page-head" style="padding-bottom:.6rem"><p class="crumb"><a href="#atlas">Brain atlases</a> / <a href="#species/${id}">${esc(s.common)}</a></p><h1 id="av-title"></h1><p class="muted" id="av-sub" style="margin:0 0 .9rem"></p><dl class="meta" id="av-facts"></dl><p style="margin:.9rem 0 0"><button class="btn sm" type="button" id="av-copy">Copy link to this view</button> <span class="small muted" id="av-copied" role="status"></span></p></header>${ATLAS_MARKUP}</div>`;
-  const {openAtlas} = await import('./atlas.js?v=20261115b');
+  const {openAtlas} = await import('./atlas.js?v=20261116a');
   await openAtlas(id, {status: t => { const r = $('#av-readout'); if (r) r.textContent = t || ''; }, esc, getJSON, sp: s});
 }
 
@@ -245,7 +252,7 @@ async function speciesPage(id, secId) {
   <div class="wrap">${secs.map(x => `<section class="sec" id="sec-${x.id}"><h2><span class="sec-n">${secs.indexOf(x) + 1}</span>${esc(x.title)}</h2>${x.full || (x.textOnly ? `<div class="prose text">${x.html}</div>` : `<div class="sec-grid${x.wide ? ' wide' : ''}"><div class="prose">${x.html}</div><div data-inst="${x.inst || ''}"></div></div>`)}</section>`).join('')}
     <section class="sec" id="sec-refs"><h2>References</h2><ol class="refs">${used.map(k => `<li>${refItem(k)}</li>`).join('') || '<li class="muted">See the atlas source above.</li>'}</ol></section></div>`;
   const mounts = {
-    song: async el => { const d = await getJSON('data/models/zebra-finch/strf.json'); return player(el, Object.entries(d.songs).map(([k, v], i) => ({title: `Song ${i + 1}`, short: String(i + 1), kind: `Song of male ${k}`, files: {original: v.audio}, spectrogram: {file: v.spec, f1: 8000}, source: {duration_s: v.dur, citation: 'Le, Bjoring & Meliza (2025), figshare 10.6084/m9.figshare.29203457', licence: 'CC BY 4.0'}})), {title: 'Songs of eight males'}); },
+    song: async el => { const d = await getJSON('data/models/zebra-finch/strf.json'); return player(el, Object.entries(d.songs).map(([k, v], i) => ({title: `Song ${i + 1}`, short: String(i + 1), kind: `Song of male ${k}`, files: {original: v.audio}, spectrogram: {file: v.spec, t1: v.dur, f0: 500, f1: 8000, scale: 'log', db_range: 70}, source: {duration_s: v.dur, citation: 'Le, Bjoring & Meliza (2025), figshare 10.6084/m9.figshare.29203457', licence: 'CC BY 4.0'}})), {title: 'Songs of eight males'}); },
     pathway: async el => { el.innerHTML = '<figure><div class="plate-view" style="height:440px"></div></figure>'; const v = await specimen($('.plate-view', el), 'zebra-finch', nm => $$('[data-part]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.part === nm)))); $$('[data-part]').forEach(b => b.onclick = () => { const on = b.getAttribute('aria-pressed') !== 'true'; v.select(on ? b.dataset.part : null); }); },
     atlas3d: async el => { if (!meta.meshes) { el.innerHTML = `<figure><a href="#atlas/${id}"><img src="assets/atlas-thumbs/${id}.jpg?v=${V}" alt="Section through the ${esc(s.common)} brain scan" style="max-width:420px;width:100%"></a><figcaption>Section from the scan. No surfaces or region labels exist for this specimen.</figcaption></figure>`; return; } el.innerHTML = '<figure><div class="plate-view" style="height:420px"></div></figure>'; await specimen($('.plate-view', el), id); },
     ear: el => M.mountEar(el, {initial: 'finch'}), strf: el => M.mountSTRF(el), ra: el => M.mountRA(el), neurons: el => M.mountNeurons(el, {species: id === 'house-mouse' ? 'house-mouse' : 'zebra-finch'}),
@@ -264,38 +271,40 @@ async function speciesPage(id, secId) {
 
 // ---------------------------------------------------------------- recordings
 const lib = {page: 0, cur: null, mode: null, audio: null};
+const PER = 25;
 async function recordings(arg) {
   if (arg === 'video') return video();
   setTitle('Recordings'); const all = await loadSounds();
   if (!$('#lib')) {
-    main.innerHTML = `<div class="wrap"><header class="page-head"><h1>Recordings</h1><p class="lede">${fmt(all.length)} recordings with spectrograms. Ultrasonic calls are also provided at reduced playback speed; the transformation is stated with each file.</p><p><a href="#recordings/video">Research video</a></p></header>
-      <div class="filters"><label class="field" for="f-sp">Species<select id="f-sp"><option value="">All</option>${SPECIES.map(s => `<option value="${s.id}">${esc(s.common)}</option>`).join('')}</select></label>
-        <label class="field" for="f-k">Type<select id="f-k"><option value="">All</option></select></label><label class="field" for="f-q">Name<input id="f-q" type="search"></label></div>
-      <div class="lib" id="lib" style="margin-bottom:3rem"><div class="inst" id="pl"><div class="inst-bar"><span class="title" id="pl-t">No recording selected</span><span class="pb"></span></div>
-        <div class="inst-body"><div class="spec-box" id="pl-box"><img id="pl-img" alt=""><div class="ph"></div><div class="hover-read" hidden id="pl-hov"></div></div><div class="spec-axes" id="pl-ax"></div>
+    main.innerHTML = `<div class="wrap"><header class="page-head"><h1>Recordings</h1><p class="lede">${fmt(all.length)} recordings with spectrograms, each with its source, licence and original file name. Ultrasonic calls are also provided at reduced playback speed.</p><p><a href="#recordings/video">Research video</a></p></header>
+      <div id="lib"><div class="inst" id="pl" style="max-width:720px"><div class="inst-bar"><span class="title" id="pl-t">No recording selected</span><span class="pb"></span></div>
+        <div class="inst-body">${specAxes('<img id="pl-img" alt=""><div class="ph"></div><div class="hover-read" hidden id="pl-hov"></div>', 'pl-box')}
           <div style="margin:.6rem 0" class="seg" id="pl-mode" role="group" aria-label="Playback version"></div><div id="pl-meta" class="small muted"></div></div></div>
-        <div><div class="lib-list" id="lib-list" aria-label="Recordings"></div><div class="pager" id="lib-pager"></div></div></div></div>`;
+      <div class="filters" style="margin-top:1.6rem"><label class="field" for="f-sp">Species<select id="f-sp"><option value="">All</option>${SPECIES.filter(s => all.some(x => x.species === s.id)).map(s => `<option value="${s.id}">${esc(s.common)}</option>`).join('')}</select></label>
+        <label class="field" for="f-k">Type<select id="f-k"><option value="">All</option></select></label><label class="field" for="f-q">Name<input id="f-q" type="search"></label></div>
+      <div class="tbl"><table><thead><tr><th>Recording</th><th>Species</th><th class="hide-sm">Type</th><th class="num">Duration</th><th class="hide-sm">Recordist or source</th><th class="hide-sm">Licence</th></tr></thead><tbody id="lib-list"></tbody></table></div>
+      <div class="pager" id="lib-pager" style="margin-bottom:3rem"></div></div></div>`;
     const kinds = () => { const sp = $('#f-sp').value; $('#f-k').innerHTML = '<option value="">All</option>' + [...new Set(all.filter(s => !sp || s.species === sp).map(s => s.kind))].sort().map(k => `<option>${esc(k)}</option>`).join(''); };
     kinds(); $('#f-sp').onchange = () => { kinds(); lib.page = 0; libList(all); }; $('#f-k').onchange = $('#f-q').oninput = () => { lib.page = 0; libList(all); };
-    const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261115b');
+    const {makePlayer, PLAY_ICON, PAUSE_ICON} = await import('./dsp.js?v=20261116a');
     lib.audio = new Audio(); const phd = $('#pl-box .ph'); makePlayer(lib.audio, f => phd.style.left = (f * 100) + '%');
     const b = document.createElement('button'); b.className = 'play'; const setB = () => b.innerHTML = lib.audio.paused ? PLAY_ICON + 'Play' : PAUSE_ICON + 'Pause'; ['play', 'pause', 'ended'].forEach(ev => lib.audio.addEventListener(ev, setB)); setB(); b.onclick = () => lib.audio.paused ? lib.audio.play() : lib.audio.pause(); $('#pl .pb').appendChild(b);
     const box = $('#pl-box'), hov = $('#pl-hov');
-    box.onpointermove = e => { const s = all.find(x => x.id === lib.cur); if (!s?.spectrogram) return; const r = box.getBoundingClientRect(), t = (e.clientX - r.left) / r.width * s.spectrogram.t1, f = (1 - (e.clientY - r.top) / r.height) * s.spectrogram.f1; hov.hidden = false; hov.style.left = (e.clientX - r.left) + 'px'; hov.style.top = (e.clientY - r.top) + 'px'; hov.textContent = `${t < 1 ? (t * 1000).toFixed(0) + ' ms' : t.toFixed(2) + ' s'}, ${f >= 1000 ? (f / 1000).toFixed(1) + ' kHz' : f.toFixed(0) + ' Hz'}`; };
+    box.onpointermove = e => { const s = all.find(x => x.id === lib.cur), sg = s?.spectrogram; if (!sg) return; const r = box.getBoundingClientRect(), t = (e.clientX - r.left) / r.width * sg.t1, fr = 1 - (e.clientY - r.top) / r.height, f = sg.scale === 'log' ? sg.f0 * (sg.f1 / sg.f0) ** fr : (sg.f0 || 0) + fr * (sg.f1 - (sg.f0 || 0)); hov.hidden = false; hov.style.left = (e.clientX - r.left) + 'px'; hov.style.top = (e.clientY - r.top) + 'px'; hov.textContent = `${t < 1 ? (t * 1000).toFixed(0) + ' ms' : t.toFixed(2) + ' s'}, ${f >= 1000 ? (f / 1000).toFixed(1) + ' kHz' : f.toFixed(0) + ' Hz'}`; };
     box.onpointerleave = () => hov.hidden = true; box.onclick = e => { const r = box.getBoundingClientRect(); if (lib.audio.duration) { lib.audio.currentTime = (e.clientX - r.left) / r.width * lib.audio.duration; lib.audio.play(); } };
-    $('#lib-list').onkeydown = e => { const bs = $$('#lib-list button'), i = bs.indexOf(document.activeElement); if (e.key === 'ArrowDown') { e.preventDefault(); bs[Math.min(bs.length - 1, i + 1)]?.focus(); } if (e.key === 'ArrowUp') { e.preventDefault(); bs[Math.max(0, i - 1)]?.focus(); } };
   }
-  if (arg) { const s = all.find(x => x.id === arg); if (s) { if ($('#f-sp').value !== s.species) { $('#f-sp').value = s.species; $('#f-sp').onchange(); } lib.page = Math.max(0, Math.floor(libFiltered(all).findIndex(x => x.id === arg) / 40)); lib.cur = arg; libLoad(s); } }
+  if (arg) { const s = all.find(x => x.id === arg); if (s) { if ($('#f-sp').value && $('#f-sp').value !== s.species) { $('#f-sp').value = s.species; $('#f-sp').onchange(); } lib.page = Math.max(0, Math.floor(libFiltered(all).findIndex(x => x.id === arg) / PER)); lib.cur = arg; libLoad(s); } }
   if (!lib.cur) { const f = libFiltered(all)[0]; if (f) { lib.cur = f.id; libLoad(f); } }
   libList(all);
 }
 function libFiltered(all) { const sp = $('#f-sp').value, k = $('#f-k').value, q = $('#f-q').value.trim().toLowerCase(); return all.filter(s => (!sp || s.species === sp) && (!k || s.kind === k) && (!q || (s.title + ' ' + s.id + ' ' + s.kind).toLowerCase().includes(q))); }
+const srcShort = c => { const m = (c || '').match(/^(.*?\(\d{4}\))/); return m ? m[1] : (c || '').split('. doi')[0].slice(0, 80); };
 function libList(all) {
-  const L = libFiltered(all), pages = Math.max(1, Math.ceil(L.length / 40)); lib.page = Math.min(lib.page, pages - 1);
-  $('#lib-list').innerHTML = L.slice(lib.page * 40, lib.page * 40 + 40).map(s => `<button type="button" data-id="${esc(s.id)}" aria-current="${s.id === lib.cur}">${esc(s.title)}<small>${esc(SP[s.species].common)}, ${esc(s.kind.toLowerCase())}, ${(+s.source.duration_s).toFixed(2)} s${s.files.expanded ? ' as recorded' : ''}</small></button>`).join('') || '<p style="padding:.7rem;margin:0" class="muted">No recordings match.</p>';
+  const L = libFiltered(all), pages = Math.max(1, Math.ceil(L.length / PER)); lib.page = Math.min(lib.page, pages - 1);
+  $('#lib-list').innerHTML = L.slice(lib.page * PER, lib.page * PER + PER).map(s => `<tr aria-current="${s.id === lib.cur}"><td><button type="button" class="row-btn" data-id="${esc(s.id)}">${esc(s.title)}</button></td><td>${esc(SP[s.species].common)}</td><td class="hide-sm">${esc(s.kind)}</td><td class="num">${(+s.source.duration_s) < 1 ? Math.round(s.source.duration_s * 1000) + ' ms' : (+s.source.duration_s).toFixed(2) + ' s'}</td><td class="hide-sm small">${esc(srcShort(s.source.citation))}</td><td class="hide-sm small">${esc(s.source.licence)}</td></tr>`).join('') || '<tr><td colspan="6" class="muted">No recordings match.</td></tr>';
   $('#lib-pager').innerHTML = `<span>${fmt(L.length)} recordings</span><span><button class="btn sm" ${lib.page ? '' : 'disabled'} data-p="-1">Previous</button> ${lib.page + 1} / ${pages} <button class="btn sm" ${lib.page < pages - 1 ? '' : 'disabled'} data-p="1">Next</button></span>`;
   $$('#lib-pager [data-p]').forEach(b => b.onclick = () => { lib.page += +b.dataset.p; libList(all); });
-  $$('#lib-list button').forEach(b => b.onclick = () => { history.replaceState(null, '', '#recordings/' + b.dataset.id); lib.cur = b.dataset.id; libLoad(all.find(x => x.id === b.dataset.id)); $$('#lib-list button').forEach(x => x.setAttribute('aria-current', String(x === b))); lib.audio.play().catch(() => {}); });
+  $$('#lib-list .row-btn').forEach(b => b.onclick = () => { history.replaceState(null, '', '#recordings/' + b.dataset.id); lib.cur = b.dataset.id; libLoad(all.find(x => x.id === b.dataset.id)); $$('#lib-list tr').forEach(r => r.setAttribute('aria-current', String(r.contains(b)))); lib.audio.play().catch(() => {}); });
 }
 function libLoad(s) {
   $('#pl-t').textContent = `${SP[s.species].common}: ${s.title}`;
@@ -303,8 +312,8 @@ function libLoad(s) {
   lib.mode = modes.includes('realtime') ? 'realtime' : modes[0]; lib.audio.src = s.files[lib.mode];
   $('#pl-mode').innerHTML = modes.length > 1 ? modes.map(m => `<button type="button" data-m="${m}" aria-pressed="${m === lib.mode}">${lab[m]}</button>`).join('') : ''; $('#pl-mode').hidden = modes.length < 2;
   $$('#pl-mode button').forEach(b => b.onclick = () => { lib.mode = b.dataset.m; lib.audio.src = s.files[lib.mode]; lib.audio.play(); $$('#pl-mode button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); });
-  const sg = s.spectrogram; $('#pl-img').src = sg?.file || ''; $('#pl-img').alt = sg ? `Spectrogram, 0 to ${(sg.f1 / 1000).toFixed(0)} kHz, ${(+sg.t1).toFixed(2)} s` : '';
-  $('#pl-ax').innerHTML = sg ? `<span>0 s</span><span>Frequency 0–${(sg.f1 / 1000).toFixed(0)} kHz</span><span>${+sg.t1 < 1 ? (sg.t1 * 1000).toFixed(0) + ' ms' : (+sg.t1).toFixed(2) + ' s'}</span>` : '';
+  const sg = s.spectrogram; $('#pl-img').src = sg?.file || ''; $('#pl-img').alt = sg ? `Spectrogram, ${((sg.f0 || 0) / 1000)} to ${(sg.f1 / 1000).toFixed(0)} kHz, ${(+sg.t1).toFixed(2)} s` : '';
+  setSpecAxes($('#pl'), sg, s.source.duration_s);
   const src = s.source;
   $('#pl-meta').innerHTML = `<p style="margin:0 0 .4rem">${esc(s.playback)}</p><dl class="meta"><dt>Source</dt><dd>${esc(src.citation)} ${src.url ? `<a href="${esc(src.url)}">record</a>` : ''}</dd><dt>Licence</dt><dd>${esc(src.licence)}</dd><dt>File</dt><dd class="mono">${esc(src.file)}</dd><dt>Sample rate</dt><dd>${src.sample_rate ? fmt(src.sample_rate) + ' Hz' : '–'}</dd></dl>`;
 }
@@ -402,12 +411,21 @@ async function dataPage() {
     <div><h2>Outcome categories</h2><dl class="meta">${Object.entries(VERDICTS).map(([k, v]) => `<dt>${chip(k)}</dt><dd>${esc(v.text)}</dd>`).join('')}<dt>${chip('model', 'Model')}</dt><dd>A model fitted to open data and reported with its validation.</dd></dl>
       <h2 style="margin-top:1.6rem">Reproducibility</h2><p>Derived files are generated from the original downloads by scripts in the <a href="${GH}">repository</a>. Source URLs and SHA-256 checksums are listed in <a href="${GH}/blob/main/research/sources-2026-11.json">sources-2026-11.json</a>.</p></div></div></div>`;
 }
+const RELEASES = [
+  ['2.3', '12 November 2026', 'Axes, units and colour scales on all figures; one colour map for all spectrograms; recordings listed in a table with source and licence; whole zebra finch songs added to the recordings.'],
+  ['2.2', '12 November 2026', 'Atlas viewer shows the three-dimensional view and sections together; a surface for every labelled region; view links; source, citation and file listing on each atlas page.'],
+  ['2.1', '12 November 2026', 'Chapter pages for all twelve species; corrections from an accuracy review of the texts and analyses; six references added; accessibility fixes.'],
+  ['2.0', '12 November 2026', 'Rebuilt as a multi-species collection: eleven brain atlases, receptive-field models of zebra finch auditory neurons, reanalyses of deposited data.'],
+  ['1.0', '9 November 2026', 'Zebra finch and sperm whale collections.']];
 function about() {
   setTitle('About');
   main.innerHTML = `<div class="wrap"><header class="page-head"><h1>About</h1><p class="lede">An independent, non-commercial collection of open data on animal communication and its neural basis, with an emphasis on three-dimensional brain atlases and the auditory and vocal systems.</p></header>
   <div class="split" style="margin-bottom:3rem"><div class="text"><h2>Scope and sources</h2><p>All recordings, images, atlases, neuron reconstructions and videos come from published studies or public repositories and retain their original licences. Derived figures and models are generated from those data by published scripts. The collection is not affiliated with the institutions whose data it presents. Some resources, including the Allen mouse atlas and InsectBrainDB surfaces, permit non-commercial use only.</p>
     <h2>Citing</h2><p>Animal Communication &amp; Neuroscience (2026). https://jordanxxlopez.github.io/animal-communication-neuroscience/. Original data sources should be cited as listed on each page.</p></div>
-  <div><h2>Accessibility</h2><p>Text size, contrast, colour theme and motion can be set under Display. Section views and the three-dimensional specimen views respond to the arrow keys, and every region shown in three dimensions is also listed as text. Charts are accompanied by data tables, and spectrograms carry text descriptions.</p><h2>Source code</h2><p><a href="${GH}">${GH.replace('https://', '')}</a></p></div></div></div>`;
+  <div><h2>Accessibility</h2><p>Text size, contrast, colour theme and motion can be set under Display. Section views and the three-dimensional specimen views respond to the arrow keys, and every region shown in three dimensions is also listed as text. Charts are accompanied by data tables, and spectrograms carry text descriptions.</p><h2>Source code</h2><p><a href="${GH}">${GH.replace('https://', '')}</a></p>
+    <h2>Corrections and contact</h2><p>Corrections, missing attributions and suggestions for datasets are received through the <a href="${GH}/issues">issue tracker</a> of the repository.</p></div></div>
+  <section style="margin-bottom:3rem"><h2>Version</h2><p>Version ${RELEASES[0][0]}, updated ${RELEASES[0][1]}.</p>
+    <div class="tbl"><table><thead><tr><th>Version</th><th>Date</th><th>Changes</th></tr></thead><tbody>${RELEASES.map(r => `<tr><td>${r[0]}</td><td style="white-space:nowrap">${r[1]}</td><td>${esc(r[2])}</td></tr>`).join('')}</tbody></table></div></section></div>`;
 }
 
 route();
